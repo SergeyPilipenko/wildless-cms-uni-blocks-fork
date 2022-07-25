@@ -46,14 +46,17 @@
                 "icon": "AppleIcon",
                 "rounded": true,
                 "version": "secondary",
-                "href": "/_blank",
-                "target": "_blank"
+                "href": "/",
+                "target": "_blank",
+                "text": ""
               },
               {
                 "icon": "PlayMarketIcon",
                 "rounded": true,
                 "version": "secondary",
-                "href": "/secondary"
+                "href": "/",
+                "target": "_blank",
+                "text": ""
               }
             ]
           }
@@ -61,23 +64,16 @@
         [
           {
             "image": {
-              "src": "payment-systems.png",
               "format": "webp",
               "size": {
                 "width": 288,
                 "height": 56
-              },
-              "alt": "Описание картинки",
-              "title": "Подсказка"
+              }
             }
           },
           {
             "list": {
-              "items": [
-                "item 1",
-                "item 2",
-                "item 3"
-              ]
+              "items": ["item 1", "item 2", "item 3"]
             }
           }
         ]

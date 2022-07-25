@@ -1,6 +1,6 @@
+import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { TariffsTable } from './TariffsTable';
-import type { Picture } from '../../model/Picture';
 import type { TariffsTableColumn, TariffsTableRowHeader } from './TariffsTableContent';
 
 const image: Picture = {
@@ -48,14 +48,15 @@ const columns: TariffsTableColumn[] = [
               icon: 'AppleIcon',
               rounded: true,
               version: 'secondary',
-              href: '/_blank',
+              href: '/',
               target: '_blank',
             },
             {
               icon: 'PlayMarketIcon',
               rounded: true,
               version: 'secondary',
-              href: '/secondary',
+              href: '/',
+              target: '_blank',
             },
           ],
         },

@@ -1,10 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { DIVIDER_CLASSES } from './constants';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
-import { Img } from '../../ui-kit/Img';
 import { Button } from '../../ui-kit/Button/Button';
-import type { TariffsTableCellData } from './TariffsTableContent';
 import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img';
+import type { TariffsTableCellData } from './TariffsTableContent';
 
 export interface TariffsTableCellProps {
   cell: TariffsTableCellData[];
@@ -40,7 +39,7 @@ const renderCellInner = (
             <BlockItem
               key={String(idx)}
               text={text}
-              version={list.version ?? 'secondary'}
+              version={list.version ?? 'primary'}
               isDotted={list.isDotted ?? true}
             />
           ))}

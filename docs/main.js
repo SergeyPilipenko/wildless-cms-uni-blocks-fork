@@ -33050,7 +33050,7 @@ const TariffsTableCell = JSX(({ cell, isLastRow }) => {
     const cellWrapperClasses = `first:pl-0 pl-10 w-80 flex-grow flex flex-col border-solid border-main-divider border border-t-0 border-x-0 ${isLastRow ? 'border-t-0 rounded-b-md' : ''}`;
     return (jsx("div", { className: cellWrapperClasses, role: "cell", children: jsx("div", { children: cell.map((item, i) => TariffsTableCell_renderCellInner(item, i)) }) }));
 });
-const TariffsTableCell_renderCellInner = ({ label, description, list, image, buttons }, i) => (jsxs("div", { className: "first:pt-5 last:pb-5", children: [i > 0 && (jsx("div", { className: "border-main-divider border border-solid border-t-0 border-x-0 my-4" })), label && jsx("div", { className: "text-xl font-medium m-0", children: label }), description && jsx("div", { className: "text-sm text-secondary-text", children: description }), list?.items?.length ? (jsx("div", { className: "flex flex-col justify-between items-start", children: jsx("div", { role: "list", children: list.items.map((text, idx) => (jsx(BlockItem, { text: text, version: list.version ?? 'secondary', isDotted: list.isDotted ?? true }, String(idx)))) }) })) : null, image && jsx(Img, { image: image }), buttons?.length
+const TariffsTableCell_renderCellInner = ({ label, description, list, image, buttons }, i) => (jsxs("div", { className: "first:pt-5 last:pb-5", children: [i > 0 && (jsx("div", { className: "border-main-divider border border-solid border-t-0 border-x-0 my-4" })), label && jsx("div", { className: "text-xl font-medium m-0", children: label }), description && jsx("div", { className: "text-sm text-secondary-text", children: description }), list?.items?.length ? (jsx("div", { className: "flex flex-col justify-between items-start", children: jsx("div", { role: "list", children: list.items.map((text, idx) => (jsx(BlockItem, { text: text, version: list.version ?? 'primary', isDotted: list.isDotted ?? true }, String(idx)))) }) })) : null, image && jsx(Img, { image: image }), buttons?.length
             ? buttons.map(({ icon, ...buttonProps }, idx) => (jsx(Button, { className: `${idx > 0 ? 'ml-3' : ''} w-12 h-12`, appendLeft: icon && jsx(Icon, { name: icon, width: "24px", height: "24px" }), ...buttonProps }, String(idx))))
             : null] }, String(i)));
 
@@ -34334,14 +34334,15 @@ const TariffsTable_fixture_columns = [
                             icon: 'AppleIcon',
                             rounded: true,
                             version: 'secondary',
-                            href: '/_blank',
+                            href: '/',
                             target: '_blank',
                         },
                         {
                             icon: 'PlayMarketIcon',
                             rounded: true,
                             version: 'secondary',
-                            href: '/secondary',
+                            href: '/',
+                            target: '_blank',
                         },
                     ],
                 },
