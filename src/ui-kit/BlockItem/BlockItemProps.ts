@@ -17,6 +17,7 @@ export interface BlockItemContent {
 export interface BlockItemProps extends BlockItemContent {
   className?: string;
   version?: BlockItemVersion;
+  white?: boolean;
   /** @title Маркер */
   isDotted?: boolean;
 }

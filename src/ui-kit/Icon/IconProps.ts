@@ -61,8 +61,8 @@ export enum IconMap {
   'UserTickIcon',
   'VisaIcon',
   'VKIcon',
-  'WalletAdd',
-  'WalletAdd2',
+  'WalletAddIcon',
+  'WalletAdd2Icon',
   'WalletIcon',
   'WalletWithMoneyIcon',
 }

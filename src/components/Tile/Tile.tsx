@@ -15,11 +15,11 @@ const tileStyleMap: Record<BlockVersion, string> = {
 };
 
 export const Tile = JSX<TileProps>((props) => {
-  const { children, className, version = 'primary', role } = props;
+  const { children, className = '', version = 'primary', role } = props;
 
   return (
     <section
-      className={`font-sans p-9 box-border ${className || ''} ${
+      className={`font-sans p-9 box-border ${className} ${
         tileStyleMap[version]
       } ${getContainerPaddingRight(className)} ${getContainerMinHeight(className)} `}
       role={role}

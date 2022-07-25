@@ -39,12 +39,12 @@ export const BaseTile = JSX<BaseTileProps>(
             {title}
           </Title>
         )}
-        <div className={`flex grow w-full justify-between`}>
-          <div className={`flex flex-col justify-between items-start`}>
+        <div className="flex grow w-full justify-between">
+          <div className="flex flex-col justify-between items-start">
             <div>
-              {description ? (
+              {description && (
                 <div className={`font-normal text-base mt-4 max-w-[600px]`}>{description}</div>
-              ) : null}
+              )}
               {children}
               {items?.length ? renderItems(items, version) : null}
             </div>
@@ -78,7 +78,12 @@ function renderItems(items: string[] = [], version?: BlockVersion) {
   return (
     <section className="max-w-[600px] mt-5" role="list">
       {items.map((_, i) => (
-        <BlockItem key={String(i)} className={i ? 'mt-2.5' : ''} text={_} version={version} />
+        <BlockItem
+          key={String(i)}
+          className={i ? 'mt-2.5' : ''}
+          text={_}
+          white={version !== 'primary'}
+        />
       ))}
     </section>
   );

@@ -39,14 +39,14 @@ const renderCellInner = (
             <BlockItem
               key={String(idx)}
               text={text}
-              version={list.version ?? 'primary'}
+              version={list.version ?? 'secondary'}
               isDotted={list.isDotted ?? true}
             />
           ))}
         </div>
       </div>
     ) : null}
-    {image?.src && <Img image={image} />}
+    {image && <Img image={image} />}
     {buttons?.length
       ? buttons.map(({ icon, ...buttonProps }, idx) => (
           <Button

@@ -106,7 +106,6 @@ const columns: TariffsTableColumn[] = [
         { label: '69 рублей в месяц' },
         {
           list: {
-            version: 'primary',
             items: ['item 1', 'item 2', 'item 3'],
           },
         },
