@@ -1,5 +1,7 @@
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 
+import type { SizeVersion } from '../../model/SizeVersion';
+
 /**
  * @title Шаг
  */
@@ -17,6 +19,7 @@ export interface Step {
 export interface StepsBlockContent {
   /** @title Заголовок */
   title?: string;
+  description?: string; // TODO: mobile content
   /** @title Линии */
   showLines?: boolean;
   /**
@@ -25,4 +28,5 @@ export interface StepsBlockContent {
    * @maxItems 3
    */
   steps?: Step[];
+  size?: SizeVersion; // TODO: mobile content
 }
