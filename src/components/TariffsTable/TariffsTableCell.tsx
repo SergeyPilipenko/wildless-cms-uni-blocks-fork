@@ -46,7 +46,7 @@ const renderCellInner = (
         </div>
       </div>
     ) : null}
-    {image && <Img image={image} />}
+    {image?.src && <Img image={image} />}
     {buttons?.length
       ? buttons.map(({ icon, ...buttonProps }, idx) => (
           <Button
