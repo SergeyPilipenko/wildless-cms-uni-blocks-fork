@@ -33,7 +33,7 @@ export const BaseTile = JSX<BaseTileProps>(
       <div className={`font-sans flex flex-col grow h-full items-start`}>
         {title && (
           <Title
-            size={titleSize || getTitleSizeByClassName(className)}
+            size={getTitleSize(titleSize, className)}
             className={`${TITLE_CLASSES} ${version === 'primary' ? 'text-primary-text' : ''}`}
           >
             {title}
@@ -63,7 +63,11 @@ export const BaseTile = JSX<BaseTileProps>(
   },
 );
 
-function getTitleSizeByClassName(className = '') {
+function getTitleSize(titleSize, className = '') {
+  if (titleSize) {
+    return titleSize;
+  }
+
   const colSpan = getColSpan(className);
   if (colSpan <= 4) {
     return 'S';
@@ -95,7 +99,7 @@ function renderButton({ icon, asSVG, ...button }: BaseTileIconButton, i: number)
   return icon ? (
     <Button
       key={String(i)}
-      appendLeft={<Icon name={icon} asSVG width="24" height="24" />}
+      appendLeft={<Icon name={icon} asSVG={asSVG} width="24" height="24" />}
       {...button}
     />
   ) : (

@@ -5,6 +5,9 @@ import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
  * @title Продуктовая плитка
  */
 export interface ProductTileContent extends Omit<BaseTileCommonProps, 'align'> {
-  /** @title Преимущества */
+  /**
+   * @title Преимущества
+   * @maxItems 7
+   */
   benefits?: Omit<Benefit, 'icon'>[];
 }

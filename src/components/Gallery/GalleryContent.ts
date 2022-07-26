@@ -11,12 +11,9 @@ export interface GalleryCard {
   /** @title Описание */
   description?: string;
   image?: Picture;
-  /** @title Ссылка */
+  /** @title Кнопка */
   button?: BaseTileIconButton;
-  /**
-   * @title Список
-   * @minItems 4
-   */
+  /** @title Список */
   items?: string[];
   version?: BlockVersion;
 }
@@ -29,6 +26,9 @@ export interface GalleryContent {
   title?: string;
   /** @title Описание */
   description?: string;
-  /** @title Карточки */
+  /**
+   * @title Карточки
+   * @minItems 4
+   */
   cards?: GalleryCard[];
 }

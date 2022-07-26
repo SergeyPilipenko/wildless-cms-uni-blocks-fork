@@ -45,17 +45,6 @@
       },
       "title": "Заголовок 4",
       "description": "Описание 4"
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 120,
-          "height": 70
-        }
-      },
-      "title": "Заголовок 5",
-      "description": "Описание 5"
     }
   ]
 }

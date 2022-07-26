@@ -28,7 +28,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
             </section>
           ) : null}
         </div>
-        {button?.href && <Button className="mt-6" {...button} />}
+        {button?.text && <Button className="mt-6" {...button} />}
       </div>
     );
   },

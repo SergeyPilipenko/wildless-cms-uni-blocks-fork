@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ImgSource, Picture } from '../model/Picture';
 
-export interface TextWithImageProps {
+export interface ImageProps {
   className?: string;
   image: Picture;
 }
 
-export const Img = JSX<TextWithImageProps>(({ className, image: { size, ...image } }) => {
+export const Img = JSX<ImageProps>(({ className, image: { size, ...image } }) => {
   const style = {
     width: size?.width ? `${size?.width}px` : '100%',
     height: size?.height ? `${size?.height}px` : '100%',

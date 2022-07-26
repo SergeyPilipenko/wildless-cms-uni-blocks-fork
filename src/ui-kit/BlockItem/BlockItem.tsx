@@ -17,7 +17,7 @@ const LIST_STYLE_MAP: Record<BlockItemVersion, string> = {
 export const BlockItem = JSX<BlockItemProps>(
   ({ className = '', isDotted = true, text, children, version = 'primary', white }) => {
     return (
-      <div className={`font-sans inline-block flex ${className}`} role="listitem">
+      <div className={`font-sans inline-block flex items-baseline ${className}`} role="listitem">
         {isDotted && <div className={getListStyle(version, white)} />}
         <span className={white ? 'text-white' : TEXT_STYLE_MAP[version]}>{text || children}</span>
       </div>

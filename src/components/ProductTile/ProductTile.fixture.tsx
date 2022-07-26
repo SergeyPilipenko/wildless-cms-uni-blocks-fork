@@ -1,7 +1,7 @@
 import { context } from '../../setup-fixture';
 
-import { ProductTile } from './ProductTile';
 import type { Picture } from '../../model/Picture';
+import { ProductTile } from './ProductTile';
 
 const cardWithMoney: Picture = {
   src: 'card-with-diamond.png',
@@ -31,16 +31,16 @@ export default {
         description="Потребительский кредит на любые цели, без залога и поручительства"
         benefits={[
           {
-            label: 'Кредитный лимит',
-            description: 'до 5 млн Р',
+            label: 'до 5 млн Р',
+            description: 'Кредитный лимит',
           },
           {
-            label: 'Процентная ставка',
-            description: 'от 12,5%',
+            label: 'от 12,5%',
+            description: 'Процентная ставка',
           },
           {
-            label: 'Срок кредитования',
-            description: 'до 5 лет',
+            label: 'до 5 лет',
+            description: 'Срок кредитования',
           },
         ]}
         buttons={[
@@ -63,16 +63,16 @@ export default {
         description={'Потребительский кредит на любые цели, без залога и поручительства'}
         benefits={[
           {
-            label: 'Кредитный лимит',
-            description: 'до 3 млн Р',
+            label: 'до 3 млн Р',
+            description: 'Кредитный лимит',
           },
           {
-            label: 'Процентная ставка',
-            description: 'от 12,5%',
+            label: 'от 12,5%',
+            description: 'Процентная ставка',
           },
           {
-            label: 'Срок кредитования',
-            description: 'до 3 лет',
+            label: 'до 3 лет',
+            description: 'Срок кредитования',
           },
         ]}
         buttons={[
@@ -96,16 +96,16 @@ export default {
         description={'Без переоформления залогой недвижимости на банк'}
         benefits={[
           {
-            label: 'Кредитный лимит',
-            description: 'до 10 млн Р',
+            label: 'до 10 млн Р',
+            description: 'Кредитный лимит',
           },
           {
-            label: 'Процентная ставка',
-            description: 'от 21,5%',
+            label: 'от 21,5%',
+            description: 'Процентная ставка',
           },
           {
-            label: 'Срок кредитования',
-            description: 'до 10 лет',
+            label: 'до 10 лет',
+            description: 'Срок кредитования',
           },
         ]}
         buttons={[
@@ -129,16 +129,16 @@ export default {
         description={'Для людей в возрасте до 75 лет'}
         benefits={[
           {
-            label: 'Кредитный лимит',
-            description: 'до 3 млн Р',
+            label: 'до 3 млн Р',
+            description: 'Кредитный лимит',
           },
           {
-            label: 'Процентная ставка',
-            description: 'от 16,8%',
+            label: 'от 16,8%',
+            description: 'Процентная ставка',
           },
           {
-            label: 'Срок кредитования',
-            description: 'до 5 лет',
+            label: 'до 5 лет',
+            description: 'Срок кредитования',
           },
         ]}
         buttons={[
