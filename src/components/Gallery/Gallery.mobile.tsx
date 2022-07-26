@@ -4,7 +4,7 @@ import type { GalleryCard } from './GalleryContent';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img';
-import { Title } from '../../ui-kit/Title/Title';
+import { Title } from '../../ui-kit/Title/Title.mobile';
 
 export const Gallery = JSX<GalleryProps>(({ title, description, cards = [], className }) => {
   return (

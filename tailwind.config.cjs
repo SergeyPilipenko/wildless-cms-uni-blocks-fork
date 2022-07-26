@@ -31,19 +31,28 @@ module.exports = {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        '2xs': ['0.625rem', '0.625rem'], // 10px 10px
-        xs: ['0.75rem', '1.125rem'], // 12px 18px
-        sm: ['0.875rem', '1.375rem'], // 14px 22px
-        md: ['0.9375rem', '1.5rem'], // 15px 24px
-        'mobile-md':['1.0625rem', '1.375rem'], // 17px 22px
-        lg: ['2.188rem', '3rem'], // 35px 48px
-        base: ['1rem', '1.5rem'], // 16px 24px
-        'title-sm': ['1.75rem', '2.5rem'], //28px 40px
-        'title-xs': ['1.5rem', '1.875rem'], //24px 30px
-        'title-2xs': ['1.375rem', '1.8125rem'], //22px 29px
-        'title-3xs': ['1.25rem', '1.625rem'], //20px 26px
-        title: ['2rem', '2.5rem'], //32px 40px
-        'title-lg': ['2.5rem', '3rem'], //40px 48px
+        'title-lg':  ['2.5rem', '3rem'],      //40px 48px
+        'title':     ['2rem', '2.5rem'],      //32px 40px
+        'title-sm':  ['1.75rem', '2.5rem'],   //28px 40px
+        'title-xs':  ['1.5rem', '1.875rem'],  //24px 30px
+        'title-2xs': ['1.25rem', '1.625rem'], //20px 26px
+
+        lg:    ['2.188rem', '3rem'],      // 35px 48px
+        base:  ['1rem', '1.5rem'],        // 16px 24px
+        sm:    ['0.875rem', '1.375rem'],  // 14px 22px
+        xs:    ['0.75rem', '1.125rem'],   // 12px 18px
+        '2xs': ['0.625rem', '0.625rem'],  // 10px 10px
+
+        'm-title':    ['1.375rem', '1.8125rem'],   //22px 29px
+        'm-title-md': ['1.25rem', '1.625rem'],     //20px 26px
+        'm-title-xs': ['1.0625rem', '1.375rem'],   // 17px 22px
+
+        'm-base':  ['1rem', '1.5rem'],        // 16px 24px
+        'm-md':    ['0.9375rem', '1.5rem'],   // 15px 24px
+        'm-sm':    ['0.875rem', '1.375rem'],  // 14px 22px
+        'm-xs':     ['1.8125rem', '1.375rem'], // 13px 22px
+        'm-2xs':    ['0.75rem', '1.125rem'],   // 12px 18px
+        'm-3xs':   ['0.625rem', '0.625rem'],  // 10px 10px
       },
       colors: {
         main: {
