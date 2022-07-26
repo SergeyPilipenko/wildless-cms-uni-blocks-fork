@@ -3,7 +3,6 @@ export enum SizeTableClass {
   'L' = 'text-title',
   'M' = 'text-title-sm',
   'S' = 'text-title-xs',
-  'XS' = 'text-title-xs',
   '2XS' = 'text-title-2xs',
   '3XS' = 'text-title-3xs',
 }
