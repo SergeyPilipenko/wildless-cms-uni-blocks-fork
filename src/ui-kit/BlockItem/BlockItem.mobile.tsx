@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { BlockItemProps, BlockItemVersion } from './BlockItemProps';
 
-const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3';
+const LIST_STYLE_CLASSES = 'inline-block mr-3';
 
 const TEXT_STYLE_MAP: Record<BlockItemVersion, string> = {
   primary: 'text-primary-text',
@@ -10,12 +10,14 @@ const TEXT_STYLE_MAP: Record<BlockItemVersion, string> = {
 };
 
 const LIST_STYLE_MAP: Record<BlockItemVersion, string> = {
-  primary: 'bg-primary-main',
-  secondary: 'bg-secondary-text',
+  primary:
+    'bg-primary-main bg-secondary-text w-[6px] h-[6px] min-w-[6px] min-h-[6px] mt-2.5 rounded-full',
+  secondary:
+    'bg-secondary-text bg-white w-[6px] h-[6px] min-w-[6px] min-h-[6px] mt-2.5 rounded-full',
 };
 
 export const BlockItem = JSX<BlockItemProps>(
-  ({ className = '', isDotted = true, text, children, version = 'primary', white }) => {
+  ({ className, isDotted = true, text, children, version = 'primary', white }) => {
     return (
       <div className={`font-sans flex items-baseline ${className}`} role="listitem">
         {isDotted && <div className={getListStyle(version, white)} />}

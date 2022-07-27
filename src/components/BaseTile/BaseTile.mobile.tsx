@@ -2,8 +2,14 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Title } from '../../ui-kit/Title/Title';
 import { BaseTileInner } from './BaseTileInner';
-import type { BaseTileCommonProps } from './BaseTileProps';
+import type { AlignType, BaseTileCommonProps } from './BaseTileProps';
 import { getTitleSizeByClassName } from './getTitleSizeByClassName';
+
+const alignBlock: Record<AlignType, string> = {
+  left: 'items-start',
+  center: 'items-center',
+  right: 'items-end',
+};
 
 export interface BaseTileProps extends BaseTileCommonProps, UniBlockProps {}
 
@@ -21,9 +27,10 @@ export const BaseTile = JSX<BaseTileProps>(
     image,
     items,
     version = 'primary',
+    align = 'left',
   }) => {
     return (
-      <div className={`font-sans flex flex-col grow h-full items-start`}>
+      <div className={`font-sans flex flex-col grow h-full ${alignBlock[align]}`}>
         {title && (
           <Title
             size={titleSize || getTitleSizeByClassName(className)}

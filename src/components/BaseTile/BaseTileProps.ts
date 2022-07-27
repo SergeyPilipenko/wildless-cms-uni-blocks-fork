@@ -19,9 +19,14 @@ export interface BaseTileIconButton extends ButtonWithIconProps {
 }
 
 /**
- * @title Плитка
+ * @title Общий компонент плиток
  */
-export interface BaseTileCommonProps {
+export interface BaseTileCommonProps extends BaseTileTitleProps, BaseTileMainProps {}
+
+/**
+ * @title Заголовк плитки
+ */
+export interface BaseTileTitleProps {
   /** @title Заголовок */
   title?: string;
   /**
@@ -29,7 +34,8 @@ export interface BaseTileCommonProps {
    * @default M
    */
   titleSize?: TitleSize;
-  /** @title Описание */
+}
+export interface BaseTileMainProps {
   description?: string;
   image?: Picture;
   /** @title Список */
