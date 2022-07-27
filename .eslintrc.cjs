@@ -1,11 +1,10 @@
 const BLOCKS_DIR = 'src/components';
 const BLOCKS_DIR_EXCLUSIONS = [
-  /^.*Page$/,
-  /^.*Control$/,
+  /^.*Page(\.fixture)?(\.mobile)?$/,
+  /^.*Control(\.fixture)?(\.mobile)?$/,
   /^Base.*$/,
-  /^BlockContent$/,
-  /^Blocks$/,
-  /^MobileBlocks$/,
+  /^BlockContent(\.mobile)?$/,
+  /^Blocks(\.mobile)?$/,
 ];
 
 module.exports = {
@@ -28,6 +27,7 @@ module.exports = {
       files: ['src/**/*'],
       excludedFiles: [
         'src/**/*.fixture.tsx',
+        'src/**/*.fixture.mobile.tsx',
         'src/cosmos*',
         'src/**/*.spec.tsx',
         'src/**/*.spec.ts',
@@ -51,9 +51,10 @@ module.exports = {
             exclude: BLOCKS_DIR_EXCLUSIONS,
           },
           {
-            blocksRegistry: 'src/components/MobileBlocks.ts',
+            blocksRegistry: 'src/components/Blocks.mobile.ts',
             blocksDir: BLOCKS_DIR,
             include: [/^.*\.mobile$/],
+            exclude: BLOCKS_DIR_EXCLUSIONS,
           },
         ],
         'local-eslint-rules/block-structure': [
@@ -66,7 +67,7 @@ module.exports = {
         'local-eslint-rules/no-index-file': [
           'error',
           {
-            exclude: [/\/src\/index\.ts$/, /\/src\/content-page-repository\/index\.ts$/],
+            exclude: [/\/src\/index(\.mobile)?\.ts$/, /\/src\/content-page-repository\/index\.ts$/],
           },
         ],
       },

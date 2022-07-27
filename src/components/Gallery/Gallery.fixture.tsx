@@ -1,8 +1,8 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
-import { Gallery, GalleryProps } from './Gallery';
-import { Gallery as MobileGallery } from './Gallery.mobile';
+import { Gallery } from './Gallery';
+import type { GalleryProps } from './GalleryProps';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -209,11 +209,6 @@ export default {
   'only title': (
     <div className="container grid grid-cols-12">
       <Gallery className="col-span-12" {...onlyTitleProps} />
-    </div>
-  ),
-  mobile: (
-    <div className="container grid grid-cols-12">
-      <MobileGallery className="col-span-12" {...defaultProps} />
     </div>
   ),
 };

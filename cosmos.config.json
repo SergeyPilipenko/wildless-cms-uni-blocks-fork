@@ -1,4 +1,5 @@
 {
+  "watchDirs": ["src"],
   "globalImports": ["cosmos.common.css", "src/common.css"],
   "port": 5001,
   "staticPath": "cosmos-static",

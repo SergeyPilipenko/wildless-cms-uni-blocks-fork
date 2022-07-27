@@ -8,7 +8,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "json.schemas": [
     {
-      "fileMatch": ["cosmos.config.json"],
+      "fileMatch": ["cosmos.config.json", "cosmos.config.mobile.json"],
       "url": "http://json.schemastore.org/cosmos-config"
     }
   ],

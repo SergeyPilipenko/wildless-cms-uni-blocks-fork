@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Title } from '../../ui-kit/Title/Title.mobile';
+import { Title } from '../../ui-kit/Title/Title';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
@@ -32,7 +32,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
   },
 );
 
-const renderStepTitle = ({ step: step, size: size }, i: number, array: Step[]) => {
+const renderStepTitle = ({ step, size }, i: number, array: Step[]) => {
   const isLastStep = array.length - 1 === i;
   const iconAreaSize =
     size === 'normal'

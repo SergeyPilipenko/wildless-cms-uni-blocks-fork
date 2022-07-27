@@ -2,8 +2,8 @@ node_modules/
 build/
 dist/
 lib/
-module/
 bundle/
+mobile/src/
 coverage/
 cosmos-static/icons/
 temp/

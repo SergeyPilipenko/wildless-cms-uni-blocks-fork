@@ -15,12 +15,12 @@ const config = [
       {
         file: 'bundle/bundle.umd.js',
         format: 'umd',
-        name: 'UniBlocks',
+        name: 'UniMobileBlocks',
       },
       {
         file: 'bundle/bundle.umd.min.js',
         format: 'umd',
-        name: 'UniBlocks',
+        name: 'UniMobileBlocks',
         plugins: [terser()],
       },
     ],

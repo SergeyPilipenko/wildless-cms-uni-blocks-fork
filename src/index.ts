@@ -17,7 +17,6 @@ export type {
 export { ContentPageHead } from './components/ContentPage/ContentPageHead';
 export { toMobilePage } from './components/ContentPage/toMobilePage';
 export { Header } from './components/Header/Header';
-export { MobileBlocks } from './components/MobileBlocks';
 export type { Img, ImgSource, Picture } from './model/Picture';
 export { projectSettings } from './ProjectSettings';
 export type { ProjectSettings } from './ProjectSettings';

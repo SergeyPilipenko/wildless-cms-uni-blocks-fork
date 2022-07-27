@@ -1,10 +1,8 @@
-import { context, mobileContext } from '../../setup-fixture';
+import { context } from '../../setup-fixture';
 
 import type { ContentPageDef } from '../../types';
 import { Blocks } from '../Blocks';
-import { MobileBlocks } from '../MobileBlocks';
 import { BlockDecorator, ContentPage } from './ContentPage';
-import { toMobilePage } from './toMobilePage';
 
 import data from './ContentPage.page.json';
 
@@ -34,14 +32,6 @@ export default {
       context={context}
       blocksRegistry={Blocks}
       data={data as ContentPageDef}
-    />
-  ),
-  mobile: (
-    <ContentPage
-      className="bg-secondary-text"
-      context={mobileContext}
-      blocksRegistry={MobileBlocks}
-      data={toMobilePage(data as ContentPageDef)}
     />
   ),
   editor: (

@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { ProductBlockInnerCommonProps } from './ProductBlockContent';
+import type { ProductBlockContent } from './ProductBlockContent';
 import { ProductBlockInner } from './ProductBlockInner';
 
-export interface ProductBlockProps extends ProductBlockInnerCommonProps, UniBlockProps {}
+export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
 
 export const ProductBlock = JSX<ProductBlockProps>(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

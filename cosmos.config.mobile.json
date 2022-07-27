@@ -1,0 +1,33 @@
+{
+  "watchDirs": ["src"],
+  "globalImports": ["cosmos.common.css", "src/common.css"],
+  "port": 5002,
+  "fixtureFileSuffix": "fixture.mobile",
+  "staticPath": "cosmos-static",
+  "exportPath": "docs/mobile",
+  "publicUrl": "./",
+  "webpack": {
+    "overridePath": "./webpack.override.mobile.cjs"
+  },
+  "ui": {
+    "responsivePreview": {
+      "devices": [
+        {
+          "label": "Mobile 360x640",
+          "width": 360,
+          "height": 640
+        },
+        {
+          "label": "Mobile 375x667",
+          "width": 375,
+          "height": 667
+        },
+        {
+          "label": "Mobile 414x896",
+          "width": 414,
+          "height": 896
+        }
+      ]
+    }
+  }
+}

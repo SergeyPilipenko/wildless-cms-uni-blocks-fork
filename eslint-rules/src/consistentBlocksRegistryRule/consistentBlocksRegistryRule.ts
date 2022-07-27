@@ -1,5 +1,6 @@
 import { ESLintUtils } from '@typescript-eslint/utils';
 import { jsBasename } from '../utils/jsBasename';
+import { withoutExt } from '../utils/withoutExt';
 import { defaultOptions } from './consistentBlocksRegistryRule.defaultOptions';
 import { ConsistentBlocksRegistryRuleOptions, meta } from './consistentBlocksRegistryRule.meta';
 import { diff } from './diff';
@@ -31,7 +32,7 @@ export const consistentBlocksRegistryRule = ESLintUtils.RuleCreator.withoutDocs<
           return;
         }
         const [blocksRegistryConst] = vars;
-        const blocksRegistryName = jsBasename(blocksRegistry);
+        const blocksRegistryName = withoutExt(jsBasename(blocksRegistry));
         if (blocksRegistryConst.name !== blocksRegistryName) {
           context.report({
             messageId: 'blocksRegistryNotFound',
