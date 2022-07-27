@@ -30,6 +30,7 @@ jobs:
             lib/
             bundle/
             fonts/
+            mobile/
 
   publish:
     if: github.ref == 'refs/heads/main'
