@@ -14,10 +14,20 @@
       "require": "./dist/index.js",
       "types": "./lib/index.d.ts"
     },
+    "./mobile": {
+      "import": "./mobile/lib/index.js",
+      "require": "./mobile/dist/index.js",
+      "types": "./mobile/lib/index.d.ts"
+    },
     "./lib/*.js": {
       "import": "./lib/*.js",
       "require": "./dist/*.js",
       "types": "./lib/*.d.ts"
+    },
+    "./mobile/lib/*.js": {
+      "import": "./mobile/lib/*.js",
+      "require": "./mobile/dist/*.js",
+      "types": "./mobile/lib/*.d.ts"
     },
     "./lib/common.css": "./lib/common.css",
     "./fonts/ubuntu/*": "./fonts/ubuntu/*",
