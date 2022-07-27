@@ -1,7 +1,7 @@
+import React from 'react';
 import '../../setup-fixture';
-
-import { Button } from './Button';
 import { Icon } from '../Icon/Icon';
+import { Button } from './Button';
 
 export default {
   all: (
@@ -114,39 +114,69 @@ export default {
   ),
   'primary (Private clients)': (
     <div data-theme="pc">
-      <Button href="https://www.rshb.ru/" target="_blank" text="Сайт РСХБ" version="primary" />
+      <Button
+        href="https://www.rshb.ru/"
+        target="_blank"
+        text="Оформить кредит"
+        version="primary"
+      />
     </div>
   ),
   'secondary (Private clients)': (
     <div data-theme="pc">
-      <Button href="https://www.rshb.ru/" target="_blank" text="Сайт РСХБ" version="secondary" />
+      <Button
+        href="https://www.rshb.ru/"
+        target="_blank"
+        text="Оформить кредит"
+        version="secondary"
+      />
     </div>
   ),
   'primary (Business clients)': (
     <div data-theme="bc">
-      <Button href="https://www.rshb.ru/" target="_blank" text="Сайт РСХБ" version="primary" />
+      <Button
+        href="https://www.rshb.ru/"
+        target="_blank"
+        text="Оформить кредит"
+        version="primary"
+      />
     </div>
   ),
   'secondary (Business clients)': (
     <div data-theme="bc">
-      <Button href="https://www.rshb.ru/" target="_blank" text="Сайт РСХБ" version="secondary" />
+      <Button
+        href="https://www.rshb.ru/"
+        target="_blank"
+        text="Оформить кредит"
+        version="secondary"
+      />
     </div>
   ),
   'primary (Ecosystem own)': (
     <div data-theme="eo">
-      <Button href="https://www.rshb.ru/" target="_blank" text="Сайт РСХБ" version="primary" />
+      <Button
+        href="https://www.rshb.ru/"
+        target="_blank"
+        text="Оформить кредит"
+        version="primary"
+      />
     </div>
   ),
   'secondary (Ecosystem own)': (
     <div data-theme="eo">
-      <Button href="https://www.rshb.ru/" target="_blank" text="Сайт РСХБ" version="secondary" />
+      <Button
+        href="https://www.rshb.ru/"
+        target="_blank"
+        text="Оформить кредит"
+        version="secondary"
+      />
     </div>
   ),
   'primary (disabled)': (
     <Button
       href="https://www.rshb.ru/"
       target="_blank"
-      text="Сайт РСХБ"
+      text="Оформить кредит"
       version="primary"
       disabled
     />
@@ -155,7 +185,7 @@ export default {
     <Button
       href="https://www.rshb.ru/"
       target="_blank"
-      text="Сайт РСХБ"
+      text="Оформить кредит"
       version="secondary"
       disabled
     />

@@ -37,6 +37,8 @@ module.exports = {
         'title-xs': ['1.5rem', '1.875rem'], //24px 30px
         'title-2xs': ['1.25rem', '1.625rem'], //20px 26px
 
+        button: ['0.875rem', '1.25rem'],
+
         lg: ['2.188rem', '3rem'], // 35px 48px
         base: ['1rem', '1.5rem'], // 16px 24px
         sm: ['0.875rem', '1.375rem'], // 14px 22px

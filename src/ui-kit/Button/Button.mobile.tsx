@@ -16,7 +16,7 @@ const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
   secondary: 'bg-secondary-light text-secondary-text',
 };
 
-const styleButton = 'text-center font-sans select-none';
+const styleButton = 'w-full text-center font-sans select-none';
 
 export interface ButtonCommonProps extends ButtonProps, ButtonWithIconProps {}
 
