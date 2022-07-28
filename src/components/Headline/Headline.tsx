@@ -2,8 +2,8 @@ import { JSX } from '@redneckz/uni-jsx';
 
 import type { UniBlockProps } from '../../types';
 import { Title } from '../../ui-kit/Title/Title';
-import type { HeadlineContent } from './HeadlineContent';
 import { AlignType } from '../BaseTile/BaseTileProps';
+import type { HeadlineContent } from './HeadlineContent';
 
 export interface HeadlineProps extends UniBlockProps, HeadlineContent {}
 
@@ -14,10 +14,10 @@ const alignText: Record<AlignType, string> = {
 };
 
 export const Headline = JSX<HeadlineProps>(
-  ({ bgColor = 'transparent', align = 'left', className, title, description }) => {
+  ({ bgColor = 'transparent', align = 'left', className = '', title, description }) => {
     const textClasses = alignText[align];
     return (
-      <section className={`p-[50px] ${bgColor} ${className || ''} `}>
+      <section className={`p-[50px] ${bgColor} ${className}`}>
         {title && (
           <Title size="L" className={`text-primary-text mt-0 font-medium ${textClasses}`}>
             {title}

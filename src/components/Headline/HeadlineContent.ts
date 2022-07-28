@@ -5,6 +5,7 @@ import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
  * @title Заголовок
  */
 export interface HeadlineContent
-  extends Pick<BaseTileCommonProps, 'title' | 'titleSize' | 'description' | 'align'> {
+  extends Pick<BaseTileCommonProps, 'title' | 'titleSize' | 'description' | 'align' | 'image'> {
+  //TODO: image for mobile
   bgColor?: BgColorVersion;
 }

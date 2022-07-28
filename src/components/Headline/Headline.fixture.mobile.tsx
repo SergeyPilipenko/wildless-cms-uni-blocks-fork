@@ -1,9 +1,8 @@
 import { context } from '../../setup-fixture';
 
-import { Headline } from './Headline';
-import { Headline as MobileHeadline } from './Headline';
-import { HeadlineContent } from './HeadlineContent';
 import { Picture } from '../../model/Picture';
+import { Headline } from './Headline';
+import { HeadlineContent } from './HeadlineContent';
 
 export const HEADLINE: HeadlineContent = {
   title: 'Своя кредитная карта',
@@ -24,34 +23,7 @@ const image: Picture = {
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...HEADLINE} />
-    </div>
-  ),
-  'left white': (
-    <div className="container grid grid-cols-12">
       <Headline
-        className="col-span-12"
-        context={context}
-        {...HEADLINE}
-        align="left"
-        bgColor="bg-white"
-      />
-    </div>
-  ),
-  'right transparent': (
-    <div className="container grid grid-cols-12">
-      <Headline
-        className="col-span-12"
-        context={context}
-        {...HEADLINE}
-        align="right"
-        bgColor="transparent"
-      />
-    </div>
-  ),
-  mobile: (
-    <div className="container grid grid-cols-12">
-      <MobileHeadline
         className="col-span-12"
         context={context}
         title="Копите в нескольких валютах"
@@ -60,9 +32,9 @@ export default {
       />
     </div>
   ),
-  'mobile title-img': (
+  'title-img': (
     <div className="container grid grid-cols-12">
-      <MobileHeadline
+      <Headline
         className="col-span-12"
         context={context}
         title="Копите в нескольких валютах"
@@ -70,9 +42,9 @@ export default {
       />
     </div>
   ),
-  'mobile desc-img': (
+  'desc-img': (
     <div className="container grid grid-cols-12">
-      <MobileHeadline
+      <Headline
         className="col-span-12"
         context={context}
         description="Откройте мультивалютный вклад, чтобы распределить свои вложения. Это до 4 счетов в разных валютах внутри одного вклада"
@@ -80,9 +52,9 @@ export default {
       />
     </div>
   ),
-  'mobile white': (
+  white: (
     <div className="container grid grid-cols-12">
-      <MobileHeadline
+      <Headline
         className="col-span-12"
         context={context}
         title="Копите в нескольких валютах"
