@@ -1,5 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
+import type { IconName } from '../../ui-kit/Icon/IconProps';
 
 /**
  * @title Тип контакта
@@ -27,6 +28,14 @@ export interface ContactInfo {
 export type SocialMedia = Omit<LinkProps, 'text'>;
 
 /**
+ * @title Пункт подменю
+ */
+export interface SubMenuItem extends LinkProps {
+  /** @title Иконка подменю */
+  icon?: IconName;
+}
+
+/**
  * @title Подвал
  * @required ["topItems"]
  */
@@ -39,4 +48,8 @@ export interface FooterContent extends SitemapProps {
   contacts?: ContactInfo[];
   /** @title Социальные сети */
   socialMedia?: SocialMedia[];
+  /** @title Заголовок для меню */
+  horizontalNavigationTitle?: string; // TODO: для мобильной версии
+  /** @title Подменю */
+  subMenu?: SubMenuItem[]; // TODO: для мобильной версии
 }

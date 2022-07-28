@@ -16,5 +16,7 @@
       "icon": "PlayMarketIcon",
       "version": "secondary"
     }
-  ]
+  ],
+  "title": "Мобильное приложение",
+  "description": "Загрузить для IOS и Android"
 }

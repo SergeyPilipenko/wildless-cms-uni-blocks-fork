@@ -14,7 +14,7 @@ export const TextInformation = JSX<FooterLink>(({ className, links, context }) =
         </span>
       </div>
       {links?.length ? (
-        <div className="flex justify-start items-start gap-5 pt-[5px]">
+        <div className={`flex flex-col justify-start items-start gap-5 pt-[5px]`}>
           {links.map((_, i) => (
             <TextInformationLink
               key={String(i)}

@@ -19,7 +19,7 @@ export const Tile = JSX<TileProps>((props) => {
 
   return (
     <section
-      className={`font-sans p-9 box-border ${className} ${
+      className={`font-sans p-9 box-border ${className || ''} ${
         tileStyleMap[version]
       } ${getContainerPaddingRight(className)} ${getContainerMinHeight(className)} `}
       role={role}

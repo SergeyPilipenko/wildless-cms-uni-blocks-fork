@@ -13,6 +13,10 @@ export interface QRCode {
 /**
  * @title Мобильное приложение
  */
-export interface MobileAppTileContent extends Pick<BaseTileCommonProps, 'title' | 'buttons'> {
+export interface MobileAppTileContent
+  extends Pick<BaseTileCommonProps, 'title' | 'buttons' | 'description'> {
+  // TODO: description для мобильной версии
   qr?: QRCode;
+  /** @title Ссылка */
+  href?: string; // TODO: для мобильной версии
 }

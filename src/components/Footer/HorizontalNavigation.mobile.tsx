@@ -9,14 +9,15 @@ export interface HorizontalNavigationProps extends FooterLink, UniBlockProps {
 }
 
 export const HorizontalNavigation = JSX<HorizontalNavigationProps>(
-  ({ links, className = '', context }) => {
+  ({ title, links, className = '', context }) => {
     const router = context.useRouter();
     const { handlerDecorator } = context;
 
     return (
       <div className={className}>
+        <span className="text-primary-text font-sans font-medium text-sm">{title}</span>
         {links?.length ? (
-          <div className="flex justify-between items-center gap-5 py-5 border-solid border-x-0 border-y border-y-main-divider">
+          <div className="flex flex-col gap-5 py-5">
             {links.map((_, i) => (
               <HorizontalNavigationLink
                 key={String(i)}
@@ -40,7 +41,7 @@ interface HorizontalNavigationLinkProps extends LinkProps {
 const HorizontalNavigationLink = JSX<Partial<HorizontalNavigationLinkProps>>(
   ({ className = '', index, text, href, target, onClick }) => (
     <a
-      className={`font-sans font-normal text-sm text-secondary-text hover:text-primary-main inline-block no-underline  max-w-[292px] ${className}`}
+      className={`font-sans font-normal text-sm text-secondary-text hover:text-primary-main inline-block no-underline ${className}`}
       href={href}
       target={target}
       onClick={onClick}

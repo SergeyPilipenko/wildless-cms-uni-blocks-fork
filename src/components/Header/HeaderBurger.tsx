@@ -37,9 +37,9 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
 const renderBurgerSubMenuItem = (menu: SubMenuItem, i: number) => {
   const { icon, href, text } = menu;
   return (
-    <a key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4">
+    <Button key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4">
       {icon ? <Icon className="pr-1" name={icon} width="24" height="24" asSVG /> : null}
       <span className="pl-0.5 font-medium">{text}</span>
-    </a>
+    </Button>
   );
 };

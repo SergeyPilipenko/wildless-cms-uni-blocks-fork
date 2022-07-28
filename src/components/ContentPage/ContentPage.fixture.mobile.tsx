@@ -1,7 +1,7 @@
 import { mobileContext } from '../../setup-fixture';
 
 import type { ContentPageDef } from '../../types';
-import { Blocks } from '../Blocks.mobile';
+import { Blocks } from '../Blocks';
 import { ContentPage } from './ContentPage';
 import { toMobilePage } from './toMobilePage';
 

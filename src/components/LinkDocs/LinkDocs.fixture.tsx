@@ -1,7 +1,6 @@
 import { context } from '../../setup-fixture';
 import { LinkDocs } from './LinkDocs';
 import type { LinkDocsContent } from './LinkDocsContent';
-import { Accordion } from '../Accordion/Accordion';
 
 export const LINK_DOCS: LinkDocsContent = {
   title: 'Дополнительные документы',

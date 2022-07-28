@@ -7,6 +7,7 @@ export interface LogoProps {
   href: string;
   targetBlank: boolean;
   bgColor?: string;
+  hideTitle?: boolean;
 }
 
 const LOGO_PATHS = [
@@ -26,7 +27,7 @@ const TEXT_COLOR: Record<BgColorVersion, string> = {
 };
 
 export const Logo = JSX<Partial<LogoProps>>(
-  ({ className, href, children, targetBlank, bgColor = 'bg-white' }) => {
+  ({ className, href, children, targetBlank, bgColor = 'bg-white', hideTitle }) => {
     return (
       <a
         className={`inline-flex items-center font-sans no-underline ${className || ''}`}
@@ -38,9 +39,11 @@ export const Logo = JSX<Partial<LogoProps>>(
           viewBox="0 0 40 45"
           paths={LOGO_PATHS.map((d) => ({ d }))}
         />
-        <span className={`${TEXT_COLOR[bgColor]} text-base font-medium ml-2.5`}>
-          {children || 'Россельхозбанк'}
-        </span>
+        {!hideTitle && (
+          <span className={`${TEXT_COLOR[bgColor]} text-base font-medium ml-2.5`}>
+            {children || 'Россельхозбанк'}
+          </span>
+        )}
       </a>
     );
   },
