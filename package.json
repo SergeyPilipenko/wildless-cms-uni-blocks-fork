@@ -73,14 +73,12 @@
     "start": "npm run cosmos",
     "start:mobile": "npm run cosmos:mobile",
     "prebuild": "rimraf ./mobile/src",
-    "build": "npm run build:lib && npm run build:commonjs && npm run bundle && npm run build:style && npm run build:design && npm run build:mobile && npm run build:design:mobile",
+    "build": "npm run build:lib && npm run build:commonjs && npm run bundle && npm run build:style && npm run build:design && npm run build:mobile",
     "prebuild:mobile": "rimraf ./mobile/src && node ./scripts/prebuild-mobile.js ./src ./mobile",
     "build:mobile": "npm run --prefix ./mobile build",
     "postbuild": "npm run size",
     "build:design": "npm run cosmos:export || exit 0",
     "postbuild:design": "copyfiles --up 1 \"./docs/**/*\" ./build || exit 0",
-    "build:design:mobile": "npm run cosmos:export:mobile || exit 0",
-    "postbuild:design:mobile": "copyfiles --up 1 \"./docs/mobile/**/*\" ./build || exit 0",
     "build:lib": "rimraf ./lib && tsc --build --verbose",
     "postbuild:lib": "replace-in-file --configFile=replace-config.lib.cjs --verbose",
     "build:commonjs": "rimraf ./dist && tsc --module commonjs --noImplicitUseStrict --outDir ./dist",
@@ -98,10 +96,8 @@
     "precosmos:mobile": "npm run build:icons",
     "cosmos:mobile": "cosmos --config cosmos.config.mobile.json",
     "precosmos:export": "npm run build:icons",
-    "cosmos:export": "rimraf ./build && cosmos-export",
-    "prepare": "husky install && npm run --prefix ./eslint-rules build || exit 0",
-    "precosmos:export:mobile": "npm run build:icons",
-    "cosmos:export:mobile": "rimraf ./build && cosmos-export --config cosmos.config.mobile.json"
+    "cosmos:export": "rimraf ./build && cosmos-export && cosmos-export --config cosmos.config.mobile.json",
+    "prepare": "husky install && npm run --prefix ./eslint-rules build || exit 0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

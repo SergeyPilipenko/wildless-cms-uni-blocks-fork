@@ -45,7 +45,12 @@ async function transformImg(
   )}`;
 
   await mkdir(path.dirname(transformedImgPath), { recursive: true });
-  await chain.toFile(transformedImgPath);
+
+  try {
+    await chain.toFile(transformedImgPath);
+  } catch (e) {
+    console.error(e);
+  }
 
   return transformedSrc;
 }
