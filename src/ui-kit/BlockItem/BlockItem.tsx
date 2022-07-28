@@ -29,7 +29,7 @@ const getListStyle = (version: BlockVersion, white?: boolean) => {
   const color = white ? 'bg-white' : LIST_STYLE_MAP[version];
   const size =
     version === 'primary'
-      ? 'w-[8px] h-[8px] min-w-[8px] min-h-[8px] mt-2'
+      ? 'w-2 h-2 min-w-2 min-h-2 mt-2'
       : 'w-[6px] h-[6px] min-w-[6px] min-h-[6px] mt-2.5';
 
   return `${LIST_STYLE_CLASSES} ${color} ${size}`;

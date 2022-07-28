@@ -23,4 +23,5 @@ export interface TextBlockContent {
   iconVersion?: TextBlockIconVersion;
   image?: Picture;
   blockVersion?: TextBlockVersion;
+  items?: string[]; // TODO: mobile content
 }
