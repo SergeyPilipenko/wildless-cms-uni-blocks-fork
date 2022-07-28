@@ -35,6 +35,8 @@ const LINK_DOCS_ACCORDION_BLOCK: LinkDocsAccordionBlock = {
 
 const propsTextBlock: AccordionProps = {
   title: 'Accordion title',
+  description: 'Accordion description 2',
+  bordered: true,
   context,
   accordionItems: [
     {

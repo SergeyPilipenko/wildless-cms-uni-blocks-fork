@@ -66,6 +66,11 @@ export interface AccordionItemCommonProps {
   label?: string;
   /** @title Блоки */
   blocks?: AccordionBlockProps[];
+  /**
+   * @title Отображать/скрывать обводку элемента
+   * @default false
+   */
+  bordered?: boolean; // TODO: только для мобильной версии
 }
 
 /**
@@ -76,4 +81,11 @@ export interface AccordionContent {
   title?: string;
   /** @title Список */
   accordionItems?: AccordionItemCommonProps[];
+  /** @title Подзаголовок */
+  description?: string; // TODO: только для мобильной версии
+  /**
+   * @title Отображать/скрывать обводку у элемента списка
+   * @default false
+   */
+  bordered?: boolean; // TODO: только для мобильной версии
 }

@@ -5,6 +5,7 @@ const BLOCKS_DIR_EXCLUSIONS = [
   /^Base.*$/,
   /^BlockContent(\.mobile)?$/,
   /^Blocks(\.mobile)?$/,
+  /^utils$/,
 ];
 
 module.exports = {

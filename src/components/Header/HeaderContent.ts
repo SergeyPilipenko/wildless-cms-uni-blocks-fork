@@ -1,6 +1,14 @@
-import { BgColorVersion } from '../../model/BgColorVersion';
+import type { BgColorVersion } from '../../model/BgColorVersion';
+import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
+import type { IconName } from '../../ui-kit/Icon/IconProps';
 
+/**
+ * @title Пункт подменю
+ */
+export interface SubMenuItem extends LinkProps {
+  icon?: IconName;
+}
 /**
  * @title Шапка
  * @required ["defaultLocation", "topItems"]
@@ -17,4 +25,6 @@ export interface HeaderContent extends SitemapProps {
    * @default white
    */
   bgColor?: BgColorVersion;
+  /** @title Подменю */
+  burgerSubMenu?: SubMenuItem[]; // TODO: для мобильной версии
 }
