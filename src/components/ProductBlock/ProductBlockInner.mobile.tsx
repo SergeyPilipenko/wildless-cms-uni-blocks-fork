@@ -21,8 +21,8 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     version = 'primary',
   }) => {
     return (
-      <div className={`flex grow justify-between items-stretch ${className || ''}`}>
-        <div className={'flex flex-col'}>
+      <div className={`${className || ''}`}>
+        <div>
           <BaseTile
             context={context}
             title={title}
@@ -30,16 +30,19 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             description={description}
             items={items}
             buttons={buttons}
-            version={version}
           >
             {benefits?.length ? (
-              <div className="flex gap-6 mt-6 mb-3.5">
+              <div className="mt-[19px]">
                 {benefits.map((_, i) => renderBenefit(_, i, version))}
               </div>
             ) : null}
           </BaseTile>
         </div>
-        {image?.src && <Img className="mt-auto" image={image} />}
+        {image?.src && (
+          <div className="mt-5">
+            <Img image={{ className: 'block', ...image }} />
+          </div>
+        )}
       </div>
     );
   },

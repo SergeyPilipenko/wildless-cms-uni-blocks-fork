@@ -72,5 +72,5 @@ function renderIcon(className: string) {
 }
 
 function renderImage(image?: Picture) {
-  return image?.src ? <Img className="pb-3" image={image} /> : null;
+  return image?.src ? <Img className="pb-3 mr-auto" image={image} /> : null;
 }

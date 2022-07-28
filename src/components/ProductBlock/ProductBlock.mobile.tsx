@@ -7,13 +7,11 @@ export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
 
 export const ProductBlock = JSX<ProductBlockProps>(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ({ titleSize, image, benefits, ...props } /* Get rid of image and benefits */) => {
+  (props /* Get rid of image and benefits */) => {
     const { className } = props;
     return (
-      <section
-        className={`font-sans bg-white pt-10 pl-[50px] pb-[50px] pr-[7.5rem] ${className || ''}`}
-      >
-        <ProductBlockInner {...props} titleSize="L" />
+      <section className={`font-sans bg-white px-4 py-6 ${className || ''}`}>
+        <ProductBlockInner {...props} />
       </section>
     );
   },

@@ -18,7 +18,7 @@ export const BaseTileInner = JSX<BaseTileInnerProps>(
         {children}
         {items?.length && renderItems(items, version)}
         {buttons?.length && (
-          <div className="mt-5">
+          <div className="mt-[18px]">
             {buttons.map((button, index) =>
               renderButton(useLink({ router, handlerDecorator }, button), index),
             )}

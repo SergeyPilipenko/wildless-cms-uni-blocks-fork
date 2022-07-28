@@ -13,15 +13,15 @@ export const Img = JSX<ImageProps>(({ className = '', image: { size, ...image } 
   };
 
   return (
-    <picture className={`flex-none ${className}`}>
+    <picture className={className}>
       {image.sources?.length
         ? image.sources.map(({ src, format }, index) => (
             <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
           ))
         : null}
       <img
-        className={image.className || ''}
         src={image.src}
+        className={`m-auto ${image.className || ''}`}
         alt={image.alt || image.title}
         title={image.title}
         style={style}

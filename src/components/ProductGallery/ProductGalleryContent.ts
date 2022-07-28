@@ -12,7 +12,8 @@ interface ProductGalleryNav {
  * @title Слайд
  */
 export interface ProductSlide {
-  nav: ProductGalleryNav;
+  /** @title Превью содержимого слайда на навигации */
+  nav?: ProductGalleryNav;
   /** @title Содержимое слайда */
   productBlock: ProductBlockInnerCommonProps;
 }

@@ -27,4 +27,5 @@ export interface ImgSource {
 export interface Picture extends Img, ImgSource {
   /** @title Другие форматы */
   sources?: ImgSource[];
+  className?: string;
 }

@@ -88,8 +88,8 @@ export const ButtonInner = JSX<ButtonInner>(({ text, aboveText, appendLeft, roun
       {appendLeft ? appendLeft : null}
       {withoutText ? null : (
         <div>
-          <div className="text-2xs text-left">{aboveText}</div>
-          <div className="text-button font-medium text-left">{text}</div>
+          <div className="text-m-2xs text-left">{aboveText}</div>
+          <div className="text-m-button font-medium text-left">{text}</div>
         </div>
       )}
     </div>
