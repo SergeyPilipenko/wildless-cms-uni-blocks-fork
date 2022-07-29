@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { SizeVersion } from '../../model/SizeVersion';
 import type { UniBlockProps } from '../../types';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { Title } from '../../ui-kit/Title/Title';
@@ -23,7 +24,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
         {steps?.length ? (
           <div className={`box-border py-0.5 mb-0.5 mt-5`}>
             <div className="flex flex-col justify-between gap-x-[101px]">
-              {steps.map((step, i, array) => renderStepTitle({ step, size }, i, array))}
+              {steps.map((step, i) => renderStepTitle({ step, size, i, length: steps.length }))}
             </div>
           </div>
         ) : null}
@@ -32,24 +33,25 @@ export const StepsBlock = JSX<StepsBlockProps>(
   },
 );
 
-const renderStepTitle = ({ step, size }, i: number, array: Step[]) => {
-  const isLastStep = array.length - 1 === i;
-  const iconAreaSize =
-    size === 'normal'
-      ? 'h-[70px] w-[70px] min-w-[70px] min-h-[70px]'
-      : 'h-[50px] w-[50px] min-w-[50px] min-h-[50px]';
-  const iconSize = size === 'normal' ? '38' : '27';
+interface RenderStepTitleParams {
+  step: Step;
+  size: SizeVersion;
+  i: number;
+  length: number;
+}
+
+const renderStepTitle = (params: RenderStepTitleParams) => {
+  const { step, size, i, length } = params;
+
+  const isLastStep = length - 1 === i;
   const margin = size === 'normal' ? 'ml-[34px]' : 'ml-[24px]';
-  const iconTextSize = size === 'normal' ? 'text-m-title' : 'text-m-title-xs';
+
   return (
-    <div>
+    <div key={String(i)}>
       <div key={String(i)} className="flex flex-row text-center relative">
-        <div
-          className={`${iconAreaSize} bg-secondary-light rounded-full z-10 mr-3 flex justify-center content-center`}
-        >
-          <span className={`font-medium text-secondary-text self-center ${iconTextSize}`}>
-            {(step.icon && <Icon name={step.icon} width={iconSize} height={iconSize} />) || i + 1}
-          </span>
+        <div>
+          {renderIconArea(step, size, i)}
+          {!isLastStep && <div className={`min-h-8 h-full w-[2px] bg-secondary-light ${margin}`} />}
         </div>
         <div className="flex flex-col justify-center relative">
           {step.label && (
@@ -66,7 +68,26 @@ const renderStepTitle = ({ step, size }, i: number, array: Step[]) => {
           )}
         </div>
       </div>
-      {!isLastStep && <div className={`h-8 w-[2px] bg-secondary-light ${margin}`} />}
+    </div>
+  );
+};
+
+const renderIconArea = (step: Step, size: SizeVersion, i: number) => {
+  const iconAreaSize =
+    size === 'normal'
+      ? 'h-[70px] w-[70px] min-w-[70px] min-h-[70px]'
+      : 'h-[50px] w-[50px] min-w-[50px] min-h-[50px]';
+
+  const iconSize = size === 'normal' ? '38' : '27';
+  const iconTextSize = size === 'normal' ? 'text-m-title' : 'text-m-title-xs';
+
+  return (
+    <div
+      className={`${iconAreaSize} bg-secondary-light rounded-full z-10 mr-3 flex justify-center content-center`}
+    >
+      <span className={`font-medium text-secondary-text self-center ${iconTextSize}`}>
+        {(step.icon && <Icon name={step.icon} width={iconSize} height={iconSize} />) || i + 1}
+      </span>
     </div>
   );
 };
