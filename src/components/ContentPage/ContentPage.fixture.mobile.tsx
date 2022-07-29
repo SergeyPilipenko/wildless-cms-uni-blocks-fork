@@ -5,7 +5,7 @@ import { Blocks } from '../Blocks';
 import { ContentPage } from './ContentPage';
 import { toMobilePage } from './toMobilePage';
 
-import data from './ContentPage.page.json';
+import data from './ContentPage.page.mobile.json';
 
 export default {
   default: (
