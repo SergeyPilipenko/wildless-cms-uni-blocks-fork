@@ -32404,7 +32404,7 @@ function renderBenefitDescription(benefit, i, version = 'primary') {
 
 
 const StepsBlock = JSX(({ className, title, description, steps, size = 'normal' }) => {
-    return (jsxs("section", { className: `box-border font-sans text-primary-text bg-white px-20 py-[50px] flex flex-col ${className || ''}`, children: [title && (jsx(Title, { size: "M", className: "font-medium m-0 text-center", children: title })), description && jsx("p", { className: `text-m-md text-center ${title && 'mt-2'}`, children: description }), steps?.length ? (jsx("div", { className: `box-border py-0.5 mb-0.5 mt-5`, children: jsx("div", { className: "flex flex-col justify-between gap-x-[101px]", children: steps.map((step, i, array) => renderStepTitle({ step, size }, i, array)) }) })) : null] }));
+    return (jsxs("section", { className: `box-border font-sans text-primary-text bg-white px-4 py-6 flex flex-col ${className || ''}`, children: [title && (jsx(Title, { size: "M", className: "font-medium m-0 text-center", children: title })), description && jsx("p", { className: `text-m-md text-center ${title && 'mt-2'}`, children: description }), steps?.length ? (jsx("div", { className: `box-border py-0.5 mb-0.5 mt-5`, children: jsx("div", { className: "flex flex-col justify-between gap-x-[101px]", children: steps.map((step, i, array) => renderStepTitle({ step, size }, i, array)) }) })) : null] }));
 });
 const renderStepTitle = ({ step, size }, i, array) => {
     const isLastStep = array.length - 1 === i;

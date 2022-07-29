@@ -10,7 +10,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
   ({ className, title, description, steps, size = 'normal' }) => {
     return (
       <section
-        className={`box-border font-sans text-primary-text bg-white px-20 py-[50px] flex flex-col ${
+        className={`box-border font-sans text-primary-text bg-white px-4 py-6 flex flex-col ${
           className || ''
         }`}
       >
