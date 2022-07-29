@@ -34,7 +34,7 @@ export const Header = JSX<HeaderProps>(
       <header className={`${bgColor} ${className}`}>
         <div className="container px-4 py-0">
           <HeaderTop onClick={toggleBurgerMenu} bgColor={bgColor} />
-          <nav className="flex items-center m-0 p-0 overflow-x-scroll overflow-y-hidden w-full h-[50px]">
+          <nav className="flex items-center m-0 p-0 overflow-y-hidden w-full h-[50px]">
             <div className="flex">
               {subItems?.map((_, i) =>
                 renderSubItem(
