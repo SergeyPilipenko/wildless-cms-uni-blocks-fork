@@ -62,3 +62,14 @@ jobs:
         with:
           configPath: './lighthouserc.json'
           uploadArtifacts: true
+
+  lighthouse-mobile:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: treosh/lighthouse-ci-action@v9
+        with:
+          configPath: './lighthouserc.mobile.json'
+          uploadArtifacts: true

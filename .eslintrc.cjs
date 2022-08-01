@@ -11,11 +11,12 @@ const BLOCKS_DIR_EXCLUSIONS = [
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'import', 'local-eslint-rules'],
+  plugins: ['@typescript-eslint', 'import', 'react', 'local-eslint-rules'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
+    'plugin:react/jsx-runtime',
   ],
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',

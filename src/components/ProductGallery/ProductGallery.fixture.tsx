@@ -1,4 +1,3 @@
-import React from 'react';
 import { context } from '../../setup-fixture';
 
 import type { Picture } from '../../model/Picture';

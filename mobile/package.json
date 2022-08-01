@@ -4,10 +4,9 @@
 
   "scripts": {
     "start": "npm run cosmos",
-    "build": "npm run build:lib && npm run build:commonjs && npm run bundle",
-    "postbuild": "npm run size",
+    "build": "npm run build:lib && npm run build:commonjs && npm run bundle && npm run size",
     "build:lib": "rimraf ./lib && tsc --build --verbose",
-    "postbuild:lib": "replace-in-file --configFile=../replace-config.lib.cjs --verbose",
+    "postbuild:lib": "replace-in-file --configFile=../replace-config.lib.cjs",
     "build:commonjs": "rimraf ./dist && tsc --module commonjs --noImplicitUseStrict --outDir ./dist",
     "bundle": "rimraf ./bundle && rollup --config rollup.config.js",
     "size": "size-limit"
