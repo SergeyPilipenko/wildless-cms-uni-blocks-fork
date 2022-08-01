@@ -1,7 +1,7 @@
-import { context } from '../../setup-fixture';
-
-import { Tile } from './Tile';
+import React from 'react';
 import type { Picture } from '../../model/Picture';
+import { context } from '../../setup-fixture';
+import { Tile } from './Tile';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -25,25 +25,29 @@ const image4: Picture = {
 
 export default {
   credit: (
-    <div className="container grid grid-cols-12">
-      <Tile
-        context={context}
-        className="col-span-8"
-        title="Кредиты"
-        items={[
-          'Кредитный лимит до 10 млн ₽',
-          'Кредиты наличными на любые цели',
-          'Получите деньги без залога и поручителей',
-        ]}
-        buttons={[
-          {
-            text: 'Подробнее',
-            href: '/credit-cards',
-            version: 'secondary',
-          },
-        ]}
-        image={image}
-      />
+    <div className="p-2 w-full h-full">
+      <div className="bg-slate-100 w-full h-full">
+        <div className="container grid grid-cols-12">
+          <Tile
+            context={context}
+            className="col-span-8"
+            title="Кредиты"
+            items={[
+              'Кредитный лимит до 10 млн ₽',
+              'Кредиты наличными на любые цели',
+              'Получите деньги без залога и поручителей',
+            ]}
+            buttons={[
+              {
+                text: 'Подробнее',
+                href: '/credit-cards',
+                version: 'secondary',
+              },
+            ]}
+            image={image}
+          />
+        </div>
+      </div>
     </div>
   ),
   mortgage: (

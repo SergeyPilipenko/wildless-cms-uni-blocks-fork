@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useComparisonTableScroll } from '../../hooks/useComparisonTableScroll';
 import type { UniBlockProps } from '../../types';
 import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { COLS_LENGTH_FOR_SCROLL } from './constants';
 import type { TariffsTableContent } from './TariffsTableContent';
 import { TariffsTableRow } from './TariffsTableRow';
@@ -33,7 +33,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
           className || ''
         }`}
       >
-        <Title className="font-medium m-0 max-w-[47rem] text-center mb-9 mx-auto">{title}</Title>
+        <Heading type="h2" className="max-w-[47rem] text-center mb-9 mx-auto" text={title} />
         <div role="table">
           {rowData?.length ? (
             <div className="relative">

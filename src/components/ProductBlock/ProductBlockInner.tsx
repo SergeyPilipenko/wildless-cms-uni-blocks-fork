@@ -12,7 +12,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     className,
     context,
     title,
-    titleSize,
+    headingType,
     description,
     benefits,
     buttons,
@@ -26,7 +26,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
           <BaseTile
             context={context}
             title={title}
-            titleSize={titleSize || 'XL'}
+            headingType={headingType || 'h2'}
             description={description}
             items={items}
             buttons={buttons}

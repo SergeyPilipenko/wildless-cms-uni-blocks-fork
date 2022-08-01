@@ -1,11 +1,12 @@
 import { getColSpan } from '../../utils/getColSpan';
-export function getTitleSizeByClassName(className = '') {
+
+export function getHeadingType(className = '') {
   const colSpan = getColSpan(className);
   if (colSpan <= 4) {
-    return 'S';
+    return 'h4';
   } else if (colSpan <= 8) {
-    return 'M';
+    return 'h3';
   } else {
-    return 'L';
+    return 'h2';
   }
 }

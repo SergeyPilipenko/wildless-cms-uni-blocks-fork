@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img';
-import { Title } from '../../ui-kit/Title/Title';
 import type { GalleryCard } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
 
@@ -12,7 +12,7 @@ export const Gallery = JSX<GalleryProps>(({ title, description, cards = [], clas
       className={`relative font-sans text-primary-text bg-white p-4 overflow-hidden ${className}`}
     >
       <div className="flex flex-col items-center mb-8">
-        <Title className="font-medium m-0 text-centers">{title}</Title>
+        <Heading type="h2" className="text-center" text={title} />
         {description ? (
           <div className="font-normal text-base max-w-[600px] mt-3">{description}</div>
         ) : null}

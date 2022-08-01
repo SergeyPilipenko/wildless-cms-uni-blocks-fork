@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Title } from '../../ui-kit/Title/Title';
 import { AlignType } from '../BaseTile/BaseTileProps';
 import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
 
@@ -30,13 +30,13 @@ export const LinkDocs = JSX<LinkDocsProps>(
     return (
       <section className={`font-sans p-[50px] bg-white ${className}`}>
         {title && (
-          <Title
-            className={`font-medium mt-0 ${titleMarginsStyleMap[columnsMode]} ${
+          <Heading
+            type="h2"
+            className={`${titleMarginsStyleMap[columnsMode]} ${
               titleAlignStyleMap[align ?? 'center']
             }`}
-          >
-            {title}
-          </Title>
+            text={title}
+          />
         )}
         <div className={`flex ${containerClasses}`} role="list">
           {documents?.length

@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { AccordionContent } from './AccordionContent';
 import { AccordionItem } from './AccordionItem';
 
@@ -14,11 +14,7 @@ export const Accordion = JSX<AccordionProps>(
           bordered ? 'px-4' : ''
         } ${className}`}
       >
-        {title ? (
-          <Title className="m-0 mb-2 font-medium text-center" size="M">
-            {title}
-          </Title>
-        ) : null}
+        {title ? <Heading type="h3" className="mb-2 text-center" text={title} /> : null}
         {description ? <div className="mb-5 text-m-md text-center">{description}</div> : null}
         {accordionItems?.length ? (
           <ul className="list-none m-0 p-0">

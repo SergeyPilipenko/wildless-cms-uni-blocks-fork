@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 
 import type { UniBlockProps } from '../../types';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { AlignType } from '../BaseTile/BaseTileProps';
 import type { HeadlineContent } from './HeadlineContent';
 
@@ -18,11 +18,7 @@ export const Headline = JSX<HeadlineProps>(
     const textClasses = alignText[align];
     return (
       <section className={`p-[50px] ${bgColor} ${className}`}>
-        {title && (
-          <Title size="L" className={`text-primary-text mt-0 font-medium ${textClasses}`}>
-            {title}
-          </Title>
-        )}
+        {title && <Heading type="h2" className={`text-primary-text ${textClasses}`} text={title} />}
         {description && (
           <p className={`font-normal text-base mt-4 ${textClasses}`}>{description}</p>
         )}

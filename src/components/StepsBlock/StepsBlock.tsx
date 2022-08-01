@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Title } from '../../ui-kit/Title/Title';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 
@@ -14,7 +14,7 @@ export const StepsBlock = JSX<StepsBlockProps>(({ className, title, showLines = 
         className || ''
       }`}
     >
-      <Title className="font-medium m-0 max-w-[47rem] text-center">{title}</Title>
+      <Heading type="h2" className="max-w-[47rem] text-center" text={title} />
       {steps?.length ? (
         <div className={`box-border py-0.5 mb-0.5 ${title ? 'mt-9' : ''}`}>
           <div className="flex items-center px-[88px]">

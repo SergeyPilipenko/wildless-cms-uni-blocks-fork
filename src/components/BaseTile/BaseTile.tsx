@@ -1,20 +1,18 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTileInner } from './BaseTileInner';
 import type { BaseTileCommonProps } from './BaseTileProps';
-import { getTitleSizeByClassName } from './getTitleSizeByClassName';
+import { getHeadingType } from './getHeadingType';
 
 export interface BaseTileProps extends BaseTileCommonProps, UniBlockProps {}
-
-const TITLE_CLASSES = 'font-medium m-0 whitespace-pre-wrap max-w-[600px]';
 
 export const BaseTile = JSX<BaseTileProps>(
   ({
     className,
     context,
     title,
-    titleSize,
+    headingType,
     description,
     children,
     buttons,
@@ -25,12 +23,15 @@ export const BaseTile = JSX<BaseTileProps>(
     return (
       <div className={`font-sans flex flex-col grow h-full items-start`}>
         {title && (
-          <Title
-            size={titleSize || getTitleSizeByClassName(className)}
-            className={`${TITLE_CLASSES} ${version === 'primary' ? 'text-primary-text' : ''}`}
+          <Heading
+            type={headingType || getHeadingType(className)}
+            text={title}
+            className={`whitespace-pre-wrap max-w-[600px] ${
+              version === 'primary' ? 'text-primary-text' : ''
+            }`}
           >
             {title}
-          </Title>
+          </Heading>
         )}
         <BaseTileInner
           context={context}

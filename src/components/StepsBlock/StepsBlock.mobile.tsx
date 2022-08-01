@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { SizeVersion } from '../../model/SizeVersion';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Title } from '../../ui-kit/Title/Title';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
@@ -15,11 +15,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
           className || ''
         }`}
       >
-        {title && (
-          <Title size="M" className="font-medium m-0 text-center">
-            {title}
-          </Title>
-        )}
+        {title && <Heading type="h3" className="text-center" text={title} />}
         {description && <p className={`text-m-md text-center ${title && 'mt-2'}`}>{description}</p>}
         {steps?.length ? (
           <div className={`box-border py-0.5 mb-0.5 mt-5`}>

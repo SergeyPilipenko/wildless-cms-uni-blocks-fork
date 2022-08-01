@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTileInner } from './BaseTileInner';
 import type { AlignType, BaseTileCommonProps } from './BaseTileProps';
-import { getTitleSizeByClassName } from './getTitleSizeByClassName';
+import { getHeadingType } from './getHeadingType';
 
 const alignBlock: Record<AlignType, string> = {
   left: 'items-start',
@@ -20,7 +20,7 @@ export const BaseTile = JSX<BaseTileProps>(
     className,
     context,
     title,
-    titleSize,
+    headingType,
     description,
     children,
     buttons,
@@ -32,12 +32,11 @@ export const BaseTile = JSX<BaseTileProps>(
     return (
       <div className={`font-sans flex flex-col grow h-full ${alignBlock[align]}`}>
         {title && (
-          <Title
-            size={titleSize || getTitleSizeByClassName(className)}
+          <Heading
+            type={headingType || getHeadingType(className)}
             className={`${TITLE_CLASSES} ${version === 'primary' ? 'text-primary-text' : ''}`}
-          >
-            {title}
-          </Title>
+            text={title}
+          />
         )}
         <BaseTileInner
           context={context}

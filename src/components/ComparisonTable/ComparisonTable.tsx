@@ -3,7 +3,7 @@ import { useComparisonTableScroll } from '../../hooks/useComparisonTableScroll';
 import { useLink } from '../../hooks/useLink';
 import type { UniBlockProps } from '../../types';
 import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { ComparisonTableContent } from './ComparisonTableContent';
 import { COLS_LENGTH_FOR_SCROLL, COLUMN_WIDTH, FIRST_CELL_CLASSES } from './constants';
 import { HeaderCell } from './HeaderCell';
@@ -54,7 +54,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
           className || ''
         }`}
       >
-        <Title className="font-medium m-0 max-w-[47rem] text-center mb-9 mx-auto">{title}</Title>
+        <Heading type="h2" className="max-w-[47rem] text-center mb-9 mx-auto" text={title} />
         <div role="table">
           {colHeaders?.length ? (
             <TableRowContainer>

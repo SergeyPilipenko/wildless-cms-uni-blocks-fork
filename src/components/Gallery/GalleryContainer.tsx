@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { GalleryVersion } from '../../model/GalleryVersion';
-import { Title } from '../../ui-kit/Title/Title';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { Tile } from '../Tile/Tile';
 import { cardStyleMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
@@ -24,7 +24,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
       <div>
         <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent" />
         <div className="flex flex-col items-center mb-8">
-          {title ? <Title className="font-medium m-0 text-center">{title}</Title> : null}
+          {title ? <Heading type="h2" className="text-center" text={title} /> : null}
           {description ? (
             <div className="font-normal text-base max-w-[600px] mt-2.5">{description}</div>
           ) : null}

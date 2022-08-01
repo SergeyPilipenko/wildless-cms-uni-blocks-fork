@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../setup-fixture';
 import { Icon } from '../Icon/Icon';
 import { Button } from './Button';
 

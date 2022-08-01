@@ -1,5 +1,5 @@
+import React from 'react';
 import { context } from '../../setup-fixture';
-
 import { PromoTile } from './PromoTile';
 
 export default {
