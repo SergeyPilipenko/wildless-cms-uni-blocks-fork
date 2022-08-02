@@ -33,6 +33,7 @@ export const Logo = JSX<Partial<LogoProps>>(
         className={`inline-flex items-center font-sans no-underline ${className || ''}`}
         href={href || 'https://rshb.ru/'}
         target={targetBlank ? '_blank' : '_self'}
+        aria-label="Россельхозбанк"
       >
         <SVG
           className={`${SVG_COLOR[bgColor]} w-10`}

@@ -20,15 +20,15 @@ export const BaseTileInner = JSX<BaseTileInnerProps>(
               <div className={`font-normal text-base mt-4 max-w-[600px]`}>{description}</div>
             )}
             {children}
-            {items?.length && renderItems(items, version)}
+            {items?.length ? renderItems(items, version) : null}
           </div>
-          {buttons?.length && (
+          {buttons?.length ? (
             <div className="flex mt-9 gap-3">
               {buttons.map((button, index) =>
                 renderButton(useLink({ router, handlerDecorator }, button), index),
               )}
             </div>
-          )}
+          ) : null}
         </div>
         {image?.src && <Img className="mt-auto ml-7" image={image} />}
       </div>

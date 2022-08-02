@@ -27,9 +27,9 @@ export function renderBenefit(benefit: Benefit, i: number, version: string) {
         />
       )}
       <div className="flex gap-1 flex-col h-full max-w-[149px]">
-        <h4 className={`font-medium text-xl m-0 ${benefitTitleStyleMap[version]}`}>
+        <div className={`font-medium text-xl m-0 ${benefitTitleStyleMap[version]}`}>
           {benefit.label}
-        </h4>
+        </div>
         {benefit.description && (
           <div className={`font-normal text-sm ${benefitDescStyleMap[version]}`}>
             {benefit.description}

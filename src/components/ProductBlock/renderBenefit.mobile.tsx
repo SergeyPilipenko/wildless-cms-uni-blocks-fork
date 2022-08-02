@@ -22,9 +22,9 @@ export function renderBenefit(benefit: Benefit, i: number, version: string) {
           height="24"
         />
       )}
-      <h4 className={`font-medium text-m-base m-0 ${benefitTitleStyleMap[version]}`}>
+      <div className={`font-medium text-m-base m-0 ${benefitTitleStyleMap[version]}`}>
         {benefit.label}
-      </h4>
+      </div>
       {benefit.description && (
         <div className={`font-normal text-m-sm ${benefitDescStyleMap[version]}`}>
           {benefit.description}

@@ -25,7 +25,7 @@ interface MediaButtonProps {
 }
 
 export const MediaButton = JSX<MediaButtonProps>(({ href }) => {
-  const { icon, width, height } =
+  const { icon, width, height, label } =
     ICONS_MAP.find(({ origins }) => origins.some((_) => href?.includes(_))) || {};
 
   if (!icon) return null;
@@ -34,6 +34,7 @@ export const MediaButton = JSX<MediaButtonProps>(({ href }) => {
     <a
       className="flex items-center justify-center border border-solid border-main-divider rounded-full no-underline outline-none w-[38px] h-[38px] hover:fill-primary-main"
       href={href}
+      aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
     >

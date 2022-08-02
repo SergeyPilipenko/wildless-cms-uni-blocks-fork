@@ -25,6 +25,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
         <div className="flex px-4 py-6">
           {slides.map((_, i) =>
             renderNavButton({
+              slide: _.productBlock,
               i,
               activeSlideIndex,
               onClick: () => setActiveSlideIndex(i),
@@ -37,7 +38,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
   },
 );
 
-function renderNavButton({ i, activeSlideIndex, onClick, duration }) {
+function renderNavButton({ slide, i, activeSlideIndex, onClick, duration }) {
   const isActiveBtn = i === activeSlideIndex;
   const progressBarClassName = isActiveBtn ? 'animate-slide bg-primary-main' : 'bg-main-divider';
   return (
@@ -45,6 +46,7 @@ function renderNavButton({ i, activeSlideIndex, onClick, duration }) {
       type="button"
       key={String(i)}
       onClick={onClick}
+      aria-label={slide?.title}
       className={`relative overflow-hidden border-0 bg-inherit cursor-pointer pl-0 mr-1.5 pt-4 pb-5 last:mr-0 grow basis-0`}
     >
       <div

@@ -61,6 +61,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, duration }) {
       type="button"
       key={String(i)}
       onClick={onClick}
+      aria-label={slide?.title}
       className={`font-sans group relative overflow-hidden border-0 bg-inherit cursor-pointer text-left px-0 pt-4 pb-5 grow basis-0`}
     >
       <div className="border-0 border-r border-solid border-main-divider px-6">
