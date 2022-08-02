@@ -1,4 +1,4 @@
-import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
+import type { BaseTileIconButton } from '../BaseTile/BaseTileProps';
 
 /**
  * @title QR код
@@ -13,8 +13,15 @@ export interface QRCode {
 /**
  * @title Мобильное приложение
  */
-export interface MobileAppTileContent
-  extends Pick<BaseTileCommonProps, 'title' | 'buttons' | 'description'> {
+export interface MobileAppTileContent {
+  /** @title Заголовок */
+  title?: string;
+  description?: string;
+  /**
+   * @title Кнопки
+   * @maxItems 4
+   */
+  buttons?: BaseTileIconButton[];
   // TODO: description для мобильной версии
   qr?: QRCode;
   /** @title Ссылка */

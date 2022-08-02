@@ -5,7 +5,7 @@ import { BaseTile } from '../BaseTile/BaseTile';
 import type { ProductBlockInnerCommonProps } from './ProductBlockContent';
 import { renderBenefit } from './renderBenefit';
 
-export interface ProductBlockInnerProps extends ProductBlockInnerCommonProps, UniBlockProps {}
+export type ProductBlockInnerProps = ProductBlockInnerCommonProps & UniBlockProps;
 
 export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   ({

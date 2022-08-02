@@ -1,0 +1,1975 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JSON Schema Generator should generate schema according to *Content types 1`] = `
+Object {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": Object {
+    "AccordionBlockProps": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "#/definitions/EmptyOption",
+        },
+        Object {
+          "$ref": "#/definitions/HeadlineAccordionBlock",
+        },
+        Object {
+          "$ref": "#/definitions/LinkDocsAccordionBlock",
+        },
+        Object {
+          "$ref": "#/definitions/TextBlockAccordionBlock",
+        },
+        Object {
+          "$ref": "#/definitions/PictureTextAccordionBlock",
+        },
+      ],
+      "title": "Содержимое аккордеона",
+    },
+    "AccordionContent": Object {
+      "properties": Object {
+        "accordionItems": Object {
+          "items": Object {
+            "$ref": "#/definitions/AccordionItemCommonProps",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "bordered": Object {
+          "default": false,
+          "title": "Отображать/скрывать обводку у элемента списка",
+          "type": "boolean",
+        },
+        "description": Object {
+          "title": "Подзаголовок",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Аккордеон",
+      "type": "object",
+    },
+    "AccordionItemCommonProps": Object {
+      "properties": Object {
+        "blocks": Object {
+          "items": Object {
+            "$ref": "#/definitions/AccordionBlockProps",
+          },
+          "title": "Блоки",
+          "type": "array",
+        },
+        "bordered": Object {
+          "default": false,
+          "title": "Отображать/скрывать обводку элемента",
+          "type": "boolean",
+        },
+        "label": Object {
+          "default": "Список",
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Элемент списка",
+      "type": "object",
+    },
+    "AccordionTypeBlock": Object {
+      "enum": Array [
+        "Headline",
+        "LinkDocs",
+        "TextBlock",
+        "PictureText",
+      ],
+      "title": "Тип блока",
+      "type": "string",
+    },
+    "AlignType": Object {
+      "enum": Array [
+        "left",
+        "center",
+        "right",
+      ],
+      "enumNames": Array [
+        "По левому краю",
+        "По центру",
+        "По правому краю",
+      ],
+      "title": "Выравнивание",
+      "type": "string",
+    },
+    "BaseTileCommonProps": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Общий компонент плиток",
+      "type": "object",
+    },
+    "BaseTileIconButton": Object {
+      "properties": Object {
+        "aboveText": Object {
+          "title": "Верхний текст",
+          "type": "string",
+        },
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "rounded": Object {
+          "title": "Закругленные углы",
+          "type": "boolean",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "default": "Кнопка",
+          "title": "Текст",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/ButtonVersion",
+        },
+      },
+      "type": "object",
+    },
+    "BaseTileMainProps": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "type": "object",
+    },
+    "BaseTileTitleProps": Object {
+      "properties": Object {
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Заголовк плитки",
+      "type": "object",
+    },
+    "Benefit": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "label": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Преимущество",
+      "type": "object",
+    },
+    "BenefitsBlockContent": Object {
+      "properties": Object {
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "maxItems": 6,
+          "title": "Список преимуществ",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Блок преимущества",
+      "type": "object",
+    },
+    "BgColorVersion": Object {
+      "enum": Array [
+        "transparent",
+        "bg-white",
+      ],
+      "enumNames": Array [
+        "Прозрачный",
+        "Белый",
+      ],
+      "title": "Цвет фона",
+      "type": "string",
+    },
+    "BlockVersion": Object {
+      "enum": Array [
+        "primary",
+        "secondary",
+      ],
+      "enumNames": Array [
+        "Основная",
+        "Второстепенная",
+      ],
+      "title": "Цвет плитки",
+      "type": "string",
+    },
+    "ButtonProps": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "default": "Кнопка",
+          "title": "Текст",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/ButtonVersion",
+        },
+      },
+      "type": "object",
+    },
+    "ButtonVersion": Object {
+      "default": "primary",
+      "enum": Array [
+        "primary",
+        "secondary",
+      ],
+      "enumNames": Array [
+        "Основная",
+        "Второстепенная",
+      ],
+      "title": "Цвет кнопки",
+      "type": "string",
+    },
+    "ButtonWithIconProps": Object {
+      "properties": Object {
+        "aboveText": Object {
+          "title": "Верхний текст",
+          "type": "string",
+        },
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "rounded": Object {
+          "title": "Закругленные углы",
+          "type": "boolean",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "default": "Кнопка",
+          "title": "Текст",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/ButtonVersion",
+        },
+      },
+      "type": "object",
+    },
+    "CalculatorParams": Object {
+      "properties": Object {
+        "isAnnuity": Object {
+          "type": "boolean",
+        },
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rateWithInsurance": Object {
+          "type": "number",
+        },
+        "rateWithoutInsurance": Object {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+    "CellData": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "label": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Ячейка",
+      "type": "object",
+    },
+    "Column": Object {
+      "properties": Object {
+        "data": Object {
+          "items": Object {
+            "items": Object {
+              "$ref": "#/definitions/CellData",
+            },
+            "type": "array",
+          },
+          "title": "Данные",
+          "type": "array",
+        },
+        "header": Object {
+          "$ref": "#/definitions/ColumnHeader",
+        },
+      },
+      "title": "Продукт",
+      "type": "object",
+    },
+    "ColumnHeader": Object {
+      "properties": Object {
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "link": Object {
+          "$ref": "#/definitions/LinkProps",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Шапка колонки",
+      "type": "object",
+    },
+    "ComparisonTableContent": Object {
+      "properties": Object {
+        "columns": Object {
+          "items": Object {
+            "$ref": "#/definitions/Column",
+          },
+          "title": "Продукты",
+          "type": "array",
+        },
+        "isColoredFirstColumn": Object {
+          "title": "Закрасить первую колонку",
+          "type": "boolean",
+        },
+        "rowHeaders": Object {
+          "items": Object {
+            "$ref": "#/definitions/RowHeader",
+          },
+          "title": "Параметры",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "visibleRowLength": Object {
+          "title": "Отображать заданное количество строк",
+          "type": "number",
+        },
+      },
+      "title": "Сравнительная таблица",
+      "type": "object",
+    },
+    "ContactInfo": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+        "type": Object {
+          "$ref": "#/definitions/ContactType",
+        },
+      },
+      "title": "Контакт",
+      "type": "object",
+    },
+    "ContactType": Object {
+      "enum": Array [
+        "tel",
+        "email",
+      ],
+      "enumNames": Array [
+        "Телефон",
+        "Почта",
+      ],
+      "title": "Тип контакта",
+      "type": "string",
+    },
+    "CreditCalculatorContent": Object {
+      "properties": Object {
+        "directoryName": Object {
+          "title": "Справочник",
+          "type": "string",
+        },
+      },
+      "title": "Кредитный калькулятор",
+      "type": "object",
+    },
+    "CreditCalculatorData": Object {
+      "properties": Object {
+        "rows": Object {
+          "items": Object {
+            "$ref": "#/definitions/CalculatorParams",
+          },
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+    "EmptyOption": Object {
+      "title": "Выберите блок",
+      "type": "null",
+    },
+    "ExchangeRateTileContent": Object {
+      "properties": Object {
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Курсы валют",
+      "type": "object",
+    },
+    "FooterContent": Object {
+      "properties": Object {
+        "contacts": Object {
+          "items": Object {
+            "$ref": "#/definitions/ContactInfo",
+          },
+          "title": "Контакты",
+          "type": "array",
+        },
+        "documents": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Обязательные документы",
+          "type": "array",
+        },
+        "horizontalNavigationTitle": Object {
+          "title": "Заголовок для меню",
+          "type": "string",
+        },
+        "relatedEnterprises": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Другие предприятия",
+          "type": "array",
+        },
+        "socialMedia": Object {
+          "items": Object {
+            "$ref": "#/definitions/SocialMedia",
+          },
+          "title": "Социальные сети",
+          "type": "array",
+        },
+        "subMenu": Object {
+          "items": Object {
+            "$ref": "#/definitions/SubMenuItem",
+          },
+          "title": "Подменю",
+          "type": "array",
+        },
+        "topItems": Object {
+          "items": Object {
+            "$ref": "#/definitions/TopMenuItem",
+          },
+          "title": "Дополнительное меню",
+          "type": "array",
+        },
+      },
+      "required": Array [
+        "topItems",
+      ],
+      "title": "Подвал",
+      "type": "object",
+    },
+    "GalleryCard": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/BaseTileIconButton",
+          "title": "Кнопка",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Карточка",
+      "type": "object",
+    },
+    "GalleryContent": Object {
+      "properties": Object {
+        "cards": Object {
+          "items": Object {
+            "$ref": "#/definitions/GalleryCard",
+          },
+          "minItems": 4,
+          "title": "Карточки",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Галерея",
+      "type": "object",
+    },
+    "HeaderContent": Object {
+      "properties": Object {
+        "burgerSubMenu": Object {
+          "items": Object {
+            "$ref": "#/definitions/SubMenuItem",
+          },
+          "title": "Подменю",
+          "type": "array",
+        },
+        "defaultLocation": Object {
+          "default": "Москва",
+          "title": "Город по-умолчанию",
+          "type": "string",
+        },
+        "topItems": Object {
+          "items": Object {
+            "$ref": "#/definitions/TopMenuItem",
+          },
+          "title": "Дополнительное меню",
+          "type": "array",
+        },
+      },
+      "required": Array [
+        "defaultLocation",
+        "topItems",
+      ],
+      "title": "Шапка",
+      "type": "object",
+    },
+    "HeadingType": Object {
+      "enum": Array [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+      ],
+      "enumNames": Array [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+      ],
+      "title": "Тип заголовка",
+      "type": "string",
+    },
+    "HeadlineAccordionBlock": Object {
+      "properties": Object {
+        "accordionBlockType": Object {
+          "$ref": "#/definitions/AccordionTypeBlock",
+          "default": "Headline",
+        },
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "bgColor": Object {
+          "$ref": "#/definitions/BgColorVersion",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "accordionBlockType",
+      ],
+      "title": "Заголовок",
+      "type": "object",
+    },
+    "HeadlineContent": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "bgColor": Object {
+          "$ref": "#/definitions/BgColorVersion",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Заголовок",
+      "type": "object",
+    },
+    "IconName": Object {
+      "enum": Array [
+        "",
+        "ActualBalanceIcon",
+        "AppleIcon",
+        "AtmIcon",
+        "BankIcon",
+        "BurgerIcon",
+        "BurgerIconWhite",
+        "Calendar2Icon",
+        "CalendarCircleIcon",
+        "CalendarIcon",
+        "CalendarTickIcon",
+        "CalendarWhiteIcon",
+        "CardIcon",
+        "CardPosIcon",
+        "CardTickIcon",
+        "CardWithGemIcon",
+        "ChartSquareIcon",
+        "ClockIcon",
+        "CloseIcon",
+        "ComfortableCompIcon",
+        "CreditCardsIcon",
+        "DiscountShapeIcon",
+        "DocIcon",
+        "DocumentTextIcon",
+        "DollarIcon",
+        "EarthIcon",
+        "EmptyWalletChangeIcon",
+        "EmptyWalletIcon",
+        "EmptyWalletWhiteIcon",
+        "EuroIcon",
+        "GeolocationIcon",
+        "GlassIcon",
+        "GlobalIcon",
+        "GridIcon",
+        "GridIconWhite",
+        "InterestGrowthIcon",
+        "InterestIcon",
+        "JCBIcon",
+        "LoupeIcon",
+        "MasterCardIcon",
+        "MinusIcon",
+        "MirIcon",
+        "MoneyIcon",
+        "MoneyInsuranceIcon",
+        "MonitorMobileIcon",
+        "NewDocIcon",
+        "OfficeIcon",
+        "OkIcon",
+        "PassSendIcon",
+        "PercentageRoundIcon",
+        "PercentageSquareIcon",
+        "PercentageSquareWhiteIcon",
+        "PersonalCardIcon",
+        "PlayMarketIcon",
+        "PlusIcon",
+        "Profile2UserIcon",
+        "ProfileIcon",
+        "RoundRubleIcon",
+        "SafeIcon",
+        "ShieldTickIcon",
+        "SignDocsIcon",
+        "SmallClockIcon",
+        "TelegramIcon",
+        "UnionPayIcon",
+        "UserTickIcon",
+        "VisaIcon",
+        "VKIcon",
+        "WalletAdd2Icon",
+        "WalletAddIcon",
+        "WalletIcon",
+        "WalletWithMoneyIcon",
+      ],
+      "enumNames": Array [
+        "",
+        "Деньги",
+        "Лого «Apple»",
+        "Банкомат",
+        "Банк",
+        "Бургер",
+        "Бургер (белый)",
+        "Календарь 2",
+        "Скруглённый календарь",
+        "Календарь",
+        "Календарь с галочкой",
+        "Календарь белый",
+        "Кред. карта",
+        "Кред. карта под наклоном",
+        "Кред. карта с галочкой",
+        "Карта с драгоценностями",
+        "Деньги внутри кошелька",
+        "Часы",
+        "Крестик",
+        "Кресло",
+        "Кредитные карты",
+        "Скидка",
+        "Документ",
+        "Документ с текстом",
+        "Доллар",
+        "Земля",
+        "Пустой кошелёк с возвратом",
+        "Пустой кошелёк",
+        "Пустой кошелёк (белый)",
+        "Евро",
+        "Геолокация",
+        "Зеркало",
+        "Глобус",
+        "Сетка",
+        "Сетка (белая)",
+        "Диаграмма роста",
+        "Скидка",
+        "JCB",
+        "Лупа",
+        "MasterCard",
+        "Минус",
+        "МИР",
+        "Деньги",
+        "Денежное страхование",
+        "Монитор и мобильный",
+        "Новый документ",
+        "Офис",
+        "Лого «Одноклассники»",
+        "Бизнес",
+        "Проценты (круг.)",
+        "Проценты",
+        "Проценты белые",
+        "Персональная карта",
+        "Лого «PlayMarket»",
+        "Плюс",
+        "Профиль, 2 персоны",
+        "Профиль",
+        "Рубль (круг.)",
+        "Сейф",
+        "Безопасность",
+        "Подписанные документы",
+        "Маленькие часы",
+        "Лого «Telegram»",
+        "UnionPay",
+        "Пользователь",
+        "Visa",
+        "Лого «VK»",
+        "Пополнение карты",
+        "Кошелёк с плюсом",
+        "Кошелёк",
+        "Кошелёк с деньгами",
+      ],
+      "title": "Иконка",
+      "type": "string",
+    },
+    "Img": Object {
+      "properties": Object {
+        "alt": Object {
+          "title": "Альтернативный текст (alt)",
+          "type": "string",
+        },
+        "src": Object {
+          "title": "Картинка",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Текст подсказки (title)",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "src",
+      ],
+      "type": "object",
+    },
+    "ImgSource": Object {
+      "properties": Object {
+        "format": Object {
+          "enum": Array [
+            "jpeg",
+            "jpg",
+            "png",
+            "gif",
+            "webp",
+            "heif",
+            "avif",
+          ],
+          "title": "Формат",
+          "type": "string",
+        },
+        "size": Object {
+          "properties": Object {
+            "height": Object {
+              "title": "Высота",
+              "type": "number",
+            },
+            "width": Object {
+              "title": "Ширина",
+              "type": "number",
+            },
+          },
+          "title": "Размер изображения",
+          "type": "object",
+        },
+        "src": Object {
+          "title": "Картинка",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "src",
+      ],
+      "type": "object",
+    },
+    "LinkColumnsMode": Object {
+      "enum": Array [
+        "single",
+        "double",
+      ],
+      "title": "Режим отображения списка",
+      "type": "string",
+    },
+    "LinkDocsAccordionBlock": Object {
+      "properties": Object {
+        "accordionBlockType": Object {
+          "$ref": "#/definitions/AccordionTypeBlock",
+          "default": "LinkDocs",
+        },
+        "align": Object {
+          "anyOf": Array [
+            Object {
+              "properties": Object {},
+              "type": "object",
+            },
+            Object {
+              "properties": Object {},
+              "type": "object",
+            },
+            Object {
+              "properties": Object {},
+              "type": "object",
+            },
+          ],
+        },
+        "columnsMode": Object {
+          "$ref": "#/definitions/LinkColumnsMode",
+          "title": "Отображение списка",
+        },
+        "documents": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkDocsItem",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+          "title": "Название иконки",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "accordionBlockType",
+      ],
+      "title": "Список документов",
+      "type": "object",
+    },
+    "LinkDocsContent": Object {
+      "properties": Object {
+        "align": Object {
+          "anyOf": Array [
+            Object {
+              "properties": Object {},
+              "type": "object",
+            },
+            Object {
+              "properties": Object {},
+              "type": "object",
+            },
+            Object {
+              "properties": Object {},
+              "type": "object",
+            },
+          ],
+        },
+        "columnsMode": Object {
+          "$ref": "#/definitions/LinkColumnsMode",
+          "title": "Отображение списка",
+        },
+        "documents": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkDocsItem",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+          "title": "Название иконки",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Список документов",
+      "type": "object",
+    },
+    "LinkDocsItem": Object {
+      "properties": Object {
+        "fileSize": Object {
+          "title": "размер файла",
+          "type": "string",
+        },
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "title": "Элемент списка",
+      "type": "object",
+    },
+    "LinkProps": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "text",
+        "href",
+      ],
+      "title": "Ссылка",
+      "type": "object",
+    },
+    "MiniGalleryContent": Object {
+      "$ref": "#/definitions/GalleryContent",
+      "title": "Мини-галерея",
+    },
+    "MobileAppTileContent": Object {
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "href": Object {
+          "title": "Ссылка",
+          "type": "string",
+        },
+        "qr": Object {
+          "$ref": "#/definitions/QRCode",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Мобильное приложение",
+      "type": "object",
+    },
+    "NavigationContent": Object {
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonProps",
+          },
+          "title": "Список ссылок",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Навигация",
+      "type": "object",
+    },
+    "Picture": Object {
+      "properties": Object {
+        "alt": Object {
+          "title": "Альтернативный текст (alt)",
+          "type": "string",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "format": Object {
+          "enum": Array [
+            "jpeg",
+            "jpg",
+            "png",
+            "gif",
+            "webp",
+            "heif",
+            "avif",
+          ],
+          "title": "Формат",
+          "type": "string",
+        },
+        "size": Object {
+          "properties": Object {
+            "height": Object {
+              "title": "Высота",
+              "type": "number",
+            },
+            "width": Object {
+              "title": "Ширина",
+              "type": "number",
+            },
+          },
+          "title": "Размер изображения",
+          "type": "object",
+        },
+        "sources": Object {
+          "items": Object {
+            "$ref": "#/definitions/ImgSource",
+          },
+          "title": "Другие форматы",
+          "type": "array",
+        },
+        "src": Object {
+          "title": "Картинка",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Текст подсказки (title)",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "src",
+      ],
+      "title": "Изображение",
+      "type": "object",
+    },
+    "PictureTextAccordionBlock": Object {
+      "properties": Object {
+        "accordionBlockType": Object {
+          "$ref": "#/definitions/AccordionTypeBlock",
+          "default": "PictureText",
+        },
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "title": "Список преимуществ",
+          "type": "array",
+        },
+        "image": Object {
+          "properties": Object {
+            "alt": Object {
+              "title": "Альтернативный текст (alt)",
+              "type": "string",
+            },
+            "className": Object {
+              "type": "string",
+            },
+            "format": Object {
+              "enum": Array [
+                "jpeg",
+                "jpg",
+                "png",
+                "gif",
+                "webp",
+                "heif",
+                "avif",
+              ],
+              "title": "Формат",
+              "type": "string",
+            },
+            "size": Object {
+              "properties": Object {
+                "height": Object {
+                  "title": "Высота",
+                  "type": "number",
+                },
+                "width": Object {
+                  "title": "Ширина",
+                  "type": "number",
+                },
+              },
+              "title": "Размер изображения",
+              "type": "object",
+            },
+            "sources": Object {
+              "items": Object {
+                "$ref": "#/definitions/ImgSource",
+              },
+              "title": "Другие форматы",
+              "type": "array",
+            },
+            "src": Object {
+              "title": "Картинка",
+              "type": "string",
+            },
+            "title": Object {
+              "title": "Текст подсказки (title)",
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "src",
+          ],
+          "type": "object",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "accordionBlockType",
+      ],
+      "title": "Картинка с текстом",
+      "type": "object",
+    },
+    "PictureTextContent": Object {
+      "properties": Object {
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "title": "Список преимуществ",
+          "type": "array",
+        },
+        "image": Object {
+          "properties": Object {
+            "alt": Object {
+              "title": "Альтернативный текст (alt)",
+              "type": "string",
+            },
+            "className": Object {
+              "type": "string",
+            },
+            "format": Object {
+              "enum": Array [
+                "jpeg",
+                "jpg",
+                "png",
+                "gif",
+                "webp",
+                "heif",
+                "avif",
+              ],
+              "title": "Формат",
+              "type": "string",
+            },
+            "size": Object {
+              "properties": Object {
+                "height": Object {
+                  "title": "Высота",
+                  "type": "number",
+                },
+                "width": Object {
+                  "title": "Ширина",
+                  "type": "number",
+                },
+              },
+              "title": "Размер изображения",
+              "type": "object",
+            },
+            "sources": Object {
+              "items": Object {
+                "$ref": "#/definitions/ImgSource",
+              },
+              "title": "Другие форматы",
+              "type": "array",
+            },
+            "src": Object {
+              "title": "Картинка",
+              "type": "string",
+            },
+            "title": Object {
+              "title": "Текст подсказки (title)",
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "src",
+          ],
+          "type": "object",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Картинка с текстом",
+      "type": "object",
+    },
+    "ProductBlockContent": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "maxItems": 3,
+          "minItems": 2,
+          "title": "Преимущества",
+          "type": "array",
+        },
+        "breadcrumbs": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Хлебные крошки",
+          "type": "array",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Продуктовый блок",
+      "type": "object",
+    },
+    "ProductBlockInnerCommonProps": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "maxItems": 3,
+          "minItems": 2,
+          "title": "Преимущества",
+          "type": "array",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "type": "object",
+    },
+    "ProductGalleryContent": Object {
+      "properties": Object {
+        "slides": Object {
+          "items": Object {
+            "$ref": "#/definitions/ProductSlide",
+          },
+          "title": "Слайды",
+          "type": "array",
+        },
+      },
+      "title": "Продуктовая галерея",
+      "type": "object",
+    },
+    "ProductSlide": Object {
+      "properties": Object {
+        "nav": Object {
+          "properties": Object {
+            "desc": Object {
+              "title": "Описание",
+              "type": "string",
+            },
+            "title": Object {
+              "title": "Заголовок",
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "title",
+            "desc",
+          ],
+          "title": "Превью содержимого слайда на навигации",
+          "type": "object",
+        },
+        "productBlock": Object {
+          "$ref": "#/definitions/ProductBlockInnerCommonProps",
+          "title": "Содержимое слайда",
+        },
+      },
+      "required": Array [
+        "productBlock",
+      ],
+      "title": "Слайд",
+      "type": "object",
+    },
+    "ProductTileContent": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "benefits": Object {
+          "items": Object {
+            "properties": Object {
+              "description": Object {
+                "title": "Описание",
+                "type": "string",
+              },
+              "label": Object {
+                "title": "Название",
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "maxItems": 7,
+          "title": "Преимущества",
+          "type": "array",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Продуктовая плитка",
+      "type": "object",
+    },
+    "PromoTileContent": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "date": Object {
+          "title": "Дата публикации",
+          "type": "string",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+          "title": "Тип заголовка",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Акции",
+      "type": "object",
+    },
+    "QRCode": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "Ссылка",
+          "type": "string",
+        },
+        "src": Object {
+          "title": "QR код",
+          "type": "string",
+        },
+      },
+      "title": "QR код",
+      "type": "object",
+    },
+    "RowHeader": Object {
+      "properties": Object {
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Параметр",
+      "type": "object",
+    },
+    "SitemapProps": Object {
+      "properties": Object {
+        "topItems": Object {
+          "items": Object {
+            "$ref": "#/definitions/TopMenuItem",
+          },
+          "title": "Дополнительное меню",
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+    "SizeVersion": Object {
+      "enum": Array [
+        "normal",
+        "small",
+      ],
+      "enumNames": Array [
+        "Обычный",
+        "Уменьшенный",
+      ],
+      "title": "Размер",
+      "type": "string",
+    },
+    "SocialMedia": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+      },
+      "required": Array [
+        "href",
+      ],
+      "type": "object",
+    },
+    "Step": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "label": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Шаг",
+      "type": "object",
+    },
+    "StepsBlockContent": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "showLines": Object {
+          "title": "Линии",
+          "type": "boolean",
+        },
+        "size": Object {
+          "$ref": "#/definitions/SizeVersion",
+        },
+        "steps": Object {
+          "items": Object {
+            "$ref": "#/definitions/Step",
+          },
+          "maxItems": 3,
+          "minItems": 2,
+          "title": "Шаги",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Блок шаги",
+      "type": "object",
+    },
+    "SubMenuItem": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "title": "Пункт подменю",
+      "type": "object",
+    },
+    "Target": Object {
+      "enum": Array [
+        "",
+        "_self",
+        "_blank",
+        "_parent",
+        "_top",
+      ],
+      "enumNames": Array [
+        "",
+        "self (текущее окно или фрейм)",
+        "blank (новое окно)",
+        "parent (фрейм-родитель)",
+        "top (текущее окно)",
+      ],
+      "title": "Таргет (target)",
+      "type": "string",
+    },
+    "TariffsTableCellData": Object {
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/BaseTileIconButton",
+          },
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "label": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "list": Object {
+          "$ref": "#/definitions/TariffsTableList",
+        },
+      },
+      "title": "Ячейка",
+      "type": "object",
+    },
+    "TariffsTableColumn": Object {
+      "properties": Object {
+        "data": Object {
+          "items": Object {
+            "items": Object {
+              "$ref": "#/definitions/TariffsTableCellData",
+            },
+            "type": "array",
+          },
+          "title": "Данные",
+          "type": "array",
+        },
+      },
+      "title": "Колонка",
+      "type": "object",
+    },
+    "TariffsTableContent": Object {
+      "properties": Object {
+        "columns": Object {
+          "items": Object {
+            "$ref": "#/definitions/TariffsTableColumn",
+          },
+          "title": "Колонки",
+          "type": "array",
+        },
+        "rowHeaders": Object {
+          "items": Object {
+            "$ref": "#/definitions/TariffsTableRowHeader",
+          },
+          "title": "Параметры",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Таблица тарифов",
+      "type": "object",
+    },
+    "TariffsTableList": Object {
+      "properties": Object {
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Элементы списка",
+          "type": "array",
+        },
+      },
+      "title": "Список",
+      "type": "object",
+    },
+    "TariffsTableRowData": Object {
+      "properties": Object {
+        "data": Object {
+          "items": Object {
+            "items": Object {
+              "$ref": "#/definitions/TariffsTableCellData",
+            },
+            "type": "array",
+          },
+          "type": "array",
+        },
+        "header": Object {
+          "$ref": "#/definitions/TariffsTableRowHeader",
+        },
+      },
+      "required": Array [
+        "header",
+        "data",
+      ],
+      "title": "Ряд",
+      "type": "object",
+    },
+    "TariffsTableRowHeader": Object {
+      "properties": Object {
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Параметр",
+      "type": "object",
+    },
+    "TextBlockAccordionBlock": Object {
+      "properties": Object {
+        "accordionBlockType": Object {
+          "$ref": "#/definitions/AccordionTypeBlock",
+          "default": "TextBlock",
+        },
+        "blockVersion": Object {
+          "$ref": "#/definitions/TextBlockVersion",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "iconVersion": Object {
+          "$ref": "#/definitions/TextBlockIconVersion",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "accordionBlockType",
+      ],
+      "title": "Текстовый блок",
+      "type": "object",
+    },
+    "TextBlockContent": Object {
+      "properties": Object {
+        "blockVersion": Object {
+          "$ref": "#/definitions/TextBlockVersion",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "iconVersion": Object {
+          "$ref": "#/definitions/TextBlockIconVersion",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Текстовый блок",
+      "type": "object",
+    },
+    "TextBlockIconVersion": Object {
+      "enum": Array [
+        "none",
+        "small",
+        "big",
+      ],
+      "enumNames": Array [
+        "Нет",
+        "Маленькая",
+        "Большая",
+      ],
+      "title": "Размер иконки",
+      "type": "string",
+    },
+    "TextBlockVersion": Object {
+      "enum": Array [
+        "primary",
+        "secondary",
+        "secondary-light",
+      ],
+      "enumNames": Array [
+        "Основная",
+        "Второстепенная",
+        "Второстепенная прозрачная",
+      ],
+      "title": "Цвет плитки",
+      "type": "string",
+    },
+    "TileContent": Object {
+      "$ref": "#/definitions/BaseTileCommonProps",
+      "title": "Плитка",
+    },
+    "TopMenuItem": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "text",
+        "href",
+      ],
+      "title": "Ссылка",
+      "type": "object",
+    },
+  },
+}
+`;

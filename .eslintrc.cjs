@@ -18,6 +18,9 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:react/jsx-runtime',
   ],
+  env: {
+    jest: true,
+  },
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'warn',

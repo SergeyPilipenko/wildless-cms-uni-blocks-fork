@@ -1,11 +1,14 @@
 import type { BgColorVersion } from '../../model/BgColorVersion';
-import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
+import type { Picture } from '../../model/Picture';
+import type { AlignType, BaseTileTitleProps } from '../BaseTile/BaseTileProps';
 
 /**
  * @title Заголовок
  */
-export interface HeadlineContent
-  extends Pick<BaseTileCommonProps, 'title' | 'headingType' | 'description' | 'align' | 'image'> {
-  //TODO: image for mobile
+export interface HeadlineContent extends BaseTileTitleProps {
+  description?: string;
+  image?: Picture;
+  align?: AlignType;
+  // TODO: image for mobile
   bgColor?: BgColorVersion;
 }

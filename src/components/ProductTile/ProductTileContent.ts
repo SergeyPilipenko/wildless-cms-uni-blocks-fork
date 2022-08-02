@@ -1,10 +1,10 @@
-import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
+import type { TileContent } from '../Tile/TileContent';
 
 /**
  * @title Продуктовая плитка
  */
-export interface ProductTileContent extends Omit<BaseTileCommonProps, 'align'> {
+export interface ProductTileContent extends TileContent {
   /**
    * @title Преимущества
    * @maxItems 7

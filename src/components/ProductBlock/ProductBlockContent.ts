@@ -1,15 +1,8 @@
 import type { LinkProps } from '../../model/LinkProps';
-import { HeadingType } from '../../ui-kit/Heading/HeadingProps';
 import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
-export interface ProductBlockInnerCommonProps
-  extends Omit<BaseTileCommonProps, 'align' | 'titleSize'> {
-  /**
-   * @title Размер заголовка
-   * @hidden
-   */
-  headingType?: HeadingType;
+export interface ProductBlockInnerCommonProps extends BaseTileCommonProps {
   /**
    * @title Преимущества
    * @minItems 2

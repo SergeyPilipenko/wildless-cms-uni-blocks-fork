@@ -21,7 +21,7 @@ export interface BaseTileIconButton extends ButtonWithIconProps {
 /**
  * @title Общий компонент плиток
  */
-export interface BaseTileCommonProps extends BaseTileTitleProps, BaseTileMainProps {}
+export type BaseTileCommonProps = BaseTileTitleProps & BaseTileMainProps;
 
 /**
  * @title Заголовк плитки
@@ -34,6 +34,7 @@ export interface BaseTileTitleProps {
    */
   headingType?: HeadingType;
 }
+
 export interface BaseTileMainProps {
   description?: string;
   image?: Picture;

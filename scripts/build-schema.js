@@ -11,7 +11,6 @@ const [, , schemaFile] = process.argv;
 /** @type {import('ts-json-schema-generator/dist/src/Config').Config} */
 const GENERATOR_CONFIG = {
   path: './src/**/*Content.ts',
-  type: '*',
   skipTypeCheck: true,
   additionalProperties: true,
   sortProps: false,
@@ -20,7 +19,7 @@ const GENERATOR_CONFIG = {
 };
 
 (async () => {
-  const schema = createGenerator(GENERATOR_CONFIG).createSchema(GENERATOR_CONFIG.type);
+  const schema = createGenerator(GENERATOR_CONFIG).createSchema();
 
   const definitions = mergeObjs(
     Object.entries(schema.definitions).map(([definitionKey, definition]) => ({
