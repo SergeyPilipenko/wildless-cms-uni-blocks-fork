@@ -98,14 +98,14 @@ export default {
             href="https://www.rshb.ru/"
             target="_blank"
             version="secondary"
-            appendLeft={<Icon name="PlayMarketIcon" width="20" height="21" />}
+            appendLeft={<Icon name="PlayMarketIcon" width="20" height="21" asSVG />}
           />
           <Button
             rounded
             href="https://www.rshb.ru/"
             target="_blank"
             version="secondary"
-            appendLeft={<Icon name="AppleIcon" width="18" height="20" />}
+            appendLeft={<Icon name="AppleIcon" width="18" height="20" asSVG />}
           />
         </div>
       </div>

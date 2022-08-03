@@ -52,7 +52,7 @@ const renderCellInner = (
           <Button
             className={`${idx > 0 ? 'ml-3' : ''} w-12 h-12`}
             key={String(idx)}
-            appendLeft={icon && <Icon name={icon} width="24px" height="24px" />}
+            appendLeft={icon && <Icon name={icon} width="24px" height="24px" asSVG />}
             {...buttonProps}
           />
         ))
