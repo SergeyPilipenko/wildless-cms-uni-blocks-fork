@@ -1,6 +1,6 @@
 import { LinkProps } from '../../model/LinkProps';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
-import { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
+import { AlignType } from '../BaseTile/BaseTileProps';
 
 /** @title Режим отображения списка */
 export type LinkColumnsMode = 'single' | 'double';
@@ -16,11 +16,13 @@ export interface LinkDocsItem extends LinkProps {
 /**
  * @title Список документов
  */
-export interface LinkDocsContent extends Pick<BaseTileCommonProps, 'title' | 'align'> {
-  /** @title Отображение списка */
+export interface LinkDocsContent {
+  /** @title Заголовок */
+  title?: string;
   columnsMode?: LinkColumnsMode;
   /** @title Название иконки */
   icon?: IconName;
   /** @title Список */
   documents?: LinkDocsItem[];
+  align?: AlignType;
 }

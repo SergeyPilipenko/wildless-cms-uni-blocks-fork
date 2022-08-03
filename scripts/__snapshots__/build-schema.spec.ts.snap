@@ -949,24 +949,10 @@ Object {
           "default": "LinkDocs",
         },
         "align": Object {
-          "anyOf": Array [
-            Object {
-              "properties": Object {},
-              "type": "object",
-            },
-            Object {
-              "properties": Object {},
-              "type": "object",
-            },
-            Object {
-              "properties": Object {},
-              "type": "object",
-            },
-          ],
+          "$ref": "#/definitions/AlignType",
         },
         "columnsMode": Object {
           "$ref": "#/definitions/LinkColumnsMode",
-          "title": "Отображение списка",
         },
         "documents": Object {
           "items": Object {
@@ -993,24 +979,10 @@ Object {
     "LinkDocsContent": Object {
       "properties": Object {
         "align": Object {
-          "anyOf": Array [
-            Object {
-              "properties": Object {},
-              "type": "object",
-            },
-            Object {
-              "properties": Object {},
-              "type": "object",
-            },
-            Object {
-              "properties": Object {},
-              "type": "object",
-            },
-          ],
+          "$ref": "#/definitions/AlignType",
         },
         "columnsMode": Object {
           "$ref": "#/definitions/LinkColumnsMode",
-          "title": "Отображение списка",
         },
         "documents": Object {
           "items": Object {
