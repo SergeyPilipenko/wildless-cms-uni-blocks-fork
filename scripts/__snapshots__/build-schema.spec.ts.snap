@@ -939,7 +939,11 @@ Object {
         "single",
         "double",
       ],
-      "title": "Режим отображения списка",
+      "enumNames": Array [
+        "Одна колонка",
+        "Две колонки",
+      ],
+      "title": "Отображение списка",
       "type": "string",
     },
     "LinkDocsAccordionBlock": Object {
@@ -961,9 +965,20 @@ Object {
           "title": "Список",
           "type": "array",
         },
+        "hasBorder": Object {
+          "title": "Рамка элементов (моб.)",
+          "type": "boolean",
+        },
         "icon": Object {
           "$ref": "#/definitions/IconName",
           "title": "Название иконки",
+        },
+        "listMode": Object {
+          "$ref": "#/definitions/LinkListMode",
+        },
+        "subtitle": Object {
+          "title": "Подзаголовок",
+          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -991,9 +1006,20 @@ Object {
           "title": "Список",
           "type": "array",
         },
+        "hasBorder": Object {
+          "title": "Рамка элементов (моб.)",
+          "type": "boolean",
+        },
         "icon": Object {
           "$ref": "#/definitions/IconName",
           "title": "Название иконки",
+        },
+        "listMode": Object {
+          "$ref": "#/definitions/LinkListMode",
+        },
+        "subtitle": Object {
+          "title": "Подзаголовок",
+          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -1023,6 +1049,18 @@ Object {
       },
       "title": "Элемент списка",
       "type": "object",
+    },
+    "LinkListMode": Object {
+      "enum": Array [
+        "vertical",
+        "horizontal",
+      ],
+      "enumNames": Array [
+        "Вертикально",
+        "Горизонтально",
+      ],
+      "title": "Отображение списка (моб.)",
+      "type": "string",
     },
     "LinkProps": Object {
       "properties": Object {

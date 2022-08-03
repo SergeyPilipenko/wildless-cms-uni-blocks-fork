@@ -1,6 +1,6 @@
 import { context } from '../../setup-fixture';
 import { HEADLINE } from '../Headline/Headline.fixture';
-import { LINK_DOCS } from '../LinkDocs/LinkDocs.fixture';
+import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
 import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
 import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import type { AccordionProps } from './Accordion';
@@ -29,7 +29,7 @@ const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextAccordionBlock = {
 
 const LINK_DOCS_ACCORDION_BLOCK: LinkDocsAccordionBlock = {
   accordionBlockType: 'LinkDocs',
-  ...LINK_DOCS,
+  ...linkDocsContentExample,
   title: '',
 };
 

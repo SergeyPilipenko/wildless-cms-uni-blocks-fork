@@ -2,6 +2,7 @@ import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import { Headline } from './Headline/Headline';
+import { LinkDocs } from './LinkDocs/LinkDocs';
 import { Placeholder } from './Placeholder/Placeholder';
 import { ProductBlock } from './ProductBlock/ProductBlock';
 import { ProductGallery } from './ProductGallery/ProductGallery';
@@ -13,6 +14,7 @@ export const Blocks = {
   Footer,
   Header,
   Headline,
+  LinkDocs,
   Placeholder,
   ProductBlock,
   ProductGallery,

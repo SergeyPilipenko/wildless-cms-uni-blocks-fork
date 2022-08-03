@@ -1,5 +1,6 @@
 {
   "title": "Дополнительные документы",
+  "subtitle": "Ответы на часто задаваемые вопросы",
   "icon": "DocIcon",
   "documents": [
     {
@@ -22,5 +23,7 @@
       "href": "/abc/map.rar"
     }
   ],
-  "columnsMode": "double"
+  "columnsMode": "double",
+  "listMode": "vertical",
+  "hasBorder": true
 }

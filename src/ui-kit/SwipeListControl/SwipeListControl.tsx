@@ -25,7 +25,6 @@ export const SwipeListControl = JSX<SwipeListControlProps>(
       // horizontal PADDING / 2 to compensate padding-margin combo of child container
       // without CSS calc function, as wrapper element gets bigger in the DOM, remaining same visually
       const itemWidth = (children[0] as HTMLElement).offsetWidth - padding / 2;
-
       const scrollPoints = getScrollPoints({
         gap,
         padding,

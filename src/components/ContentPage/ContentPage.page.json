@@ -1395,6 +1395,7 @@
       "style": ["col-span-12"],
       "content": {
         "title": "Дополнительные документы",
+        "subtitle": "Ответы на часто задаваемые вопросы",
         "icon": "DocIcon",
         "documents": [
           {

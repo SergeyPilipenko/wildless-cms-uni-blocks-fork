@@ -30,7 +30,7 @@ export const SwipeListControlList = JSX<SwipeListControlListProps>(
         onScroll={onScroll}
       >
         {children?.length ? (
-          children.map((child, idx) => (
+          children?.map((child, idx) => (
             <SwipeListControlItem
               key={String(idx)}
               style={getContainerStyle(padding / 4)}
