@@ -40,6 +40,7 @@ export const BaseTile = JSX<BaseTileProps>(
           children={children}
           description={description}
           items={items}
+          version={version}
         />
       </div>
     );

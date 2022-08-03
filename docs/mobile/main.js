@@ -31568,11 +31568,11 @@ const PICTURE_TEXT = {
 const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3';
 const TEXT_STYLE_MAP = {
     primary: 'text-primary-text',
-    secondary: 'text-secondary-text',
+    secondary: '',
 };
 const LIST_STYLE_MAP = {
     primary: 'bg-primary-main',
-    secondary: 'bg-secondary-text',
+    secondary: 'bg-white',
 };
 const BlockItem = JSX(({ className = '', isDotted = true, text, children, version = 'primary', white }) => {
     return (jsxs("div", { className: `font-sans flex items-baseline ${className}`, role: "listitem", children: [isDotted && jsx("div", { className: getListStyle(version, white) }), jsx("span", { className: white ? 'text-white' : TEXT_STYLE_MAP[version], children: text || children })] }));
@@ -32798,7 +32798,6 @@ const DEFAULT_ORIGIN = 'https://rshb.ru/';
 
 
 
-
 const Header_fixture_mobile_DEFAULT_ORIGIN = 'https://rshb.ru/';
 /* harmony default export */ const Header_fixture_mobile = ({
     default: (jsx(Header, { context: context, defaultLocation: "\u041C\u043E\u0441\u043A\u0432\u0430", topItems: [
@@ -33230,7 +33229,6 @@ const steps = [
 });
 
 ;// CONCATENATED MODULE: ./src/ui-kit/Heading/Heading.fixture.mobile.tsx
-
 
 
 /* harmony default export */ const Heading_fixture_mobile = ({

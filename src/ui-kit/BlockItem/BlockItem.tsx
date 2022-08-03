@@ -6,12 +6,12 @@ const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3';
 
 const TEXT_STYLE_MAP: Record<BlockItemVersion, string> = {
   primary: 'text-primary-text',
-  secondary: 'text-secondary-text',
+  secondary: '',
 };
 
 const LIST_STYLE_MAP: Record<BlockItemVersion, string> = {
   primary: 'bg-primary-main',
-  secondary: 'bg-secondary-text',
+  secondary: 'bg-white',
 };
 
 export const BlockItem = JSX<BlockItemProps>(

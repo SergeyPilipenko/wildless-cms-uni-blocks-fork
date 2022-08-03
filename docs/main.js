@@ -32376,11 +32376,11 @@ function renderButton_renderButton({ icon, ...button }, i) {
 const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3';
 const TEXT_STYLE_MAP = {
     primary: 'text-primary-text',
-    secondary: 'text-secondary-text',
+    secondary: '',
 };
 const LIST_STYLE_MAP = {
     primary: 'bg-primary-main',
-    secondary: 'bg-secondary-text',
+    secondary: 'bg-white',
 };
 const BlockItem = JSX(({ className = '', isDotted = true, text, children, version = 'primary', white }) => {
     return (jsxs("div", { className: `font-sans flex items-baseline ${className}`, role: "listitem", children: [isDotted && jsx("div", { className: getListStyle(version, white) }), jsx("span", { className: white ? 'text-white' : TEXT_STYLE_MAP[version], children: text || children })] }));
@@ -32435,7 +32435,7 @@ function getHeadingType(className = '') {
 
 
 const BaseTile = JSX(({ className, context, title, headingType, description, children, buttons, image, items, version = 'primary', }) => {
-    return (jsxs("div", { className: `font-sans flex flex-col grow h-full items-start`, children: [title && (jsx(Heading, { type: headingType || getHeadingType(className), text: title, className: `whitespace-pre-wrap max-w-[600px] ${version === 'primary' ? 'text-primary-text' : ''}`, children: title })), jsx(BaseTileInner, { context: context, buttons: buttons, image: image, children: children, description: description, items: items })] }));
+    return (jsxs("div", { className: `font-sans flex flex-col grow h-full items-start`, children: [title && (jsx(Heading, { type: headingType || getHeadingType(className), text: title, className: `whitespace-pre-wrap max-w-[600px] ${version === 'primary' ? 'text-primary-text' : ''}`, children: title })), jsx(BaseTileInner, { context: context, buttons: buttons, image: image, children: children, description: description, items: items, version: version })] }));
 });
 
 ;// CONCATENATED MODULE: ./src/components/Tile/Tile.tsx
@@ -34090,7 +34090,6 @@ const building = {
 
 
 
-
 /* harmony default export */ const PromoTile_fixture = ({
     default: (jsx("div", { className: "container grid grid-cols-12", children: jsx(PromoTile, { context: context, className: "col-span-4", title: "\u0410\u043A\u0446\u0438\u0438 \u0438 \u0441\u043F\u0435\u0446\u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F", description: "\u041F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0439 \u043A\u0440\u0435\u0434\u0438\u0442 \u043F\u043E \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0439 \u043F\u0440\u043E\u0446\u0435\u043D\u0442\u043D\u043E\u0439 \u0441\u0442\u0430\u0432\u043A\u0435", version: "secondary", date: "2022-04-16", buttons: [
                 {
@@ -34124,7 +34123,6 @@ const steps = [
 });
 
 ;// CONCATENATED MODULE: ./src/components/TariffsTable/TariffsTable.fixture.tsx
-
 
 
 
@@ -34268,7 +34266,6 @@ const TariffsTable_fixture_columns = [
 
 
 
-
 const Tile_fixture_image = {
     src: 'money-1.png',
     format: 'webp',
@@ -34389,7 +34386,6 @@ const image4 = {
 });
 
 ;// CONCATENATED MODULE: ./src/ui-kit/Heading/Heading.fixture.tsx
-
 
 
 /* harmony default export */ const Heading_fixture = ({
