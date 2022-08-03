@@ -1881,36 +1881,36 @@
         "topItems": [
           {
             "href": "https://rshb.ru/",
-            "text": "Частным клиентам",
+            "text": "О банке",
             "target": "_blank",
             "items": [
               {
                 "href": "https://rshb.ru/",
-                "text": "Кредитные карты"
+                "text": "О банке"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Дебетовые карты"
+                "text": "Новости"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Кредиты"
+                "text": "Офисы и отделения"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Ипотека"
+                "text": "Карьера в банке"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Вклады и сбережения"
+                "text": "Пресс-центр"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Инвестиции"
+                "text": "Кредитным организациям"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Страхование"
+                "text": "Закупки"
               },
               {
                 "href": "https://rshb.ru/",
@@ -1918,90 +1918,23 @@
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Биометрическая регистрация"
+                "text": "Непрофильные/Профильные нецелевые активы"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Перевод денег"
+                "text": "Инсайдерам"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Обмен денег"
+                "text": "Противодействие коррупции"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Акции"
+                "text": "Меры безопасности"
               },
               {
                 "href": "https://rshb.ru/",
-                "text": "Тарифы"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Архивная информация"
-              }
-            ]
-          },
-          {
-            "href": "https://rshb.ru/",
-            "text": "Бизнес клиентам",
-            "target": "_blank",
-            "items": [
-              {
-                "href": "https://rshb.ru/",
-                "text": "РКО"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Кредиты"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Депозиты"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Эквайринг"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Банковские карты"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "ВЭД"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Инвестиции"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Обмен валюты"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Страхование"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Партнёрские программы"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Онлайн-сервисы"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Акции"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Тарифы"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Архивная информация"
+                "text": "Залоговое имущество"
               }
             ]
           }
