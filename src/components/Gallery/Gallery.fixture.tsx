@@ -27,7 +27,7 @@ const defaultItems = [
   'Площадки для создания комфортной жизни за городом',
 ];
 
-const defaultProps: GalleryProps = {
+export const defaultProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
   context,

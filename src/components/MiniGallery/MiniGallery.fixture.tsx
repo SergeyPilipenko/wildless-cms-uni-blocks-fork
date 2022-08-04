@@ -12,7 +12,7 @@ const image: Picture = {
   title: 'domovoj-kupon',
 };
 
-const defaultProps: MiniGalleryProps = {
+export const defaultProps: MiniGalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
   context,

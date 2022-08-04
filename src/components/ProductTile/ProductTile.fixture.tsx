@@ -2,6 +2,7 @@ import { context } from '../../setup-fixture';
 
 import type { Picture } from '../../model/Picture';
 import { ProductTile } from './ProductTile';
+import { ProductTileContent } from './ProductTileContent';
 
 const cardWithMoney: Picture = {
   src: 'card-with-diamond.png',
@@ -19,6 +20,33 @@ const building: Picture = {
   src: 'building.png',
   alt: 'Кредит под залог недвижимости в РСХБ',
   format: 'webp',
+};
+
+export const PRODUCT_TILE: ProductTileContent = {
+  title: 'Акция! “Кредит На все, что хочется!”',
+  description: 'Потребительский кредит на любые цели, без залога и поручительства',
+  benefits: [
+    {
+      label: 'до 5 млн Р',
+      description: 'Кредитный лимит',
+    },
+    {
+      label: 'от 12,5%',
+      description: 'Процентная ставка',
+    },
+    {
+      label: 'до 5 лет',
+      description: 'Срок кредитования',
+    },
+  ],
+  buttons: [
+    {
+      text: 'Подробнее',
+      href: '/credit-cards',
+      version: 'secondary',
+    },
+  ],
+  image: cardWithMoney,
 };
 
 export default {

@@ -6,28 +6,28 @@ import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import type { AccordionProps } from './Accordion';
 import { Accordion } from './Accordion';
 import type {
-  HeadlineAccordionBlock,
-  LinkDocsAccordionBlock,
-  PictureTextAccordionBlock,
-  TextBlockAccordionBlock,
+  HeadlineAccordionBlockDef,
+  LinkDocsAccordionBlockDef,
+  PictureTextAccordionBlockDef,
+  TextBlockAccordionBlockDef,
 } from './AccordionContent';
 
-const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockAccordionBlock = {
+const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockAccordionBlockDef = {
   accordionBlockType: 'TextBlock',
   ...TEXT_BLOCK,
 };
 
-const HEADLINE_ACCORDION_BLOCK: HeadlineAccordionBlock = {
+const HEADLINE_ACCORDION_BLOCK: HeadlineAccordionBlockDef = {
   accordionBlockType: 'Headline',
   ...HEADLINE,
 };
 
-const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextAccordionBlock = {
+const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextAccordionBlockDef = {
   accordionBlockType: 'PictureText',
   ...PICTURE_TEXT,
 };
 
-const LINK_DOCS_ACCORDION_BLOCK: LinkDocsAccordionBlock = {
+const LINK_DOCS_ACCORDION_BLOCK: LinkDocsAccordionBlockDef = {
   accordionBlockType: 'LinkDocs',
   ...linkDocsContentExample,
   title: '',

@@ -1,6 +1,7 @@
-import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { Tile } from './Tile';
+import type { Picture } from '../../model/Picture';
+import type { TileContent } from './TileContent';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -22,31 +23,44 @@ const image4: Picture = {
   format: 'webp',
 };
 
+export const TILE: TileContent = {
+  title: 'Кредиты',
+  items: [
+    'Кредитный лимит до 10 млн ₽',
+    'Кредиты наличными на любые цели',
+    'Получите деньги без залога и поручителей',
+  ],
+  buttons: [
+    {
+      text: 'Подробнее',
+      href: '/credit-cards',
+      version: 'secondary',
+    },
+  ],
+  image,
+};
+
 export default {
   credit: (
-    <div className="p-2 w-full h-full">
-      <div className="bg-slate-100 w-full h-full">
-        <div className="container grid grid-cols-12">
-          <Tile
-            context={context}
-            className="col-span-8"
-            title="Кредиты"
-            items={[
-              'Кредитный лимит до 10 млн ₽',
-              'Кредиты наличными на любые цели',
-              'Получите деньги без залога и поручителей',
-            ]}
-            buttons={[
-              {
-                text: 'Подробнее',
-                href: '/credit-cards',
-                version: 'secondary',
-              },
-            ]}
-            image={image}
-          />
-        </div>
-      </div>
+    <div className="container grid grid-cols-12">
+      <Tile
+        context={context}
+        className="col-span-8"
+        title="Кредиты"
+        items={[
+          'Кредитный лимит до 10 млн ₽',
+          'Кредиты наличными на любые цели',
+          'Получите деньги без залога и поручителей',
+        ]}
+        buttons={[
+          {
+            text: 'Подробнее',
+            href: '/credit-cards',
+            version: 'secondary',
+          },
+        ]}
+        image={image}
+      />
     </div>
   ),
   mortgage: (
