@@ -1,7 +1,8 @@
 /**
  * @title Версия списка
+ * @enumNames ["Основной", "Второстепенный", "Белый"]
  */
-export type BlockItemVersion = 'primary' | 'secondary';
+export type BlockItemVersion = 'primary' | 'secondary' | 'gray';
 
 /**
  * @title Содержимое элемента блока
@@ -17,7 +18,6 @@ export interface BlockItemContent {
 export interface BlockItemProps extends BlockItemContent {
   className?: string;
   version?: BlockItemVersion;
-  white?: boolean;
   /** @title Маркер */
   isDotted?: boolean;
 }

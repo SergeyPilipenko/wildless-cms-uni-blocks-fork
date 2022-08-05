@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../setup-fixture';
+import { mobileContext } from '../../setup-fixture';
 import { TextBlock } from './TextBlock';
 import { TextBlockContent } from './TextBlockContent';
 
@@ -24,27 +24,37 @@ export default (
       <div>
         <p>Private clients</p>
         <div className="flex flex-col gap-[6px]" data-theme="pc">
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
           <TextBlock
-            context={context}
+            context={mobileContext}
+            {...TEXT_BLOCK}
+            blockVersion="primary"
+            iconVersion="small"
+          />
+          <TextBlock
+            context={mobileContext}
             {...TEXT_BLOCK}
             blockVersion="primary"
             iconVersion="big"
             image={image}
           />
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="none" />
           <TextBlock
-            context={context}
+            context={mobileContext}
+            {...TEXT_BLOCK}
+            blockVersion="primary"
+            iconVersion="none"
+          />
+          <TextBlock
+            context={mobileContext}
             description="Если не планируете поездку за границу, продолжайте пользоваться картой Своя. Для поездок за границу"
             blockVersion="primary"
           />
           <TextBlock
-            context={context}
+            context={mobileContext}
             title="Все карты Россельхозбанка работают"
             blockVersion="primary"
           />
           <TextBlock
-            context={context}
+            context={mobileContext}
             title="Все карты Россельхозбанка работают"
             blockVersion="primary"
             iconVersion="small"
@@ -61,19 +71,19 @@ export default (
         <div className="flex flex-col gap-[6px]" data-theme="bc">
           <TextBlock
             className="flex flex-col"
-            context={context}
+            context={mobileContext}
             {...TEXT_BLOCK}
             blockVersion="primary"
             iconVersion="small"
           />
           <TextBlock
-            context={context}
+            context={mobileContext}
             {...TEXT_BLOCK}
             iconVersion="small"
             blockVersion="secondary"
           />
           <TextBlock
-            context={context}
+            context={mobileContext}
             {...TEXT_BLOCK}
             iconVersion="small"
             blockVersion="secondary-light"
@@ -83,15 +93,20 @@ export default (
       <div>
         <p>Ecosystem own</p>
         <div className="flex flex-col gap-[6px]" data-theme="eo">
-          <TextBlock context={context} {...TEXT_BLOCK} iconVersion="small" blockVersion="primary" />
           <TextBlock
-            context={context}
+            context={mobileContext}
+            {...TEXT_BLOCK}
+            iconVersion="small"
+            blockVersion="primary"
+          />
+          <TextBlock
+            context={mobileContext}
             {...TEXT_BLOCK}
             iconVersion="small"
             blockVersion="secondary"
           />
           <TextBlock
-            context={context}
+            context={mobileContext}
             {...TEXT_BLOCK}
             iconVersion="small"
             blockVersion="secondary-light"

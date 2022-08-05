@@ -23,5 +23,8 @@ export interface TextBlockContent {
   iconVersion?: TextBlockIconVersion;
   image?: Picture;
   blockVersion?: TextBlockVersion;
-  items?: string[]; // TODO: mobile content
+  /** @title Маркеры списка (моб.) */ // TODO: mobile prop
+  isDotted?: boolean;
+  /** @title Список (моб.) */ // TODO: mobile prop
+  items?: string[];
 }

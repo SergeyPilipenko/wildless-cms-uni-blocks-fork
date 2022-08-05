@@ -1973,6 +1973,10 @@ Object {
     },
     "TariffsTableList": Object {
       "properties": Object {
+        "isDotted": Object {
+          "title": "Маркеры",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "type": "string",
@@ -2081,10 +2085,15 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
+        "isDotted": Object {
+          "title": "Маркеры списка (моб.)",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "type": "string",
           },
+          "title": "Список (моб.)",
           "type": "array",
         },
         "title": Object {

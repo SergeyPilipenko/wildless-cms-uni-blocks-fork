@@ -37,9 +37,10 @@ const renderCellInner = (
         <div role="list">
           {list.items.map((text, idx) => (
             <BlockItem
+              className="text-sm"
               key={String(idx)}
               text={text}
-              version={list.version ?? 'secondary'}
+              version="gray"
               isDotted={list.isDotted ?? true}
             />
           ))}

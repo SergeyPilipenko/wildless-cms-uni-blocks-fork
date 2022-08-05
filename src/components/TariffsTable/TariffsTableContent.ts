@@ -1,7 +1,6 @@
 import type { CellData, RowHeader } from '../ComparisonTable/ComparisonTableContent';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { IconName } from '../../icons/IconName';
 import type { Picture } from '../../model/Picture';
-import type { BlockItemVersion } from '../../ui-kit/BlockItem/BlockItemProps';
 import type { BaseTileIconButton } from '../BaseTile/BaseTileProps';
 
 /**
@@ -24,12 +23,7 @@ export interface TariffsTableColumn {
  * @title Список
  */
 export interface TariffsTableList {
-  /** @hidden */
-  version?: BlockItemVersion;
-  /**
-   * @title Маркеры
-   * @hidden
-   */
+  /** @title Маркеры */
   isDotted?: boolean;
   /** @title Элементы списка */
   items?: string[];
