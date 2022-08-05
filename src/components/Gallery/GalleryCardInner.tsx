@@ -4,7 +4,7 @@ import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img';
 import { cardVersionMap } from './constants';
-import type { GalleryCard } from './GalleryContent';
+import type { GalleryCard, GalleryItem } from './GalleryContent';
 
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
@@ -24,7 +24,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
           )}
           {items?.length ? (
             <section className={`max-w-[308px] mt-2 ${cardVersionClasses}`} role="list">
-              {items.map((item, i) => renderItem(item, i, version))}
+              {items.map((item, i) => renderItem(item.text, i, version))}
             </section>
           ) : null}
         </div>
@@ -34,7 +34,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
   },
 );
 
-function renderCardTitle(title: string, description?: string, items?: string[]) {
+function renderCardTitle(title: string, description?: string, items?: GalleryItem[]) {
   return (
     <div
       className={`font-medium text-xl m-0 ${!description && !items?.length ? 'text-center' : ''}`}

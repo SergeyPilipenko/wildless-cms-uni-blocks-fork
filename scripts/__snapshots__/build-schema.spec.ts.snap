@@ -315,6 +315,7 @@ Object {
       "enum": Array [
         "primary",
         "secondary",
+        "link",
       ],
       "enumNames": Array [
         "Основная",
@@ -642,7 +643,7 @@ Object {
         },
         "items": Object {
           "items": Object {
-            "type": "string",
+            "$ref": "#/definitions/GalleryItem",
           },
           "title": "Список",
           "type": "array",
@@ -672,12 +673,29 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "isScroll": Object {
+          "type": "boolean",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
         },
       },
       "title": "Галерея",
+      "type": "object",
+    },
+    "GalleryItem": Object {
+      "properties": Object {
+        "text": Object {
+          "type": "string",
+        },
+        "title": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "text",
+      ],
       "type": "object",
     },
     "HeaderContent": Object {

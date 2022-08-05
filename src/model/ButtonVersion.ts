@@ -3,4 +3,4 @@
  * @default primary
  * @enumNames ["Основная", "Второстепенная"]
  */
-export type ButtonVersion = 'primary' | 'secondary';
+export type ButtonVersion = 'primary' | 'secondary' | 'link';

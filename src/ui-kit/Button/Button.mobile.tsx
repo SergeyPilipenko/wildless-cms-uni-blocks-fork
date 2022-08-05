@@ -4,23 +4,24 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { ButtonProps, ButtonWithIconProps } from './ButtonProps';
+import { ButtonInner } from './ButtonInner';
 
 const buttonStyleMap: Record<ButtonVersion, string> = {
   primary: 'text-white bg-primary-main hover:bg-primary-hover active:bg-primary-active',
   secondary:
     'text-primary-main bg-secondary-light hover:bg-secondary-hover active:bg-secondary-active',
+  link: 'text-primary-main',
 };
 
 const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
   primary: 'bg-secondary-dark text-secondary-text',
   secondary: 'bg-secondary-light text-secondary-text',
+  link: '',
 };
 
 const styleButton = 'w-full text-center font-sans select-none';
 
 export interface ButtonCommonProps extends ButtonProps, ButtonWithIconProps {}
-
-export type ButtonInner = Pick<ButtonCommonProps, 'text' | 'aboveText' | 'appendLeft' | 'rounded'>;
 
 export const Button = JSX<ButtonCommonProps>(
   ({
@@ -34,12 +35,18 @@ export const Button = JSX<ButtonCommonProps>(
     children,
     disabled,
     rounded,
-    version = 'none',
+    version = 'primary',
     ariaLabel,
     ...rest
   }) => {
     const buttonInner = children ?? (
-      <ButtonInner text={text} aboveText={aboveText} appendLeft={appendLeft} rounded={rounded} />
+      <ButtonInner
+        text={text}
+        aboveText={aboveText}
+        appendLeft={appendLeft}
+        rounded={rounded}
+        version={version}
+      />
     );
 
     if (disabled) {
@@ -75,23 +82,3 @@ export const Button = JSX<ButtonCommonProps>(
     );
   },
 );
-
-export const ButtonInner = JSX<ButtonInner>(({ text, aboveText, appendLeft, rounded }) => {
-  const withoutText = !text && !aboveText && Boolean(appendLeft);
-
-  const buttonInnerClasses = `flex items-center justify-center ${
-    withoutText ? 'h-12 w-12' : `px-9 gap-2 ${aboveText ? 'py-2' : 'py-3.5'}`
-  } ${rounded ? 'rounded-full' : ''}`;
-
-  return (
-    <div className={buttonInnerClasses}>
-      {appendLeft ? appendLeft : null}
-      {withoutText ? null : (
-        <div>
-          <div className="text-m-2xs text-left">{aboveText}</div>
-          <div className="text-m-button font-medium text-left">{text}</div>
-        </div>
-      )}
-    </div>
-  );
-});

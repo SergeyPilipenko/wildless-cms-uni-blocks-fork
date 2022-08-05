@@ -2,6 +2,11 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import type { BaseTileIconButton } from '../BaseTile/BaseTileProps';
 
+export interface GalleryItem {
+  title?: string; //TODO: for mobile
+  text: string;
+}
+
 /**
  * @title Карточка
  */
@@ -14,7 +19,7 @@ export interface GalleryCard {
   /** @title Кнопка */
   button?: BaseTileIconButton;
   /** @title Список */
-  items?: string[];
+  items?: GalleryItem[];
   version?: BlockVersion;
 }
 
@@ -31,4 +36,5 @@ export interface GalleryContent {
    * @minItems 4
    */
   cards?: GalleryCard[];
+  isScroll?: boolean; //TODO: for mobile
 }
