@@ -31631,8 +31631,6 @@ function renderButtonInner({ buttonInnerClasses, appendLeft, withoutText, aboveT
 
 ;// CONCATENATED MODULE: ./src/ui-kit/Button/Button.tsx
 
-/* eslint-disable max-lines-per-function */
-/* eslint-disable complexity */
 
 
 const buttonStyleMap = {

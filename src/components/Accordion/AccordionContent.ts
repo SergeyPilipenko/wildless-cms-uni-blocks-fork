@@ -1,11 +1,11 @@
+import type { GalleryContent } from '../Gallery/GalleryContent';
 import type { HeadlineContent } from '../Headline/HeadlineContent';
 import type { LinkDocsContent } from '../LinkDocs/LinkDocsContent';
+import type { MiniGalleryContent } from '../MiniGallery/MiniGalleryContent';
 import type { PictureTextContent } from '../PictureText/PictureTextContent';
+import type { ProductTileContent } from '../ProductTile/ProductTileContent';
 import type { TextBlockContent } from '../TextBlock/TextBlockContent';
 import type { TileContent } from '../Tile/TileContent';
-import type { ProductTileContent } from '../ProductTile/ProductTileContent';
-import type { GalleryContent } from '../Gallery/GalleryContent';
-import type { MiniGalleryContent } from '../MiniGallery/MiniGalleryContent';
 
 /**
  * @title Тип блока
@@ -13,8 +13,8 @@ import type { MiniGalleryContent } from '../MiniGallery/MiniGalleryContent';
 export type AccordionBlockType =
   | 'Headline'
   | 'LinkDocs'
-  | 'PictureText'
   | 'TextBlock'
+  | 'PictureText'
   | 'Tile'
   | 'ProductTile'
   | 'Gallery'
@@ -27,22 +27,22 @@ interface AccordionBlockDef {
 /**
  * @title Заголовок
  */
-export type HeadlineAccordionBlockDef = TileContent & AccordionBlockDef;
+export type HeadlineAccordionBlockDef = HeadlineContent & AccordionBlockDef;
 
 /**
  * @title Список документов
  */
-export type LinkDocsAccordionBlockDef = TileContent & AccordionBlockDef;
+export type LinkDocsAccordionBlockDef = LinkDocsContent & AccordionBlockDef;
 
 /**
  * @title Текстовый блок
  */
-export type TextBlockAccordionBlockDef = TileContent & AccordionBlockDef;
+export type TextBlockAccordionBlockDef = TextBlockContent & AccordionBlockDef;
 
 /**
  * @title Картинка с текстом
  */
-export type PictureTextAccordionBlockDef = TileContent & AccordionBlockDef;
+export type PictureTextAccordionBlockDef = PictureTextContent & AccordionBlockDef;
 
 /**
  * @title Плитка
@@ -57,12 +57,12 @@ export type ProductTileAccordionBlockDef = ProductTileContent & AccordionBlockDe
 /**
  * @title Галлерея
  */
-export type GalleryAccordionBlockDef = TileContent & AccordionBlockDef;
+export type GalleryAccordionBlockDef = GalleryContent & AccordionBlockDef;
 
 /**
  * @title Мини-галлерея
  */
-export type MiniGalleryAccordionBlockDef = TileContent & AccordionBlockDef;
+export type MiniGalleryAccordionBlockDef = MiniGalleryContent & AccordionBlockDef;
 
 /**
  * @title Выберите блок

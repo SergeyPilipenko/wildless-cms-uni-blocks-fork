@@ -1,9 +1,6 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable complexity */
-
 import { JSX } from '@redneckz/uni-jsx';
-import { ButtonInner } from './ButtonInner';
 import type { ButtonVersion } from '../../model/ButtonVersion';
+import { ButtonInner } from './ButtonInner';
 import type { ButtonProps, ButtonWithIconProps } from './ButtonProps';
 
 const buttonStyleMap: Record<ButtonVersion, string> = {
