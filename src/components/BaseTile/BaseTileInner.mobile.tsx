@@ -16,14 +16,14 @@ export const BaseTileInner = JSX<BaseTileInnerProps>(
       <div>
         {description && <div className={`font-normal text-base mt-3`}>{description}</div>}
         {children}
-        {items?.length && renderItems(items, version)}
-        {buttons?.length && (
+        {items?.length ? renderItems(items, version) : null}
+        {buttons?.length ? (
           <div className="mt-[18px]">
             {buttons.map((button, index) =>
               renderButton(useLink({ router, handlerDecorator }, button), index),
             )}
           </div>
-        )}
+        ) : null}
         {image?.src && <Img className="mt-auto ml-7" image={image} />}
       </div>
     );
