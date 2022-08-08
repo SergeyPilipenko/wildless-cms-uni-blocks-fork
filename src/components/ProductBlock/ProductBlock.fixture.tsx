@@ -19,6 +19,7 @@ export default {
         className="col-span-12"
         context={context}
         title={'Потребительский кредит наличными'}
+        headingType="h2"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         breadcrumbs={[
           {
@@ -74,6 +75,7 @@ export default {
         context={context}
         className="col-span-12"
         title={'Потребительский кредит наличными'}
+        headingType="h2"
         version={'secondary'}
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         breadcrumbs={[
@@ -131,6 +133,7 @@ export default {
         className="col-span-12"
         context={context}
         title={'Оплата проходит \nв 180 странах мира'}
+        headingType="h2"
         breadcrumbs={[]}
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         items={[

@@ -4,7 +4,7 @@ import type { PictureTextContent } from './PictureTextContent';
 
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Img } from '../../ui-kit/Img';
+import { Img } from '../../ui-kit/Img/Img';
 import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
@@ -12,7 +12,7 @@ export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 export const PictureText = JSX<PictureTextProps>(({ className, title, image, benefits }) => {
   return (
     <section className={`relative font-sans text-primary-text bg-white p-14 ${className}`}>
-      <Heading type="h2" className="text-center" text={title} />
+      <Heading headingType="h2" className="text-center" title={title} />
       <div className={'flex justify-center mt-9'}>
         {image?.src && <Img className="mr-6" image={image} />}
         {benefits?.length ? (

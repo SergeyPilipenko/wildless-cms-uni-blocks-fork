@@ -1,6 +1,6 @@
 import { getColSpan } from '../../utils/getColSpan';
 
-export function getHeadingType(className = '') {
+export function getTileHeadingType(className = '') {
   const colSpan = getColSpan(className);
   if (colSpan <= 4) {
     return 'h4';

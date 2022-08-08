@@ -1,32 +1,59 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { MobileAppTileContent } from './MobileAppTileContent';
-import { Tile } from '../Tile/Tile';
 import type { UniBlockProps } from '../../types';
+import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
+import { Heading } from '../../ui-kit/Heading/Heading';
+import { BaseTile } from '../BaseTile/BaseTile';
+import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
+import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
+import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
+import type { MobileAppTileContent } from './MobileAppTileContent';
 
 export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps {}
 
 export const MobileAppTile = JSX<MobileAppTileProps>(
   ({ className, context, title = 'Мобильное приложение', qr, buttons = [] }) => {
     return (
-      <Tile className={className} context={context} title={title} buttons={buttons}>
-        <div className="flex items-center">
-          {qr?.src && qr?.href && (
-            <a href={qr.href} target="_blank">
-              <img
-                src={qr.src}
-                alt={title}
+      <section
+        className={`bg-white text-primary-text font-sans p-9 box-border ${className}  ${getTileRightPadding(
+          className,
+        )} ${getTileMinHeight(className)} `}
+      >
+        <BaseTile
+          context={context}
+          title={
+            title && (
+              <Heading
+                headingType={getTileHeadingType(className)}
                 title={title}
-                width="164"
-                height="164"
-                className="w-[90px] h-[90px] min-w-[90px] min-h-[90px] bg-secondary-light"
+                className={`whitespace-pre-wrap max-w-[600px]`}
               />
-            </a>
-          )}
-          <span className="font-normal text-sm text-secondary-text ml-4">
-            Наведите камеру телефона на QR-код и скачайте приложение
-          </span>
-        </div>
-      </Tile>
+            )
+          }
+          buttons={
+            buttons?.length ? (
+              <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+            ) : null
+          }
+        >
+          <div className="flex items-center">
+            {qr?.src && qr?.href && (
+              <a href={qr.href} target="_blank">
+                <img
+                  src={qr.src}
+                  alt={title}
+                  title={title}
+                  width="164"
+                  height="164"
+                  className="w-[90px] h-[90px] min-w-[90px] min-h-[90px] bg-secondary-light"
+                />
+              </a>
+            )}
+            <span className="font-normal text-sm text-secondary-text ml-4">
+              Наведите камеру телефона на QR-код и скачайте приложение
+            </span>
+          </div>
+        </BaseTile>
+      </section>
     );
   },
 );

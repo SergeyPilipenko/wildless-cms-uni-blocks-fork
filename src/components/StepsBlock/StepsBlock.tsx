@@ -14,7 +14,7 @@ export const StepsBlock = JSX<StepsBlockProps>(({ className, title, showLines = 
         className || ''
       }`}
     >
-      <Heading type="h2" className="max-w-[47rem] text-center" text={title} />
+      <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
       {steps?.length ? (
         <div className={`box-border py-0.5 mb-0.5 ${title ? 'mt-9' : ''}`}>
           <div className="flex items-center px-[88px]">

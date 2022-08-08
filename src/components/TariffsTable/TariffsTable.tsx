@@ -33,7 +33,11 @@ export const TariffsTable = JSX<TariffsTableProps>(
           className || ''
         }`}
       >
-        <Heading type="h2" className="max-w-[47rem] text-center mb-9 mx-auto" text={title} />
+        <Heading
+          headingType="h2"
+          className="max-w-[47rem] text-center mb-9 mx-auto"
+          title={title}
+        />
         <div role="table">
           {rowData?.length ? (
             <div className="relative">

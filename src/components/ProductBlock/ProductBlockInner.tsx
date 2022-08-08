@@ -1,18 +1,22 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Img } from '../../ui-kit/Img';
+import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
+import { Description } from '../../ui-kit/Description/Description';
+import { Heading } from '../../ui-kit/Heading/Heading';
+import { Img } from '../../ui-kit/Img/Img';
+import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
-import type { ProductBlockInnerCommonProps } from './ProductBlockContent';
+import type { ProductBlockInnerContent } from './ProductBlockContent';
 import { renderBenefit } from './renderBenefit';
 
-export type ProductBlockInnerProps = ProductBlockInnerCommonProps & UniBlockProps;
+export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;
 
 export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   ({
     className,
     context,
     title,
-    headingType,
+    headingType = 'h2',
     description,
     benefits,
     buttons,
@@ -21,22 +25,32 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     version = 'primary',
   }) => {
     return (
-      <div className={`flex grow justify-between items-stretch ${className || ''}`}>
+      <div className={`flex grow justify-between items-stretch ${className}`}>
         <div className={'flex flex-col'}>
           <BaseTile
             context={context}
-            title={title}
-            headingType={headingType || 'h2'}
-            description={description}
-            items={items}
-            buttons={buttons}
-            version={version}
+            title={
+              title && (
+                <Heading
+                  headingType={headingType}
+                  title={title}
+                  className={`whitespace-pre-wrap max-w-[600px]`}
+                />
+              )
+            }
+            buttons={
+              buttons?.length ? (
+                <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+              ) : null
+            }
           >
+            {description && <Description description={description} />}
             {benefits?.length ? (
               <div className="flex gap-6 mt-6 mb-3.5">
                 {benefits.map((_, i) => renderBenefit(_, i, version))}
               </div>
             ) : null}
+            {items?.length ? <List items={items} /> : null}
           </BaseTile>
         </div>
         {image?.src && <Img className="mt-auto" image={image} />}

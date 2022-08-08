@@ -1,9 +1,15 @@
-import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
+import type { BlockVersion } from '../../model/BlockVersion';
+import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionProps';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 
 /**
  * @title Акции
  */
-export interface PromoTileContent extends BaseTileCommonProps {
-  /** @title Дата публикации */
-  date?: string;
-}
+export type PromoTileContent = HeadingContent &
+  DescriptionContent &
+  ButtonContent & {
+    /** @title Дата публикации */
+    date?: string;
+    version?: BlockVersion;
+  };

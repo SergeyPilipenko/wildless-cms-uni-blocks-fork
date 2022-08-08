@@ -14,7 +14,7 @@ export const Accordion = JSX<AccordionProps>(
           bordered ? 'px-4' : ''
         } ${className}`}
       >
-        {title ? <Heading type="h3" className="mb-2 text-center" text={title} /> : null}
+        {title ? <Heading headingType="h3" className="mb-2 text-center" title={title} /> : null}
         {description ? <div className="mb-5 text-m-md text-center">{description}</div> : null}
         {accordionItems?.length ? (
           <ul className="list-none m-0 p-0">

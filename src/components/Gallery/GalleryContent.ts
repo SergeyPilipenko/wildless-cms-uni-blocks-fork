@@ -1,6 +1,6 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
-import type { BaseTileIconButton } from '../BaseTile/BaseTileProps';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface GalleryItem {
   title?: string; //TODO: for mobile
@@ -17,7 +17,7 @@ export interface GalleryCard {
   description?: string;
   image?: Picture;
   /** @title Кнопка */
-  button?: BaseTileIconButton;
+  button?: ButtonWithIconProps;
   /** @title Список */
   items?: GalleryItem[];
   version?: BlockVersion;

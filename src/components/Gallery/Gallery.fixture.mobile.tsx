@@ -1,8 +1,8 @@
-import { context } from '../../setup-fixture';
-import { Gallery } from './Gallery';
-import type { Picture } from '../../model/Picture';
-import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
 import { BlockVersion } from '../../model/BlockVersion';
+import type { Picture } from '../../model/Picture';
+import { context } from '../../setup-fixture';
+import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
+import { Gallery } from './Gallery';
 
 const image: Picture = {
   src: 'money-1.png',

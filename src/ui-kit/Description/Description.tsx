@@ -1,0 +1,8 @@
+import { JSX } from '@redneckz/uni-jsx';
+import { DescriptionProps } from './DescriptionProps';
+
+export const Description = JSX<DescriptionProps>((props) => {
+  const { className, description } = props;
+
+  return <div className={`font-sans font-medium ${className}`}>{description}</div>;
+});

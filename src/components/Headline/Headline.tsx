@@ -18,7 +18,9 @@ export const Headline = JSX<HeadlineProps>(
     const textClasses = alignText[align];
     return (
       <section className={`p-[50px] ${bgColor} ${className}`}>
-        {title && <Heading type="h2" className={`text-primary-text ${textClasses}`} text={title} />}
+        {title && (
+          <Heading headingType="h2" className={`text-primary-text ${textClasses}`} title={title} />
+        )}
         {description && (
           <p className={`font-normal text-base mt-4 ${textClasses}`}>{description}</p>
         )}

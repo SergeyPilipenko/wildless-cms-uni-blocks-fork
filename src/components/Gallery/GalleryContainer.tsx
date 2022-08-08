@@ -2,8 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { GalleryVersion } from '../../model/GalleryVersion';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
-import { Tile } from '../Tile/Tile';
-import { cardStyleMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
+import { cardStyleMap, cardVersionMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
 import { GalleryCardInner } from './GalleryCardInner';
 import type { GalleryCard } from './GalleryContent';
 import type { GalleryInnerProps } from './GalleryInner';
@@ -24,7 +23,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
       <div>
         <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent" />
         <div className="flex flex-col items-center mb-8">
-          {title ? <Heading type="h2" className="text-center" text={title} /> : null}
+          {title ? <Heading headingType="h2" className="text-center" title={title} /> : null}
           {description ? (
             <div className="font-normal text-base max-w-[600px] mt-2.5">{description}</div>
           ) : null}
@@ -43,17 +42,17 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
   },
 );
 
-function renderCard({ card, version, context }: GalleryCardData, i: number) {
+function renderCard({ card, version }: GalleryCardData, i: number) {
   return (
-    <Tile
-      context={context}
+    <section
       className={`box-border border-solid border rounded-md border-main-divider p-7 mx-2 flex flex-col justify-between
-        items-stretch ${cardStyleMap[version]} w-full col-span-4`}
-      version={card.version}
+        items-stretch ${cardStyleMap[version]} ${
+        cardVersionMap[card.version ?? 'primary']
+      } w-full col-span-4`}
       key={String(i)}
       role="listitem"
     >
       <GalleryCardInner {...card} />
-    </Tile>
+    </section>
   );
 }

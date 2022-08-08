@@ -5,7 +5,7 @@ import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
-import { Img } from '../../ui-kit/Img';
+import { Img } from '../../ui-kit/Img/Img';
 import { BORDER_CLASSES, GRADIENT } from './constants';
 
 export interface HeaderCellProps {
@@ -30,7 +30,7 @@ export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) =>
       />
     )}
     {image?.src && <Img className="mb-[18px]" image={image} />}
-    {title && <Heading type="h4" className="text-center text-white" text={title} />}
+    {title && <Heading headingType="h4" className="text-center text-white" title={title} />}
     {link?.text && (
       <div className="mt-auto w-full">
         <Button

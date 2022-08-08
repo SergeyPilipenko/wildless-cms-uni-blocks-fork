@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { HeadingType } from '../../ui-kit/Heading/HeadingProps';
-import type { ProductBlockInnerCommonProps } from '../ProductBlock/ProductBlockContent';
+import { HeadingType } from '../../ui-kit/Heading/HeadingContent';
+import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 
 export interface ProductGalleryBlockProps extends UniBlockProps {
   headingType?: HeadingType;
-  block?: ProductBlockInnerCommonProps;
+  block?: ProductBlockInnerContent;
 }
 
 export const ProductGalleryBlock = JSX<ProductGalleryBlockProps>(
@@ -17,7 +17,7 @@ export const ProductGalleryBlock = JSX<ProductGalleryBlockProps>(
           <ProductBlockInner
             className="pl-2.5 pt-2.5 pb-1.5 pr-[6.25rem]"
             context={context}
-            headingType={headingType}
+            headingType={headingType || 'h2'}
             {...block}
           />
         </div>

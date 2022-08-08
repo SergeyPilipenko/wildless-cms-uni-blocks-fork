@@ -40,36 +40,62 @@ export const Button = JSX<ButtonCommonProps>(
       <ButtonInner text={text} aboveText={aboveText} appendLeft={appendLeft} rounded={rounded} />
     );
 
-    if (disabled) {
-      return (
-        <div
-          role="button"
-          aria-disabled="true"
-          aria-label={ariaLabel}
-          tabIndex="-1"
-          className={`inline-block ${styleButton} ${buttonDisabledStyleMap[version] || ''} ${
-            rounded ? 'rounded-full' : 'rounded-md'
-          } ${className || ''}`}
-        >
-          {buttonInner}
-        </div>
-      );
-    }
-
-    return (
-      <a
-        className={`${styleButton} inline-block cursor-pointer no-underline ${
-          buttonStyleMap[version] || ''
-        } ${rounded ? 'rounded-full' : 'rounded-md'} ${className || ''}`}
-        href={href}
-        target={target}
-        onClick={onClick}
-        aria-label={ariaLabel}
-        role={!href ? 'button' : 'link'}
-        {...rest}
-      >
-        {buttonInner}
-      </a>
-    );
+    return disabled
+      ? renderDisabledButton({ buttonInner, ariaLabel, className, version, rounded })
+      : renderButton({
+          buttonInner,
+          ariaLabel,
+          className,
+          version,
+          rounded,
+          href,
+          target,
+          onClick,
+          rest,
+        });
   },
 );
+
+function renderButton({
+  className,
+  buttonInner,
+  ariaLabel,
+  version,
+  rounded,
+  href,
+  target,
+  onClick,
+  rest,
+}) {
+  return (
+    <a
+      className={`${styleButton} inline-block cursor-pointer no-underline ${
+        buttonStyleMap[version] || ''
+      } ${rounded ? 'rounded-full' : 'rounded-md'} ${className || ''}`}
+      href={href}
+      target={target}
+      onClick={onClick}
+      aria-label={ariaLabel}
+      role={!href ? 'button' : 'link'}
+      {...rest}
+    >
+      {buttonInner}
+    </a>
+  );
+}
+
+function renderDisabledButton({ className, buttonInner, ariaLabel, version, rounded }) {
+  return (
+    <div
+      role="button"
+      aria-disabled="true"
+      aria-label={ariaLabel}
+      tabIndex="-1"
+      className={`inline-block ${styleButton} ${buttonDisabledStyleMap[version] || ''} ${
+        rounded ? 'rounded-full' : 'rounded-md'
+      } ${className || ''}`}
+    >
+      {buttonInner}
+    </div>
+  );
+}

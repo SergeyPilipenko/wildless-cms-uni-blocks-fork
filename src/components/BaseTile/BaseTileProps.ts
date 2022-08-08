@@ -1,8 +1,7 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { HeadingType } from '../../ui-kit/Heading/HeadingProps';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { HeadingType } from '../../ui-kit/Heading/HeadingContent';
 
 /**
  * @title Выравнивание
@@ -13,10 +12,6 @@ import type { IconName } from '../../ui-kit/Icon/IconProps';
  * ]
  */
 export type AlignType = 'left' | 'center' | 'right';
-
-export interface BaseTileIconButton extends ButtonWithIconProps {
-  icon?: IconName;
-}
 
 /**
  * @title Общий компонент плиток
@@ -40,11 +35,14 @@ export interface BaseTileMainProps {
   image?: Picture;
   /** @title Список */
   items?: string[];
+
+  list?: string;
+
   /**
    * @title Кнопки
    * @maxItems 4
    */
-  buttons?: BaseTileIconButton[];
+  buttons?: ButtonWithIconProps[];
   version?: BlockVersion;
   align?: AlignType;
 }

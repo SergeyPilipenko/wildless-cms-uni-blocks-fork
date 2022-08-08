@@ -1,6 +1,6 @@
+import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { Tile } from './Tile';
-import type { Picture } from '../../model/Picture';
 import type { TileContent } from './TileContent';
 
 const image: Picture = {

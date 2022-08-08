@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { Picture } from '../../model/Picture';
 import type { UniBlockProps } from '../../types';
-import { Img } from '../../ui-kit/Img';
+import { Img } from '../../ui-kit/Img/Img';
 import type { TextBlockContent, TextBlockVersion } from './TextBlockContent';
 
 export interface TextBlockProps extends TextBlockContent, UniBlockProps {}

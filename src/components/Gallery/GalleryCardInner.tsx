@@ -2,14 +2,11 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
-import { Img } from '../../ui-kit/Img';
-import { cardVersionMap } from './constants';
+import { Img } from '../../ui-kit/Img/Img';
 import type { GalleryCard, GalleryItem } from './GalleryContent';
 
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
-    const cardVersionClasses = cardVersionMap[version ?? 'primary'];
-
     return (
       <div>
         <div>
@@ -19,11 +16,9 @@ export const GalleryCardInner = JSX<GalleryCard>(
             </div>
           ) : null}
           {title && renderCardTitle(title, description, items)}
-          {description && (
-            <div className={`font-normal text-sm mt-2 ${cardVersionClasses}`}>{description}</div>
-          )}
+          {description && <div className={`font-normal text-sm mt-2`}>{description}</div>}
           {items?.length ? (
-            <section className={`max-w-[308px] mt-2 ${cardVersionClasses}`} role="list">
+            <section className={`max-w-[308px] mt-2`} role="list">
               {items.map((item, i) => renderItem(item.text, i, version))}
             </section>
           ) : null}

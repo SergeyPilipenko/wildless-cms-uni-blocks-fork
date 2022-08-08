@@ -1,6 +1,6 @@
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+
 /**
  * @hidden
  */
-export interface PlaceholderContent {
-  title?: string;
-}
+export type PlaceholderContent = HeadingContent;

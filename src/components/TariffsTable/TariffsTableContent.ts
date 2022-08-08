@@ -1,7 +1,7 @@
-import type { CellData, RowHeader } from '../ComparisonTable/ComparisonTableContent';
 import type { IconName } from '../../icons/IconName';
 import type { Picture } from '../../model/Picture';
-import type { BaseTileIconButton } from '../BaseTile/BaseTileProps';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { CellData, RowHeader } from '../ComparisonTable/ComparisonTableContent';
 
 /**
  * @title Ряд
@@ -36,7 +36,7 @@ export interface TariffsTableCellData extends CellData {
   list?: TariffsTableList;
   image?: Picture;
   /** @title Кнопки */
-  buttons?: BaseTileIconButton[];
+  buttons?: ButtonWithIconProps[];
 }
 
 /**

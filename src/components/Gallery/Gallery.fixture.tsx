@@ -39,6 +39,7 @@ export const defaultProps: GalleryProps = {
       image,
       button: buttonPrimary,
       items: defaultItems,
+      version: 'secondary',
     },
     {
       title: 'Более 1000 развлечений',

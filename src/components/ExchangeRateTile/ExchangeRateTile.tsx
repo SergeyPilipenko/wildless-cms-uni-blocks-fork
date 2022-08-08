@@ -1,8 +1,13 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Tile } from '../Tile/Tile';
+import { BaseTile } from '../BaseTile/BaseTile';
+import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
+import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
+import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import type { ExchangeRateTileContent } from './ExchangeRateTileContent';
 
 export interface ExchangeRateTileProps extends ExchangeRateTileContent, UniBlockProps {}
@@ -23,42 +28,46 @@ const buttons: ButtonProps[] = [
   },
 ];
 
-export const ExchangeRateTile = JSX<ExchangeRateTileProps>(({ className, context, title }) => {
-  const { data } = context.useAsyncData(CBR_EXCHANGE_RATE_URL, fetchExchangeRate);
-  return (
-    <Tile
-      className={className}
-      context={context}
-      title={title || 'Курсы обмена валют'}
-      buttons={buttons}
-    >
-      <table>
-        <thead>
-          <tr>
-            <CurrencyTH>Валюта</CurrencyTH>
-            <CurrencyTH className="pl-11">Курс</CurrencyTH>
-          </tr>
-        </thead>
-        <tbody>
-          {CURRENCY_CODES.map((code) => {
-            const value = (data?.Valute || {})[code]?.Value;
-            return (
-              <tr key={code}>
-                <CurrencyTD className="pt-4">
-                  <div className="flex items-center">
-                    <Icon name={CURRENCY_ICONS_MAP[code]} width="24" height="24" />
-                    <span className="ml-2">{code}</span>
-                  </div>
-                </CurrencyTD>
-                <CurrencyTD className="pt-4 pl-11">{formatCurrency(value)}</CurrencyTD>
+export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
+  ({ className, context, title = 'Курсы обмена валют' }) => {
+    const { data } = context.useAsyncData(CBR_EXCHANGE_RATE_URL, fetchExchangeRate);
+    return (
+      <section
+        className={`bg-white text-primary-text font-sans p-9 box-border ${className}  ${getTileRightPadding(
+          className,
+        )} ${getTileMinHeight(className)} `}
+      >
+        <BaseTile
+          context={context}
+          title={
+            title && (
+              <Heading
+                headingType={getTileHeadingType(className)}
+                title={title}
+                className={`whitespace-pre-wrap max-w-[600px]`}
+              />
+            )
+          }
+          buttons={
+            buttons?.length ? (
+              <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+            ) : null
+          }
+        >
+          <table>
+            <thead>
+              <tr>
+                <CurrencyTH>Валюта</CurrencyTH>
+                <CurrencyTH className="pl-11">Курс</CurrencyTH>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </Tile>
-  );
-});
+            </thead>
+            <tbody>{CURRENCY_CODES.map(renderCurrencyRow(data))}</tbody>
+          </table>
+        </BaseTile>
+      </section>
+    );
+  },
+);
 
 const CurrencyTH = JSX<{ className?: string }>(({ className = '', children }) => (
   <th className={`text-left font-normal text-sm text-secondary-text ${className}`}>{children}</th>
@@ -78,3 +87,18 @@ async function fetchExchangeRate(): Promise<{
 const currencyNumberFormat = new Intl.NumberFormat('ru', { style: 'currency', currency: 'RUB' });
 
 const formatCurrency = (value?: number) => (value ? currencyNumberFormat.format(value) : '');
+
+const renderCurrencyRow = (data) => (code: string) => {
+  const value = (data?.Valute || {})[code]?.Value;
+  return (
+    <tr key={code}>
+      <CurrencyTD className="pt-4">
+        <div className="flex items-center">
+          <Icon name={CURRENCY_ICONS_MAP[code]} width="24" height="24" />
+          <span className="ml-2">{code}</span>
+        </div>
+      </CurrencyTD>
+      <CurrencyTD className="pt-4 pl-11">{formatCurrency(value)}</CurrencyTD>
+    </tr>
+  );
+};

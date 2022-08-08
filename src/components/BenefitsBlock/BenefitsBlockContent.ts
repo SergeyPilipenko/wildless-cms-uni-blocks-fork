@@ -1,13 +1,16 @@
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 
-/**
- * @title Преимущество
- */
-export interface Benefit {
+export interface TextBenefit {
   /** @title Название */
   label?: string;
   /** @title Описание */
   description?: string;
+}
+
+/**
+ * @title Преимущество
+ */
+export interface Benefit extends TextBenefit {
   icon?: IconName;
 }
 

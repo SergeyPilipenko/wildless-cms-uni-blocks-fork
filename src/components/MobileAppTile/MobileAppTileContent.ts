@@ -1,4 +1,6 @@
-import type { BaseTileIconButton } from '../BaseTile/BaseTileProps';
+import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionProps';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 
 /**
  * @title QR код
@@ -13,17 +15,11 @@ export interface QRCode {
 /**
  * @title Мобильное приложение
  */
-export interface MobileAppTileContent {
-  /** @title Заголовок */
-  title?: string;
-  description?: string;
-  /**
-   * @title Кнопки
-   * @maxItems 4
-   */
-  buttons?: BaseTileIconButton[];
-  // TODO: description для мобильной версии
-  qr?: QRCode;
-  /** @title Ссылка */
-  href?: string; // TODO: для мобильной версии
-}
+export type MobileAppTileContent = HeadingContent &
+  DescriptionContent &
+  ButtonContent & {
+    // TODO: description для мобильной версии
+    qr?: QRCode;
+    /** @title Ссылка */
+    href?: string; // TODO: для мобильной версии
+  };

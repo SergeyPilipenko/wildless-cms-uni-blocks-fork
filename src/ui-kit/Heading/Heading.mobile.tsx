@@ -1,7 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { HeadingProps } from './HeadingProps';
+import { HeadingContent, HeadingType, HeadingTypeContent } from './HeadingContent';
 
-const HeadingClass: Record<HeadingProps['type'], string> = {
+export interface HeadingProps extends HeadingContent, HeadingTypeContent {
+  className?: string;
+}
+
+const HeadingClass: Record<HeadingType, string> = {
   h1: 'text-m-title',
   h2: 'text-m-title',
   h3: 'text-m-title-md',
@@ -11,10 +15,15 @@ const HeadingClass: Record<HeadingProps['type'], string> = {
 };
 
 export const Heading = JSX<HeadingProps>((props) => {
-  const { className, type, text } = props;
-  const Tag = type;
+  const { className, headingType, title } = props;
+  if (!headingType) {
+    return;
+  }
+  const Tag = headingType;
 
   return (
-    <Tag className={`font-sans font-medium ${HeadingClass[type]} ${className || ''}`}>{text}</Tag>
+    <Tag className={`font-sans font-medium ${HeadingClass[headingType]} ${className || ''}`}>
+      {title}
+    </Tag>
   );
 });

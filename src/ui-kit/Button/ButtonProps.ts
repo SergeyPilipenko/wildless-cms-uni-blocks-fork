@@ -1,5 +1,6 @@
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { LinkProps } from '../../model/LinkProps';
+import type { IconName } from '../Icon/IconProps';
 
 /**
  * @hidden
@@ -22,6 +23,8 @@ export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
 }
 
 export interface ButtonWithIconProps extends ButtonProps {
+  /** @title Иконка */
+  icon?: IconName;
   /** @title Верхний текст */
   aboveText?: string;
   /** @hidden */
@@ -30,4 +33,12 @@ export interface ButtonWithIconProps extends ButtonProps {
   rounded?: boolean;
   /** @hidden */
   asSVG?: boolean;
+}
+
+export interface ButtonContent {
+  /**
+   * @title Кнопки
+   * @maxItems 4
+   */
+  buttons?: ButtonWithIconProps[];
 }

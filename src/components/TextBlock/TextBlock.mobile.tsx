@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
-import { Img } from '../../ui-kit/Img';
 import type { Picture } from '../../model/Picture';
 import type { UniBlockProps } from '../../types';
+import { Img } from '../../ui-kit/Img/Img';
+import { List } from '../../ui-kit/List/List';
 import type { TextBlockContent, TextBlockVersion } from './TextBlockContent';
 
 export interface TextBlockProps extends TextBlockContent, UniBlockProps {}
@@ -53,28 +53,19 @@ export const TextBlock = JSX<TextBlockProps>(
           {description ? (
             <div className={`text-sm ${textBlockStyleMap.description}`}>{description}</div>
           ) : null}
-          {items?.length ? renderItems(items, isDotted, blockVersion) : null}
+          {items?.length ? (
+            <List
+              items={items}
+              isDotted={isDotted}
+              version="gray"
+              className="mt-1 text-m-sm text-secondary-text"
+            />
+          ) : null}
         </div>
       </section>
     );
   },
 );
-
-function renderItems(items: string[] = [], isDotted: boolean, version?: TextBlockVersion) {
-  return (
-    <section className="mt-1 text-secondary-text" role="list">
-      {items.map((_, i) => (
-        <BlockItem
-          key={String(i)}
-          className={`text-m-sm ${version === 'secondary' ? 'opacity-80' : ''}`}
-          text={_}
-          isDotted={isDotted}
-          version={version === 'secondary' ? version : 'gray'}
-        />
-      ))}
-    </section>
-  );
-}
 
 function renderIcon(className: string) {
   return (

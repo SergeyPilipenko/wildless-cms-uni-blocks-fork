@@ -2,8 +2,8 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { GalleryVersion } from '../../model/GalleryVersion';
 
 export const cardVersionMap: Record<BlockVersion, string> = {
-  primary: 'text-secondary-text',
-  secondary: '',
+  primary: 'bg-white text-secondary-text',
+  secondary: 'bg-primary-main text-white',
 };
 
 export const galleryLengthForScrollMap: Record<GalleryVersion, number> = {

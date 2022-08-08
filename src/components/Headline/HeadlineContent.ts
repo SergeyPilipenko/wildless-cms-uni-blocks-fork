@@ -1,14 +1,16 @@
 import type { BgColorVersion } from '../../model/BgColorVersion';
-import type { Picture } from '../../model/Picture';
-import type { AlignType, BaseTileTitleProps } from '../BaseTile/BaseTileProps';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionProps';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { ImageContent } from '../../ui-kit/Img/ImgProps';
+import type { AlignType } from '../BaseTile/BaseTileProps';
 
 /**
  * @title Заголовок
  */
-export interface HeadlineContent extends BaseTileTitleProps {
-  description?: string;
-  image?: Picture;
-  align?: AlignType;
-  // TODO: image for mobile
-  bgColor?: BgColorVersion;
-}
+export type HeadlineContent = HeadingContent &
+  DescriptionContent &
+  ImageContent & {
+    align?: AlignType;
+    // TODO: image for mobile
+    bgColor?: BgColorVersion;
+  };

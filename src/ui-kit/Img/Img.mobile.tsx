@@ -1,31 +1,30 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { ImgSource, Picture } from '../model/Picture';
+import type { ImgSource } from '../../model/Picture';
+import { ImageProps } from './ImgProps';
 
-export interface ImageProps {
-  className?: string;
-  image: Picture;
-}
-
-export const Img = JSX<ImageProps>(({ className = '', image: { size, ...image } }) => {
+export const Img = JSX<ImageProps>(({ className = '', image }) => {
+  if (!image) {
+    return null;
+  }
   const style = {
-    width: size?.width ? `${size?.width}px` : '100%',
-    height: size?.height ? `${size?.height}px` : '100%',
+    width: image.size?.width ? `${image.size?.width}px` : '100%',
+    height: image.size?.height ? `${image.size?.height}px` : '100%',
   };
 
   return (
-    <picture className={`flex-none ${className}`}>
+    <picture className={className}>
       {image.sources?.length
         ? image.sources.map(({ src, format }, index) => (
             <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
           ))
         : null}
       <img
-        className={image.className || ''}
         src={image.src}
+        className={`m-auto ${image.className || ''}`}
         alt={image.alt || image.title}
         title={image.title}
         style={style}
-        {...size}
+        {...image.size}
       />
     </picture>
   );

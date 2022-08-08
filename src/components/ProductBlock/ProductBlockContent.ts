@@ -1,20 +1,31 @@
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { BaseTileCommonProps } from '../BaseTile/BaseTileProps';
+import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionProps';
+import type { HeadingContent, HeadingTypeContent } from '../../ui-kit/Heading/HeadingContent';
+import type { ImageContent } from '../../ui-kit/Img/ImgProps';
+import type { ListContent } from '../../ui-kit/List/ListContent';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
-export interface ProductBlockInnerCommonProps extends BaseTileCommonProps {
-  /**
-   * @title Преимущества
-   * @minItems 2
-   * @maxItems 3
-   */
-  benefits?: Benefit[];
-}
+export type ProductBlockInnerContent = HeadingContent &
+  HeadingTypeContent &
+  DescriptionContent &
+  ListContent &
+  ButtonContent &
+  ImageContent & {
+    /**
+     * @title Преимущества
+     * @minItems 2
+     * @maxItems 3
+     */
+    benefits?: Benefit[];
+    version?: BlockVersion;
+  };
 
 /**
  * @title Продуктовый блок
  */
-export interface ProductBlockContent extends ProductBlockInnerCommonProps {
+export interface ProductBlockContent extends ProductBlockInnerContent {
   /** @title Хлебные крошки */
   breadcrumbs?: LinkProps[];
 }

@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { Img } from '../../ui-kit/Img';
+import { Img } from '../../ui-kit/Img/Img';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import type { GalleryCard } from './GalleryContent';
-import type { GalleryProps } from './GalleryProps';
-import { BlockVersion } from '../../model/BlockVersion';
 import { GalleryItem } from './GalleryContent';
+import type { GalleryProps } from './GalleryProps';
 
 const blockStyle: Record<BlockVersion, string> = {
   primary: 'bg-white',
@@ -20,7 +20,7 @@ export const Gallery = JSX<GalleryProps>(
         className={`relative font-sans text-primary-text bg-white px-4 py-6 overflow-hidden ${className}`}
       >
         <div className="flex flex-col items-center mb-5">
-          <Heading type="h2" className="text-center" text={title} />
+          <Heading headingType="h2" className="text-center" title={title} />
           {description ? (
             <div className="font-normal text-m-md max-w-[600px] mt-2">{description}</div>
           ) : null}

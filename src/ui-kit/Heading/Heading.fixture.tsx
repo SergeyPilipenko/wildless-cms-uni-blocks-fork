@@ -5,22 +5,22 @@ export default {
     <div className="p-2 w-full h-full">
       <div className="bg-slate-100 w-full h-full">
         <div className="pb-3">
-          <Heading type="h1" text="«Своя» дебетовая карта" />
+          <Heading headingType="h1" title="«Своя» дебетовая карта" />
         </div>
         <div className="pb-3">
-          <Heading type="h2" text="Рефинансирование кредитов" />
+          <Heading headingType="h2" title="Рефинансирование кредитов" />
         </div>
         <div className="pb-3">
-          <Heading type="h3" text="Потребительский кредит" />
+          <Heading headingType="h3" title="Потребительский кредит" />
         </div>
         <div className="pb-3">
-          <Heading type="h4" text="Курсы обмена валют" />
+          <Heading headingType="h4" title="Курсы обмена валют" />
         </div>
         <div className="pb-3">
-          <Heading type="h5" text="Своё Родное" />
+          <Heading headingType="h5" title="Своё Родное" />
         </div>
         <div className="pb-3">
-          <Heading type="h6" text="Своё Родное" />
+          <Heading headingType="h6" title="Своё Родное" />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import { Img } from '../../ui-kit/Img';
+import { Img } from '../../ui-kit/Img/Img';
 import type { TariffsTableCellData } from './TariffsTableContent';
 
 export interface TariffsTableCellProps {

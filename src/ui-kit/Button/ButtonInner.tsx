@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { ButtonWithIconProps } from './ButtonProps';
 import { ButtonVersion } from '../../model/ButtonVersion';
+import type { ButtonWithIconProps } from './ButtonProps';
 
 interface ButtonInnerProps extends ButtonWithIconProps {
   version?: ButtonVersion;
@@ -13,7 +13,7 @@ export const ButtonInner = JSX<ButtonInnerProps>(
     const buttonInnerClasses =
       version !== 'link'
         ? `flex items-center justify-center
-          ${withoutText ? 'h-12 w-12' : `px-9 gap-2 ${aboveText ? 'py-2' : 'py-3.5'}`} ${
+          ${withoutText ? 'h-12 w-12' : `px-8 gap-2 ${aboveText ? 'py-2' : 'py-3.5'}`} ${
             rounded ? 'rounded-full' : ''
           }`
         : null;

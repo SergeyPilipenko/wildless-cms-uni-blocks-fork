@@ -13,7 +13,9 @@ export const BenefitsBlock = JSX<BenefitsBlockProps>(({ className, title, benefi
         className || ''
       }`}
     >
-      {title ? <Heading type="h2" className="max-w-[47rem] text-center" text={title} /> : null}
+      {title ? (
+        <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
+      ) : null}
       {benefits?.length ? (
         <div className="grid grid-cols-2 gap-5 mt-9">{benefits.map(renderStep)}</div>
       ) : null}

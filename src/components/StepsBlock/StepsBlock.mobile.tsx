@@ -15,7 +15,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
           className || ''
         }`}
       >
-        {title && <Heading type="h3" className="text-center" text={title} />}
+        {title && <Heading headingType="h3" className="text-center" title={title} />}
         {description && <p className={`text-m-md text-center ${title && 'mt-2'}`}>{description}</p>}
         {steps?.length ? (
           <div className={`box-border py-0.5 mb-0.5 mt-5`}>

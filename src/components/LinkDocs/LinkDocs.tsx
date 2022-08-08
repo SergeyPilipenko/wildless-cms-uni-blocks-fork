@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { LinkDocsList } from './LinkDocsList';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { AlignType } from '../BaseTile/BaseTileProps';
 import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
+import { LinkDocsList } from './LinkDocsList';
 
 const titleAlignStyleMap: Record<AlignType, string> = {
   left: 'text-left',
@@ -37,11 +37,11 @@ export const LinkDocs = JSX<LinkDocsProps>(
       <section className={`font-sans p-[50px] bg-white ${className}`}>
         {title ? (
           <Heading
-            type="h2"
+            headingType="h2"
             className={`${subtitle ? 'mb-2.5' : titleMarginsStyleMap[columnsMode]} ${
               titleAlignStyleMap[align ?? 'center']
             }`}
-            text={title}
+            title={title}
           />
         ) : null}
         {subtitle ? (
