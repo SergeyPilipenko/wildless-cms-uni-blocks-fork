@@ -4,5 +4,5 @@ import { DescriptionProps } from './DescriptionProps';
 export const Description = JSX<DescriptionProps>((props) => {
   const { className, description } = props;
 
-  return <div className={`font-sans font-medium ${className}`}>{description}</div>;
+  return <div className={`font-normal text-base ${className || ''}`}>{description}</div>;
 });

@@ -13,7 +13,7 @@ export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;
 
 export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   ({
-    className,
+    className = '',
     context,
     title,
     headingType = 'h2',

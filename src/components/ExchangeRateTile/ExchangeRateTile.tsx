@@ -29,7 +29,7 @@ const buttons: ButtonProps[] = [
 ];
 
 export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
-  ({ className, context, title = 'Курсы обмена валют' }) => {
+  ({ className = '', context, title = 'Курсы обмена валют' }) => {
     const { data } = context.useAsyncData(CBR_EXCHANGE_RATE_URL, fetchExchangeRate);
     return (
       <section

@@ -16,7 +16,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
             </div>
           ) : null}
           {title && renderCardTitle(title, description, items)}
-          {description && <div className={`font-normal text-sm mt-2`}>{description}</div>}
+          {description ? <div className={`font-normal text-sm mt-2`}>{description}</div> : null}
           {items?.length ? (
             <section className={`max-w-[308px] mt-2`} role="list">
               {items.map((item, i) => renderItem(item.text, i, version))}

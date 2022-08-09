@@ -1438,13 +1438,6 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
-        "items": Object {
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Список",
-          "type": "array",
-        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
@@ -1483,13 +1476,6 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
-        },
-        "items": Object {
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Список",
-          "type": "array",
         },
         "title": Object {
           "title": "Заголовок",

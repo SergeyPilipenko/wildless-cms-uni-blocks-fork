@@ -3,7 +3,7 @@ import { ListItem } from './ListItem';
 import { ListProps } from './ListProps';
 
 export const List = JSX<ListProps>((props) => {
-  const { className, itemClassName, isDotted, items, version } = props;
+  const { className = '', itemClassName, isDotted, items, version } = props;
 
   return (
     <section className={`${className}`} role="list">

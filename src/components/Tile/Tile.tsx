@@ -62,7 +62,7 @@ export const Tile = JSX<TileProps>((props) => {
         }
         image={image?.src && <Img className="mt-auto ml-7" image={image} />}
       >
-        {description && <Description description={description} />}
+        {description && <Description className="mt-4 max-w-[600px]" description={description} />}
         {children}
         {items?.length ? <List items={items} /> : null}
       </BaseTile>

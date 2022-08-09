@@ -18,7 +18,7 @@ const promoTileStyleMap: Record<BlockVersion, string> = {
 
 export const PromoTile = JSX<PromoTileProps>(
   ({
-    className,
+    className = '',
     context,
     title = 'Акции и спецпредложения',
     date,
@@ -35,13 +35,13 @@ export const PromoTile = JSX<PromoTileProps>(
         <BaseTile
           context={context}
           title={
-            title && (
+            title ? (
               <Heading
                 headingType={getTileHeadingType(className)}
                 title={title}
                 className={`whitespace-pre-wrap max-w-[600px]`}
               />
-            )
+            ) : null
           }
           buttons={
             buttons?.length ? (
@@ -50,7 +50,7 @@ export const PromoTile = JSX<PromoTileProps>(
           }
         >
           <div className="mt-1.5">
-            {date && <div className="text-sm mb-2">{formatDate(date)}</div>}
+            {date ? <div className="text-sm mb-2">{formatDate(date)}</div> : null}
             <div className="text-base">{description}</div>
           </div>
         </BaseTile>

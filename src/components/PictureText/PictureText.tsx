@@ -9,7 +9,7 @@ import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 
-export const PictureText = JSX<PictureTextProps>(({ className, title, image, benefits }) => {
+export const PictureText = JSX<PictureTextProps>(({ className = '', title, image, benefits }) => {
   return (
     <section className={`relative font-sans text-primary-text bg-white p-14 ${className}`}>
       <Heading headingType="h2" className="text-center" title={title} />

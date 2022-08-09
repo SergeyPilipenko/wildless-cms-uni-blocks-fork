@@ -1,13 +1,21 @@
+import type { BlockVersion } from '../../model/BlockVersion';
+import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionProps';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { TextBenefit } from '../BenefitsBlock/BenefitsBlockContent';
-import type { TileContent } from '../Tile/TileContent';
 
 /**
  * @title Продуктовая плитка
  */
-export interface ProductTileContent extends TileContent {
-  /**
-   * @title Преимущества
-   * @maxItems 7
-   */
-  benefits?: TextBenefit[];
-}
+export type ProductTileContent = HeadingContent &
+  DescriptionContent &
+  ButtonContent &
+  ImageContent & {
+    version?: BlockVersion;
+    /**
+     * @title Преимущества
+     * @maxItems 7
+     */
+    benefits?: TextBenefit[];
+  };

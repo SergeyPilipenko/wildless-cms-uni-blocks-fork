@@ -13,7 +13,7 @@ export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;
 
 export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   ({
-    className,
+    className = '',
     context,
     title,
     headingType = 'h2',
@@ -44,7 +44,9 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               ) : null
             }
           >
-            {description && <Description description={description} />}
+            {description && (
+              <Description className="mt-4 max-w-[600px]" description={description} />
+            )}
             {benefits?.length ? (
               <div className="flex gap-6 mt-6 mb-3.5">
                 {benefits.map((_, i) => renderBenefit(_, i, version))}
