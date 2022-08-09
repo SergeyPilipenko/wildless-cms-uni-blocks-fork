@@ -1,6 +1,9 @@
 import type { BlockDef, ContentPageDef } from '../../types';
+import { Blocks } from '../Blocks';
+import { isBlockInRegistry } from './isBlockInRegistry';
+import { normalizeBlock } from './normalizeBlock';
 
-export function toMobilePage(contentPage: ContentPageDef): ContentPageDef {
+export function normalizePage(contentPage: ContentPageDef): ContentPageDef {
   const { blocks, slots } = contentPage;
 
   return {
@@ -22,17 +25,7 @@ export function toMobilePage(contentPage: ContentPageDef): ContentPageDef {
 }
 
 function getMobileBlocks(blocks?: BlockDef[]) {
-  return blocks?.filter(({ mobile }) => !mobile?.hidden).map(toMobileBlock);
-}
-
-function toMobileBlock(block: BlockDef): BlockDef {
-  const { mobile } = block;
-  if (mobile) {
-    return {
-      ...block,
-      style: mobile.style?.length ? mobile.style : block.style,
-    };
-  } else {
-    return block;
-  }
+  return blocks
+    ?.filter((block) => isBlockInRegistry(block, Blocks) && !block.mobile?.hidden)
+    .map(normalizeBlock);
 }

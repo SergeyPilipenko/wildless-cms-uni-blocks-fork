@@ -98,7 +98,7 @@ function renderBlock(
       blockClassName: style2className(block.style),
       block,
       render: (props) => {
-        const { version, content, blocks } = props.block;
+        const { version, content } = props.block;
         return (
           <BlockComponent
             key={`${type}-${i}`}
@@ -106,13 +106,7 @@ function renderBlock(
             version={version}
             context={context}
             {...content}
-          >
-            {blocks?.length
-              ? blocks.map((block, i) =>
-                  renderBlock({ block, blockDecorator, blocksRegistry, context }, i),
-                )
-              : null}
-          </BlockComponent>
+          />
         );
       },
     },

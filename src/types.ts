@@ -4,15 +4,16 @@ import type { BlockVersion } from './model/BlockVersion';
 
 export type ColorPalette = 'pc' | 'bc' | 'eo' | 'eo2' | 'eo3' | 'eo4';
 
-export interface BlockDef {
+export interface BaseBlockDef {
   type: string;
   style?: string[];
   content?: BlockContent;
   version?: BlockVersion;
-  blocks?: BlockDef[];
-  mobile?: Pick<BlockDef, 'content' | 'style'> & {
-    hidden?: boolean;
-  };
+  hidden?: boolean;
+}
+
+export interface BlockDef extends BaseBlockDef {
+  mobile?: BaseBlockDef;
 }
 
 export interface Slot {

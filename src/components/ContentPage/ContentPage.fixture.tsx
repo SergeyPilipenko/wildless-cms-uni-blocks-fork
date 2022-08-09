@@ -3,6 +3,7 @@ import { context } from '../../setup-fixture';
 import type { ContentPageDef } from '../../types';
 import { Blocks } from '../Blocks';
 import { BlockDecorator, ContentPage } from './ContentPage';
+import { normalizePage } from './normalizePage';
 
 import data from './ContentPage.page.json';
 
@@ -31,7 +32,7 @@ export default {
       className="bg-main"
       context={context}
       blocksRegistry={Blocks}
-      data={data as ContentPageDef}
+      data={normalizePage(data as ContentPageDef)}
     />
   ),
   editor: (
@@ -40,7 +41,7 @@ export default {
         className="bg-transparent"
         context={context}
         blocksRegistry={Blocks}
-        data={data as ContentPageDef}
+        data={normalizePage(data as ContentPageDef)}
         blockDecorator={blockDecorator}
       />
     </div>

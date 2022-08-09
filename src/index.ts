@@ -15,7 +15,7 @@ export type {
   Search,
 } from './components/ContentPage/ContentPageContext';
 export { ContentPageHead } from './components/ContentPage/ContentPageHead';
-export { toMobilePage } from './components/ContentPage/toMobilePage';
+export { normalizePage } from './components/ContentPage/normalizePage';
 export { Header } from './components/Header/Header';
 export type { Img, ImgSource, Picture } from './model/Picture';
 export { projectSettings } from './ProjectSettings';

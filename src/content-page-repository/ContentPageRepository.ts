@@ -1,6 +1,5 @@
 import glob from 'glob';
 import util from 'util';
-import { toMobilePage } from '../components/ContentPage/toMobilePage';
 import type { ContentPageDef } from '../types';
 import type { TransformationOptions } from './TransformationOptions';
 import { transformContentPage } from './transformContentPage';
@@ -28,17 +27,8 @@ export function ContentPageRepository({
     return pages.find((content) => content.slug === slug);
   }
 
-  async function getMobilePageBySlug(slug: string): Promise<ContentPageDef | undefined> {
-    const page = await getContentPageBySlug(slug);
-    return page && toMobilePage(page);
-  }
-
   async function getIndexPage() {
     return await getContentPageBySlug(INDEX_PAGE_SLUG);
-  }
-
-  async function getIndexMobilePage() {
-    return await getMobilePageBySlug(INDEX_PAGE_SLUG);
   }
 
   const cache: Record<string, ContentPageDef> = {};
@@ -55,9 +45,7 @@ export function ContentPageRepository({
   return {
     getAllContentPages,
     getContentPageBySlug,
-    getMobilePageBySlug,
     getSecondaryContentPages,
     getIndexPage,
-    getIndexMobilePage,
   };
 }

@@ -447,7 +447,7 @@
       ]
     },
     {
-      "type": "Unknown",
+      "type": "Placeholder",
       "style": ["col-span-12"],
       "content": {
         "title": "Какой то новый блок"
