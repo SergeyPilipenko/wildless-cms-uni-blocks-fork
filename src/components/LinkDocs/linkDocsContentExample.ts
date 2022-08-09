@@ -3,7 +3,6 @@ import type { LinkDocsContent } from './LinkDocsContent';
 export const linkDocsContentExample: LinkDocsContent = {
   title: 'Дополнительные документы',
   subtitle: 'Ответы на часто задаваемые вопросы',
-  icon: 'DocIcon',
   documents: [
     { text: 'target self', href: '/abc1/cooldoc.doc', target: '_self' },
     { text: 'target blank', href: '/abc2/wtf.rtf', target: '_blank' },

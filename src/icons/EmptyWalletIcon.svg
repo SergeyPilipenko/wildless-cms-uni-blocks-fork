@@ -13,5 +13,5 @@
     stroke-width="2"
     d="M2.5 12.41V7.84c0-1.19.73-2.25 1.84-2.67l3.97-1.5M22.56 13.97v2.06c0 .55-.44 1-1 1.02H19.6c-1.08 0-2.07-.79-2.16-1.87-.06-.63.18-1.22.6-1.63.37-.38.88-.6 1.44-.6h2.08c.56.02 1 .47 1 1.02Z"
   />
-  <path stroke="#42AB44" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h7" />
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h7" />
 </svg>

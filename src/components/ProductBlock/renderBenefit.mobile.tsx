@@ -20,6 +20,7 @@ export function renderBenefit(benefit: Benefit, i: number, version: string) {
           name={benefit.icon}
           width="24"
           height="24"
+          asSVG
         />
       )}
       <div className={`font-medium text-m-base m-0 ${benefitTitleStyleMap[version]}`}>

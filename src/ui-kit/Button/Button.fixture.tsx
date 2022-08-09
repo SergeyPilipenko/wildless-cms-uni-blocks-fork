@@ -70,7 +70,7 @@ export default {
             appendLeft={
               /** Div need for perfect pixel */
               <div>
-                <Icon name="PlayMarketIcon" width="24" height="24" />
+                <Icon name="PlayMarketIcon" width="24" height="24" asSVG />
               </div>
             }
             text="Google Play"
@@ -82,7 +82,7 @@ export default {
             aboveText="Загрузите в"
             appendLeft={
               <div>
-                <Icon name="AppleIcon" width="24" height="24" />
+                <Icon name="AppleIcon" width="24" height="24" asSVG />
               </div>
             }
             text="App Store"

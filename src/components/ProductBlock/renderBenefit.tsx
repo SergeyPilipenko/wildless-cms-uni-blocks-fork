@@ -24,6 +24,7 @@ export function renderBenefit(benefit: Benefit, i: number, version: string) {
           name={benefit.icon}
           width="24"
           height="24"
+          asSVG
         />
       )}
       <div className="flex gap-1 flex-col h-full max-w-[149px]">

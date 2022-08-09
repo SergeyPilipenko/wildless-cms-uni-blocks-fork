@@ -1,7 +1,7 @@
 <svg title="Банкомат" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.6665 10.441V12.916C1.6665 15.8327 3.33317 17.0827 5.83317 17.0827H14.1665C16.6665 17.0827 18.3332 15.8327 18.3332 12.916V7.08268C18.3332 4.16602 16.6665 2.91602 14.1665 2.91602H5.83317C3.33317 2.91602 1.6665 4.16602 1.6665 7.08268V7.49935H2.49984C4.99984 7.49935 5.83317 6.66602 5.83317 4.16602V3.33268" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.5 10C12.5 8.61667 11.3833 7.5 10 7.5C8.61667 7.5 7.5 8.61667 7.5 10C7.5 11.3833 8.61667 12.5 10 12.5" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.3332 7.50065H17.4998C14.9998 7.50065 14.1665 6.66732 14.1665 4.16732V3.33398" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1.6665 12.5H2.49984C4.99984 12.5 5.83317 13.3333 5.83317 15.8333V16.6667" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.3332 12.5H17.4998C14.9998 12.5 14.1665 13.3333 14.1665 15.8333V16.6667" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.6665 10.441V12.916C1.6665 15.8327 3.33317 17.0827 5.83317 17.0827H14.1665C16.6665 17.0827 18.3332 15.8327 18.3332 12.916V7.08268C18.3332 4.16602 16.6665 2.91602 14.1665 2.91602H5.83317C3.33317 2.91602 1.6665 4.16602 1.6665 7.08268V7.49935H2.49984C4.99984 7.49935 5.83317 6.66602 5.83317 4.16602V3.33268" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 10C12.5 8.61667 11.3833 7.5 10 7.5C8.61667 7.5 7.5 8.61667 7.5 10C7.5 11.3833 8.61667 12.5 10 12.5" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3332 7.50065H17.4998C14.9998 7.50065 14.1665 6.66732 14.1665 4.16732V3.33398" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.6665 12.5H2.49984C4.99984 12.5 5.83317 13.3333 5.83317 15.8333V16.6667" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3332 12.5H17.4998C14.9998 12.5 14.1665 13.3333 14.1665 15.8333V16.6667" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

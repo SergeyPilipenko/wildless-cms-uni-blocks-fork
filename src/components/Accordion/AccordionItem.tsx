@@ -27,7 +27,7 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, blocks, context }
         >
           {label}
         </span>
-        {hasContent ? <Icon name={icon} width="24" height="24" /> : null}
+        {hasContent ? <Icon name={icon} width="24" height="24" asSVG /> : null}
       </button>
       {hasContent ? <AccordionItemInner blocks={blocks} context={context} /> : null}
     </li>

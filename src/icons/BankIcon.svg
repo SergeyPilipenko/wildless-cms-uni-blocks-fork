@@ -1,11 +1,11 @@
 <svg title="Банк" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.19151 4.79217C2.89984 4.90883 2.6665 5.25883 2.6665 5.56716V8.33383C2.6665 8.79217 3.0415 9.16717 3.49984 9.16717H18.4998C18.9582 9.16717 19.3332 8.79217 19.3332 8.33383V5.56716C19.3332 5.25883 19.0998 4.90883 18.8082 4.79217L11.3082 1.79219C11.1415 1.72552 10.8582 1.72552 10.6915 1.79219L6.65815 3.40886" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M19.3332 18.3333H2.6665V15.8333C2.6665 15.375 3.0415 15 3.49984 15H18.4998C18.9582 15 19.3332 15.375 19.3332 15.8333V18.3333Z" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4.3335 14.9993V9.16602" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.6665 14.9993V9.16602" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11 14.9993V9.16602" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14.3335 14.9993V9.16602" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17.6665 14.9993V9.16602" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1.8335 18.334H20.1668" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11 7.08398C11.6904 7.08398 12.25 6.52434 12.25 5.83398C12.25 5.14363 11.6904 4.58398 11 4.58398C10.3096 4.58398 9.75 5.14363 9.75 5.83398C9.75 6.52434 10.3096 7.08398 11 7.08398Z" stroke="#42AB44" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.19151 4.79217C2.89984 4.90883 2.6665 5.25883 2.6665 5.56716V8.33383C2.6665 8.79217 3.0415 9.16717 3.49984 9.16717H18.4998C18.9582 9.16717 19.3332 8.79217 19.3332 8.33383V5.56716C19.3332 5.25883 19.0998 4.90883 18.8082 4.79217L11.3082 1.79219C11.1415 1.72552 10.8582 1.72552 10.6915 1.79219L6.65815 3.40886" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.3332 18.3333H2.6665V15.8333C2.6665 15.375 3.0415 15 3.49984 15H18.4998C18.9582 15 19.3332 15.375 19.3332 15.8333V18.3333Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.3335 14.9993V9.16602" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.6665 14.9993V9.16602" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 14.9993V9.16602" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.3335 14.9993V9.16602" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.6665 14.9993V9.16602" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.8335 18.334H20.1668" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 7.08398C11.6904 7.08398 12.25 6.52434 12.25 5.83398C12.25 5.14363 11.6904 4.58398 11 4.58398C10.3096 4.58398 9.75 5.14363 9.75 5.83398C9.75 6.52434 10.3096 7.08398 11 7.08398Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { UniBlockProps } from '../../types';
 import { Icon } from '../../ui-kit/Icon/Icon';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { IconName } from '../../icons/IconName';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
 import { HeaderSecondaryMenuButton } from './HeaderSecondaryMenuButton';
 
@@ -52,16 +52,16 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
           className={`mr-5 ${COLORS_MAP[bgColor]}`}
           ariaLabel="Поиск по сайту"
         >
-          <Icon name="LoupeIcon" className="h-full" asSVG />
+          <Icon name="LoupeIcon" className="h-full" asSVG color="none" />
         </HeaderSecondaryMenuButton>
         <HeaderSecondaryMenuButton className={`mr-5 ${COLORS_MAP[bgColor]}`} ariaLabel="Профиль">
-          <Icon name="ProfileIcon" className="h-full" asSVG />
+          <Icon name="ProfileIcon" className="h-full" asSVG color="none" />
         </HeaderSecondaryMenuButton>
         <HeaderSecondaryMenuButton
           className={`${DOP_LINKS_COLORS_MAP[bgColor]} min-w-[32px] min-h-[32px]`}
           ariaLabel="Дополнительные ссылки"
         >
-          <Icon name={DOP_LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG />
+          <Icon name={DOP_LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG color="none" />
         </HeaderSecondaryMenuButton>
       </div>
     );

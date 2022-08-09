@@ -1,14 +1,27 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { projectSettings } from '../../ProjectSettings';
-import type { IconProps } from './IconProps';
+import type { IconColor, IconProps } from './IconProps';
+
+const svgColorsMap: Record<IconColor, string> = {
+  none: '',
+  primary: 'text-primary-main',
+};
 
 export const Icon = JSX<IconProps>(
-  ({ className = '', name, alt = `Icon ${name}`, title = alt, asSVG, ...imgProps }) => {
+  ({
+    className = '',
+    name,
+    alt = `Icon ${name}`,
+    title = alt,
+    asSVG,
+    color = 'primary',
+    ...imgProps
+  }) => {
     const href = `${projectSettings.CDN || ''}icons/${name}.svg`;
 
     if (asSVG) {
       return (
-        <svg className={className} {...imgProps} aria-hidden="true">
+        <svg className={`${svgColorsMap[color]} ${className}`} {...imgProps} aria-hidden="true">
           {title ? <title>{title}</title> : null}
           {alt ? <desc>{alt}</desc> : null}
           <use href={`${href}#icon`} xlinkHref={`${href}#icon`} />

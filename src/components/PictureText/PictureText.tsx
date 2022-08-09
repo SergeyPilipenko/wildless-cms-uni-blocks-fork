@@ -32,6 +32,7 @@ function renderBenefit(benefit: Benefit, i: number) {
           name={benefit.icon}
           width="48"
           height="48"
+          asSVG
         />
       )}
       <div className="flex gap-1 flex-col h-full ml-5 max-w-[490px]">

@@ -82,7 +82,7 @@ const renderIconArea = (step: Step, size: SizeVersion, i: number) => {
       className={`${iconAreaSize} bg-secondary-light rounded-full z-10 mr-3 flex justify-center content-center`}
     >
       <span className={`font-medium text-secondary-text self-center ${iconTextSize}`}>
-        {(step.icon && <Icon name={step.icon} width={iconSize} height={iconSize} />) || i + 1}
+        {(step.icon && <Icon name={step.icon} width={iconSize} height={iconSize} asSVG />) || i + 1}
       </span>
     </div>
   );

@@ -29,6 +29,7 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
                 name={header.icon}
                 width="24px"
                 height="24px"
+                asSVG
               />
             )}
             {header?.title}
