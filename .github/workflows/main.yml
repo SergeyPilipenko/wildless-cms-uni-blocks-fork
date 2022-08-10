@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -24,11 +24,12 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: docs
-          path: |
-            docs/
+          retention-days: 3
+          path: docs/
       - uses: actions/upload-artifact@v3
         with:
           name: dist
+          retention-days: 3
           path: |
             lib/
             dist/
@@ -66,6 +67,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: docs
+          path: docs/
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.json'
@@ -80,6 +82,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: docs
+          path: docs/
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.mobile.json'
