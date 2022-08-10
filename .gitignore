@@ -4,8 +4,8 @@ dist/
 lib/
 bundle/
 mobile/src/
+/docs
 coverage/
-cosmos-static/icons/
 temp/
 .idea
 .nvmrc

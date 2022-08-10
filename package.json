@@ -89,7 +89,7 @@
     "prebuild:schema": "npm run build:icons",
     "build:schema": "node ./scripts/build-schema.js ./bundle/blocks.schema.json",
     "build:style": "postcss ./src/**/*.css --env production --dir ./lib",
-    "build:icons": "node ./scripts/prepare-icons.js ./src/icons ./cosmos-static/icons > ./src/icons/IconName.ts",
+    "build:icons": "rimraf ./cosmos-static/icons && node ./scripts/prepare-icons.js ./src/icons ./cosmos-static/icons > ./src/icons/IconName.ts",
     "size": "size-limit",
     "lint": "eslint ./src",
     "pretest": "npm run lint",
@@ -168,8 +168,8 @@
     ],
     "src/**/*.{js,jsx,ts,tsx,css}": [
       "prettier --write",
-      "npm run cosmos:export",
-      "git add ./docs"
+      "npm run build:icons",
+      "git add ./cosmos-static/icons"
     ]
   }
 }
