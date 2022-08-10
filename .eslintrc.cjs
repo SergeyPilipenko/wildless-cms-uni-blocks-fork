@@ -72,7 +72,7 @@ module.exports = {
         'local-eslint-rules/no-index-file': [
           'error',
           {
-            exclude: [/\/src\/index(\.mobile)?\.ts$/, /\/src\/content-page-repository\/index\.ts$/],
+            exclude: [/([\\\/])src([\\\/])index(\.mobile)?\.ts$/, /([\\\/])src([\\\/])content-page-repository([\\\/])index\.ts$/],
           },
         ],
       },
