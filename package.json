@@ -65,7 +65,8 @@
     "mobile/bundle",
     "fonts",
     "mobile/src",
-    "src"
+    "src",
+    "cosmos-static/icons"
   ],
   "repository": {
     "url": "https://github.com/redneckz/wildless-cms-uni-blocks.git"
@@ -167,9 +168,7 @@
       "eslint"
     ],
     "src/**/*.{js,jsx,ts,tsx,css}": [
-      "prettier --write",
-      "npm run build:icons",
-      "git add ./cosmos-static/icons"
+      "prettier --write"
     ]
   }
 }

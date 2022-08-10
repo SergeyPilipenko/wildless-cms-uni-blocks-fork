@@ -16,21 +16,26 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: jq -s add ./package.json ./.public.package.json > ./temp.package.json && mv ./temp.package.json ./package.json
-      - run: npm ci
-      - run: npm install react react-dom --no-save
+      - run: npm ci && npm install react react-dom --no-save
       - run: npm run build
       - run: npm test
         env:
           CI: true
       - uses: actions/upload-artifact@v3
         with:
+          name: docs
+          path: |
+            docs/
+      - uses: actions/upload-artifact@v3
+        with:
           name: dist
           path: |
-            dist/
             lib/
+            dist/
             bundle/
             fonts/
             mobile/
+            cosmos-static/icons/
 
   publish:
     if: github.ref == 'refs/heads/main'
@@ -58,6 +63,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: docs
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.json'
@@ -69,6 +77,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: docs
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.mobile.json'

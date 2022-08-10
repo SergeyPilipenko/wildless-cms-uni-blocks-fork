@@ -5,6 +5,7 @@ lib/
 bundle/
 mobile/src/
 /docs
+/cosmos-static/icons
 coverage/
 temp/
 .idea
