@@ -20,7 +20,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
           {items?.length ? (
             <section className={`max-w-[308px] mt-2`} role="list">
               {items
-                .filter((item) => item.text)
+                .filter((item) => item?.text)
                 .map((item, i) => renderItem(item.text as string, i, version))}
             </section>
           ) : null}
