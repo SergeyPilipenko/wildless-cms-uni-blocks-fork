@@ -4,12 +4,12 @@ module.exports = (webpackConfig) => {
   return {
     ...webpackConfig,
     resolve: {
-      extensions: ['.mobile.ts', '.mobile.tsx', ...extensions],
+      extensions: [...extensions],
     },
     devServer: {
       proxy: {
-        '/api/': {
-          target: 'https://dataservice.catalog.dev.rshbdev.ru/api/v1/',
+        '/api': {
+          target: 'https://dataservice.catalog.dev.rshbdev.ru/api/v1',
           secure: false,
         },
       },

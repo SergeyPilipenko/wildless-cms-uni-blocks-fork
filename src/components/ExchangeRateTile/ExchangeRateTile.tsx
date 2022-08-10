@@ -1,36 +1,78 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
-import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
-import type { ExchangeRateTileContent } from './ExchangeRateTileContent';
+import { CurrentLocation } from './CurrentLocation';
+import { BuyCurrency } from './BuyCurrency';
+import type { Currencies, ExchangeRateTileContent } from './ExchangeRateTileContent';
 
 export interface ExchangeRateTileProps extends ExchangeRateTileContent, UniBlockProps {}
 
-const CBR_EXCHANGE_RATE_URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+const CBR_EXCHANGE_RATE_URL = 'https://dataservice.catalog.dev.rshbdev.ru/api/v1/exchangerates';
 
 const CURRENCY_CODES = ['USD', 'EUR'];
+const EXCHANGE_CODES = ['RUB', 'USD', 'EUR'];
 const CURRENCY_ICONS_MAP = {
   USD: 'DollarIcon',
   EUR: 'EuroIcon',
 };
 
-const buttons: ButtonProps[] = [
-  {
-    text: 'Все показатели',
-    href: 'https://cbr.ru/currency_base/daily/',
-    version: 'secondary',
-  },
-];
-
 export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
   ({ className = '', context, title = 'Курсы обмена валют' }) => {
-    const { data } = context.useAsyncData(CBR_EXCHANGE_RATE_URL, fetchExchangeRate);
+    // const { data } = context.useAsyncData(CBR_EXCHANGE_RATE_URL, fetchExchangeRate);
+    const dataCurrency = {
+      exchangeRate: {
+        currencies: [
+          {
+            buyExchangeRate: 90.6,
+            saleExchangeRate: 92.8,
+            currency: {
+              id: 2,
+              code: '978',
+              currency: 'EUR',
+              name: 'Евро',
+            },
+          },
+          {
+            buyExchangeRate: 99.25,
+            saleExchangeRate: 104.15,
+            currency: {
+              id: 7,
+              code: '826',
+              currency: 'GBP',
+              name: 'Фунт стерлингов',
+            },
+          },
+          {
+            buyExchangeRate: 73.75,
+            saleExchangeRate: 75.95,
+            currency: {
+              id: 1,
+              code: '840',
+              currency: 'USD',
+              name: 'Американский доллар',
+            },
+          },
+        ],
+        updateDate: '2022-08-08',
+      },
+      name: null,
+      address: null,
+      description: null,
+      gpsLatitude: null,
+      gpsLongitude: null,
+    };
+    const currency = dataCurrency?.exchangeRate?.currencies?.filter((item) => {
+      return CURRENCY_CODES.indexOf(item.currency.currency) !== -1;
+    });
+    const dataBranch = {
+      address: 'Москва, ул.Ленина д.28',
+      distance: '6км',
+    };
     return (
       <section
         className={`bg-white text-primary-text font-sans p-9 box-border ${className}  ${getTileRightPadding(
@@ -48,21 +90,29 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
               />
             )
           }
-          buttons={
-            buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
-            ) : null
-          }
         >
-          <table>
-            <thead>
-              <tr>
-                <CurrencyTH>Валюта</CurrencyTH>
-                <CurrencyTH className="pl-11">Курс</CurrencyTH>
-              </tr>
-            </thead>
-            <tbody>{CURRENCY_CODES.map(renderCurrencyRow(data))}</tbody>
-          </table>
+          <div className="flex flex-row">
+            <div className="flex flex-col gap-[28px] pt-[22px]">
+              {currency ? (
+                <table className="h-fit w-fit">
+                  <thead>
+                    <tr>
+                      <CurrencyTH>Валюта</CurrencyTH>
+                      <CurrencyTH className="pl-11">Купить</CurrencyTH>
+                      <CurrencyTH className="pl-11">Продать</CurrencyTH>
+                    </tr>
+                  </thead>
+                  <tbody>{currency.map((item) => renderCurrencyRow(item))}</tbody>
+                </table>
+              ) : null}
+              <CurrentLocation
+                className="max-w-[350px]"
+                address={dataBranch.address}
+                distance={dataBranch.distance}
+              />
+            </div>
+            {EXCHANGE_CODES ? <BuyCurrency currency={currency} codes={EXCHANGE_CODES} /> : null}
+          </div>
         </BaseTile>
       </section>
     );
@@ -88,17 +138,20 @@ const currencyNumberFormat = new Intl.NumberFormat('ru', { style: 'currency', cu
 
 const formatCurrency = (value?: number) => (value ? currencyNumberFormat.format(value) : '');
 
-const renderCurrencyRow = (data) => (code: string) => {
-  const value = (data?.Valute || {})[code]?.Value;
+const renderCurrencyRow = (data: Currencies) => {
+  const code = data?.currency?.currency;
   return (
     <tr key={code}>
       <CurrencyTD className="pt-4">
         <div className="flex items-center">
-          <Icon name={CURRENCY_ICONS_MAP[code]} width="24" height="24" />
+          {code ? <Icon name={CURRENCY_ICONS_MAP[code]} width="24" height="24" /> : null}
           <span className="ml-2">{code}</span>
         </div>
       </CurrencyTD>
-      <CurrencyTD className="pt-4 pl-11">{formatCurrency(value)}</CurrencyTD>
+      <CurrencyTD className="pt-4 pl-11">{formatCurrency(data.buyExchangeRate) || null}</CurrencyTD>
+      <CurrencyTD className="pt-4 pl-11">
+        {formatCurrency(data.saleExchangeRate) || null}
+      </CurrencyTD>
     </tr>
   );
 };
