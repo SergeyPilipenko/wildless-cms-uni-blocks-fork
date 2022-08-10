@@ -579,9 +579,6 @@ Object {
           "type": "string",
         },
       },
-      "required": Array [
-        "text",
-      ],
       "type": "object",
     },
     "HeaderContent": Object {

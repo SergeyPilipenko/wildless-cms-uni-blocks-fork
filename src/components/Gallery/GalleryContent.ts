@@ -4,7 +4,7 @@ import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface GalleryItem {
   title?: string; //TODO: for mobile
-  text: string;
+  text?: string;
 }
 
 /**
