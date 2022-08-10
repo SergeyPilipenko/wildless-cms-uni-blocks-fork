@@ -33881,6 +33881,9 @@ function normalizeBlock(block) {
 
 
 function normalizePage(contentPage) {
+    if (!contentPage) {
+        return undefined;
+    }
     const { blocks, slots } = contentPage;
     return {
         ...contentPage,

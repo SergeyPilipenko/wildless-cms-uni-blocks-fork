@@ -3,7 +3,13 @@ import { Blocks } from '../Blocks';
 import { isBlockInRegistry } from './isBlockInRegistry';
 import { normalizeBlock } from './normalizeBlock';
 
-export function normalizePage(contentPage: ContentPageDef): ContentPageDef {
+export function normalizePage(
+  contentPage: ContentPageDef | undefined | null,
+): ContentPageDef | undefined {
+  if (!contentPage) {
+    return undefined;
+  }
+
   const { blocks, slots } = contentPage;
 
   return {
