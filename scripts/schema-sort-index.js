@@ -1,6 +1,7 @@
 export default [
   'title',
   'titleSize',
+  'subtitle',
   'align',
   'description',
   'image',
@@ -11,6 +12,8 @@ export default [
   'cards',
   'accordionItems',
   'columnsMode',
+  'listMode',
+  'hasBorder',
   'qr',
   'rowHeaders',
   'columns',

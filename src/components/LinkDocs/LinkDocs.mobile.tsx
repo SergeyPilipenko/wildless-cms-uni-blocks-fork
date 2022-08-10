@@ -19,7 +19,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     hasBorder = true,
   }) => {
     return (
-      <section className={`py-6 px-4 bg-white ${className}`}>
+      <section className={`font-sans py-6 px-4 bg-white ${className}`}>
         {title ? (
           <Heading
             headingType="h2"
@@ -27,7 +27,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
             title={title}
           />
         ) : null}
-        {subtitle ? <h3 className="mb-5 text-center text-m-base">{subtitle}</h3> : null}
+        {subtitle ? <h3 className="mb-5 text-center text-m-md">{subtitle}</h3> : null}
         {listMode === 'vertical' ? (
           <LinkDocsVerticalList hasBorder={hasBorder} documents={documents} icon={icon} />
         ) : (

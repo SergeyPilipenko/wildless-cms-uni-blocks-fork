@@ -1,5 +1,5 @@
 import type { LinkProps } from '../../model/LinkProps';
-import type { IconName } from '../../icons/IconName';
+import type { IconName } from '../../ui-kit/Icon/IconProps';
 import type { AlignType } from '../BaseTile/BaseTileProps';
 
 /**
