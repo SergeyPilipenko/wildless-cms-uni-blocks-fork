@@ -10,11 +10,18 @@ const moneyImage: Picture = {
     height: 280,
   },
   alt: 'Варианты потребительского кредита',
+  sources: [
+    {
+      src: 'money-1.png 1x, money-1-2x.png 2x',
+      format: 'png',
+    },
+  ],
 };
 
 const worker: Picture = {
   src: 'money-2.png',
   format: 'webp',
+  alt: 'Варианты потребительского кредита',
   size: {
     width: 280,
     height: 280,
@@ -24,6 +31,7 @@ const worker: Picture = {
 const creditCard: Picture = {
   src: 'credit-card-1.png',
   format: 'webp',
+  alt: 'Варианты потребительского кредита',
   size: {
     width: 280,
     height: 280,

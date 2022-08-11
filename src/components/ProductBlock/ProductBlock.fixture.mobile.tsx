@@ -10,6 +10,12 @@ const image: Picture = {
     width: 280,
     height: 280,
   },
+  sources: [
+    {
+      src: 'money-1.png 1x, money-1-2x.png 2x',
+      format: 'png',
+    },
+  ],
 };
 
 export default {
