@@ -22,7 +22,7 @@ export const Heading = JSX<HeadingProps>((props) => {
   const Tag = headingType;
 
   return (
-    <Tag className={`font-sans font-medium ${HeadingClass[headingType]} ${className || ''}`}>
+    <Tag className={`font-sans font-medium m-0 ${HeadingClass[headingType]} ${className || ''}`}>
       {title}
     </Tag>
   );
