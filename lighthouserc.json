@@ -2,7 +2,15 @@
   "ci": {
     "collect": {
       "settings": {
-        "preset": "desktop"
+        "preset": "desktop",
+        "chromeFlags": "--disable-gpu --no-sandbox --headless --disable-dev-shm-usage --ignore-certificate-errors",
+        "skipAudits": [
+          "screenshot-thumbnails",
+          "full-page-screenshot",
+          "final-screenshot",
+          "script-treemap-data",
+          "offscreen-images"
+        ]
       },
       "staticDistDir": "./docs",
       "url": [
