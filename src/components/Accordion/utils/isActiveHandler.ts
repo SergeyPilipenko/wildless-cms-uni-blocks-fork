@@ -5,8 +5,7 @@ export const isActiveHandler = ({ context, blocks }) => {
   const hasContent = blocks?.length;
   const icon: IconName = isActive ? 'MinusIcon' : 'PlusIcon';
 
-  const getContentBlock = ({ target }) =>
-    target.tagName === 'BUTTON' ? target.nextSibling : target.parentNode.nextSibling;
+  const getContentBlock = ({ currentTarget }) => currentTarget.nextSibling;
 
   const handleToggle = (e: MouseEvent) => {
     if (!hasContent) {

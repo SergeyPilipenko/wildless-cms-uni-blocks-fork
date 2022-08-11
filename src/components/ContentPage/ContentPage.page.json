@@ -1318,22 +1318,18 @@
             "label": "Accordion label 1",
             "blocks": [
               {
-                "type": "TextBlock",
-                "data": {
-                  "title": "Title",
-                  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
-                  "blockVersion": "secondary-light",
-                  "iconVersion": "small"
-                }
+                "accordionBlockType": "TextBlock",
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
+                "blockVersion": "secondary-light",
+                "iconVersion": "small"
               },
               {
-                "type": "TextBlock",
-                "data": {
-                  "title": "Title",
-                  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
-                  "blockVersion": "secondary-light",
-                  "iconVersion": "small"
-                }
+                "accordionBlockType": "TextBlock",
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
+                "blockVersion": "secondary-light",
+                "iconVersion": "small"
               }
             ]
           },
@@ -1341,22 +1337,18 @@
             "label": "Accordion label 2",
             "blocks": [
               {
-                "type": "TextBlock",
-                "data": {
-                  "title": "Title",
-                  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
-                  "blockVersion": "secondary-light",
-                  "iconVersion": "small"
-                }
+                "accordionBlockType": "TextBlock",
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
+                "blockVersion": "secondary-light",
+                "iconVersion": "small"
               },
               {
-                "type": "TextBlock",
-                "data": {
-                  "title": "Title",
-                  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
-                  "blockVersion": "secondary-light",
-                  "iconVersion": "small"
-                }
+                "accordionBlockType": "TextBlock",
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
+                "blockVersion": "secondary-light",
+                "iconVersion": "small"
               }
             ]
           },
@@ -1364,22 +1356,18 @@
             "label": "Accordion label 3",
             "blocks": [
               {
-                "type": "TextBlock",
-                "data": {
-                  "title": "Title",
-                  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
-                  "blockVersion": "secondary-light",
-                  "iconVersion": "small"
-                }
+                "accordionBlockType": "TextBlock",
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
+                "blockVersion": "secondary-light",
+                "iconVersion": "small"
               },
               {
-                "type": "TextBlock",
-                "data": {
-                  "title": "Title",
-                  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
-                  "blockVersion": "secondary-light",
-                  "iconVersion": "small"
-                }
+                "accordionBlockType": "TextBlock",
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima odio soluta cupiditate pariatur, labore molestias quas necessitatibus nesciunt in praesentium accusamus provident sequi maiores autem. Voluptas quam neque iste?",
+                "blockVersion": "secondary-light",
+                "iconVersion": "small"
               }
             ]
           }
