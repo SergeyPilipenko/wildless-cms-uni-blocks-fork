@@ -43,16 +43,14 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
                 <ButtonSection
                   context={context}
                   buttons={buttons}
-                  className="flex flex-col mt-5 gap-3"
+                  className="flex flex-col mt-5 gap-2.5"
                 />
               ) : null
             }
           >
             {description && <Description description={description} />}
             {benefits?.length ? (
-              <div className="mt-[19px]">
-                {benefits.map((_, i) => renderBenefit(_, i, version))}
-              </div>
+              <div className="mt-5">{benefits.map((_, i) => renderBenefit(_, i, version))}</div>
             ) : null}
             {items?.length ? <List items={items} /> : null}
           </BaseTile>
