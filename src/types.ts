@@ -5,7 +5,7 @@ import type { BlockVersion } from './model/BlockVersion';
 export type ColorPalette = 'pc' | 'bc' | 'eo' | 'eo2' | 'eo3' | 'eo4';
 
 export interface BaseBlockDef {
-  type: string;
+  type?: string;
   style?: string[];
   content?: BlockContent;
   version?: BlockVersion;

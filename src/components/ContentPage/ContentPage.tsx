@@ -88,11 +88,11 @@ function renderBlock(
   i: number,
 ) {
   const { type } = block;
-  if (!(type in blocksRegistry)) {
+  if (!(type && type in blocksRegistry)) {
     console.warn(`No block with "${type}" is registered`);
   }
 
-  const BlockComponent = blocksRegistry[type] || Placeholder;
+  const BlockComponent = blocksRegistry[type || 'Placeholder'] || Placeholder;
   return blockDecorator(
     {
       blockClassName: style2className(block.style),

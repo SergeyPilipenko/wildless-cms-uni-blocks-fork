@@ -1,5 +1,3 @@
-import { BlockDef } from '../../types';
-
-export function isBlockInRegistry<T>(block: BlockDef, registry: Record<string, T>) {
-  return block.type in registry;
+export function isBlockInRegistry<T>(blockType: string | undefined, registry: Record<string, T>) {
+  return (blockType || '') in registry;
 }

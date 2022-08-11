@@ -31,5 +31,5 @@ export function normalizePage<T extends ContentPageDef | undefined | null>(
 }
 
 function getDesktopBlocks(blocks?: BlockDef[]) {
-  return blocks?.filter((block) => isBlockInRegistry(block, Blocks)).map(normalizeBlock);
+  return blocks?.filter((block) => isBlockInRegistry(block?.type, Blocks)).map(normalizeBlock);
 }

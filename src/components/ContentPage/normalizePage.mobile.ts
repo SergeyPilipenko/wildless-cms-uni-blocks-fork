@@ -32,6 +32,9 @@ export function normalizePage(
 
 function getMobileBlocks(blocks?: BlockDef[]) {
   return blocks
-    ?.filter((block) => isBlockInRegistry(block, Blocks) && !block.mobile?.hidden)
+    ?.filter(
+      (block) =>
+        isBlockInRegistry(block?.type || block?.mobile?.type, Blocks) && !block.mobile?.hidden,
+    )
     .map(normalizeBlock);
 }
