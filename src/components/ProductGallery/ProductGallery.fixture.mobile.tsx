@@ -26,6 +26,12 @@ const worker: Picture = {
     width: 280,
     height: 280,
   },
+  sources: [
+    {
+      src: 'money-2.png 1x, money-2-2x.png 2x',
+      format: 'png',
+    },
+  ],
 };
 
 const creditCard: Picture = {
