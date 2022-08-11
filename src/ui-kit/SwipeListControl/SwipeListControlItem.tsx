@@ -12,7 +12,11 @@ export interface SwipeListControlItemProps {
 export const SwipeListControlItem = JSX<SwipeListControlItemProps>(
   ({ className = '', children, ...rest }) => {
     return (
-      <div className={`snap-center snap-always min-w-full ${className}`} role="listitem" {...rest}>
+      <div
+        className={`snap-center snap-always min-w-full box-border ${className}`}
+        role="listitem"
+        {...rest}
+      >
         {children}
       </div>
     );
