@@ -18,8 +18,8 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
     const [city, getCity] = context.useGeolocation(defaultLocation);
 
     return (
-      <div className="absolute top-0 left-0 w-full h-full bg-white p-4">
-        <button className="absolute top-4 right-4" onClick={onClick}>
+      <div className="absolute top-0 left-0 w-full h-full bg-white p-4 box-border z-20">
+        <button className="absolute top-4 right-4 border-none bg-transparent" onClick={onClick}>
           <Icon name="CloseIcon" width="24" height="24" asSVG />
         </button>
         <Button onClick={getCity} className="flex items-center text-sm text-secondary-text mb-4">
