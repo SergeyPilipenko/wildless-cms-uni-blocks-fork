@@ -1,5 +1,5 @@
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
-import type { DescriptionContent } from '../../ui-kit/Description/DescriptionProps';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
 import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 
 /**
