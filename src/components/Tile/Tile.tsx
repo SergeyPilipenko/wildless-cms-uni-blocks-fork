@@ -49,9 +49,8 @@ export const Tile = JSX<TileProps>((props) => {
             <Heading
               headingType={getTileHeadingType(className)}
               title={title}
-              className={`whitespace-pre-wrap max-w-[600px] ${
-                version === 'primary' ? 'text-primary-text' : ''
-              }`}
+              className={`whitespace-pre-wrap max-w-[600px] ${title ? 'mb-3' : ''}
+              ${version === 'primary' ? 'text-primary-text' : ''}`}
             />
           )
         }
@@ -64,8 +63,12 @@ export const Tile = JSX<TileProps>((props) => {
       >
         {description && <Description className="mt-4 max-w-[600px]" description={description} />}
         {children}
-        {items?.length ? <List items={items} /> : null}
+        {renderList(items, version)}
       </BaseTile>
     </section>
   );
 });
+
+function renderList(items, version) {
+  return items?.length ? <List items={items} version={version} /> : null;
+}

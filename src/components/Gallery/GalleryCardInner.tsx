@@ -3,10 +3,11 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
-import type { GalleryCard, GalleryItem } from './GalleryContent';
+import type { GalleryCard } from './GalleryContent';
 
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
+    const titleStyleClasses = getTitleStyle(version, description, items);
     return (
       <div>
         <div>
@@ -15,15 +16,11 @@ export const GalleryCardInner = JSX<GalleryCard>(
               <Img className="mb-6" image={image} />
             </div>
           ) : null}
-          {title && renderCardTitle(title, description, items)}
-          {description ? <div className={`font-normal text-sm mt-2`}>{description}</div> : null}
-          {items?.length ? (
-            <section className={`max-w-[308px] mt-2`} role="list">
-              {items
-                .filter((item) => item?.text)
-                .map((item, i) => renderItem(item.text as string, i, version))}
-            </section>
+          {title ? renderCardTitle(title, titleStyleClasses) : null}
+          {description ? (
+            <div className={`font-normal text-sm ${title ? 'mt-2' : ''}`}>{description}</div>
           ) : null}
+          {items?.length ? renderItems(items, version) : null}
         </div>
         {button?.text && <Button className="mt-6" {...button} />}
       </div>
@@ -31,13 +28,17 @@ export const GalleryCardInner = JSX<GalleryCard>(
   },
 );
 
-function renderCardTitle(title: string, description?: string, items?: GalleryItem[]) {
+function renderCardTitle(title: string, className: string) {
+  return <div className={`font-medium text-xl m-0 ${className}`}>{title}</div>;
+}
+
+function renderItems(items, version) {
   return (
-    <div
-      className={`font-medium text-xl m-0 ${!description && !items?.length ? 'text-center' : ''}`}
-    >
-      {title}
-    </div>
+    <section className={`max-w-[308px] mt-2`} role="list">
+      {items
+        .filter((item) => item?.text)
+        .map((item, i) => renderItem(item.text as string, i, version))}
+    </section>
   );
 }
 
@@ -47,4 +48,11 @@ function renderItem(item: string, i: number, version?: BlockVersion) {
       <span className="text-sm">{item}</span>
     </BlockItem>
   );
+}
+
+function getTitleStyle(version, description, items) {
+  return `font-medium text-xl m-0
+        ${version !== 'secondary' ? 'text-primary-text' : ''}
+        ${!description && !items?.length ? 'text-center' : ''}
+      `;
 }

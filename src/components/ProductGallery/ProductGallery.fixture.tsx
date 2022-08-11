@@ -7,8 +7,8 @@ const moneyImage: Picture = {
   src: 'money-1.png',
   format: 'webp',
   size: {
-    width: 280,
-    height: 280,
+    width: 234,
+    height: 234,
   },
   alt: 'Варианты потребительского кредита',
 };

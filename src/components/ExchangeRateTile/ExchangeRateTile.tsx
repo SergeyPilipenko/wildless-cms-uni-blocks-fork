@@ -44,7 +44,7 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
               <Heading
                 headingType={getTileHeadingType(className)}
                 title={title}
-                className={`whitespace-pre-wrap max-w-[600px]`}
+                className={`whitespace-pre-wrap max-w-[600px] ${title ? 'mb-3' : ''}`}
               />
             )
           }

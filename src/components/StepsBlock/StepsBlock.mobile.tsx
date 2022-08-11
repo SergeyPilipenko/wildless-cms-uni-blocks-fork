@@ -49,7 +49,7 @@ const renderStepTitle = (params: RenderStepTitleParams) => {
           {renderIconArea(step, size, i)}
           {!isLastStep && <div className={`min-h-8 h-full w-[2px] bg-secondary-light ${margin}`} />}
         </div>
-        <div className="flex flex-col justify-center relative">
+        <div className="flex flex-col justify-start relative">
           {step.label && (
             <div className="font-medium text-m-title-xs m-0 text-left">{step.label}</div>
           )}

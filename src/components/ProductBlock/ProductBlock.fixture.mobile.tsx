@@ -7,8 +7,8 @@ const image: Picture = {
   format: 'webp',
   alt: 'Потребительский кредит наличными',
   size: {
-    width: 280,
-    height: 280,
+    width: 234,
+    height: 234,
   },
   sources: [
     {

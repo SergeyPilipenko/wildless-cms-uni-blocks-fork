@@ -15,7 +15,7 @@ export interface SwipeListControlDotsProps {
 export const SwipeListControlDots = JSX<SwipeListControlDotsProps>(
   ({ children, activeIndex, indexFraction, showDots }) => {
     return showDots && children?.length ? (
-      <div className="flex gap-2 mx-auto mt-[22px] w-fit">
+      <div className="flex gap-2 mx-auto mt-5 w-fit">
         {children?.map((_, idx) => (
           <div
             key={String(idx)}

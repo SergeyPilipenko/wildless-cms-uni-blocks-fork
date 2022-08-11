@@ -25,7 +25,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     version = 'primary',
   }) => {
     return (
-      <div className={`${className}`}>
+      <div className={`w-full text-primary-text ${className}`}>
         <div>
           <BaseTile
             context={context}
@@ -34,13 +34,17 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
                 <Heading
                   headingType={headingType}
                   title={title}
-                  className={`whitespace-pre-wrap max-w-[600px]`}
+                  className={`whitespace-pre-wrap max-w-[600px] ${title ? 'mb-3' : ''}`}
                 />
               )
             }
             buttons={
               buttons?.length ? (
-                <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+                <ButtonSection
+                  context={context}
+                  buttons={buttons}
+                  className="flex flex-col mt-5 gap-3"
+                />
               ) : null
             }
           >
@@ -53,12 +57,16 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             {items?.length ? <List items={items} /> : null}
           </BaseTile>
         </div>
-        {image?.src && (
-          <div className="mt-5">
-            <Img image={{ className: 'block', ...image }} />
-          </div>
-        )}
+        {renderImage(image)}
       </div>
     );
   },
 );
+
+function renderImage(image) {
+  return image?.src ? (
+    <div className="mt-5">
+      <Img image={{ className: 'block', ...image }} />
+    </div>
+  ) : null;
+}

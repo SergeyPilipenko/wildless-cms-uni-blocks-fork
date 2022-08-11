@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { ComparisonTable } from './ComparisonTable';

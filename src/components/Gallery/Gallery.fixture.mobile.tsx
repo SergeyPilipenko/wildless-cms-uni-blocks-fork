@@ -48,7 +48,7 @@ const cards = [
   {
     image,
     title: 'Вклады в любой валюте',
-    itemsMobile: defaultItems,
+    items: defaultItems,
   },
   {
     title: 'Вклады в любой валюте',
