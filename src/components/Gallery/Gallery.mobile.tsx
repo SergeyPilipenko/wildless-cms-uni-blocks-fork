@@ -45,7 +45,6 @@ function renderCard(card: GalleryCard, key: number) {
     <div
       className={`box-border horizontal-list-item border-solid border rounded-md border-main-stroke p-4 flex flex-col
       ${blockStyle[card.version ?? 'primary']}`}
-      role="listitem"
       key={key}
     >
       <div>
