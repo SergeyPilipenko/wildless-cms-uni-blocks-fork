@@ -28,10 +28,17 @@ export interface SlotsMap {
 export interface ContentPageMeta {
   title: string;
   slug: string;
+  main: ContentPageMetaMain;
+  og?: Record<string, string>;
+  twitter?: Record<string, string>;
+  jsonLd?: string;
+}
+
+export interface ContentPageMetaMain {
   description?: string;
   keywords?: string[];
+  canonical?: string;
   robots?: string[];
-  og?: Record<string, string>;
 }
 
 export interface ContentPageDef extends ContentPageMeta {

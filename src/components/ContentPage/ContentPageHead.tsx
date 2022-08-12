@@ -7,7 +7,13 @@ export interface ContentPageHeadProps {
 }
 
 export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data, children }) => {
-  const { title, description, keywords, robots, og } = data;
+  const {
+    title,
+    main: { description, keywords, canonical, robots },
+    og,
+    twitter,
+    jsonLd,
+  } = data;
   return (
     <HeadComponent>
       <title>{title}</title>
@@ -20,6 +26,13 @@ export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data,
             <meta key={key} name={`og:${key}`} content={value} />
           ))
         : null}
+      {twitter
+        ? Object.entries(twitter).map(([key, value]) => (
+            <meta key={key} name={`twitter:${key}`} content={value} />
+          ))
+        : null}
+      {canonical && <link rel="canonical" href={canonical} />}
+      {jsonLd && <script type="application/ld+json">{jsonLd}</script>}
       {children}
     </HeadComponent>
   );
