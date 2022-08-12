@@ -19,7 +19,7 @@ export const Contacts = JSX<ContactsProps>(({ className, items, hasButton, conte
       {hasButton ? (
         <Button
           version="primary"
-          className="my-4"
+          className="mt-0.5 mb-5"
           {...useLink(
             { router, handlerDecorator },
             {
@@ -38,7 +38,7 @@ const renderContact = (item: ContactInfo, index: number) => {
   const { type, text, description } = item;
 
   return (
-    <div className="mb-4" key={String(index)}>
+    <div className="mb-3.5" key={String(index)}>
       <div>{renderText(type, text)}</div>
       <div className="font-sans text-sm text-secondary-text">{description}</div>
     </div>

@@ -20,8 +20,8 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
               <Logo className="w-[33px]" bgColor="transparent" hideTitle />
             </div>
             <a href={href} target="_blank" className="flex flex-col justify-center pl-3">
-              <div className="text-sm font-medium">{title}</div>
-              <div className="text-xs text-secondary-text">{description}</div>
+              <div className="text-m-button font-medium mb-[3px]">{title}</div>
+              <div className="text-m-button text-secondary-text">{description}</div>
             </a>
           </div>
         ) : null}

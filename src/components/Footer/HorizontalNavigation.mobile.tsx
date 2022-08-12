@@ -17,7 +17,7 @@ export const HorizontalNavigation = JSX<HorizontalNavigationProps>(
       <div className={className}>
         <span className="text-primary-text font-sans font-medium text-sm">{title}</span>
         {links?.length ? (
-          <div className="flex flex-col gap-5 py-5">
+          <div className="flex flex-col gap-2 pt-3">
             {links.map((_, i) => (
               <HorizontalNavigationLink
                 key={String(i)}
