@@ -7,13 +7,8 @@ export interface ContentPageHeadProps {
 }
 
 export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data, children }) => {
-  const {
-    title,
-    main: { description, keywords, canonical, robots },
-    og,
-    twitter,
-    jsonLd,
-  } = data;
+  const { title, main, og, twitter, jsonLd } = data;
+  const { description, keywords, canonical, robots } = main || {};
   return (
     <HeadComponent>
       <title>{title}</title>
@@ -21,19 +16,27 @@ export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data,
       {description && <meta name="description" content={description} />}
       {keywords && <meta name="keywords" content={keywords.join(',')} />}
       {robots && <meta name="robots" content={robots.join(',')} />}
-      {og
-        ? Object.entries(og).map(([key, value]) => (
-            <meta key={key} name={`og:${key}`} content={value} />
-          ))
-        : null}
-      {twitter
-        ? Object.entries(twitter).map(([key, value]) => (
-            <meta key={key} name={`twitter:${key}`} content={value} />
-          ))
-        : null}
+      {renderOpenGraph(og)}
+      {renderTwitter(twitter)}
       {canonical && <link rel="canonical" href={canonical} />}
       {jsonLd && <script type="application/ld+json">{jsonLd}</script>}
       {children}
     </HeadComponent>
   );
 });
+
+function renderOpenGraph(og: Record<string, string> | undefined) {
+  return og
+    ? Object.entries(og).map(([key, value]) => (
+        <meta key={key} name={`og:${key}`} content={value} />
+      ))
+    : null;
+}
+
+function renderTwitter(twitter: Record<string, string> | undefined) {
+  return twitter
+    ? Object.entries(twitter).map(([key, value]) => (
+        <meta key={key} name={`twitter:${key}`} content={value} />
+      ))
+    : null;
+}
