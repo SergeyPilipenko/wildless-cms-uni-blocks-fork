@@ -19,7 +19,7 @@ export const BlockItem = JSX<BlockItemProps>(
   ({ className = '', isDotted = true, text, children, version = 'primary' }) => {
     return (
       <div className={`font-sans flex items-start ${className}`} role="listitem">
-        {isDotted && <div className={getListStyle(version)} />}!!!!!
+        {isDotted && <div className={getListStyle(version)} />}
         <span className={TEXT_STYLE_MAP[version]}>{text || children}</span>
       </div>
     );

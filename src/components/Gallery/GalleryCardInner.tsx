@@ -22,7 +22,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
           ) : null}
           {items?.length ? renderItems(items, version) : null}
         </div>
-        {button?.text && <Button className="mt-6" {...button} />}
+        {button?.text && <Button className="mt-6 w-full" {...button} />}
       </div>
     );
   },
