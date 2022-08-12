@@ -1,4 +1,4 @@
-import type { IconName } from '../../../ui-kit/Icon/IconProps';
+import type { IconName } from '../../../icons/IconName';
 
 export const isActiveHandler = ({ context, blocks }) => {
   const [isActive, setIsActive] = context.useState(false);

@@ -34,7 +34,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
                 <Heading
                   headingType={headingType}
                   title={title}
-                  className={`whitespace-pre-wrap max-w-[600px]`}
+                  className={`whitespace-pre-wrap mb-4 max-w-[600px]`}
                 />
               )
             }
@@ -45,14 +45,14 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             }
           >
             {description && (
-              <Description className="mt-4 max-w-[600px]" description={description} />
+              <Description className="text-m-base max-w-[600px]" description={description} />
             )}
             {benefits?.length ? (
               <div className="flex gap-6 mt-6 mb-3.5">
                 {benefits.map((_, i) => renderBenefit(_, i, version))}
               </div>
             ) : null}
-            {items?.length ? <List className="mt-5" items={items} /> : null}
+            {items?.length ? <List className="mt-5" items={items} itemClassName="mb-[10px]" /> : null}
           </BaseTile>
         </div>
         {image?.src && <Img className="mt-auto" image={image} />}

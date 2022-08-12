@@ -6,7 +6,7 @@ export interface DescriptionProps extends DescriptionContent {
 }
 
 export const Description = JSX<DescriptionProps>((props) => {
-  const { className, description } = props;
+  const { className = '', description } = props;
 
-  return <div className={`font-normal text-m-md ${className || ''}`}>{description}</div>;
+  return <div className={`font-normal text-m-md ${className}`}>{description}</div>;
 });

@@ -20,7 +20,7 @@ export const TableRow = JSX<TableRowProps>(
       {header?.title ? (
         <div
           className={`text-sm py-7 ${DIVIDER_CLASSES} ${FIRST_CELL_CLASSES} ${
-            !isLastRow ? 'border-solid' : ''
+            !isLastRow ? 'border-solid' : 'border-b-0'
           }`}
         >
           {header.title}

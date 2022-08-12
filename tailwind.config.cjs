@@ -30,6 +30,8 @@ module.exports = {
       backgroundImage: {
         'opacity-to-white':
           'linear-gradient(270deg, #FFFFFF 34.89%, rgba(255, 255, 255, 0) 92.52%);',
+        'opacity-from-white':
+          'linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 25%, rgba(255,255,255,0) 80%);',
       },
       fontFamily: {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],

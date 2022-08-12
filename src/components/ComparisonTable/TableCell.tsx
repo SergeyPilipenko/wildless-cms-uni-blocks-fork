@@ -16,7 +16,7 @@ export const TableCell = JSX<TableCellProps>(({ cell, isFirstRow, isLastRow, isF
 
   const cellClasses = `mx-7 h-full ${DIVIDER_CLASSES} ${
     isFillGradient && isFirstRow ? 'border-t' : ''
-  } ${!isLastRow ? 'border-solid' : ''}`;
+  } ${!isLastRow ? 'border-solid' : 'border-b-0'}`;
 
   return (
     <div className={cellWrapperClasses} role="cell">

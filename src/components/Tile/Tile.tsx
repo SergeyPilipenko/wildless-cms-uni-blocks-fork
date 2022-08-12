@@ -10,7 +10,7 @@ import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
-import type { TileContent } from '../Tile/TileContent';
+import type { TileContent } from './TileContent';
 
 export interface TileProps extends TileContent, UniBlockProps {
   role?: string;
@@ -37,7 +37,7 @@ export const Tile = JSX<TileProps>((props) => {
 
   return (
     <section
-      className={`font-sans p-9 box-border ${className} ${
+      className={`overflow-hidden font-sans p-9 box-border ${className} ${
         tileStyleMap[version]
       } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
       role={role}

@@ -6,22 +6,17 @@ export const InputRange = JSX<InputRangeProps>(
   ({ className, title, items = [], min = 1, max = 100, step = 1, value = min, onChange }) => {
     const handleChange = (value: string) => {
       if (!onChange) return;
-
       const sanitizedValue = Number(value.replace(/\D/g, ''));
       onChange(sanitizedValue);
     };
-
     const inputStyle = {
       backgroundSize: `${(((value - min) * 100) / (max - min)).toFixed(2)}% 100%`,
     };
-
     const handleBlur = () => {
       if (!onChange) return;
-
       if (value < min) onChange(min);
       if (value > max) onChange(max);
     };
-
     return (
       <div className={className}>
         <label className="block relative">
@@ -32,14 +27,12 @@ export const InputRange = JSX<InputRangeProps>(
           ) : null}
           <input
             className={`m-0 font-sans text-sm w-full h-12 border border-solid border-main-stroke rounded-md
-                        outline-none p-0 pl-4 m-0 box-border text-primary-text ${
-                          title ? 'pt-4' : ''
-                        }`}
+                        outline-none p-0 pl-4 m-0 box-border text-primary-text ${ title ? 'pt-4' : '' }`}
             value={addSpacesBetweenNumbers(value)}
             onChange={(e) => handleChange(e.target.value)}
             onBlur={handleBlur}
           />
-          <div className="absolute inset-x-0 top-8 px-4">
+          <div className="absolute inset-x-0 top-[35px] px-4 leading-[18px]">
             <input
               className="box-border w-full m-0 cursor-pointer slider"
               type="range"
@@ -54,9 +47,7 @@ export const InputRange = JSX<InputRangeProps>(
         </label>
         <div className="flex justify-between my-3">
           {items.map((item, i) => (
-            <span key={String(i)} className="text-xs leading-[14px] text-secondary-text pl-4">
-              {item}
-            </span>
+            <span key={String(i)} className="text-xs leading-[14px] text-secondary-text pl-4"> {item} </span>
           ))}
         </div>
       </div>

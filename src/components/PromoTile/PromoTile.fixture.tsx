@@ -1,5 +1,6 @@
 import { context } from '../../setup-fixture';
 import { PromoTile } from './PromoTile';
+import { getCurrentDate } from '../../utils/getCurrentDate'
 
 export default {
   default: (
@@ -10,7 +11,7 @@ export default {
         title="Акции и спецпредложения"
         description="Пенсионный кредит по специальной процентной ставке"
         version="secondary"
-        date="2022-04-16"
+        date={getCurrentDate()}
         buttons={[
           {
             text: 'Все акции',
