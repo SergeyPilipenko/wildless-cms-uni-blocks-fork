@@ -34,7 +34,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     columnsMode = 'double',
   }) => {
     return (
-      <section className={`font-sans p-[50px] bg-white ${className}`}>
+      <section className={`font-sans text-primary-text p-12 bg-white ${className}`}>
         {title ? (
           <Heading
             headingType="h2"
@@ -46,7 +46,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
         ) : null}
         {subtitle ? (
           <h3
-            className={`text-base ${titleMarginsStyleMap[columnsMode]} ${
+            className={`text-base mt-0 font-normal ${titleMarginsStyleMap[columnsMode]} ${
               titleAlignStyleMap[align ?? 'center']
             }`}
           >
