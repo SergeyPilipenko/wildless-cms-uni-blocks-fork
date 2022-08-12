@@ -7,6 +7,7 @@ import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl
 import type { GalleryCard } from './GalleryContent';
 import { GalleryItem } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
+import { Icon } from '../../ui-kit/Icon/Icon';
 
 const blockStyle: Record<BlockVersion, string> = {
   primary: 'bg-white',
@@ -57,8 +58,18 @@ function renderCard(card: GalleryCard, key: number) {
         {card.description ? renderDescription(card) : null}
         {card.items?.length ? renderItems(card.items) : null}
       </div>
-      {card?.button?.text ? <Button className="mt-3" {...card.button} /> : null}
+      {card?.button?.href ? renderButton(card.button) : null}
     </div>
+  );
+}
+
+function renderButton(button) {
+  return (
+    <Button
+      className="mt-3"
+      appendLeft={button?.icon && <Icon name={button?.icon} width="24px" height="24px" asSVG />}
+      {...button}
+    />
   );
 }
 

@@ -19,6 +19,7 @@ const buttonPrimary: ButtonCommonProps = {
   text: 'Подробнее',
   target: '_blank',
   version: 'secondary',
+  icon: 'BankIcon',
 };
 const link: ButtonCommonProps = {
   href: '/credit-cards',

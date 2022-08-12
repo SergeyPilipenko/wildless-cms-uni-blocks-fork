@@ -21,6 +21,14 @@ const buttonPrimary: ButtonCommonProps = {
   version: 'secondary',
 };
 
+const buttonPrimaryIcon: ButtonCommonProps = {
+  href: '/credit-cards',
+  text: 'Подробнее',
+  target: '_blank',
+  version: 'secondary',
+  icon: 'BankIcon',
+};
+
 const defaultItems = [
   { text: 'Качественные фермерские продукты напрямую от производителей' },
   { text: 'Самая большая база сельских туров по России' },
@@ -45,7 +53,7 @@ export const defaultProps: GalleryProps = {
       title: 'Более 1000 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
       image,
-      button: buttonPrimary,
+      button: buttonPrimaryIcon,
       items: defaultItems,
     },
     {

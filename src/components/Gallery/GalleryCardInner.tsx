@@ -2,6 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
+import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
 import type { GalleryCard } from './GalleryContent';
 
@@ -22,11 +23,21 @@ export const GalleryCardInner = JSX<GalleryCard>(
           ) : null}
           {items?.length ? renderItems(items, version) : null}
         </div>
-        {button?.text && <Button className="mt-6 w-full" {...button} />}
+        {button?.text ? renderButton(button) : null}
       </div>
     );
   },
 );
+
+function renderButton(button) {
+  return (
+    <Button
+      className="mt-6 w-full"
+      appendLeft={button.icon && <Icon name={button.icon} width="24px" height="24px" asSVG />}
+      {...button}
+    />
+  );
+}
 
 function renderCardTitle(title: string, className: string) {
   return <div className={`font-medium text-xl m-0 ${className}`}>{title}</div>;
