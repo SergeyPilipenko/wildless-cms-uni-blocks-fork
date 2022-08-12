@@ -77,8 +77,8 @@ function renderDescription(card: GalleryCard) {
 function renderItems(items: GalleryItem[]) {
   return (
     <section className="mt-3">
-      {items.map((item) => (
-        <div>
+      {items.map((item, i) => (
+        <div key={String(i)}>
           <span className="text-m-md font-medium">{item.title}</span>
           <span className="text-m-sm text-secondary-text pl-2">{item.text}</span>
         </div>
