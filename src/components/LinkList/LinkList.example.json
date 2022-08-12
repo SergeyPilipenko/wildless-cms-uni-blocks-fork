@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "text": "Документ №1",
+      "href": "/documents/document1.doc"
+    },
+    {
+      "text": "Документ №2",
+      "href": "/documents/document2.rtf",
+      "target": "_blank"
+    },
+    {
+      "text": "Документ №3",
+      "href": "/abc3/map.jpeg"
+    },
+    {
+      "text": "Документ №4",
+      "href": "/abc/map.rar"
+    }
+  ]
+}

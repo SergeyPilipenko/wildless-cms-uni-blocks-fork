@@ -33,6 +33,9 @@ Object {
         Object {
           "$ref": "#/definitions/MiniGalleryAccordionBlockDef",
         },
+        Object {
+          "$ref": "#/definitions/LinkListAccordionBlockDef",
+        },
       ],
       "title": "Содержимое аккордеона",
     },
@@ -46,6 +49,7 @@ Object {
         "ProductTile",
         "Gallery",
         "MiniGallery",
+        "LinkList",
       ],
       "title": "Тип блока",
       "type": "string",
@@ -1031,6 +1035,38 @@ Object {
         },
       },
       "title": "Элемент списка",
+      "type": "object",
+    },
+    "LinkListAccordionBlockDef": Object {
+      "properties": Object {
+        "accordionBlockType": Object {
+          "$ref": "#/definitions/AccordionBlockType",
+        },
+        "documents": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+      },
+      "required": Array [
+        "accordionBlockType",
+      ],
+      "title": "Список ссылок",
+      "type": "object",
+    },
+    "LinkListContent": Object {
+      "properties": Object {
+        "documents": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+      },
+      "title": "Список документов",
       "type": "object",
     },
     "LinkListMode": Object {

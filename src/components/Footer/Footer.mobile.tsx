@@ -35,7 +35,7 @@ export const Footer = JSX<FooterProps>(
     return (
       <footer className={`px-4 py-[26px] bg-white ${className}`}>
         <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
-        <Accordion className="p-0 pt-0 pb-0 mb-4" {...propsTextBlock} />
+        <Accordion className="!p-0 mb-4" {...propsTextBlock} />
         <div>{subMenu?.map(renderSubMenuItem)}</div>
         <MobileAppTile
           context={context}

@@ -10,6 +10,7 @@ import { ProductBlock } from './ProductBlock/ProductBlock';
 import { ProductGallery } from './ProductGallery/ProductGallery';
 import { StepsBlock } from './StepsBlock/StepsBlock';
 import { TextBlock } from './TextBlock/TextBlock';
+import { LinkList } from './LinkList/LinkList';
 
 export const Blocks = {
   Accordion,
@@ -24,4 +25,5 @@ export const Blocks = {
   ProductGallery,
   StepsBlock,
   TextBlock,
+  LinkList,
 };

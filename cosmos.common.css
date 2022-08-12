@@ -17,3 +17,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+ol, ul, menu {
+  list-style: none initial initial;
+  padding-left: 0;
+}

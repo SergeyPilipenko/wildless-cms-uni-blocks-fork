@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 
 export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
@@ -23,24 +22,23 @@ export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
       <input
         id="search-bar-input"
         className={
-          'h-12 pl-12 w-full peer font-sans font-normal text-base text-black border border-solid rounded h-full box-border outline-none pr-[6%] border-main-divider focus:border-primary-text'
+          'h-12 pl-12 w-full peer placeholder-transparent font-sans font-normal text-base text-black border border-solid rounded box-border outline-none pr-[6%] border-main-divider focus:border-primary-text'
         }
         value={term}
         onChange={(e) => setTerm(e.target.value)}
         type="text"
         name="search-bar-input"
+        placeholder="some search"
       />
-      <Button
-        version="primary"
-        text="Найти"
-        className="w-auto invisible peer-focus:visible absolute top-1 right-1"
+      <button
+        className="visible peer-placeholder-shown:invisible absolute top-2 right-3 w-6 h-6 p-1 bg-transparent cursor-pointer"
         onClick={(e) => {
           e.preventDefault();
-          console.log('click');
+          setTerm('');
         }}
       >
-        <div className="font-normal text-sm px-9 py-[9px]">Найти</div>
-      </Button>
+        <Icon name="CloseIcon" width="24" height="24" />
+      </button>
     </form>
   );
 });

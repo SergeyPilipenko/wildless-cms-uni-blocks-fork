@@ -3,7 +3,7 @@ export const getAccordionItems = (items) =>
     label: item.text || '',
     blocks: [
       {
-        accordionBlockType: 'LinkDocs',
+        accordionBlockType: 'LinkList',
         documents: item.items || [],
       },
     ],

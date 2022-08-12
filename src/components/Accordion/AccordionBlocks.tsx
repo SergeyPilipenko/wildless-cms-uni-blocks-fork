@@ -6,6 +6,7 @@ import { Tile } from '../Tile/Tile';
 import { ProductTile } from '../ProductTile/ProductTile';
 import { Gallery } from '../Gallery/Gallery';
 import { MiniGallery } from '../MiniGallery/MiniGallery';
+import { LinkList } from '../LinkList/LinkList';
 
 export const AccordionBlocks = {
   Headline,
@@ -16,4 +17,5 @@ export const AccordionBlocks = {
   ProductTile,
   Gallery,
   MiniGallery,
+  LinkList,
 };

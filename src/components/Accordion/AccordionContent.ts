@@ -6,6 +6,7 @@ import type { PictureTextContent } from '../PictureText/PictureTextContent';
 import type { ProductTileContent } from '../ProductTile/ProductTileContent';
 import type { TextBlockContent } from '../TextBlock/TextBlockContent';
 import type { TileContent } from '../Tile/TileContent';
+import type { LinkListContent } from '../LinkList/LinkListContent';
 
 /**
  * @title Тип блока
@@ -18,7 +19,8 @@ export type AccordionBlockType =
   | 'Tile'
   | 'ProductTile'
   | 'Gallery'
-  | 'MiniGallery';
+  | 'MiniGallery'
+  | 'LinkList';
 
 interface AccordionBlockDef {
   accordionBlockType: AccordionBlockType;
@@ -65,6 +67,11 @@ export type GalleryAccordionBlockDef = GalleryContent & AccordionBlockDef;
 export type MiniGalleryAccordionBlockDef = MiniGalleryContent & AccordionBlockDef;
 
 /**
+ * @title Список ссылок
+ */
+export type LinkListAccordionBlockDef = LinkListContent & AccordionBlockDef;
+
+/**
  * @title Выберите блок
  */
 export type EmptyOption = null;
@@ -81,7 +88,8 @@ export type AccordionBlockProps =
   | TileAccordionBlockDef
   | ProductTileAccordionBlockDef
   | GalleryAccordionBlockDef
-  | MiniGalleryAccordionBlockDef;
+  | MiniGalleryAccordionBlockDef
+  | LinkListAccordionBlockDef;
 
 /**
  * @title Элемент списка

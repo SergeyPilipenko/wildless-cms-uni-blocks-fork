@@ -1,5 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Button } from '../../ui-kit/Button/Button';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
@@ -19,13 +18,19 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
 
     return (
       <div className="absolute top-0 left-0 w-full h-full bg-white p-4 box-border z-20">
-        <button className="absolute top-4 right-4 border-none bg-transparent" onClick={onClick}>
+        <button className="absolute top-4 right-4 border-none bg-transparent cursor-pointer" onClick={onClick}>
           <Icon name="CloseIcon" width="24" height="24" asSVG />
         </button>
-        <Button onClick={getCity} className="flex items-center text-sm text-secondary-text mb-4">
-          <Icon name="GeolocationIcon" width="24" height="24" className="box-border mr-2" asSVG />
+        <button onClick={getCity} className="flex items-center text-sm text-secondary-text mb-4 bg-transparent cursor-pointer">
+          <Icon
+            name="GeolocationIcon"
+            width="20"
+            height="20"
+            className="text-primary-main box-border mr-2"
+            asSVG
+          />
           {city}
-        </Button>
+        </button>
         {children}
         <div className="mb-7">{burgerSubMenu?.map(renderBurgerSubMenuItem)}</div>
         <SearchBar context={context} className="grow" />
@@ -37,9 +42,11 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
 const renderBurgerSubMenuItem = (menu: SubMenuItem, i: number) => {
   const { icon, href, text } = menu;
   return (
-    <Button key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4">
-      {icon ? <Icon className="pr-1" name={icon} width="24" height="24" asSVG /> : null}
+    <a key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4 hover:text-primary-main">
+      {icon ? (
+        <Icon className="text-primary-main pr-1" name={icon} width="24" height="24" asSVG />
+      ) : null}
       <span className="pl-0.5 font-medium">{text}</span>
-    </Button>
+    </a>
   );
 };
