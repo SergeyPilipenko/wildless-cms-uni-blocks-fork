@@ -13,5 +13,6 @@
       "text": "Кнопка",
       "version": "secondary"
     }
-  ]
+  ],
+  "version": "primary"
 }
