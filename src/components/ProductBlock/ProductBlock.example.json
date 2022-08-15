@@ -14,5 +14,15 @@
       "version": "secondary"
     }
   ],
-  "version": "primary"
+  "version": "primary",
+  "benefits": [
+    {
+      "label": "Преимущество №1",
+      "icon": "ClockIcon"
+    },
+    {
+      "label": "Преимущество №2",
+      "icon": "SignDocsIcon"
+    }
+  ]
 }

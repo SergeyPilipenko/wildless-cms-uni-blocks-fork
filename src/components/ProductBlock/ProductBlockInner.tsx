@@ -34,7 +34,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
                 <Heading
                   headingType={headingType}
                   title={title}
-                  className={`whitespace-pre-wrap mb-4 max-w-[600px]`}
+                  className="whitespace-pre-wrap max-w-[600px]"
                 />
               )
             }
@@ -45,7 +45,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             }
           >
             {description && (
-              <Description className="text-m-base max-w-[600px]" description={description} />
+              <Description className="text-m-base mt-4 max-w-[600px]" description={description} />
             )}
             {benefits?.length ? (
               <div className="flex gap-6 mt-6 mb-3.5">
