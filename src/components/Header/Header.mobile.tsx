@@ -35,7 +35,7 @@ export const Header = JSX<HeaderProps>(
         <div className="container px-4 py-0 box-border">
           <HeaderTop onClick={toggleBurgerMenu} bgColor={bgColor} />
           <nav className="flex items-center m-0 p-0 overflow-y-hidden w-full h-[50px]">
-            <div className="flex">
+            <div className="flex no-scrollbar horizontal-list h-full items-center">
               {subItems?.map((_, i) =>
                 renderSubItem(
                   {
