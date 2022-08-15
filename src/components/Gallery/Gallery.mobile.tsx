@@ -2,12 +2,12 @@ import { JSX } from '@redneckz/uni-jsx';
 import { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import type { GalleryCard } from './GalleryContent';
 import { GalleryItem } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
-import { Icon } from '../../ui-kit/Icon/Icon';
 
 const blockStyle: Record<BlockVersion, string> = {
   primary: 'bg-white',
@@ -57,7 +57,7 @@ function renderCard(card: GalleryCard, key: number) {
         {card.description ? renderDescription(card) : null}
         {card.items?.length ? renderItems(card.items) : null}
       </div>
-      {card?.button?.href ? renderButton(card.button) : null}
+      {card?.button?.text ? renderButton(card.button) : null}
     </div>
   );
 }
