@@ -49,7 +49,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             }
           >
             {description ? <Description className="mt-3" description={description} /> : null}
-            {benefits?.length ? (
+            {benefits?.filter((items) => items.label)?.length ? (
               <div className="mt-3">{benefits.map((_, i) => renderBenefit(_, i, version))}</div>
             ) : null}
             {items?.length ? <List className="mt-3" items={items} /> : null}
