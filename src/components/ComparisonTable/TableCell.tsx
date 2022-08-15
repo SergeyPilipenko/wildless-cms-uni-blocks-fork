@@ -4,8 +4,9 @@ import { BORDER_CLASSES, DIVIDER_CLASSES, GRADIENT } from './constants';
 
 export interface TableCellProps {
   cell: CellData[];
-  isLastRow: boolean;
-  isFirstRow: boolean;
+  isLastRow?: boolean;
+  isFirstRow?: boolean;
+  rowHeader?: string;
   isFillGradient: boolean;
 }
 

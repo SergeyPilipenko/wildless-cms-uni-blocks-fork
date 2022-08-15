@@ -86,9 +86,7 @@
   .horizontal-list {
     display: flex;
     overflow-x: scroll;
-    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
     scroll-snap-type: x mandatory;
   }
 

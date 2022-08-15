@@ -325,6 +325,10 @@ Object {
         "link": Object {
           "$ref": "#/definitions/LinkProps",
         },
+        "subtitle": Object {
+          "title": "Подзаголовок",
+          "type": "string",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
@@ -356,6 +360,10 @@ Object {
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "useSwiper": Object {
+          "title": "Использовать свайпер-",
+          "type": "boolean",
         },
         "visibleRowLength": Object {
           "title": "Отображать заданное количество строк",

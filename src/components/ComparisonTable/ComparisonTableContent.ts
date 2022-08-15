@@ -26,6 +26,8 @@ export interface CellData {
 export interface ColumnHeader {
   /** @title Заголовок */
   title?: string;
+  /** @title Подзаголовок */
+  subtitle?: string;
   icon?: IconName;
   image?: Picture;
   link?: LinkProps;
@@ -61,4 +63,6 @@ export interface ComparisonTableContent {
   isColoredFirstColumn?: boolean;
   /** @title Отображать заданное количество строк */
   visibleRowLength?: number;
+  /** @title Использовать свайпер- */
+  useSwiper?: boolean;
 }

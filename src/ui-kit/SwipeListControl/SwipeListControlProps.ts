@@ -16,4 +16,5 @@ export interface SwipeContainer {
 export interface SwipeListControlProps extends SwipeContainer, UniBlockProps {
   /** @title Точки-индикаторы */
   showDots?: boolean;
+  onSlideChange?: () => void;
 }

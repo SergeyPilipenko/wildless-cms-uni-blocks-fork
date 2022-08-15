@@ -9,12 +9,8 @@ export default {
         <p>Private clients</p>
         <div className="flex gap-6" data-theme="pc">
           <Button href="https://www.rshb.ru/" target="_blank" text="Primary" version="primary" />
-          <Button
-            href="https://www.rshb.ru/"
-            target="_blank"
-            text="Secondary"
-            version="secondary"
-          />
+          <Button href="https://www.rshb.ru/" target="_blank" text="Link" version="secondary" />
+          <Button href="https://www.rshb.ru/" target="_blank" text="Secondary" version="link" />
         </div>
       </div>
       <div>
