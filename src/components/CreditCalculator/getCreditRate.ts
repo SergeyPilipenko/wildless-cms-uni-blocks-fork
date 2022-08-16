@@ -1,4 +1,4 @@
-import { CalculatorParams } from './CreditCalculatorContent';
+import type { CalculatorParams } from './CreditCalculatorContent';
 
 const DEFAULT_RATE = 5;
 

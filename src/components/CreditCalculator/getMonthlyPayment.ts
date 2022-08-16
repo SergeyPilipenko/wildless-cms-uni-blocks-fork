@@ -1,6 +1,6 @@
 import { clamp } from '../../utils/clamp';
 import { DEFAULT_MAX_SUM, DEFAULT_MIN_SUM, MONTHS_IN_YEAR } from './constants';
-import { CalculatorParams } from './CreditCalculatorContent';
+import type { CalculatorParams } from './CreditCalculatorContent';
 
 type PaymentType = 'annuity' | 'differentiated';
 

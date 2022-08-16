@@ -21,7 +21,7 @@ export interface Search {
 
 export type AsyncDataHook = <Data, Error = any>(
   key: string,
-  fetcher: () => Promise<Data>,
+  fetcher: (key: string) => Promise<Data>,
 ) => { data?: Data; error?: Error };
 
 export type GeolocationHook = (defaultLocation: string) => [string, () => void];

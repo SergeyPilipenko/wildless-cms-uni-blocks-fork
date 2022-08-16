@@ -12,6 +12,7 @@ import { MiniGallery } from './MiniGallery/MiniGallery';
 import { MobileAppTile } from './MobileAppTile/MobileAppTile';
 import { Navigation } from './Navigation/Navigation';
 import { PictureText } from './PictureText/PictureText';
+import { Placeholder } from './Placeholder/Placeholder';
 import { ProductBlock } from './ProductBlock/ProductBlock';
 import { ProductGallery } from './ProductGallery/ProductGallery';
 import { ProductTile } from './ProductTile/ProductTile';
@@ -44,4 +45,5 @@ export const Blocks = {
   TextBlock,
   Tile,
   Navigation,
+  Placeholder,
 };
