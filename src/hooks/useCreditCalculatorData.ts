@@ -5,16 +5,12 @@ export function useCreditCalculatorData(
   useAsyncData: AsyncDataHook,
   directoryName: string | undefined,
 ): CreditCalculatorData {
-  const { data } = useAsyncData(creditCalculatorUrl(directoryName), () =>
-    fetchCreditCalculatorData(directoryName),
-  );
+  const { data } = useAsyncData(creditCalculatorUrl(directoryName), fetchCreditCalculatorData);
   return data || {};
 }
 
-async function fetchCreditCalculatorData(
-  directoryName: string | undefined,
-): Promise<CreditCalculatorData> {
-  const response = await fetch(creditCalculatorUrl(directoryName));
+async function fetchCreditCalculatorData(url: string): Promise<CreditCalculatorData> {
+  const response = await fetch(url);
   return await response.json();
 }
 

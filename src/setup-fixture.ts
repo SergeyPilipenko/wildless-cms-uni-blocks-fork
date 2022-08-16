@@ -24,7 +24,7 @@ export const context: ContentPageContext = {
   useAsyncData: (key, fetcher) => {
     const [data, setData] = useState();
     useEffect(() => {
-      fetcher().then((_) => {
+      fetcher(key).then((_) => {
         setData(_);
       });
     }, [key, fetcher]);
