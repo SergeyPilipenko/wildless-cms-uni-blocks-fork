@@ -44,7 +44,7 @@ module.exports = {
         'max-params': ['error', 3],
         'max-statements-per-line': ['error', { max: 1 }],
         'max-nested-callbacks': ['warn', 3],
-        'max-lines-per-function': ['warn', { max: 50, skipComments: true }],
+        'max-lines-per-function': ['warn', { max: 64, skipComments: true, skipBlankLines: true }],
         'no-multiple-empty-lines': ['error', { max: 1 }],
         'import/no-default-export': 'error',
         'import/no-unresolved': 'off',
@@ -72,7 +72,10 @@ module.exports = {
         'local-eslint-rules/no-index-file': [
           'error',
           {
-            exclude: [/([\\\/])src([\\\/])index(\.mobile)?\.ts$/, /([\\\/])src([\\\/])content-page-repository([\\\/])index\.ts$/],
+            exclude: [
+              /([\\\/])src([\\\/])index(\.mobile)?\.ts$/,
+              /([\\\/])src([\\\/])content-page-repository([\\\/])index\.ts$/,
+            ],
           },
         ],
       },
