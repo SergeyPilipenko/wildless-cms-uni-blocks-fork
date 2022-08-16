@@ -5,13 +5,13 @@ import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
  */
 export type ExchangeRateTileContent = HeadingContent;
 
-export interface Currencies {
+export interface ExchangeCurrencyItem {
   buyExchangeRate?: number;
   saleExchangeRate?: number;
   currency?: {
-    id: number;
-    code: string;
-    currency: string;
-    name: string;
+    id?: number;
+    code?: string;
+    currency?: string;
+    name?: string;
   };
 }

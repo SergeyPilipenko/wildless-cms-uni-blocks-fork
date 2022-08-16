@@ -436,6 +436,34 @@ Object {
       "title": "Выберите блок",
       "type": "null",
     },
+    "ExchangeCurrencyItem": Object {
+      "properties": Object {
+        "buyExchangeRate": Object {
+          "type": "number",
+        },
+        "currency": Object {
+          "properties": Object {
+            "code": Object {
+              "type": "string",
+            },
+            "currency": Object {
+              "type": "string",
+            },
+            "id": Object {
+              "type": "number",
+            },
+            "name": Object {
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+        "saleExchangeRate": Object {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
     "ExchangeRateTileContent": Object {
       "$ref": "#/definitions/HeadingContent",
       "title": "Курсы валют",
@@ -747,6 +775,7 @@ Object {
         "GeolocationIcon",
         "GlassIcon",
         "GlobalIcon",
+        "GpsIcon",
         "GridIcon",
         "GridIconWhite",
         "InterestGrowthIcon",
@@ -821,6 +850,7 @@ Object {
         "Геолокация",
         "Зеркало",
         "Глобус",
+        "Gps",
         "Сетка",
         "Сетка (белая)",
         "Диаграмма роста",

@@ -1,0 +1,77 @@
+{
+  "exchangeRate": {
+    "currencies": [
+      {
+        "buyExchangeRate": 56.2,
+        "saleExchangeRate": 60.8,
+        "currency": { "id": 14, "code": "036", "currency": "AUD", "name": "Австралийский доллар" }
+      },
+      {
+        "buyExchangeRate": 28.05,
+        "saleExchangeRate": 29.65,
+        "currency": { "id": 15, "code": "933", "currency": "BYN", "name": "Белорусский рубль" }
+      },
+      {
+        "buyExchangeRate": 82.85,
+        "saleExchangeRate": 87.25,
+        "currency": { "id": 6, "code": "756", "currency": "CHF", "name": "Швейцарский франк" }
+      },
+      {
+        "buyExchangeRate": 11.35,
+        "saleExchangeRate": 11.8,
+        "currency": { "id": 3, "code": "156", "currency": "CNY", "name": "Китайский юань" }
+      },
+      {
+        "buyExchangeRate": 33.85,
+        "saleExchangeRate": 36.25,
+        "currency": { "id": 9, "code": "203", "currency": "CZK", "name": "Чешская крона" }
+      },
+      {
+        "buyExchangeRate": 11.95,
+        "saleExchangeRate": 12.85,
+        "currency": { "id": 11, "code": "208", "currency": "DKK", "name": "Датская крона" }
+      },
+      {
+        "buyExchangeRate": 90.6,
+        "saleExchangeRate": 92.8,
+        "currency": { "id": 2, "code": "978", "currency": "EUR", "name": "Евро" }
+      },
+      {
+        "buyExchangeRate": 99.25,
+        "saleExchangeRate": 104.15,
+        "currency": { "id": 7, "code": "826", "currency": "GBP", "name": "Фунт стерлингов" }
+      },
+      {
+        "buyExchangeRate": 70.5,
+        "saleExchangeRate": 75.5,
+        "currency": { "id": 5, "code": "392", "currency": "JPY", "name": "Японская йена" }
+      },
+      {
+        "buyExchangeRate": 85.1,
+        "saleExchangeRate": 90.4,
+        "currency": { "id": 8, "code": "578", "currency": "NOK", "name": "Норвежская крона" }
+      },
+      {
+        "buyExchangeRate": 19.4,
+        "saleExchangeRate": 20.8,
+        "currency": { "id": 13, "code": "985", "currency": "PLN", "name": "Польский злотый" }
+      },
+      {
+        "buyExchangeRate": 88.7,
+        "saleExchangeRate": 93.9,
+        "currency": { "id": 12, "code": "752", "currency": "SEK", "name": "Шведская крона" }
+      },
+      {
+        "buyExchangeRate": 73.75,
+        "saleExchangeRate": 75.95,
+        "currency": { "id": 1, "code": "840", "currency": "USD", "name": "Американский доллар" }
+      }
+    ],
+    "lastUpdate": "2022-08-15 10:22:55"
+  },
+  "name": "АО \"Россельхозбанк\"",
+  "address": "119034 г. Москва, Гагаринский пер., д. 3",
+  "description": "",
+  "gpsLatitude": 55.744865,
+  "gpsLongitude": 37.599867
+}

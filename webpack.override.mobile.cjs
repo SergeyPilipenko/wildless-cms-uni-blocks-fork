@@ -8,8 +8,8 @@ module.exports = (webpackConfig) => {
     },
     devServer: {
       proxy: {
-        '/api/': {
-          target: 'https://dataservice.catalog.dev.rshbdev.ru/api/v1/',
+        '/api/v1/exchangerates': {
+          target: 'https://dataservice.catalog.dev.rshbdev.ru',
           secure: false,
         },
       },
