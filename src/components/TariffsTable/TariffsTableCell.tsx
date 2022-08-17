@@ -17,7 +17,7 @@ export const TariffsTableCell = JSX<TariffsTableCellProps>(({ cell, isLastRow })
 
   return (
     <div className={cellWrapperClasses} role="cell">
-      <div>{cell.map((item, i) => renderCellInner(item, i))}</div>
+      <div>{cell.map(renderCellInner)}</div>
     </div>
   );
 });
@@ -30,8 +30,8 @@ const renderCellInner = (
     {i > 0 && (
       <div className="border-main-divider border border-solid border-t-0 border-x-0 my-4" />
     )}
-    {label && <div className="text-xl font-medium m-0">{label}</div>}
-    {description && <div className="text-sm text-secondary-text">{description}</div>}
+    {label ? <div className="text-xl font-medium m-0">{label}</div> : null}
+    {description ? <div className="text-sm text-secondary-text">{description}</div> : null}
     {list?.items?.length ? (
       <div className="flex flex-col justify-between items-start">
         <div role="list">

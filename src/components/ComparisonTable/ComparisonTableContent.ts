@@ -63,6 +63,6 @@ export interface ComparisonTableContent {
   isColoredFirstColumn?: boolean;
   /** @title Отображать заданное количество строк */
   visibleRowLength?: number;
-  /** @title Использовать свайпер- */
+  /** @title Использовать свайпер (моб.) */
   useSwiper?: boolean;
 }

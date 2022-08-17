@@ -362,7 +362,7 @@ Object {
           "type": "string",
         },
         "useSwiper": Object {
-          "title": "Использовать свайпер-",
+          "title": "Использовать свайпер (моб.)",
           "type": "boolean",
         },
         "visibleRowLength": Object {
@@ -1152,6 +1152,18 @@ Object {
       },
       "type": "object",
     },
+    "ListOrientation": Object {
+      "enum": Array [
+        "vertical",
+        "horizontal",
+      ],
+      "enumNames": Array [
+        "Вертикально",
+        "Горизонтально",
+      ],
+      "title": "Направление списка",
+      "type": "string",
+    },
     "MiniGalleryAccordionBlockDef": Object {
       "properties": Object {
         "accordionBlockType": Object {
@@ -1742,6 +1754,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/ButtonWithIconProps",
           },
+          "maxItems": 4,
           "title": "Кнопки",
           "type": "array",
         },
@@ -1788,6 +1801,14 @@ Object {
           "title": "Колонки",
           "type": "array",
         },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "orientation": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Направление таблицы (моб.)",
+        },
         "rowHeaders": Object {
           "items": Object {
             "$ref": "#/definitions/TariffsTableRowHeader",
@@ -1813,7 +1834,7 @@ Object {
           "items": Object {
             "type": "string",
           },
-          "title": "Элементы списка",
+          "title": "Список",
           "type": "array",
         },
       },

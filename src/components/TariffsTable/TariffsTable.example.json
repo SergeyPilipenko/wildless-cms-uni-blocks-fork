@@ -1,5 +1,7 @@
 {
   "title": "Заголовок",
+  "description": "Описание",
+  "orientation": "vertical",
   "rowHeaders": [
     {
       "title": "Параметр 1",
@@ -73,7 +75,11 @@
           },
           {
             "list": {
-              "items": ["item 1", "item 2", "item 3"]
+              "items": [
+                "item 1",
+                "item 2",
+                "item 3"
+              ]
             }
           }
         ]

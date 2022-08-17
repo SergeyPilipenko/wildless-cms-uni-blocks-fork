@@ -1,7 +1,11 @@
 import type { IconName } from '../../icons/IconName';
-import type { Picture } from '../../model/Picture';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { CellData, RowHeader } from '../ComparisonTable/ComparisonTableContent';
+import type { CellData } from '../ComparisonTable/ComparisonTableContent';
+import type { ListOrientation } from '../../model/ListOrientation';
+import type { ImageContent } from '../../ui-kit/Img/ImgProps';
+import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { ListContent } from '../../ui-kit/List/ListContent';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
 
 /**
  * @title Ряд
@@ -22,38 +26,42 @@ export interface TariffsTableColumn {
 /**
  * @title Список
  */
-export interface TariffsTableList {
+export type TariffsTableList = ListContent & {
   /** @title Маркеры */
   isDotted?: boolean;
-  /** @title Элементы списка */
-  items?: string[];
-}
+};
 
 /**
  * @title Ячейка
  */
-export interface TariffsTableCellData extends CellData {
-  list?: TariffsTableList;
-  image?: Picture;
-  /** @title Кнопки */
-  buttons?: ButtonWithIconProps[];
-}
+export type TariffsTableCellData = CellData &
+  ImageContent &
+  ButtonContent & {
+    list?: TariffsTableList;
+  };
 
 /**
  * @title Параметр
  */
-export interface TariffsTableRowHeader extends RowHeader {
+export type TariffsTableRowHeader = HeadingContent & {
   icon?: IconName;
-}
+};
 
 /**
  * @title Таблица тарифов
  */
-export interface TariffsTableContent {
-  /** @title Заголовок */
-  title?: string;
-  /** @title Колонки */
-  columns?: TariffsTableColumn[];
-  /** @title Параметры */
-  rowHeaders?: TariffsTableRowHeader[];
-}
+export type TariffsTableContent = HeadingContent &
+  DescriptionContent & {
+    /** @title Колонки */
+    columns?: TariffsTableColumn[];
+    /** @title Параметры */
+    rowHeaders?: TariffsTableRowHeader[];
+    /** @title Направление таблицы (моб.) */
+    orientation?: ListOrientation;
+  };
+
+/** @hidden */
+export type TariffsTableTileCellProps = {
+  header: TariffsTableRowHeader;
+  data: TariffsTableCellData[];
+};

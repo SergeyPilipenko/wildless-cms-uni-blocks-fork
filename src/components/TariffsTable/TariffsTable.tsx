@@ -1,31 +1,33 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useComparisonTableScroll } from '../../hooks/useComparisonTableScroll';
-import type { UniBlockProps } from '../../types';
-import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { COLS_LENGTH_FOR_SCROLL } from './constants';
-import type { TariffsTableContent } from './TariffsTableContent';
 import { TariffsTableRow } from './TariffsTableRow';
+import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
+import type { UniBlockProps } from '../../types';
+import type {
+  TariffsTableCellData,
+  TariffsTableColumn,
+  TariffsTableContent,
+  TariffsTableRowHeader,
+} from './TariffsTableContent';
+import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 
 export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
 export const TariffsTable = JSX<TariffsTableProps>(
-  ({ className, context, title, rowHeaders, columns }) => {
+  ({ className, context, title, description, rowHeaders, columns }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
-    const colData = columns?.map(({ data }) => data) || [];
-    const rowData = rowHeaders?.map((header, i) => ({
-      header,
-      data: colData.map((col) => col?.[i] || [{}]),
-    }));
+    const colData = getColData(columns);
+    const rowData = getRowData(rowHeaders, colData);
 
-    const { nextClick, prevClick, isScrollAvailable, showNextButton, showPrevButton } =
-      useComparisonTableScroll({
-        colData,
-        colsLengthForScroll: COLS_LENGTH_FOR_SCROLL,
-        activeCardIndex,
-        setActiveCardIndex,
-      });
+    const tableArrowScrollControlProps = useTableArrowScrollControl({
+      columnsLength: colData.length,
+      colsLengthForScroll: COLS_LENGTH_FOR_SCROLL,
+      activeCardIndex,
+      setActiveCardIndex,
+    });
+    const { isScrollAvailable } = tableArrowScrollControlProps;
 
     return (
       <section
@@ -33,15 +35,18 @@ export const TariffsTable = JSX<TariffsTableProps>(
           className || ''
         }`}
       >
-        <Heading
-          headingType="h2"
-          className="max-w-[47rem] text-center mb-9 mx-auto"
-          title={title}
-        />
-        <div role="table">
-          {rowData?.length ? (
+        {title ? (
+          <Heading
+            headingType="h2"
+            className={`text-center ${description ? 'mb-2.5' : 'mb-9'}`}
+            title={title}
+          />
+        ) : null}
+        {description ? <div className="mb-9 text-center text-m-base">{description}</div> : null}
+        {rowData?.length ? (
+          <div role="table">
             <div className="relative">
-              {rowData.map((row, i, { length }) => (
+              {rowData.map((row, i) => (
                 <TariffsTableRow
                   key={String(i)}
                   row={row}
@@ -49,30 +54,29 @@ export const TariffsTable = JSX<TariffsTableProps>(
                   activeCardIndex={activeCardIndex}
                 />
               ))}
-              {isScrollAvailable ? (
-                <div>
-                  <div className="absolute top-7 right-7 z-10">
-                    <ArrowButton
-                      onClick={nextClick}
-                      disabled={!showNextButton}
-                      ariaLabel="Пролистать вправо"
-                    />
-                    <ArrowButton
-                      className="mt-4 rotate-180"
-                      onClick={prevClick}
-                      disabled={!showPrevButton}
-                      ariaLabel="Пролистать влево"
-                    />
-                  </div>
-                </div>
-              ) : null}
+              <TableArrowScrollControl {...tableArrowScrollControlProps} />
             </div>
-          ) : null}
-          {isScrollAvailable ? (
-            <div className="absolute top-0 right-0 bottom-0 w-[84px] bg-opacity-to-white" />
-          ) : null}
-        </div>
+            {isScrollAvailable ? (
+              <div className="absolute top-0 right-0 bottom-0 w-[84px] bg-opacity-to-white" />
+            ) : null}
+          </div>
+        ) : null}
       </section>
     );
   },
 );
+
+type ColDataType = (TariffsTableCellData[][] | undefined)[];
+type RowDataType = { header: TariffsTableRowHeader; data: any }[] | undefined;
+
+const getColData = (columns: TariffsTableColumn[] | undefined): ColDataType =>
+  columns?.map(({ data }) => data) || [];
+
+const getRowData = (
+  rowHeaders: TariffsTableRowHeader[] | undefined,
+  colData: ColDataType,
+): RowDataType =>
+  rowHeaders?.map((header, i) => ({
+    header,
+    data: colData.map((col) => col?.[i] || [{}]),
+  }));

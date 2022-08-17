@@ -9,6 +9,7 @@ import { MobileAppTile } from './MobileAppTile/MobileAppTile';
 import { ProductBlock } from './ProductBlock/ProductBlock';
 import { ProductGallery } from './ProductGallery/ProductGallery';
 import { StepsBlock } from './StepsBlock/StepsBlock';
+import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { LinkList } from './LinkList/LinkList';
 
@@ -24,6 +25,7 @@ export const Blocks = {
   ProductBlock,
   ProductGallery,
   StepsBlock,
+  TariffsTable,
   TextBlock,
   LinkList,
 };
