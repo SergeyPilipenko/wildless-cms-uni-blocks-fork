@@ -6,32 +6,36 @@ interface ButtonInnerProps extends ButtonWithIconProps {
   version?: ButtonVersion;
 }
 
-export const ButtonInner = JSX<ButtonInnerProps>(
-  ({ text, aboveText, appendLeft, rounded, version }) => {
-    const withoutText = !text && !aboveText && Boolean(appendLeft);
-
-    const buttonInnerClasses =
-      version !== 'link'
-        ? `flex items-center justify-center
-          ${withoutText ? 'h-12 w-12' : `px-8 gap-2 ${aboveText ? 'py-2' : 'py-3.5'}`} ${
-            rounded ? 'rounded-full' : ''
-          }`
-        : null;
-
-    return renderButtonInner({ buttonInnerClasses, appendLeft, withoutText, aboveText, text });
-  },
-);
-
-function renderButtonInner({ buttonInnerClasses, appendLeft, withoutText, aboveText, text }) {
+export const ButtonInner = JSX<ButtonInnerProps>((props) => {
+  const { text, aboveText, appendLeft } = props;
   return (
-    <div className={buttonInnerClasses}>
+    <div className={getButtonStyle(props)}>
       {appendLeft ? appendLeft : null}
-      {withoutText ? null : (
+      {isWithText(props) ? (
         <div>
           <div className="text-m-2xs text-left">{aboveText}</div>
           <div className="text-m-button font-medium text-left">{text}</div>
         </div>
-      )}
+      ) : null}
     </div>
   );
-}
+});
+
+const getButtonStyle = (props: ButtonInnerProps) => {
+  const { version, aboveText, rounded } = props;
+
+  if (version === 'link') {
+    return '';
+  }
+
+  const withTextStyle = `px-8 gap-2 ${aboveText ? 'py-2' : 'py-3.5'}`;
+
+  return [
+    'flex items-center justify-center',
+    isWithText(props) ? withTextStyle : 'h-12 w-12',
+    rounded ? 'rounded-full' : '',
+  ].join(' ');
+};
+
+const isWithText = ({ text, aboveText, appendLeft }: ButtonInnerProps) =>
+  Boolean(text || aboveText || !appendLeft);

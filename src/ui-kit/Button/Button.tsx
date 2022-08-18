@@ -16,86 +16,64 @@ const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
   link: '',
 };
 
-const styleButton = 'text-center font-sans select-none';
+const buttonStyle = 'text-center font-sans select-none';
 
 export interface ButtonCommonProps extends ButtonProps, ButtonWithIconProps {}
 
-export const Button = JSX<ButtonCommonProps>(
+export const Button = JSX<ButtonCommonProps>((props) => {
+  const { text, aboveText, appendLeft, children, disabled, rounded } = props;
+
+  const buttonInner = children ?? (
+    <ButtonInner text={text} aboveText={aboveText} appendLeft={appendLeft} rounded={rounded} />
+  );
+
+  return disabled ? (
+    <DisabledButton {...props}>{buttonInner}</DisabledButton>
+  ) : (
+    <RegularButton {...props}>{buttonInner}</RegularButton>
+  );
+});
+
+export const RegularButton = JSX<ButtonCommonProps>(
   ({
     className,
-    text,
-    aboveText,
-    appendLeft,
+    ariaLabel,
+    version = 'none',
+    rounded,
     href,
     target,
-    onClick,
     children,
-    disabled,
-    rounded,
-    version = 'none',
-    ariaLabel,
+    onClick,
     ...rest
-  }) => {
-    const buttonInner = children ?? (
-      <ButtonInner text={text} aboveText={aboveText} appendLeft={appendLeft} rounded={rounded} />
-    );
-
-    return disabled
-      ? renderDisabledButton({ buttonInner, ariaLabel, className, version, rounded })
-      : renderButton({
-          buttonInner,
-          ariaLabel,
-          className,
-          version,
-          rounded,
-          href,
-          target,
-          onClick,
-          rest,
-        });
-  },
-);
-
-function renderButton({
-  className,
-  buttonInner,
-  ariaLabel,
-  version,
-  rounded,
-  href,
-  target,
-  onClick,
-  rest,
-}) {
-  return (
+  }) => (
     <a
-      className={`${styleButton} inline-block cursor-pointer no-underline ${
+      className={`${buttonStyle} inline-block cursor-pointer no-underline ${
         buttonStyleMap[version] || ''
       } ${rounded ? 'rounded-full' : 'rounded-md'} ${className || ''}`}
       href={href}
       target={target}
       onClick={onClick}
       aria-label={ariaLabel}
-      role={!href ? 'button' : 'link'}
+      role={href ? 'link' : 'button'}
       {...rest}
     >
-      {buttonInner}
+      {children}
     </a>
-  );
-}
+  ),
+);
 
-function renderDisabledButton({ className, buttonInner, ariaLabel, version, rounded }) {
-  return (
+const DisabledButton = JSX<ButtonCommonProps>(
+  ({ className, children, ariaLabel, version = 'none', rounded }) => (
     <div
       role="button"
       aria-disabled="true"
       aria-label={ariaLabel}
       tabIndex="-1"
-      className={`inline-block ${styleButton} ${buttonDisabledStyleMap[version] || ''} ${
+      className={`inline-block ${buttonStyle} ${buttonDisabledStyleMap[version] || ''} ${
         rounded ? 'rounded-full' : 'rounded-md'
       } ${className || ''}`}
     >
-      {buttonInner}
+      {children}
     </div>
-  );
-}
+  ),
+);
