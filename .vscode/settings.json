@@ -12,5 +12,6 @@
       "url": "http://json.schemastore.org/cosmos-config"
     }
   ],
-  "svg.preview.background": "white"
+  "svg.preview.background": "white",
+  "files.autoSave": "onFocusChange"
 }

@@ -1,23 +1,23 @@
 import { context } from '../../setup-fixture';
+import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
 import { HEADLINE } from '../Headline/Headline.fixture';
 import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
+import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
 import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
+import { PRODUCT_TILE } from '../ProductTile/ProductTile.fixture';
 import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import { TILE } from '../Tile/Tile.fixture';
-import { PRODUCT_TILE } from '../ProductTile/ProductTile.fixture';
-import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
-import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
 import type { AccordionProps } from './Accordion';
 import { Accordion } from './Accordion';
 import type {
+  GalleryAccordionBlockDef,
   HeadlineAccordionBlockDef,
   LinkDocsAccordionBlockDef,
+  MiniGalleryAccordionBlockDef,
   PictureTextAccordionBlockDef,
+  ProductTileAccordionBlockDef,
   TextBlockAccordionBlockDef,
   TileAccordionBlockDef,
-  ProductTileAccordionBlockDef,
-  GalleryAccordionBlockDef,
-  MiniGalleryAccordionBlockDef,
 } from './AccordionContent';
 
 const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockAccordionBlockDef = {
@@ -100,8 +100,10 @@ const propsTextBlock: AccordionProps = {
   ],
 };
 
-export default (
-  <div className="container grid grid-cols-12">
-    <Accordion className="col-span-12" {...propsTextBlock} />
-  </div>
-);
+export default {
+  default: (
+    <div className="container grid grid-cols-12">
+      <Accordion className="col-span-12" {...propsTextBlock} />
+    </div>
+  ),
+};

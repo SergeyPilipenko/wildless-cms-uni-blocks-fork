@@ -11,3 +11,7 @@ temp/
 .idea
 .nvmrc
 .DS_Store
+cypress/screenshots/
+cypress/videos/
+cypress/snapshots/actual/
+cypress/snapshots/diff/

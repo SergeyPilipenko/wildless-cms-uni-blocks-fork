@@ -41,6 +41,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
             className="absolute top-1/2 left-8 rotate-180 z-10 mt-[25px]"
             onClick={handlePrevClick}
             ariaLabel="Пролистать влево"
+            data-block-control="scroll-left"
           />
         )}
         {showNextButton && (
@@ -48,6 +49,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
             className="absolute top-1/2 right-8 z-10 mt-[25px]"
             onClick={handleNextClick}
             ariaLabel="Пролистать вправо"
+            data-block-control="scroll-right"
           />
         )}
         <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-opacity-from-white" />

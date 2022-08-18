@@ -99,14 +99,24 @@
     "cosmos:mobile": "cosmos --config cosmos.config.mobile.json",
     "precosmos:export": "npm run build:icons",
     "cosmos:export": "rimraf ./build && cosmos-export && cosmos-export --config cosmos.config.mobile.json",
-    "prepare": "husky install && npm run --prefix ./eslint-rules build || exit 0"
+    "prepare": "husky install && npm run --prefix ./eslint-rules build || exit 0",
+    "e2e": "cypress open",
+    "e2e:run": "cypress run --browser chrome --env type=actual",
+    "e2e:test": "npm run clean:diff && npm run e2e:run",
+    "e2e:base": "npm run create:base && npm run clean:diff && npm run clean:actual",
+    "create:base": "cypress run --browser chrome --env type=base --config screenshotsFolder=cypress/snapshots/base",
+    "clean:diff": "rimraf  ./cypress/snapshots/diff || exit 0",
+    "clean:actual": "rimraf ./cypress/snapshots/actual || exit 0"
   },
   "peerDependencies": {
+    "cypress": "^10.4.0",
+    "cypress-visual-regression": "^1.7.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
     "@redneckz/uni-jsx": "^0.1.6",
+    "cypress-visual-regression": "^1.7.0",
     "glob": "^8.0.3",
     "remark-html": "^15.0.1",
     "remark-parse": "^10.0.1",

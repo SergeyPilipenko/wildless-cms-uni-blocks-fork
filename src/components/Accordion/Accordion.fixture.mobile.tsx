@@ -58,8 +58,10 @@ const propsTextBlock: AccordionProps = {
   ],
 };
 
-export default (
-  <div className="container grid grid-cols-12">
-    <Accordion className="col-span-12" {...propsTextBlock} />
-  </div>
-);
+export default {
+  default: (
+    <div className="container grid grid-cols-12">
+      <Accordion className="col-span-12" {...propsTextBlock} />
+    </div>
+  ),
+};
