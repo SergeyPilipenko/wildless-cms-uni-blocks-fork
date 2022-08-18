@@ -38,6 +38,9 @@ export const getBlockFixtures = (blockPath: string) =>
 
 export const getBlock = () => cy.get('div[data-theme]:first > *');
 
+export const headerMapIsLoaded = () => cy.contains('Кредитные карты').should('exist');
+export const footerMapIsLoaded = () => cy.contains('Частным клиентам').should('exist');
+
 export const activeSearchBar = () => cy.get('#search-bar-input').should('exist').type('тест');
 
 export const galleryScrollRight = () =>

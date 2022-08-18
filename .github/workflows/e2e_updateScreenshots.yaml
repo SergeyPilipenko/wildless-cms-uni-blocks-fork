@@ -20,12 +20,18 @@ jobs:
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
 
-      - name: Commit_changes
-        uses: devops-infra/action-commit-push@v0.9.0
+      - name: Commit files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Add changes" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: '${{ secrets.GITHUB_TOKEN }}'
-          commit_prefix: '[AUTO]'
-          commit_message: 'Update screenshots'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
       - name: upload_screenshots
         uses: actions/upload-artifact@v2

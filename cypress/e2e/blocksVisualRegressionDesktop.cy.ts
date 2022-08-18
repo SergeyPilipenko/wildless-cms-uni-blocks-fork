@@ -18,7 +18,22 @@ describe('Desktop. Регресс отображения блоков', {}, () =
         cy.visit(blockFixture.getBlockFixtureURL(blockPath, fixture));
         const screenshotName = `${blockName}_${fixture}`;
 
-        blockFixture.getBlock().compareSnapshot(screenshotName);
+        switch (blockName) {
+          case 'Header': {
+            blockFixture.headerMapIsLoaded();
+            blockFixture.getBlock().compareSnapshot(screenshotName);
+            break;
+          }
+          case 'Footer': {
+            blockFixture.footerMapIsLoaded();
+            blockFixture.getBlock().compareSnapshot(screenshotName);
+            break;
+          }
+          default: {
+            blockFixture.getBlock().compareSnapshot(screenshotName);
+            break;
+          }
+        }
       });
     });
   });
