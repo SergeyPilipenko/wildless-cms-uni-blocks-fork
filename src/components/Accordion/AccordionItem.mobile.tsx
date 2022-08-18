@@ -26,13 +26,13 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, blocks, bordered,
         onClick={handleToggle}
       >
         <span
-          className={`text-sm pr-2.5 font-medium ${
+          className={`text-m-title-xs pr-2.5 font-medium ${
             hasContent ? 'group-hover:text-primary-main' : ''
           }`}
         >
           {label}
         </span>
-        {hasContent ? <Icon name={icon} width="20" height="20" asSVG /> : null}
+        {hasContent ? <Icon name={icon} width="24" height="24" asSVG /> : null}
       </button>
       {hasContent ? <AccordionItemInner blocks={blocks} context={context} /> : null}
     </li>

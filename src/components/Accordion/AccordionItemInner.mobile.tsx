@@ -21,7 +21,7 @@ const renderBlock = (context: ContentPageContext) => (block: AccordionBlockProps
 
   const AccordionBlock: JSXBlock = AccordionBlocks[type];
   return (
-    <div className="mb-5 last:mb-0" key={`block_${i}`}>
+    <div className="mb-5 last:mb-0 first:mt-2" key={`block_${i}`}>
       <AccordionBlock context={context} {...block} className="!p-0" />
     </div>
   );
