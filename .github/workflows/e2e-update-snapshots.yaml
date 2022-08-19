@@ -1,9 +1,9 @@
-name: e2e_updateScreenshots
+name: e2e-update-snapshots
 
 on: [workflow_dispatch]
 
 jobs:
-  cypress-run:
+  update-snapshots:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,9 +33,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
-      - name: upload_screenshots
+      - name: Upload snapshots
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: cypress-screenshots
+          name: cypress-snapshots
           path: cypress/snapshots

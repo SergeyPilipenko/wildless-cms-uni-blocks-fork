@@ -1,9 +1,9 @@
-name: e2e
+name: e2e-visual-regression
 
 on: [push]
 
 jobs:
-  cypress-run:
+  visual-regression:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,9 +21,9 @@ jobs:
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
 
-      - name: upload_screenshots
+      - name: Upload snapshots
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: cypress-screenshots
+          name: cypress-snapshots
           path: cypress/snapshots/

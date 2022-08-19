@@ -25,22 +25,18 @@ jobs:
       - run: npm test
         env:
           CI: true
+      - run: tar -cvf docs.tar ./docs
       - uses: actions/upload-artifact@v3
         with:
           name: docs
           retention-days: 1
-          path: docs/
+          path: docs.tar
+      - run: tar -cvf dist.tar ./lib ./dist ./bundle ./fonts ./mobile ./cosmos-static/icons
       - uses: actions/upload-artifact@v3
         with:
           name: dist
           retention-days: 1
-          path: |
-            lib/
-            dist/
-            bundle/
-            fonts/
-            mobile/
-            cosmos-static/icons/
+          path: dist.tar
 
   publish:
     if: github.ref == 'refs/heads/main'
@@ -55,10 +51,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: dist
+      - run: tar -xvf dist.tar
       - run: jq -s add ./package.json ./.public.package.json > ./temp.package.json && mv ./temp.package.json ./package.json
       - run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          npm publish --access=public --ignore-scripts
+          npm publish --access=public --ignore-scripts || exit 0
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -71,12 +68,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: docs
-          path: docs/
+      - run: tar -xvf docs.tar
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.json'
           uploadArtifacts: true
-          retention-days: 1
 
   lighthouse-mobile:
     needs: build
@@ -87,9 +83,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: docs
-          path: docs/
+      - run: tar -xvf docs.tar
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.mobile.json'
           uploadArtifacts: true
-          retention-days: 1
