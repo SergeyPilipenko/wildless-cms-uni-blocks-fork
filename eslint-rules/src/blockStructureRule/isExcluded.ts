@@ -1,10 +1,9 @@
-import { jsBasename } from '../utils/jsBasename';
-import { getBlockSubDir } from './getBlockSubDir';
+import { basename } from 'path';
+import { getBlockSubDir } from '../utils/getBlockSubDir';
 
 export const isExcluded =
   (exclude: RegExp[]) =>
   (filename: string): boolean => {
-    const blockName = jsBasename(filename);
     const blockSubDir = getBlockSubDir(filename);
-    return exclude.some((_) => _.test(blockSubDir) || _.test(blockName));
+    return exclude.some((_) => _.test(blockSubDir) || _.test(basename(filename)));
   };

@@ -3,6 +3,5 @@ import type { ConsistentBlocksRegistryRuleOptions } from './consistentBlocksRegi
 export const defaultOptions: ConsistentBlocksRegistryRuleOptions[0] = {
   blocksRegistry: 'src/components/Blocks.ts',
   blocksDir: 'src/components',
-  include: [],
   exclude: [],
 };

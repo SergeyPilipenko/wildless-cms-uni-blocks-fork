@@ -1,10 +1,11 @@
 const BLOCKS_DIR = 'src/components';
 const BLOCKS_DIR_EXCLUSIONS = [
-  /^.*Page(\.fixture)?(\.mobile)?$/,
-  /^.*Control(\.fixture)?(\.mobile)?$/,
-  /^Base.*$/,
-  /^BlockContent(\.mobile)?$/,
-  /^Blocks(\.mobile)?$/,
+  /\.json$/,
+  /Page/,
+  /Control/,
+  /^Base.*/,
+  /^BlockContent(\.mobile)?\.ts$/,
+  /^Blocks(\.mobile)?\.ts$/,
   /^utils$/,
 ];
 
@@ -39,27 +40,29 @@ module.exports = {
         'src/**/*.spec.ts',
       ],
       rules: {
-        complexity: ['warn', 7],
+        complexity: ['error', 7],
         'max-lines': ['error', { max: 150, skipBlankLines: true, skipComments: true }],
         'max-depth': ['error', 2],
         'max-params': ['error', 3],
         'max-statements-per-line': ['error', { max: 1 }],
-        'max-nested-callbacks': ['warn', 3],
-        'max-lines-per-function': ['warn', { max: 64, skipComments: true, skipBlankLines: true }],
+        'max-nested-callbacks': ['error', 3],
+        'max-lines-per-function': ['error', { max: 70, skipComments: true, skipBlankLines: true }],
         'no-multiple-empty-lines': ['error', { max: 1 }],
         'import/no-default-export': 'error',
         'import/no-unresolved': 'off',
         'local-eslint-rules/consistent-blocks-registry': [
-          'warn',
+          'error',
           {
+            // Desktop
             blocksRegistry: 'src/components/Blocks.ts',
             blocksDir: BLOCKS_DIR,
-            exclude: BLOCKS_DIR_EXCLUSIONS,
+            exclude: [...BLOCKS_DIR_EXCLUSIONS, /LinkList/],
           },
           {
+            // Mobile
             blocksRegistry: 'src/components/Blocks.mobile.ts',
             blocksDir: BLOCKS_DIR,
-            include: [/^.*\.mobile$/],
+            suffix: '.mobile.tsx',
             exclude: BLOCKS_DIR_EXCLUSIONS,
           },
         ],
@@ -74,8 +77,8 @@ module.exports = {
           'error',
           {
             exclude: [
-              /([\\\/])src([\\\/])index(\.mobile)?\.ts$/,
-              /([\\\/])src([\\\/])content-page-repository([\\\/])index\.ts$/,
+              /([\\/])src([\\/])index(\.mobile)?\.ts$/,
+              /([\\/])src([\\/])content-page-repository([\\/])index\.ts$/,
             ],
           },
         ],

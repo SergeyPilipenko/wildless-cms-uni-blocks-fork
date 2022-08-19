@@ -1,10 +1,10 @@
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
-import { jsBasename } from '../utils/jsBasename';
+import { isBlockMainFile } from '../utils/isBlockMainFile';
 import { withoutExt } from '../utils/withoutExt';
 
 interface Options {
-  include: RegExp[];
+  suffix?: string;
   exclude: RegExp[];
 }
 
@@ -13,27 +13,20 @@ export function findBlocks(blocksDir: string, options: Options): string[] {
   return children.flatMap(findBlockFiles(blocksDir, options)).map(withoutExt);
 }
 
-function findBlockFiles(blocksDir: string, { include, exclude }: Options) {
-  const isIncluded = (defaultFilename: string) => (filename: string) =>
-    (include.length ? include.some((_) => _.test(filename)) : filename === defaultFilename) &&
-    !exclude.some((_) => _.test(filename));
-
+function findBlockFiles(blocksDir: string, { suffix, exclude }: Options) {
   return (childName: string): string[] => {
-    const blockName = jsBasename(childName);
     const blockPath = join(blocksDir, childName);
 
     try {
       const childStat = statSync(blockPath);
-      if (childStat.isFile()) {
-        return isIncluded(blockName)(blockName) ? [blockName] : [];
-      }
-
       if (!childStat.isDirectory()) {
         return [];
       }
 
       const blockFiles = readdirSync(blockPath);
-      return blockFiles.map(jsBasename).filter(isIncluded(blockName));
+      return blockFiles
+        .filter((filename) => !exclude.some((_) => _.test(filename)))
+        .filter((filename) => isBlockMainFile(join(blockPath, filename), suffix));
     } catch (ex) {
       return [];
     }

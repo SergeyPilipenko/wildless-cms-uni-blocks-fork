@@ -3,8 +3,8 @@ import type { RuleMetaData } from '../RuleMetaData';
 export type ConsistentBlocksRegistryRuleOptions = Array<{
   blocksRegistry: string;
   blocksDir: string;
-  include: RegExp[];
-  exclude: RegExp[];
+  suffix?: string;
+  exclude?: RegExp[];
 }>;
 
 const schema = {
@@ -17,11 +17,8 @@ const schema = {
     blocksDir: {
       type: 'string',
     },
-    include: {
-      type: 'array',
-      items: {
-        type: 'object',
-      },
+    suffix: {
+      type: 'string',
     },
     exclude: {
       type: 'array',

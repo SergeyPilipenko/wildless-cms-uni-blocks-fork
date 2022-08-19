@@ -1,16 +1,16 @@
 import { ESLintUtils, TSESTree } from '@typescript-eslint/utils';
-import { jsBasename } from '../utils/jsBasename';
+import { basename } from 'path';
+import { getBlockSubDir } from '../utils/getBlockSubDir';
+import { isBlockMainFile } from '../utils/isBlockMainFile';
 import { defaultOptions } from './blockStructureRule.defaultOptions';
 import { BlockStructureRuleOptions, meta } from './blockStructureRule.meta';
 import { composeAssertions } from './composeAssertions';
-import { getBlockSubDir } from './getBlockSubDir';
 import { getExportedConstName } from './getExportedConstName';
 import {
   hasBlockContentFile,
   hasBlockFixtureFile,
   hasBlockMainFile,
 } from './hasBlockFileWithSuffix';
-import { isBlockMainFile } from './isBlockMainFile';
 import { isExcluded } from './isExcluded';
 
 type MessageIds =
@@ -31,7 +31,7 @@ export const blockStructureRule = ESLintUtils.RuleCreator.withoutDocs<
       return {};
     }
 
-    const blockName = jsBasename(filename);
+    const blockName = basename(filename, '.tsx');
 
     const assertBlockFilePresence =
       (messageId: MessageIds, predicate: (filename: string) => boolean) =>

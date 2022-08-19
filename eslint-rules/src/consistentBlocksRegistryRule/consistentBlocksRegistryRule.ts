@@ -1,5 +1,5 @@
 import { ESLintUtils } from '@typescript-eslint/utils';
-import { jsBasename } from '../utils/jsBasename';
+import { basename } from 'path';
 import { withoutExt } from '../utils/withoutExt';
 import { defaultOptions } from './consistentBlocksRegistryRule.defaultOptions';
 import { ConsistentBlocksRegistryRuleOptions, meta } from './consistentBlocksRegistryRule.meta';
@@ -21,9 +21,9 @@ export const consistentBlocksRegistryRule = ESLintUtils.RuleCreator.withoutDocs<
       return {};
     }
 
-    const { blocksRegistry, blocksDir, include = [], exclude = [] } = options;
+    const { blocksRegistry, blocksDir, suffix, exclude = [] } = options;
 
-    const requiredBlocks = findBlocks(blocksDir, { include, exclude });
+    const requiredBlocks = findBlocks(blocksDir, { suffix, exclude });
 
     return {
       VariableDeclaration(node) {
@@ -32,7 +32,7 @@ export const consistentBlocksRegistryRule = ESLintUtils.RuleCreator.withoutDocs<
           return;
         }
         const [blocksRegistryConst] = vars;
-        const blocksRegistryName = withoutExt(jsBasename(blocksRegistry));
+        const blocksRegistryName = withoutExt(basename(blocksRegistry));
         if (blocksRegistryConst.name !== blocksRegistryName) {
           context.report({
             messageId: 'blocksRegistryNotFound',
@@ -47,7 +47,7 @@ export const consistentBlocksRegistryRule = ESLintUtils.RuleCreator.withoutDocs<
           return;
         }
 
-        const registeredBlocks = objectExpr.properties.map((_) => _.key.name);
+        const registeredBlocks: string[] = objectExpr.properties.map((_) => _.key.name);
         const blocksToRegister = diff(requiredBlocks, registeredBlocks);
 
         if (blocksToRegister.length) {
