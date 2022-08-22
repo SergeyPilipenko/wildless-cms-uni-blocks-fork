@@ -1,6 +1,7 @@
 import { Headline } from '../Headline/Headline';
 import { LinkDocs } from '../LinkDocs/LinkDocs';
 import { PictureText } from '../PictureText/PictureText';
+import { ProductBlock } from '../ProductBlock/ProductBlock';
 import { TextBlock } from '../TextBlock/TextBlock';
 import { Tile } from '../Tile/Tile';
 import { ProductTile } from '../ProductTile/ProductTile';
@@ -13,6 +14,7 @@ export const AccordionBlocks = {
   LinkDocs,
   TextBlock,
   PictureText,
+  ProductBlock,
   Tile,
   ProductTile,
   Gallery,

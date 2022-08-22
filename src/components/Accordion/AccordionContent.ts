@@ -3,6 +3,7 @@ import type { HeadlineContent } from '../Headline/HeadlineContent';
 import type { LinkDocsContent } from '../LinkDocs/LinkDocsContent';
 import type { MiniGalleryContent } from '../MiniGallery/MiniGalleryContent';
 import type { PictureTextContent } from '../PictureText/PictureTextContent';
+import type { ProductBlockContent } from '../ProductBlock/ProductBlockContent';
 import type { ProductTileContent } from '../ProductTile/ProductTileContent';
 import type { TextBlockContent } from '../TextBlock/TextBlockContent';
 import type { TileContent } from '../Tile/TileContent';
@@ -18,6 +19,7 @@ export type AccordionBlockType =
   | 'PictureText'
   | 'Tile'
   | 'ProductTile'
+  | 'ProductBlock'
   | 'Gallery'
   | 'MiniGallery'
   | 'LinkList';
@@ -45,6 +47,11 @@ export type TextBlockAccordionBlockDef = TextBlockContent & AccordionBlockDef;
  * @title Картинка с текстом
  */
 export type PictureTextAccordionBlockDef = PictureTextContent & AccordionBlockDef;
+
+/**
+ * @title Продуктовый блок
+ */
+export type ProductBlockAccordionBlockDef = ProductBlockContent & AccordionBlockDef;
 
 /**
  * @title Плитка
@@ -85,11 +92,18 @@ export type AccordionBlockProps =
   | LinkDocsAccordionBlockDef
   | TextBlockAccordionBlockDef
   | PictureTextAccordionBlockDef
+  | ProductBlockAccordionBlockDef
   | TileAccordionBlockDef
   | ProductTileAccordionBlockDef
   | GalleryAccordionBlockDef
   | MiniGalleryAccordionBlockDef
   | LinkListAccordionBlockDef;
+
+/**
+ * @title Количество колонок
+ * @enumNames ["1 колонка", "2 колонки"]
+ */
+export type ColumnsCount = 1 | 2;
 
 /**
  * @title Элемент списка
@@ -107,6 +121,8 @@ export interface AccordionItemCommonProps {
    * @default false
    */
   bordered?: boolean; // TODO: только для мобильной версии
+
+  columns?: ColumnsCount;
 }
 
 /**

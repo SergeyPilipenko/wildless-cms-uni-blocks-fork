@@ -4,9 +4,10 @@ import { HEADLINE } from '../Headline/Headline.fixture';
 import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
 import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
 import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
-import { PRODUCT_TILE } from '../ProductTile/ProductTile.fixture';
+import { PRODUCT_BLOCK } from '../ProductBlock/ProductBlock.fixture';
+import { PRODUCT_TILE, PRODUCT_PENSION_TILE } from '../ProductTile/ProductTile.fixture';
 import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
-import { TILE } from '../Tile/Tile.fixture';
+import { TILE, TILE_PREMIUM } from '../Tile/Tile.fixture';
 import type { AccordionProps } from './Accordion';
 import { Accordion } from './Accordion';
 import type {
@@ -15,6 +16,7 @@ import type {
   LinkDocsAccordionBlockDef,
   MiniGalleryAccordionBlockDef,
   PictureTextAccordionBlockDef,
+  ProductBlockAccordionBlockDef,
   ProductTileAccordionBlockDef,
   TextBlockAccordionBlockDef,
   TileAccordionBlockDef,
@@ -35,6 +37,11 @@ const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextAccordionBlockDef = {
   ...PICTURE_TEXT,
 };
 
+const PRODUCT_BLOCK_ACCORDION_BLOCK: ProductBlockAccordionBlockDef = {
+  accordionBlockType: 'ProductBlock',
+  ...PRODUCT_BLOCK,
+};
+
 const LINK_DOCS_ACCORDION_BLOCK: LinkDocsAccordionBlockDef = {
   accordionBlockType: 'LinkDocs',
   ...linkDocsContentExample,
@@ -46,9 +53,19 @@ const TILES_ACCORDION_BLOCK: TileAccordionBlockDef = {
   ...TILE,
 };
 
+const TILES_PREMIUM_ACCORDION_BLOCK: TileAccordionBlockDef = {
+  accordionBlockType: 'Tile',
+  ...TILE_PREMIUM,
+};
+
 const PRODUCT_TILES_ACCORDION_BLOCK: ProductTileAccordionBlockDef = {
   accordionBlockType: 'ProductTile',
   ...PRODUCT_TILE,
+};
+
+const PRODUCT_PENSION_TILES__ACCORDION_BLOCK: ProductTileAccordionBlockDef = {
+  accordionBlockType: 'ProductTile',
+  ...PRODUCT_PENSION_TILE,
 };
 
 const GALLERY_ACCORDION_BLOCK: GalleryAccordionBlockDef = {
@@ -61,8 +78,7 @@ const MINI_GALLERY_ACCORDION_BLOCK: MiniGalleryAccordionBlockDef = {
   ...MINI_GALLERY,
 };
 
-const propsTextBlock: AccordionProps = {
-  title: 'Accordion title',
+const propsBlock: AccordionProps = {
   context,
   accordionItems: [
     {
@@ -100,10 +116,58 @@ const propsTextBlock: AccordionProps = {
   ],
 };
 
+const propsTwoColumns: AccordionProps = {
+  context,
+  accordionItems: [
+    {
+      label: 'Другие продукты Россельхозбанка 1',
+      blocks: [
+        TILES_PREMIUM_ACCORDION_BLOCK,
+        TILES_PREMIUM_ACCORDION_BLOCK,
+        TILES_ACCORDION_BLOCK,
+        TILES_ACCORDION_BLOCK,
+      ],
+      columns: 2,
+    },
+    {
+      label: 'Другие продукты Россельхозбанка 2',
+      blocks: [
+        PRODUCT_TILES_ACCORDION_BLOCK,
+        PRODUCT_TILES_ACCORDION_BLOCK,
+        PRODUCT_PENSION_TILES__ACCORDION_BLOCK,
+        PRODUCT_PENSION_TILES__ACCORDION_BLOCK,
+      ],
+      columns: 2,
+    },
+    {
+      label: 'Другие продукты Россельхозбанка 3',
+      blocks: [PRODUCT_BLOCK_ACCORDION_BLOCK, PRODUCT_BLOCK_ACCORDION_BLOCK],
+      columns: 2,
+    },
+
+    {
+      label: 'Другие продукты Россельхозбанка 4',
+      blocks: [
+        TEXT_BLOCK_ACCORDION_BLOCK,
+        TEXT_BLOCK_ACCORDION_BLOCK,
+        TEXT_BLOCK_ACCORDION_BLOCK,
+        TEXT_BLOCK_ACCORDION_BLOCK,
+      ],
+      columns: 2,
+    },
+  ],
+};
+
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <Accordion className="col-span-12" {...propsTextBlock} />
+      <Accordion className="col-span-12" {...propsBlock} />
+    </div>
+  ),
+
+  'two columns': (
+    <div className="container grid grid-cols-12">
+      <Accordion className="col-span-12" {...propsTwoColumns} />
     </div>
   ),
 };

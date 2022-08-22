@@ -3,6 +3,7 @@ import { context } from '../../setup-fixture';
 import { ProductBlock } from './ProductBlock';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { ProductBlockContent } from './ProductBlockContent';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -61,6 +62,19 @@ const buttons: ButtonWithIconProps[] = [
   },
 ];
 
+export const PRODUCT_BLOCK: ProductBlockContent = {
+  title: 'Оплата проходит в 180 странах мира',
+  headingType: 'h2',
+  description:
+    'Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт.',
+  items: [
+    'Совершайте любые личные покупки',
+    'Используйте корпоративную карту как обычную дебетовую, если вы ИП',
+    'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
+  ],
+  buttons: buttons,
+};
+
 export default {
   default: (
     <div className="container grid grid-cols-12">
@@ -98,17 +112,19 @@ export default {
       <ProductBlock
         className="col-span-12"
         context={context}
-        title={'Оплата проходит \nв 180 странах мира'}
-        headingType="h2"
         breadcrumbs={breadcrumbs}
-        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
-        items={[
-          'Совершайте любые личные покупки',
-          'Используйте корпоративную карту как обычную дебетовую, если вы ИП',
-          'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
-        ]}
-        buttons={buttons as ButtonWithIconProps[]}
+        {...PRODUCT_BLOCK}
         image={image}
+      />
+    </div>
+  ),
+  'without image': (
+    <div className="container grid grid-cols-12">
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        breadcrumbs={breadcrumbs}
+        {...PRODUCT_BLOCK}
       />
     </div>
   ),

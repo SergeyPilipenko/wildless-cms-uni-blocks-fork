@@ -7,7 +7,7 @@ import { isActiveHandler } from './utils/isActiveHandler';
 
 export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
 
-export const AccordionItem = JSX<AccordionItemProps>(({ label, blocks, context }) => {
+export const AccordionItem = JSX<AccordionItemProps>(({ label, blocks, columns, context }) => {
   const { hasContent, icon, handleToggle } = isActiveHandler({
     context,
     blocks,
@@ -29,7 +29,9 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, blocks, context }
         </span>
         {hasContent ? <Icon name={icon} width="24" height="24" asSVG /> : null}
       </button>
-      {hasContent ? <AccordionItemInner blocks={blocks} context={context} /> : null}
+      {hasContent ? (
+        <AccordionItemInner columns={columns} blocks={blocks} context={context} />
+      ) : null}
     </li>
   );
 });

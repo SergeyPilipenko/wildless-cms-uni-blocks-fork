@@ -1,8 +1,9 @@
 import { context } from '../../setup-fixture';
 
-import type { Picture } from '../../model/Picture';
 import { ProductTile } from './ProductTile';
-import { ProductTileContent } from './ProductTileContent';
+import type { Picture } from '../../model/Picture';
+import type { ProductTileContent } from './ProductTileContent';
+import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 
 const cardWithMoney: Picture = {
   src: 'card-with-diamond.png',
@@ -22,64 +23,56 @@ const building: Picture = {
   format: 'webp',
 };
 
+const benefits = [
+  {
+    label: 'до 5 млн Р',
+    description: 'Кредитный лимит',
+  },
+  {
+    label: 'от 12,5%',
+    description: 'Процентная ставка',
+  },
+  {
+    label: 'до 5 лет',
+    description: 'Срок кредитования',
+  },
+];
+
+const buttons: ButtonProps[] = [
+  {
+    text: 'Подробнее',
+    href: '/credit-cards',
+    version: 'secondary',
+  },
+];
+
+const buttonsSecondary: ButtonProps[] = [
+  {
+    href: 'https://rshb.ru',
+    text: 'Подробнее',
+    target: '_blank',
+    version: 'secondary',
+  },
+];
+
 export const PRODUCT_TILE: ProductTileContent = {
   title: 'Акция! “Кредит На все, что хочется!”',
   description: 'Потребительский кредит на любые цели, без залога и поручительства',
-  benefits: [
-    {
-      label: 'до 5 млн Р',
-      description: 'Кредитный лимит',
-    },
-    {
-      label: 'от 12,5%',
-      description: 'Процентная ставка',
-    },
-    {
-      label: 'до 5 лет',
-      description: 'Срок кредитования',
-    },
-  ],
-  buttons: [
-    {
-      text: 'Подробнее',
-      href: '/credit-cards',
-      version: 'secondary',
-    },
-  ],
+  benefits,
+  buttons: buttons,
   image: cardWithMoney,
+};
+export const PRODUCT_PENSION_TILE: ProductTileContent = {
+  title: 'Кредит пенсионный',
+  description: 'Для людей в возрасте до 75 лет',
+  benefits,
+  buttons: buttonsSecondary,
 };
 
 export default {
   credit: (
     <div className="container grid grid-cols-12">
-      <ProductTile
-        context={context}
-        className="col-span-6"
-        title="Акция! “Кредит На все, что хочется!”"
-        description="Потребительский кредит на любые цели, без залога и поручительства"
-        benefits={[
-          {
-            label: 'до 5 млн Р',
-            description: 'Кредитный лимит',
-          },
-          {
-            label: 'от 12,5%',
-            description: 'Процентная ставка',
-          },
-          {
-            label: 'до 5 лет',
-            description: 'Срок кредитования',
-          },
-        ]}
-        buttons={[
-          {
-            text: 'Подробнее',
-            href: '/credit-cards',
-            version: 'secondary',
-          },
-        ]}
-        image={cardWithMoney}
-      />
+      <ProductTile context={context} className="col-span-6" {...PRODUCT_TILE} />
     </div>
   ),
   pension: (
@@ -89,28 +82,8 @@ export default {
         className="col-span-6"
         title="Акция! “Пенсионный кредит”"
         description={'Потребительский кредит на любые цели, без залога и поручительства'}
-        benefits={[
-          {
-            label: 'до 3 млн Р',
-            description: 'Кредитный лимит',
-          },
-          {
-            label: 'от 12,5%',
-            description: 'Процентная ставка',
-          },
-          {
-            label: 'до 3 лет',
-            description: 'Срок кредитования',
-          },
-        ]}
-        buttons={[
-          {
-            href: 'https://rshb.ru',
-            text: 'Подробнее',
-            target: '_blank',
-            version: 'secondary',
-          },
-        ]}
+        benefits={benefits}
+        buttons={buttonsSecondary}
         image={letterWithMoney}
       />
     </div>
@@ -122,28 +95,8 @@ export default {
         className="col-span-8"
         title="Кредит под залог недвижимости"
         description={'Без переоформления залогой недвижимости на банк'}
-        benefits={[
-          {
-            label: 'до 10 млн Р',
-            description: 'Кредитный лимит',
-          },
-          {
-            label: 'от 21,5%',
-            description: 'Процентная ставка',
-          },
-          {
-            label: 'до 10 лет',
-            description: 'Срок кредитования',
-          },
-        ]}
-        buttons={[
-          {
-            href: 'https://rshb.ru',
-            text: 'Подробнее',
-            target: '_blank',
-            version: 'secondary',
-          },
-        ]}
+        benefits={benefits}
+        buttons={buttonsSecondary}
         image={building}
       />
     </div>
@@ -155,28 +108,8 @@ export default {
         className="col-span-4"
         title="Кредит пенсионный"
         description={'Для людей в возрасте до 75 лет'}
-        benefits={[
-          {
-            label: 'до 3 млн Р',
-            description: 'Кредитный лимит',
-          },
-          {
-            label: 'от 16,8%',
-            description: 'Процентная ставка',
-          },
-          {
-            label: 'до 5 лет',
-            description: 'Срок кредитования',
-          },
-        ]}
-        buttons={[
-          {
-            href: 'https://rshb.ru',
-            text: 'Подробнее',
-            target: '_blank',
-            version: 'secondary',
-          },
-        ]}
+        benefits={benefits}
+        buttons={buttonsSecondary}
       />
     </div>
   ),

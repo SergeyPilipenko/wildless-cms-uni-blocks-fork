@@ -40,27 +40,25 @@ export const TILE: TileContent = {
   image,
 };
 
+export const TILE_PREMIUM: TileContent = {
+  title: 'Премиальные продукты',
+  description:
+    'Выделенные зоны обслуживания и персональный финансовый консультант. Полный спектр премиальных продуктов, подчеркивающих ваш статус',
+  buttons: [
+    {
+      href: 'https://rshb.ru',
+      text: 'Подробнее',
+      target: '_blank',
+      version: 'secondary',
+    },
+  ],
+  image: image3,
+};
+
 export default {
   credit: (
     <div className="container grid grid-cols-12">
-      <Tile
-        context={context}
-        className="col-span-8"
-        title="Кредиты"
-        items={[
-          'Кредитный лимит до 10 млн ₽',
-          'Кредиты наличными на любые цели',
-          'Получите деньги без залога и поручителей',
-        ]}
-        buttons={[
-          {
-            text: 'Подробнее',
-            href: '/credit-cards',
-            version: 'secondary',
-          },
-        ]}
-        image={image}
-      />
+      <Tile context={context} className="col-span-8" {...TILE} />
     </div>
   ),
   mortgage: (
@@ -108,23 +106,7 @@ export default {
   ),
   premium: (
     <div className="container grid grid-cols-12">
-      <Tile
-        context={context}
-        className="col-span-6"
-        title="Премиальные продукты"
-        description={
-          'Выделенные зоны обслуживания и персональный финансовый консультант. Полный спектр премиальных продуктов, подчеркивающих ваш статус'
-        }
-        buttons={[
-          {
-            href: 'https://rshb.ru',
-            text: 'Подробнее',
-            target: '_blank',
-            version: 'secondary',
-          },
-        ]}
-        image={image3}
-      />
+      <Tile context={context} className="col-span-6" {...TILE_PREMIUM} />
     </div>
   ),
   ecosystem: (

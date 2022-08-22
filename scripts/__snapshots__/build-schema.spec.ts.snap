@@ -22,6 +22,9 @@ Object {
           "$ref": "#/definitions/PictureTextAccordionBlockDef",
         },
         Object {
+          "$ref": "#/definitions/ProductBlockAccordionBlockDef",
+        },
+        Object {
           "$ref": "#/definitions/TileAccordionBlockDef",
         },
         Object {
@@ -47,6 +50,7 @@ Object {
         "PictureText",
         "Tile",
         "ProductTile",
+        "ProductBlock",
         "Gallery",
         "MiniGallery",
         "LinkList",
@@ -93,6 +97,9 @@ Object {
           "default": false,
           "title": "Отображать/скрывать обводку элемента",
           "type": "boolean",
+        },
+        "columns": Object {
+          "$ref": "#/definitions/ColumnsCount",
         },
         "label": Object {
           "default": "Список",
@@ -336,6 +343,18 @@ Object {
       },
       "title": "Шапка колонки",
       "type": "object",
+    },
+    "ColumnsCount": Object {
+      "enum": Array [
+        1,
+        2,
+      ],
+      "enumNames": Array [
+        "1 колонка",
+        "2 колонки",
+      ],
+      "title": "Количество колонок",
+      "type": "number",
     },
     "ComparisonTableContent": Object {
       "properties": Object {
@@ -1352,6 +1371,66 @@ Object {
         },
       },
       "title": "Картинка с текстом",
+      "type": "object",
+    },
+    "ProductBlockAccordionBlockDef": Object {
+      "properties": Object {
+        "accordionBlockType": Object {
+          "$ref": "#/definitions/AccordionBlockType",
+        },
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "maxItems": 3,
+          "minItems": 2,
+          "title": "Преимущества",
+          "type": "array",
+        },
+        "breadcrumbs": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Хлебные крошки",
+          "type": "array",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "required": Array [
+        "accordionBlockType",
+      ],
+      "title": "Продуктовый блок",
       "type": "object",
     },
     "ProductBlockContent": Object {
