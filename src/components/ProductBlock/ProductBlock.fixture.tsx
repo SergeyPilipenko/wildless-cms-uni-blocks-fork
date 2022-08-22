@@ -46,7 +46,7 @@ const benefits = [
   },
 ];
 
-const buttons = [
+const buttons: ButtonWithIconProps[] = [
   {
     href: 'https://rshb.ru',
     text: 'Оформить карту',
@@ -72,7 +72,7 @@ export default {
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         breadcrumbs={breadcrumbs}
         benefits={benefits as Benefit[]}
-        buttons={buttons as ButtonWithIconProps[]}
+        buttons={buttons}
         image={image}
       />
     </div>

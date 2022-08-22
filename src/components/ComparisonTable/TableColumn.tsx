@@ -21,7 +21,10 @@ export const TableColumn = JSX<TableColumnProps>(
     const gradientClassName = isFillGradient ? GRADIENT : '';
     const buttonVersion: ButtonVersion = isFillGradient ? 'secondary' : 'primary';
     return (
-      <div className={`border border-main-stroke rounded-md p-4 mb-3.5 ${gradientClassName}`}>
+      <div
+        className={`border border-main-stroke rounded-md p-4 mb-3.5 ${gradientClassName}`}
+        role="row"
+      >
         <HeaderCell {...header} isFillGradient={isFillGradient} />
         {columnDataView?.length
           ? columnDataView.map(({ rowHeader, cell }, i) => (
@@ -53,8 +56,9 @@ const renderButton = ({ header, buttonVersion }) => (
 );
 
 const renderToggleButton = ({ onToggleColumn, isFillGradient, showRow }) => (
-  <div className="mt-5">
+  <div className="mt-5" role="cell">
     <a
+      role="link"
       onClick={onToggleColumn}
       className={`font-medium text-m-sm cursor-pointer ${
         isFillGradient ? 'text-white/80' : 'text-primary-main'

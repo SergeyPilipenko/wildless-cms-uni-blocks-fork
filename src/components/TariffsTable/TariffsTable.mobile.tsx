@@ -27,17 +27,19 @@ export const TariffsTable = JSX<TariffsTableProps>(
           />
         ) : null}
         {description ? <div className="mb-5 text-center text-m-md">{description}</div> : null}
-        {tiles?.length ? (
-          orientation === 'vertical' ? (
-            <TariffsTableVertical tiles={tiles} />
-          ) : (
-            <TariffsTableHorizontal context={context} tiles={tiles} />
-          )
-        ) : null}
+        {tiles?.length ? renderOrientationTable(orientation, tiles, context) : null}
       </section>
     );
   },
 );
+
+function renderOrientationTable(orientation, tiles, context) {
+  return orientation === 'vertical' ? (
+    <TariffsTableVertical tiles={tiles} />
+  ) : (
+    <TariffsTableHorizontal context={context} tiles={tiles} />
+  );
+}
 
 const getColData = (columns: TariffsTableColumn[] | undefined) =>
   columns?.[0].data ? columns[0].data : [];

@@ -37,7 +37,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
         >
           <div className="flex items-center">
             {qr?.src && qr?.href && (
-              <a href={qr.href} target="_blank">
+              <a href={qr.href} target="_blank" aria-label={title}>
                 <img
                   src={qr.src}
                   alt={title}

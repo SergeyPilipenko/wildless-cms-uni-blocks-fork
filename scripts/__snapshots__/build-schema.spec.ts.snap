@@ -541,6 +541,7 @@ Object {
           "type": "string",
         },
         "isScroll": Object {
+          "title": "Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll)",
           "type": "boolean",
         },
         "title": Object {
@@ -600,6 +601,7 @@ Object {
           "type": "string",
         },
         "isScroll": Object {
+          "title": "Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll)",
           "type": "boolean",
         },
         "title": Object {
@@ -613,9 +615,11 @@ Object {
     "GalleryItem": Object {
       "properties": Object {
         "text": Object {
+          "title": "Текст",
           "type": "string",
         },
         "title": Object {
+          "title": "Заголовок (моб.)",
           "type": "string",
         },
       },
@@ -647,7 +651,7 @@ Object {
         "defaultLocation",
         "topItems",
       ],
-      "title": "Шапка",
+      "title": "Шапка (для мобильных горизонтальная прокрутка shift+mouseScroll)",
       "type": "object",
     },
     "HeadingContent": Object {
@@ -1182,6 +1186,7 @@ Object {
           "type": "string",
         },
         "isScroll": Object {
+          "title": "Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll)",
           "type": "boolean",
         },
         "title": Object {
@@ -1459,7 +1464,7 @@ Object {
           "type": "array",
         },
       },
-      "title": "Продуктовая галерея",
+      "title": "Продуктовая галерея (для мобильных горизонтальная прокрутка shift+mouseScroll)",
       "type": "object",
     },
     "ProductSlide": Object {

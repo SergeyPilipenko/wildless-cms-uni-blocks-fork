@@ -43,7 +43,7 @@ function renderCardsLayout(isScroll: boolean, cards: GalleryCard[], context) {
 function renderCard(card: GalleryCard, key: number) {
   return (
     <div
-      className={`box-border horizontal-list-item border-solid border rounded-md border-main-stroke p-4 flex flex-col
+      className={`h-full justify-between box-border horizontal-list-item border-solid border rounded-md border-main-stroke p-4 flex flex-col
       ${blockStyle[card.version ?? 'primary']}`}
       key={key}
     >
@@ -53,9 +53,9 @@ function renderCard(card: GalleryCard, key: number) {
             <Img className="mb-6" image={card.image} />
           </div>
         ) : null}
-        {card.title ? <h4 className={`font-medium text-m-title-xs m-0`}>{card.title}</h4> : null}
+        {card.title ? <h3 className={`font-medium text-m-title-xs m-0`}>{card.title}</h3> : null}
         {card.description ? renderDescription(card) : null}
-        {card.items?.length ? renderItems(card.items) : null}
+        {card.items?.length ? renderItems(card.items, card.version) : null}
       </div>
       {card?.button?.text ? renderButton(card.button) : null}
     </div>
@@ -84,13 +84,15 @@ function renderDescription(card: GalleryCard) {
   );
 }
 
-function renderItems(items: GalleryItem[]) {
+function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
   return (
     <section className="mt-3">
       {items.map((item, i) => (
         <div key={String(i)}>
           <span className="text-m-md font-medium">{item.title}</span>
-          <span className="text-m-sm text-secondary-text pl-2">{item.text}</span>
+          <span className={`text-m-sm pl-2 ${version === 'primary' ? 'text-secondary-text' : ''}`}>
+            {item.text}
+          </span>
         </div>
       ))}
     </section>

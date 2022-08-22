@@ -10,7 +10,7 @@ export interface SubMenuItem extends LinkProps {
   icon?: IconName;
 }
 /**
- * @title Шапка
+ * @title Шапка (для мобильных горизонтальная прокрутка shift+mouseScroll)
  * @required ["defaultLocation", "topItems"]
  */
 export interface HeaderContent extends SitemapProps {

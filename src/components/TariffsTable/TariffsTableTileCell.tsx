@@ -52,6 +52,7 @@ const renderCellInner = (
             rounded={rounded}
             appendLeft={icon && <Icon name={icon} width="24px" height="24px" asSVG />}
             {...buttonProps}
+            aria-label={icon}
           />
         ))}
       </div>

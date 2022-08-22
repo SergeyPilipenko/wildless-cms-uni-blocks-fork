@@ -3,7 +3,9 @@ import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface GalleryItem {
+  /** @title Заголовок (моб.) */
   title?: string; //TODO: for mobile
+  /** @title Текст */
   text?: string;
 }
 
@@ -36,5 +38,6 @@ export interface GalleryContent {
    * @minItems 4
    */
   cards?: GalleryCard[];
+  /** @title Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll) */
   isScroll?: boolean; //TODO: for mobile
 }

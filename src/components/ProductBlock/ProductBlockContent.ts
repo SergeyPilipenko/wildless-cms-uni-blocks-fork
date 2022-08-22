@@ -20,6 +20,7 @@ export type ProductBlockInnerContent = HeadingContent &
      */
     benefits?: Benefit[];
     version?: BlockVersion;
+    buttons?: ButtonContent[];
   };
 
 /**

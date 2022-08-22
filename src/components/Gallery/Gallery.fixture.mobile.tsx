@@ -1,8 +1,8 @@
-import { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
 import { Gallery } from './Gallery';
+import { GalleryCard } from './GalleryContent';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -34,7 +34,7 @@ const defaultItems = [
   { title: 'До 15% ', text: 'Кэшбэк от покупок' },
 ];
 
-const cards = [
+const cards: GalleryCard[] = [
   {
     image,
     title: 'Вклады в любой валюте',
@@ -60,7 +60,6 @@ const cards = [
     title: 'Вклады в любой валюте',
   },
   {
-    image,
     title: 'Вклады в любой валюте',
     description: 'О Вклады до 1,4 млн застрахованы в государственной системе страхования вкладов',
     button: buttonPrimary,
@@ -70,7 +69,13 @@ const cards = [
     title: 'Вклады в любой валюте',
     description: 'О Вклады до 1,4 млн застрахованы в государственной системе страхования вкладов',
     button: buttonPrimary,
-    version: 'secondary' as BlockVersion,
+    version: 'secondary',
+  },
+  {
+    image,
+    title: 'Вклады в любой валюте',
+    items: defaultItems,
+    version: 'secondary',
   },
 ];
 

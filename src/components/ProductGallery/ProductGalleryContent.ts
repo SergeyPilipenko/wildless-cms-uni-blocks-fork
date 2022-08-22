@@ -19,7 +19,7 @@ export interface ProductSlide {
 }
 
 /**
- * @title Продуктовая галерея
+ * @title Продуктовая галерея (для мобильных горизонтальная прокрутка shift+mouseScroll)
  */
 export interface ProductGalleryContent {
   /**
