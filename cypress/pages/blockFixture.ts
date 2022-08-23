@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import { basename } from 'path';
 
 const fixtureURL = (path, name) =>
   `_fixtureId=${encodeURIComponent(
@@ -12,29 +11,6 @@ const fixtureURL = (path, name) =>
 export const getBlockFixtureURL = (path, fixture) => {
   return `${Cypress.config().baseUrl}${fixtureURL(path, fixture)}`;
 };
-
-export const getBlockFixurePathMap = (pattern: string) => {
-  const blockFixturePathMap = new Map<string, string>();
-  const files = cy.task('glob', { pattern: pattern });
-
-  files.each((el) => {
-    const blockPath = String(el);
-    const blockName = basename(blockPath, '.tsx').replace(/\.\w+/g, '');
-    blockFixturePathMap.set(blockName, blockPath);
-  });
-
-  return blockFixturePathMap;
-};
-
-export const getBlockFixtures = (blockPath: string) =>
-  cy.readFile(blockPath).then((file) => {
-    const fixtures = String(file).substring(String(file).indexOf('export default'));
-    const keyValuePairs = fixtures
-      .substring(fixtures.indexOf('{') + 1, fixtures.lastIndexOf('}'))
-      .split(/[>)],\n\s/g)
-      .map((pair) => pair.split(':'));
-    return keyValuePairs.map(([key]) => key.trim().replace(/'/g, ''));
-  });
 
 export const getBlock = () => cy.get('div[data-theme]:first > *');
 

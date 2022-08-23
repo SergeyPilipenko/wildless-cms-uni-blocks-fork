@@ -2,6 +2,10 @@ name: e2e-visual-regression
 
 on: [push]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   visual-regression:
     runs-on: ubuntu-latest
@@ -22,8 +26,9 @@ jobs:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
 
       - name: Upload snapshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-snapshots
-          path: cypress/snapshots/
+          path: cypress/snapshots/diff
+          retention-days: 1

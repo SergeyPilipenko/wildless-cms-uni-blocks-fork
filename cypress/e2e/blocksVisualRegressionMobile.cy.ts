@@ -1,6 +1,11 @@
 /// <reference types="cypress" />
-
+import blockFixturesMapJSON from '../fixtures/blockFixturesMap.json';
 import * as blockFixture from '../pages/blockFixture';
+
+type Params = {
+  path: string;
+  fixtures: Array<string>;
+};
 
 describe(
   'Mobile. Регресс отображения блоков',
@@ -10,37 +15,33 @@ describe(
     viewportHeight: 896,
   },
   () => {
-    const pattetnBlockFixtureMobile = 'src/components/**/*fixture.mobile.tsx';
-    let blockFixturePathMap = new Map<string, string>();
+    const blockFixturesMap = new Map<string, Params>(Object.entries(blockFixturesMapJSON));
 
-    before(() => {
-      blockFixturePathMap = blockFixture.getBlockFixurePathMap(pattetnBlockFixtureMobile);
-    });
+    blockFixturesMap.forEach((blockParams, blockName) => {
+      describe(`Desktop. Регресс отображения блока ${blockName}`, () => {
+        blockParams.fixtures.forEach((fixture) => {
+          it(`Блок ${blockName}: ${fixture}`, () => {
+            cy.visit(blockFixture.getBlockFixtureURL(blockParams.path, fixture));
 
-    it(`Mobile. Регресс отображения блока`, function () {
-      blockFixturePathMap.forEach((blockPath, blockName) => {
-        const blockFixtures = blockFixture.getBlockFixtures(blockPath);
+            const screenshotName = `${blockName}_${fixture}`;
 
-        blockFixtures.each((fixture) => {
-          cy.visit(blockFixture.getBlockFixtureURL(blockPath, fixture));
-          const screenshotName = `${blockName}_${fixture}`;
-
-          switch (blockName) {
-            case 'Header': {
-              blockFixture.headerMapIsLoaded();
-              blockFixture.getBlock().compareSnapshot(screenshotName);
-              break;
+            switch (blockName) {
+              case 'Header': {
+                blockFixture.headerMapIsLoaded();
+                blockFixture.getBlock().compareSnapshot(screenshotName);
+                break;
+              }
+              case 'Footer': {
+                blockFixture.footerMapIsLoaded();
+                blockFixture.getBlock().compareSnapshot(screenshotName);
+                break;
+              }
+              default: {
+                blockFixture.getBlock().compareSnapshot(screenshotName);
+                break;
+              }
             }
-            case 'Footer': {
-              blockFixture.footerMapIsLoaded();
-              blockFixture.getBlock().compareSnapshot(screenshotName);
-              break;
-            }
-            default: {
-              blockFixture.getBlock().compareSnapshot(screenshotName);
-              break;
-            }
-          }
+          });
         });
       });
     });

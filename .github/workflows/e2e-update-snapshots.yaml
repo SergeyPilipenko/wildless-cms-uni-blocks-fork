@@ -2,6 +2,10 @@ name: e2e-update-snapshots
 
 on: [workflow_dispatch]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-snapshots:
     runs-on: ubuntu-latest
@@ -34,8 +38,9 @@ jobs:
           branch: ${{ github.ref }}
 
       - name: Upload snapshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-snapshots
           path: cypress/snapshots
+          retention-days: 1
