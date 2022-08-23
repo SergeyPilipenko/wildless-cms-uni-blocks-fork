@@ -21,9 +21,17 @@ export const Gallery = JSX<GalleryProps>(
         className={`relative font-sans text-primary-text bg-white px-4 py-6 overflow-hidden ${className}`}
       >
         <div className="flex flex-col items-center mb-5">
-          <Heading headingType="h2" className="text-center" title={title} />
+          {title ? (
+            <Heading
+              headingType="h3"
+              className={`text-center ${description ? 'mb-2' : 'mb-5'}`}
+              title={title}
+            />
+          ) : null}
           {description ? (
-            <div className="font-normal text-m-md max-w-[600px] mt-2">{description}</div>
+            <div className="font-normal text-m-md max-w-[600px] text-center mb-5">
+              {description}
+            </div>
           ) : null}
         </div>
         {renderCardsLayout(isScroll, cards, context)}
@@ -50,7 +58,7 @@ function renderCard(card: GalleryCard, key: number) {
       <div>
         {card.image?.src ? (
           <div className="flex justify-center">
-            <Img className="mb-6" image={card.image} />
+            <Img className="mb-3.5" image={card.image} />
           </div>
         ) : null}
         {card.title ? <h3 className={`font-medium text-m-title-xs m-0`}>{card.title}</h3> : null}
@@ -75,7 +83,7 @@ function renderButton(button) {
 function renderDescription(card: GalleryCard) {
   return (
     <div
-      className={`text-secondary-text mt-2 ${
+      className={`text-secondary-text mt-1 text-m-sm ${
         card.version === 'secondary' ? 'text-white opacity-80' : ''
       }`}
     >
