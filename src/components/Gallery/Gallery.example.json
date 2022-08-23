@@ -13,6 +13,7 @@
       "title": "Заголовок 1",
       "description": "Описание 1",
       "href": "/credit-cards",
+      "version": "primary",
       "items": [
         {"text":"Элемент списка 1", "title": "Элемент заголовка 1"},
         {"text":"Элемент списка 2", "title": "Элемент заголовка 2"},
@@ -30,6 +31,7 @@
       "title": "Заголовок 2",
       "description": "Описание 2",
       "href": "/credit-cards",
+      "version": "primary",
       "items": [
         {"text":"Элемент списка 1", "title": "Элемент заголовка 1"},
         {"text":"Элемент списка 2", "title": "Элемент заголовка 2"},
@@ -47,6 +49,7 @@
       "title": "Заголовок 3",
       "description": "Описание 3",
       "href": "/credit-cards",
+      "version": "primary",
       "items": [
         {"text":"Элемент списка 1", "title": "Элемент заголовка 1"},
         {"text":"Элемент списка 2", "title": "Элемент заголовка 2"},
@@ -64,6 +67,7 @@
       "title": "Заголовок 4",
       "description": "Описание 4",
       "href": "/credit-cards",
+      "version": "primary",
       "items": [
         {"text":"Элемент списка 1", "title": "Элемент заголовка 1"},
         {"text":"Элемент списка 2", "title": "Элемент заголовка 2"},

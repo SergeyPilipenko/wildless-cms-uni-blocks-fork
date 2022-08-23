@@ -642,6 +642,7 @@ Object {
           "type": "string",
         },
       },
+      "title": "Элемент списка",
       "type": "object",
     },
     "HeaderContent": Object {

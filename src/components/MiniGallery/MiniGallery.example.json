@@ -11,7 +11,8 @@
         }
       },
       "title": "Заголовок 1",
-      "description": "Описание 1"
+      "description": "Описание 1",
+      "version": "primary"
     },
     {
       "image": {
@@ -22,7 +23,8 @@
         }
       },
       "title": "Заголовок 2",
-      "description": "Описание 2"
+      "description": "Описание 2",
+      "version": "primary"
     },
     {
       "image": {
@@ -33,7 +35,8 @@
         }
       },
       "title": "Заголовок 3",
-      "description": "Описание 3"
+      "description": "Описание 3",
+      "version": "primary"
     },
     {
       "image": {
@@ -44,7 +47,8 @@
         }
       },
       "title": "Заголовок 4",
-      "description": "Описание 4"
+      "description": "Описание 4",
+      "version": "primary"
     }
   ]
 }
