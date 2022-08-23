@@ -1,15 +1,16 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { ImgSource } from '../../model/Picture';
-import { ImageProps } from './ImgProps';
+import type { Picture, ImgSource } from '../../model/Picture';
 
-export const Img = JSX<ImageProps>(({ className = '', image }) => {
+export interface ImageProps {
+  className?: string;
+  imageClassName?: string;
+  image: Picture;
+}
+
+export const Img = JSX<ImageProps>(({ className = '', image, imageClassName }) => {
   if (!image) {
     return null;
   }
-  const style = {
-    width: image.size?.width ? `${image.size?.width}px` : '100%',
-    height: image.size?.height ? `${image.size?.height}px` : '100%',
-  };
 
   return (
     <picture className={className}>
@@ -18,17 +19,30 @@ export const Img = JSX<ImageProps>(({ className = '', image }) => {
             <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
           ))
         : null}
-      <img
-        src={image.src}
-        className={`m-auto ${image.className || ''}`}
-        alt={image.alt || image.title}
-        title={image.title}
-        style={style}
-        {...image.size}
-      />
+      {renderImg(image, imageClassName)}
     </picture>
   );
 });
+
+const renderImg = (image, imageClassName = '') => {
+  const style = {
+    width: image.size?.width ? `${image.size?.width}px` : '100%',
+    height: image.size?.height ? `${image.size?.height}px` : '100%',
+  };
+  const title = image.title || '';
+  const alt = image.alt || image.title;
+
+  return (
+    <img
+      src={image.src}
+      className={`m-auto ${imageClassName}`}
+      alt={alt}
+      title={title}
+      style={style}
+      {...image.size}
+    />
+  );
+};
 
 export function formatToMimeType(format: ImgSource['format']): string | undefined {
   return format ? `image/${String(format)}` : undefined;

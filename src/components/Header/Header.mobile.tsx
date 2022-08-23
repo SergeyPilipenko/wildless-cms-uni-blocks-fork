@@ -16,18 +16,17 @@ import { HeaderTop } from './HeaderTop';
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
-  ({ className = '', defaultLocation, bgColor = 'bg-white', context, topItems, burgerSubMenu }) => {
+  ({ className = '', defaultLocation, bgColor = 'bg-white', context, topItems }) => {
     const router = context.useRouter();
     const sitemap = useSitemap(context.useAsyncData);
+    const dispositions = sitemap?.dispositions
     const { handlerDecorator } = context;
 
     const mergedItems = mergeTopItems(sitemap.topItems, topItems);
     const activeTopItem = mergedItems.find(isTopItemActive(router));
     const subItems = activeTopItem?.items;
     const activeSubItem = findActiveSubItem(router)(subItems);
-
     const [burgerMenuShow, setBurgerMenuShow] = context.useState(false);
-
     const toggleBurgerMenu = () => setBurgerMenuShow(!burgerMenuShow);
 
     return (
@@ -53,13 +52,13 @@ export const Header = JSX<HeaderProps>(
           <HeaderBurger
             context={context}
             onClick={toggleBurgerMenu}
-            burgerSubMenu={burgerSubMenu}
+            burgerSubMenu={dispositions}
             defaultLocation={defaultLocation}
           >
             <Accordion
               context={context}
-              accordionItems={getAccordionItems(topItems)}
-              className="p-0 pt-0 pb-0 mb-4"
+              accordionItems={getAccordionItems(sitemap.topItems)}
+              className="!p-0 mb-4"
             />
           </HeaderBurger>
         ) : null}

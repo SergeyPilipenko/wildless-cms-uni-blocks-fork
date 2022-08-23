@@ -120,6 +120,18 @@
       "href": "http://localhost:5001/svoe"
     }
   ],
+  "dispositions": [
+    {
+      "text": "Офисы",
+      "href": "#",
+      "icon": "BankIcon"
+    },
+    {
+      "text": "Банкоматы",
+      "href": "#",
+      "icon": "AtmIcon"
+    }
+  ],
   "id": "6XGlupwIMfAfAca1Zm1X0",
   "title": "Сайт РСХБ",
   "slug": "sitemap"

@@ -11,7 +11,11 @@ export interface HeaderTopProps {
 export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
   <div className="flex items-center justify-between border-0 border-b border-main-divider h-[50px]">
     <div className="flex items-center">
-      <button className="pr-4 border-0 bg-transparent cursor-pointer" onClick={onClick} aria-label="Открыть меню">
+      <button
+        className="pl-0 pr-4 border-0 bg-transparent cursor-pointer"
+        onClick={onClick}
+        aria-label="Открыть меню"
+      >
         <Icon
           name={bgColor === 'bg-white' ? 'BurgerIcon' : 'BurgerIconWhite'}
           width="24"

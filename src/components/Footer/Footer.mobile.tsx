@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { AccordionProps } from '../Accordion/Accordion';
 import { Accordion } from '../Accordion/Accordion';
 import { MobileAppTile } from '../MobileAppTile/MobileAppTile';
 import { Contacts } from './Contacts';
@@ -13,6 +12,7 @@ import { Button } from '../../ui-kit/Button/Button';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import { getAccordionItems } from '../../utils/getAccordionItems';
+import { useSitemap } from "../../services/sitemap/useSitemap";
 
 export interface FooterProps extends FooterContent, UniBlockProps {}
 
@@ -23,20 +23,20 @@ export const Footer = JSX<FooterProps>(
     relatedEnterprises,
     contacts,
     socialMedia,
-    topItems,
     context,
     horizontalNavigationTitle,
-    subMenu,
   }) => {
-    const propsTextBlock: AccordionProps = {
-      context,
-      accordionItems: getAccordionItems(topItems),
-    };
+    const sitemap = useSitemap(context.useAsyncData);
+    const dispositions = sitemap?.dispositions
     return (
       <footer className={`px-4 py-[26px] bg-white ${className}`}>
         <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
-        <Accordion className="!p-0 mb-4" {...propsTextBlock} />
-        <div>{subMenu?.map(renderSubMenuItem)}</div>
+        <Accordion
+          context={context}
+          className="!p-0 mb-4"
+          accordionItems={getAccordionItems(sitemap.topItems)}
+        />
+        <div>{dispositions?.map(renderSubMenuItem)}</div>
         <MobileAppTile
           context={context}
           title="Мобильное приложение"

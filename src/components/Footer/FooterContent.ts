@@ -1,6 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { IconName } from '../../icons/IconName';
 
 /**
  * @title Тип контакта

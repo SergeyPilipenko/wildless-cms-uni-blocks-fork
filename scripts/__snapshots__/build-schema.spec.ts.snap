@@ -451,6 +451,27 @@ Object {
       },
       "type": "object",
     },
+    "DispositionItem": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "text",
+        "href",
+      ],
+      "title": "Ссылка дополнительного меню",
+      "type": "object",
+    },
     "EmptyOption": Object {
       "title": "Выберите блок",
       "type": "null",
@@ -496,6 +517,13 @@ Object {
           "title": "Контакты",
           "type": "array",
         },
+        "dispositions": Object {
+          "items": Object {
+            "$ref": "#/definitions/DispositionItem",
+          },
+          "title": "Дополнительное меню",
+          "type": "array",
+        },
         "documents": Object {
           "items": Object {
             "$ref": "#/definitions/LinkProps",
@@ -532,7 +560,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/TopMenuItem",
           },
-          "title": "Дополнительное меню",
+          "title": "Основное меню",
           "type": "array",
         },
       },
@@ -647,23 +675,23 @@ Object {
     },
     "HeaderContent": Object {
       "properties": Object {
-        "burgerSubMenu": Object {
-          "items": Object {
-            "$ref": "#/definitions/SubMenuItem",
-          },
-          "title": "Подменю",
-          "type": "array",
-        },
         "defaultLocation": Object {
           "default": "Москва",
           "title": "Город по-умолчанию",
           "type": "string",
         },
+        "dispositions": Object {
+          "items": Object {
+            "$ref": "#/definitions/DispositionItem",
+          },
+          "title": "Дополнительное меню",
+          "type": "array",
+        },
         "topItems": Object {
           "items": Object {
             "$ref": "#/definitions/TopMenuItem",
           },
-          "title": "Дополнительное меню",
+          "title": "Основное меню",
           "type": "array",
         },
       },
@@ -1711,11 +1739,18 @@ Object {
     },
     "SitemapProps": Object {
       "properties": Object {
+        "dispositions": Object {
+          "items": Object {
+            "$ref": "#/definitions/DispositionItem",
+          },
+          "title": "Дополнительное меню",
+          "type": "array",
+        },
         "topItems": Object {
           "items": Object {
             "$ref": "#/definitions/TopMenuItem",
           },
-          "title": "Дополнительное меню",
+          "title": "Основное меню",
           "type": "array",
         },
       },
