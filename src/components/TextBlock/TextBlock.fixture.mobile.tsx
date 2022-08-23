@@ -12,6 +12,12 @@ const image: Picture = {
   },
 };
 
+const items = [
+  'Вклады до 1,4 млн застрахованы',
+  'Вклады до 1,4 млн застрахованы',
+  'Вклады до 1,4 млн застрахованы',
+];
+
 export const TEXT_BLOCK: TextBlockContent = {
   title: 'Все карты Россельхозбанка работают',
   description:
@@ -59,11 +65,15 @@ export default {
               title="Все карты Россельхозбанка работают"
               blockVersion="primary"
               iconVersion="small"
-              items={[
-                'Вклады до 1,4 млн застрахованы',
-                'Вклады до 1,4 млн застрахованы',
-                'Вклады до 1,4 млн застрахованы',
-              ]}
+              items={items}
+            />
+            <TextBlock
+              context={mobileContext}
+              title="Все карты Россельхозбанка работают"
+              description="Если не планируете поездку за границу, продолжайте пользоваться картой Своя. Для поездок за границу"
+              blockVersion="secondary"
+              iconVersion="small"
+              items={items}
             />
           </div>
         </div>

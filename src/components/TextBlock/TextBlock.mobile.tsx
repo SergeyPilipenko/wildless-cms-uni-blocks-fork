@@ -55,10 +55,10 @@ export const TextBlock = JSX<TextBlockProps>(
           ) : null}
           {items?.length ? (
             <List
+              className="mt-1"
               items={items}
               isDotted={isDotted}
-              version="gray"
-              className="mt-1 text-m-sm text-secondary-text"
+              version={blockVersion.indexOf('secondary') !== -1 ? 'secondary' : 'gray'}
             />
           ) : null}
         </div>
