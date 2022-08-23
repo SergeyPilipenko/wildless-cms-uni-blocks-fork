@@ -1,8 +1,6 @@
-import { context } from '../../setup-fixture';
-import { CreditCalculator } from './CreditCalculator';
 import type { CreditCalculatorTab } from './CreditCalculatorContent';
 
-const TABS: CreditCalculatorTab[] = [
+export const DEFAULT_TABS: CreditCalculatorTab[] = [
   {
     title: 'Кредит',
     description: 'Ставка от 6% до 7 лет',
@@ -22,11 +20,3 @@ const TABS: CreditCalculatorTab[] = [
     icon: 'DiscountShapeIcon',
   },
 ];
-
-export default {
-  default: (
-    <div className="container grid grid-cols-12">
-      <CreditCalculator className="col-span-12" context={context} tabs={TABS} />
-    </div>
-  ),
-};

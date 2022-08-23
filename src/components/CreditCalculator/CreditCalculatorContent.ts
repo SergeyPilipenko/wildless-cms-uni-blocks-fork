@@ -1,3 +1,5 @@
+import type { Tab } from '../../ui-kit/Tabs/TabsProps';
+
 export interface CalculatorParams {
   isAnnuity?: boolean;
   minSum?: number;
@@ -13,9 +15,17 @@ export interface CreditCalculatorData {
 }
 
 /**
+ * @title Вкладка
+ */
+export interface CreditCalculatorTab extends Tab {
+  /** @title Справочник */
+  directoryName?: string;
+}
+
+/**
  * @title Кредитный калькулятор
  */
 export interface CreditCalculatorContent {
-  /** @title Справочник */
-  directoryName?: string;
+  /** @title Вкладки */
+  tabs?: CreditCalculatorTab[];
 }

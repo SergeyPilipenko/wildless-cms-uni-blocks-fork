@@ -423,9 +423,12 @@ Object {
     },
     "CreditCalculatorContent": Object {
       "properties": Object {
-        "directoryName": Object {
-          "title": "Справочник",
-          "type": "string",
+        "tabs": Object {
+          "items": Object {
+            "$ref": "#/definitions/CreditCalculatorTab",
+          },
+          "title": "Вкладки",
+          "type": "array",
         },
       },
       "title": "Кредитный калькулятор",
@@ -440,6 +443,27 @@ Object {
           "type": "array",
         },
       },
+      "type": "object",
+    },
+    "CreditCalculatorTab": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "directoryName": Object {
+          "title": "Справочник",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "title": Object {
+          "title": "Имя вкладки",
+          "type": "string",
+        },
+      },
+      "title": "Вкладка",
       "type": "object",
     },
     "DescriptionContent": Object {
@@ -1848,6 +1872,23 @@ Object {
         },
       },
       "title": "Пункт подменю",
+      "type": "object",
+    },
+    "Tab": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "title": Object {
+          "title": "Имя вкладки",
+          "type": "string",
+        },
+      },
+      "title": "Вкладка",
       "type": "object",
     },
     "Target": Object {
