@@ -14,11 +14,23 @@ export interface SwipeListControlDotsProps {
 
 export const SwipeListControlDots = JSX<SwipeListControlDotsProps>(
   ({ children, activeIndex, indexFraction, showDots }) => {
+    const handleClick = (idx: number) => (e: Event) => {
+      if (idx === activeIndex) {
+        return;
+      }
+
+      const contentContainer = (e.currentTarget as HTMLElement).parentElement
+        ?.previousElementSibling;
+
+      contentContainer?.children[idx]?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return showDots && children?.length ? (
       <div className="flex gap-2 mx-auto mt-5 w-fit">
         {children?.map((_, idx) => (
           <div
             key={String(idx)}
+            onClick={handleClick(idx)}
             className={`${DOT_STYLES}`}
             style={getDotStyles(idx, activeIndex, indexFraction)}
             aria-hidden

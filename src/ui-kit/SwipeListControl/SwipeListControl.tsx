@@ -2,9 +2,9 @@ import { JSX } from '@redneckz/uni-jsx';
 import { DEFAULT_GAP, DEFAULT_PADDING } from './constants';
 import { SwipeListControlDots } from './SwipeListControlDots';
 import { SwipeListControlList } from './SwipeListControlList';
-import type { SwipeListControlProps } from './SwipeListControlProps';
 import { getIndexParts } from './utils/getIndexParts';
 import { getScrollPoints } from './utils/getScrollPoints';
+import type { SwipeListControlProps } from './SwipeListControlProps';
 
 export const SwipeListControl = JSX<SwipeListControlProps>(
   ({
@@ -18,6 +18,13 @@ export const SwipeListControl = JSX<SwipeListControlProps>(
   }) => {
     const [activeIndex, setActiveIndex] = context.useState<number>(0);
     const [indexFraction, setIndexFraction] = context.useState<number>(0);
+
+    const dotsProps = {
+      activeIndex,
+      indexFraction,
+      showDots,
+      children,
+    };
 
     const handleScroll = (e: UIEvent) => {
       const { scrollLeft, clientWidth, childElementCount, scrollWidth, children } =
@@ -45,26 +52,16 @@ export const SwipeListControl = JSX<SwipeListControlProps>(
 
     return (
       <div className={className}>
-        {renderSwipeList({ gap, padding, activeIndex, handleScroll, children })}
-        {renderSwipelistDots({ activeIndex, indexFraction, showDots, children })}
+        <SwipeListControlList
+          gap={gap}
+          padding={padding}
+          activeIndex={activeIndex}
+          onScroll={handleScroll}
+        >
+          {children}
+        </SwipeListControlList>
+        <SwipeListControlDots {...dotsProps} />
       </div>
     );
   },
-);
-
-const renderSwipeList = ({ gap, padding, activeIndex, handleScroll, children }) => (
-  <SwipeListControlList
-    gap={gap}
-    padding={padding}
-    activeIndex={activeIndex}
-    onScroll={handleScroll}
-  >
-    {children}
-  </SwipeListControlList>
-);
-
-const renderSwipelistDots = ({ activeIndex, indexFraction, showDots, children }) => (
-  <SwipeListControlDots activeIndex={activeIndex} indexFraction={indexFraction} showDots={showDots}>
-    {children}
-  </SwipeListControlDots>
 );
