@@ -24,8 +24,8 @@ const chair: Picture = {
 
 export const defaultProps: RecommendationProps = {
   context,
-  title: 'С этип продуктом приобретают',
-  cards: [
+  title: 'С этим продуктом приобретают',
+  recommendations: [
     {
       title: 'Кредиты',
       items: ['до 10 000 000 ₽', 'до 10 лет'],

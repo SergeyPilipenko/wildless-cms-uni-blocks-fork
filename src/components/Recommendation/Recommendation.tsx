@@ -12,7 +12,7 @@ const CARD_SHIFT = 525;
 export interface RecommendationProps extends RecommendationContent, UniBlockProps {}
 
 export const Recommendation = JSX<RecommendationProps>(
-  ({ context, cards = [], className = '', title, version }) => {
+  ({ context, recommendations = [], className = '', title, version }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const blockClassName =
@@ -29,11 +29,17 @@ export const Recommendation = JSX<RecommendationProps>(
           style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}
           role="list"
         >
-          {cards?.length
-            ? cards.map(renderRecommendationCard({ context, version, className: cardClassName }))
+          {recommendations?.length
+            ? recommendations.map(
+                renderRecommendationCard({ context, version, className: cardClassName }),
+              )
             : null}
         </div>
-        {renderNavButtons({ cardsCount: cards.length, activeCardIndex, setActiveCardIndex })}
+        {renderNavButtons({
+          cardsCount: recommendations.length,
+          activeCardIndex,
+          setActiveCardIndex,
+        })}
         <div
           className={`${BLUR_BLOCK_CLASSES} left-0 ${
             version === 'secondary' ? 'bg-opacity-from-main' : 'bg-opacity-from-white'

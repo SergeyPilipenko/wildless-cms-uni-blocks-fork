@@ -14,6 +14,6 @@ export type RecommendationCardContent = HeadingContent &
  */
 export interface RecommendationContent extends HeadingContent {
   /** @title Карточки */
-  cards?: RecommendationCardContent[];
+  recommendations?: RecommendationCardContent[];
   version?: BlockVersion;
 }

@@ -1774,7 +1774,7 @@ Object {
     },
     "RecommendationContent": Object {
       "properties": Object {
-        "cards": Object {
+        "recommendations": Object {
           "items": Object {
             "$ref": "#/definitions/RecommendationCardContent",
           },
