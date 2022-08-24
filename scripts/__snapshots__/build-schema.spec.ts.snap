@@ -1891,6 +1891,9 @@ Object {
           "title": "Заголовок",
           "type": "string",
         },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
       },
       "title": "Блок шаги",
       "type": "object",

@@ -2,15 +2,16 @@ import { JSX } from '@redneckz/uni-jsx';
 
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { ALIGN_TEXT, BACKGROUND_COLOR } from './constants';
+import { ALIGN_TEXT, HEADLINE_BLOCK_STYLE_MAPS } from './constants';
 import type { HeadlineContent } from './HeadlineContent';
 
 export interface HeadlineProps extends UniBlockProps, HeadlineContent {}
 
 export const Headline = JSX<HeadlineProps>(
   ({ bgColorHeadline = 'transparent', align = 'left', className = '', title, description }) => {
+    const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
     return (
-      <section className={`p-[50px] ${BACKGROUND_COLOR[bgColorHeadline]} ${className}`}>
+      <section className={`p-[50px] ${STYLE_MAPS.background} ${className}`}>
         {title && (
           <Heading
             headingType="h2"

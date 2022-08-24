@@ -1,6 +1,6 @@
 import type { IconName } from '../../ui-kit/Icon/IconProps';
-
 import type { SizeVersion } from '../../model/SizeVersion';
+import type { BlockVersion } from '../../model/BlockVersion';
 
 /**
  * @title Шаг
@@ -30,4 +30,5 @@ export interface StepsBlockContent {
    */
   steps?: Step[];
   size?: SizeVersion; // TODO: mobile content
+  version?: BlockVersion; // TODO: mobile content
 }
