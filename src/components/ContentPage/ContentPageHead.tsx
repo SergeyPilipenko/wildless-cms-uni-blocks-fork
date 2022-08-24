@@ -28,7 +28,7 @@ export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data,
 function renderOpenGraph(og: Record<string, string> | undefined) {
   return og
     ? Object.entries(og).map(([key, value]) => (
-        <meta key={key} name={`og:${key}`} content={value} />
+        <meta key={key} property={`og:${key}`} content={value} />
       ))
     : null;
 }
