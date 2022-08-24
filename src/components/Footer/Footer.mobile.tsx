@@ -8,11 +8,11 @@ import { HorizontalNavigation } from './HorizontalNavigation';
 import { SocialMedia } from './SocialMedia';
 import { TextInformation } from './TextInformation';
 
+import { useSitemap } from '../../services/sitemap/useSitemap';
 import { Button } from '../../ui-kit/Button/Button';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import { getAccordionItems } from '../../utils/getAccordionItems';
-import { useSitemap } from "../../services/sitemap/useSitemap";
 
 export interface FooterProps extends FooterContent, UniBlockProps {}
 
@@ -27,7 +27,7 @@ export const Footer = JSX<FooterProps>(
     horizontalNavigationTitle,
   }) => {
     const sitemap = useSitemap(context.useAsyncData);
-    const dispositions = sitemap?.dispositions
+    const dispositions = sitemap?.dispositions;
     return (
       <footer className={`px-4 py-[26px] bg-white ${className}`}>
         <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
