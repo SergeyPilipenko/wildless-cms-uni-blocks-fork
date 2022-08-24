@@ -17,7 +17,7 @@ export interface TableColumnProps extends UniBlockProps {
 
 export const TableColumn = JSX<TableColumnProps>(
   ({ header, columnData, visibleRowLength = 0, isFillGradient, showRow, onToggleColumn }) => {
-    const columnDataView = columnData.slice(0, showRow ? columnData.length : visibleRowLength);
+    const columnDataView = columnData?.slice(0, showRow ? columnData.length : visibleRowLength);
     const gradientClassName = isFillGradient ? GRADIENT : '';
     const buttonVersion: ButtonVersion = isFillGradient ? 'secondary' : 'primary';
     return (
