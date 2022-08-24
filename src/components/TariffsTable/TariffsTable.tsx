@@ -1,16 +1,16 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { COLS_LENGTH_FOR_SCROLL } from './constants';
-import { TariffsTableRow } from './TariffsTableRow';
-import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
+import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
+import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
+import { COLS_LENGTH_FOR_SCROLL } from './constants';
 import type {
   TariffsTableCellData,
   TariffsTableColumn,
   TariffsTableContent,
   TariffsTableRowHeader,
 } from './TariffsTableContent';
-import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
+import { TariffsTableRow } from './TariffsTableRow';
 
 export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
@@ -46,7 +46,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
         {rowData?.length ? (
           <div role="table">
             <div className="relative">
-              {rowData.map((row, i) => (
+              {rowData.map((row, i, { length }) => (
                 <TariffsTableRow
                   key={String(i)}
                   row={row}
