@@ -48,7 +48,9 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               ) : null
             }
           >
-            {description ? <Description className="mt-3" description={description} /> : null}
+            {description ? (
+              <Description className="mt-3 text-m-md" description={description} />
+            ) : null}
             {benefits?.filter((items) => items.label)?.length ? (
               <div className="mt-3">{benefits.map((_, i) => renderBenefit(_, i, version))}</div>
             ) : null}

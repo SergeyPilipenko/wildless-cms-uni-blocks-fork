@@ -32,6 +32,10 @@ module.exports = {
           'linear-gradient(270deg, #FFFFFF 34.89%, rgba(255, 255, 255, 0) 92.52%);',
         'opacity-from-white':
           'linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 25%, rgba(255,255,255,0) 80%);',
+        'opacity-to-main':
+          'linear-gradient(270deg, rgba(var(--color-primary-main), 1) 34.89%, rgba(var(--color-primary-main), 0) 92.52%);',
+        'opacity-from-main':
+          'linear-gradient(90deg, rgba(var(--color-primary-main), 1) 0%, rgba(var(--color-primary-main), 0) 80%);',
       },
       fontFamily: {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],

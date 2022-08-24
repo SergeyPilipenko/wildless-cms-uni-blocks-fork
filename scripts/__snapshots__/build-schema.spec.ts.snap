@@ -1749,6 +1749,49 @@ Object {
       "title": "QR код",
       "type": "object",
     },
+    "RecommendationCardContent": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "RecommendationContent": Object {
+      "properties": Object {
+        "cards": Object {
+          "items": Object {
+            "$ref": "#/definitions/RecommendationCardContent",
+          },
+          "title": "Карточки",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Рекомендации",
+      "type": "object",
+    },
     "RowHeader": Object {
       "properties": Object {
         "title": Object {
