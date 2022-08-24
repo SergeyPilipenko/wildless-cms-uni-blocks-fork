@@ -1,4 +1,4 @@
-import type { BgColorVersion } from '../../model/BgColorVersion';
+import type { BlockVersionWithTransparent } from '../../model/BlockVersion';
 import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
 import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
@@ -11,6 +11,5 @@ export type HeadlineContent = HeadingContent &
   DescriptionContent &
   ImageContent & {
     align?: AlignType;
-    // TODO: image for mobile
-    bgColor?: BgColorVersion;
+    bgColorHeadline?: BlockVersionWithTransparent;
   };

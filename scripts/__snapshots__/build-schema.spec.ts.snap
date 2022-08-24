@@ -159,18 +159,6 @@ Object {
       "title": "Блок преимущества",
       "type": "object",
     },
-    "BgColorVersion": Object {
-      "enum": Array [
-        "transparent",
-        "bg-white",
-      ],
-      "enumNames": Array [
-        "Прозрачный",
-        "Белый",
-      ],
-      "title": "Цвет фона",
-      "type": "string",
-    },
     "BlockVersion": Object {
       "enum": Array [
         "primary",
@@ -180,7 +168,17 @@ Object {
         "Основная",
         "Второстепенная",
       ],
-      "title": "Цвет плитки",
+      "title": "Цвет блока",
+      "type": "string",
+    },
+    "BlockVersionWithTransparent": Object {
+      "enum": Array [
+        "transparent",
+        "primary",
+        "secondary",
+      ],
+      "enumNames": "[\\"Прозрачная\\", Основная\\", \\"Второстепенная\\"]",
+      "title": "Цвет блока",
       "type": "string",
     },
     "ButtonContent": Object {
@@ -771,8 +769,8 @@ Object {
         "align": Object {
           "$ref": "#/definitions/AlignType",
         },
-        "bgColor": Object {
-          "$ref": "#/definitions/BgColorVersion",
+        "bgColorHeadline": Object {
+          "$ref": "#/definitions/BlockVersionWithTransparent",
         },
         "description": Object {
           "title": "Описание",
@@ -797,8 +795,8 @@ Object {
         "align": Object {
           "$ref": "#/definitions/AlignType",
         },
-        "bgColor": Object {
-          "$ref": "#/definitions/BgColorVersion",
+        "bgColorHeadline": Object {
+          "$ref": "#/definitions/BlockVersionWithTransparent",
         },
         "description": Object {
           "title": "Описание",

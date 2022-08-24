@@ -2,5 +2,5 @@
   "title": "Заголовок",
   "description": "Описание",
   "align": "center",
-  "bgColor": "transparent"
+  "bgColorHeadline": "transparent"
 }
