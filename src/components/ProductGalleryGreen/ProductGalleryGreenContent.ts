@@ -19,9 +19,9 @@ export interface ProductSlide {
 }
 
 /**
- * @title Продуктовая галерея (для мобильных горизонтальная прокрутка shift+mouseScroll)
+ * @title Продуктовая галерея
  */
-export interface ProductGalleryContent {
+export interface ProductGalleryGreenContent {
   /**
    * @title Задержка
    * @hidden //! temporary not used

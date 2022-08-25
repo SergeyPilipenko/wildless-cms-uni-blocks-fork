@@ -15,7 +15,7 @@ const HEADING_STYLE_MAP: Record<HeadingType, string> = {
 };
 
 export const Heading = JSX<HeadingProps>((props) => {
-  const { className, headingType, title } = props;
+  const { className = '', headingType, title } = props;
   if (!headingType) {
     return;
   }
@@ -23,7 +23,7 @@ export const Heading = JSX<HeadingProps>((props) => {
 
   return (
     <Tag
-      className={`font-sans font-medium m-0 ${HEADING_STYLE_MAP[headingType]} ${className || ''}`}
+      className={`font-sans font-medium m-0 ${HEADING_STYLE_MAP[headingType]} ${className}`}
     >
       {title}
     </Tag>

@@ -27,6 +27,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      backgroundColor:{
+        'white/10':'rgba(255,255,255,0.1);',
+      },
       backgroundImage: {
         'opacity-to-white':
           'linear-gradient(270deg, #FFFFFF 34.89%, rgba(255, 255, 255, 0) 92.52%);',
@@ -108,6 +111,12 @@ module.exports = {
           to: { transform: 'translateX(0px)' },
         },
       },
+      boxShadow: {
+        'dark-blue/42': '0 18px 36px -4px rgba(24, 39, 75, 0.42);',
+      },
+      border: {
+        'white/50':'rgba(255,255,255,.5);',
+      }
     },
   },
   plugins: [],

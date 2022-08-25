@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "nav": {
+        "title": "Заголовок",
+        "description": "Описание"
+      },
+      "productBlock": {
+        "title": "Продуктовая галерея",
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 280
+          }
+        },
+        "version": "primary",
+        "description": "Описание",
+        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
+      }
+    }
+  ]
+}

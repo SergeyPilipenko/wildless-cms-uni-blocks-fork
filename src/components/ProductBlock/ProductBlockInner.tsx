@@ -23,26 +23,16 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     image,
     items,
     version = 'primary',
+    textBlockClassName = '',
   }) => {
+    const textColor = version === 'secondary' ? 'text-white' : '';
     return (
       <div className={`flex grow justify-between items-stretch ${className}`}>
-        <div className={'flex flex-col'}>
+        <div className={`flex flex-col ${textBlockClassName}`}>
           <BaseTile
             context={context}
-            title={
-              title && (
-                <Heading
-                  headingType={headingType}
-                  title={title}
-                  className="whitespace-pre-wrap max-w-[600px]"
-                />
-              )
-            }
-            buttons={
-              buttons?.length ? (
-                <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
-              ) : null
-            }
+            title={getTitle(title, headingType, textColor)}
+            buttons={getButtons(context, buttons)}
           >
             {description && (
               <Description className="mt-4 max-w-[600px]" description={description} />
@@ -62,3 +52,21 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     );
   },
 );
+
+const getTitle = (title, headingType, textColor) => {
+  return (
+    title && (
+      <Heading
+        headingType={headingType}
+        title={title}
+        className={`whitespace-pre-wrap max-w-[600px] ${textColor}`}
+      />
+    )
+  );
+};
+
+const getButtons = (context, buttons) => {
+  return buttons?.length ? (
+    <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+  ) : null;
+};

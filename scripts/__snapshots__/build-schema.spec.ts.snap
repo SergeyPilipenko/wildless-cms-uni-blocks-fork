@@ -818,6 +818,7 @@ Object {
         "",
         "ActualBalanceIcon",
         "AppleIcon",
+        "ArrowsRewindRight",
         "AtmIcon",
         "BankIcon",
         "BurgerIcon",
@@ -893,6 +894,7 @@ Object {
         "",
         "Деньги",
         "Лого «Apple»",
+        "ArrowsRewindRight",
         "Банкомат",
         "Банк",
         "Бургер",
@@ -1429,6 +1431,10 @@ Object {
         "accordionBlockType": Object {
           "$ref": "#/definitions/AccordionBlockType",
         },
+        "backgroundText": Object {
+          "title": "Фоновый текст под иллюстрацией",
+          "type": "string",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1486,6 +1492,10 @@ Object {
     },
     "ProductBlockContent": Object {
       "properties": Object {
+        "backgroundText": Object {
+          "title": "Фоновый текст под иллюстрацией",
+          "type": "string",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1540,6 +1550,10 @@ Object {
     },
     "ProductBlockInnerContent": Object {
       "properties": Object {
+        "backgroundText": Object {
+          "title": "Фоновый текст под иллюстрацией",
+          "type": "string",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1597,11 +1611,24 @@ Object {
       "title": "Продуктовая галерея (для мобильных горизонтальная прокрутка shift+mouseScroll)",
       "type": "object",
     },
+    "ProductGalleryGreenContent": Object {
+      "properties": Object {
+        "slides": Object {
+          "items": Object {
+            "$ref": "#/definitions/ProductSlide",
+          },
+          "title": "Слайды",
+          "type": "array",
+        },
+      },
+      "title": "Продуктовая галерея",
+      "type": "object",
+    },
     "ProductSlide": Object {
       "properties": Object {
         "nav": Object {
           "properties": Object {
-            "desc": Object {
+            "description": Object {
               "title": "Описание",
               "type": "string",
             },
@@ -1612,7 +1639,7 @@ Object {
           },
           "required": Array [
             "title",
-            "desc",
+            "description",
           ],
           "title": "Превью содержимого слайда на навигации",
           "type": "object",

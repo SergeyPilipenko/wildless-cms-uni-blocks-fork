@@ -20,7 +20,13 @@ export type ProductBlockInnerContent = HeadingContent &
      */
     benefits?: Benefit[];
     version?: BlockVersion;
-    buttons?: ButtonContent[];
+    /**
+     * @title Стиль для текстовой части
+     * @hidden
+     */
+    textBlockClassName?: string;
+    /** @title Фоновый текст под иллюстрацией */
+    backgroundText?: string;
   };
 
 /**
