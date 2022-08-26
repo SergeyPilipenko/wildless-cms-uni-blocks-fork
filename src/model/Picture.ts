@@ -1,6 +1,6 @@
 export interface Img {
   /** @title Картинка */
-  src: string;
+  src?: string;
   /** @title Альтернативный текст (alt) */
   alt?: string;
   /** @title Текст подсказки (title) */
@@ -9,7 +9,7 @@ export interface Img {
 
 export interface ImgSource {
   /** @title Картинка */
-  src: string;
+  src?: string;
   /** @title Формат */
   format?: 'jpeg' | 'jpg' | 'png' | 'gif' | 'webp' | 'heif' | 'avif';
   /** @hidden */

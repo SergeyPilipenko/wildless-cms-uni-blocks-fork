@@ -1,7 +1,8 @@
-import type { IconName } from '../../../icons/IconName';
+import type { IconName } from '../../icons/IconName';
+import { ActiveHandler } from '../../ui-kit/BlocksList/BlocksListProps';
 
-export const useActiveHandler = ({ context, blocks }) => {
-  const [isActive, setIsActive] = context.useState(false);
+export const useActiveHandler = ({ context, blocks, initialState = false }: ActiveHandler) => {
+  const [isActive, setIsActive] = context.useState(initialState);
   const hasContent = blocks?.length;
   const icon: IconName = isActive ? 'MinusIcon' : 'PlusIcon';
 

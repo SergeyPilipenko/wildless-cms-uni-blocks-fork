@@ -9,6 +9,10 @@ export interface blockItemCommonProps {
    * @default Список
    */
   label?: string;
+  /**
+   * @title Отображать в раскрытом виде
+   */
+  isExpanded?: boolean;
   /** @title Блоки */
   blocks?: BlockDef[];
   /**
@@ -17,7 +21,6 @@ export interface blockItemCommonProps {
    */
   bordered?: boolean; // TODO: только для мобильной версии
   columns?: ColumnsCount;
-  isActive?: boolean;
 }
 
 /**

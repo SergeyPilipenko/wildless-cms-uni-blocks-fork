@@ -8,6 +8,13 @@ import type { ProductTileContent } from '../../components/ProductTile/ProductTil
 import type { TextBlockContent } from '../../components/TextBlock/TextBlockContent';
 import type { TileContent } from '../../components/Tile/TileContent';
 import type { LinkListContent } from '../../components/LinkList/LinkListContent';
+import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
+
+export interface ActiveHandler {
+  context: ContentPageContext;
+  blocks?: BlockDef[];
+  initialState?: boolean;
+}
 
 /**
  * @title Количество колонок
@@ -16,73 +23,64 @@ import type { LinkListContent } from '../../components/LinkList/LinkListContent'
 export type ColumnsCount = 1 | 2;
 
 /**
- * @title Тип блока
- */
-export type BlockDefType =
-  | 'Headline'
-  | 'LinkDocs'
-  | 'TextBlock'
-  | 'PictureText'
-  | 'Tile'
-  | 'ProductTile'
-  | 'ProductBlock'
-  | 'Gallery'
-  | 'MiniGallery'
-  | 'LinkList';
-
-interface BaseBlockDef {
-  blockListType: BlockDefType;
-}
-
-/**
  * @title Заголовок
+ * @default {"blockListType": "Headline"}
  */
-export type HeadlineBlockListDef = HeadlineContent & BaseBlockDef;
+export type HeadlineBlockListDef = HeadlineContent & { blockListType: 'Headline' };
 
 /**
  * @title Список документов
+ * @default {"blockListType": "LinkDocs"}
  */
-export type LinkDocsBlockListDef = LinkDocsContent & BaseBlockDef;
+export type LinkDocsBlockListDef = LinkDocsContent & { blockListType: 'LinkDocs' };
 
 /**
  * @title Текстовый блок
+ * @default {"blockListType": "TextBlock"}
  */
-export type TextBlockBlockListDef = TextBlockContent & BaseBlockDef;
+export type TextBlockBlockListDef = TextBlockContent & { blockListType: 'TextBlock' };
 
 /**
  * @title Картинка с текстом
+ * @default {"blockListType": "PictureText"}
  */
-export type PictureTextBlockListDef = PictureTextContent & BaseBlockDef;
+export type PictureTextBlockListDef = PictureTextContent & { blockListType: 'PictureText' };
 
 /**
  * @title Продуктовый блок
+ * @default {"blockListType": "ProductBlock"}
  */
-export type ProductBlockBlockListDef = ProductBlockContent & BaseBlockDef;
+export type ProductBlockBlockListDef = ProductBlockContent & { blockListType: 'ProductBlock' };
 
 /**
  * @title Плитка
+ * @default {"blockListType": "Tile"}
  */
-export type TileBlockListDef = TileContent & BaseBlockDef;
+export type TileBlockListDef = TileContent & { blockListType: 'Tile' };
 
 /**
  * @title Продуктовая плитка
+ * @default {"blockListType": "ProductTile"}
  */
-export type ProductTileBlockListDef = ProductTileContent & BaseBlockDef;
+export type ProductTileBlockListDef = ProductTileContent & { blockListType: 'ProductTile' };
 
 /**
  * @title Галлерея
+ * @default {"blockListType": "Gallery"}
  */
-export type GalleryBlockListDef = GalleryContent & BaseBlockDef;
+export type GalleryBlockListDef = GalleryContent & { blockListType: 'Gallery' };
 
 /**
  * @title Мини-галлерея
+ * @default {"blockListType": "MiniGallery"}
  */
-export type MiniGalleryBlockListDef = MiniGalleryContent & BaseBlockDef;
+export type MiniGalleryBlockListDef = MiniGalleryContent & { blockListType: 'MiniGallery' };
 
 /**
  * @title Список ссылок
+ * @default {"blockListType": "LinkList"}
  */
-export type LinkListBlockListDef = LinkListContent & BaseBlockDef;
+export type LinkListBlockListDef = LinkListContent & { blockListType: 'LinkList' };
 
 /**
  * @title Выберите блок

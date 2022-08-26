@@ -3,7 +3,7 @@ import type { UniBlockProps } from '../../types';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import type { AccordionItemCommonProps } from './AccordionContent';
 import { AccordionItemInner } from './AccordionItemInner';
-import { useActiveHandler } from './utils/useActiveHandler';
+import { useActiveHandler } from './useActiveHandler';
 
 export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
 

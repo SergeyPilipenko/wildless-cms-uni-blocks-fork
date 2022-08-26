@@ -13,8 +13,9 @@ export async function transformPicture(
   options: TransformationOptions,
 ): Promise<Picture> {
   const sources = picture.sources || [];
+  const src = picture?.src || '';
   const [transformedPicture, ...transformedSources] = await Promise.all(
-    [picture].concat(sources).map((_) => transformImg(pagePath, picture.src, { ...options, ..._ })),
+    [picture].concat(sources).map((_) => transformImg(pagePath, src, { ...options, ..._ })),
   );
   return {
     ...picture,

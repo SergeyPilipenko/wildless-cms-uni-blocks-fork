@@ -26,6 +26,9 @@ Object {
           "title": "Заголовок",
           "type": "string",
         },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
       },
       "title": "Аккордеон",
       "type": "object",
@@ -47,10 +50,17 @@ Object {
         "columns": Object {
           "$ref": "#/definitions/ColumnsCount",
         },
+        "isExpanded": Object {
+          "title": "Отображать в раскрытом виде",
+          "type": "boolean",
+        },
         "label": Object {
           "default": "Список",
           "title": "Название",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "title": "Элемент списка",
@@ -142,22 +152,6 @@ Object {
         },
       ],
       "title": "Содержимое блока",
-    },
-    "BlockDefType": Object {
-      "enum": Array [
-        "Headline",
-        "LinkDocs",
-        "TextBlock",
-        "PictureText",
-        "Tile",
-        "ProductTile",
-        "ProductBlock",
-        "Gallery",
-        "MiniGallery",
-        "LinkList",
-      ],
-      "title": "Тип блока",
-      "type": "string",
     },
     "BlockVersion": Object {
       "enum": Array [
@@ -597,9 +591,13 @@ Object {
       "type": "object",
     },
     "GalleryBlockListDef": Object {
+      "default": Object {
+        "blockListType": "Gallery",
+      },
       "properties": Object {
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "Gallery",
+          "type": "string",
         },
         "cards": Object {
           "items": Object {
@@ -766,6 +764,9 @@ Object {
       "type": "object",
     },
     "HeadlineBlockListDef": Object {
+      "default": Object {
+        "blockListType": "Headline",
+      },
       "properties": Object {
         "align": Object {
           "$ref": "#/definitions/AlignType",
@@ -774,7 +775,8 @@ Object {
           "$ref": "#/definitions/BlockVersionWithTransparent",
         },
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "Headline",
+          "type": "string",
         },
         "description": Object {
           "title": "Описание",
@@ -1000,9 +1002,6 @@ Object {
           "type": "string",
         },
       },
-      "required": Array [
-        "src",
-      ],
       "type": "object",
     },
     "ImgSource": Object {
@@ -1039,9 +1038,6 @@ Object {
           "type": "string",
         },
       },
-      "required": Array [
-        "src",
-      ],
       "type": "object",
     },
     "LinkColumnsMode": Object {
@@ -1057,12 +1053,16 @@ Object {
       "type": "string",
     },
     "LinkDocsBlockListDef": Object {
+      "default": Object {
+        "blockListType": "LinkDocs",
+      },
       "properties": Object {
         "align": Object {
           "$ref": "#/definitions/AlignType",
         },
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "LinkDocs",
+          "type": "string",
         },
         "columnsMode": Object {
           "$ref": "#/definitions/LinkColumnsMode",
@@ -1160,9 +1160,13 @@ Object {
       "type": "object",
     },
     "LinkListBlockListDef": Object {
+      "default": Object {
+        "blockListType": "LinkList",
+      },
       "properties": Object {
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "LinkList",
+          "type": "string",
         },
         "documents": Object {
           "items": Object {
@@ -1249,9 +1253,13 @@ Object {
       "type": "string",
     },
     "MiniGalleryBlockListDef": Object {
+      "default": Object {
+        "blockListType": "MiniGallery",
+      },
       "properties": Object {
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "MiniGallery",
+          "type": "string",
         },
         "cards": Object {
           "items": Object {
@@ -1409,13 +1417,13 @@ Object {
           "type": "string",
         },
       },
-      "required": Array [
-        "src",
-      ],
       "title": "Изображение",
       "type": "object",
     },
     "PictureTextBlockListDef": Object {
+      "default": Object {
+        "blockListType": "PictureText",
+      },
       "properties": Object {
         "benefits": Object {
           "items": Object {
@@ -1425,7 +1433,8 @@ Object {
           "type": "array",
         },
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "PictureText",
+          "type": "string",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -1462,6 +1471,9 @@ Object {
       "type": "object",
     },
     "ProductBlockBlockListDef": Object {
+      "default": Object {
+        "blockListType": "ProductBlock",
+      },
       "properties": Object {
         "backgroundText": Object {
           "title": "Фоновый текст под иллюстрацией",
@@ -1477,7 +1489,8 @@ Object {
           "type": "array",
         },
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "ProductBlock",
+          "type": "string",
         },
         "breadcrumbs": Object {
           "items": Object {
@@ -1691,6 +1704,9 @@ Object {
       "type": "object",
     },
     "ProductTileBlockListDef": Object {
+      "default": Object {
+        "blockListType": "ProductTile",
+      },
       "properties": Object {
         "benefits": Object {
           "items": Object {
@@ -1701,7 +1717,8 @@ Object {
           "type": "array",
         },
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "ProductTile",
+          "type": "string",
         },
         "buttons": Object {
           "items": Object {
@@ -2188,9 +2205,13 @@ Object {
       "type": "object",
     },
     "TextBlockBlockListDef": Object {
+      "default": Object {
+        "blockListType": "TextBlock",
+      },
       "properties": Object {
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "TextBlock",
+          "type": "string",
         },
         "blockVersion": Object {
           "$ref": "#/definitions/TextBlockVersion",
@@ -2290,9 +2311,13 @@ Object {
       "type": "string",
     },
     "TileBlockListDef": Object {
+      "default": Object {
+        "blockListType": "Tile",
+      },
       "properties": Object {
         "blockListType": Object {
-          "$ref": "#/definitions/BlockDefType",
+          "const": "Tile",
+          "type": "string",
         },
         "buttons": Object {
           "items": Object {
@@ -2415,7 +2440,8 @@ Object {
         "columns": Object {
           "$ref": "#/definitions/ColumnsCount",
         },
-        "isActive": Object {
+        "isExpanded": Object {
+          "title": "Отображать в раскрытом виде",
           "type": "boolean",
         },
         "label": Object {

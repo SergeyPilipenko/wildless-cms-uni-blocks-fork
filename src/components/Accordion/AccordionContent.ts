@@ -1,5 +1,5 @@
 import type { BlockDef, ColumnsCount } from '../../ui-kit/BlocksList/BlocksListProps';
-
+import type { BlockVersion } from '../../model/BlockVersion';
 /**
  * @title Элемент списка
  */
@@ -9,6 +9,10 @@ export interface AccordionItemCommonProps {
    * @default Список
    */
   label?: string;
+  /**
+   * @title Отображать в раскрытом виде
+   */
+  isExpanded?: boolean;
   /** @title Блоки */
   blocks?: BlockDef[];
   /**
@@ -16,6 +20,8 @@ export interface AccordionItemCommonProps {
    * @default false
    */
   bordered?: boolean; // TODO: только для мобильной версии
+  version?: BlockVersion;
+
   columns?: ColumnsCount;
 }
 
@@ -25,6 +31,7 @@ export interface AccordionItemCommonProps {
 export interface AccordionContent {
   /** @title Заголовок */
   title?: string;
+  version?: BlockVersion;
   /** @title Список */
   accordionItems?: AccordionItemCommonProps[];
   /** @title Описание */
