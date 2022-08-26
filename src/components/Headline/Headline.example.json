@@ -2,5 +2,12 @@
   "title": "Заголовок",
   "description": "Описание",
   "align": "center",
-  "bgColorHeadline": "transparent"
+  "bgColorHeadline": "transparent",
+  "image": {
+    "format": "webp",
+    "size": {
+      "width": 180,
+      "height": 180
+    }
+  }
 }
