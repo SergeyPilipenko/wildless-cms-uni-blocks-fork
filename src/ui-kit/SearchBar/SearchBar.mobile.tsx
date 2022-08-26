@@ -31,7 +31,7 @@ export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
         placeholder="some search"
       />
       <button
-        className="visible peer-placeholder-shown:invisible absolute top-2 right-3 w-6 h-6 p-1 bg-transparent cursor-pointer"
+        className="visible peer-placeholder-shown:invisible absolute top-2 right-3 w-6 h-6 p-1 bg-transparent cursor-pointer border-none"
         onClick={(e) => {
           e.preventDefault();
           setTerm('');
