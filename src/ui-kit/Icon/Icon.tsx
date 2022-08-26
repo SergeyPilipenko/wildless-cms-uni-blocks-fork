@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { projectSettings } from '../../ProjectSettings';
 import type { IconColor, IconProps } from './IconProps';
+import { IconTitleMap } from '../../icons/IconName';
 
 const svgColorsMap: Record<IconColor, string> = {
   none: '',
@@ -11,7 +12,7 @@ export const Icon = JSX<IconProps>(
   ({
     className = '',
     name,
-    alt = `Icon ${name}`,
+    alt = `Иконка ${IconTitleMap[name] || name}`,
     title = alt,
     asSVG,
     color = 'primary',

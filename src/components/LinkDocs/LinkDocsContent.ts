@@ -34,7 +34,7 @@ export interface LinkDocsItem extends LinkProps {
 export interface LinkDocsContent {
   /** @title Заголовок */
   title?: string;
-  /** @title Подзаголовок */
+  /** @title Описание */
   subtitle?: string;
   /** @title Название иконки */
   icon?: IconName;

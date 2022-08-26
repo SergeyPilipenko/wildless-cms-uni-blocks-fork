@@ -56,6 +56,10 @@ export enum IconMap {
   ${iconNames.map((_) => `${_} = ${wrap(_)}`).join(', ')}
 }
 
+export enum IconTitleMap {
+  ${iconTitles.map((_, i) => `${iconNames[i]} = "${_ || iconNames[i]}"`).join(', ')}
+}
+
 /**
  *
  * @title Иконка

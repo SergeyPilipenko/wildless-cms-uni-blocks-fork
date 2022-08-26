@@ -1,7 +1,7 @@
 import type { Picture } from '../../model/Picture';
 
 /**
- * @title Цвет плитки
+ * @title Цвет блока
  * @enumNames ["Основная", "Второстепенная", "Второстепенная прозрачная"]
  */
 export type TextBlockVersion = 'primary' | 'secondary' | 'secondary-light';

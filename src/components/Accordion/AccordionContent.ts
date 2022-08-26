@@ -27,7 +27,7 @@ export interface AccordionContent {
   title?: string;
   /** @title Список */
   accordionItems?: AccordionItemCommonProps[];
-  /** @title Подзаголовок */
+  /** @title Описание */
   description?: string; // TODO: только для мобильной версии
   /**
    * @title Отображать/скрывать обводку у элемента списка

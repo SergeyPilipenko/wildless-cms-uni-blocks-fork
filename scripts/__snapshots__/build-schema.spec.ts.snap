@@ -19,7 +19,7 @@ Object {
           "type": "boolean",
         },
         "description": Object {
-          "title": "Подзаголовок",
+          "title": "Описание",
           "type": "string",
         },
         "title": Object {
@@ -1082,7 +1082,7 @@ Object {
           "$ref": "#/definitions/LinkListMode",
         },
         "subtitle": Object {
-          "title": "Подзаголовок",
+          "title": "Описание",
           "type": "string",
         },
         "title": Object {
@@ -1123,7 +1123,7 @@ Object {
           "$ref": "#/definitions/LinkListMode",
         },
         "subtitle": Object {
-          "title": "Подзаголовок",
+          "title": "Описание",
           "type": "string",
         },
         "title": Object {
@@ -2281,7 +2281,7 @@ Object {
         "Второстепенная",
         "Второстепенная прозрачная",
       ],
-      "title": "Цвет плитки",
+      "title": "Цвет блока",
       "type": "string",
     },
     "TileBlockListDef": Object {
