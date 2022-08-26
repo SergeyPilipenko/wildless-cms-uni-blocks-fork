@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { IconName } from '../../icons/IconName';
 import type { LinkDocsItem } from './LinkDocsContent';
 import { LinkDocsListItem } from './LinkDocsListItem';
 
@@ -20,7 +20,9 @@ export const LinkDocsVerticalList = JSX<LinkDocsVerticalListProps>(
           ? documents.map((doc, i) => (
               <div key={String(i)} role="listitem">
                 <LinkDocsListItem
-                  className={hasBorder ? 'rounded-md border-main-stroke border p-4' : ''}
+                  className={
+                    hasBorder ? 'rounded-md border-main-stroke border border-solid p-4' : ''
+                  }
                   doc={doc}
                   icon={icon}
                 />

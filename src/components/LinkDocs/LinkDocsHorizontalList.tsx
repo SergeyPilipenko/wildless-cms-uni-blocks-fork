@@ -16,7 +16,7 @@ export const LinkDocsHorizontalList = JSX<LinkDocsHorizontalListProps>(
           ? documents.map((doc, i) => (
               <LinkDocsListItem
                 key={String(i)}
-                className={hasBorder ? 'rounded-md border-main-stroke border p-4' : ''}
+                className={hasBorder ? 'rounded-md border-main-stroke border border-solid p-4' : ''}
                 doc={doc}
                 icon={icon}
               />
