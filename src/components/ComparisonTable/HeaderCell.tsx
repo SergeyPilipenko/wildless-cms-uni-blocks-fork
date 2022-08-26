@@ -13,6 +13,7 @@ export interface HeaderCellProps {
   image?: Picture;
   title?: string;
   link?: LinkProps;
+  isFillGradient?: boolean;
 }
 
 export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) => (

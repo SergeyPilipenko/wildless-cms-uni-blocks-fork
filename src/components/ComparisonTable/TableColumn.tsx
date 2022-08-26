@@ -5,10 +5,11 @@ import { Button } from '../../ui-kit/Button/Button';
 import { GRADIENT } from './constants';
 import { HeaderCell } from './HeaderCell';
 import { TableCell } from './TableCell';
+import type { TableColumnData, TableColumnHeader } from './ComparisonTableContent';
 
 export interface TableColumnProps extends UniBlockProps {
-  header: any;
-  columnData: any;
+  header: TableColumnHeader;
+  columnData: TableColumnData[];
   visibleRowLength: number;
   isFillGradient: boolean;
   showRow: boolean;

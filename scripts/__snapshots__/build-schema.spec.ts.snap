@@ -1992,6 +1992,37 @@ Object {
       "title": "Вкладка",
       "type": "object",
     },
+    "TableColumnData": Object {
+      "properties": Object {
+        "cell": Object {
+          "items": Object {
+            "$ref": "#/definitions/CellData",
+          },
+          "type": "array",
+        },
+        "rowHeader": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "cell",
+      ],
+      "title": "Ячейка",
+      "type": "object",
+    },
+    "TableColumnHeader": Object {
+      "properties": Object {
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Параметр",
+      "type": "object",
+    },
     "Target": Object {
       "enum": Array [
         "",

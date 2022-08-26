@@ -49,6 +49,24 @@ export interface RowHeader {
   /** @title Заголовок */
   title?: string;
 }
+
+/**
+ * @title Ячейка
+ */
+export interface TableColumnData {
+  rowHeader?: string;
+  cell: CellData[];
+}
+
+/**
+ * @title Параметр
+ */
+export interface TableColumnHeader {
+  /** @title Заголовок */
+  title?: string;
+  icon?: IconName;
+}
+
 /**
  * @title Сравнительная таблица
  */
