@@ -15,12 +15,14 @@ export const Headline = JSX<HeadlineProps>(
         {title && (
           <Heading
             headingType="h2"
-            className={`text-primary-text ${ALIGN_TEXT[align]}`}
+            className={`text-primary-text ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
             title={title}
           />
         )}
         {description && (
-          <p className={`font-normal text-base mt-4 ${ALIGN_TEXT[align]}`}>{description}</p>
+          <p className={`font-normal text-base mt-4 ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}>
+            {description}
+          </p>
         )}
       </section>
     );

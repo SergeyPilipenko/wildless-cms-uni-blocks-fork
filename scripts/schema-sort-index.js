@@ -7,6 +7,7 @@ export default [
   'image',
   'breadcrumbs',
   'benefits',
+  'isScroll',
   'items',
   'steps',
   'cards',

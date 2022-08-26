@@ -38,7 +38,7 @@ export interface GalleryContent {
   description?: string;
   /**
    * @title Карточки
-   * @minItems 4
+   * @minItems 3
    */
   cards?: GalleryCard[];
   /** @title Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll) */

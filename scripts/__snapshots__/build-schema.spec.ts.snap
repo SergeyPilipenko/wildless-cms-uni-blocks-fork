@@ -177,7 +177,11 @@ Object {
         "primary",
         "secondary",
       ],
-      "enumNames": "[\\"Прозрачная\\", Основная\\", \\"Второстепенная\\"]",
+      "enumNames": Array [
+        "Прозрачная",
+        "Основная",
+        "Второстепенная",
+      ],
       "title": "Цвет блока",
       "type": "string",
     },
@@ -601,7 +605,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/GalleryCard",
           },
-          "minItems": 4,
+          "minItems": 3,
           "title": "Карточки",
           "type": "array",
         },
@@ -661,7 +665,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/GalleryCard",
           },
-          "minItems": 4,
+          "minItems": 3,
           "title": "Карточки",
           "type": "array",
         },
@@ -1253,7 +1257,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/GalleryCard",
           },
-          "minItems": 4,
+          "minItems": 3,
           "title": "Карточки",
           "type": "array",
         },
@@ -1278,6 +1282,7 @@ Object {
     },
     "MiniGalleryContent": Object {
       "$ref": "#/definitions/GalleryContent",
+      "minItems": 3,
       "title": "Мини-галерея",
     },
     "MobileAppTileContent": Object {
