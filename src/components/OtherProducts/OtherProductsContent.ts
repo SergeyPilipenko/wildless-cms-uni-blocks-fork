@@ -3,7 +3,7 @@ import type { BlockDef, ColumnsCount } from '../../ui-kit/BlocksList/BlocksListP
 /**
  * @title Элемент списка
  */
-export interface AccordionItemCommonProps {
+export interface blockItemCommonProps {
   /**
    * @title Название
    * @default Список
@@ -17,16 +17,17 @@ export interface AccordionItemCommonProps {
    */
   bordered?: boolean; // TODO: только для мобильной версии
   columns?: ColumnsCount;
+  isActive?: boolean;
 }
 
 /**
- * @title Аккордеон
+ * @title Другие продукты
  */
-export interface AccordionContent {
+export interface OtherProductsContent {
   /** @title Заголовок */
   title?: string;
   /** @title Список */
-  accordionItems?: AccordionItemCommonProps[];
+  blockItems?: blockItemCommonProps[];
   /** @title Подзаголовок */
   description?: string; // TODO: только для мобильной версии
   /**

@@ -3,12 +3,12 @@ import type { UniBlockProps } from '../../types';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import type { AccordionItemCommonProps } from './AccordionContent';
 import { AccordionItemInner } from './AccordionItemInner';
-import { isActiveHandler } from './utils/isActiveHandler';
+import { useActiveHandler } from './utils/useActiveHandler';
 
 export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
 
 export const AccordionItem = JSX<AccordionItemProps>(({ label, blocks, bordered, context }) => {
-  const { hasContent, icon, handleToggle } = isActiveHandler({
+  const { hasContent, icon, handleToggle } = useActiveHandler({
     context,
     blocks,
   });

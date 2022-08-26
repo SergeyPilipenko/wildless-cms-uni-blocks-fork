@@ -6,29 +6,29 @@ import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import type { AccordionProps } from './Accordion';
 import { Accordion } from './Accordion';
 import type {
-  HeadlineAccordionBlockDef,
-  LinkDocsAccordionBlockDef,
-  PictureTextAccordionBlockDef,
-  TextBlockAccordionBlockDef,
-} from './AccordionContent';
+  HeadlineBlockListDef,
+  LinkDocsBlockListDef,
+  PictureTextBlockListDef,
+  TextBlockBlockListDef,
+} from '../../ui-kit/BlocksList/BlocksListProps';
 
-const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockAccordionBlockDef = {
-  accordionBlockType: 'TextBlock',
+const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockBlockListDef = {
+  blockListType: 'TextBlock',
   ...TEXT_BLOCK,
 };
 
-const HEADLINE_ACCORDION_BLOCK: HeadlineAccordionBlockDef = {
-  accordionBlockType: 'Headline',
+const HEADLINE_ACCORDION_BLOCK: HeadlineBlockListDef = {
+  blockListType: 'Headline',
   ...HEADLINE,
 };
 
-const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextAccordionBlockDef = {
-  accordionBlockType: 'PictureText',
+const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextBlockListDef = {
+  blockListType: 'PictureText',
   ...PICTURE_TEXT,
 };
 
-const LINK_DOCS_ACCORDION_BLOCK: LinkDocsAccordionBlockDef = {
-  accordionBlockType: 'LinkDocs',
+const LINK_DOCS_ACCORDION_BLOCK: LinkDocsBlockListDef = {
+  blockListType: 'LinkDocs',
   ...linkDocsContentExample,
   title: '',
 };

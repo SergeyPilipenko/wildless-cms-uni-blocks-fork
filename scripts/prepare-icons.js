@@ -50,6 +50,7 @@ async function optimizeIcon(iconPath) {
 function generateIconNameType(iconNames, iconTitles) {
   return `
 // Generated. Do not touch
+/* eslint-disable max-lines */
 
 export enum IconMap {
   ${iconNames.map((_) => `${_} = ${wrap(_)}`).join(', ')}

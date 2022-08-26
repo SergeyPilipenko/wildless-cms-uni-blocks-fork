@@ -18,6 +18,7 @@ import { ProductGallery } from './ProductGallery/ProductGallery';
 import { ProductGalleryGreen } from './ProductGalleryGreen/ProductGalleryGreen';
 import { ProductTile } from './ProductTile/ProductTile';
 import { PromoTile } from './PromoTile/PromoTile';
+import { OtherProducts } from './OtherProducts/OtherProducts';
 import { Recommendation } from './Recommendation/Recommendation';
 import { StepsBlock } from './StepsBlock/StepsBlock';
 import { TariffsTable } from './TariffsTable/TariffsTable';
@@ -43,6 +44,7 @@ export const Blocks = {
   ProductGalleryGreen,
   ProductTile,
   PromoTile,
+  OtherProducts,
   Recommendation,
   StepsBlock,
   TariffsTable,

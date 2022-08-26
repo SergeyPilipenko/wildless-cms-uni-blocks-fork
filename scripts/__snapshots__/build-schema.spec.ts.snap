@@ -4,60 +4,6 @@ exports[`JSON Schema Generator should generate schema according to *Content type
 Object {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": Object {
-    "AccordionBlockProps": Object {
-      "anyOf": Array [
-        Object {
-          "$ref": "#/definitions/EmptyOption",
-        },
-        Object {
-          "$ref": "#/definitions/HeadlineAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/LinkDocsAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/TextBlockAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/PictureTextAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/ProductBlockAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/TileAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/ProductTileAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/GalleryAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/MiniGalleryAccordionBlockDef",
-        },
-        Object {
-          "$ref": "#/definitions/LinkListAccordionBlockDef",
-        },
-      ],
-      "title": "Содержимое аккордеона",
-    },
-    "AccordionBlockType": Object {
-      "enum": Array [
-        "Headline",
-        "LinkDocs",
-        "TextBlock",
-        "PictureText",
-        "Tile",
-        "ProductTile",
-        "ProductBlock",
-        "Gallery",
-        "MiniGallery",
-        "LinkList",
-      ],
-      "title": "Тип блока",
-      "type": "string",
-    },
     "AccordionContent": Object {
       "properties": Object {
         "accordionItems": Object {
@@ -88,7 +34,7 @@ Object {
       "properties": Object {
         "blocks": Object {
           "items": Object {
-            "$ref": "#/definitions/AccordionBlockProps",
+            "$ref": "#/definitions/BlockDef",
           },
           "title": "Блоки",
           "type": "array",
@@ -158,6 +104,60 @@ Object {
       },
       "title": "Блок преимущества",
       "type": "object",
+    },
+    "BlockDef": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "#/definitions/EmptyOption",
+        },
+        Object {
+          "$ref": "#/definitions/HeadlineBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/LinkDocsBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/TextBlockBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/PictureTextBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/ProductBlockBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/TileBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/ProductTileBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/GalleryBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/MiniGalleryBlockListDef",
+        },
+        Object {
+          "$ref": "#/definitions/LinkListBlockListDef",
+        },
+      ],
+      "title": "Содержимое блока",
+    },
+    "BlockDefType": Object {
+      "enum": Array [
+        "Headline",
+        "LinkDocs",
+        "TextBlock",
+        "PictureText",
+        "Tile",
+        "ProductTile",
+        "ProductBlock",
+        "Gallery",
+        "MiniGallery",
+        "LinkList",
+      ],
+      "title": "Тип блока",
+      "type": "string",
     },
     "BlockVersion": Object {
       "enum": Array [
@@ -592,10 +592,10 @@ Object {
       "title": "Подвал",
       "type": "object",
     },
-    "GalleryAccordionBlockDef": Object {
+    "GalleryBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "cards": Object {
           "items": Object {
@@ -619,7 +619,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Галлерея",
       "type": "object",
@@ -761,16 +761,16 @@ Object {
       },
       "type": "object",
     },
-    "HeadlineAccordionBlockDef": Object {
+    "HeadlineBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
-        },
         "align": Object {
           "$ref": "#/definitions/AlignType",
         },
         "bgColorHeadline": Object {
           "$ref": "#/definitions/BlockVersionWithTransparent",
+        },
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "description": Object {
           "title": "Описание",
@@ -785,7 +785,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Заголовок",
       "type": "object",
@@ -818,7 +818,9 @@ Object {
         "",
         "ActualBalanceIcon",
         "AppleIcon",
+        "ArrowDownIcon",
         "ArrowsRewindRight",
+        "ArrowUpIcon",
         "AtmIcon",
         "BankIcon",
         "BurgerIcon",
@@ -894,7 +896,9 @@ Object {
         "",
         "Деньги",
         "Лого «Apple»",
+        "ArrowDownIcon",
         "ArrowsRewindRight",
+        "ArrowUpIcon",
         "Банкомат",
         "Банк",
         "Бургер",
@@ -1048,13 +1052,13 @@ Object {
       "title": "Отображение списка",
       "type": "string",
     },
-    "LinkDocsAccordionBlockDef": Object {
+    "LinkDocsBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
-        },
         "align": Object {
           "$ref": "#/definitions/AlignType",
+        },
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "columnsMode": Object {
           "$ref": "#/definitions/LinkColumnsMode",
@@ -1087,7 +1091,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Список документов",
       "type": "object",
@@ -1151,10 +1155,10 @@ Object {
       "title": "Элемент списка",
       "type": "object",
     },
-    "LinkListAccordionBlockDef": Object {
+    "LinkListBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "documents": Object {
           "items": Object {
@@ -1165,7 +1169,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Список ссылок",
       "type": "object",
@@ -1240,10 +1244,10 @@ Object {
       "title": "Направление списка",
       "type": "string",
     },
-    "MiniGalleryAccordionBlockDef": Object {
+    "MiniGalleryBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "cards": Object {
           "items": Object {
@@ -1267,7 +1271,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Мини-галлерея",
       "type": "object",
@@ -1320,6 +1324,32 @@ Object {
         },
       },
       "title": "Навигация",
+      "type": "object",
+    },
+    "OtherProductsContent": Object {
+      "properties": Object {
+        "blockItems": Object {
+          "items": Object {
+            "$ref": "#/definitions/blockItemCommonProps",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "bordered": Object {
+          "default": false,
+          "title": "Отображать/скрывать обводку у элемента списка",
+          "type": "boolean",
+        },
+        "description": Object {
+          "title": "Подзаголовок",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Другие продукты",
       "type": "object",
     },
     "Picture": Object {
@@ -1380,17 +1410,17 @@ Object {
       "title": "Изображение",
       "type": "object",
     },
-    "PictureTextAccordionBlockDef": Object {
+    "PictureTextBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
-        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
           },
           "title": "Список преимуществ",
           "type": "array",
+        },
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -1401,7 +1431,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Картинка с текстом",
       "type": "object",
@@ -1426,11 +1456,8 @@ Object {
       "title": "Картинка с текстом",
       "type": "object",
     },
-    "ProductBlockAccordionBlockDef": Object {
+    "ProductBlockBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
-        },
         "backgroundText": Object {
           "title": "Фоновый текст под иллюстрацией",
           "type": "string",
@@ -1443,6 +1470,9 @@ Object {
           "minItems": 2,
           "title": "Преимущества",
           "type": "array",
+        },
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "breadcrumbs": Object {
           "items": Object {
@@ -1485,7 +1515,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Продуктовый блок",
       "type": "object",
@@ -1655,11 +1685,8 @@ Object {
       "title": "Слайд",
       "type": "object",
     },
-    "ProductTileAccordionBlockDef": Object {
+    "ProductTileBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
-        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/TextBenefit",
@@ -1667,6 +1694,9 @@ Object {
           "maxItems": 7,
           "title": "Преимущества",
           "type": "array",
+        },
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "buttons": Object {
           "items": Object {
@@ -1692,7 +1722,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Продуктовая плитка",
       "type": "object",
@@ -2121,10 +2151,10 @@ Object {
       },
       "type": "object",
     },
-    "TextBlockAccordionBlockDef": Object {
+    "TextBlockBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "blockVersion": Object {
           "$ref": "#/definitions/TextBlockVersion",
@@ -2156,7 +2186,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Текстовый блок",
       "type": "object",
@@ -2223,10 +2253,10 @@ Object {
       "title": "Цвет плитки",
       "type": "string",
     },
-    "TileAccordionBlockDef": Object {
+    "TileBlockListDef": Object {
       "properties": Object {
-        "accordionBlockType": Object {
-          "$ref": "#/definitions/AccordionBlockType",
+        "blockListType": Object {
+          "$ref": "#/definitions/BlockDefType",
         },
         "buttons": Object {
           "items": Object {
@@ -2259,7 +2289,7 @@ Object {
         },
       },
       "required": Array [
-        "accordionBlockType",
+        "blockListType",
       ],
       "title": "Плитка",
       "type": "object",
@@ -2330,6 +2360,35 @@ Object {
         "href",
       ],
       "title": "Ссылка",
+      "type": "object",
+    },
+    "blockItemCommonProps": Object {
+      "properties": Object {
+        "blocks": Object {
+          "items": Object {
+            "$ref": "#/definitions/BlockDef",
+          },
+          "title": "Блоки",
+          "type": "array",
+        },
+        "bordered": Object {
+          "default": false,
+          "title": "Отображать/скрывать обводку элемента",
+          "type": "boolean",
+        },
+        "columns": Object {
+          "$ref": "#/definitions/ColumnsCount",
+        },
+        "isActive": Object {
+          "type": "boolean",
+        },
+        "label": Object {
+          "default": "Список",
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Элемент списка",
       "type": "object",
     },
   },

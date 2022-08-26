@@ -1,11 +1,11 @@
 import type { IconName } from '../../../icons/IconName';
 
-export const isActiveHandler = ({ context, blocks }) => {
+export const useActiveHandler = ({ context, blocks }) => {
   const [isActive, setIsActive] = context.useState(false);
   const hasContent = blocks?.length;
-  const icon: IconName = isActive ? 'MinusIcon' : 'PlusIcon';
+  const icon: IconName = isActive ? 'ArrowUpIcon' : 'ArrowDownIcon';
 
-  const getContentBlock = ({ currentTarget }) => currentTarget.nextSibling;
+  const getContentBlock = ({ currentTarget }) => currentTarget.previousSibling;
 
   const handleToggle = (e: MouseEvent) => {
     if (!hasContent) {

@@ -1,8 +1,8 @@
 {
-  "title": "Аккордеон",
-  "accordionItems": [
+  "title": "Другие продукты",
+  "blockItems": [
     {
-      "label": "Аккордеон 1",
+      "label": "Другие продукты 1",
       "blocks": [
         {
           "blockListType": "TextBlock",
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "label": "Аккордеон 2",
+      "label": "Другие продукты 2",
       "blocks": [
         {
           "blockListType": "TextBlock",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "label": "Аккордеон 3",
+      "label": "Другие продукты 3",
       "blocks": [
         {
           "blockListType": "TextBlock",
