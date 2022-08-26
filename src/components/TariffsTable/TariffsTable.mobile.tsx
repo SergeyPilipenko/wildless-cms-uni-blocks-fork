@@ -18,7 +18,9 @@ export const TariffsTable = JSX<TariffsTableProps>(
     const tiles = getTiles(rowHeaders, colData);
 
     return (
-      <section className={`px-4 py-6 bg-white font-sans text-primary-text ${className}`}>
+      <section
+        className={`px-4 py-6 bg-white font-sans text-primary-text overflow-x-hidden ${className}`}
+      >
         {title ? (
           <Heading
             headingType="h2"

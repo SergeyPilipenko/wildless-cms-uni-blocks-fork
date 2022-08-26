@@ -19,7 +19,9 @@ export const LinkDocs = JSX<LinkDocsProps>(
     hasBorder = true,
   }) => {
     return (
-      <section className={`font-sans text-primary-text py-6 px-4 bg-white ${className}`}>
+      <section
+        className={`font-sans text-primary-text py-6 px-4 bg-white overflow-x-hidden ${className}`}
+      >
         {title ? (
           <Heading
             headingType="h2"
