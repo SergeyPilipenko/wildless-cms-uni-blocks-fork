@@ -75,6 +75,14 @@ export default {
               iconVersion="small"
               items={items}
             />
+            <TextBlock
+              context={mobileContext}
+              title="Все карты Россельхозбанка работают"
+              description="Если не планируете поездку за границу, продолжайте пользоваться картой Своя. Для поездок за границу"
+              blockVersion="secondary-light"
+              iconVersion="small"
+              items={items}
+            />
           </div>
         </div>
         <div>

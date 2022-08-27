@@ -8,6 +8,7 @@ export default [
   'breadcrumbs',
   'benefits',
   'isScroll',
+  'isDotted',
   'items',
   'steps',
   'cards',

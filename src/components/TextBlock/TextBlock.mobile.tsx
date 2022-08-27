@@ -58,7 +58,7 @@ export const TextBlock = JSX<TextBlockProps>(
               className="mt-1"
               items={items}
               isDotted={isDotted}
-              version={blockVersion.indexOf('secondary') !== -1 ? 'secondary' : 'gray'}
+              version={blockVersion === 'secondary' ? 'secondary' : 'gray'}
             />
           ) : null}
         </div>
