@@ -17,9 +17,9 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v4.1.1
         with:
-          build: npm run build:icons
-          start: npm start, npm run start:mobile
-          wait-on: 'http://localhost:5001/, http://localhost:5002/'
+          build: npm run cosmos:export
+          start: npx -y http-server ./docs/ -d false -g
+          wait-on: 'http://localhost:8080/'
           browser: chrome
           command: npm run e2e:test
         env:
