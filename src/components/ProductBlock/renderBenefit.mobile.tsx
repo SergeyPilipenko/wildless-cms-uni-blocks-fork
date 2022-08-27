@@ -11,7 +11,7 @@ const benefitDescStyleMap: Record<BlockVersion, string> = {
   secondary: 'text-white',
 };
 
-export function renderBenefit(benefit: Benefit, i: number, version: string) {
+export function renderBenefit(benefit: Benefit, i: number, version: BlockVersion) {
   return (
     <div key={String(i)} className="flex gap-3 items-center mb-2.5 last:mb-0">
       {benefit.icon && (
@@ -21,6 +21,7 @@ export function renderBenefit(benefit: Benefit, i: number, version: string) {
           width="24"
           height="24"
           asSVG
+          color={version}
         />
       )}
       <div className={`font-medium text-m-title-xs m-0 ${benefitTitleStyleMap[version]}`}>

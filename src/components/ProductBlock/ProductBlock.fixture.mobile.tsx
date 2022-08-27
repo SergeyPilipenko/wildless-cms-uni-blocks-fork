@@ -4,6 +4,11 @@ import { ProductBlock } from './ProductBlock';
 import { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
+const title = 'Кредит до 5 000 000 Р\nбез залога и поручителей';
+const description =
+  'Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт.';
+const label = 'Самое лучшее предложение';
+
 const image: Picture = {
   src: 'money-1.png',
   format: 'webp',
@@ -20,7 +25,7 @@ const image: Picture = {
   ],
 };
 
-const benefits = [
+const benefits: Benefit[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',
@@ -38,7 +43,7 @@ const benefits = [
   },
 ];
 
-const buttons = [
+const buttons: ButtonWithIconProps[] = [
   {
     href: 'https://rshb.ru',
     text: 'Оформить карту',
@@ -51,7 +56,7 @@ const buttons = [
     target: '_blank',
     version: 'secondary',
   },
-] as ButtonWithIconProps;
+];
 
 const items = [
   'Совершайте любые личные покупки',
@@ -59,30 +64,61 @@ const items = [
   'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
 ];
 
+const props = { title, description, image, buttons };
+
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        title={'Кредит до 5 000 000 Р\nбез залога и поручителей'}
-        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
-        benefits={benefits as Benefit[]}
-        buttons={buttons as ButtonWithIconProps[]}
-        image={image}
-      />
+      <ProductBlock className="col-span-12" context={context} {...props} benefits={benefits} />
     </div>
   ),
   items: (
     <div className="container grid grid-cols-12">
+      <ProductBlock className="col-span-12" context={context} {...props} items={items} />
+    </div>
+  ),
+  'primary with label': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
-        title={'Кредит до 5 000 000 Р\nбез залога и поручителей'}
-        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        {...props}
+        benefits={benefits}
+        label={label}
+      />
+    </div>
+  ),
+  secondary: (
+    <div className="container grid grid-cols-12">
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        {...props}
+        benefits={benefits}
+        version="secondary"
+      />
+    </div>
+  ),
+  'secondary with items': (
+    <div className="container grid grid-cols-12">
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        {...props}
         items={items}
-        buttons={buttons as ButtonWithIconProps[]}
-        image={image}
+        version="secondary"
+      />
+    </div>
+  ),
+  'secondary with label': (
+    <div className="container grid grid-cols-12">
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        {...props}
+        benefits={benefits}
+        label={label}
+        version="secondary"
       />
     </div>
   ),

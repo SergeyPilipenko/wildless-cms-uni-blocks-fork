@@ -20,6 +20,10 @@ export type ProductBlockInnerContent = HeadingContent &
      */
     benefits?: Benefit[];
     version?: BlockVersion;
+    /** @title Буллиты */
+    isDotted?: boolean;
+    /** @title Лейбл (моб.) */
+    label?: string;
     /**
      * @title Стиль для текстовой части
      * @hidden

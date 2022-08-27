@@ -4,9 +4,9 @@ export type { IconName };
 
 /**
  * @title Цвет иконки (svg)
- * @enumNames ["Нет", "Основной"]
+ * @enumNames ["Нет", "Основной", "Второстепенный"]
  */
-export type IconColor = 'none' | 'primary';
+export type IconColor = 'none' | 'primary' | 'secondary';
 
 export interface IconProps {
   className?: string;

@@ -27,6 +27,9 @@ export interface ProductGalleryContent {
    * @hidden //! temporary not used
    */
   duration?: number;
-  /** @title Слайды */
+  /**
+   * @title Слайды
+   * @minItems 2
+   */
   slides?: ProductSlide[];
 }

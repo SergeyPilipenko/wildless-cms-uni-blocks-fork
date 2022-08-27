@@ -1517,12 +1517,20 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
+        "isDotted": Object {
+          "title": "Буллиты",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "type": "string",
           },
           "title": "Список",
           "type": "array",
+        },
+        "label": Object {
+          "title": "Лейбл (моб.)",
+          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -1578,12 +1586,20 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
+        "isDotted": Object {
+          "title": "Буллиты",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "type": "string",
           },
           "title": "Список",
           "type": "array",
+        },
+        "label": Object {
+          "title": "Лейбл (моб.)",
+          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -1629,12 +1645,20 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
+        "isDotted": Object {
+          "title": "Буллиты",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "type": "string",
           },
           "title": "Список",
           "type": "array",
+        },
+        "label": Object {
+          "title": "Лейбл (моб.)",
+          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -1652,6 +1676,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/ProductSlide",
           },
+          "minItems": 2,
           "title": "Слайды",
           "type": "array",
         },

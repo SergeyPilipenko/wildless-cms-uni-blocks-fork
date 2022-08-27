@@ -7,6 +7,7 @@ import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import type { ProductBlockInnerContent } from './ProductBlockContent';
+import type { BlockVersion } from '../../model/BlockVersion';
 import { renderBenefit } from './renderBenefit';
 
 export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;
@@ -23,10 +24,13 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     image,
     items,
     version = 'primary',
+    isDotted = true,
+    label,
   }) => {
     return (
-      <div className={`w-full text-primary-text ${className}`}>
+      <div className={`w-full ${className}`}>
         <div>
+          {label ? renderLabel(label, version) : null}
           <BaseTile
             context={context}
             title={
@@ -54,7 +58,9 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             {benefits?.filter((items) => items.label)?.length ? (
               <div className="mt-3">{benefits.map((_, i) => renderBenefit(_, i, version))}</div>
             ) : null}
-            {items?.length ? <List className="mt-3" items={items} /> : null}
+            {items?.length ? (
+              <List className="mt-3" items={items} version={version} isDotted={isDotted} />
+            ) : null}
           </BaseTile>
         </div>
         {renderImage(image)}
@@ -65,8 +71,17 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
 
 function renderImage(image) {
   return image?.src ? (
-    <div className="mt-5">
-      <Img image={{ className: 'block', ...image }} />
-    </div>
+    <Img imageClassName="mt-5 mx-auto block" image={{ className: 'block', ...image }} />
   ) : null;
 }
+
+const labelStyleMap: Record<BlockVersion, string> = {
+  primary: 'text-primary-main border-secondary-hover',
+  secondary: 'text-white/80',
+};
+
+const renderLabel = (label: string, version: BlockVersion) => (
+  <div className={`m-xs px-2.5 py-1.5 mb-5 rounded-md border-2 w-fit ${labelStyleMap[version]}`}>
+    {label}
+  </div>
+);

@@ -23,6 +23,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     image,
     items,
     version = 'primary',
+    isDotted = true,
     textBlockClassName = '',
   }) => {
     const textColor = version === 'secondary' ? 'text-white' : '';
@@ -43,7 +44,13 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               </div>
             ) : null}
             {items?.length ? (
-              <List className="mt-5" items={items} itemClassName="mb-[10px]" version={version} />
+              <List
+                className="mt-5"
+                items={items}
+                itemClassName="mb-[10px]"
+                version={version}
+                isDotted={isDotted}
+              />
             ) : null}
           </BaseTile>
         </div>

@@ -6,6 +6,7 @@ import { IconTitleMap } from '../../icons/IconName';
 const svgColorsMap: Record<IconColor, string> = {
   none: '',
   primary: 'text-primary-main',
+  secondary: 'text-primary-text',
 };
 
 export const Icon = JSX<IconProps>(
@@ -22,7 +23,12 @@ export const Icon = JSX<IconProps>(
 
     if (asSVG) {
       return (
-        <svg className={`${svgColorsMap[color]} ${className}`} {...imgProps} aria-hidden="true">
+        <svg
+          className={`${svgColorsMap[color]} ${className}`}
+          {...imgProps}
+          aria-hidden="true"
+          style={color === 'secondary' ? { filter: 'invert(1)' } : null}
+        >
           {title ? <title>{title}</title> : null}
           {alt ? <desc>{alt}</desc> : null}
           <use href={`${href}#icon`} xlinkHref={`${href}#icon`} />
