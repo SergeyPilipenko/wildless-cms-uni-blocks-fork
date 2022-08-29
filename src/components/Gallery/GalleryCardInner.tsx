@@ -10,7 +10,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
     const titleStyleClasses = getTitleStyle(version, description, items);
     return (
-      <div>
+      <div className="h-full flex flex-col justify-between">
         <div>
           {image?.src ? (
             <div className="flex justify-center">

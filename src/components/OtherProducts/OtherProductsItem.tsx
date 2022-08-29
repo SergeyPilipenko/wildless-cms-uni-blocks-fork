@@ -26,7 +26,7 @@ export const OtherProductsItem = JSX<BlockItemProps>(
           />
         ) : null}
         <button
-          className="border-none bg-primary-main px-0 py-[25px] w-full font-sans text-white text-base flex justify-center cursor-pointer"
+          className="border-none bg-primary-main px-0 py-[26px] w-full font-sans text-white text-base flex justify-center cursor-pointer"
           onClick={handleToggle}
         >
           <span className="pr-3">{isActive ? 'Скрыть' : label}</span>
