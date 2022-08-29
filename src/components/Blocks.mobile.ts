@@ -8,6 +8,7 @@ import { Headline } from './Headline/Headline';
 import { LinkDocs } from './LinkDocs/LinkDocs';
 import { LinkList } from './LinkList/LinkList';
 import { MobileAppTile } from './MobileAppTile/MobileAppTile';
+import { Placeholder } from './Placeholder/Placeholder';
 import { ProductBlock } from './ProductBlock/ProductBlock';
 import { ProductGallery } from './ProductGallery/ProductGallery';
 import { StepsBlock } from './StepsBlock/StepsBlock';
@@ -30,4 +31,5 @@ export const Blocks = {
   StepsBlock,
   TariffsTable,
   TextBlock,
+  Placeholder,
 };
