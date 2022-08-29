@@ -1,0 +1,19 @@
+{
+  "tabs": [
+    {
+      "title": "Вкладка 1",
+      "description": "Описание",
+      "icon": "CardIcon"
+    },
+    {
+      "title": "Вкладка 2",
+      "description": "Описание",
+      "icon": "ChartSquareIcon"
+    },
+    {
+      "title": "Вкладка 3",
+      "description": "Описание",
+      "icon": "DiscountShapeIcon"
+    }
+  ]
+}
