@@ -1082,7 +1082,7 @@ Object {
           "$ref": "#/definitions/IconName",
           "title": "Название иконки",
         },
-        "listMode": Object {
+        "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
           "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
@@ -1124,7 +1124,7 @@ Object {
           "$ref": "#/definitions/IconName",
           "title": "Название иконки",
         },
-        "listMode": Object {
+        "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
           "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },

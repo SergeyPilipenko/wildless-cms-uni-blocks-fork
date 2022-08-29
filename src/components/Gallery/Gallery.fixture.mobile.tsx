@@ -83,7 +83,7 @@ const cards: GalleryCard[] = [
 const defaultProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  orientation: 'horizontal' as ListOrientation,
+  orientation: 'vertical' as ListOrientation,
   context,
   cards: cards,
 };

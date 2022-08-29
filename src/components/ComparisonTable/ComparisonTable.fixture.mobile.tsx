@@ -130,6 +130,7 @@ export default {
         isColoredFirstColumn={true}
         context={context}
         rowHeaders={rowHeaders}
+        orientation="vertical"
         columns={Array(2).fill(columns).flat()}
         visibleRowLength={2}
       />
@@ -143,7 +144,7 @@ export default {
         isColoredFirstColumn={true}
         context={context}
         rowHeaders={rowHeaders}
-        orientation={'horizontal'}
+        orientation="horizontal"
         columns={Array(2).fill(columns).flat()}
         visibleRowLength={2}
       />

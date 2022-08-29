@@ -24,6 +24,6 @@
     }
   ],
   "columnsMode": "double",
-  "listMode": "vertical",
+  "orientation": "vertical",
   "hasBorder": true
 }

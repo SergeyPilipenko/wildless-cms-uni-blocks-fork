@@ -16,7 +16,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
     columns,
     visibleRowLength = 0,
     isColoredFirstColumn = false,
-    orientation = 'horizontal',
+    orientation = 'vertical',
   }) => {
     const tableData =
       columns?.map(({ data, header }) => ({
@@ -95,16 +95,6 @@ const renderInnerTable = ({
   handleToggleColumn,
 }) =>
   orientation === 'horizontal' ? (
-    tableData.map(
-      renderColumn({
-        context,
-        visibleRowLength,
-        isColoredFirstColumn,
-        columnsViewState,
-        handleToggleColumn,
-      }),
-    )
-  ) : (
     <SwipeListControl
       context={context}
       onSlideChange={onSlideChange(columnsViewState, setColumnsViewState)}
@@ -119,6 +109,16 @@ const renderInnerTable = ({
         }),
       )}
     </SwipeListControl>
+  ) : (
+    tableData.map(
+      renderColumn({
+        context,
+        visibleRowLength,
+        isColoredFirstColumn,
+        columnsViewState,
+        handleToggleColumn,
+      }),
+    )
   );
 
 const renderColumn =

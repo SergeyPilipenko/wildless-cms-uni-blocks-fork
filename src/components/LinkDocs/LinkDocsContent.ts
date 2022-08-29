@@ -34,7 +34,7 @@ export interface LinkDocsContent {
   documents?: LinkDocsItem[];
   columnsMode?: LinkColumnsMode;
   /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
-  listMode?: ListOrientation; // TODO: мобильный проп
+  orientation?: ListOrientation; // TODO: мобильный проп
   /** @title Рамка элементов (моб.) */ // TODO: мобильный проп
   hasBorder?: boolean;
   align?: AlignType;

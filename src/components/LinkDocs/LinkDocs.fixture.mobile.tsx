@@ -29,7 +29,7 @@ export default {
         className="col-span-12"
         context={mobileContext}
         {...linkDocsContentExample}
-        listMode={'horizontal'}
+        orientation="horizontal"
       />
     </div>
   ),

@@ -15,7 +15,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     subtitle,
     icon = 'DocIconMonoColor',
     documents,
-    listMode = 'vertical',
+    orientation = 'vertical',
     hasBorder = true,
   }) => {
     return (
@@ -32,7 +32,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
         {subtitle ? (
           <h3 className="mt-0 font-normal mb-5 text-center text-m-md">{subtitle}</h3>
         ) : null}
-        {listMode === 'vertical' ? (
+        {orientation === 'vertical' ? (
           <LinkDocsVerticalList hasBorder={hasBorder} documents={documents} icon={icon} />
         ) : (
           <LinkDocsHorizontalList
