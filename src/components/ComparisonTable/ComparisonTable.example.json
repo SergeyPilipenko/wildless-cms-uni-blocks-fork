@@ -1,5 +1,6 @@
 {
   "title": "Сравнительная таблица",
+  "orientation": "horizontal",
   "rowHeaders": [
     {
       "title": "Параметр 1"

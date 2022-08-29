@@ -16,7 +16,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
     columns,
     visibleRowLength = 0,
     isColoredFirstColumn = false,
-    useSwiper = 'horizontal',
+    orientation = 'horizontal',
   }) => {
     const tableData =
       columns?.map(({ data, header }) => ({
@@ -50,7 +50,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
           isColoredFirstColumn,
           columnsViewState,
           handleToggleColumn,
-          useSwiper,
+          orientation,
           setColumnsViewState,
         })}
       </section>
@@ -65,13 +65,13 @@ const renderColumns = ({
   isColoredFirstColumn,
   columnsViewState,
   handleToggleColumn,
-  useSwiper = 'horizontal',
+  orientation = 'horizontal',
   setColumnsViewState,
 }) => (
   <div role="table">
     {tableData?.length
       ? renderInnerTable({
-          useSwiper,
+          orientation,
           context,
           columnsViewState,
           setColumnsViewState,
@@ -85,7 +85,7 @@ const renderColumns = ({
 );
 
 const renderInnerTable = ({
-  useSwiper,
+  orientation,
   context,
   columnsViewState,
   setColumnsViewState,
@@ -94,7 +94,7 @@ const renderInnerTable = ({
   isColoredFirstColumn,
   handleToggleColumn,
 }) =>
-  useSwiper === 'horizontal' ? (
+  orientation === 'horizontal' ? (
     tableData.map(
       renderColumn({
         context,

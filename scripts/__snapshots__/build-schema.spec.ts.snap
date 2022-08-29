@@ -365,6 +365,10 @@ Object {
           "title": "Закрасить первую колонку",
           "type": "boolean",
         },
+        "orientation": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
+        },
         "rowHeaders": Object {
           "items": Object {
             "$ref": "#/definitions/RowHeader",
@@ -375,10 +379,6 @@ Object {
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "useSwiper": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
         "visibleRowLength": Object {
           "title": "Отображать заданное количество строк",
@@ -611,13 +611,13 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "orientation": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "useSwiper": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
       },
       "required": Array [
@@ -671,13 +671,13 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "orientation": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "useSwiper": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
       },
       "title": "Галерея",
@@ -1263,13 +1263,13 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "orientation": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "useSwiper": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
       },
       "required": Array [

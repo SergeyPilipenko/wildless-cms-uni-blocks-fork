@@ -83,7 +83,7 @@ const cards: GalleryCard[] = [
 const defaultProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  useSwiper: 'horizontal' as ListOrientation,
+  orientation: 'horizontal' as ListOrientation,
   context,
   cards: cards,
 };
@@ -91,7 +91,7 @@ const defaultProps = {
 const scrollProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  useSwiper: 'horizontal' as ListOrientation,
+  orientation: 'horizontal' as ListOrientation,
   context,
   cards: cards,
 };

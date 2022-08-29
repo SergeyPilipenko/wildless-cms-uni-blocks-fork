@@ -143,7 +143,7 @@ export default {
         isColoredFirstColumn={true}
         context={context}
         rowHeaders={rowHeaders}
-        useSwiper={'horizontal'}
+        orientation={'horizontal'}
         columns={Array(2).fill(columns).flat()}
         visibleRowLength={2}
       />

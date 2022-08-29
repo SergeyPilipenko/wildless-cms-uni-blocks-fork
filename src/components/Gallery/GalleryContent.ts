@@ -43,5 +43,5 @@ export interface GalleryContent {
    */
   cards?: GalleryCard[];
   /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
-  useSwiper?: ListOrientation; //TODO: for mobile
+  orientation?: ListOrientation; //TODO: for mobile
 }

@@ -16,7 +16,7 @@ const blockStyle: Record<BlockVersion, string> = {
 };
 
 export const Gallery = JSX<GalleryProps>(
-  ({ context, title, description, cards = [], className, useSwiper = 'horizontal' }) => {
+  ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {
     return (
       <section
         className={`relative font-sans text-primary-text bg-white px-4 py-6 overflow-hidden ${className}`}
@@ -35,14 +35,14 @@ export const Gallery = JSX<GalleryProps>(
             </div>
           ) : null}
         </div>
-        {renderCardsLayout(useSwiper, cards, context)}
+        {renderCardsLayout(orientation, cards, context)}
       </section>
     );
   },
 );
 
-function renderCardsLayout(useSwiper: ListOrientation, cards: GalleryCard[], context) {
-  return useSwiper === 'horizontal' ? (
+function renderCardsLayout(orientation: ListOrientation, cards: GalleryCard[], context) {
+  return orientation === 'horizontal' ? (
     <SwipeListControl context={context}>{cards?.map(renderCard)}</SwipeListControl>
   ) : (
     <div className="grid gap-[14px]">{cards?.map(renderCard)}</div>

@@ -83,5 +83,5 @@ export interface ComparisonTableContent {
   /** @title Отображать заданное количество строк */
   visibleRowLength?: number;
   /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
-  useSwiper?: ListOrientation;
+  orientation?: ListOrientation;
 }

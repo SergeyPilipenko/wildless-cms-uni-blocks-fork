@@ -1,6 +1,7 @@
 {
   "title": "Галерея",
   "description": "Описание",
+  "orientation": "horizontal",
   "cards": [
     {
       "image": {
