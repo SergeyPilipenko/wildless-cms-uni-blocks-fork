@@ -3,6 +3,7 @@ import { context } from '../../setup-fixture';
 import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
 import { Gallery } from './Gallery';
 import { GalleryCard } from './GalleryContent';
+import { ListOrientation } from '../../model/ListOrientation';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -82,7 +83,7 @@ const cards: GalleryCard[] = [
 const defaultProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  isScroll: false,
+  useSwiper: 'horizontal' as ListOrientation,
   context,
   cards: cards,
 };
@@ -90,7 +91,7 @@ const defaultProps = {
 const scrollProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  isScroll: true,
+  useSwiper: 'horizontal' as ListOrientation,
   context,
   cards: cards,
 };

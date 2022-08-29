@@ -16,7 +16,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
     columns,
     visibleRowLength = 0,
     isColoredFirstColumn = false,
-    useSwiper = false,
+    useSwiper = 'horizontal',
   }) => {
     const tableData =
       columns?.map(({ data, header }) => ({
@@ -65,40 +65,61 @@ const renderColumns = ({
   isColoredFirstColumn,
   columnsViewState,
   handleToggleColumn,
-  useSwiper,
+  useSwiper = 'horizontal',
   setColumnsViewState,
 }) => (
   <div role="table">
-    {tableData?.length ? (
-      useSwiper ? (
-        <SwipeListControl
-          context={context}
-          onSlideChange={onSlideChange(columnsViewState, setColumnsViewState)}
-        >
-          {tableData.map(
-            renderColumn({
-              context,
-              visibleRowLength,
-              isColoredFirstColumn,
-              columnsViewState,
-              handleToggleColumn,
-            }),
-          )}
-        </SwipeListControl>
-      ) : (
-        tableData.map(
-          renderColumn({
-            context,
-            visibleRowLength,
-            isColoredFirstColumn,
-            columnsViewState,
-            handleToggleColumn,
-          }),
-        )
-      )
-    ) : null}
+    {tableData?.length
+      ? renderInnerTable({
+          useSwiper,
+          context,
+          columnsViewState,
+          setColumnsViewState,
+          tableData,
+          visibleRowLength,
+          isColoredFirstColumn,
+          handleToggleColumn,
+        })
+      : null}
   </div>
 );
+
+const renderInnerTable = ({
+  useSwiper,
+  context,
+  columnsViewState,
+  setColumnsViewState,
+  tableData,
+  visibleRowLength,
+  isColoredFirstColumn,
+  handleToggleColumn,
+}) =>
+  useSwiper === 'horizontal' ? (
+    tableData.map(
+      renderColumn({
+        context,
+        visibleRowLength,
+        isColoredFirstColumn,
+        columnsViewState,
+        handleToggleColumn,
+      }),
+    )
+  ) : (
+    <SwipeListControl
+      context={context}
+      onSlideChange={onSlideChange(columnsViewState, setColumnsViewState)}
+    >
+      {tableData.map(
+        renderColumn({
+          context,
+          visibleRowLength,
+          isColoredFirstColumn,
+          columnsViewState,
+          handleToggleColumn,
+        }),
+      )}
+    </SwipeListControl>
+  );
 
 const renderColumn =
   ({ context, visibleRowLength, isColoredFirstColumn, columnsViewState, handleToggleColumn }) =>

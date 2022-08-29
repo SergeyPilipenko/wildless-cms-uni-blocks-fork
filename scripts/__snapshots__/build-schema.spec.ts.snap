@@ -377,8 +377,8 @@ Object {
           "type": "string",
         },
         "useSwiper": Object {
-          "title": "Использовать свайпер (моб.)",
-          "type": "boolean",
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
         "visibleRowLength": Object {
           "title": "Отображать заданное количество строк",
@@ -611,13 +611,13 @@ Object {
           "title": "Описание",
           "type": "string",
         },
-        "isScroll": Object {
-          "title": "Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll)",
-          "type": "boolean",
-        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "useSwiper": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
       },
       "required": Array [
@@ -671,13 +671,13 @@ Object {
           "title": "Описание",
           "type": "string",
         },
-        "isScroll": Object {
-          "title": "Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll)",
-          "type": "boolean",
-        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "useSwiper": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
       },
       "title": "Галерея",
@@ -1083,7 +1083,8 @@ Object {
           "title": "Название иконки",
         },
         "listMode": Object {
-          "$ref": "#/definitions/LinkListMode",
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
         "subtitle": Object {
           "title": "Описание",
@@ -1124,7 +1125,8 @@ Object {
           "title": "Название иконки",
         },
         "listMode": Object {
-          "$ref": "#/definitions/LinkListMode",
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
         "subtitle": Object {
           "title": "Описание",
@@ -1195,18 +1197,6 @@ Object {
       "title": "Список документов",
       "type": "object",
     },
-    "LinkListMode": Object {
-      "enum": Array [
-        "vertical",
-        "horizontal",
-      ],
-      "enumNames": Array [
-        "Вертикально",
-        "Горизонтально",
-      ],
-      "title": "Отображение списка (моб.)",
-      "type": "string",
-    },
     "LinkProps": Object {
       "properties": Object {
         "href": Object {
@@ -1273,13 +1263,13 @@ Object {
           "title": "Описание",
           "type": "string",
         },
-        "isScroll": Object {
-          "title": "Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll)",
-          "type": "boolean",
-        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "useSwiper": Object {
+          "$ref": "#/definitions/ListOrientation",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
       },
       "required": Array [
@@ -2147,7 +2137,7 @@ Object {
         },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
-          "title": "Направление таблицы (моб.)",
+          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
         },
         "rowHeaders": Object {
           "items": Object {

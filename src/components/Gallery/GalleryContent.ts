@@ -1,6 +1,7 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { ListOrientation } from '../../model/ListOrientation';
 
 /**
  * @title Элемент списка
@@ -41,6 +42,6 @@ export interface GalleryContent {
    * @minItems 3
    */
   cards?: GalleryCard[];
-  /** @title Горизонтальная прокрутка (для мобильных прокрутка shift+mouseScroll) */
-  isScroll?: boolean; //TODO: for mobile
+  /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
+  useSwiper?: ListOrientation; //TODO: for mobile
 }

@@ -1,6 +1,7 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 import type { AlignType } from '../BaseTile/BaseTileProps';
+import type { ListOrientation } from '../../model/ListOrientation';
 
 /**
  * @title Отображение списка
@@ -10,15 +11,6 @@ import type { AlignType } from '../BaseTile/BaseTileProps';
  *    ]
  */
 export type LinkColumnsMode = 'single' | 'double';
-
-/**
- * @title Отображение списка (моб.)
- * @enumNames [
- *    "Вертикально",
- *    "Горизонтально",
- *    ]
- */
-export type LinkListMode = 'vertical' | 'horizontal';
 
 /**
  * @title Элемент списка
@@ -41,7 +33,8 @@ export interface LinkDocsContent {
   /** @title Список */
   documents?: LinkDocsItem[];
   columnsMode?: LinkColumnsMode;
-  listMode?: LinkListMode; // TODO: мобильный проп
+  /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
+  listMode?: ListOrientation; // TODO: мобильный проп
   /** @title Рамка элементов (моб.) */ // TODO: мобильный проп
   hasBorder?: boolean;
   align?: AlignType;

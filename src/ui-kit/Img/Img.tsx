@@ -14,6 +14,9 @@ export const Img = JSX<ImageProps>(
       height: size?.height ? `${size?.height}px` : '100%',
     };
 
+    const title = image.title || '';
+    const alt = image.alt || title;
+
     return (
       <picture className={`flex-none ${className}`}>
         {image.sources?.length
@@ -24,8 +27,8 @@ export const Img = JSX<ImageProps>(
         <img
           className={imageClassName}
           src={image.src}
-          alt={image.alt || image.title}
-          title={image.title}
+          alt={alt}
+          title={title}
           style={style}
           {...size}
         />

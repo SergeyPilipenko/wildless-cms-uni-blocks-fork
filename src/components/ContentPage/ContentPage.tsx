@@ -91,7 +91,6 @@ function renderBlock(
   if (!(type && type in blocksRegistry)) {
     console.warn(`No block with "${type}" is registered`);
   }
-
   const BlockComponent = blocksRegistry[type || 'Placeholder'] || Placeholder;
   return blockDecorator(
     {

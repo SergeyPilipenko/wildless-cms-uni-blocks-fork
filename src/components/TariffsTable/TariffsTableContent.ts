@@ -56,7 +56,7 @@ export type TariffsTableContent = HeadingContent &
     columns?: TariffsTableColumn[];
     /** @title Параметры */
     rowHeaders?: TariffsTableRowHeader[];
-    /** @title Направление таблицы (моб.) */
+    /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
     orientation?: ListOrientation;
   };
 

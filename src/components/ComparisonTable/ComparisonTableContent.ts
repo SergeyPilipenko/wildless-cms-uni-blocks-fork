@@ -1,6 +1,7 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { ListOrientation } from '../../model/ListOrientation';
 
 /**
  * @hidden
@@ -81,6 +82,6 @@ export interface ComparisonTableContent {
   isColoredFirstColumn?: boolean;
   /** @title Отображать заданное количество строк */
   visibleRowLength?: number;
-  /** @title Использовать свайпер (моб.) */
-  useSwiper?: boolean;
+  /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
+  useSwiper?: ListOrientation;
 }
