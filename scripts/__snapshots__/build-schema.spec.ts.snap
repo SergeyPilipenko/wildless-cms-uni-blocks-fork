@@ -1280,7 +1280,7 @@ Object {
     },
     "MiniGalleryContent": Object {
       "$ref": "#/definitions/GalleryContent",
-      "minItems": 3,
+      "minItems": 4,
       "title": "Мини-галерея",
     },
     "MobileAppTileContent": Object {
