@@ -15,12 +15,13 @@ export interface PlaceholderProps extends PlaceholderContent, UniBlockProps {
 const GOLDEN_RATIO = 1.618;
 
 export const Placeholder = JSX<PlaceholderProps>(
-  ({ className, context, title, description = 'Блок в разработке...' }) => {
+  ({ className, context, title, description = 'Блок в разработке...', anchor = null }) => {
     return (
       <section
         className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${getTileRightPadding(
           className,
         )} ${getTileMinHeight(className)} `}
+        id={anchor}
       >
         <BaseTile
           context={context}

@@ -11,7 +11,7 @@ export interface GalleryInnerProps extends GalleryContent, UniBlockProps {
 }
 
 export const GalleryInner = JSX<GalleryInnerProps>(
-  ({ context, cards = [], className = '', version = 'normal', ...rest }) => {
+  ({ context, cards = [], className = '', version = 'normal', anchor = null, ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
@@ -28,6 +28,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
     return (
       <section
         className={`relative font-sans text-primary-text bg-white p-[50px] overflow-hidden ${className}`}
+        id={anchor}
       >
         <GalleryContainer
           context={context}

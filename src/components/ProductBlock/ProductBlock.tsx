@@ -20,14 +20,16 @@ const breadcrumbsStyleMap: Record<BlockVersion, string> = {
 };
 
 export const ProductBlock = JSX<ProductBlockProps>((props) => {
-  const { context, version = 'primary', breadcrumbs, className, ...otherProps } = props;
+  const { context, className, breadcrumbs, version = 'primary', anchor = null, ...otherProps } = props;
   const router = context.useRouter();
   const { handlerDecorator } = context;
+
   return (
     <section
       className={`font-sans pt-10 pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${
         className || ''
       } ${productBlockStyleMap[version]}`}
+      id={anchor}
     >
       {breadcrumbs?.length ? (
         <div className="text-xs mb-6">

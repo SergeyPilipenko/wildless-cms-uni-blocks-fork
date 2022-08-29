@@ -5,8 +5,10 @@ import type { FooterContent } from './Footer/FooterContent';
 import type { GalleryContent } from './Gallery/GalleryContent';
 import type { HeaderContent } from './Header/HeaderContent';
 import type { LinkDocsContent } from './LinkDocs/LinkDocsContent';
+import type { LinkListContent } from './LinkList/LinkListContent';
 import type { MobileAppTileContent } from './MobileAppTile/MobileAppTileContent';
 import type { NavigationContent } from './Navigation/NavigationContent';
+import type { NavigatorTabsContent } from './NavigatorTabs/NavigatorTabsContent';
 import type { PictureTextContent } from './PictureText/PictureTextContent';
 import type { PlaceholderContent } from './Placeholder/PlaceholderContent';
 import type { ProductBlockContent } from './ProductBlock/ProductBlockContent';
@@ -17,7 +19,6 @@ import type { StepsBlockContent } from './StepsBlock/StepsBlockContent';
 import type { TariffsTableContent } from './TariffsTable/TariffsTableContent';
 import type { TextBlockContent } from './TextBlock/TextBlockContent';
 import type { TileContent } from './Tile/TileContent';
-import type { LinkListContent } from './LinkList/LinkListContent';
 
 /**
  * @hidden
@@ -31,6 +32,7 @@ export type BlockContent =
   | HeaderContent
   | LinkDocsContent
   | MobileAppTileContent
+  | NavigatorTabsContent
   | PictureTextContent
   | PlaceholderContent
   | ProductBlockContent

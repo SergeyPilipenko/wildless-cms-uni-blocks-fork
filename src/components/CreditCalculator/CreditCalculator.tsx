@@ -10,11 +10,11 @@ import { DEFAULT_TABS } from './defaultTabs';
 export interface CreditCalculatorProps extends CreditCalculatorContent, UniBlockProps {}
 
 export const CreditCalculator = JSX<CreditCalculatorProps>(
-  ({ className = '', context, tabs = DEFAULT_TABS }) => {
+  ({ className = '', context, tabs = DEFAULT_TABS, anchor = null }) => {
     const [currentTabIndex, setCurrentTabIndex] = context.useState(0);
 
     return (
-      <section className={`font-sans text-primary-text py-10 bg-white ${className}`}>
+      <section className={`font-sans text-primary-text py-10 bg-white ${className}`} id={anchor}>
         <Heading
           className="w-full text-center mb-8"
           headingType={getTileHeadingType(className)}

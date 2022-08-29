@@ -13,9 +13,12 @@ const accordionStyleMap: Record<BlockVersion, string> = {
 };
 
 export const Accordion = JSX<AccordionProps>(
-  ({ title, accordionItems, context, className = '', version = 'primary' }) => {
+  ({ title, accordionItems, context, className = '', version = 'primary', anchor = null }) => {
     return (
-      <section className={`p-[50px] font-sans ${className} ${accordionStyleMap[version]}`}>
+      <section
+        className={`p-[50px] font-sans ${className} ${accordionStyleMap[version]}`}
+        id={anchor}
+      >
         {title ? <Heading headingType="h4" className="mb-2.5" title={title} /> : null}
         {accordionItems?.length ? (
           <ul className="list-none m-0 p-0">

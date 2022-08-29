@@ -94,16 +94,16 @@ function renderBlock(
   const BlockComponent = blocksRegistry[type || 'Placeholder'] || Placeholder;
   return blockDecorator(
     {
-      blockClassName: style2className(block.style),
+      blockClassName: `scroll-mt-12 ${style2className(block.style)}`,
       block,
       render: (props) => {
-        const { version, content } = props.block;
+        const { version, content, anchor } = props.block;
         return (
           <BlockComponent
-            key={`${type}-${i}`}
             className={props.blockClassName}
             version={version}
             context={context}
+            anchor={anchor}
             {...content}
           />
         );

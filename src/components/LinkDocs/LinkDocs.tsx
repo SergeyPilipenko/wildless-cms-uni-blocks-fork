@@ -32,9 +32,10 @@ export const LinkDocs = JSX<LinkDocsProps>(
     documents,
     icon = 'DocIcon',
     columnsMode = 'double',
+    anchor = null,
   }) => {
     return (
-      <section className={`font-sans text-primary-text p-12 bg-white ${className}`}>
+      <section className={`font-sans text-primary-text p-12 bg-white ${className}`} id={anchor}>
         {title ? (
           <Heading
             headingType="h2"

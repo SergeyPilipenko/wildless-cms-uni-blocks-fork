@@ -33,6 +33,7 @@ export const Tile = JSX<TileProps>((props) => {
     className = '',
     version = 'primary',
     role,
+    anchor = null,
   } = props;
 
   return (
@@ -41,6 +42,7 @@ export const Tile = JSX<TileProps>((props) => {
         tileStyleMap[version]
       } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
       role={role}
+      id={anchor}
     >
       <BaseTile
         context={context}

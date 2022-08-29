@@ -8,7 +8,7 @@ import type { ProductGalleryGreenContent } from './ProductGalleryGreenContent';
 export interface ProductGalleryProps extends ProductGalleryGreenContent, UniBlockProps {}
 
 export const ProductGalleryGreen = JSX<ProductGalleryProps>(
-  ({ className = '', context, slides = [] }) => {
+  ({ className = '', context, slides = [], anchor = null }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
@@ -16,6 +16,7 @@ export const ProductGalleryGreen = JSX<ProductGalleryProps>(
     return (
       <section
         className={`box-border pt-[70px] relative font-sans overflow-hidden bg-primary-main w-100 ${className}`}
+        id={anchor}
       >
         <div
           className="flex duration-1000 pb-14"

@@ -11,12 +11,20 @@ import type { MobileAppTileContent } from './MobileAppTileContent';
 export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps {}
 
 export const MobileAppTile = JSX<MobileAppTileProps>(
-  ({ className = '', context, title = 'Мобильное приложение', qr, buttons = [] }) => {
+  ({
+    className = '',
+    context,
+    title = 'Мобильное приложение',
+    qr,
+    buttons = [],
+    anchor = null,
+  }) => {
     return (
       <section
         className={`bg-white text-primary-text font-sans p-9 box-border ${className}  ${getTileRightPadding(
           className,
         )} ${getTileMinHeight(className)} `}
+        id={anchor}
       >
         <BaseTile
           context={context}

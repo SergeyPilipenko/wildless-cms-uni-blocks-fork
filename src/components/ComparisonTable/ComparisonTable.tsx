@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { FIRST_CELL_CLASSES } from './constants';
-import { ComparisonTableBody } from './ComparisonTableBody';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
+import { ComparisonTableBody } from './ComparisonTableBody';
 import type { ComparisonTableContent } from './ComparisonTableContent';
+import { FIRST_CELL_CLASSES } from './constants';
 
 export interface ComparisonTableProps extends ComparisonTableContent, UniBlockProps {}
 
@@ -16,6 +16,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
     columns,
     visibleRowLength = 0,
     isColoredFirstColumn = false,
+    anchor = null,
   }) => {
     const [isShowAllRow, setIsShowAllRow] = context.useState(!visibleRowLength);
     const showToggle = () => setIsShowAllRow(!isShowAllRow);
@@ -25,6 +26,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
         className={`bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative ${
           className || ''
         }`}
+        id={anchor}
       >
         <Heading
           headingType="h2"

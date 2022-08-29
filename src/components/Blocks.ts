@@ -11,6 +11,7 @@ import { LinkDocs } from './LinkDocs/LinkDocs';
 import { MiniGallery } from './MiniGallery/MiniGallery';
 import { MobileAppTile } from './MobileAppTile/MobileAppTile';
 import { Navigation } from './Navigation/Navigation';
+import { NavigatorTabs } from './NavigatorTabs/NavigatorTabs';
 import { PictureText } from './PictureText/PictureText';
 import { Placeholder } from './Placeholder/Placeholder';
 import { ProductBlock } from './ProductBlock/ProductBlock';
@@ -38,6 +39,7 @@ export const Blocks = {
   LinkDocs,
   MiniGallery,
   MobileAppTile,
+  NavigatorTabs,
   PictureText,
   ProductBlock,
   ProductGallery,

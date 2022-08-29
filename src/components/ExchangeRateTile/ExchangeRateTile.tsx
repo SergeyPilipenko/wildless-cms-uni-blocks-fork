@@ -32,7 +32,7 @@ const DEFAULT_LOCATION = {
 export interface ExchangeRateTileProps extends ExchangeRateTileContent, UniBlockProps {}
 
 export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
-  ({ className = '', context, title = 'Курсы обмена валют' }) => {
+  ({ className = '', context, title = 'Курсы обмена валют', anchor = null }) => {
     const data = useExchangeRates(context.useAsyncData);
     const exchangeCurrencyItems =
       data?.exchangeRate?.currencies?.filter((item) => {
@@ -40,7 +40,10 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
       }) || DEFAULT_CURRENCY_ITEMS;
 
     return (
-      <section className={`bg-white text-primary-text font-sans p-9 box-border ${className}`}>
+      <section
+        className={`bg-white text-primary-text font-sans p-9 box-border ${className}`}
+        id={anchor}
+      >
         <BaseTile
           context={context}
           title={

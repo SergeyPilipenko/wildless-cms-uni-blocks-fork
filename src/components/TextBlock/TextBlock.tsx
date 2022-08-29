@@ -31,11 +31,20 @@ const textBlockStyleMaps: Record<
 };
 
 export const TextBlock = JSX<TextBlockProps>(
-  ({ title, description, blockVersion = 'primary', iconVersion, image, className }) => {
+  ({
+    title,
+    description,
+    blockVersion = 'primary',
+    iconVersion,
+    image,
+    className,
+    anchor = null,
+  }) => {
     const textBlockStyleMap = textBlockStyleMaps[blockVersion];
     return (
       <section
         className={`font-sans px-9 py-4 flex ${textBlockStyleMap.background} ${className || ''}`}
+        id={anchor}
       >
         {iconVersion === 'small' ? renderIcon(textBlockStyleMap.icon) : null}
         {iconVersion === 'big' ? renderImage(image) : null}

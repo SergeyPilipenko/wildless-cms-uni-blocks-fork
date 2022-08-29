@@ -15,7 +15,7 @@ import { TariffsTableRow } from './TariffsTableRow';
 export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
 export const TariffsTable = JSX<TariffsTableProps>(
-  ({ className, context, title, description, rowHeaders, columns }) => {
+  ({ className, context, title, description, rowHeaders, columns, anchor = null }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const colData = getColData(columns);
@@ -34,6 +34,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
         className={`bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative ${
           className || ''
         }`}
+        id={anchor}
       >
         {title ? (
           <Heading

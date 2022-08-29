@@ -15,9 +15,18 @@ const LEFT_COL_WIDTH_SMALL_DESKTOP = 'xl:w-[220px]';
 export interface FooterProps extends FooterContent, UniBlockProps {}
 
 export const Footer = JSX<FooterProps>(
-  ({ className, documents, relatedEnterprises, contacts, socialMedia, topItems, context }) => {
+  ({
+    className,
+    documents,
+    relatedEnterprises,
+    contacts,
+    socialMedia,
+    topItems,
+    context,
+    anchor = null,
+  }) => {
     return (
-      <footer className={`px-9 py-10 bg-white ${className || ''}`}>
+      <footer className={`px-9 py-10 bg-white ${className || ''}`} id={anchor}>
         <div className="flex items-stretch gap-[54px] pb-8 xl:gap-8">
           <Logo className={`${LEFT_COL_WIDTH_FULL_HD} ${LEFT_COL_WIDTH_SMALL_DESKTOP}`} />
           <SearchBar context={context} className="grow" />

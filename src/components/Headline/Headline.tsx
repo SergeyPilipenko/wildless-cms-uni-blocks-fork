@@ -8,10 +8,17 @@ import type { HeadlineContent } from './HeadlineContent';
 export interface HeadlineProps extends UniBlockProps, HeadlineContent {}
 
 export const Headline = JSX<HeadlineProps>(
-  ({ bgColorHeadline = 'transparent', align = 'left', className = '', title, description }) => {
+  ({
+    bgColorHeadline = 'transparent',
+    align = 'left',
+    className = '',
+    title,
+    description,
+    anchor = null,
+  }) => {
     const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
     return (
-      <section className={`p-[50px] ${STYLE_MAPS.background} ${className}`}>
+      <section className={`p-[50px] ${STYLE_MAPS.background} ${className}`} id={anchor}>
         {title && (
           <Heading
             headingType="h2"

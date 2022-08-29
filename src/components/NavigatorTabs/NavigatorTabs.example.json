@@ -1,0 +1,7 @@
+{
+  "navigatorTabs": [
+    { "label": "Tab1", "anchor": "tab1" },
+    { "label": "Tab2", "anchor": "tab2" },
+    { "label": "Tab3", "anchor": "tab3" }
+  ]
+}

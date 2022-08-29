@@ -4,9 +4,9 @@ import type { LinkListContent } from './LinkListContent';
 
 export interface LinkListProps extends LinkListContent, UniBlockProps {}
 
-export const LinkList = JSX<LinkListProps>(({ className = '', documents }) => {
+export const LinkList = JSX<LinkListProps>(({ className = '', documents, anchor = null }) => {
   return (
-    <section className={`font-sans bg-white mt-[10px] ${className}`}>
+    <section className={`font-sans bg-white mt-[10px] ${className}`} id={anchor}>
       <ul className="flex flex-col text-sm text-secondary-text p-0">
         {documents?.length ? renderLinkListItem(documents) : null}
       </ul>

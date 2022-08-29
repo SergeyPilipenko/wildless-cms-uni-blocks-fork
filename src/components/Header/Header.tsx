@@ -20,7 +20,7 @@ const BORDER_COLORS: Record<BgColorVersion, string> = {
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
-  ({ className, defaultLocation, bgColor = 'bg-white', context, topItems }) => {
+  ({ className, defaultLocation, bgColor = 'bg-white', context, topItems, anchor = null }) => {
     const router = context.useRouter();
     const sitemap = useSitemap(context.useAsyncData);
     const { handlerDecorator } = context;
@@ -51,7 +51,7 @@ export const Header = JSX<HeaderProps>(
     ));
 
     return (
-      <header className={`pt-5 pb-8 px-20 ${bgColor} ${className || ''}`}>
+      <header className={`pt-5 pb-8 px-20 ${bgColor} ${className || ''}`} id={anchor}>
         <div className="container">
           <div className="flex items-center">
             <Logo className="mr-8" bgColor={bgColor} />

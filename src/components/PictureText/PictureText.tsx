@@ -9,19 +9,24 @@ import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 
-export const PictureText = JSX<PictureTextProps>(({ className = '', title, image, benefits }) => {
-  return (
-    <section className={`relative font-sans text-primary-text bg-white p-14 ${className}`}>
-      <Heading headingType="h2" className="text-center" title={title} />
-      <div className={'flex justify-center mt-9'}>
-        {image?.src && <Img className="mr-6" image={image} />}
-        {benefits?.length ? (
-          <div className="flex flex-col">{benefits.map(renderBenefit)}</div>
-        ) : null}
-      </div>
-    </section>
-  );
-});
+export const PictureText = JSX<PictureTextProps>(
+  ({ className = '', title, image, benefits, anchor = null }) => {
+    return (
+      <section
+        className={`relative font-sans text-primary-text bg-white p-14 ${className}`}
+        id={anchor}
+      >
+        <Heading headingType="h2" className="text-center" title={title} />
+        <div className={'flex justify-center mt-9'}>
+          {image?.src && <Img className="mr-6" image={image} />}
+          {benefits?.length ? (
+            <div className="flex flex-col">{benefits.map(renderBenefit)}</div>
+          ) : null}
+        </div>
+      </section>
+    );
+  },
+);
 
 function renderBenefit(benefit: Benefit, i: number) {
   return (

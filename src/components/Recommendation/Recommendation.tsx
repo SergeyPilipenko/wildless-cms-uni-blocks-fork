@@ -12,7 +12,7 @@ const CARD_SHIFT = 525;
 export interface RecommendationProps extends RecommendationContent, UniBlockProps {}
 
 export const Recommendation = JSX<RecommendationProps>(
-  ({ context, recommendations = [], className = '', title, version }) => {
+  ({ context, recommendations = [], className = '', title, version, anchor = null }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const blockClassName =
@@ -22,6 +22,7 @@ export const Recommendation = JSX<RecommendationProps>(
     return (
       <section
         className={`relative font-sans p-[50px] overflow-hidden ${blockClassName} ${className}`}
+        id={anchor}
       >
         {title ? <Heading headingType="h3" className="mb-8" title={title} /> : null}
         <div

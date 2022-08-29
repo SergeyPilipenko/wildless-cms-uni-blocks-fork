@@ -11,16 +11,28 @@ const TEST_ORIGIN = 'http://localhost:5001';
 
 const DaData = DaDataAPI('https://10.80.4.9');
 
-export const context: ContentPageContext = {
-  useState,
-  useRouter: () => ({
-    href: `${TEST_ORIGIN}/credits`,
+const Router = () => {
+  const [href, setHref] = useState<string>(globalThis.location.href);
+
+  return {
+    href: href,
     pathname: '/credits',
     query: {},
-    push: (url: string) => {
-      console.log(url);
+    push: (url?: string) => {
+      if (!url) return;
+      globalThis.history.pushState(null, '', url);
+      setHref(globalThis.location.href);
     },
-  }),
+    replace: (url?: string) => {
+      if (!url) return;
+      globalThis.history.replaceState(null, '', url);
+      setHref(globalThis.location.href);
+    },
+  };
+};
+export const context: ContentPageContext = {
+  useState,
+  useRouter: Router,
   useAsyncData: (key, fetcher) => {
     const [data, setData] = useState();
     useEffect(() => {
@@ -76,7 +88,10 @@ export const mobileContext: ContentPageContext = {
     href: `${TEST_ORIGIN}/mobile/credits`,
     pathname: '/mobile/credits',
     query: {},
-    push: (url: string) => {
+    push: (url?: string) => {
+      console.log(url);
+    },
+    replace: (url?: string) => {
       console.log(url);
     },
   }),

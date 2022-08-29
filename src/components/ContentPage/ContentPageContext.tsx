@@ -3,7 +3,8 @@ export interface Router {
   query: Record<string, string | string[] | undefined>;
   href?: string;
   basePath?: string;
-  push: (url: string) => void;
+  push: (url?: string) => void;
+  replace: (url?: string) => void;
 }
 
 export interface LikeService {

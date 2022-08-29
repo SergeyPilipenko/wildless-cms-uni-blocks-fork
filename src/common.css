@@ -1,5 +1,9 @@
 @import '../fonts/ubuntu/ubuntu.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Private clients | Green */
 [data-theme='pc'] {
   --color-primary-main: 66, 171, 68;

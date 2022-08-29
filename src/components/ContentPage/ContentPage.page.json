@@ -58,6 +58,34 @@
       }
     },
     {
+      "type": "NavigatorTabs",
+      "style": ["col-span-12"],
+      "content": {
+        "navigatorTabs": [
+          {
+            "label": "Калькулятор",
+            "anchor": "calculator"
+          },
+          {
+            "label": "Преимущества",
+            "anchor": "advantages"
+          },
+          {
+            "label": "Как оформить",
+            "anchor": "howToApply"
+          },
+          {
+            "label": "Тарифы",
+            "anchor": "tariffs"
+          },
+          {
+            "label": "Документы",
+            "anchor": "documents"
+          }
+        ]
+      }
+    },
+    {
       "type": "ProductGallery",
       "style": ["col-span-12"],
       "content": {
@@ -1400,6 +1428,7 @@
     {
       "type": "LinkDocs",
       "style": ["col-span-12"],
+      "anchor": "documents",
       "content": {
         "title": "Дополнительные документы",
         "subtitle": "Ответы на часто задаваемые вопросы",
@@ -1880,6 +1909,7 @@
     },
     {
       "type": "CreditCalculator",
+      "anchor": "calculator",
       "style": ["col-span-12"]
     },
     {

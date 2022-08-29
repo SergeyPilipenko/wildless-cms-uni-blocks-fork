@@ -7,29 +7,32 @@ import type { Step, StepsBlockContent } from './StepsBlockContent';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
-export const StepsBlock = JSX<StepsBlockProps>(({ className, title, showLines = true, steps }) => {
-  return (
-    <section
-      className={`box-border font-sans text-primary-text bg-white px-20 py-[50px] flex flex-col items-center ${
-        className || ''
-      }`}
-    >
-      <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
-      {steps?.length ? (
-        <div className={`box-border py-0.5 mb-0.5 ${title ? 'mt-9' : ''}`}>
-          <div className="flex items-center px-[88px]">
-            {joinList(
-              <div
-                className={`h-0.5 w-full bg-secondary-light ${!showLines ? 'opacity-0' : ''}`}
-              />,
-            )(steps.map((step, i) => renderStepIcon(step, i)))}
+export const StepsBlock = JSX<StepsBlockProps>(
+  ({ className, title, showLines = true, steps, anchor = null }) => {
+    return (
+      <section
+        className={`box-border font-sans text-primary-text bg-white px-20 py-[50px] flex flex-col items-center ${
+          className || ''
+        }`}
+        id={anchor}
+      >
+        <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
+        {steps?.length ? (
+          <div className={`box-border py-0.5 mb-0.5 ${title ? 'mt-9' : ''}`}>
+            <div className="flex items-center px-[88px]">
+              {joinList(
+                <div
+                  className={`h-0.5 w-full bg-secondary-light ${!showLines ? 'opacity-0' : ''}`}
+                />,
+              )(steps.map((step, i) => renderStepIcon(step, i)))}
+            </div>
+            <div className="flex justify-between gap-x-[101px]">{steps.map(renderStepTitle)}</div>
           </div>
-          <div className="flex justify-between gap-x-[101px]">{steps.map(renderStepTitle)}</div>
-        </div>
-      ) : null}
-    </section>
-  );
-});
+        ) : null}
+      </section>
+    );
+  },
+);
 
 const renderStepIcon = (step: Step, i: number) => {
   return (

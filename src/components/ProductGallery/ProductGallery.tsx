@@ -7,13 +7,16 @@ import type { ProductGalleryContent } from './ProductGalleryContent';
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
 
 export const ProductGallery = JSX<ProductGalleryProps>(
-  ({ className, context, duration = 0, slides = [] }) => {
+  ({ className, context, duration = 0, slides = [], anchor = null }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
 
     return (
-      <section className={`font-sans bg-white overflow-hidden w-100 ${className || ''}`}>
+      <section
+        className={`font-sans bg-white overflow-hidden w-100 ${className || ''}`}
+        id={anchor}
+      >
         <div
           className={`flex duration-1000`}
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}

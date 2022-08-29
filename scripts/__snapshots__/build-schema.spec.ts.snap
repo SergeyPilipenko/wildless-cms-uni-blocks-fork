@@ -1329,6 +1329,34 @@ Object {
       "title": "Навигация",
       "type": "object",
     },
+    "NavigatorTab": Object {
+      "properties": Object {
+        "anchor": Object {
+          "title": "Якорь",
+          "type": "string",
+        },
+        "label": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Таб",
+      "type": "object",
+    },
+    "NavigatorTabsContent": Object {
+      "properties": Object {
+        "navigatorTabs": Object {
+          "items": Object {
+            "$ref": "#/definitions/NavigatorTab",
+          },
+          "minItems": 3,
+          "title": "Список табов",
+          "type": "array",
+        },
+      },
+      "title": "Блок табов",
+      "type": "object",
+    },
     "OtherProductsContent": Object {
       "properties": Object {
         "blockItems": Object {

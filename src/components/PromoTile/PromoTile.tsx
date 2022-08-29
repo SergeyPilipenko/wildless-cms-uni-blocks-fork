@@ -25,12 +25,14 @@ export const PromoTile = JSX<PromoTileProps>(
     description,
     buttons = [],
     version = 'primary',
+    anchor = null,
   }) => {
     return (
       <section
         className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${
           promoTileStyleMap[version]
         } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
+        id={anchor}
       >
         <BaseTile
           context={context}

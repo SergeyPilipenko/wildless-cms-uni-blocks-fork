@@ -6,22 +6,25 @@ import type { Benefit, BenefitsBlockContent } from './BenefitsBlockContent';
 
 export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
 
-export const BenefitsBlock = JSX<BenefitsBlockProps>(({ className, title, benefits }) => {
-  return (
-    <section
-      className={`font-sans text-primary-text bg-white p-12 flex flex-col items-center ${
-        className || ''
-      }`}
-    >
-      {title ? (
-        <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
-      ) : null}
-      {benefits?.length ? (
-        <div className="grid grid-cols-2 gap-8 mt-9">{benefits.map(renderStep)}</div>
-      ) : null}
-    </section>
-  );
-});
+export const BenefitsBlock = JSX<BenefitsBlockProps>(
+  ({ className, title, benefits, anchor = null }) => {
+    return (
+      <section
+        className={`font-sans text-primary-text bg-white p-12 flex flex-col items-center ${
+          className || ''
+        }`}
+        id={anchor}
+      >
+        {title ? (
+          <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
+        ) : null}
+        {benefits?.length ? (
+          <div className="grid grid-cols-2 gap-8 mt-9">{benefits.map(renderStep)}</div>
+        ) : null}
+      </section>
+    );
+  },
+);
 
 const renderStep = (benefit: Benefit, i: number) => {
   return (

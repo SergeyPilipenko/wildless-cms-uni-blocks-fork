@@ -10,6 +10,7 @@ export interface BaseBlockDef {
   content?: BlockContent;
   version?: BlockVersion;
   hidden?: boolean;
+  anchor?: string;
 }
 
 export interface BlockDef extends BaseBlockDef {
@@ -50,6 +51,7 @@ export interface ContentPageDef extends ContentPageMeta {
 export interface UniBlockProps {
   className?: string;
   context: ContentPageContext;
+  anchor?: string;
 }
 
 export interface DaDataResult {

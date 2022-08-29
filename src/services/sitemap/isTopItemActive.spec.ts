@@ -5,6 +5,7 @@ const router: Router = {
   href: 'https://foo.ru/natural/credits',
   pathname: '/natural',
   push: () => undefined,
+  replace: () => undefined,
   query: {},
 };
 

@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { LikeButton } from '../../ui-kit/Button/LikeButton';
 import type { UniBlockProps } from '../../types';
+import { LikeButton } from '../../ui-kit/Button/LikeButton';
 
-export const LikeControl = JSX<UniBlockProps>(({ className, context }) => {
+export const LikeControl = JSX<UniBlockProps>(({ className, context, anchor = null }) => {
   const likeService = context.useLikeService();
 
   return (
@@ -10,6 +10,7 @@ export const LikeControl = JSX<UniBlockProps>(({ className, context }) => {
       className={`border-main border-2 border-solid bg-white flex w-[125px] items-center justify-center gap-3 p-2 font-sans ${
         className || ''
       }`}
+      id={anchor}
     >
       <LikeButton onClick={likeService.like} ariaLabel="Поставить отметку «лайк»" />
       <LikeButton
