@@ -55,7 +55,7 @@ export const TextBlock = JSX<TextBlockProps>(
           ) : null}
           {items?.length ? (
             <List
-              className="mt-1"
+              className="mt-1 text-m-md"
               items={items}
               isDotted={isDotted}
               version={blockVersion === 'secondary' ? 'secondary' : 'gray'}

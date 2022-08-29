@@ -1,10 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockVersion } from '../../model/BlockVersion';
-import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
-import type { GalleryCard } from './GalleryContent';
+import { List } from '../../ui-kit/List/List';
+import type { GalleryCard, GalleryItem } from './GalleryContent';
+import type { BlockVersion } from '../../model/BlockVersion';
 
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
@@ -43,21 +43,16 @@ function renderCardTitle(title: string, className: string) {
   return <div className={`font-medium text-xl m-0 ${className}`}>{title}</div>;
 }
 
-function renderItems(items, version) {
+function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
   return (
-    <section className={`max-w-[308px] mt-2`} role="list">
-      {items
-        .filter((item) => item?.text)
-        .map((item, i) => renderItem(item.text as string, i, version))}
-    </section>
-  );
-}
-
-function renderItem(item: string, i: number, version?: BlockVersion) {
-  return (
-    <BlockItem key={String(i)} version={version ?? 'primary'}>
-      <span className="text-sm">{item}</span>
-    </BlockItem>
+    <List
+      className={`max-w-[308px] mt-2 text-sm ${
+        version === 'primary' ? '!text-secondary-text' : ''
+      }`}
+      itemClassName="mt-1 first:mt-0"
+      items={items.filter((item) => item?.text).map((item) => item.text as string)}
+      version={version}
+    />
   );
 }
 

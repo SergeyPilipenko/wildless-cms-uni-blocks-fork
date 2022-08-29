@@ -1,9 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockItem } from '../../ui-kit/BlockItem/BlockItem';
 import { Button } from '../../ui-kit/Button/Button';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
-import type { TariffsTableCellData } from './TariffsTableContent';
+import { List } from '../../ui-kit/List/List';
+import type { TariffsTableCellData, TariffsTableList } from './TariffsTableContent';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface TariffsTableCellProps {
   cell: TariffsTableCellData[];
@@ -32,31 +33,31 @@ const renderCellInner = (
     )}
     {label ? <div className="text-xl font-medium m-0">{label}</div> : null}
     {description ? <div className="text-sm text-secondary-text">{description}</div> : null}
-    {list?.items?.length ? (
-      <div className="flex flex-col justify-between items-start">
-        <div role="list">
-          {list.items.map((text, idx) => (
-            <BlockItem
-              className="text-sm"
-              key={String(idx)}
-              text={text}
-              version="gray"
-              isDotted={list.isDotted ?? true}
-            />
-          ))}
-        </div>
-      </div>
-    ) : null}
+    {list?.items?.length ? renderList(list) : null}
     {image && <Img image={image} />}
-    {buttons?.length
-      ? buttons.map(({ icon, ...buttonProps }, idx) => (
-          <Button
-            className={`${idx > 0 ? 'ml-3' : ''} w-12 h-12`}
-            key={String(idx)}
-            appendLeft={icon && <Icon name={icon} width="24px" height="24px" asSVG />}
-            {...buttonProps}
-          />
-        ))
-      : null}
+    {buttons?.length ? renderButtons(buttons) : null}
+  </div>
+);
+
+const renderList = (list: TariffsTableList) => (
+  <List
+    className="flex flex-col justify-between items-start text-sm"
+    version="gray"
+    items={list.items}
+    isDotted={list.isDotted ?? true}
+  />
+);
+
+const renderButtons = (buttons: ButtonWithIconProps[]) => (
+  <div>
+    {buttons.map(({ icon, rounded, ...buttonProps }, idx) => (
+      <Button
+        className={`${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`}
+        key={String(idx)}
+        rounded={rounded}
+        appendLeft={icon && <Icon name={icon} width="24px" height="24px" asSVG />}
+        {...buttonProps}
+      />
+    ))}
   </div>
 );

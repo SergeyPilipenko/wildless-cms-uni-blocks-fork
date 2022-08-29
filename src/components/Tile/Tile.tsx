@@ -70,5 +70,7 @@ export const Tile = JSX<TileProps>((props) => {
 });
 
 function renderList(items, version) {
-  return items?.length ? <List items={items} version={version} /> : null;
+  return items?.length ? (
+    <List items={items} itemClassName="mt-2.5 first:mt-0" version={version} />
+  ) : null;
 }

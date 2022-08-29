@@ -59,7 +59,12 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               <div className="mt-3">{benefits.map((_, i) => renderBenefit(_, i, version))}</div>
             ) : null}
             {items?.length ? (
-              <List className="mt-3" items={items} version={version} isDotted={isDotted} />
+              <List
+                className="mt-3 text-m-md"
+                items={items}
+                version={version}
+                isDotted={isDotted}
+              />
             ) : null}
           </BaseTile>
         </div>
