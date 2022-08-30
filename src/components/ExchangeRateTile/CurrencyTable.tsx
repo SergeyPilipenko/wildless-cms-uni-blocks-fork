@@ -3,7 +3,7 @@ import { Icon } from '../../ui-kit/Icon/Icon';
 import type { ExchangeCurrencyItem } from './ExchangeRateTileContent';
 import { formatCurrency } from './formatCurrency';
 
-const TABLE_HEAD_STYLE = 'text-left font-normal text-sm text-secondary-text';
+const TABLE_HEAD_STYLE = 'font-light text-left font-normal text-sm text-secondary-text';
 
 const CURRENCY_ICONS_MAP = {
   USD: 'DollarIcon',
@@ -33,15 +33,19 @@ export const CurrencyTable = JSX<CurrencyTableProps>(({ className, exchangeCurre
 const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
   const code = exchangeCurrencyItem?.currency?.currency;
   return (
-    <tr key={code}>
+    <tr key={code} className="pb-1">
       <td className="pt-4">
         <div className="flex items-center">
           {code ? <Icon name={CURRENCY_ICONS_MAP[code]} width="24" height="24" /> : null}
-          <span className="ml-2">{code}</span>
+          <span className="text-m-title-md ml-2">{code}</span>
         </div>
       </td>
-      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem.buyExchangeRate)}</td>
-      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem.saleExchangeRate)}</td>
+      <td className="pt-4 pl-11 m-title-md font-light">
+        {formatCurrency(exchangeCurrencyItem.buyExchangeRate)}
+      </td>
+      <td className="pt-4 pl-11 m-title-md font-light">
+        {formatCurrency(exchangeCurrencyItem.saleExchangeRate)}
+      </td>
     </tr>
   );
 };

@@ -50,14 +50,17 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
             <Heading
               headingType={getTileHeadingType(className)}
               title={title}
-              className="whitespace-pre-wrap mb-3"
+              className="whitespace-pre-wrap"
             />
           }
         >
           <div className="flex">
-            <div className="mr-20 pt-3">
+            <div className="mr-[43px] pt-4">
               {exchangeCurrencyItems ? (
-                <CurrencyTable className="mb-7" exchangeCurrencyItems={exchangeCurrencyItems} />
+                <CurrencyTable
+                  className="mb-[31px]"
+                  exchangeCurrencyItems={exchangeCurrencyItems}
+                />
               ) : null}
               <CurrentLocation {...DEFAULT_LOCATION} />
             </div>

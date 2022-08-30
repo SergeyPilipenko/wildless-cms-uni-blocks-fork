@@ -17,7 +17,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
       <div className={`grid gap-3.5 ${className}`}>
         {renderInput('Хочу продать', codes)}
         {renderInput('Получу', codes)}
-        <Button className="box-border mt-3.5 py-3 h-12 w-44" version="primary" href="#">
+        <Button className="box-border mt-3.5 py-3 h-12 w-full" version="primary" href="#">
           Купить валюту
         </Button>
       </div>
@@ -27,14 +27,14 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
 
 function renderInput(placeholder: string, codes: string[]) {
   return (
-    <div className="flex items-center">
+    <div className="relative flex items-center">
       <Input
-        className="h-10 border pl-2.5 rounded-md text-m-sm w-full appearance-none"
+        className="h-10 border pl-4 pt-[7px] pb-[7px] rounded-md text-m-sm w-full appearance-none -mr-12"
         type="number"
         placeholder={`${placeholder}`}
       />
       {codes.length ? (
-        <Select className="h-9 -translate-x-16">
+        <Select className="h-9 -translate-x-4">
           {codes.map((code, i) => (
             <SelectOption key={String(i)} value={code}>
               {code}

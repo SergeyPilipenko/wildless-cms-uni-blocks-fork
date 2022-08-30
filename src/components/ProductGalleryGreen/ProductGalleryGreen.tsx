@@ -76,9 +76,13 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick }) {
   const isActiveBtn = i === activeSlideIndex;
   const btnClassName = isActiveBtn
     ? 'bg-white shadow-dark-blue/42 h-[102px] w-[354px] min-w-[354px] max-w-[354px] p-0'
-    : 'bg-white/10 min-w-[277px] px-0 pt-4 pb-[23px] hover:py-[26px] hover:py-[26px] ease-in duration-300';
-  const btnTitleClassName = isActiveBtn ? 'text-primary-text' : 'text-white';
-  const btnDescClassName = isActiveBtn ? 'text-secondary-text' : 'text-white';
+    : 'bg-white/10 min-w-[277px] px-0 pt-4 pb-[23px] hover:pt-[21px] hover:pb-7 ease-in duration-300';
+  const btnTitleClassName = isActiveBtn
+    ? 'text-[18px] text-primary-text pb-[10px]'
+    : 'text-m-base text-white pb-[3px]';
+  const btnDescClassName = isActiveBtn
+    ? 'text-[18px] text-secondary-text'
+    : 'text-m-base text-white';
 
   return (
     <button
@@ -91,8 +95,8 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick }) {
       `}
     >
       <div className="border-0 px-6">
-        <div className={`text-sm font-medium pb-[3px] ${btnTitleClassName}`}>{slide?.title}</div>
-        <div className={`text-xs text-secondary-text ${btnDescClassName}`}>{slide.description}</div>
+        <div className={`font-medium ${btnTitleClassName}`}>{slide?.title}</div>
+        <div className={`text-secondary-text ${btnDescClassName}`}>{slide.description}</div>
       </div>
     </button>
   );
