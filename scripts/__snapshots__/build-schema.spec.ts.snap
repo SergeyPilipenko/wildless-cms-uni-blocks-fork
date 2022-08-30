@@ -2270,7 +2270,7 @@ Object {
           "$ref": "#/definitions/Picture",
         },
         "isDotted": Object {
-          "title": "Маркеры списка (моб.)",
+          "title": "Буллиты",
           "type": "boolean",
         },
         "items": Object {
@@ -2307,7 +2307,7 @@ Object {
           "$ref": "#/definitions/Picture",
         },
         "isDotted": Object {
-          "title": "Маркеры списка (моб.)",
+          "title": "Буллиты",
           "type": "boolean",
         },
         "items": Object {
