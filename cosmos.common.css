@@ -1,4 +1,5 @@
 @tailwind base;
+/**
 * {
   box-sizing: content-box;
   border-width: 0;
@@ -25,3 +26,4 @@ menu {
   list-style: none initial initial;
   padding-left: 0;
 }
+/**/

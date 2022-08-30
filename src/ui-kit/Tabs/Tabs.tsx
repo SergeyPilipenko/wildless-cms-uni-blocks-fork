@@ -19,7 +19,7 @@ const renderTab =
     return (
       <div
         key={String(index)}
-        className={`flex h-full flex-1 cursor-pointer mr-2 last:mr-0 ${
+        className={`flex h-full flex-1 cursor-pointer mr-2 last:mr-0 box-content ${
           isActive ? ACTIVE_TAB_STYLE : TAB_STYLE
         }`}
         role="tab"
