@@ -20,7 +20,14 @@ const BORDER_COLORS: Record<BgColorVersion, string> = {
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
-  ({ className, defaultLocation, bgColor = 'bg-white', context, topItems, anchor = null }) => {
+  ({
+    className,
+    defaultLocation = 'Москва',
+    bgColor = 'bg-white',
+    context,
+    topItems,
+    anchor = null,
+  }) => {
     const router = context.useRouter();
     const sitemap = useSitemap(context.useAsyncData);
     const { handlerDecorator } = context;
