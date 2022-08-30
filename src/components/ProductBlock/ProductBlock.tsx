@@ -20,7 +20,14 @@ const breadcrumbsStyleMap: Record<BlockVersion, string> = {
 };
 
 export const ProductBlock = JSX<ProductBlockProps>((props) => {
-  const { context, className, breadcrumbs, version = 'primary', anchor = null, ...otherProps } = props;
+  const {
+    context,
+    className,
+    breadcrumbs,
+    version = 'primary',
+    anchor = null,
+    ...otherProps
+  } = props;
   const router = context.useRouter();
   const { handlerDecorator } = context;
 
