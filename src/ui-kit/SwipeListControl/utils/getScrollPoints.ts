@@ -16,9 +16,17 @@ export const getScrollPoints = ({
   scrollWidth: number;
   childElementCount: number;
   itemWidth: number;
-}) => {
-  const scrollItemWidth = itemWidth + gap;
+}): [number, number][] => {
   const scrollableDistance = scrollWidth - clientWidth;
+
+  if (childElementCount === 2) {
+    return [
+      [0, scrollableDistance],
+      [scrollableDistance, scrollWidth],
+    ];
+  }
+
+  const scrollItemWidth = itemWidth + gap;
   const edgeScrollDistance = clientWidth - gap - padding;
 
   const lastScrollableIdx = childElementCount - 2;

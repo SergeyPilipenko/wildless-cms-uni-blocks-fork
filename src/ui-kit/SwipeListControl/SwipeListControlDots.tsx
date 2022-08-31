@@ -22,7 +22,7 @@ export const SwipeListControlDots = JSX<SwipeListControlDotsProps>(
       const contentContainer = (e.currentTarget as HTMLElement).parentElement
         ?.previousElementSibling;
 
-      contentContainer?.children[idx]?.scrollIntoView({ behavior: 'smooth' });
+      contentContainer?.children[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };
 
     return showDots && children?.length ? (
