@@ -63,6 +63,8 @@ const MINI_GALLERY_ACCORDION_BLOCK: MiniGalleryBlockListDef = {
 
 const propsBlock: AccordionProps = {
   context,
+  title: 'Accordion title',
+  description: 'Accordion description',
   accordionItems: [
     {
       label: 'Accordion label 1',

@@ -3,6 +3,7 @@
   "accordionItems": [
     {
       "label": "Аккордеон 1",
+      "labelIcon": "CardIcon",
       "blocks": [
         {
           "blockListType": "TextBlock",
@@ -18,6 +19,7 @@
     },
     {
       "label": "Аккордеон 2",
+      "labelIcon": "CardIcon",
       "blocks": [
         {
           "blockListType": "TextBlock",
@@ -33,6 +35,7 @@
     },
     {
       "label": "Аккордеон 3",
+      "labelIcon": "CardIcon",
       "blocks": [
         {
           "blockListType": "TextBlock",

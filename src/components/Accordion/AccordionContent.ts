@@ -1,5 +1,6 @@
-import type { BlockDef, ColumnsCount } from '../../ui-kit/BlocksList/BlocksListProps';
+import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { IconName } from '../../icons/IconName';
 /**
  * @title Элемент списка
  */
@@ -20,9 +21,7 @@ export interface AccordionItemCommonProps {
    * @default false
    */
   bordered?: boolean; // TODO: только для мобильной версии
-  version?: BlockVersion;
-
-  columns?: ColumnsCount;
+  labelIcon?: IconName; // TODO: только для мобильной версии
 }
 
 /**
@@ -35,7 +34,7 @@ export interface AccordionContent {
   /** @title Список */
   accordionItems?: AccordionItemCommonProps[];
   /** @title Описание */
-  description?: string; // TODO: только для мобильной версии
+  description?: string;
   /**
    * @title Отображать/скрывать обводку у элемента списка
    * @default false

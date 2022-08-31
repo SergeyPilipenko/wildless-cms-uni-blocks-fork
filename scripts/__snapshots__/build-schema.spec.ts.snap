@@ -47,9 +47,6 @@ Object {
           "title": "Отображать/скрывать обводку элемента",
           "type": "boolean",
         },
-        "columns": Object {
-          "$ref": "#/definitions/ColumnsCount",
-        },
         "isExpanded": Object {
           "title": "Отображать в раскрытом виде",
           "type": "boolean",
@@ -59,8 +56,8 @@ Object {
           "title": "Название",
           "type": "string",
         },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
+        "labelIcon": Object {
+          "$ref": "#/definitions/IconName",
         },
       },
       "title": "Элемент списка",

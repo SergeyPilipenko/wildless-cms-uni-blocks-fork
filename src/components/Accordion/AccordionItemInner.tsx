@@ -2,13 +2,11 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { AccordionItemProps } from './AccordionItem';
 import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 
-export const AccordionItemInner = JSX<AccordionItemProps>(
-  ({ blocks, columns = 1, context, version = 'primary' }) => {
-    const className = 'mb-5 last:mb-0 pb-5';
-    return (
-      <div className="transition-all duration-300 max-h-0 overflow-hidden">
-        {renderBlocksList({ context, className, columns, blocks, version })}
-      </div>
-    );
-  },
-);
+export const AccordionItemInner = JSX<AccordionItemProps>(({ blocks, context }) => {
+  const className = 'mb-5 last:mb-0 pb-5';
+  return (
+    <div className="transition-all duration-300 max-h-0 overflow-hidden">
+      {renderBlocksList({ context, className, blocks })}
+    </div>
+  );
+});

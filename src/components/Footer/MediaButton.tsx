@@ -32,7 +32,7 @@ export const MediaButton = JSX<MediaButtonProps>(({ href }) => {
 
   return (
     <a
-      className="flex items-center justify-center border border-solid border-main-divider rounded-full no-underline outline-none w-[38px] h-[38px] hover:text-primary-main"
+      className="flex items-center justify-center border border-solid border-main-divider rounded-full no-underline outline-none w-[40px] h-[40px] box-border hover:text-primary-main"
       href={href}
       aria-label={label}
       target="_blank"
