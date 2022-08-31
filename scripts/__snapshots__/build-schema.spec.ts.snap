@@ -1360,17 +1360,9 @@ Object {
           "items": Object {
             "$ref": "#/definitions/blockItemCommonProps",
           },
+          "maxItems": 10,
           "title": "Список",
           "type": "array",
-        },
-        "bordered": Object {
-          "default": false,
-          "title": "Отображать/скрывать обводку у элемента списка",
-          "type": "boolean",
-        },
-        "description": Object {
-          "title": "Подзаголовок",
-          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -2471,11 +2463,6 @@ Object {
           },
           "title": "Блоки",
           "type": "array",
-        },
-        "bordered": Object {
-          "default": false,
-          "title": "Отображать/скрывать обводку элемента",
-          "type": "boolean",
         },
         "columns": Object {
           "$ref": "#/definitions/ColumnsCount",

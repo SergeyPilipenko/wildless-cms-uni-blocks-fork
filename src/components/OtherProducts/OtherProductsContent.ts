@@ -15,11 +15,6 @@ export interface blockItemCommonProps {
   isExpanded?: boolean;
   /** @title Блоки */
   blocks?: BlockDef[];
-  /**
-   * @title Отображать/скрывать обводку элемента
-   * @default false
-   */
-  bordered?: boolean; // TODO: только для мобильной версии
   columns?: ColumnsCount;
 }
 
@@ -29,13 +24,9 @@ export interface blockItemCommonProps {
 export interface OtherProductsContent {
   /** @title Заголовок */
   title?: string;
-  /** @title Список */
-  blockItems?: blockItemCommonProps[];
-  /** @title Подзаголовок */
-  description?: string; // TODO: только для мобильной версии
   /**
-   * @title Отображать/скрывать обводку у элемента списка
-   * @default false
+   * @title Список
+   * @maxItems 10
    */
-  bordered?: boolean; // TODO: только для мобильной версии
+  blockItems?: blockItemCommonProps[];
 }

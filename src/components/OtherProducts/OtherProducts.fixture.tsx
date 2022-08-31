@@ -3,13 +3,24 @@ import { PRODUCT_BLOCK } from '../ProductBlock/ProductBlock.fixture';
 import { PRODUCT_TILE, PRODUCT_PENSION_TILE } from '../ProductTile/ProductTile.fixture';
 import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import { TILE, TILE_PREMIUM } from '../Tile/Tile.fixture';
-import type { OtherProductsProps } from './OtherProducts';
+import { HEADLINE } from '../Headline/Headline.fixture';
+import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
+import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
+import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
+import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
 import { OtherProducts } from './OtherProducts';
+import type { OtherProductsProps } from './OtherProducts';
+
 import type {
   ProductBlockBlockListDef,
   ProductTileBlockListDef,
   TextBlockBlockListDef,
   TileBlockListDef,
+  GalleryBlockListDef,
+  HeadlineBlockListDef,
+  LinkDocsBlockListDef,
+  MiniGalleryBlockListDef,
+  PictureTextBlockListDef,
 } from '../../ui-kit/BlocksList/BlocksListProps';
 
 const TEXT_BLOCK_OTHER_BLOCK: TextBlockBlockListDef = {
@@ -42,11 +53,36 @@ const PRODUCT_PENSION_TILES__OTHER_BLOCK: ProductTileBlockListDef = {
   ...PRODUCT_PENSION_TILE,
 };
 
+const HEADLINE_OTHER_BLOCK: HeadlineBlockListDef = {
+  blockListType: 'Headline',
+  ...HEADLINE,
+};
+
+const PICTURE_TEXT_OTHER_BLOCK: PictureTextBlockListDef = {
+  blockListType: 'PictureText',
+  ...PICTURE_TEXT,
+};
+
+const LINK_DOCS_OTHER_BLOCK: LinkDocsBlockListDef = {
+  blockListType: 'LinkDocs',
+  ...linkDocsContentExample,
+};
+
+const GALLERY_OTHER_BLOCK: GalleryBlockListDef = {
+  blockListType: 'Gallery',
+  ...GALLERY,
+};
+
+const MINI_GALLERY_OTHER_BLOCK: MiniGalleryBlockListDef = {
+  blockListType: 'MiniGallery',
+  ...MINI_GALLERY,
+};
+
 const propsBlock: OtherProductsProps = {
   context,
   blockItems: [
     {
-      label: 'Другие кредитные карты Россельхозбанка 1',
+      label: 'OtherProducts №1 Tiles',
       blocks: [
         TILES_PREMIUM_OTHER_BLOCK,
         TILES_PREMIUM_OTHER_BLOCK,
@@ -55,7 +91,7 @@ const propsBlock: OtherProductsProps = {
       ],
     },
     {
-      label: 'Другие кредитные карты Россельхозбанка 2',
+      label: 'OtherProducts №2 Product_Tiles',
       blocks: [
         PRODUCT_TILES_OTHER_BLOCK,
         PRODUCT_TILES_OTHER_BLOCK,
@@ -64,18 +100,37 @@ const propsBlock: OtherProductsProps = {
       ],
     },
     {
-      label: 'Другие кредитные карты Россельхозбанка 3',
+      label: 'OtherProducts №3 Product_Block',
       blocks: [PRODUCT_BLOCK_OTHER_BLOCK, PRODUCT_BLOCK_OTHER_BLOCK],
     },
-
     {
-      label: 'Другие кредитные карты Россельхозбанка 4',
+      label: 'OtherProducts №4 Text_Block',
       blocks: [
         TEXT_BLOCK_OTHER_BLOCK,
         TEXT_BLOCK_OTHER_BLOCK,
         TEXT_BLOCK_OTHER_BLOCK,
         TEXT_BLOCK_OTHER_BLOCK,
       ],
+    },
+    {
+      label: 'OtherProducts №5 Picture_Text',
+      blocks: [PICTURE_TEXT_OTHER_BLOCK],
+    },
+    {
+      label: 'OtherProducts №6 Headline',
+      blocks: [HEADLINE_OTHER_BLOCK],
+    },
+    {
+      label: 'OtherProducts №7 Link_Docs',
+      blocks: [LINK_DOCS_OTHER_BLOCK],
+    },
+    {
+      label: 'OtherProducts №8 Gallery',
+      blocks: [GALLERY_OTHER_BLOCK],
+    },
+    {
+      label: 'OtherProducts №9 Mini_Gallery',
+      blocks: [MINI_GALLERY_OTHER_BLOCK],
     },
   ],
 };
