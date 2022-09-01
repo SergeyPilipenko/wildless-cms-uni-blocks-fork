@@ -13,8 +13,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+      - run: npm ci
+      - run: npm test
+
       - name: Cypress.io
-        uses: cypress-io/github-action@v4.1.1
+        uses: cypress-io/github-action@v4.2.0
         with:
           build: npm run cosmos:export
           start: npx -y http-server ./docs/ -d false -g

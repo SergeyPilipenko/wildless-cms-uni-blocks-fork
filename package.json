@@ -109,14 +109,13 @@
     "clean:actual": "rimraf ./cypress/snapshots/actual || exit 0"
   },
   "peerDependencies": {
-    "cypress": "^10.4.0",
+    "cypress": "^10.6.0",
     "cypress-visual-regression": "^1.7.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
     "@redneckz/uni-jsx": "^0.1.6",
-    "cypress-visual-regression": "^1.7.0",
     "glob": "^8.0.3",
     "remark-html": "^15.0.1",
     "remark-parse": "^10.0.1",

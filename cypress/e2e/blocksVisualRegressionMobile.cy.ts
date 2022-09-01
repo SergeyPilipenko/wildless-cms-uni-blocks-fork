@@ -10,7 +10,7 @@ type Params = {
 describe(
   'Mobile. Регресс отображения блоков',
   {
-    baseUrl: 'http://localhost:5002/_renderer.html?',
+    baseUrl: 'http://localhost:8080/mobile/_renderer.html?',
     viewportWidth: 414,
     viewportHeight: 896,
   },

@@ -49,7 +49,7 @@ TODO
 
 - Базовые скриншоты блоков, с которыми будет производится сравнение, находятся в папке `cypress/snapshots/base`
 - При выполнении тестов будут создаваться скриншоты блоков в папках `cypress/snapshots/actual`, `cypress/snapshots/diff` (в том числе по успешно пройденным)
-- Тесты по визуальному регрессу запускаются в pipeline при событии push, workflow называется e2e
+- Тесты по визуальному регрессу запускаются в pipeline при событии push, workflow называется [e2e-visual-regression] (https://github.com/redneckz/wildless-cms-uni-blocks/actions/workflows/e2e-visual-regression.yml)
 - Если тест не отработает успешно:
   1. В логах workflow будет название скриншота, на котором найдено расхождение
   2. В Summary workflow будет архив со скриншотами

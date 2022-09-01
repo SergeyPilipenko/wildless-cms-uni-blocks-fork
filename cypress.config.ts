@@ -11,7 +11,7 @@ type Params = {
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:5001/_renderer.html?',
+    baseUrl: 'http://localhost:8080/_renderer.html?',
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
     experimentalInteractiveRunEvents: true,
