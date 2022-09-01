@@ -33,13 +33,13 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
               <Heading
                 headingType={getTileHeadingType(className)}
                 title={title}
-                className={`whitespace-pre-wrap max-w-[600px]`}
+                className={`whitespace-pre-wrap max-w-[600px] mb-7`}
               />
             )
           }
           buttons={
             buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+              <ButtonSection context={context} buttons={buttons} className="flex mt-7 gap-4" />
             ) : null
           }
         >
@@ -56,7 +56,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
                 />
               </a>
             )}
-            <span className="font-normal text-sm text-secondary-text ml-4">
+            <span className="font-light text-secondary-text ml-4">
               Наведите камеру телефона на QR-код и скачайте приложение
             </span>
           </div>

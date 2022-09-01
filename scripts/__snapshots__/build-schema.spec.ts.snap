@@ -1443,12 +1443,20 @@ Object {
           "const": "PictureText",
           "type": "string",
         },
+        "directionRight": Object {
+          "default": false,
+          "title": "Картинка справа/текст слева",
+          "type": "boolean",
+        },
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "required": Array [
@@ -1466,12 +1474,20 @@ Object {
           "title": "Список преимуществ",
           "type": "array",
         },
+        "directionRight": Object {
+          "default": false,
+          "title": "Картинка справа/текст слева",
+          "type": "boolean",
+        },
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "title": "Картинка с текстом",

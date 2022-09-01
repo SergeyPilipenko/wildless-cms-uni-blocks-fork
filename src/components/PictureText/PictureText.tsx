@@ -2,6 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import type { PictureTextContent } from './PictureTextContent';
 
+import { BlockVersion } from '../../model/BlockVersion';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
@@ -9,18 +10,33 @@ import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 
+const pictureTextStyleMap: Record<BlockVersion, string> = {
+  primary: 'bg-white text-primary-text',
+  secondary: 'bg-primary-main text-white',
+};
+
 export const PictureText = JSX<PictureTextProps>(
-  ({ className = '', title, image, benefits, anchor = null }) => {
+  ({
+    className = '',
+    title,
+    image,
+    benefits,
+    version = 'primary',
+    directionRight = false,
+    anchor = null,
+  }) => {
     return (
       <section
-        className={`relative font-sans text-primary-text bg-white p-14 ${className}`}
+        className={`relative font-sans p-14 ${pictureTextStyleMap[version]} ${className}`}
         id={anchor}
       >
         <Heading headingType="h2" className="text-center" title={title} />
         <div className={'flex justify-center mt-9'}>
-          {image?.src && <Img className="mr-6" image={image} />}
+          {image?.src && <Img className={directionRight ? 'order-2 ml-6' : 'mr-6'} image={image} />}
           {benefits?.length ? (
-            <div className="flex flex-col">{benefits.map(renderBenefit)}</div>
+            <div className="flex flex-col">
+              {benefits.map((_, i) => renderBenefit(_, i, version))}
+            </div>
           ) : null}
         </div>
       </section>
@@ -28,7 +44,7 @@ export const PictureText = JSX<PictureTextProps>(
   },
 );
 
-function renderBenefit(benefit: Benefit, i: number) {
+function renderBenefit(benefit: Benefit, i: number, version: string) {
   return (
     <div key={String(i)} className="flex flex-row mb-8">
       {benefit.icon && (
@@ -42,10 +58,20 @@ function renderBenefit(benefit: Benefit, i: number) {
       )}
       <div className="flex gap-1 flex-col h-full ml-5 max-w-[490px]">
         {benefit.label && (
-          <div className="font-medium text-primary-text text-xl m-0">{benefit.label}</div>
+          <div
+            className={`font-medium text-xl m-0 ${
+              version === 'primary' ? 'text-primary-text' : ''
+            }`}
+          >
+            {benefit.label}
+          </div>
         )}
         {benefit.description && (
-          <div className="font-normal text-sm text-secondary-text">{benefit.description}</div>
+          <div
+            className={`font-normal text-sm ${version === 'primary' ? 'text-secondary-text' : ''}`}
+          >
+            {benefit.description}
+          </div>
         )}
       </div>
     </div>
