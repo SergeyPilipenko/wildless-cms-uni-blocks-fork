@@ -16,6 +16,16 @@ type StyleType = {
   iconConnector: string;
 };
 
+const STEPS_SIZE_MAP: Record<SizeVersion, string> = {
+  normal: 'h-[70px] w-[70px] min-w-[70px] min-h-[70px]',
+  small: 'h-[50px] w-[50px] min-w-[50px] min-h-[50px]',
+};
+
+const STEPS_TILE_DESCRIPTION_HEIGHT_MAP: Record<SizeVersion, string> = {
+  normal: 'min-h-[70px]',
+  small: 'min-h-[50px]',
+};
+
 const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
   primary: {
     background: 'bg-white',
@@ -88,7 +98,9 @@ const renderStepTitle = (params: RenderStepTitleParams) => {
             <div className={`min-h-8 h-full w-[2px] ${style.iconConnector} ${margin}`} />
           )}
         </div>
-        <div className="flex flex-col justify-start relative">
+        <div
+          className={`flex flex-col justify-center h-fit ${STEPS_TILE_DESCRIPTION_HEIGHT_MAP[size]}`}
+        >
           {step.label && (
             <div className="font-medium text-m-title-xs m-0 text-left">{step.label}</div>
           )}
@@ -110,10 +122,7 @@ const renderStepTitle = (params: RenderStepTitleParams) => {
 const renderIconArea = (params: RenderStepTitleParams) => {
   const { step, size, i, version } = params;
   const style = styleMaps(version);
-  const iconAreaSize =
-    size === 'normal'
-      ? 'h-[70px] w-[70px] min-w-[70px] min-h-[70px]'
-      : 'h-[50px] w-[50px] min-w-[50px] min-h-[50px]';
+  const iconAreaSize = STEPS_SIZE_MAP[size];
 
   const iconSize = size === 'normal' ? '38' : '27';
   const iconTextSize = size === 'normal' ? 'text-m-title' : 'text-m-title-xs';

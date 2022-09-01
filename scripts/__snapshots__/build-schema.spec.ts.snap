@@ -1988,12 +1988,13 @@ Object {
         },
         "size": Object {
           "$ref": "#/definitions/SizeVersion",
+          "title": "Размер шагов (моб.)",
         },
         "steps": Object {
           "items": Object {
             "$ref": "#/definitions/Step",
           },
-          "maxItems": 3,
+          "maxItems": 4,
           "minItems": 2,
           "title": "Шаги",
           "type": "array",

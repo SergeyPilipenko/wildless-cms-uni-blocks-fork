@@ -1,4 +1,4 @@
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { IconName } from '../../icons/IconName';
 import type { SizeVersion } from '../../model/SizeVersion';
 import type { BlockVersion } from '../../model/BlockVersion';
 
@@ -26,9 +26,10 @@ export interface StepsBlockContent {
   /**
    * @title Шаги
    * @minItems 2
-   * @maxItems 3
+   * @maxItems 4
    */
   steps?: Step[];
+  /** @title Размер шагов (моб.) */
   size?: SizeVersion; // TODO: mobile content
   version?: BlockVersion; // TODO: mobile content
 }

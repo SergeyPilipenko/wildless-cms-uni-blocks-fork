@@ -8,12 +8,17 @@ import type { Step, StepsBlockContent } from './StepsBlockContent';
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
 export const StepsBlock = JSX<StepsBlockProps>(
-  ({ className, title, showLines = true, steps, anchor = null }) => {
+  ({ className = '', title, showLines = true, steps = [], anchor = null }) => {
+    const shortGaps = steps.length > 3;
+
     return (
       <section
-        className={`box-border font-sans text-primary-text bg-white px-20 py-[50px] flex flex-col items-center ${
-          className || ''
-        }`}
+        className={[
+          'box-border font-sans text-primary-text bg-white',
+          shortGaps ? 'px-20' : 'px-[70px]',
+          'py-[50px] flex flex-col items-center',
+          className,
+        ].join(' ')}
         id={anchor}
       >
         <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
@@ -24,9 +29,11 @@ export const StepsBlock = JSX<StepsBlockProps>(
                 <div
                   className={`h-0.5 w-full bg-secondary-light ${!showLines ? 'opacity-0' : ''}`}
                 />,
-              )(steps.map((step, i) => renderStepIcon(step, i)))}
+              )(steps.map(renderStepIcon))}
             </div>
-            <div className="flex justify-between gap-x-[101px]">{steps.map(renderStepTitle)}</div>
+            <div className={`flex justify-between ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
+              {steps.map(renderStepTitle)}
+            </div>
           </div>
         ) : null}
       </section>

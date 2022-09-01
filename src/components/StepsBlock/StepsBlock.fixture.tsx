@@ -14,10 +14,24 @@ const steps = [
     label: 'Получение наличных',
     description: 'Получите наличные в отделении банка',
   },
+  {
+    label: 'Последний шаг!',
+    description: 'Получите наличные в отделении банка',
+  },
 ];
 
 export default {
   default: (
+    <div className="container grid grid-cols-12">
+      <StepsBlock
+        className="col-span-12"
+        context={context}
+        title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
+        steps={steps.slice(0, 3)}
+      />
+    </div>
+  ),
+  '4 steps': (
     <div className="container grid grid-cols-12">
       <StepsBlock
         className="col-span-12"
