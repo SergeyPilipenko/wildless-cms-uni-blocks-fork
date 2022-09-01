@@ -1,4 +1,5 @@
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
+import type { BlockVersion } from '../../model/BlockVersion';
 
 /** @title Кнопка под слайдом */
 interface ProductGalleryNav {
@@ -29,4 +30,5 @@ export interface ProductGalleryGreenContent {
   duration?: number;
   /** @title Слайды */
   slides?: ProductSlide[];
+  version?: BlockVersion;
 }

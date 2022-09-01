@@ -42,6 +42,15 @@ const buttons: ButtonWithIconProps[] = [
     href: 'https://rshb.ru',
     text: 'Подробнее',
     target: '_blank',
+    version: 'primary',
+  },
+];
+
+const buttonsSecondary: ButtonWithIconProps[] = [
+  {
+    href: 'https://rshb.ru',
+    text: 'Подробнее',
+    target: '_blank',
     version: 'secondary',
   },
 ];
@@ -60,7 +69,6 @@ export default {
             },
             productBlock: {
               title: 'Кредит по одному документу',
-              // description: 'Кредит наличными без залога и поручительства, только по паспорту',
               headingType: 'h2',
               items,
               buttons,
@@ -104,6 +112,71 @@ export default {
               headingType: 'h2',
               items,
               buttons,
+              image: creditCard,
+            },
+          },
+        ]}
+      />
+    </div>
+  ),
+  primary: (
+    <div className="container grid grid-cols-12">
+      <ProductGalleryGreen
+        className="col-span-12"
+        context={context}
+        version={'secondary'}
+        slides={[
+          {
+            nav: {
+              title: 'Кредит по одному документу',
+              description: 'Ставка от 5,5% годовых',
+            },
+            productBlock: {
+              title: 'Кредит по одному документу',
+              // description: 'Кредит наличными без залога и поручительства, только по паспорту',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: percentImage,
+              backgroundText: '3,6',
+            },
+          },
+          {
+            nav: {
+              title: 'Для людей в возрасте',
+              description: 'Ставка до 7% годовых',
+            },
+            productBlock: {
+              title: 'Ставка от 12,5% годовых на срок до 3 лет!',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: worker,
+            },
+          },
+          {
+            nav: {
+              title: 'Выгодно покупать',
+              description: 'Ставка от 5% годовых',
+            },
+            productBlock: {
+              title: 'Дополнительные бонусные баллы за покупки!',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: creditCard,
+            },
+          },
+          {
+            nav: {
+              title: 'Карты Unionpay',
+              description: '120 дней льготный период',
+            },
+            productBlock: {
+              title: 'Карты Unionpay',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
               image: creditCard,
             },
           },

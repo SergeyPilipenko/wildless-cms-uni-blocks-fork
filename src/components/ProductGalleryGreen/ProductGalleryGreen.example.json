@@ -10,7 +10,8 @@
         "image": {
           "format": "webp",
           "size": {
-            "width": 280
+            "width": 608,
+            "height": 299
           }
         },
         "version": "primary",

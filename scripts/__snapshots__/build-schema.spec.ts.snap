@@ -1700,6 +1700,9 @@ Object {
           "title": "Слайды",
           "type": "array",
         },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
       },
       "title": "Продуктовая галерея",
       "type": "object",
