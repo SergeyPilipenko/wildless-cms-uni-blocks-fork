@@ -24,7 +24,7 @@ export const Recommendation = JSX<RecommendationProps>(
         className={`relative font-sans p-[50px] overflow-hidden ${blockClassName} ${className}`}
         id={anchor}
       >
-        {title ? <Heading headingType="h3" className="mb-8" title={title} /> : null}
+        {title ? <Heading headingType="h2" className="mb-8" title={title} /> : null}
         <div
           className="flex duration-1000 gap-4"
           style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}

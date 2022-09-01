@@ -25,7 +25,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           image={image?.src && <Img className="mt-auto ml-7" image={image} />}
         >
           {description ? <Description description={description} /> : null}
-          {items?.length ? <List items={items} version={version} /> : null}
+          {items?.length ? <List className="text-m-base" items={items} version={version} /> : null}
         </BaseTile>
       </section>
     );
