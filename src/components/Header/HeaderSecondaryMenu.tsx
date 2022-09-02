@@ -17,11 +17,11 @@ const COLORS_MAP: Record<BgColorVersion, string> = {
   'bg-white': 'text-primary-text hover:text-primary-main',
   transparent: 'text-white',
 };
-const DOP_LINKS_COLORS_MAP: Record<BgColorVersion, string> = {
+const LINKS_COLORS_MAP: Record<BgColorVersion, string> = {
   'bg-white': 'text-secondary-light hover:text-secondary-hover',
   transparent: 'text-white',
 };
-const DOP_LINKS_ICON_NAME_MAP: Record<BgColorVersion, IconName> = {
+const LINKS_ICON_NAME_MAP: Record<BgColorVersion, IconName> = {
   'bg-white': 'GridIcon',
   transparent: 'GridIconWhite',
 };
@@ -54,14 +54,11 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
         >
           <Img image="LoupeIcon" className="h-full" asSVG color="none" />
         </HeaderSecondaryMenuButton>
-        <HeaderSecondaryMenuButton className={`mr-5 ${COLORS_MAP[bgColor]}`} ariaLabel="Профиль">
-          <Img image="ProfileIcon" className="h-full" asSVG color="none" />
-        </HeaderSecondaryMenuButton>
         <HeaderSecondaryMenuButton
-          className={`${DOP_LINKS_COLORS_MAP[bgColor]} min-w-[32px] min-h-[32px]`}
+          className={`${LINKS_COLORS_MAP[bgColor]} min-w-[32px] min-h-[32px]`}
           ariaLabel="Дополнительные ссылки"
         >
-          <Img image={DOP_LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG color="none" />
+          <Img image={LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG color="none" />
         </HeaderSecondaryMenuButton>
       </div>
     );

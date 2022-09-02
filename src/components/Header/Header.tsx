@@ -58,7 +58,7 @@ export const Header = JSX<HeaderProps>(
     ));
 
     return (
-      <header className={`pt-5 pb-8 px-20 ${bgColor} ${className || ''}`} id={anchor}>
+      <header className={`pt-6 pb-8 px-20 ${bgColor} ${className || ''}`} id={anchor}>
         <div className="container">
           <div className="flex items-center">
             <Logo className="mr-8" bgColor={bgColor} />
@@ -70,7 +70,7 @@ export const Header = JSX<HeaderProps>(
               bgColor={bgColor}
             />
           </div>
-          <div className={`mt-5 h-[1px] ${BORDER_COLORS[bgColor]}`} />
+          <div className={`mt-6 h-[1px] ${BORDER_COLORS[bgColor]}`} />
           <nav className="mt-5">{subMenu}</nav>
         </div>
       </header>

@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { BgColorVersion } from '../../model/BgColorVersion';
 import type { TopItemProps } from '../TopItem/TopItem';
 
-const TEXT_CLASSES = 'font-sans font-normal text-base';
+const TEXT_CLASSES = 'font-sans font-light text-base';
 const BORDER_CLASSES = 'absolute left-0 -bottom-3 w-full h-[2px]';
 
 export const HeaderItem = JSX<TopItemProps>(

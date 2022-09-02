@@ -14,7 +14,7 @@ export interface TopItemProps extends TopItemContent {
   bgColor?: BgColorVersion;
 }
 
-const TEXT_CLASSES = 'font-sans font-normal text-sm';
+const TEXT_CLASSES = 'font-sans font-light text-sm';
 const LINK_CLASSES = 'inline-block border border-solid bg-transparent text-center no-underline';
 
 export const TopItem = JSX<TopItemProps>(
