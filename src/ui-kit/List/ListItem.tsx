@@ -11,7 +11,7 @@ export interface ListItemProps {
   isDotted?: boolean;
 }
 
-const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3 mt-2';
+const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3 mt-3.5';
 
 const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
   primary: 'bg-primary-main',

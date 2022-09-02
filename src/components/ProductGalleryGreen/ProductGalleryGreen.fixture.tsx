@@ -69,11 +69,11 @@ export default {
             },
             productBlock: {
               title: 'Кредит по одному документу',
+              description: 'Ставка от 5,5% годовых',
               headingType: 'h2',
               items,
               buttons,
               image: percentImage,
-              backgroundText: '3,6',
             },
           },
           {
@@ -133,12 +133,11 @@ export default {
             },
             productBlock: {
               title: 'Кредит по одному документу',
-              // description: 'Кредит наличными без залога и поручительства, только по паспорту',
+              description: 'Кредит наличными без залога и поручительства, только по паспорту',
               headingType: 'h2',
               items,
               buttons: buttonsSecondary,
               image: percentImage,
-              backgroundText: '3,6',
             },
           },
           {

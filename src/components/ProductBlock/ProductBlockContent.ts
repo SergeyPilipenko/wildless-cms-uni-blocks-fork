@@ -32,8 +32,6 @@ export type ProductBlockInnerContent = HeadingContent &
      * @hidden
      */
     textBlockClassName?: string;
-    /** @title Фоновый текст под иллюстрацией */
-    backgroundText?: string;
   };
 
 /**

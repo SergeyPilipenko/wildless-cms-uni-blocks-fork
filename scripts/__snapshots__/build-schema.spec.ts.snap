@@ -1498,10 +1498,6 @@ Object {
         "blockListType": "ProductBlock",
       },
       "properties": Object {
-        "backgroundText": Object {
-          "title": "Фоновый текст под иллюстрацией",
-          "type": "string",
-        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1572,10 +1568,6 @@ Object {
     },
     "ProductBlockContent": Object {
       "properties": Object {
-        "backgroundText": Object {
-          "title": "Фоновый текст под иллюстрацией",
-          "type": "string",
-        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1639,10 +1631,6 @@ Object {
     },
     "ProductBlockInnerContent": Object {
       "properties": Object {
-        "backgroundText": Object {
-          "title": "Фоновый текст под иллюстрацией",
-          "type": "string",
-        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",

@@ -45,9 +45,11 @@ module.exports = {
       fontSize: {
         button: ['0.875rem', '1.25rem'], // 14px 20px
 
+        'title-xl': ['3.5rem', '3.5rem'], //56px 56px
         'title-lg': ['2.5rem', '3rem'], //40px 48px
         title: ['2rem', '2.5rem'], //32px 40px
         'title-sm': ['1.75rem', '2.5rem'], //28px 40px
+        'title-new-sm': ['1.625rem', '2.25rem'], //26px 36px в рамках задачи ProductGalleryGreen #293
         'title-xs': ['1.5rem', '1.875rem'], //24px 30px
         'title-2xs': ['1.25rem', '1.75rem'], //20px 28px
         lg: ['2.188rem', '3rem'], // 35px 48px

@@ -2,7 +2,6 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
@@ -26,16 +25,20 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     isDotted = true,
     textBlockClassName = '',
   }) => {
+    const textColor = version === 'secondary' ? 'text-white' : 'text-primary-text';
     return (
       <div className={`flex grow justify-between items-stretch ${className}`}>
         <div className={`flex flex-col ${textBlockClassName}`}>
           <BaseTile
             context={context}
-            title={getTitle(title, headingType)}
+            title={getTitle(title, headingType, textColor)}
             buttons={getButtons(context, buttons)}
           >
             {description && (
-              <Description className="mt-4 max-w-[600px]" description={description} />
+              <Description
+                className={`mt-[18px] max-w-[600px] text-title-new-sm font-light ${textColor}`}
+                description={description}
+              />
             )}
             {benefits?.filter((items) => items.label)?.length ? (
               <div className="flex gap-6 mt-6">
@@ -44,7 +47,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             ) : null}
             {items?.length ? (
               <List
-                className="mt-5 text-m-base"
+                className="mt-5 text-title-new-sm font-light"
                 items={items}
                 itemClassName="mb-[10px]"
                 version={version}
@@ -59,15 +62,10 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-const getTitle = (title, headingType) => {
+const getTitle = (title, headingType, textColor) => {
+  const Tag = headingType;
   return (
-    title && (
-      <Heading
-        headingType={headingType}
-        title={title}
-        className="whitespace-pre-wrap max-w-[600px]"
-      />
-    )
+    title && <Tag className={`font-sans font-medium m-0 text-title-xl ${textColor}`}>{title}</Tag>
   );
 };
 
