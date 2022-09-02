@@ -18,13 +18,11 @@ const Router = () => {
     href: href,
     pathname: '/credits',
     query: {},
-    push: (url?: string) => {
-      if (!url) return;
+    push: (url: string) => {
       globalThis.history.pushState(null, '', url);
       setHref(globalThis.location.href);
     },
-    replace: (url?: string) => {
-      if (!url) return;
+    replace: (url: string) => {
       globalThis.history.replaceState(null, '', url);
       setHref(globalThis.location.href);
     },
@@ -88,10 +86,10 @@ export const mobileContext: ContentPageContext = {
     href: `${TEST_ORIGIN}/mobile/credits`,
     pathname: '/mobile/credits',
     query: {},
-    push: (url?: string) => {
+    push: (url: string) => {
       console.log(url);
     },
-    replace: (url?: string) => {
+    replace: (url: string) => {
       console.log(url);
     },
   }),
