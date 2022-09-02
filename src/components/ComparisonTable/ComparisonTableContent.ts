@@ -1,6 +1,5 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
 import type { ListOrientation } from '../../model/ListOrientation';
 
 /**
@@ -29,7 +28,7 @@ export interface ColumnHeader {
   title?: string;
   /** @title Подзаголовок */
   subtitle?: string;
-  icon?: IconName;
+  icon?: Picture;
   image?: Picture;
   link?: LinkProps;
 }
@@ -65,7 +64,7 @@ export interface TableColumnData {
 export interface TableColumnHeader {
   /** @title Заголовок */
   title?: string;
-  icon?: IconName;
+  icon?: Picture;
 }
 
 /**

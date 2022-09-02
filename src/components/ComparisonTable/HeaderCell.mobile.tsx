@@ -1,13 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { Icon } from '../../ui-kit/Icon/Icon';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
+import { Heading } from '../../ui-kit/Heading/Heading';
 
 export interface HeaderCellProps {
-  icon?: IconName;
+  icon?: Picture;
   image?: Picture;
   title?: string;
   subtitle?: string;
@@ -18,14 +16,14 @@ export interface HeaderCellProps {
 export const HeaderCell = JSX<HeaderCellProps>(
   ({ icon, image, title, subtitle, isFillGradient }) => (
     <div role="columnheader" scope="col">
-      {icon && (
-        <Icon
+      {icon ? (
+        <Img
           className="h-[63px] w-[63px] min-w-[63px] min-h-[63px] mb-4"
-          name={icon}
+          image={icon}
           width="63"
           height="63"
         />
-      )}
+      ) : null}
       {image?.src && (
         <div className="mb-3.5">
           <Img image={image} />

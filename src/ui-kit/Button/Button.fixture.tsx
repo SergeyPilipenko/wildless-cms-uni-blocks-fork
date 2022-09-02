@@ -1,5 +1,5 @@
 import '../../setup-fixture';
-import { Icon } from '../Icon/Icon';
+import { Img } from '../Img/Img';
 import { Button } from './Button';
 
 export default {
@@ -66,7 +66,7 @@ export default {
             appendLeft={
               /** Div need for perfect pixel */
               <div>
-                <Icon name="PlayMarketIcon" width="24" height="24" asSVG />
+                <Img image={{ icon: 'PlayMarketIcon' }} width="24" height="24" asSVG />
               </div>
             }
             text="Google Play"
@@ -78,7 +78,7 @@ export default {
             aboveText="Загрузите в"
             appendLeft={
               <div>
-                <Icon name="AppleIcon" width="24" height="24" asSVG />
+                <Img image={{ icon: 'AppleIcon' }} width="24" height="24" asSVG />
               </div>
             }
             text="App Store"
@@ -94,14 +94,14 @@ export default {
             href="https://www.rshb.ru/"
             target="_blank"
             version="secondary"
-            appendLeft={<Icon name="PlayMarketIcon" width="20" height="21" asSVG />}
+            appendLeft={<Img image={{ icon: 'PlayMarketIcon' }} width="20" height="21" asSVG />}
           />
           <Button
             rounded
             href="https://www.rshb.ru/"
             target="_blank"
             version="secondary"
-            appendLeft={<Icon name="AppleIcon" width="18" height="20" asSVG />}
+            appendLeft={<Img image={{ icon: 'AppleIcon' }} width="18" height="20" asSVG />}
           />
         </div>
       </div>

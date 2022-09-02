@@ -12,7 +12,7 @@ const svgColorsMap: Record<IconColor, string> = {
 export const Icon = JSX<IconProps>(
   ({
     className = '',
-    name,
+    name = '',
     alt = `Иконка ${IconTitleMap[name] || name}`,
     title = alt,
     asSVG,

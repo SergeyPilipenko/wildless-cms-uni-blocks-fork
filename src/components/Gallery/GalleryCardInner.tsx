@@ -1,10 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
-import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import type { GalleryCard, GalleryItem } from './GalleryContent';
-import type { BlockVersion } from '../../model/BlockVersion';
 
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
@@ -33,7 +32,7 @@ function renderButton(button) {
   return (
     <Button
       className="mt-6 w-full"
-      appendLeft={button.icon && <Icon name={button.icon} width="24px" height="24px" asSVG />}
+      appendLeft={button.icon && <Img image={button.icon} width="24px" height="24px" asSVG />}
       {...button}
     />
   );

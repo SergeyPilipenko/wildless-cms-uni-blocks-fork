@@ -1,15 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { TableTileHeader } from './TableTileHeader';
-import { Img } from '../../ui-kit/Img/Img';
 import { Button } from '../../ui-kit/Button/Button';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
+import { TableTileHeader } from './TableTileHeader';
 import type {
   TariffsTableCellData,
   TariffsTableList,
   TariffsTableTileCellProps,
 } from './TariffsTableContent';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export const TariffsTableTileCell = JSX<TariffsTableTileCellProps>(({ header, data }) => {
   return (
@@ -54,7 +53,7 @@ const renderButtons = (buttons: ButtonWithIconProps[]) => (
         className={`mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${icon ? 'w-12 h-12' : ''}`}
         key={String(idx)}
         rounded={rounded}
-        appendLeft={icon && <Icon name={icon} width="24px" height="24px" asSVG />}
+        appendLeft={icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null}
         {...buttonProps}
         aria-label={icon}
       />

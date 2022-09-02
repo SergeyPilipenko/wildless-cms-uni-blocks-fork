@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Icon } from '../Icon/Icon';
+import { Img } from '../Img/Img';
 
 export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
   const { term, setTerm } = context.useSearch();
@@ -8,7 +8,7 @@ export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
     <form className={`relative ${className || ''}`}>
       <div className="absolute rounded h-full flex items-center justify-center pl-4 max-w-[170px] gap-3.5 pointer-events-none">
         <div className="w-[20px] h-[20px]">
-          <Icon name="LoupeIcon" width="24" height="24" />
+          <Img image="LoupeIcon" width="24" height="24" />
         </div>
         {!term && (
           <label
@@ -37,7 +37,7 @@ export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
           setTerm('');
         }}
       >
-        <Icon name="CloseIcon" width="24" height="24" />
+        <Img image="CloseIcon" width="24" height="24" />
       </button>
     </form>
   );

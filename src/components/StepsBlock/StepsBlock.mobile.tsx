@@ -1,10 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { SizeVersion } from '../../model/SizeVersion';
 import type { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
+import { Img } from '../../ui-kit/Img/Img';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
-import type { BlockVersion } from '../../model/BlockVersion';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -132,7 +132,8 @@ const renderIconArea = (params: RenderStepTitleParams) => {
       className={`${iconAreaSize} ${style.iconBackground} rounded-full z-10 mr-3 flex justify-center content-center`}
     >
       <span className={`font-medium flex self-center ${style.title} ${iconTextSize}`}>
-        {(step.icon && <Icon name={step.icon} width={iconSize} height={iconSize} asSVG />) || i + 1}
+        {(step.icon?.icon && <Img image={step.icon} width={iconSize} height={iconSize} asSVG />) ||
+          i + 1}
       </span>
     </div>
   );

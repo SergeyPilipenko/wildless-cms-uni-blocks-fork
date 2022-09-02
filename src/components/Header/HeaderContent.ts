@@ -1,13 +1,13 @@
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
-import type { IconName } from '../../icons/IconName';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Пункт подменю
  */
 export interface SubMenuItem extends LinkProps {
-  icon?: IconName;
+  icon?: Picture;
 }
 
 /**
@@ -16,7 +16,7 @@ export interface SubMenuItem extends LinkProps {
  */
 export interface DispositionItem extends LinkProps {
   /** @hidden */
-  icon?: IconName;
+  icon?: Picture;
 }
 
 /**

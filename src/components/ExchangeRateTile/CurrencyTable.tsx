@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 import type { ExchangeCurrencyItem } from './ExchangeRateTileContent';
 import { formatCurrency } from './formatCurrency';
 
@@ -36,7 +36,7 @@ const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
     <tr key={code} className="pb-1">
       <td className="pt-4">
         <div className="flex items-center">
-          {code ? <Icon name={CURRENCY_ICONS_MAP[code]} width="24" height="24" /> : null}
+          {code ? <Img image={{ icon: CURRENCY_ICONS_MAP[code] }} width="24" height="24" /> : null}
           <span className="text-m-title-md ml-2">{code}</span>
         </div>
       </td>

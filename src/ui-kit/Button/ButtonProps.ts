@@ -1,6 +1,6 @@
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { IconName } from '../Icon/IconProps';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @hidden
@@ -24,7 +24,7 @@ export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
 
 export interface ButtonWithIconProps extends ButtonProps {
   /** @title Иконка */
-  icon?: IconName;
+  icon?: Picture;
   /** @title Верхний текст */
   aboveText?: string;
   /** @hidden */

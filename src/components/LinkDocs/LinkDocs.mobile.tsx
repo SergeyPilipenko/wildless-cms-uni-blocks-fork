@@ -13,7 +13,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     context,
     title,
     subtitle,
-    icon = 'DocIconMonoColor',
+    icon = { icon: 'DocIconMonoColor' },
     documents,
     orientation = 'vertical',
     hasBorder = true,

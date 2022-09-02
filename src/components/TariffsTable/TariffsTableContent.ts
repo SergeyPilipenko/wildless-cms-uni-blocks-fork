@@ -1,4 +1,3 @@
-import type { IconName } from '../../icons/IconName';
 import type { CellData } from '../ComparisonTable/ComparisonTableContent';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
@@ -6,6 +5,7 @@ import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
+import { Picture } from '../../model/Picture';
 
 /**
  * @title Ряд
@@ -44,7 +44,7 @@ export type TariffsTableCellData = CellData &
  * @title Параметр
  */
 export type TariffsTableRowHeader = HeadingContent & {
-  icon?: IconName;
+  icon?: Picture;
 };
 
 /**

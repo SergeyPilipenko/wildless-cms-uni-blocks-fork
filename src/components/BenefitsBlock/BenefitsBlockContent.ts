@@ -1,4 +1,4 @@
-import type { IconName } from '../../ui-kit/Icon/IconProps';
+import type { Picture } from '../../model/Picture';
 
 export interface TextBenefit {
   /** @title Название */
@@ -11,7 +11,7 @@ export interface TextBenefit {
  * @title Преимущество
  */
 export interface Benefit extends TextBenefit {
-  icon?: IconName;
+  icon?: Picture;
 }
 
 /**

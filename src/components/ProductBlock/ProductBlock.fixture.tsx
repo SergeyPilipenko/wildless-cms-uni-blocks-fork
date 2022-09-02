@@ -29,21 +29,21 @@ const breadcrumbs = [
   },
 ];
 
-const benefits = [
+const benefits: Benefit[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',
-    icon: 'EmptyWalletIcon',
+    icon: { icon: 'EmptyWalletIcon' },
   },
   {
     label: 'От 16,9%',
     description: 'Ставка по кредиту',
-    icon: 'PercentageSquareIcon',
+    icon: { icon: 'PercentageSquareIcon' },
   },
   {
     label: 'До 5 лет',
     description: 'Срок кредитования',
-    icon: 'CalendarIcon',
+    icon: { icon: 'CalendarIcon' },
   },
 ];
 
@@ -85,7 +85,7 @@ export default {
         headingType="h2"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         breadcrumbs={breadcrumbs}
-        benefits={benefits as Benefit[]}
+        benefits={benefits}
         buttons={buttons}
         image={image}
       />
@@ -101,8 +101,8 @@ export default {
         version={'secondary'}
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         breadcrumbs={breadcrumbs}
-        benefits={benefits as Benefit[]}
-        buttons={buttons as ButtonWithIconProps[]}
+        benefits={benefits}
+        buttons={buttons}
         image={image}
       />
     </div>

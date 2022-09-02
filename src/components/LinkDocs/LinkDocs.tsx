@@ -30,7 +30,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     subtitle,
     align,
     documents,
-    icon = 'DocIcon',
+    icon = { icon: 'DocIcon' },
     columnsMode = 'double',
     anchor = null,
   }) => {

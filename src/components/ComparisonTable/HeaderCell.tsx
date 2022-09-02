@@ -3,13 +3,11 @@ import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { Icon } from '../../ui-kit/Icon/Icon';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
 import { BORDER_CLASSES, GRADIENT } from './constants';
 
 export interface HeaderCellProps {
-  icon?: IconName;
+  icon?: Picture;
   image?: Picture;
   title?: string;
   link?: LinkProps;
@@ -23,9 +21,9 @@ export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) =>
     scope="col"
   >
     {icon && !image?.src && (
-      <Icon
+      <Img
         className="h-[63px] w-[63px] min-w-[63px] min-h-[63px] mb-4"
-        name={icon}
+        image={icon}
         width="63"
         height="63"
       />

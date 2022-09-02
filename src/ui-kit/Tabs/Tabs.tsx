@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../Img/Img';
 import type { Tab, TabClickHandler, TabsProps } from './TabsProps';
 
 const TAB_STYLE = 'px-2 h-14 pb-2 pt-3 border border-b-0 border-main-stroke';
@@ -41,6 +41,6 @@ const renderTab =
 
 const renderIcon = (tab: Tab, isActive: boolean) => (
   <div className="h-full mt-1" style={isActive ? { filter: 'invert(1)' } : null}>
-    <Icon className="w-5 h-5 mr-3" name={tab?.icon || 'CardIcon'} asSVG={!isActive} />
+    <Img className="w-5 h-5 mr-3" image={tab?.icon || 'CardIcon'} asSVG={!isActive} />
   </div>
 );

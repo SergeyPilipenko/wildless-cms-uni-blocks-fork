@@ -1,6 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
-import type { IconName } from '../../icons/IconName';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Тип контакта
@@ -32,7 +32,7 @@ export type SocialMedia = Omit<LinkProps, 'text'>;
  */
 export interface SubMenuItem extends LinkProps {
   /** @title Иконка подменю */
-  icon?: IconName;
+  icon?: Picture;
 }
 
 /**

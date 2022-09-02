@@ -57,7 +57,7 @@ Object {
           "type": "string",
         },
         "labelIcon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
       },
       "title": "Элемент списка",
@@ -84,7 +84,7 @@ Object {
           "type": "string",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "label": Object {
           "title": "Название",
@@ -234,7 +234,7 @@ Object {
           "type": "string",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
           "title": "Иконка",
         },
         "rounded": Object {
@@ -317,7 +317,7 @@ Object {
     "ColumnHeader": Object {
       "properties": Object {
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -449,7 +449,7 @@ Object {
           "type": "string",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "title": Object {
           "title": "Имя вкладки",
@@ -1016,6 +1016,10 @@ Object {
           "title": "Формат",
           "type": "string",
         },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+          "title": "Иконка",
+        },
         "size": Object {
           "properties": Object {
             "height": Object {
@@ -1076,7 +1080,7 @@ Object {
           "type": "boolean",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
           "title": "Название иконки",
         },
         "orientation": Object {
@@ -1118,7 +1122,7 @@ Object {
           "type": "boolean",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
           "title": "Название иконки",
         },
         "orientation": Object {
@@ -1393,6 +1397,10 @@ Object {
           ],
           "title": "Формат",
           "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+          "title": "Иконка",
         },
         "size": Object {
           "properties": Object {
@@ -1998,7 +2006,7 @@ Object {
           "type": "string",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "label": Object {
           "title": "Название",
@@ -2049,7 +2057,7 @@ Object {
           "type": "string",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "target": Object {
           "$ref": "#/definitions/Target",
@@ -2069,7 +2077,7 @@ Object {
           "type": "string",
         },
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "title": Object {
           "title": "Имя вкладки",
@@ -2100,7 +2108,7 @@ Object {
     "TableColumnHeader": Object {
       "properties": Object {
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "title": Object {
           "title": "Заголовок",
@@ -2246,7 +2254,7 @@ Object {
     "TariffsTableRowHeader": Object {
       "properties": Object {
         "icon": Object {
-          "$ref": "#/definitions/IconName",
+          "$ref": "#/definitions/Picture",
         },
         "title": Object {
           "title": "Заголовок",

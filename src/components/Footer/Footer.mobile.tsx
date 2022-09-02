@@ -10,7 +10,7 @@ import { TextInformation } from './TextInformation';
 
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import { Button } from '../../ui-kit/Button/Button';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import { getAccordionItems } from '../../utils/getAccordionItems';
 
@@ -59,7 +59,7 @@ const renderSubMenuItem = (menu: SubMenuItem, i: number) => {
   const { icon, href, text } = menu;
   return (
     <Button version="link" key={`footer-${i}`} href={href} className="flex text-sm mb-4">
-      {icon ? <Icon className="pr-1" name={icon} width="24" height="24" asSVG /> : null}
+      {icon ? <Img className="pr-1" image={icon} width="24" height="24" asSVG /> : null}
       <span className="pl-2.5 font-medium text-primary-text">{text}</span>
     </Button>
   );

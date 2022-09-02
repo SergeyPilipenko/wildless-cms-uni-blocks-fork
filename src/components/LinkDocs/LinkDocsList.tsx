@@ -1,13 +1,13 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { LinkDocsListItem } from './LinkDocsListItem';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
 import type { LinkColumnsMode, LinkDocsItem } from './LinkDocsContent';
+import type { Picture } from '../../model/Picture';
 
 export interface LinkDocsListProps {
   className?: string;
   documents?: LinkDocsItem[];
   columnsMode?: LinkColumnsMode;
-  icon?: IconName;
+  icon?: Picture;
 }
 
 export const LinkDocsList = JSX<LinkDocsListProps>(

@@ -1,7 +1,7 @@
 import type { LinkProps } from '../../model/LinkProps';
-import type { IconName } from '../../ui-kit/Icon/IconProps';
 import type { AlignType } from '../BaseTile/BaseTileProps';
 import type { ListOrientation } from '../../model/ListOrientation';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Отображение списка
@@ -29,7 +29,7 @@ export interface LinkDocsContent {
   /** @title Описание */
   subtitle?: string;
   /** @title Название иконки */
-  icon?: IconName;
+  icon?: Picture;
   /** @title Список */
   documents?: LinkDocsItem[];
   columnsMode?: LinkColumnsMode;

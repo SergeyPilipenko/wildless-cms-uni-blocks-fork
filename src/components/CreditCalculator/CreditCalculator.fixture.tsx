@@ -7,19 +7,19 @@ const TABS: CreditCalculatorTab[] = [
     title: 'Кредит',
     description: 'Ставка от 6% до 7 лет',
     directoryName: 'credit-calculator-data',
-    icon: 'CardIcon',
+    icon: { icon: 'CardIcon' },
   },
   {
     title: 'Кредит',
     description: 'Ставка от 4% до 7 лет',
     directoryName: 'credit-calculator-data1',
-    icon: 'ChartSquareIcon',
+    icon: { icon: 'ChartSquareIcon' },
   },
   {
     title: 'Кредит',
     description: 'Ставка от 3% до 6 лет',
     directoryName: 'credit-calculator-data2',
-    icon: 'DiscountShapeIcon',
+    icon: { icon: 'DiscountShapeIcon' },
   },
 ];
 

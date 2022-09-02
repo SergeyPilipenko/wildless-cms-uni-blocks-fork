@@ -3,11 +3,15 @@
   "benefits": [
     {
       "label": "Преимущество №1",
-      "icon": "ClockIcon"
+      "icon": {
+        "icon": "ClockIcon"
+      }
     },
     {
       "label": "Преимущество №2",
-      "icon": "SignDocsIcon"
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
     }
   ]
 }

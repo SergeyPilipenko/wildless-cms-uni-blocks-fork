@@ -1,41 +1,68 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Picture, ImgSource } from '../../model/Picture';
+import type { ImgSource, Picture } from '../../model/Picture';
+import { Icon } from '../Icon/Icon';
+import type { Image, ImageProps } from './ImgProps';
 
-export interface ImageProps {
-  className?: string;
-  imageClassName?: string;
-  image: Picture;
-}
+export const Img = JSX<ImageProps<Image>>(
+  ({ className = '', image, imageClassName = '', ...iconProps }) => {
+    if (!image) {
+      return null;
+    }
 
-export const Img = JSX<ImageProps>(
-  ({ className = '', image: { size, ...image }, imageClassName = '' }) => {
-    const style = {
-      width: size?.width ? `${size?.width}px` : '100%',
-      height: size?.height ? `${size?.height}px` : '100%',
-    };
+    // backwards compatibility with existing icons in usage
+    const icon = typeof image === 'string' ? image : image.icon;
+    if (icon || icon === '') {
+      return icon.length ? <Icon className={className} name={icon} {...iconProps} /> : null;
+    }
 
-    const title = image.title || '';
-    const alt = image.alt || title;
+    return (
+      <ImgAsPicture
+        className={className}
+        imageClassName={imageClassName}
+        image={image as Picture}
+      />
+    );
+  },
+);
+
+export const ImgAsPicture = JSX<ImageProps<Picture>>(
+  ({ className = '', image, imageClassName = '' }) => {
+    if (!image) {
+      return null;
+    }
 
     return (
       <picture className={`flex-none ${className}`}>
-        {image.sources?.length
+        {image?.sources?.length
           ? image.sources.map(({ src, format }, index) => (
               <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
             ))
           : null}
-        <img
-          className={imageClassName}
-          src={image.src}
-          alt={alt}
-          title={title}
-          style={style}
-          {...size}
-        />
+        {renderImg(image, imageClassName)}
       </picture>
     );
   },
 );
+
+const renderImg = (image: Picture, imageClassName = '') => {
+  const style = {
+    width: image.size?.width ? `${image.size?.width}px` : '100%',
+    height: image.size?.height ? `${image.size?.height}px` : '100%',
+  };
+  const title = image.title || '';
+  const alt = image.alt || image.title;
+
+  return (
+    <img
+      src={image.src}
+      className={imageClassName}
+      alt={alt}
+      title={title}
+      style={style}
+      {...image.size}
+    />
+  );
+};
 
 export function formatToMimeType(format: ImgSource['format']): string | undefined {
   return format ? `image/${String(format)}` : undefined;

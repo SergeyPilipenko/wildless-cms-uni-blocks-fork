@@ -146,7 +146,7 @@ const columns2: Column[] = [
   {
     header: {
       title: '«Пополняемый»',
-      icon: 'GlassIcon',
+      icon: { icon: 'GlassIcon' },
       link: {
         text: 'Подробнее',
         href: '/credits',
@@ -162,7 +162,7 @@ const columns2: Column[] = [
   {
     header: {
       title: '«Комфортный»',
-      icon: 'ComfortableCompIcon',
+      icon: { icon: 'ComfortableCompIcon' },
       link: {
         text: 'Подробнее',
         href: '/credits',
@@ -178,7 +178,7 @@ const columns2: Column[] = [
   {
     header: {
       title: '«Доходный пенсионный»',
-      icon: 'ClockIcon',
+      icon: { icon: 'ClockIcon' },
       link: {
         text: 'Подробнее',
         href: '/credits',

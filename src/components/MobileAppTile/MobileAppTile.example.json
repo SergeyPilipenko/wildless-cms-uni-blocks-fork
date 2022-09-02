@@ -7,13 +7,17 @@
     {
       "aboveText": "Загрузите в",
       "text": "App Store",
-      "icon": "AppleIcon",
+      "icon": {
+        "icon": "AppleIcon"
+      },
       "version": "secondary"
     },
     {
       "aboveText": "Доступно в",
       "text": "Google Play",
-      "icon": "PlayMarketIcon",
+      "icon": {
+        "icon": "PlayMarketIcon"
+      },
       "version": "secondary"
     }
   ],

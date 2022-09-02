@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 
@@ -45,7 +45,7 @@ const renderStepIcon = (step: Step, i: number) => {
   return (
     <div key={String(i)} className="flex flex-col items-center text-center relative">
       <div className="h-[100px] w-[100px] min-w-[100px] min-h-[100px] bg-secondary-light rounded-full p-[26px] box-border z-10">
-        {(step.icon && <Icon name={step.icon} width="48" height="48" />) || (
+        {(step.icon?.icon && <Img image={step.icon} width="48" height="48" />) || (
           <span className="font-medium text-title-sm text-secondary-text">{i + 1}</span>
         )}
       </div>

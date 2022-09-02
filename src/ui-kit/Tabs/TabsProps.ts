@@ -1,4 +1,4 @@
-import type { IconName } from '../../icons/IconName';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Вкладка
@@ -8,7 +8,7 @@ export interface Tab {
   title?: string;
   /** @title Описание */
   description?: string;
-  icon?: IconName;
+  icon?: Picture;
 }
 
 export type TabClickHandler = (value: number) => void;

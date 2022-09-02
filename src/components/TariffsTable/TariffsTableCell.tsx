@@ -1,10 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { Button } from '../../ui-kit/Button/Button';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import type { TariffsTableCellData, TariffsTableList } from './TariffsTableContent';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface TariffsTableCellProps {
   cell: TariffsTableCellData[];
@@ -55,7 +54,7 @@ const renderButtons = (buttons: ButtonWithIconProps[]) => (
         className={`${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`}
         key={String(idx)}
         rounded={rounded}
-        appendLeft={icon && <Icon name={icon} width="24px" height="24px" asSVG />}
+        appendLeft={icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null}
         {...buttonProps}
       />
     ))}

@@ -1,9 +1,12 @@
 import type { Picture } from '../../model/Picture';
+import type { IconCompatibilityFields, IconName } from '../Icon/IconProps';
 
-export interface ImageContent {
-  image?: Picture;
+export type Image = Picture | IconName;
+
+export interface ImageContent<T = Picture> {
+  image?: T;
 }
-
-export interface ImageProps extends ImageContent {
+export interface ImageProps<T> extends ImageContent<T>, IconCompatibilityFields {
   className?: string;
+  imageClassName?: string;
 }

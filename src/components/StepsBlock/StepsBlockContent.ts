@@ -1,6 +1,6 @@
-import type { IconName } from '../../icons/IconName';
 import type { SizeVersion } from '../../model/SizeVersion';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Шаг
@@ -10,7 +10,7 @@ export interface Step {
   label?: string;
   /** @title Описание */
   description?: string;
-  icon?: IconName;
+  icon?: Picture;
 }
 
 /**

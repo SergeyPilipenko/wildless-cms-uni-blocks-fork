@@ -1,30 +1,46 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Picture, ImgSource } from '../../model/Picture';
+import type { ImgSource, Picture } from '../../model/Picture';
+import { Icon } from '../Icon/Icon';
+import type { Image, ImageProps } from './ImgProps';
 
-export interface ImageProps {
-  className?: string;
-  imageClassName?: string;
-  image: Picture;
-}
+export const Img = JSX<ImageProps<Image>>(
+  ({ className = '', image, imageClassName = '', ...iconProps }) => {
+    // backwards compatibility with existing icons in usage
+    const icon = typeof image === 'string' ? image : image?.icon;
+    if (icon || icon === '') {
+      return <Icon className={className} name={icon} {...iconProps} />;
+    }
 
-export const Img = JSX<ImageProps>(({ className = '', image, imageClassName }) => {
-  if (!image) {
-    return null;
-  }
+    return (
+      <ImgAsPicture
+        className={className}
+        imageClassName={imageClassName}
+        image={image as Picture}
+      />
+    );
+  },
+);
 
-  return (
-    <picture className={className}>
-      {image.sources?.length
-        ? image.sources.map(({ src, format }, index) => (
-            <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
-          ))
-        : null}
-      {renderImg(image, imageClassName)}
-    </picture>
-  );
-});
+export const ImgAsPicture = JSX<ImageProps<Picture>>(
+  ({ className = '', image, imageClassName = '' }) => {
+    if (!image) {
+      return null;
+    }
 
-const renderImg = (image, imageClassName = '') => {
+    return (
+      <picture className={className}>
+        {image?.sources?.length
+          ? image.sources.map(({ src, format }, index) => (
+              <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
+            ))
+          : null}
+        {renderImg(image, imageClassName)}
+      </picture>
+    );
+  },
+);
+
+const renderImg = (image: Picture, imageClassName = '') => {
   const style = {
     width: image.size?.width ? `${image.size?.width}px` : '100%',
     height: image.size?.height ? `${image.size?.height}px` : '100%',

@@ -1,6 +1,6 @@
 import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { IconName } from '../../icons/IconName';
+import type { Picture } from '../../model/Picture';
 /**
  * @title Элемент списка
  */
@@ -21,7 +21,7 @@ export interface AccordionItemCommonProps {
    * @default false
    */
   bordered?: boolean; // TODO: только для мобильной версии
-  labelIcon?: IconName; // TODO: только для мобильной версии
+  labelIcon?: Picture; // TODO: только для мобильной версии
 }
 
 /**

@@ -3,17 +3,23 @@
     {
       "title": "Вкладка 1",
       "description": "Описание",
-      "icon": "CardIcon"
+      "icon": {
+        "icon": "CardIcon"
+      }
     },
     {
       "title": "Вкладка 2",
       "description": "Описание",
-      "icon": "ChartSquareIcon"
+      "icon": {
+        "icon": "ChartSquareIcon"
+      }
     },
     {
       "title": "Вкладка 3",
       "description": "Описание",
-      "icon": "DiscountShapeIcon"
+      "icon": {
+        "icon": "DiscountShapeIcon"
+      }
     }
   ]
 }

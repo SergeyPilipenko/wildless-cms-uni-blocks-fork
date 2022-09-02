@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { DispositionItem } from './HeaderContent';
@@ -21,14 +21,14 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
           className="absolute top-4 right-4 border-none bg-transparent cursor-pointer"
           onClick={onClick}
         >
-          <Icon name="CloseIcon" width="24" height="24" asSVG />
+          <Img image="CloseIcon" width="24" height="24" asSVG />
         </button>
         <button
           onClick={getCity}
           className="flex items-center text-sm text-secondary-text p-0 mb-4 bg-transparent cursor-pointer"
         >
-          <Icon
-            name="GeolocationIcon"
+          <Img
+            image="GeolocationIcon"
             width="20"
             height="20"
             className="text-primary-main box-border mr-2"
@@ -49,7 +49,7 @@ const renderBurgerSubMenuItem = (menu: DispositionItem, i: number) => {
   return (
     <a key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4 hover:text-primary-main">
       {icon ? (
-        <Icon className="text-primary-main pr-1" name={icon} width="24" height="24" asSVG />
+        <Img className="text-primary-main pr-1" image={icon} width="24" height="24" asSVG />
       ) : null}
       <span className="pl-0.5 font-medium">{text}</span>
     </a>

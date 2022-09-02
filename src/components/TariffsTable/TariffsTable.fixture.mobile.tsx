@@ -1,9 +1,6 @@
 import { mobileContext } from '../../setup-fixture';
 import { TariffsTable } from './TariffsTable';
-import type {
-  TariffsTableColumn,
-  TariffsTableRowHeader,
-} from '../TariffsTable/TariffsTableContent';
+import type { TariffsTableColumn, TariffsTableRowHeader } from './TariffsTableContent';
 import type { Picture } from '../../model/Picture';
 
 const image: Picture = {
@@ -18,9 +15,9 @@ const image: Picture = {
 };
 
 const rowHeaders: TariffsTableRowHeader[] = [
-  { title: 'Начисление процентов на остаток по счету', icon: 'OkIcon' },
-  { title: 'Снятие наличных', icon: 'GlassIcon' },
-  { title: 'Оформление онлайн', icon: 'ShieldTickIcon' },
+  { title: 'Начисление процентов на остаток по счету', icon: { icon: 'OkIcon' } },
+  { title: 'Снятие наличных', icon: { icon: 'GlassIcon' } },
+  { title: 'Оформление онлайн', icon: { icon: 'ShieldTickIcon' } },
   { title: 'Кэшбэк баллами' },
   { title: 'Кнопки-иконки' },
   { title: 'Стоимость SMS-сервиса' },
@@ -51,14 +48,14 @@ const columns: TariffsTableColumn[] = [
         {
           buttons: [
             {
-              icon: 'AppleIcon',
+              icon: { icon: 'AppleIcon' },
               rounded: true,
               version: 'secondary',
               href: '/',
               target: '_blank',
             },
             {
-              icon: 'PlayMarketIcon',
+              icon: { icon: 'PlayMarketIcon' },
               rounded: true,
               version: 'secondary',
               href: '/',

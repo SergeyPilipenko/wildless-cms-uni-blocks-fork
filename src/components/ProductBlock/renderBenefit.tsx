@@ -1,5 +1,5 @@
 import type { BlockVersion } from '../../model/BlockVersion';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 const benefitIconBgStyleMap: Record<BlockVersion, string> = {
@@ -18,15 +18,15 @@ const benefitDescStyleMap: Record<BlockVersion, string> = {
 export function renderBenefit(benefit: Benefit, i: number, version: string) {
   return (
     <div key={String(i)} className="flex gap-4 items-center">
-      {benefit.icon && (
-        <Icon
+      {benefit.icon ? (
+        <Img
           className={`w-[50px] h-[50px] min-w-[50px] min-h-[50px] rounded-full p-[10px] box-border ${benefitIconBgStyleMap[version]}`}
-          name={benefit.icon}
+          image={benefit.icon}
           width="24"
           height="24"
           asSVG
         />
-      )}
+      ) : null}
       <div className="flex gap-1 flex-col h-full max-w-[149px]">
         <div className={`font-medium text-xl m-0 ${benefitTitleStyleMap[version]}`}>
           {benefit.label}

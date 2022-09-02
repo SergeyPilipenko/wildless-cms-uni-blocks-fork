@@ -26,7 +26,7 @@ const buttonPrimaryIcon: ButtonCommonProps = {
   text: 'Подробнее',
   target: '_blank',
   version: 'secondary',
-  icon: 'BankIcon',
+  icon: { icon: 'BankIcon' },
 };
 
 const defaultItems = [

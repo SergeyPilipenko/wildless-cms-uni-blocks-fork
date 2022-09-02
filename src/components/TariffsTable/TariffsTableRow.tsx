@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
-import { Icon } from '../../ui-kit/Icon/Icon';
-import { TariffsTableCell } from './TariffsTableCell';
-import { TableRowContainer } from '../ComparisonTable/TableRowContainer';
+import { Img } from '../../ui-kit/Img/Img';
 import { TableCarouselContainer } from '../ComparisonTable/TableCarouselContainer';
+import { TableRowContainer } from '../ComparisonTable/TableRowContainer';
+import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
+import { TariffsTableCell } from './TariffsTableCell';
 import type { TariffsTableRowData } from './TariffsTableContent';
 
 export interface TariffsTableRowProps {
@@ -23,15 +23,15 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
           }`}
         >
           <div className="flex items-center text-primary-text">
-            {header?.icon && (
-              <Icon
+            {header?.icon ? (
+              <Img
                 className="mr-[14px] max-w-6 max-h-6"
-                name={header.icon}
+                image={header.icon}
                 width="24px"
                 height="24px"
                 asSVG
               />
-            )}
+            ) : null}
             {header?.title}
           </div>
         </div>

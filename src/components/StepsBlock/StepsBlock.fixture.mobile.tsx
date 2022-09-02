@@ -41,20 +41,20 @@ export default {
           steps={[
             {
               description: 'Оставьте онлайн-заявку на потребительский кредит',
-              icon: 'ClockIcon',
+              icon: { icon: 'ClockIcon' },
             },
             {
               label: 'В случае одобрения',
-              icon: 'SignDocsIcon',
+              icon: { icon: 'SignDocsIcon' },
             },
             {
               label: 'Заявка на кредит',
               description: 'Оставьте онлайн-заявку на потребительский кредит',
-              icon: 'ComfortableCompIcon',
+              icon: { icon: 'ComfortableCompIcon' },
             },
             {
               label: 'Получение наличных',
-              icon: 'ClockIcon',
+              icon: { icon: 'ClockIcon' },
             },
           ]}
         />
@@ -65,15 +65,15 @@ export default {
           steps={[
             {
               label: 'Заявка на кредит',
-              icon: 'EmptyWalletIcon',
+              icon: { icon: 'EmptyWalletIcon' },
             },
             {
               label: 'В случае одобрения',
-              icon: 'PercentageSquareIcon',
+              icon: { icon: 'PercentageSquareIcon' },
             },
             {
               label: 'Получение наличных',
-              icon: 'CalendarIcon',
+              icon: { icon: 'CalendarIcon' },
             },
           ]}
         />
@@ -107,20 +107,20 @@ export default {
           steps={[
             {
               description: 'Оставьте онлайн-заявку на потребительский кредит',
-              icon: 'ClockIcon',
+              icon: { icon: 'ClockIcon' },
             },
             {
               label: 'В случае одобрения',
-              icon: 'SignDocsIcon',
+              icon: { icon: 'SignDocsIcon' },
             },
             {
               label: 'Заявка на кредит',
               description: 'Оставьте онлайн-заявку на потребительский кредит',
-              icon: 'ComfortableCompIcon',
+              icon: { icon: 'ComfortableCompIcon' },
             },
             {
               label: 'Получение наличных',
-              icon: 'ClockIcon',
+              icon: { icon: 'ClockIcon' },
             },
           ]}
           version="secondary"
@@ -132,15 +132,15 @@ export default {
           steps={[
             {
               label: 'Заявка на кредит',
-              icon: 'EmptyWalletIcon',
+              icon: { icon: 'EmptyWalletIcon' },
             },
             {
               label: 'В случае одобрения',
-              icon: 'PercentageSquareIcon',
+              icon: { icon: 'PercentageSquareIcon' },
             },
             {
               label: 'Получение наличных',
-              icon: 'CalendarIcon',
+              icon: { icon: 'CalendarIcon' },
             },
           ]}
           version="secondary"

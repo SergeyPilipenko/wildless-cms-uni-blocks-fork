@@ -8,7 +8,11 @@
       "height": 234
     }
   },
-  "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
+  "items": [
+    "Элемент списка 1",
+    "Элемент списка 2",
+    "Элемент списка 3"
+  ],
   "isDotted": true,
   "buttons": [
     {
@@ -20,11 +24,15 @@
   "benefits": [
     {
       "label": "Преимущество №1",
-      "icon": "ClockIcon"
+      "icon": {
+        "icon": "ClockIcon"
+      }
     },
     {
       "label": "Преимущество №2",
-      "icon": "SignDocsIcon"
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
     }
   ]
 }

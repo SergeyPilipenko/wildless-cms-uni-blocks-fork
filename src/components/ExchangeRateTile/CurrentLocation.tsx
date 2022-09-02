@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 
 interface CurrentLocationProps {
   className?: string;
@@ -10,7 +10,7 @@ interface CurrentLocationProps {
 export const CurrentLocation = JSX<CurrentLocationProps>(
   ({ className = '', address, distance }) => (
     <div className={`flex text-sm ${className}`}>
-      <Icon className="min-w-fit" name="GpsIcon" width="24" height="24" asSVG />
+      <Img className="min-w-fit" image={{ icon: 'GpsIcon' }} width="24" height="24" asSVG />
       <div className="ml-3 font-light">
         {address ? <p className="m-0 mb-[3px]">{address}</p> : null}
         {distance ? (

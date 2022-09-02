@@ -7,15 +7,21 @@
     {
       "label": "Шаг №1",
       "description": "Описание шага №1",
-      "icon": "NewDocIcon"
+      "icon": {
+        "icon": "NewDocIcon"
+      }
     },
     {
       "label": "Шаг №2",
-      "icon": "PassSendIcon"
+      "icon": {
+        "icon": "PassSendIcon"
+      }
     },
     {
       "description": "Шаг №3 без заголовка",
-      "icon": "ActualBalanceIcon"
+      "icon": {
+        "icon": "ActualBalanceIcon"
+      }
     }
   ]
 }

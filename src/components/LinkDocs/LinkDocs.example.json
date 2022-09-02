@@ -1,7 +1,9 @@
 {
   "title": "Список документов",
   "subtitle": "Описание",
-  "icon": "DocIcon",
+  "icon": {
+    "icon": "DocIcon"
+  },
   "documents": [
     {
       "text": "Документ №1",

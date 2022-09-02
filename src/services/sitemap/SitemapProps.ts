@@ -1,5 +1,5 @@
 import type { LinkProps } from '../../model/LinkProps';
-import { IconName } from '../../icons/IconName';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Ссылка
@@ -16,7 +16,7 @@ export interface TopMenuItem extends LinkProps {
  */
 export interface DispositionItem extends LinkProps {
   /** @hidden */
-  icon?: IconName;
+  icon?: Picture;
 }
 
 export interface SitemapProps {

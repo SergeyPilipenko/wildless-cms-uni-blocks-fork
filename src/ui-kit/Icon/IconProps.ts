@@ -8,13 +8,22 @@ export type { IconName };
  */
 export type IconColor = 'none' | 'primary' | 'secondary';
 
-export interface IconProps {
-  className?: string;
-  name: IconName;
+export interface IconCompatibilityFields {
+  /** @title Альтернативный текст (alt) */
   alt?: string;
+  /** @title Текст подсказки (title) */
   title?: string;
+  /** @title Ширина */
   width?: string;
+  /** @title Высота */
   height?: string;
+  /** @hidden */
   asSVG?: boolean;
+  /** @hidden */
   color?: IconColor;
 }
+
+export type IconProps = IconCompatibilityFields & {
+  className?: string;
+  name?: IconName;
+};

@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import { UniBlockProps } from '../../types';
-import { Icon } from '../Icon/Icon';
+import { Img } from '../Img/Img';
 import { Button } from './Button';
 import type { ButtonContent, ButtonWithIconProps } from './ButtonProps';
 
@@ -25,7 +25,7 @@ function renderButton({ icon, ...button }: ButtonWithIconProps, i: number) {
   return icon ? (
     <Button
       key={String(i)}
-      appendLeft={<Icon name={icon} width="24" height="24" asSVG />}
+      appendLeft={<Img image={icon} width="24" height="24" asSVG />}
       {...button}
     />
   ) : (

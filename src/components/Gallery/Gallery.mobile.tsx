@@ -1,14 +1,13 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { BlockVersion } from '../../model/BlockVersion';
+import type { ListOrientation } from '../../model/ListOrientation';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import type { GalleryCard } from './GalleryContent';
 import { GalleryItem } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
-import type { ListOrientation } from '../../model/ListOrientation';
 
 const blockStyle: Record<BlockVersion, string> = {
   primary: 'bg-white',
@@ -75,7 +74,7 @@ function renderButton(button) {
   return (
     <Button
       className="mt-3"
-      appendLeft={button?.icon && <Icon name={button?.icon} width="24px" height="24px" asSVG />}
+      appendLeft={button?.icon && <Img image={button?.icon} width="24px" height="24px" asSVG />}
       {...button}
     />
   );

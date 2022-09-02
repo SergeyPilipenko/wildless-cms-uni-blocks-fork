@@ -16,7 +16,7 @@ export default {
           {
             aboveText: 'Загрузите в',
             text: 'App Store',
-            icon: 'AppleIcon',
+            icon: { icon: 'AppleIcon' },
             href: '#',
             asSVG: true,
             version: 'secondary',
@@ -24,7 +24,7 @@ export default {
           {
             aboveText: 'Доступно в',
             text: 'Google Play',
-            icon: 'PlayMarketIcon',
+            icon: { icon: 'PlayMarketIcon' },
             href: '#',
             asSVG: true,
             version: 'secondary',

@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Icon } from '../../ui-kit/Icon/Icon';
 import type { AccordionItemCommonProps } from './AccordionContent';
 import { AccordionItemInner } from './AccordionItemInner';
 import { useActiveHandler } from './useActiveHandler';
+import { Img } from '../../ui-kit/Img/Img';
 
 export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
 
@@ -23,7 +23,7 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, isExpanded, block
         onClick={handleToggle}
       >
         <span className={`text-xl pr-2.5 font-medium`}>{label}</span>
-        {hasContent ? <Icon name={icon} width="24" height="24" asSVG /> : null}
+        {hasContent ? <Img image={icon} width="24" height="24" asSVG /> : null}
       </button>
       {hasContent ? (
         <AccordionItemInner isExpanded={isActive} blocks={blocks} context={context} />

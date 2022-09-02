@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { IconName } from '../../icons/IconName';
 import type { LinkDocsItem } from './LinkDocsContent';
+import type { Picture } from '../../model/Picture';
 import { LinkDocsListItem } from './LinkDocsListItem';
 
 export interface LinkDocsVerticalListProps {
   hasBorder?: boolean;
   documents?: LinkDocsItem[];
-  icon?: IconName;
+  icon?: Picture;
 }
 
 export const LinkDocsVerticalList = JSX<LinkDocsVerticalListProps>(

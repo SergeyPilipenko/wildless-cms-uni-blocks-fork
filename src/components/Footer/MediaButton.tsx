@@ -1,23 +1,35 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Icon } from '../../ui-kit/Icon/Icon';
-import { IconName } from '../../ui-kit/Icon/IconProps';
+import { Img } from '../../ui-kit/Img/Img';
+import type { Picture } from '../../model/Picture';
 
 const ICONS_MAP: Array<{
   origins: string[];
-  icon: IconName;
+  icon: Picture;
   label: string;
   width: string;
   height: string;
 }> = [
   {
     origins: ['t.me', 'telegram.org'],
-    icon: 'TelegramIcon',
+    icon: { icon: 'TelegramIcon' },
     label: 'Телеграм',
     width: '20px',
     height: '16px',
   },
-  { origins: ['vk.com'], icon: 'VKIcon', label: 'ВКонтакте', width: '24px', height: '12px' },
-  { origins: ['ok.ru'], icon: 'OkIcon', label: 'Одноклассники', width: '12px', height: '20px' },
+  {
+    origins: ['vk.com'],
+    icon: { icon: 'VKIcon' },
+    label: 'ВКонтакте',
+    width: '24px',
+    height: '12px',
+  },
+  {
+    origins: ['ok.ru'],
+    icon: { icon: 'OkIcon' },
+    label: 'Одноклассники',
+    width: '12px',
+    height: '20px',
+  },
 ];
 
 interface MediaButtonProps {
@@ -38,9 +50,9 @@ export const MediaButton = JSX<MediaButtonProps>(({ href }) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      {Icon && (
-        <Icon name={icon} width={width} height={height} asSVG className="block" color="none" />
-      )}
+      {icon ? (
+        <Img image={icon} width={width} height={height} asSVG className="block" color="none" />
+      ) : null}
     </a>
   );
 });

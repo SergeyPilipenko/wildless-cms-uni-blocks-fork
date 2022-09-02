@@ -45,7 +45,9 @@ const propsTextBlock: AccordionProps = {
     },
     {
       label: 'Accordion label 2',
-      labelIcon: 'CardIcon',
+      labelIcon: {
+        icon: 'CardIcon',
+      },
       blocks: [PICTURE_TEXT_ACCORDION_BLOCK],
     },
     {

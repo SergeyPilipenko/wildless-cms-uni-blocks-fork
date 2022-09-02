@@ -24,13 +24,18 @@ export default {
         className="col-span-12"
         context={context}
         {...linkDocsContentExample}
-        icon="GlassIcon"
+        icon={{ icon: 'GlassIcon' }}
       />
     </div>
   ),
   'no icon': (
     <div className="container grid grid-cols-12">
-      <LinkDocs className="col-span-12" context={context} {...linkDocsContentExample} icon="" />
+      <LinkDocs
+        className="col-span-12"
+        context={context}
+        {...linkDocsContentExample}
+        icon={{ icon: '' }}
+      />
     </div>
   ),
 };

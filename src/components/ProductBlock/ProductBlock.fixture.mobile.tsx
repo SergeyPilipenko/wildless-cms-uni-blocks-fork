@@ -29,17 +29,17 @@ const benefits: Benefit[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',
-    icon: 'EmptyWalletIcon',
+    icon: { icon: 'EmptyWalletIcon' },
   },
   {
     label: 'От 16,9%',
     description: 'Ставка по кредиту',
-    icon: 'PercentageSquareIcon',
+    icon: { icon: 'PercentageSquareIcon' },
   },
   {
     label: 'До 5 лет',
     description: 'Срок кредитования',
-    icon: 'CalendarIcon',
+    icon: { icon: 'CalendarIcon' },
   },
 ];
 

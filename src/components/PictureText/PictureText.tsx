@@ -4,7 +4,6 @@ import type { PictureTextContent } from './PictureTextContent';
 
 import { BlockVersion } from '../../model/BlockVersion';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { Icon } from '../../ui-kit/Icon/Icon';
 import { Img } from '../../ui-kit/Img/Img';
 import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
@@ -47,15 +46,15 @@ export const PictureText = JSX<PictureTextProps>(
 function renderBenefit(benefit: Benefit, i: number, version: string) {
   return (
     <div key={String(i)} className="flex flex-row mb-8">
-      {benefit.icon && (
-        <Icon
+      {benefit.icon ? (
+        <Img
           className="w-[48px] h-[48px] bg-main rounded-full box-border p-[12px]"
-          name={benefit.icon}
+          image={benefit.icon}
           width="48"
           height="48"
           asSVG
         />
-      )}
+      ) : null}
       <div className="flex gap-1 flex-col h-full ml-5 max-w-[490px]">
         {benefit.label && (
           <div

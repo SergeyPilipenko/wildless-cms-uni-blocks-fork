@@ -12,11 +12,15 @@
   "benefits": [
     {
       "label": "Преимущество №1",
-      "icon": "DocumentTextIcon"
+      "icon": {
+        "icon": "DocumentTextIcon"
+      }
     },
     {
       "label": "Преимущество №2",
-      "icon": "DocumentTextIcon"
+      "icon": {
+        "icon": "DocumentTextIcon"
+      }
     }
   ]
 }

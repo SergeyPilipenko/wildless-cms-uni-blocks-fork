@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BgColorVersion } from '../../model/BgColorVersion';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import { Img } from '../../ui-kit/Img/Img';
 import { Logo } from '../../ui-kit/Logo/Logo';
 
 export interface HeaderTopProps {
@@ -16,8 +16,8 @@ export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
         onClick={onClick}
         aria-label="Открыть меню"
       >
-        <Icon
-          name={bgColor === 'bg-white' ? 'BurgerIcon' : 'BurgerIconWhite'}
+        <Img
+          image={bgColor === 'bg-white' ? 'BurgerIcon' : 'BurgerIconWhite'}
           width="24"
           height="24"
           asSVG

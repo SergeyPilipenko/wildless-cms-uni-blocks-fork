@@ -5,11 +5,15 @@
   "rowHeaders": [
     {
       "title": "Параметр 1",
-      "icon": "MoneyIcon"
+      "icon": {
+        "icon": "MoneyIcon"
+      }
     },
     {
       "title": "Параметр 2",
-      "icon": "DollarIcon"
+      "icon": {
+        "icon": "DollarIcon"
+      }
     },
     {
       "title": "Параметр 3"
@@ -45,7 +49,9 @@
             "label": "Ячейка 3-2",
             "buttons": [
               {
-                "icon": "AppleIcon",
+                "icon": {
+                  "icon": "AppleIcon"
+                },
                 "rounded": true,
                 "version": "secondary",
                 "href": "/",
@@ -53,7 +59,9 @@
                 "text": ""
               },
               {
-                "icon": "PlayMarketIcon",
+                "icon": {
+                  "icon": "PlayMarketIcon"
+                },
                 "rounded": true,
                 "version": "secondary",
                 "href": "/",
