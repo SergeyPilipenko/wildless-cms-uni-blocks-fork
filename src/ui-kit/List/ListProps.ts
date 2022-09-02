@@ -4,7 +4,7 @@ import type { ListContent } from './ListContent';
  * @title Версия списка
  * @enumNames ["Основной", "Второстепенный", "Серый"]
  */
-export type ListItemVersion = 'primary' | 'secondary' | 'gray';
+export type ListItemVersion = 'primary' | 'secondary' | 'gray' | 'tile' | 'tile-white';
 
 /**
  * @title Содержимое списка

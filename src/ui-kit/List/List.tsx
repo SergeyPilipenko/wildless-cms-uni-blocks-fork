@@ -6,6 +6,8 @@ const TEXT_STYLE_MAP: Record<ListItemVersion, string> = {
   primary: 'text-primary-text',
   secondary: 'text-white',
   gray: 'text-secondary-text',
+  tile: 'text-primary-text',
+  'tile-white': 'text-white',
 };
 
 export const List = JSX<ListProps>((props) => {

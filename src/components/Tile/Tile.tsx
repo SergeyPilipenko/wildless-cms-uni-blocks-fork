@@ -38,7 +38,7 @@ export const Tile = JSX<TileProps>((props) => {
 
   return (
     <section
-      className={`overflow-hidden font-sans p-9 box-border ${className} ${
+      className={`overflow-hidden font-sans p-9 pr-3 box-border ${className} ${
         tileStyleMap[version]
       } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
       role={role}
@@ -63,7 +63,12 @@ export const Tile = JSX<TileProps>((props) => {
         }
         image={image?.src && <Img className="mt-auto ml-7" image={image} />}
       >
-        {description && <Description className="mt-4 max-w-[600px]" description={description} />}
+        {description && (
+          <Description
+            className="mt-4 max-w-[600px] text-title-new-sm font-light"
+            description={description}
+          />
+        )}
         {children}
         {renderList(items, version)}
       </BaseTile>
@@ -73,6 +78,10 @@ export const Tile = JSX<TileProps>((props) => {
 
 function renderList(items, version) {
   return items?.length ? (
-    <List items={items} itemClassName="mt-2.5 first:mt-0" version={version} />
+    <List
+      items={items}
+      itemClassName="text-title-new-sm font-light mt-2.5 first:mt-0"
+      version={version === 'primary' ? 'tile' : 'tile-white'}
+    />
   ) : null;
 }

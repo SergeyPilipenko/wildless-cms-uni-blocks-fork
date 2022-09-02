@@ -4,8 +4,12 @@ import { Tile } from './Tile';
 import type { TileContent } from './TileContent';
 
 const image: Picture = {
-  src: 'money-1.png',
+  src: 'from-5-5-percent.svg',
   format: 'webp',
+  size: {
+    width: 445,
+    height: 202,
+  },
 };
 
 const image2: Picture = {
@@ -25,11 +29,7 @@ const image4: Picture = {
 
 export const TILE: TileContent = {
   title: 'Кредиты',
-  items: [
-    'Кредитный лимит до 10 млн ₽',
-    'Кредиты наличными на любые цели',
-    'Получите деньги без залога и поручителей',
-  ],
+  items: ['до 3 млн ₽', 'до 5 лет'],
   buttons: [
     {
       text: 'Подробнее',
