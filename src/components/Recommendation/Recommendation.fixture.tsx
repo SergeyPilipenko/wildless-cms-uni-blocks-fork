@@ -1,4 +1,5 @@
 import type { Picture } from '../../model/Picture';
+import type { LinkProps } from '../../model/LinkProps';
 import { context } from '../../setup-fixture';
 import { Recommendation, RecommendationProps } from './Recommendation';
 
@@ -22,24 +23,33 @@ const chair: Picture = {
   title: 'chair',
 };
 
+const socialMedia: LinkProps[] = [
+  { href: 'https://t.me' },
+  { href: 'https://vk.com' },
+  { href: 'https://ok.ru' },
+];
+
 export const defaultProps: RecommendationProps = {
   context,
-  title: 'С этим продуктом приобретают',
+  title: 'Мы в социальных сетях',
   recommendations: [
     {
-      title: 'Кредиты',
-      items: ['до 10 000 000 ₽', 'до 10 лет'],
+      title: 'РоссельхозБанк',
+      items: ['Свежие новости', 'Акции и предложения', 'Ставки и катировки'],
       image: chair,
+      socialMedia,
     },
     {
-      title: 'Кредитные карты',
+      title: 'Своё Родное',
       description: 'Льготный период 120 дней',
       image: creditCard,
+      socialMedia,
     },
     {
-      title: 'Кредитные карты',
+      title: 'Своё Фермерство',
       description: 'Льготный период 120 дней',
       image: creditCard,
+      socialMedia,
     },
     {
       title: 'Кредитные карты',

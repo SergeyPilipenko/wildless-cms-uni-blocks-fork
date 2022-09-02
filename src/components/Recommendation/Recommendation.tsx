@@ -3,7 +3,7 @@ import type { UniBlockProps } from '../../types';
 import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { RecommendationCard } from './RecommendationCard';
-import type { RecommendationCardContent, RecommendationContent } from './RecommendationContent';
+import type { RecommendationCardTypes, RecommendationContent } from './RecommendationContent';
 
 const BLUR_BLOCK_CLASSES = 'absolute top-0 bottom-0 w-[84px]';
 const CARD_FULL_VIEW_COUNT = 2;
@@ -17,16 +17,16 @@ export const Recommendation = JSX<RecommendationProps>(
 
     const blockClassName =
       version === 'secondary' ? 'bg-primary-main text-white' : 'bg-white text-primary-text';
-    const cardClassName = version === 'secondary' ? 'border-main-divider' : 'border-main-stroke';
+    const cardClassName = version === 'secondary' ? 'border-white/50' : 'border-main-stroke';
 
     return (
       <section
-        className={`relative font-sans p-[50px] overflow-hidden ${blockClassName} ${className}`}
+        className={`relative font-sans p-9 overflow-hidden text-center ${blockClassName} ${className}`}
         id={anchor}
       >
-        {title ? <Heading headingType="h2" className="mb-8" title={title} /> : null}
+        {title ? <Heading headingType="h2" className="mb-6" title={title} /> : null}
         <div
-          className="flex duration-1000 gap-4"
+          className="flex duration-1000 gap-3.5"
           style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}
           role="list"
         >
@@ -58,7 +58,7 @@ export const Recommendation = JSX<RecommendationProps>(
 
 const renderRecommendationCard =
   ({ context, version, className }) =>
-  (card: RecommendationCardContent, i: number) => {
+  (card: RecommendationCardTypes, i: number) => {
     return (
       <RecommendationCard
         key={String(i)}

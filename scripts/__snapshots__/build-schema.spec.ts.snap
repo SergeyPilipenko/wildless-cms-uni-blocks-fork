@@ -1870,7 +1870,7 @@ Object {
       "title": "QR код",
       "type": "object",
     },
-    "RecommendationCardContent": Object {
+    "RecommendationCardTypes": Object {
       "properties": Object {
         "description": Object {
           "title": "Описание",
@@ -1886,9 +1886,25 @@ Object {
           "title": "Список",
           "type": "array",
         },
+        "recommendations": Object {
+          "items": Object {
+            "$ref": "#/definitions/RecommendationCardTypes",
+          },
+          "title": "Карточки",
+          "type": "array",
+        },
+        "socialMedia": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "type": "array",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "type": "object",
@@ -1897,9 +1913,15 @@ Object {
       "properties": Object {
         "recommendations": Object {
           "items": Object {
-            "$ref": "#/definitions/RecommendationCardContent",
+            "$ref": "#/definitions/RecommendationCardTypes",
           },
           "title": "Карточки",
+          "type": "array",
+        },
+        "socialMedia": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
           "type": "array",
         },
         "title": Object {

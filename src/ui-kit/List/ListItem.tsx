@@ -11,7 +11,7 @@ export interface ListItemProps {
   isDotted?: boolean;
 }
 
-const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3 mt-3.5';
+const LIST_STYLE_CLASSES = 'rounded-full inline-block mr-3';
 
 const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
   primary: 'bg-primary-main',
@@ -22,7 +22,7 @@ const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
 export const ListItem = JSX<ListItemProps>(
   ({ className = '', isDotted = true, children, version = 'primary' }) => {
     return (
-      <div className={`font-sans flex items-start ${className}`} role="listitem">
+      <div className={`font-sans flex items-center ${className}`} role="listitem">
         {isDotted && <div className={getListStyle(version)} />}
         <span>{children}</span>
       </div>

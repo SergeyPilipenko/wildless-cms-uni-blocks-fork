@@ -10,7 +10,12 @@
         }
       },
       "title": "Заголовок 1",
-      "description": "Описание 1"
+      "description": "Описание 1",
+      "socialMedia": [
+        { "href":  "https://t.me" },
+        { "href":  "https://vk.com" },
+        { "href":  "https://ok.ru" }
+      ]
     },
     {
       "image": {
@@ -21,7 +26,12 @@
         }
       },
       "title": "Заголовок 2",
-      "description": "Описание 2"
+      "description": "Описание 2",
+      "socialMedia": [
+        { "href":  "https://t.me" },
+        { "href":  "https://vk.com" },
+        { "href":  "https://ok.ru" }
+      ]
     },
     {
       "image": {
@@ -32,7 +42,12 @@
         }
       },
       "title": "Заголовок 3",
-      "description": "Описание 3"
+      "description": "Описание 3",
+      "socialMedia": [
+        { "href":  "https://t.me" },
+        { "href":  "https://vk.com" },
+        { "href":  "https://ok.ru" }
+      ]
     }
   ]
 }

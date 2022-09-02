@@ -12,7 +12,7 @@ export const SocialMedia = JSX<SocialMediaProps>(({ className, media, context })
   const router = context.useRouter();
   const { handlerDecorator } = context;
   return (
-    <div className={`flex items-end justify-end gap-2 pt-[30px] pb-7 ${className || ''}`}>
+    <div className={`flex items-end gap-2 pt-[30px] pb-7 ${className || ''}`}>
       {media?.map((_, index) => (
         <MediaButton key={String(index)} {...useLink({ router, handlerDecorator }, _)} />
       ))}
