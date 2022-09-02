@@ -1,7 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { ProductGalleryBlock } from './ProductGalleryBlock';
 import type { UniBlockProps } from '../../types';
-import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
-import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent } from './ProductGalleryContent';
 
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
@@ -22,7 +21,9 @@ export const ProductGallery = JSX<ProductGalleryProps>(
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}
           role="list"
         >
-          {galleryBlocks.map((_, i) => renderProductBlock(_, i, context))}
+          {galleryBlocks.map((_, i) => (
+            <ProductGalleryBlock key={String(i)} context={context} block={_} />
+          ))}
         </div>
 
         <div className="flex">
@@ -40,20 +41,6 @@ export const ProductGallery = JSX<ProductGalleryProps>(
     );
   },
 );
-
-function renderProductBlock(block: ProductBlockInnerContent, i: number, context) {
-  return (
-    <section key={String(i)} className="flex grow-0 shrink-0 basis-full" role="listitem">
-      <div className="p-10 flex grow">
-        <ProductBlockInner
-          className="pl-2.5 pt-2.5 pb-1.5 pr-[6.25rem]"
-          context={context}
-          {...block}
-        />
-      </div>
-    </section>
-  );
-}
 
 function renderNavButton({ slide, i, activeSlideIndex, onClick, duration }) {
   const isActiveBtn = i === activeSlideIndex;

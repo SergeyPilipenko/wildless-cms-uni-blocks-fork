@@ -1541,6 +1541,7 @@ Object {
           "$ref": "#/definitions/Picture",
         },
         "isDotted": Object {
+          "default": true,
           "title": "Буллиты",
           "type": "boolean",
         },
@@ -1610,6 +1611,7 @@ Object {
           "$ref": "#/definitions/Picture",
         },
         "isDotted": Object {
+          "default": true,
           "title": "Буллиты",
           "type": "boolean",
         },
@@ -1669,6 +1671,7 @@ Object {
           "$ref": "#/definitions/Picture",
         },
         "isDotted": Object {
+          "default": true,
           "title": "Буллиты",
           "type": "boolean",
         },

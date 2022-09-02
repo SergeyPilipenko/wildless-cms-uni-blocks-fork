@@ -22,7 +22,7 @@ const breadcrumbsStyleMap: Record<BlockVersion, string> = {
 export const ProductBlock = JSX<ProductBlockProps>((props) => {
   const {
     context,
-    className,
+    className = '',
     breadcrumbs,
     version = 'primary',
     anchor = null,
@@ -33,9 +33,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
 
   return (
     <section
-      className={`font-sans pt-10 pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${
-        className || ''
-      } ${productBlockStyleMap[version]}`}
+      className={`font-sans pt-10 pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
       id={anchor}
     >
       {breadcrumbs?.length ? (

@@ -3,7 +3,7 @@
     {
       "nav": {
         "title": "Заголовок",
-        "desc": "Описание"
+        "description": "Описание"
       },
       "productBlock": {
         "title": "Продуктовая галерея",
@@ -15,6 +15,27 @@
           }
         },
         "description": "Описание",
+        "isDotted": "true",
+        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
+        "version": "primary"
+      }
+    },
+    {
+      "nav": {
+        "title": "Заголовок",
+        "description": "Описание"
+      },
+      "productBlock": {
+        "title": "Продуктовая галерея",
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 234,
+            "height": 234
+          }
+        },
+        "description": "Описание",
+        "isDotted": "true",
         "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
         "version": "primary"
       }

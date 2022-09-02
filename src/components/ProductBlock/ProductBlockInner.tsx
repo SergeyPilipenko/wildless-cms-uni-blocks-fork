@@ -26,13 +26,12 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     isDotted = true,
     textBlockClassName = '',
   }) => {
-    const textColor = version === 'secondary' ? 'text-white' : '';
     return (
       <div className={`flex grow justify-between items-stretch ${className}`}>
         <div className={`flex flex-col ${textBlockClassName}`}>
           <BaseTile
             context={context}
-            title={getTitle(title, headingType, textColor)}
+            title={getTitle(title, headingType)}
             buttons={getButtons(context, buttons)}
           >
             {description && (
@@ -60,13 +59,13 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-const getTitle = (title, headingType, textColor) => {
+const getTitle = (title, headingType) => {
   return (
     title && (
       <Heading
         headingType={headingType}
         title={title}
-        className={`whitespace-pre-wrap max-w-[600px] ${textColor}`}
+        className="whitespace-pre-wrap max-w-[600px]"
       />
     )
   );
