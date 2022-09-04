@@ -12,6 +12,7 @@ export interface TopItemProps extends TopItemContent {
   ariaLabel?: string;
   onClick?: (ev: MouseEvent) => any;
   bgColor?: BgColorVersion;
+  dataItemName?: string;
 }
 
 const TEXT_CLASSES = 'font-sans font-light text-sm';

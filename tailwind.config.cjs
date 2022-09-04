@@ -115,6 +115,7 @@ module.exports = {
       },
       boxShadow: {
         'dark-blue/42': '0 18px 36px -4px rgba(24, 39, 75, 0.42);',
+        'blue-gray/24': '0 14px 36px -4px rgba(21, 40, 90, 0.24);',
       },
       border: {
         'white/50':'rgba(255,255,255,.5);',
