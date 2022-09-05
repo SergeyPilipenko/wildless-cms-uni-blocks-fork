@@ -1,5 +1,6 @@
 import { JSX, PropsWithChildren } from '@redneckz/uni-jsx';
 import type { BlockDef, ContentPageDef, UniBlockProps } from '../../types';
+import { changeHashOnScroll } from '../../utils/changeHashOnScroll';
 import type { BlockContent } from '../BlockContent';
 import { LikeControl } from '../LikeControl/LikeControl';
 import { Placeholder } from '../Placeholder/Placeholder';
@@ -41,17 +42,26 @@ const defaultBlockDecorator: BlockDecorator = ({ blockClassName, block, render }
 
 export const ContentPage = JSX<ContentPageProps>(
   ({
-    className,
+    className = '',
     context,
     blocksRegistry,
     data: { style: pageStyle, blocks, slots = {}, likeControl, colorPalette = 'pc' },
     blockDecorator = defaultBlockDecorator,
   }) => {
     const { header } = slots;
+    const router = context.useRouter();
+
+    // listener is for NavigatorTabs
+    globalThis.addEventListener('load', () => {
+      const sectionsWithAnchors = globalThis.document.querySelectorAll('section[id]');
+      globalThis.document.addEventListener('scroll', () =>
+        changeHashOnScroll(router, sectionsWithAnchors),
+      );
+    });
 
     return (
       <section
-        className={`relative ${style2className(pageStyle)} ${className || ''}`}
+        className={`relative ${style2className(pageStyle)} ${className}`}
         data-theme={colorPalette}
       >
         {header?.blocks?.length ? (

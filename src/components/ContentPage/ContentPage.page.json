@@ -3,15 +3,9 @@
   "slug": "credits",
   "main": {
     "description": "Акционерное общество «Российский Сельскохозяйственный банк»* — один из крупнейших банков в России. Созданный в 2000 году в целях развития национальной кредитно-финансовой системы.",
-    "keywords": [
-      "кредит",
-      "акция"
-    ],
+    "keywords": ["кредит", "акция"],
     "canonical": "canonical url",
-    "robots": [
-      "index",
-      "follow"
-    ]
+    "robots": ["index", "follow"]
   },
   "og": {
     "type": "article",
@@ -22,16 +16,11 @@
   },
   "jsonLd": "json",
   "date": "2022-04-08",
-  "style": [
-    "bg-secondary-light"
-  ],
+  "style": ["bg-secondary-light"],
   "likeControl": true,
   "slots": {
     "header": {
-      "style": [
-        "mb-5",
-        "shadow-[0_8px_32px_0px_#00000014]"
-      ],
+      "style": ["mb-5", "shadow-[0_8px_32px_0px_#00000014]"],
       "blocks": [
         {
           "type": "Header",
@@ -45,9 +34,7 @@
   "blocks": [
     {
       "type": "Navigation",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Потребительский кредит наличными",
         "buttons": [
@@ -71,40 +58,8 @@
       }
     },
     {
-      "type": "NavigatorTabs",
-      "style": [
-        "col-span-12"
-      ],
-      "content": {
-        "navigatorTabs": [
-          {
-            "label": "Калькулятор",
-            "anchor": "calculator"
-          },
-          {
-            "label": "Преимущества",
-            "anchor": "advantages"
-          },
-          {
-            "label": "Как оформить",
-            "anchor": "howToApply"
-          },
-          {
-            "label": "Тарифы",
-            "anchor": "tariffs"
-          },
-          {
-            "label": "Документы",
-            "anchor": "documents"
-          }
-        ]
-      }
-    },
-    {
       "type": "ProductGallery",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "slides": [
           {
@@ -247,9 +202,7 @@
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-8"
-      ],
+      "style": ["col-span-8"],
       "content": {
         "title": "Кредиты",
         "items": [
@@ -275,17 +228,13 @@
         }
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
       "version": "secondary",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "content": {
         "title": "Ипотека",
         "titleSize": "M",
@@ -300,23 +249,15 @@
         "promo": true
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-6"
-      ],
+      "style": ["col-span-6"],
       "content": {
         "title": "Банковские пластиковые карты",
-        "items": [
-          "Счета в разных валютах",
-          "Бесплатное обслуживание",
-          "Кэшбэк до 15% от покупок"
-        ],
+        "items": ["Счета в разных валютах", "Бесплатное обслуживание", "Кэшбэк до 15% от покупок"],
         "buttons": [
           {
             "text": "Подробнее",
@@ -335,16 +276,12 @@
         }
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-6"
-      ],
+      "style": ["col-span-6"],
       "content": {
         "title": "Премиальные продукты",
         "description": "Выделенные зоны обслуживания и персональный финансовый консультант. Полный спектр премиальных продуктов, подчеркивающих ваш статус",
@@ -366,16 +303,12 @@
         }
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Экосистема «СВОЕ», созданная для людей",
         "items": [
@@ -404,15 +337,10 @@
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "content": {
         "title": "Драгоценные металлы",
-        "items": [
-          "Счета в драгоценных металлах",
-          "Слитки  и монеты из драгоценных металлов"
-        ],
+        "items": ["Счета в драгоценных металлах", "Слитки  и монеты из драгоценных металлов"],
         "buttons": [
           {
             "text": "Подробнее",
@@ -422,23 +350,15 @@
         ]
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "content": {
         "title": "Банковские ячейки",
-        "items": [
-          "Полная конфиденциальность",
-          "Разный размер ячеек",
-          "Оформление доверенностей"
-        ],
+        "items": ["Полная конфиденциальность", "Разный размер ячеек", "Оформление доверенностей"],
         "buttons": [
           {
             "text": "Подробнее",
@@ -448,16 +368,12 @@
         ]
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "content": {
         "title": "Вклады и сбережения",
         "items": [
@@ -474,16 +390,12 @@
         ]
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "PromoTile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "content": {
         "title": "Акции и спецпредложения",
         "version": "secondary",
@@ -503,20 +415,14 @@
     },
     {
       "type": "ExchangeRateTile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "MobileAppTile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "content": {
         "qr": {
           "href": "https://rshbnaturaldbo.onelink.me/qhkF/f182074f?af_qr=true",
@@ -544,9 +450,7 @@
         ]
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       },
       "buttons": [
         {
@@ -571,18 +475,14 @@
     },
     {
       "type": "Placeholder",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Какой то новый блок"
       }
     },
     {
       "type": "ProductBlock",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Потребительский кредит наличными",
         "description": "Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт.",
@@ -648,10 +548,41 @@
       }
     },
     {
+      "type": "NavigatorTabs",
+      "style": ["col-span-12"],
+      "content": {
+        "navigatorTabs": [
+          {
+            "label": "Калькулятор",
+            "href": "#calculator"
+          },
+          {
+            "label": "Преимущества",
+            "href": "#advantages"
+          },
+          {
+            "label": "Как оформить",
+            "href": "#howToApply"
+          },
+          {
+            "label": "Тарифы",
+            "href": "#tariffs"
+          },
+          {
+            "label": "Документы",
+            "href": "#documents"
+          },
+          {
+            "label": "Урожай",
+            "href": "https://rshb.ru/",
+            "target": "_blank"
+          }
+        ]
+      }
+    },
+    {
       "type": "ProductTile",
-      "style": [
-        "col-span-6"
-      ],
+      "style": ["col-span-6"],
       "content": {
         "title": "Акция! “Кредит На все, что хочется!”",
         "description": "Потребительский кредит на любые цели, без залога и поручительства",
@@ -687,16 +618,12 @@
         }
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "ProductTile",
-      "style": [
-        "col-span-6"
-      ],
+      "style": ["col-span-6"],
       "content": {
         "title": "Акция! “Пенсионный кредит”",
         "description": "Потребительский кредит на любые цели, без залога и поручительства",
@@ -733,16 +660,12 @@
         }
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "ProductTile",
-      "style": [
-        "col-span-8"
-      ],
+      "style": ["col-span-8"],
       "content": {
         "title": "Кредит под залог недвижимости",
         "description": "Без переоформления залогой недвижимости на банк",
@@ -779,16 +702,12 @@
         }
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "ProductTile",
-      "style": [
-        "col-span-4"
-      ],
+      "style": ["col-span-4"],
       "version": "secondary",
       "content": {
         "title": "Кредит пенсионный",
@@ -818,16 +737,12 @@
         ]
       },
       "mobile": {
-        "style": [
-          "col-span-12"
-        ]
+        "style": ["col-span-12"]
       }
     },
     {
       "type": "Tile",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Рефинансирование кредитов",
         "items": [
@@ -856,9 +771,7 @@
     },
     {
       "type": "StepsBlock",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит",
         "steps": [
@@ -879,9 +792,7 @@
     },
     {
       "type": "TextBlock",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Все карты Россельхозбанка работают",
         "description": "Если не планируете поездку за границу, продолжайте пользоваться картой Своя. Для поездок за границу можно заказать карту 'Кредитная карта Своя Union Pay' на сайте и в приложении Россельхозбанка",
@@ -891,9 +802,7 @@
     },
     {
       "type": "Gallery",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Вы можете оплатить бонусными баллами",
         "description": "Удобный каталог с большим ассортиментом товаров и сервисов",
@@ -998,9 +907,7 @@
     },
     {
       "type": "MiniGallery",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Вы можете оплатить бонусными баллами",
         "description": "Удобный каталог с большим ассортиментом товаров и сервисов",
@@ -1075,9 +982,7 @@
     },
     {
       "type": "ComparisonTable",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Другие вклады и сбережения",
         "rowHeaders": [
@@ -1465,9 +1370,7 @@
     },
     {
       "type": "Accordion",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Accordion title",
         "accordionItems": [
@@ -1533,9 +1436,7 @@
     },
     {
       "type": "Headline",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Своя кредитная карта",
         "description": "Карта работает в 180 странах мира. Бесплатное снятие наличных в любых банкоматах.",
@@ -1545,9 +1446,7 @@
     },
     {
       "type": "LinkDocs",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "anchor": "documents",
       "content": {
         "title": "Дополнительные документы",
@@ -1606,9 +1505,7 @@
     },
     {
       "type": "TariffsTable",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Другие дебетовые карты Россельхозбанка",
         "rowHeaders": [
@@ -1713,11 +1610,7 @@
                 {
                   "label": "Бесплатно",
                   "list": {
-                    "items": [
-                      "item 1",
-                      "item 2",
-                      "item 3"
-                    ]
+                    "items": ["item 1", "item 2", "item 3"]
                   }
                 }
               ],
@@ -1765,11 +1658,7 @@
                 {
                   "list": {
                     "isDotted": false,
-                    "items": [
-                      "item 1",
-                      "item 2",
-                      "item 3"
-                    ]
+                    "items": ["item 1", "item 2", "item 3"]
                   }
                 }
               ],
@@ -1786,11 +1675,7 @@
                 {
                   "list": {
                     "version": "primary",
-                    "items": [
-                      "item 1",
-                      "item 2",
-                      "item 3"
-                    ]
+                    "items": ["item 1", "item 2", "item 3"]
                   }
                 }
               ],
@@ -1910,11 +1795,7 @@
                 {
                   "label": "Бесплатно",
                   "list": {
-                    "items": [
-                      "item 1",
-                      "item 2",
-                      "item 3"
-                    ]
+                    "items": ["item 1", "item 2", "item 3"]
                   }
                 }
               ],
@@ -1962,11 +1843,7 @@
                 {
                   "list": {
                     "isDotted": false,
-                    "items": [
-                      "item 1",
-                      "item 2",
-                      "item 3"
-                    ]
+                    "items": ["item 1", "item 2", "item 3"]
                   }
                 }
               ],
@@ -1983,11 +1860,7 @@
                 {
                   "list": {
                     "version": "primary",
-                    "items": [
-                      "item 1",
-                      "item 2",
-                      "item 3"
-                    ]
+                    "items": ["item 1", "item 2", "item 3"]
                   }
                 }
               ],
@@ -2043,9 +1916,7 @@
     },
     {
       "type": "PictureText",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "Варианты потребительского кредита",
         "benefits": [
@@ -2078,24 +1949,17 @@
     {
       "type": "CreditCalculator",
       "anchor": "calculator",
-      "style": [
-        "col-span-12"
-      ]
+      "style": ["col-span-12"]
     },
     {
       "type": "Recommendation",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "title": "С этим продуктом приобретают",
         "recommendations": [
           {
             "title": "Кредиты",
-            "items": [
-              "до 10 000 000 ₽",
-              "до 10 лет"
-            ],
+            "items": ["до 10 000 000 ₽", "до 10 лет"],
             "image": {
               "src": "chair.png",
               "alt": "Варианты потребительского кредита",
@@ -2163,9 +2027,7 @@
     },
     {
       "type": "Footer",
-      "style": [
-        "col-span-12"
-      ],
+      "style": ["col-span-12"],
       "content": {
         "topItems": [
           {

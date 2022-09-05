@@ -5,7 +5,9 @@ export interface NavigatorTab {
   /** @title Название */
   label?: string;
   /** @title Якорь */
-  anchor?: string;
+  href?: string;
+  /** @title Таргет (target) */
+  target?: string;
 }
 
 /**

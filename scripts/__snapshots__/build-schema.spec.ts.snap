@@ -1341,12 +1341,16 @@ Object {
     },
     "NavigatorTab": Object {
       "properties": Object {
-        "anchor": Object {
+        "href": Object {
           "title": "Якорь",
           "type": "string",
         },
         "label": Object {
           "title": "Название",
+          "type": "string",
+        },
+        "target": Object {
+          "title": "Таргет (target)",
           "type": "string",
         },
       },
