@@ -9,17 +9,17 @@ export interface ContactsProps extends UniBlockProps {
   hasButton?: boolean;
 }
 
-export const Contacts = JSX<ContactsProps>(({ className, items, hasButton, context }) => {
+export const Contacts = JSX<ContactsProps>(({ className = '', items, hasButton, context }) => {
   const router = context.useRouter();
   const { handlerDecorator } = context;
 
   return (
-    <div className={`flex flex-col ${className || ''}`}>
+    <div className={className}>
       {items?.length ? items.map(renderContact) : null}
       {hasButton ? (
         <Button
           version="primary"
-          className="mt-0.5 mb-5"
+          className="mb-6 w-full"
           {...useLink(
             { router, handlerDecorator },
             {
@@ -38,9 +38,9 @@ const renderContact = (item: ContactInfo, index: number) => {
   const { type, text, description } = item;
 
   return (
-    <div className="mb-3.5" key={String(index)}>
+    <div className="mb-4" key={String(index)}>
       <div>{renderText(type, text)}</div>
-      <div className="font-sans text-sm text-secondary-text">{description}</div>
+      <div className="mt-1 font-sans font-light text-sm text-secondary-text">{description}</div>
     </div>
   );
 };
@@ -50,7 +50,7 @@ const renderText = (type: ContactInfo['type'], text = '') => {
     case 'tel':
       return (
         <a
-          className="font-sans font-medium text-xl text-primary-text no-underline"
+          className="font-sans text-xl text-primary-text no-underline"
           href={`tel:${formatTel(text)}`}
         >
           {text}
@@ -58,10 +58,7 @@ const renderText = (type: ContactInfo['type'], text = '') => {
       );
     case 'email':
       return (
-        <a
-          className="font-sans font-medium text-xl text-primary-text no-underline"
-          href={`mailto:${text}`}
-        >
+        <a className="font-sans text-xl text-primary-text no-underline" href={`mailto:${text}`}>
           {text}
         </a>
       );

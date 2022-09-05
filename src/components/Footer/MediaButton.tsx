@@ -30,6 +30,20 @@ const ICONS_MAP: Array<{
     width: '12px',
     height: '20px',
   },
+  {
+    origins: ['apps.apple.com'],
+    icon: { icon: 'AppleIcon' },
+    label: 'App Store',
+    width: '20px',
+    height: '22px',
+  },
+  {
+    origins: ['play.google.com'],
+    icon: { icon: 'PlayMarketIcon' },
+    label: 'Google Play',
+    width: '21px',
+    height: '21px',
+  },
 ];
 
 interface MediaButtonProps {
@@ -44,7 +58,7 @@ export const MediaButton = JSX<MediaButtonProps>(({ href }) => {
 
   return (
     <a
-      className="flex items-center justify-center border border-solid border-main-divider rounded-full no-underline outline-none w-[40px] h-[40px] box-border hover:text-primary-main"
+      className="flex items-center justify-center border border-solid rounded-md border-main-divider no-underline outline-none w-14 h-14 box-border text-primary-main hover:text-white hover:bg-primary-main hover:border-primary-main"
       href={href}
       aria-label={label}
       target="_blank"

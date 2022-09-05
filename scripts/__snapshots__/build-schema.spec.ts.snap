@@ -552,6 +552,13 @@ Object {
           "title": "Заголовок для меню",
           "type": "string",
         },
+        "mobileApps": Object {
+          "items": Object {
+            "$ref": "#/definitions/SocialMedia",
+          },
+          "title": "Мобильные приложения",
+          "type": "array",
+        },
         "relatedEnterprises": Object {
           "items": Object {
             "$ref": "#/definitions/LinkProps",

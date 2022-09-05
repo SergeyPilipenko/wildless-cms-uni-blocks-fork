@@ -26,8 +26,8 @@ module.exports = {
       center: true,
     },
     extend: {
-      backgroundColor:{
-        'white/10':'rgba(255,255,255,0.1);',
+      backgroundColor: {
+        'white/10': 'rgba(255,255,255,0.1);',
       },
       backgroundImage: {
         'opacity-to-white':
@@ -44,6 +44,7 @@ module.exports = {
       },
       fontSize: {
         button: ['0.875rem', '1.25rem'], // 14px 20px
+        'button-sm': ['1rem', '1.25rem'], // 16px 20px
 
         'title-xl': ['3.125rem', '3.25rem'], //50px 52px
         'title-lg': ['2.5rem', '3rem'], //40px 48px
@@ -118,8 +119,8 @@ module.exports = {
         'blue-gray/24': '0 14px 36px -4px rgba(21, 40, 90, 0.24);',
       },
       border: {
-        'white/50':'rgba(255,255,255,.5);',
-      }
+        'white/50': 'rgba(255,255,255,.5);',
+      },
     },
   },
   plugins: [],

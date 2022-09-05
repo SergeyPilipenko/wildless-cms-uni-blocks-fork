@@ -1,3 +1,4 @@
+import type { IconName } from '../../icons/IconName';
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 import type { Picture } from '../../model/Picture';
@@ -48,6 +49,8 @@ export interface FooterContent extends SitemapProps {
   contacts?: ContactInfo[];
   /** @title Социальные сети */
   socialMedia?: SocialMedia[];
+  /** @title Мобильные приложения */
+  mobileApps?: SocialMedia[];
   /** @title Заголовок для меню */
   horizontalNavigationTitle?: string; // TODO: для мобильной версии
   /** @title Подменю */

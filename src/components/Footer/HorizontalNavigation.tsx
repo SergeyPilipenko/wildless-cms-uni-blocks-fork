@@ -40,7 +40,7 @@ interface HorizontalNavigationLinkProps extends LinkProps {
 const HorizontalNavigationLink = JSX<Partial<HorizontalNavigationLinkProps>>(
   ({ className = '', index, text, href, target, onClick }) => (
     <a
-      className={`font-sans font-normal text-sm text-secondary-text hover:text-primary-main inline-block no-underline  max-w-[292px] ${className}`}
+      className={`font-sans font-light text-secondary-text hover:text-primary-main inline-block no-underline  max-w-[292px] ${className}`}
       href={href}
       target={target}
       onClick={onClick}

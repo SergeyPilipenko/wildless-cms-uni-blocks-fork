@@ -70,6 +70,7 @@ export default {
           { href: 'https://vk.com' },
           { href: 'https://ok.ru' },
         ]}
+        mobileApps={[{ href: 'https://apps.apple.com' }, { href: 'https://play.google.com' }]}
         contacts={[
           {
             text: '+7 (495) 787-7-787',
@@ -77,9 +78,9 @@ export default {
             type: 'tel',
           },
           {
-            text: 'example@example.com',
-            description: 'Для писем',
-            type: 'email',
+            text: '8 (800) 100-01-00',
+            description: 'По России',
+            type: 'tel',
           },
           {
             text: '7787',

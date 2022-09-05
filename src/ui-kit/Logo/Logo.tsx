@@ -41,7 +41,7 @@ export const Logo = JSX<Partial<LogoProps>>(
           paths={LOGO_PATHS.map((d) => ({ d }))}
         />
         {!hideTitle && (
-          <span className={`${TEXT_COLOR[bgColor]} text-base font-medium ml-2.5`}>
+          <span className={`${TEXT_COLOR[bgColor]} text-m-title-xs font-medium ml-2.5`}>
             {children || 'Россельхозбанк'}
           </span>
         )}
