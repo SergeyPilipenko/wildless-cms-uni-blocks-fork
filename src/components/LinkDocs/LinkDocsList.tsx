@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { LinkDocsListItem } from './LinkDocsListItem';
-import type { LinkColumnsMode, LinkDocsItem } from './LinkDocsContent';
 import type { Picture } from '../../model/Picture';
+import type { LinkColumnsMode, LinkDocsItem } from './LinkDocsContent';
+import { LinkDocsListItem } from './LinkDocsListItem';
 
 export interface LinkDocsListProps {
   className?: string;
@@ -21,7 +21,7 @@ export const LinkDocsList = JSX<LinkDocsListProps>(
             role="listitem"
           >
             <LinkDocsListItem
-              className="group flex text-sm align-middle h-fit w-fit text-primary-text no-underline hover:text-primary-main"
+              className="group flex align-middle h-fit w-fit text-primary-text no-underline hover:text-primary-main"
               doc={doc}
               icon={icon}
             />

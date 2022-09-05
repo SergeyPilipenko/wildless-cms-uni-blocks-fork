@@ -7,7 +7,7 @@ export interface HeadingProps extends HeadingContent, HeadingTypeContent {
 
 const HEADING_STYLE_MAP: Record<HeadingType, string> = {
   h1: 'text-title-xl tracking-[-0.3px]',
-  h2: 'text-title-lg',
+  h2: 'text-title',
   h3: 'text-title-sm',
   h4: 'text-title-xs',
   h5: 'text-title-2xs tracking-[0.2px]',
