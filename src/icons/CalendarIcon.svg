@@ -1,6 +1,6 @@
 <svg title="Календарь" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
   <path
-    stroke="#1C1C1C"
+    stroke="currentColor"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-miterlimit="10"

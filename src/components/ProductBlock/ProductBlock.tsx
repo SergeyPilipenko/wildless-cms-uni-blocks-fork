@@ -6,6 +6,7 @@ import { Breadcrumb } from '../../ui-kit/Breadcrumb';
 import { joinList } from '../../utils/joinList';
 import type { ProductBlockContent } from './ProductBlockContent';
 import { ProductBlockInner } from './ProductBlockInner';
+import { renderBackwardButton } from './renderBackwardButton';
 
 export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
 
@@ -36,6 +37,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
       className={`font-sans pt-10 pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
       id={anchor}
     >
+      {renderBackwardButton('Все дебетовые карты', version, 'mb-10')}
       {breadcrumbs?.length ? (
         <div className="text-xs mb-6">
           {joinList(<span className={`mx-2 ${breadcrumbsStyleMap[version]}`}>/</span>)(

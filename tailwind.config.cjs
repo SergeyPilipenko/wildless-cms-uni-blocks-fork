@@ -45,7 +45,7 @@ module.exports = {
       fontSize: {
         button: ['0.875rem', '1.25rem'], // 14px 20px
 
-        'title-xl': ['3.5rem', '3.5rem'], //56px 56px
+        'title-xl': ['3.125rem', '3.25rem'], //50px 52px
         'title-lg': ['2.5rem', '3rem'], //40px 48px
         title: ['2rem', '2.5rem'], //32px 40px
         'title-sm': ['1.75rem', '2.5rem'], //28px 40px

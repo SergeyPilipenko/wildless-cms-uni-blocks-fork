@@ -5,8 +5,8 @@ import { IconTitleMap } from '../../icons/IconName';
 
 const svgColorsMap: Record<IconColor, string> = {
   none: '',
-  primary: 'text-primary-main',
-  secondary: 'text-primary-text',
+  primary: 'text-white',
+  secondary: 'text-white',
 };
 
 export const Icon = JSX<IconProps>(

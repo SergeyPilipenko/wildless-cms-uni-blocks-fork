@@ -1,6 +1,6 @@
 <svg title="Календарь белый" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path
-    stroke="#fff"
+    stroke="currentColor"
     stroke-width="2"
     stroke-miterlimit="10"
     stroke-linecap="round"
@@ -8,7 +8,7 @@
     d="M8 2v3M16 2v3M3.5 9.09h17M3 13.01V8.5c0-3 1.5-5 5-5h8c3.5 0 5 2 5 5V17c0 3-1.5 5-5 5H8c-3.5 0-5-2-5-5"
   />
   <path
-    stroke="#fff"
+    stroke="currentColor"
     stroke-width="3"
     stroke-linecap="round"
     stroke-linejoin="round"

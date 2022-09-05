@@ -4,6 +4,7 @@ import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTile } from '../BaseTile/BaseTile';
 import type { ProductBlockInnerContent } from './ProductBlockContent';
 import { renderBenefit } from './renderBenefit';
@@ -31,12 +32,12 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
         <div className={`flex flex-col ${textBlockClassName}`}>
           <BaseTile
             context={context}
-            title={getTitle(title, headingType, textColor)}
+            title={getTitle(title, headingType)}
             buttons={getButtons(context, buttons)}
           >
             {description && (
               <Description
-                className={`mt-[18px] max-w-[600px] text-title-new-sm font-light ${textColor}`}
+                className={`mt-4 max-w-[600px] text-md font-light ${textColor}`}
                 description={description}
               />
             )}
@@ -47,9 +48,9 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             ) : null}
             {items?.length ? (
               <List
-                className="mt-5 text-title-new-sm font-light"
+                className="mt-5 text-title-2xs font-light"
                 items={items}
-                itemClassName="mb-[10px]"
+                itemClassName="mb-[7px]"
                 version={version}
                 isDotted={isDotted}
               />
@@ -62,15 +63,20 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-const getTitle = (title, headingType, textColor) => {
-  const Tag = headingType;
+const getTitle = (title, headingType) => {
   return (
-    title && <Tag className={`font-sans font-medium m-0 text-title-xl ${textColor}`}>{title}</Tag>
+    title && (
+      <Heading
+        headingType={headingType}
+        title={title}
+        className="whitespace-pre-wrap max-w-[600px]"
+      />
+    )
   );
 };
 
 const getButtons = (context, buttons) => {
   return buttons?.length ? (
-    <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+    <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-4" />
   ) : null;
 };

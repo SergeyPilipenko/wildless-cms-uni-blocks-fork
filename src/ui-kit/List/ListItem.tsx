@@ -20,7 +20,7 @@ const LIST_STYLE_CLASSES = {
 };
 
 const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
-  primary: 'bg-primary-main',
+  primary: 'bg-primary-text',
   secondary: 'bg-white',
   gray: 'bg-secondary-text',
   tile: 'bg-black',
@@ -30,7 +30,7 @@ const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
 export const ListItem = JSX<ListItemProps>(
   ({ className = '', isDotted = true, children, version = 'primary' }) => {
     return (
-      <div className={`font-sans flex items-center ${className}`} role="listitem">
+      <div className={`font-sans flex items-start ${className}`} role="listitem">
         {isDotted && <div className={getListStyle(version)} />}
         <span>{children}</span>
       </div>

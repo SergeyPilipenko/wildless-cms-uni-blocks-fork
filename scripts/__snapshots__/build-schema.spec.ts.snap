@@ -822,6 +822,7 @@ Object {
         "ActualBalanceIcon",
         "AppleIcon",
         "ArrowDownIcon",
+        "ArrowLeftIcon",
         "ArrowsRewindRight",
         "ArrowUpIcon",
         "AtmIcon",
@@ -899,7 +900,8 @@ Object {
         "",
         "Деньги",
         "Лого «Apple»",
-        "ArrowDownIcon",
+        "Стрелка 'Вниз'",
+        "Стрелка 'Влево'",
         "ArrowsRewindRight",
         "ArrowUpIcon",
         "Банкомат",
@@ -1506,6 +1508,10 @@ Object {
         "blockListType": "ProductBlock",
       },
       "properties": Object {
+        "backwardButton": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "title": "Текст кнопки возврата",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1576,6 +1582,10 @@ Object {
     },
     "ProductBlockContent": Object {
       "properties": Object {
+        "backwardButton": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "title": "Текст кнопки возврата",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",
@@ -1639,6 +1649,10 @@ Object {
     },
     "ProductBlockInnerContent": Object {
       "properties": Object {
+        "backwardButton": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "title": "Текст кнопки возврата",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/Benefit",

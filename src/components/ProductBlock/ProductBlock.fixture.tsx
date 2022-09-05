@@ -2,7 +2,7 @@ import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { ProductBlock } from './ProductBlock';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { ButtonWithIconProps, ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import type { ProductBlockContent } from './ProductBlockContent';
 
 const image: Picture = {
@@ -14,20 +14,6 @@ const image: Picture = {
     height: 280,
   },
 };
-
-const breadcrumbs = [
-  {
-    text: 'Главная',
-    href: '/',
-  },
-  {
-    text: 'Кредитные карты',
-    href: '/credit',
-  },
-  {
-    text: 'Кредитная карта Своя Union Pay',
-  },
-];
 
 const benefits: Benefit[] = [
   {
@@ -62,16 +48,21 @@ const buttons: ButtonWithIconProps[] = [
   },
 ];
 
+const items = [
+  'Совершайте любые личные покупки',
+  'Используйте корпоративную карту как обычную дебетовую, если вы ИП',
+  'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
+];
+
+const backwardButton: ButtonProps = {
+  href: 'https://rshb.ru',
+  text: 'Все кредитные карты',
+};
+
 export const PRODUCT_BLOCK: ProductBlockContent = {
   title: 'Оплата проходит в 180 странах мира',
   headingType: 'h2',
-  description:
-    'Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт.',
-  items: [
-    'Совершайте любые личные покупки',
-    'Используйте корпоративную карту как обычную дебетовую, если вы ИП',
-    'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
-  ],
+  items,
   buttons: buttons,
 };
 
@@ -84,7 +75,6 @@ export default {
         title={'Потребительский кредит наличными'}
         headingType="h2"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
-        breadcrumbs={breadcrumbs}
         benefits={benefits}
         buttons={buttons}
         image={image}
@@ -100,31 +90,42 @@ export default {
         headingType="h2"
         version={'secondary'}
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
-        breadcrumbs={breadcrumbs}
         benefits={benefits}
-        buttons={buttons}
+        buttons={[
+          {
+            href: 'https://rshb.ru',
+            text: 'Подробнее',
+            target: '_blank',
+            version: 'secondary',
+          },
+        ]}
+        items={items}
         image={image}
       />
     </div>
   ),
   'with items': (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        breadcrumbs={breadcrumbs}
-        {...PRODUCT_BLOCK}
-        image={image}
-      />
+      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} image={image} />
     </div>
   ),
   'without image': (
     <div className="container grid grid-cols-12">
+      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} />
+    </div>
+  ),
+  'default-h1': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
-        breadcrumbs={breadcrumbs}
-        {...PRODUCT_BLOCK}
+        title={'Потребительский кредит наличными'}
+        headingType="h1"
+        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        benefits={benefits}
+        buttons={buttons}
+        image={image}
+        backwardButton={backwardButton}
       />
     </div>
   ),
