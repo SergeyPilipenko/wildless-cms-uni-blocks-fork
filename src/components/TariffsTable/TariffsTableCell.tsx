@@ -4,6 +4,7 @@ import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import type { TariffsTableCellData, TariffsTableList } from './TariffsTableContent';
+import { getButtonAriaLabel } from './utils/getButtonAriaLabel';
 
 export interface TariffsTableCellProps {
   cell: TariffsTableCellData[];
@@ -53,6 +54,7 @@ const renderButtons = (buttons: ButtonWithIconProps[]) => (
       <Button
         className={`${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`}
         key={String(idx)}
+        ariaLabel={getButtonAriaLabel(icon)}
         rounded={rounded}
         appendLeft={icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null}
         {...buttonProps}

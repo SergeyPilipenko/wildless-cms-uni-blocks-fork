@@ -73,6 +73,7 @@ export const ContentPage = JSX<ContentPageProps>(
         {likeControl && (
           <div className="flex items-end absolute bottom-0 right-0 h-full pointer-events-none">
             <LikeControl
+              key="LikeControl"
               className="rounded-tl-lg sticky bottom-0 pointer-events-auto"
               context={context}
             />
@@ -100,6 +101,7 @@ function renderBlock(
         const { version, content, anchor } = props.block;
         return (
           <BlockComponent
+            key={`${type}-${i}`}
             className={props.blockClassName}
             version={version}
             context={context}

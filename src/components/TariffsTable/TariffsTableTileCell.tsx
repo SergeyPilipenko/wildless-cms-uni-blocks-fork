@@ -9,6 +9,7 @@ import type {
   TariffsTableList,
   TariffsTableTileCellProps,
 } from './TariffsTableContent';
+import { getButtonAriaLabel } from './utils/getButtonAriaLabel';
 
 export const TariffsTableTileCell = JSX<TariffsTableTileCellProps>(({ header, data }) => {
   return (
@@ -52,6 +53,7 @@ const renderButtons = (buttons: ButtonWithIconProps[]) => (
       <Button
         className={`mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${icon ? 'w-12 h-12' : ''}`}
         key={String(idx)}
+        ariaLabel={getButtonAriaLabel(icon)}
         rounded={rounded}
         appendLeft={icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null}
         {...buttonProps}

@@ -45,21 +45,26 @@ export const RegularButton = JSX<ButtonCommonProps>(
     children,
     onClick,
     ...rest
-  }) => (
-    <a
-      className={`${buttonStyle} inline-block cursor-pointer no-underline ${
-        buttonStyleMap[version] || ''
-      } ${rounded ? 'rounded-full' : 'rounded-md'} ${className || ''}`}
-      href={href}
-      target={target}
-      onClick={onClick}
-      aria-label={ariaLabel}
-      role={href ? 'link' : 'button'}
-      {...rest}
-    >
-      {children}
-    </a>
-  ),
+  }) => {
+    // Pick Button props to prevent forwarding into HTML <a> tag leading to errors being printed in console.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { aboveText, appendLeft, ...linkProps } = rest;
+    return (
+      <a
+        className={`${buttonStyle} inline-block cursor-pointer no-underline ${
+          buttonStyleMap[version] || ''
+        } ${rounded ? 'rounded-full' : 'rounded-md'} ${className || ''}`}
+        href={href}
+        target={target}
+        onClick={onClick}
+        aria-label={ariaLabel}
+        role={href ? 'link' : 'button'}
+        {...linkProps}
+      >
+        {children}
+      </a>
+    );
+  },
 );
 
 const DisabledButton = JSX<ButtonCommonProps>(

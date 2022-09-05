@@ -29,7 +29,7 @@ export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) =>
       />
     )}
     {image?.src && <Img className="mb-[18px]" image={image} />}
-    {title && <Heading headingType="h4" className="text-center text-white" title={title} />}
+    {title && <Heading headingType="h4" as="h3" className="text-center text-white" title={title} />}
     {link?.text && (
       <div className="mt-auto w-full">
         <Button

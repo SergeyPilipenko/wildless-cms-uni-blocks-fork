@@ -18,6 +18,7 @@ export function renderBackwardButton(text: string, version: BlockVersion, classN
       <Button
         rounded
         className={`w-12 h-12 min-h-12 max-h-12 flex items-center justify-center mr-3 ${backwardBgStyleMap[version]}`}
+        ariaLabel={text}
       >
         <Img
           className={`w-4 h-4 min-w-4 min-h-4 rounded-full box-border ${backwardIconStyleMap[version]}`}

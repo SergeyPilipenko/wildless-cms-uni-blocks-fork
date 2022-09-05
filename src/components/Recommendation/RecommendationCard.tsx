@@ -6,6 +6,7 @@ import { BaseTile } from '../BaseTile/BaseTile';
 import { SocialMedia } from '../Footer/SocialMedia';
 import type { UniBlockProps } from '../../types';
 import type { RecommendationCardTypes } from './RecommendationContent';
+import { Heading } from '../../ui-kit/Heading/Heading';
 
 export interface RecommendationCardProps extends RecommendationCardTypes, UniBlockProps {}
 
@@ -21,7 +22,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           className="flex justify-between"
           title={
             title ? (
-              <h4 className={`font-sans text-title-xs font-normal m-0 mb-3.5`}>{title}</h4>
+              <Heading headingType="h4" as="h3" className="font-normal mb-3.5" title={title} />
             ) : null
           }
           image={image?.src && <Img className="mt-auto ml-7" image={image} />}

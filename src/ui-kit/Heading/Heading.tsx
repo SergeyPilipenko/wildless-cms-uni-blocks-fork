@@ -3,6 +3,7 @@ import { HeadingContent, HeadingType, HeadingTypeContent } from './HeadingConten
 
 export interface HeadingProps extends HeadingContent, HeadingTypeContent {
   className?: string;
+  as?: HeadingType;
 }
 
 const HEADING_STYLE_MAP: Record<HeadingType, string> = {
@@ -15,11 +16,13 @@ const HEADING_STYLE_MAP: Record<HeadingType, string> = {
 };
 
 export const Heading = JSX<HeadingProps>((props) => {
-  const { className = '', headingType, title } = props;
+  const { className = '', headingType, title, as } = props;
+
   if (!headingType) {
     return;
   }
-  const Tag = headingType;
+
+  const Tag = as || headingType;
 
   return (
     <Tag className={`font-sans m-0 ${HEADING_STYLE_MAP[headingType]} ${className}`}>{title}</Tag>

@@ -1567,9 +1567,7 @@
             "target": "_blank"
           },
           {
-            "text": {
-              "icon": "GlassIcon"
-            },
+            "text": "GlassIcon",
             "href": "/abc3/map.jpeg"
           },
           {

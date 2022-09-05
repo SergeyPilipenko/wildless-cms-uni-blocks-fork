@@ -39,7 +39,7 @@ export const Header = JSX<HeaderProps>(
         key={String(i)}
         active={_ === activeTopItem}
         {...useLink({ router, handlerDecorator }, _)}
-        ariaLabel={_.text}
+        aria-label={_.text}
         bgColor={bgColor}
       />
     ));

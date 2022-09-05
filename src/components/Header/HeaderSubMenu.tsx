@@ -70,10 +70,16 @@ const renderDotsSubMenu = ({
     <button
       className="flex justify-between items-center cursor-pointer h-6 ml-6"
       onClick={toggleSubMenu}
+      aria-label={`${subMenuIsShow ? 'Скрыть другие разделы' : 'Показать другие разделы'}`}
     >
-      {Array(3).fill(<div className="w-[3px] h-[3px] rounded bg-black mr-1" />)}
+      {Array(3)
+        .fill(0)
+        .map((_, i) => renderDot(i))}
     </button>
-    <div className={`flex flex-col rounded-md bg-white p-6 pb-2 ${subMenuIsShow ? '' : 'hidden'}`}>
+    <div
+      className={`flex flex-col rounded-md bg-white p-6 pb-2 ${subMenuIsShow ? '' : 'hidden'}`}
+      aria-hidden={!subMenuIsShow}
+    >
       {renderDotsSubMenuItems(subItems, router, handlerDecorator)}
     </div>
   </div>
@@ -91,3 +97,7 @@ const renderDotsSubMenuItems = (subItems, router, handlerDecorator) =>
       {_.text}
     </a>
   ));
+
+const renderDot = (i: number) => (
+  <div key={String(i)} className="w-[3px] h-[3px] rounded bg-black mr-1" />
+);

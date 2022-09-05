@@ -50,6 +50,7 @@ export const Tile = JSX<TileProps>((props) => {
           title && (
             <Heading
               headingType={getTileHeadingType(className)}
+              as="h3"
               title={title}
               className={`whitespace-pre-wrap max-w-[600px] ${title ? 'mb-3' : ''}
               ${version === 'primary' ? 'text-primary-text' : ''}`}
