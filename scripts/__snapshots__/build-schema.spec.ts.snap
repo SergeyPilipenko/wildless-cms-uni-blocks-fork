@@ -1926,6 +1926,8 @@ Object {
           "items": Object {
             "$ref": "#/definitions/LinkProps",
           },
+          "minItems": 3,
+          "title": "Ссылка",
           "type": "array",
         },
         "title": Object {
@@ -1951,6 +1953,8 @@ Object {
           "items": Object {
             "$ref": "#/definitions/LinkProps",
           },
+          "minItems": 3,
+          "title": "Ссылка",
           "type": "array",
         },
         "title": Object {
@@ -2022,6 +2026,9 @@ Object {
     },
     "Step": Object {
       "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+        },
         "description": Object {
           "title": "Описание",
           "type": "string",
@@ -2039,6 +2046,9 @@ Object {
     },
     "StepsBlockContent": Object {
       "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+        },
         "description": Object {
           "title": "Описание",
           "type": "string",

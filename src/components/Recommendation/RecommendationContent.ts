@@ -17,5 +17,9 @@ export interface RecommendationContent extends HeadingContent {
   /** @title Карточки */
   recommendations?: RecommendationCardTypes[];
   version?: BlockVersion;
+  /**
+   * @title Ссылка
+   * @minItems 3
+   */
   socialMedia?: LinkProps[];
 }

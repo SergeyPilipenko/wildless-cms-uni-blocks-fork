@@ -31,6 +31,65 @@ export default {
       />
     </div>
   ),
+  'steps-img': (
+    <div className="container grid grid-cols-12">
+      <StepsBlock
+        className="col-span-12"
+        context={context}
+        title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
+        showLines={false}
+        steps={[
+          {
+            label: 'В мобильном приложении или интернет-банке',
+            description: 'Для всех клиентов Россельхозбанка',
+            icon: { icon: 'SignDocsIcon' },
+            button: { text: 'Войти в интернет-банк' },
+          },
+          {
+            label: 'Через Госуслуги',
+            description: 'При наличии данных в Единой биометрической системе',
+            icon: { icon: 'ClockIcon' },
+            button: { text: 'Оформить' },
+          },
+          {
+            label: 'В офисах Россельхозбанка',
+            description: 'Откройте вклад',
+            icon: { icon: 'ComfortableCompIcon' },
+            button: { text: 'Офисы на карте' },
+          },
+        ]}
+      />
+    </div>
+  ),
+  'steps-with-btn': (
+    <div className="container grid grid-cols-12">
+      <StepsBlock
+        className="col-span-12"
+        context={context}
+        title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
+        showLines={false}
+        steps={[
+          {
+            label: 'В мобильном приложении или интернет-банке',
+            description: 'Для всех клиентов Россельхозбанка',
+            icon: { icon: 'SignDocsIcon' },
+          },
+          {
+            label: 'Через Госуслуги',
+            description: 'При наличии данных в Единой биометрической системе',
+            icon: { icon: 'ClockIcon' },
+          },
+          {
+            label: 'В офисах Россельхозбанка',
+            description: 'Откройте вклад',
+            icon: { icon: 'ComfortableCompIcon' },
+          },
+        ]}
+        button={{ text: 'Отправить заявку' }}
+      />
+    </div>
+  ),
+
   '4 steps': (
     <div className="container grid grid-cols-12">
       <StepsBlock

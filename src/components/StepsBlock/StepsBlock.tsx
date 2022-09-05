@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
@@ -8,7 +9,7 @@ import type { Step, StepsBlockContent } from './StepsBlockContent';
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
 export const StepsBlock = JSX<StepsBlockProps>(
-  ({ className = '', title, showLines = true, steps = [], anchor = null }) => {
+  ({ className = '', title, showLines = true, steps = [], button, anchor = null }) => {
     const shortGaps = steps.length > 3;
 
     return (
@@ -32,9 +33,18 @@ export const StepsBlock = JSX<StepsBlockProps>(
               )(steps.map(renderStepIcon))}
             </div>
             <div className={`flex justify-between ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
-              {steps.map(renderStepTitle)}
+              {steps.map((step, i) => renderStepTitle(step, i, Boolean(button?.text)))}
             </div>
           </div>
+        ) : null}
+        {button?.text ? (
+          <Button
+            className="box-border mt-[43px] py-3 h-12 w-full max-w-[240px]"
+            version="primary"
+            href="#"
+          >
+            {button.text}
+          </Button>
         ) : null}
       </section>
     );
@@ -46,25 +56,38 @@ const renderStepIcon = (step: Step, i: number) => {
     <div key={String(i)} className="flex flex-col items-center text-center relative">
       <div className="h-[100px] w-[100px] min-w-[100px] min-h-[100px] bg-secondary-light rounded-full p-[26px] box-border z-10">
         {(step.icon?.icon && <Img image={step.icon} width="48" height="48" />) || (
-          <span className="font-medium text-title-sm text-secondary-text">{i + 1}</span>
+          <span className="font-normal text-title-sm text-secondary-text">{i + 1}</span>
         )}
       </div>
     </div>
   );
 };
 
-const renderStepTitle = (step: Step, i: number) => {
+const renderStepTitle = (step: Step, i: number, isMainButton: boolean) => {
   return (
     <div
       key={String(i)}
-      className="flex flex-col items-center text-center relative w-[276px] whitespace-pre-line overflow-hidden"
+      className="flex flex-col items-center justify-between text-center relative w-[276px] whitespace-pre-line overflow-hidden"
     >
-      {step.label && <div className="font-medium text-xl m-0 mt-4">{step.label}</div>}
-      {step.description && (
-        <div className={`font-normal text-sm text-secondary-text ${step.label ? 'mt-2' : 'mt-4'}`}>
-          {step.description}
-        </div>
-      )}
+      <div>
+        {step.label && <div className="font-normal text-xl m-0 mt-4">{step.label}</div>}
+        {step.description && (
+          <div
+            className={`font-light text-base text-secondary-text ${step.label ? 'mt-2' : 'mt-4'}`}
+          >
+            {step.description}
+          </div>
+        )}
+      </div>
+      {step?.button?.text && !isMainButton ? (
+        <Button
+          className="box-border mt-[38px] py-3 h-12 w-full max-w-[240px]"
+          version="primary"
+          href="#"
+        >
+          {step.button.text}
+        </Button>
+      ) : null}
     </div>
   );
 };
