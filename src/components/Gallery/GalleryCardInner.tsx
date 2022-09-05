@@ -7,9 +7,9 @@ import type { GalleryCard, GalleryItem } from './GalleryContent';
 
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version }) => {
-    const titleStyleClasses = getTitleStyle(version, description, items);
+    const titleStyleClasses = getTitleStyle(version);
     return (
-      <div className="h-full flex flex-col justify-between">
+      <div className="h-full flex flex-col justify-between text-center">
         <div>
           {image?.src ? (
             <div className="flex justify-center">
@@ -18,7 +18,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
           ) : null}
           {title ? renderCardTitle(title, titleStyleClasses) : null}
           {description ? (
-            <div className={`font-normal text-sm ${title ? 'mt-2' : ''}`}>{description}</div>
+            <div className={`font-light text-m-md-new ${title ? 'mt-2' : ''}`}>{description}</div>
           ) : null}
           {items?.length ? renderItems(items, version) : null}
         </div>
@@ -39,7 +39,7 @@ function renderButton(button) {
 }
 
 function renderCardTitle(title: string, className: string) {
-  return <div className={`font-medium text-xl m-0 ${className}`}>{title}</div>;
+  return <div className={`text-xl m-0 ${className}`}>{title}</div>;
 }
 
 function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
@@ -55,9 +55,8 @@ function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
   );
 }
 
-function getTitleStyle(version, description, items) {
-  return `font-medium text-xl m-0
+function getTitleStyle(version) {
+  return `text-xl m-0
         ${version !== 'secondary' ? 'text-primary-text' : ''}
-        ${!description && !items?.length ? 'text-center' : ''}
       `;
 }

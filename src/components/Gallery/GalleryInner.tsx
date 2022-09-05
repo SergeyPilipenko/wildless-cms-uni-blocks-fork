@@ -27,7 +27,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
 
     return (
       <section
-        className={`relative font-sans text-primary-text bg-white p-[50px] overflow-hidden ${className}`}
+        className={`relative font-sans text-primary-text bg-white p-[42px] overflow-hidden ${className}`}
         id={anchor}
       >
         <GalleryContainer

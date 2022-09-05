@@ -25,7 +25,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
         <div className="flex flex-col items-center mb-8">
           {title ? <Heading headingType="h2" className="text-center" title={title} /> : null}
           {description ? (
-            <div className="font-normal text-base max-w-[600px] mt-2.5">{description}</div>
+            <div className="font-light text-md max-w-[600px] mt-2.5">{description}</div>
           ) : null}
         </div>
         <div
@@ -45,7 +45,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
 function renderCard({ card, version }: GalleryCardData, i: number) {
   return (
     <section
-      className={`box-border border-solid border rounded-md border-main-divider p-7 mx-2 flex flex-col justify-between
+      className={`box-border border-solid border border-main-stroke p-6 mx-2 flex flex-col justify-between
         items-stretch ${cardStyleMap[version]} ${
         cardVersionMap[card.version ?? 'primary']
       } w-full col-span-4`}

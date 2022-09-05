@@ -67,6 +67,7 @@ module.exports = {
         'm-title-xs': ['1.0625rem', '1.375rem'], // 17px 22px
         'm-base': ['1rem', '1.5rem'], // 16px 24px
         'm-md': ['0.9375rem', '1.5rem'], // 15px 24px
+        'm-md-new': ['0.9375rem', '1.375rem'], // 15px 22px
         'm-sm': ['0.875rem', '1.375rem'], // 14px 22px
         'm-xs': ['1.8125rem', '1.375rem'], // 13px 22px
         'm-2xs': ['0.75rem', '1.125rem'], // 12px 18px
