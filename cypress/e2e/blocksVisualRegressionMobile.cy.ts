@@ -18,7 +18,7 @@ describe(
     const blockFixturesMap = new Map<string, Params>(Object.entries(blockFixturesMapJSON));
 
     blockFixturesMap.forEach((blockParams, blockName) => {
-      describe(`Desktop. Регресс отображения блока ${blockName}`, () => {
+      describe(`Mobile. Регресс отображения блока ${blockName}`, () => {
         blockParams.fixtures.forEach((fixture) => {
           it(`Блок ${blockName}: ${fixture}`, () => {
             cy.visit(blockFixture.getBlockFixtureURL(blockParams.path, fixture));

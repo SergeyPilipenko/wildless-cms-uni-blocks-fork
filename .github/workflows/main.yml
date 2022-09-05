@@ -1,6 +1,12 @@
 name: main
 
-on: [push]
+on:
+  push:
+  workflow_run:
+    workflows:
+      - e2e-update-snapshots
+    types:
+      - completed
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -15,7 +21,12 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
+
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -44,7 +55,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -64,7 +79,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
       - uses: actions/download-artifact@v3
         with:
           name: docs
@@ -79,7 +98,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
       - uses: actions/download-artifact@v3
         with:
           name: docs

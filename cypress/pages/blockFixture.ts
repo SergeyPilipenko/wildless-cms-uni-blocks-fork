@@ -12,7 +12,7 @@ export const getBlockFixtureURL = (path, fixture) => {
   return `${Cypress.config().baseUrl}${fixtureURL(path, fixture)}`;
 };
 
-export const getBlock = () => cy.get('div[data-theme]:first > *');
+export const getBlock = () => cy.get('div[data-theme]:first > *').should('exist');
 
 export const headerMapIsLoaded = () => cy.contains('Кредитные карты').should('exist');
 export const footerMapIsLoaded = () => cy.contains('Частным клиентам').should('exist');
