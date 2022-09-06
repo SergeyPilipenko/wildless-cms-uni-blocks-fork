@@ -4,6 +4,7 @@ import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
+import { isSSR } from '../../utils/isSSR';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { headerSubMenuObserver } from './HeaderSubMenuObserver';
 
@@ -19,6 +20,10 @@ export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems, bgCol
   const { handlerDecorator } = context;
 
   setTimeout(() => {
+    if (isSSR()) {
+      return;
+    }
+
     const headerSubMenu = globalThis.document.querySelectorAll('[data-item-name=header-submenu]');
     headerSubMenu.forEach((_) => {
       headerSubMenuObserver?.observe(_);
