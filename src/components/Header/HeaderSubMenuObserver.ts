@@ -1,8 +1,9 @@
 import { isSSR } from '../../utils/isSSR';
 
-export const headerSubMenuObserver = isSSR()
-  ? undefined
-  : new IntersectionObserver(
+const isClient = !isSSR();
+
+export const headerSubMenuObserver = isClient
+  ? new IntersectionObserver(
       (entries) => {
         const headerSubMenuButtonElement = window.document.querySelector(
           '[data-header-submenu-visible=toggled]',
@@ -30,7 +31,8 @@ export const headerSubMenuObserver = isSSR()
         }
       },
       { root: window.document, threshold: 1.0 },
-    );
+    )
+  : undefined;
 
 // TODO: add types
 const toggleVisibilityInItems = (visibilityList, items, className) => {
