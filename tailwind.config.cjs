@@ -121,7 +121,8 @@ module.exports = {
       },
       border: {
         'white/50': 'rgba(255,255,255,.5);',
-      },
+        'gray/100': 'rgba(235, 237, 240, 1);',
+      }
     },
   },
   plugins: [],

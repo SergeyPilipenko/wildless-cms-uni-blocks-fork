@@ -701,6 +701,53 @@ Object {
       "title": "Элемент списка",
       "type": "object",
     },
+    "GracePeriodContent": Object {
+      "properties": Object {
+        "calendar": Object {
+          "items": Object {
+            "properties": Object {
+              "blackText": Object {
+                "title": "Основной текст",
+                "type": "string",
+              },
+              "greenText": Object {
+                "title": "Вспомогательный текст",
+                "type": "string",
+              },
+              "month": Object {
+                "items": Object {
+                  "properties": Object {
+                    "image": Object {
+                      "$ref": "#/definitions/Picture",
+                      "title": "Изображение календарного месяца",
+                    },
+                    "name": Object {
+                      "title": "Название месяца",
+                      "type": "string",
+                    },
+                  },
+                  "type": "object",
+                },
+                "type": "array",
+              },
+            },
+            "type": "object",
+          },
+          "title": "Календарь",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Льготный период",
+      "type": "object",
+    },
     "HeaderContent": Object {
       "properties": Object {
         "defaultLocation": Object {

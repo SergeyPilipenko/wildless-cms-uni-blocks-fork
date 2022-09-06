@@ -8,7 +8,7 @@ mobile/src/
 /cosmos-static/icons
 coverage/
 temp/
-.idea
+#.idea
 .nvmrc
 .DS_Store
 cypress/screenshots/
