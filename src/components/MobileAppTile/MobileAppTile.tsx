@@ -3,7 +3,6 @@ import type { UniBlockProps } from '../../types';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTile } from '../BaseTile/BaseTile';
-import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import type { MobileAppTileContent } from './MobileAppTileContent';
@@ -31,15 +30,15 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
           title={
             title && (
               <Heading
-                headingType={getTileHeadingType(className)}
+                headingType="h3"
                 title={title}
-                className={`whitespace-pre-wrap max-w-[600px] mb-7`}
+                className={`whitespace-pre-wrap max-w-[600px] mb-[30px]`}
               />
             )
           }
           buttons={
             buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex mt-7 gap-4" />
+              <ButtonSection context={context} buttons={buttons} className="flex mt-[30px] gap-4" />
             ) : null
           }
         >
@@ -52,7 +51,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
                   title={title}
                   width="164"
                   height="164"
-                  className="w-[90px] h-[90px] min-w-[90px] min-h-[90px] bg-secondary-light"
+                  className="w-[92px] h-[92px] min-w-[92px] min-h-[92px] bg-secondary-light"
                 />
               </a>
             )}
