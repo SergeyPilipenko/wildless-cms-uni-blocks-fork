@@ -1,4 +1,14 @@
+import { tableFunc } from '../../utils/tableFunc';
+
+const func = tableFunc<number, string>([
+  [(_) => _ === 1, 'год'],
+  [(_) => _ <= 4, 'года'],
+  [() => true, 'лет'],
+]);
+
 export function renderButton(number: number, i: number, handleClick: (number: number) => void) {
+  const string = func(number);
+
   return (
     <button
       key={String(i)}
@@ -6,7 +16,7 @@ export function renderButton(number: number, i: number, handleClick: (number: nu
       onClick={() => handleClick(number)}
     >
       <span className="font-semibold text-sm">
-        {number} {number === 1 ? 'год' : number > 4 ? 'лет' : 'года'}
+        {number} {string}
       </span>
     </button>
   );
