@@ -13,7 +13,7 @@ export const GracePeriod = JSX<GracePeriodProps>(
       <section className={`bg-white p-16 pt-12 ${className}`} id={anchor}>
         <Heading headingType="h2" className="text-center" title={title} />
         <div className="font-light text-base-md text-center mt-3">{description}</div>
-        {renderCalendar(calendar)}
+        {calendar ? renderCalendar(calendar) : null}
       </section>
     );
   },
@@ -60,11 +60,13 @@ const renderMonthNames = (item, colSize) =>
     </div>
   ));
 const renderMonthImages = (item) =>
-  item.month.map((_) => (
-    <div
-      key={`monthImage-${_.image.src}`}
-      className="max-h-[207px] border-r-[1px] pr-3 mr-3 border-r-gray/100 last:border-r-0 last:pr-0 last:mr-0"
-    >
-      <Img image={_.image} className="flex" />
-    </div>
-  ));
+  item.month.map((_) =>
+    _.image?.src ? (
+      <div
+        key={`monthImage-${_.image.src}`}
+        className="max-h-[207px] border-r-[1px] pr-3 mr-3 border-r-gray/100 last:border-r-0 last:pr-0 last:mr-0"
+      >
+        <Img image={_.image} className="flex" />
+      </div>
+    ) : null,
+  );
