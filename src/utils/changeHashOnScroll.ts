@@ -2,7 +2,7 @@ import { Router } from '../components/ContentPage/ContentPageContext';
 
 export const changeHashOnScroll = (router: Router, blocks: NodeListOf<Element> | null) => {
   blocks?.forEach((block) => {
-    const currentHash = globalThis.location.hash;
+    const currentHash = globalThis.location?.hash; // TODO: remove globalThis, use href from router
     const anchorHash = `#${block?.id}`;
 
     if (currentHash === anchorHash) return;

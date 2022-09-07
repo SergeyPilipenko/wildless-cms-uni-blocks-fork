@@ -10,7 +10,7 @@ export interface TabsBlockProps extends UniBlockProps, NavigatorTabsContent {}
 export const NavigatorTabs = JSX<TabsBlockProps>(
   ({ className = '', navigatorTabs, context, anchor = null }) => {
     const router = context.useRouter();
-    const href = globalThis.location.href;
+    const href = globalThis.location?.href; // TODO: remove globalThis, use href from router
 
     return (
       <section
