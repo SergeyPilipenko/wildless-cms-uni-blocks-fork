@@ -1,26 +1,26 @@
 import { context } from '../../setup-fixture';
+import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
+import { HEADLINE } from '../Headline/Headline.fixture';
+import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
+import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
+import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
 import { PRODUCT_BLOCK } from '../ProductBlock/ProductBlock.fixture';
-import { PRODUCT_TILE, PRODUCT_PENSION_TILE } from '../ProductTile/ProductTile.fixture';
+import { PRODUCT_PENSION_TILE, PRODUCT_TILE } from '../ProductTile/ProductTile.fixture';
 import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import { TILE, TILE_PREMIUM } from '../Tile/Tile.fixture';
-import { HEADLINE } from '../Headline/Headline.fixture';
-import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
-import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
-import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
-import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
-import { OtherProducts } from './OtherProducts';
 import type { OtherProductsProps } from './OtherProducts';
+import { OtherProducts } from './OtherProducts';
 
 import type {
-  ProductBlockBlockListDef,
-  ProductTileBlockListDef,
-  TextBlockBlockListDef,
-  TileBlockListDef,
   GalleryBlockListDef,
   HeadlineBlockListDef,
   LinkDocsBlockListDef,
   MiniGalleryBlockListDef,
   PictureTextBlockListDef,
+  ProductBlockBlockListDef,
+  ProductTileBlockListDef,
+  TextBlockBlockListDef,
+  TileBlockListDef,
 } from '../../ui-kit/BlocksList/BlocksListProps';
 
 const TEXT_BLOCK_OTHER_BLOCK: TextBlockBlockListDef = {
@@ -80,6 +80,7 @@ const MINI_GALLERY_OTHER_BLOCK: MiniGalleryBlockListDef = {
 
 const propsBlock: OtherProductsProps = {
   context,
+  colorPalette: 'pc',
   blockItems: [
     {
       label: 'OtherProducts №1 Tiles',

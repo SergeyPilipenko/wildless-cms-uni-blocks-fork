@@ -334,6 +334,17 @@ Object {
       "title": "Ячейка",
       "type": "object",
     },
+    "ColorPalette": Object {
+      "enum": Array [
+        "pc",
+        "bc",
+        "eo",
+        "eo2",
+        "eo3",
+        "eo4",
+      ],
+      "type": "string",
+    },
     "Column": Object {
       "properties": Object {
         "data": Object {
@@ -1466,6 +1477,9 @@ Object {
           "maxItems": 10,
           "title": "Список",
           "type": "array",
+        },
+        "colorPalette": Object {
+          "$ref": "#/definitions/ColorPalette",
         },
         "title": Object {
           "title": "Заголовок",

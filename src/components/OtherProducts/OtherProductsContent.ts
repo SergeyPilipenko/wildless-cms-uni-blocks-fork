@@ -1,3 +1,4 @@
+import type { ColorPalette } from '../../types';
 import type { BlockDef, ColumnsCount } from '../../ui-kit/BlocksList/BlocksListProps';
 
 /**
@@ -29,4 +30,5 @@ export interface OtherProductsContent {
    * @maxItems 10
    */
   blockItems?: blockItemCommonProps[];
+  colorPalette?: ColorPalette;
 }
