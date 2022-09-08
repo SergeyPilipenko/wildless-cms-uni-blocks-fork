@@ -23,7 +23,7 @@ export const List = JSX<ListProps>((props) => {
               isDotted={isDotted}
               version={version}
             >
-              {_}12
+              {_}
             </ListItem>
           ))
         : null}
