@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { UniBlockProps } from '../../types';
 import { Description } from '../../ui-kit/Description/Description';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { SocialMedia } from '../Footer/SocialMedia';
-import type { UniBlockProps } from '../../types';
 import type { RecommendationCardTypes } from './RecommendationContent';
-import { Heading } from '../../ui-kit/Heading/Heading';
 
 export interface RecommendationCardProps extends RecommendationCardTypes, UniBlockProps {}
 
@@ -35,7 +35,12 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
               version={version}
             />
           ) : null}
-          <SocialMedia className="pt-[42px] pb-0" media={socialMedia} context={context} />
+          <SocialMedia
+            className="pt-[42px] pb-0"
+            media={socialMedia}
+            version={version}
+            context={context}
+          />
         </BaseTile>
       </section>
     );

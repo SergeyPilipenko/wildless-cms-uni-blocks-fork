@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Img } from '../../ui-kit/Img/Img';
+import { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
+import { Img } from '../../ui-kit/Img/Img';
 
 const ICONS_MAP: Array<{
   origins: string[];
@@ -48,25 +49,29 @@ const ICONS_MAP: Array<{
 
 interface MediaButtonProps {
   href?: string;
+  version?: BlockVersion;
 }
 
-export const MediaButton = JSX<MediaButtonProps>(({ href }) => {
+export const MediaButton = JSX<MediaButtonProps>(({ href, version }) => {
   const { icon, width, height, label } =
     ICONS_MAP.find(({ origins }) => origins.some((_) => href?.includes(_))) || {};
 
   if (!icon) return null;
 
+  const classes =
+    version === 'secondary'
+      ? 'text-white hover:text-primary-main hover:bg-white'
+      : 'text-primary-main hover:text-white hover:bg-primary-main hover:border-primary-main';
+
   return (
     <a
-      className="flex items-center justify-center border border-solid rounded-md border-main-divider no-underline outline-none w-14 h-14 box-border text-primary-main hover:text-white hover:bg-primary-main hover:border-primary-main"
+      className={` flex items-center justify-center border border-solid rounded-md border-main-divider no-underline outline-none w-14 h-14 box-border ${classes}`}
       href={href}
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
     >
-      {icon ? (
-        <Img image={icon} width={width} height={height} asSVG className="block" color="none" />
-      ) : null}
+      {icon ? <Img image={icon} width={width} height={height} asSVG className="block" /> : null}
     </a>
   );
 });

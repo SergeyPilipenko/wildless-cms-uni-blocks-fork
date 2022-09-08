@@ -7,7 +7,6 @@ export interface HeaderTopProps {
   onClick: () => void;
   bgColor?: BgColorVersion;
 }
-
 export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
   <div className="flex items-center justify-between border-0 border-b border-main-divider h-[50px]">
     <div className="flex items-center">
@@ -18,6 +17,7 @@ export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
       >
         <Img
           image={bgColor === 'bg-white' ? 'BurgerIcon' : 'BurgerIconWhite'}
+          className="text-primary-text"
           width="24"
           height="24"
           asSVG

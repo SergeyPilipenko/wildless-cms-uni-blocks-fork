@@ -19,7 +19,7 @@ export const Header = JSX<HeaderProps>(
   ({ className = '', defaultLocation, bgColor = 'bg-white', context, topItems }) => {
     const router = context.useRouter();
     const sitemap = useSitemap(context.useAsyncData);
-    const dispositions = sitemap?.dispositions
+    const dispositions = sitemap?.dispositions;
     const { handlerDecorator } = context;
 
     const mergedItems = mergeTopItems(sitemap.topItems, topItems);

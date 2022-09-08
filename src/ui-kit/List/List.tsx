@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { ListItem } from './ListItem';
-import type { ListProps, ListItemVersion } from './ListProps';
+import type { ListItemVersion, ListProps } from './ListProps';
 
 const TEXT_STYLE_MAP: Record<ListItemVersion, string> = {
   primary: 'text-primary-text',
@@ -23,7 +23,7 @@ export const List = JSX<ListProps>((props) => {
               isDotted={isDotted}
               version={version}
             >
-              {_}
+              {_}12
             </ListItem>
           ))
         : null}

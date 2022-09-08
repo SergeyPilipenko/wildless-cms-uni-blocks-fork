@@ -40,7 +40,11 @@ const renderTab =
   };
 
 const renderIcon = (tab: Tab, isActive: boolean) => (
-  <div className="h-full mt-1" style={isActive ? { filter: 'invert(1)' } : null}>
-    <Img className="w-5 h-5 mr-3" image={tab?.icon || 'CardIcon'} asSVG={!isActive} />
+  <div className="h-full mt-1">
+    <Img
+      className={`w-5 h-5 mr-3 ${isActive ? 'invert-full' : ''}`}
+      image={tab?.icon || 'CardIcon'}
+      asSVG={!isActive}
+    />
   </div>
 );

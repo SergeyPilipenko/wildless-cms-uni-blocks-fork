@@ -1,6 +1,6 @@
-import { Img } from '../../ui-kit/Img/Img';
-import { Button } from '../../ui-kit/Button/Button';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { Button } from '../../ui-kit/Button/Button';
+import { Img } from '../../ui-kit/Img/Img';
 
 const backwardBgStyleMap: Record<BlockVersion, string> = {
   primary: 'bg-primary-main',
@@ -23,7 +23,6 @@ export function renderBackwardButton(text: string, version: BlockVersion, classN
         <Img
           className={`w-4 h-4 min-w-4 min-h-4 rounded-full box-border ${backwardIconStyleMap[version]}`}
           image={{ icon: 'ArrowLeftIcon' }}
-          color="none"
           width="24"
           height="24"
           asSVG

@@ -21,7 +21,6 @@ export function renderBenefit(benefit: Benefit, i: number, version: BlockVersion
           width="24"
           height="24"
           asSVG
-          color={version}
         />
       ) : null}
       <div className={`font-medium text-m-title-xs m-0 ${benefitTitleStyleMap[version]}`}>

@@ -52,13 +52,13 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
           className={`mr-5 ${COLORS_MAP[bgColor]}`}
           ariaLabel="Поиск по сайту"
         >
-          <Img image="LoupeIcon" className="h-full" asSVG color="none" />
+          <Img image="LoupeIcon" className="h-full" asSVG />
         </HeaderSecondaryMenuButton>
         <HeaderSecondaryMenuButton
           className={`${LINKS_COLORS_MAP[bgColor]} min-w-[32px] min-h-[32px]`}
           ariaLabel="Дополнительные ссылки"
         >
-          <Img image={LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG color="none" />
+          <Img image={LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG />
         </HeaderSecondaryMenuButton>
       </div>
     );
