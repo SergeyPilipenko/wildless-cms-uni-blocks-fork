@@ -35,7 +35,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     anchor = null,
   }) => {
     return (
-      <section className={`font-sans text-primary-text p-12 bg-white ${className}`} id={anchor}>
+      <section className={`font-sans text-primary-text p-[50px] bg-white ${className}`} id={anchor}>
         {title ? (
           <Heading
             headingType="h2"

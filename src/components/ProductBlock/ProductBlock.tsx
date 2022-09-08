@@ -34,7 +34,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
 
   return (
     <section
-      className={`font-sans pt-10 pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
+      className={`font-sans overflow-hidden pt-10 pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
       id={anchor}
     >
       {renderBackwardButton('Все дебетовые карты', version, 'mb-10')}

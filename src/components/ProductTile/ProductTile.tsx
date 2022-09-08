@@ -33,7 +33,7 @@ export const ProductTile = JSX<ProductTileProps>(
   }) => {
     return (
       <section
-        className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${
+        className={`bg-white overflow-hidden text-primary-text font-sans p-9 box-border ${className} ${
           productTileStyleMap[version]
         } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
         id={anchor}

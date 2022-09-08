@@ -103,7 +103,7 @@ module.exports = {
           // Text
           text: 'rgba(125, 126, 127, <alpha-value>)',
         },
-        gray:'#C9CACC;',
+        gray:'rgba(201, 202, 204, <alpha-value>)',
       },
       minHeight: (theme) => ({
         ...theme('spacing'),
