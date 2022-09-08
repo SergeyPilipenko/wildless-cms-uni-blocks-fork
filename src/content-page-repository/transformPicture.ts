@@ -36,7 +36,11 @@ async function transformImg(
 
   const imgPath = `${path.dirname(pagePath)}/${src}`;
   let chain = sharp(imgPath);
-  if (size) chain = chain.resize(size);
+  if (size)
+    chain = chain.resize(size?.width, size?.height, {
+      fit: sharp.fit.contain,
+      background: [0, 0, 0, 0],
+    });
   if (format) chain = chain.toFormat(format, options);
 
   const transformedSrc = transformSrc(src, transformationOptions);
