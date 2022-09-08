@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import { Button } from '../../ui-kit/Button/Button';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
@@ -24,7 +24,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
       >
         <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
         {steps?.length ? (
-          <div className={`box-border py-0.5 mb-0.5 ${title ? 'mt-9' : ''}`}>
+          <div className={`box-border ${title ? 'mt-9' : ''}`}>
             <div className="flex items-center px-[88px]">
               {joinList(
                 <div
@@ -39,7 +39,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
         ) : null}
         {button?.text ? (
           <Button
-            className="box-border mt-[43px] py-3 h-12 w-full max-w-[240px]"
+            className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
             version="primary"
             href="#"
           >
