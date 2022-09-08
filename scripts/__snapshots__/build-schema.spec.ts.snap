@@ -692,6 +692,13 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 140,
+              "width": 140,
+            },
+          },
         },
         "items": Object {
           "items": Object {

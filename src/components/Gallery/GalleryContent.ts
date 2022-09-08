@@ -1,7 +1,7 @@
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { ListOrientation } from '../../model/ListOrientation';
 
 /**
  * @title Элемент списка
@@ -21,6 +21,16 @@ export interface GalleryCard {
   title?: string;
   /** @title Описание */
   description?: string;
+  /**
+   * @default
+   * {
+   *  format: "webp",
+   *  size: {
+   *    width: 140,
+   *    height: 140
+   *   }
+   * }
+   */
   image?: Picture;
   /** @title Кнопка */
   button?: ButtonWithIconProps;
