@@ -1,4 +1,5 @@
 import type { BenefitsBlockContent } from './BenefitsBlock/BenefitsBlockContent';
+import type { BonusContent } from './Bonus/BonusContent';
 import type { ComparisonTableContent } from './ComparisonTable/ComparisonTableContent';
 import type { ExchangeRateTileContent } from './ExchangeRateTile/ExchangeRateTileContent';
 import type { FooterContent } from './Footer/FooterContent';
@@ -26,6 +27,7 @@ import type { TileContent } from './Tile/TileContent';
  */
 export type BlockContent =
   | BenefitsBlockContent
+  | BonusContent
   | ComparisonTableContent
   | ExchangeRateTileContent
   | FooterContent

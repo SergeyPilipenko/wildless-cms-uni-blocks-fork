@@ -5,18 +5,20 @@ const isClient = !isSSR();
 export const headerSubMenuObserver = isClient
   ? new IntersectionObserver(
       (entries) => {
+        const createArrays = (selectors) =>
+          selectors.map((_) => Array.from(window.document.querySelectorAll(_)));
+
         const headerSubMenuButtonElement = window.document.querySelector(
           '[data-header-submenu-visible=toggled]',
         );
-        const headerSubMenuItems = Array.from(
-          window.document.querySelectorAll('[data-item-name=header-submenu]'),
-        );
-        const dotsHeaderSubMenuItems = Array.from(
-          window.document.querySelectorAll('[data-item-name=dots-header-submenu]'),
-        );
+        const [headerSubMenuItems, dotsHeaderSubMenuItems] = createArrays([
+          '[data-item-name=header-submenu]',
+          '[data-item-name=dots-header-submenu]',
+        ]);
+
         const visibilityList = {};
-        entries.forEach((j) => {
-          visibilityList[String(j.target.toString())] = j.isIntersecting;
+        entries.forEach((_) => {
+          visibilityList[_.target.toString()] = _.isIntersecting;
         });
         const isHeaderSubMenuButtonShow = toggleVisibilityInItems(
           visibilityList,
@@ -37,10 +39,10 @@ export const headerSubMenuObserver = isClient
 // TODO: add types
 const toggleVisibilityInItems = (visibilityList, items, className) => {
   const isReversed = className !== 'hidden';
-  return items.some((item) => {
-    const key = item.toString();
+  return items.some((_) => {
+    const key = _.toString();
     const option = isReversed ? !visibilityList[key] : visibilityList[key];
-    key in visibilityList ? item.classList.toggle(className, option) : null;
-    return isReversed ? item.classList.contains('hidden') : !item.classList.contains('hidden');
+    key in visibilityList ? _.classList.toggle(className, option) : null;
+    return isReversed ? _.classList.contains('hidden') : !_.classList.contains('hidden');
   });
 };

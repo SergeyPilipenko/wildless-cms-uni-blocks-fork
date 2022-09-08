@@ -1,5 +1,6 @@
 import { Accordion } from './Accordion/Accordion';
 import { BenefitsBlock } from './BenefitsBlock/BenefitsBlock';
+import { Bonus } from './Bonus/Bonus';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
 import { CreditCalculator } from './CreditCalculator/CreditCalculator';
 import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
@@ -30,6 +31,7 @@ import { Tile } from './Tile/Tile';
 export const Blocks = {
   Accordion,
   BenefitsBlock,
+  Bonus,
   ComparisonTable,
   CreditCalculator,
   ExchangeRateTile,

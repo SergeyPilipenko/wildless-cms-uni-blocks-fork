@@ -176,6 +176,45 @@ Object {
       "title": "Цвет блока",
       "type": "string",
     },
+    "BonusContent": Object {
+      "properties": Object {
+        "bonusItems": Object {
+          "items": Object {
+            "properties": Object {
+              "bonusCount": Object {
+                "title": "Количество баллов",
+                "type": "number",
+              },
+              "bonusName": Object {
+                "title": "Наименование",
+                "type": "string",
+              },
+              "description": Object {
+                "title": "Описание плитки",
+                "type": "string",
+              },
+              "name": Object {
+                "title": "Заголовок плитки",
+                "type": "string",
+              },
+            },
+            "title": "Список плиток",
+            "type": "object",
+          },
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Плитка",
+      "type": "object",
+    },
     "ButtonContent": Object {
       "properties": Object {
         "buttons": Object {

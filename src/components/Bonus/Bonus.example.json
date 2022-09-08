@@ -1,0 +1,12 @@
+{
+  "title": "Начисление баллов",
+  "description": "Описание",
+  "bonusItems": [
+    {
+      "name": "Плитка 1",
+      "description": "Описание плитки 1",
+      "bonusCount": 1,
+      "bonusName": "балл"
+    }
+  ]
+}

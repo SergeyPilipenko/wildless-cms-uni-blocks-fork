@@ -38,14 +38,18 @@ module.exports = {
           'linear-gradient(270deg, rgba(var(--color-primary-main), 1) 34.89%, rgba(var(--color-primary-main), 0) 92.52%);',
         'opacity-from-main':
           'linear-gradient(90deg, rgba(var(--color-primary-main), 1) 0%, rgba(var(--color-primary-main), 0) 80%);',
+        'green-to-yellow':
+          'linear-gradient(180deg, #42AB44 0%, #F6DB7D 100%)',
       },
       fontFamily: {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
+        serif: ['Mohave', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         button: ['0.875rem', '1.25rem'], // 14px 20px
         'button-sm': ['1rem', '1.25rem'], // 16px 20px
 
+        'title-extra': ['15.625rem','14.687rem'], // 250px 235px
         'title-xl': ['3.125rem', '3.25rem'], //50px 52px
         'title-lg': ['2.5rem', '3rem'], //40px 48px
         title: ['2rem', '2.5rem'], //32px 40px
@@ -99,6 +103,7 @@ module.exports = {
           // Text
           text: 'rgba(125, 126, 127, <alpha-value>)',
         },
+        gray:'#C9CACC;',
       },
       minHeight: (theme) => ({
         ...theme('spacing'),
