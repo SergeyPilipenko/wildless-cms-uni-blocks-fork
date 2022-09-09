@@ -1,20 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { Button } from './Button';
 import { ButtonProps } from './ButtonProps';
-import { SVG } from '../SVG';
-
-const ARROW_PATHS = [
-  {
-    d: 'm9 12 4-4-4-4',
-    stroke: 'currentColor',
-    strokeWidth: '2',
-    strokeLinecap: 'round',
-    fill: 'none',
-  },
-  {
-    d: 'M2 9a1 1 0 0 1 0-2v2Zm6-2a1 1 0 0 1 0 2V7ZM2 7h6v2H2V7Z',
-  },
-];
+import { Img } from '../Img/Img';
 
 export const ArrowButton = JSX<ButtonProps>(({ className, disabled, ...rest }) => (
   <Button
@@ -27,6 +14,12 @@ export const ArrowButton = JSX<ButtonProps>(({ className, disabled, ...rest }) =
     disabled={disabled}
     {...rest}
   >
-    <SVG paths={ARROW_PATHS} viewBox="0 0 16 16" fill="none" width="16" height="16" />
+    <Img
+      className="w-4 h-4 min-w-4 min-h-4 rounded-full box-border"
+      image={{ icon: 'ArrowLeftIcon' }}
+      width="16"
+      height="16"
+      asSVG
+    />
   </Button>
 ));

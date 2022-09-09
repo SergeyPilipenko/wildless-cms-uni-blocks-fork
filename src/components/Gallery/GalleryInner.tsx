@@ -39,7 +39,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
         />
         {showPrevButton && (
           <ArrowButton
-            className="absolute top-1/2 left-8 rotate-180 z-10 mt-[25px]"
+            className="absolute top-1/2 left-8 z-10 mt-[25px]"
             onClick={handlePrevClick}
             ariaLabel="Пролистать влево"
             data-block-control="scroll-left"
@@ -47,7 +47,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
         )}
         {showNextButton && (
           <ArrowButton
-            className="absolute top-1/2 right-8 z-10 mt-[25px]"
+            className="absolute top-1/2 right-8 z-10 mt-[25px] rotate-180"
             onClick={handleNextClick}
             ariaLabel="Пролистать вправо"
             data-block-control="scroll-right"

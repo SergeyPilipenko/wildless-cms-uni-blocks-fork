@@ -1,8 +1,8 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
-import { ProductBlock } from './ProductBlock';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
-import type { ButtonWithIconProps, ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import { ProductBlock } from './ProductBlock';
 import type { ProductBlockContent } from './ProductBlockContent';
 
 const image: Picture = {
@@ -54,9 +54,10 @@ const items = [
   'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
 ];
 
-const backwardButton: ButtonProps = {
+const backwardButton: ButtonWithIconProps = {
   href: 'https://rshb.ru',
   text: 'Все кредитные карты',
+  icon: { icon: 'ArrowLeftIcon' },
 };
 
 export const PRODUCT_BLOCK: ProductBlockContent = {
@@ -72,7 +73,7 @@ export default {
       <ProductBlock
         className="col-span-12"
         context={context}
-        title={'Потребительский кредит наличными'}
+        title="Потребительский кредит наличными"
         headingType="h2"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
@@ -86,9 +87,9 @@ export default {
       <ProductBlock
         context={context}
         className="col-span-12"
-        title={'Потребительский кредит наличными'}
+        title="Потребительский кредит наличными"
         headingType="h2"
-        version={'secondary'}
+        version="secondary"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
         buttons={[
@@ -119,7 +120,7 @@ export default {
       <ProductBlock
         className="col-span-12"
         context={context}
-        title={'Потребительский кредит наличными'}
+        title="Потребительский кредит наличными"
         headingType="h1"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}

@@ -6,6 +6,7 @@ export default [
   'align',
   'description',
   'image',
+  'backwardButton',
   'breadcrumbs',
   'benefits',
   'isScroll',

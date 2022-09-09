@@ -89,14 +89,14 @@ const renderNavButtons = ({
     <div>
       {showPrevButton && (
         <ArrowButton
-          className="absolute top-1/2 left-8 rotate-180 z-10 mt-6"
+          className="absolute top-1/2 left-8 z-10 mt-6"
           onClick={handlePrevClick}
           ariaLabel="Пролистать влево"
         />
       )}
       {showNextButton && (
         <ArrowButton
-          className="absolute top-1/2 right-8 z-10 mt-6"
+          className="absolute top-1/2 right-8 z-10 mt-6 rotate-180"
           onClick={handleNextClick}
           ariaLabel="Пролистать вправо"
         />

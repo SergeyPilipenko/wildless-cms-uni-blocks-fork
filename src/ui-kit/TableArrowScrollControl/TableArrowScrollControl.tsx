@@ -8,13 +8,14 @@ export const TableArrowScrollControl = JSX<TableArrowScrollControlProps>(
       <div>
         <div className="absolute top-7 right-7 z-10">
           <ArrowButton
+            className="mt-4 rotate-180"
             onClick={onNextClick}
             disabled={!showNextButton}
             ariaLabel="Пролистать вправо"
             data-block-control="scroll-right"
           />
           <ArrowButton
-            className="mt-4 rotate-180"
+            className="mt-4"
             onClick={onPrevClick}
             disabled={!showPrevButton}
             ariaLabel="Пролистать влево"

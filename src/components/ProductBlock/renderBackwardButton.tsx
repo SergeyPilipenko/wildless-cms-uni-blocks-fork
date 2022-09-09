@@ -1,34 +1,24 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
 
-const backwardBgStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-primary-main group hover:bg-white active:bg-primary-active',
-  secondary: 'bg-white group hover:bg-primary-main active:bg-primary-active',
-};
-
-const backwardIconStyleMap: Record<BlockVersion, string> = {
-  primary: 'text-white group-hover:text-primary-main',
-  secondary: 'text-primary-text group-hover:text-white',
-};
-
-export function renderBackwardButton(text: string, version: BlockVersion, className: string) {
+export function renderBackwardButton(
+  button: ButtonWithIconProps,
+  version: BlockVersion,
+  className: string,
+) {
   return (
     <div className={`flex items-center ${className}`}>
       <Button
+        version={version}
         rounded
-        className={`w-12 h-12 min-h-12 max-h-12 flex items-center justify-center mr-3 ${backwardBgStyleMap[version]}`}
-        ariaLabel={text}
+        className="w-12 h-12 min-h-12 min-w-12 flex items-center justify-center mr-3"
+        ariaLabel={button?.text}
       >
-        <Img
-          className={`w-4 h-4 min-w-4 min-h-4 rounded-full box-border ${backwardIconStyleMap[version]}`}
-          image={{ icon: 'ArrowLeftIcon' }}
-          width="24"
-          height="24"
-          asSVG
-        />
+        <Img className="w-4 h-4" image={button?.icon || { icon: 'ArrowLeftIcon' }} asSVG />
       </Button>
-      {text ? <span className="text-m-md font-light">{text}</span> : null}
+      {button?.text ? <span className="text-m-md font-light">{button.text}</span> : null}
     </div>
   );
 }

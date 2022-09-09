@@ -25,19 +25,19 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
     context,
     className = '',
     breadcrumbs,
+    backwardButton,
     version = 'primary',
     anchor = null,
     ...otherProps
   } = props;
   const router = context.useRouter();
   const { handlerDecorator } = context;
-
   return (
     <section
       className={`font-sans overflow-hidden pt-[50px] pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
       id={anchor}
     >
-      {renderBackwardButton('Все дебетовые карты', version, 'mb-10 -mt-[10px]')}
+      {backwardButton ? renderBackwardButton(backwardButton, version, 'mb-10 -mt-[10px]') : null}
       {breadcrumbs?.length ? (
         <div className="text-xs mb-6">
           {joinList(<span className={`mx-2 ${breadcrumbsStyleMap[version]}`}>/</span>)(

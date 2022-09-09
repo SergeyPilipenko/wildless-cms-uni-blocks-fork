@@ -21,22 +21,26 @@ const buttonStyle = 'text-center font-sans select-none';
 export interface ButtonCommonProps extends ButtonProps, ButtonWithIconProps {}
 
 export const Button = JSX<ButtonCommonProps>((props) => {
-  const { text, aboveText, appendLeft, children, disabled, rounded } = props;
+  const { text, aboveText, appendLeft, children, disabled, rounded, ...rest } = props;
 
   const buttonInner = children ?? (
     <ButtonInner text={text} aboveText={aboveText} appendLeft={appendLeft} rounded={rounded} />
   );
 
   return disabled ? (
-    <DisabledButton {...props}>{buttonInner}</DisabledButton>
+    <DisabledButton rounded={rounded} {...rest}>
+      {buttonInner}
+    </DisabledButton>
   ) : (
-    <RegularButton {...props}>{buttonInner}</RegularButton>
+    <RegularButton rounded={rounded} {...rest}>
+      {buttonInner}
+    </RegularButton>
   );
 });
 
 export const RegularButton = JSX<ButtonCommonProps>(
   ({
-    className,
+    className = '',
     ariaLabel,
     version = 'none',
     rounded,
@@ -46,20 +50,17 @@ export const RegularButton = JSX<ButtonCommonProps>(
     onClick,
     ...rest
   }) => {
-    // Pick Button props to prevent forwarding into HTML <a> tag leading to errors being printed in console.
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { aboveText, appendLeft, ...linkProps } = rest;
     return (
       <a
         className={`${buttonStyle} inline-block cursor-pointer no-underline ${
           buttonStyleMap[version] || ''
-        } ${rounded ? 'rounded-full' : 'rounded-md'} ${className || ''}`}
+        } ${rounded ? 'rounded-full' : 'rounded-md'} ${className}`}
         href={href}
         target={target}
         onClick={onClick}
         aria-label={ariaLabel}
         role={href ? 'link' : 'button'}
-        {...linkProps}
+        {...rest}
       >
         {children}
       </a>
