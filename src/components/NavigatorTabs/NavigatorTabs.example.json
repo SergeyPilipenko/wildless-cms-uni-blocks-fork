@@ -1,7 +1,7 @@
 {
   "navigatorTabs": [
-    { "label": "Tab1", "href": "#tab1" },
-    { "label": "Tab2", "href": "#tab2" },
-    { "label": "Link", "href": "https://rshb.ru", "target": "_blank" }
+    { "text": "Таб 1", "href": "#tab1", "target": "_self" },
+    { "text": "Таб 2", "href": "#tab2", "target": "_self" },
+    { "text": "Ссылка", "href": "https://rshb.ru", "target": "_blank" }
   ]
 }

@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { NavigatorTab } from './NavigatorTabsContent';
+import type { LinkProps } from '../../model/LinkProps';
 
-export interface NavigatorTabItemProps extends NavigatorTab {
+export interface NavigatorTabItemProps extends LinkProps {
   active?: boolean;
   className?: string;
   onClick?: (ev: MouseEvent) => void;
@@ -11,9 +11,9 @@ const TEXT_CLASSES = 'font-sans font-normal text-sm';
 const LINK_CLASSES = 'flex-1 flex items-center justify-center cursor-pointer';
 
 export const NavigatorTabItem = JSX<NavigatorTabItemProps>(
-  ({ className = '', label, active, children, onClick, href, target = '_self' }) => (
+  ({ className = '', text, active, children, onClick, href, target = '_self' }) => (
     <a className={getLinkClasses(className, active)} target={target} href={href} onClick={onClick}>
-      <span className={getTextClasses(active)}>{label || children}</span>
+      <span className={getTextClasses(active)}>{text || children}</span>
     </a>
   ),
 );

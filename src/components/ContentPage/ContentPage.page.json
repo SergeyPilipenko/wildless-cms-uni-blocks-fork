@@ -553,27 +553,27 @@
       "content": {
         "navigatorTabs": [
           {
-            "label": "Калькулятор",
+            "text": "Калькулятор",
             "href": "#calculator"
           },
           {
-            "label": "Преимущества",
+            "text": "Преимущества",
             "href": "#advantages"
           },
           {
-            "label": "Как оформить",
+            "text": "Как оформить",
             "href": "#howToApply"
           },
           {
-            "label": "Тарифы",
+            "text": "Тарифы",
             "href": "#tariffs"
           },
           {
-            "label": "Документы",
+            "text": "Документы",
             "href": "#documents"
           },
           {
-            "label": "Урожай",
+            "text": "Урожай",
             "href": "https://rshb.ru/",
             "target": "_blank"
           }
