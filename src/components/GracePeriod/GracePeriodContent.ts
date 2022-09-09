@@ -9,6 +9,7 @@ interface Month {
 }
 
 interface CalendarItem {
+  /** @title Месяц */
   month?: Month[];
   /** @title Основной текст */
   blackText?: string;

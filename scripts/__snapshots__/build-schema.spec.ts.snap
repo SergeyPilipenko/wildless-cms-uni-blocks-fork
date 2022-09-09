@@ -785,6 +785,7 @@ Object {
                   },
                   "type": "object",
                 },
+                "title": "Месяц",
                 "type": "array",
               },
             },
