@@ -81,7 +81,7 @@ const renderStepTitle = (step: Step, i: number, isMainButton: boolean) => {
       </div>
       {step?.button?.text && !isMainButton ? (
         <Button
-          className="box-border mt-[38px] py-3 h-12 w-full max-w-[240px]"
+          className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
           version="primary"
           href="#"
         >
