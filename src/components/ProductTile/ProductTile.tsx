@@ -6,7 +6,6 @@ import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { BaseTile } from '../BaseTile/BaseTile';
-import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
@@ -24,6 +23,7 @@ export const ProductTile = JSX<ProductTileProps>(
     context,
     className = '',
     title,
+    headingType = 'h3',
     description,
     benefits,
     buttons,
@@ -43,7 +43,8 @@ export const ProductTile = JSX<ProductTileProps>(
           title={
             title && (
               <Heading
-                headingType={getTileHeadingType(className)}
+                headingType={headingType}
+                as="h3"
                 title={title}
                 className={`whitespace-pre-wrap max-w-[600px]`}
               />

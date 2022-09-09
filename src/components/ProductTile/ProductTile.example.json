@@ -1,5 +1,6 @@
 {
   "title": "Продуктовая плитка",
+  "headingType": "h3",
   "description": "Описание",
   "image": {
     "format": "webp",

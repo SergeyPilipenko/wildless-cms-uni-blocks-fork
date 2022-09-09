@@ -7,7 +7,6 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
-import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import type { TileContent } from './TileContent';
@@ -25,6 +24,7 @@ export const Tile = JSX<TileProps>((props) => {
   const {
     context,
     title,
+    headingType = 'h3',
     description,
     items,
     children,
@@ -49,7 +49,7 @@ export const Tile = JSX<TileProps>((props) => {
         title={
           title && (
             <Heading
-              headingType={getTileHeadingType(className)}
+              headingType={headingType}
               as="h3"
               title={title}
               className={`whitespace-pre-wrap max-w-[600px] ${title ? 'mb-3' : ''}

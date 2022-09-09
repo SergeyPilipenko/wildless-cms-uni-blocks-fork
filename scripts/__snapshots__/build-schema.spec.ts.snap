@@ -1911,6 +1911,9 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+        },
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
@@ -1949,6 +1952,9 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -2543,6 +2549,9 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+        },
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
@@ -2580,6 +2589,9 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",

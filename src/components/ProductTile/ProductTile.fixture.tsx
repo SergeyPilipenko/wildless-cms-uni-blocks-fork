@@ -1,9 +1,9 @@
 import { context } from '../../setup-fixture';
 
-import { ProductTile } from './ProductTile';
 import type { Picture } from '../../model/Picture';
-import type { ProductTileContent } from './ProductTileContent';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import { ProductTile } from './ProductTile';
+import type { ProductTileContent } from './ProductTileContent';
 
 const cardWithMoney: Picture = {
   src: 'card-with-diamond.png',
@@ -57,6 +57,7 @@ const buttonsSecondary: ButtonProps[] = [
 
 export const PRODUCT_TILE: ProductTileContent = {
   title: 'Акция! “Кредит На все, что хочется!”',
+  headingType: 'h3',
   description: 'Потребительский кредит на любые цели, без залога и поручительства',
   benefits,
   buttons: buttons,
@@ -64,6 +65,7 @@ export const PRODUCT_TILE: ProductTileContent = {
 };
 export const PRODUCT_PENSION_TILE: ProductTileContent = {
   title: 'Кредит пенсионный',
+  headingType: 'h3',
   description: 'Для людей в возрасте до 75 лет',
   benefits,
   buttons: buttonsSecondary,
@@ -81,6 +83,7 @@ export default {
         context={context}
         className="col-span-6"
         title="Акция! “Пенсионный кредит”"
+        headingType="h3"
         description={'Потребительский кредит на любые цели, без залога и поручительства'}
         benefits={benefits}
         buttons={buttonsSecondary}
@@ -94,6 +97,7 @@ export default {
         context={context}
         className="col-span-8"
         title="Кредит под залог недвижимости"
+        headingType="h3"
         description={'Без переоформления залогой недвижимости на банк'}
         benefits={benefits}
         buttons={buttonsSecondary}
@@ -107,6 +111,7 @@ export default {
         context={context}
         className="col-span-4"
         title="Кредит пенсионный"
+        headingType="h3"
         description={'Для людей в возрасте до 75 лет'}
         benefits={benefits}
         buttons={buttonsSecondary}
