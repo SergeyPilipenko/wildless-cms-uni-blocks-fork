@@ -336,13 +336,18 @@ Object {
     },
     "ColorPalette": Object {
       "enum": Array [
+        "",
         "pc",
         "bc",
         "eo",
-        "eo2",
-        "eo3",
-        "eo4",
       ],
+      "enumNames": Array [
+        "",
+        "Частным клиентам",
+        "Бизнес клиентам",
+        "Экосистема Своё",
+      ],
+      "title": "Цветовая палитра",
       "type": "string",
     },
     "Column": Object {

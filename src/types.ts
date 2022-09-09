@@ -2,7 +2,11 @@ import type { BlockContent } from './components/BlockContent';
 import type { ContentPageContext } from './components/ContentPage/ContentPageContext';
 import type { BlockVersion } from './model/BlockVersion';
 
-export type ColorPalette = 'pc' | 'bc' | 'eo' | 'eo2' | 'eo3' | 'eo4';
+/**
+ * @title Цветовая палитра
+ * @enumNames ["", "Частным клиентам", "Бизнес клиентам", "Экосистема Своё"]
+ */
+export type ColorPalette = '' | 'pc' | 'bc' | 'eo';
 
 export interface BaseBlockDef {
   type?: string;
