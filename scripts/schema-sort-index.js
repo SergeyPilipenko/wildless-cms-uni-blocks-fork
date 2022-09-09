@@ -2,6 +2,7 @@ export default [
   'title',
   'titleSize',
   'subtitle',
+  'date',
   'columns',
   'align',
   'description',
