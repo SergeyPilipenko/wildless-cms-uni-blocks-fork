@@ -20,7 +20,7 @@ export function renderBenefit(benefit: Benefit, i: number, version: string) {
     <div key={String(i)} className="flex gap-4 items-center">
       {benefit.icon ? (
         <Img
-          className={`w-[50px] h-[50px] min-w-[50px] min-h-[50px] rounded-full p-[10px] box-border text-white ${benefitIconBgStyleMap[version]}`}
+          className={`w-[50px] h-[50px] min-w-[50px] min-h-[50px] rounded-full p-[10px] box-border text-primary-text ${benefitIconBgStyleMap[version]}`}
           image={benefit.icon}
           width="24"
           height="24"

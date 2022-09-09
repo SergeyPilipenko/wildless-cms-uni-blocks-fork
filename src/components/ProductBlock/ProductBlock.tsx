@@ -37,7 +37,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
       className={`font-sans overflow-hidden pt-[50px] pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
       id={anchor}
     >
-      {backwardButton ? renderBackwardButton(backwardButton, version, 'mb-10 -mt-[10px]') : null}
+      {backwardButton?.text ? renderBackwardButton(backwardButton, version, 'mb-10 -mt-2.5') : null}
       {breadcrumbs?.length ? (
         <div className="text-xs mb-6">
           {joinList(<span className={`mx-2 ${breadcrumbsStyleMap[version]}`}>/</span>)(

@@ -15,6 +15,7 @@ export function renderBackwardButton(
         rounded
         className="w-12 h-12 min-h-12 min-w-12 flex items-center justify-center mr-3"
         ariaLabel={button?.text}
+        href={button?.href}
       >
         <Img className="w-4 h-4" image={button?.icon || { icon: 'ArrowLeftIcon' }} asSVG />
       </Button>
