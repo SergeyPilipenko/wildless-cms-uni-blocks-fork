@@ -66,7 +66,7 @@ export const Tile = JSX<TileProps>((props) => {
       >
         {description && (
           <Description
-            className="mt-4 max-w-[600px] text-title-new-sm font-light"
+            className="max-w-[600px] text-title-new-sm font-light"
             description={description}
           />
         )}
@@ -81,7 +81,7 @@ function renderList(items, version) {
   return items?.length ? (
     <List
       items={items}
-      itemClassName="text-title-new-sm font-light mt-2.5 first:mt-0"
+      itemClassName="text-title-2xs font-light mt-2"
       version={version === 'primary' ? 'tile' : 'tile-white'}
     />
   ) : null;

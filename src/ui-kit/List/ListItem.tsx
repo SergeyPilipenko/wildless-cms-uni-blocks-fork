@@ -15,8 +15,8 @@ const LIST_STYLE_CLASSES = {
   primary: 'rounded-full inline-block mr-3 mt-2',
   secondary: 'rounded-full inline-block mr-3 mt-2',
   gray: 'rounded-full inline-block mr-3 mt-2',
-  tile: 'rounded-full inline-block mr-4',
-  'tile-white': 'rounded-full inline-block mr-4',
+  tile: 'rounded-full inline-block mr-4 mt-3',
+  'tile-white': 'rounded-full inline-block mr-4 mt-3',
 };
 
 const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {

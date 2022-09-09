@@ -29,7 +29,7 @@ const image4: Picture = {
 
 export const TILE: TileContent = {
   title: 'Кредиты',
-  items: ['до 3 млн ₽', 'до 5 лет'],
+  items: ['До 3 млн ₽', 'до 5 лет'],
   buttons: [
     {
       text: 'Подробнее',
