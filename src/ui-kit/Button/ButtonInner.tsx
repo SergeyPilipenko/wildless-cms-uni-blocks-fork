@@ -14,7 +14,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
       {isWithText(props) ? (
         <div>
           <div className="text-m-2xs font-light text-left">{aboveText}</div>
-          <div className="text-button text-left">{text}</div>
+          <div className="text-button-sm text-left">{text}</div>
         </div>
       ) : null}
     </div>

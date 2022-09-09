@@ -3,13 +3,13 @@ import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 
 const backwardBgStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-primary-main',
-  secondary: 'bg-white',
+  primary: 'bg-primary-main group hover:bg-white active:bg-primary-active',
+  secondary: 'bg-white group hover:bg-primary-main active:bg-primary-active',
 };
 
 const backwardIconStyleMap: Record<BlockVersion, string> = {
-  primary: 'text-white',
-  secondary: 'text-primary-text',
+  primary: 'text-white group-hover:text-primary-main',
+  secondary: 'text-primary-text group-hover:text-white',
 };
 
 export function renderBackwardButton(text: string, version: BlockVersion, className: string) {
@@ -28,7 +28,7 @@ export function renderBackwardButton(text: string, version: BlockVersion, classN
           asSVG
         />
       </Button>
-      {text ? <span className="text-m-md">{text}</span> : null}
+      {text ? <span className="text-m-md font-light">{text}</span> : null}
     </div>
   );
 }

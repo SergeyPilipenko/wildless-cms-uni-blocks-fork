@@ -43,7 +43,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
-        serif: ['Mohave', ...defaultTheme.fontFamily.serif],
+        mohave: ['Mohave', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         button: ['0.875rem', '1.25rem'], // 14px 20px
