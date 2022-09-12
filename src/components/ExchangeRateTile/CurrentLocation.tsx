@@ -10,7 +10,7 @@ interface CurrentLocationProps {
 export const CurrentLocation = JSX<CurrentLocationProps>(
   ({ className = '', address, distance }) => (
     <div className={`flex text-sm ${className}`}>
-      <Img className="min-w-fit" image={{ icon: 'GpsIcon' }} width="24" height="24" asSVG />
+      <Img image={{ icon: 'GpsIcon' }} width="24" height="24" asSVG />
       <div className="ml-3 font-light">
         {address ? <p className="m-0 mb-[3px]">{address}</p> : null}
         {distance ? (
