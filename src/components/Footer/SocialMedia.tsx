@@ -16,7 +16,7 @@ export const SocialMedia = JSX<SocialMediaProps>(
     const { handlerDecorator } = context;
     return (
       <div>
-        <div className={`flex gap-2.5 mb-1.5 ${className}`}>
+        <div className={`flex gap-2.5 ${className}`}>
           {media?.map((_, index) => (
             <MediaButton
               key={String(index)}

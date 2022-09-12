@@ -14,7 +14,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
   ({ context, className = '', title, description, items, image, version, socialMedia }) => {
     return (
       <section
-        className={`border border-solid box-border py-[30px] px-9 min-w-[515px] max-w-[515px] ${className}`}
+        className={`border border-solid box-border p-[30px] w-[524px] ${className}`}
         role="listitem"
       >
         <BaseTile
@@ -30,7 +30,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           {description ? <Description className="text-left" description={description} /> : null}
           {items?.length ? (
             <List
-              className="text-md font-light flex flex-col gap-2"
+              className="text-md text-left font-light flex flex-col flex-1 gap-2"
               items={items}
               version={version}
             />
