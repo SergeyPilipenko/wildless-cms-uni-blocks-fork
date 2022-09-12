@@ -12,7 +12,8 @@
             "src": "calendar/august.png",
             "format": "webp",
             "size": {
-              "width": 210
+              "width": 210,
+              "height": 190
             },
             "alt": "Пример использования «Карты для покупок в рассрочку»"
           }
@@ -29,7 +30,8 @@
             "src": "calendar/september.png",
             "format": "webp",
             "size": {
-              "width": 210
+              "width": 210,
+              "height": 190
             },
             "alt": "Пример использования «Карты для покупок в рассрочку»"
           }
@@ -40,7 +42,8 @@
             "src": "calendar/october.png",
             "format": "webp",
             "size": {
-              "width": 210
+              "width": 210,
+              "height": 190
             },
             "alt": "Пример использования «Карты для покупок в рассрочку»"
           }
@@ -57,7 +60,8 @@
             "src": "calendar/november.png",
             "format": "webp",
             "size": {
-              "width": 210
+              "width": 210,
+              "height": 190
             },
             "alt": "Пример использования «Карты для покупок в рассрочку»"
           }
@@ -74,7 +78,8 @@
             "src": "calendar/december.png",
             "format": "webp",
             "size": {
-              "width": 210
+              "width": 210,
+              "height": 190
             },
             "alt": "Пример использования «Карты для покупок в рассрочку»"
           }

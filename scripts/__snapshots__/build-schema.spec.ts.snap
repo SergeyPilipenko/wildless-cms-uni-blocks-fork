@@ -781,6 +781,13 @@ Object {
                   "properties": Object {
                     "image": Object {
                       "$ref": "#/definitions/Picture",
+                      "default": Object {
+                        "format": "webp",
+                        "size": Object {
+                          "height": 190,
+                          "width": 210,
+                        },
+                      },
                       "title": "Изображение календарного месяца",
                     },
                     "name": Object {

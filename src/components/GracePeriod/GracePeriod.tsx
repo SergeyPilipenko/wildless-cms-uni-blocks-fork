@@ -21,17 +21,23 @@ export const GracePeriod = JSX<GracePeriodProps>(
 
 const renderCalendar = (calendar) => {
   const colCount =
-    calendar.reduce((accumulator, currentValue) => accumulator + currentValue.month.length, 0) || 1;
+    calendar.reduce(
+      (accumulator, currentValue) =>
+        currentValue?.month?.length ? accumulator + currentValue.month.length : accumulator,
+      0,
+    ) || 1;
   const colSize = 100 / colCount;
 
-  const mappedCalendar = calendar.map((_) => ({
-    ..._,
-    flexBasis: `${_.month.length * colSize}%`,
-  }));
+  const mappedCalendar = calendar
+    .filter((_) => _?.month?.length)
+    .map((_) => ({
+      ..._,
+      flexBasis: `${_.month.length * colSize}%`,
+    }));
 
   return (
     <div className="w-full flex flex-col justify-center mt-14">
-      <div className="flex w-full mb-3 font-light text-m-title-md mb-3 text-center">
+      <div className="flex w-full mb-3 font-light text-m-title-md text-center">
         {mappedCalendar.map((_) => renderMonthNames(_, colSize))}
       </div>
       <div className="flex w-full">
