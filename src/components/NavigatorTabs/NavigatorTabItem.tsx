@@ -7,7 +7,7 @@ export interface NavigatorTabItemProps extends LinkProps {
   onClick?: (ev: MouseEvent) => void;
 }
 
-const TEXT_CLASSES = 'font-sans font-normal text-sm';
+const TEXT_CLASSES = 'font-sans font-normal text-m-md';
 const LINK_CLASSES = 'flex-1 flex items-center justify-center cursor-pointer';
 
 export const NavigatorTabItem = JSX<NavigatorTabItemProps>(

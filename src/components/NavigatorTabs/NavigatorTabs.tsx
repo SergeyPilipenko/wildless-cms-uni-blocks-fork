@@ -15,7 +15,7 @@ export const NavigatorTabs = JSX<TabsBlockProps>(
 
     return (
       <section
-        className={`sticky top-0 z-20 box-border flex gap-x-1 h-12 ${className}`}
+        className={`sticky top-0 z-20 box-border flex gap-x-1 h-14 ${className}`}
         id={anchor}
       >
         {navigatorTabs ? navigatorTabs.map(renderTab(context, href)) : null}
