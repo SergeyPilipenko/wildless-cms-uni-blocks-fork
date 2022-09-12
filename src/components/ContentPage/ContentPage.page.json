@@ -486,6 +486,12 @@
       "content": {
         "title": "Потребительский кредит наличными",
         "description": "Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт.",
+        "headingType": "h2",
+        "backwardButton": {
+          "href": "https://rshb.ru",
+          "text": "Кнопка возврата",
+          "icon": { "icon": "ArrowLeftIcon" }
+        },
         "breadcrumbs": [
           {
             "text": "Главная",

@@ -20,6 +20,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     headingType = 'h2',
     description,
     benefits,
+    benefitsVersion = 'normal',
     buttons,
     image,
     items,
@@ -56,7 +57,11 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               <Description className="mt-3 text-m-md" description={description} />
             ) : null}
             {benefits?.filter((items) => items.label)?.length ? (
-              <div className="mt-3">{benefits.map((_, i) => renderBenefit(_, i, version))}</div>
+              <div className="mt-3">
+                {benefits.map((benefit, i) =>
+                  renderBenefit({ benefit, version, benefitsVersion }, i),
+                )}
+              </div>
             ) : null}
             {items?.length ? (
               <List

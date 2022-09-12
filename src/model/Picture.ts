@@ -1,4 +1,5 @@
 import type { IconName } from '../icons/IconName';
+import type { IconVersion } from './IconVersion';
 
 export interface Img {
   /** @title Картинка */
@@ -12,6 +13,8 @@ export interface Img {
 export interface ImgSource {
   /** @title Иконка */
   icon?: IconName;
+  /** @hidden */
+  iconVersion?: IconVersion;
   /** @title Картинка */
   src?: string;
   /** @title Формат */

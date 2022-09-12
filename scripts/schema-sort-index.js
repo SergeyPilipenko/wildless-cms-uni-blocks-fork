@@ -10,6 +10,7 @@ export default [
   'backwardButton',
   'breadcrumbs',
   'benefits',
+  'benefitsVersion',
   'isScroll',
   'orientation',
   'isDotted',

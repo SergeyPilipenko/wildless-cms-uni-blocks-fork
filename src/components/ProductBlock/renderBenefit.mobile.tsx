@@ -1,6 +1,6 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import { Img } from '../../ui-kit/Img/Img';
-import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
+import type { BenefitItemProps } from './ProductBlockContent';
 
 const benefitTitleStyleMap: Record<BlockVersion, string> = {
   primary: 'text-primary-text',
@@ -11,13 +11,14 @@ const benefitDescStyleMap: Record<BlockVersion, string> = {
   secondary: 'text-white',
 };
 
-export function renderBenefit(benefit: Benefit, i: number, version: BlockVersion) {
+export function renderBenefit({ benefit, version = 'primary' }: BenefitItemProps, i: number) {
+  const isIconWhite = version === 'secondary';
   return (
     <div key={String(i)} className="flex gap-3 items-center mb-2.5 last:mb-0">
       {benefit.icon ? (
         <Img
-          className="w-6 h-6 rounded-full box-border"
-          image={benefit.icon}
+          className={renderBenefitIconBgStyle(version)}
+          image={{ ...benefit?.icon, iconVersion: isIconWhite ? 'white' : 'normal' }}
           width="24"
           height="24"
           asSVG
@@ -33,4 +34,14 @@ export function renderBenefit(benefit: Benefit, i: number, version: BlockVersion
       )}
     </div>
   );
+}
+
+function renderBenefitIconBgStyle(version) {
+  let bgColorStyle = 'text-primary-main';
+
+  if (version === 'secondary') {
+    bgColorStyle = 'text-black';
+  }
+
+  return `w-6 h-6 rounded-full box-border ${bgColorStyle}`;
 }

@@ -40,10 +40,6 @@ html {
 @tailwind utilities;
 
 @layer utilities {
-  .invert-full {
-    filter: invert(1);
-  }
-
   .rotate-180 {
     transform: rotate(180deg);
   }

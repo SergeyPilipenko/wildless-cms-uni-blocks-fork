@@ -19,7 +19,7 @@ const benefits: Benefit[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',
-    icon: { icon: 'EmptyWalletIcon' },
+    icon: { icon: 'EmptyWalletIcon', iconVersion: 'white' },
   },
   {
     label: 'От 16,9%',
@@ -40,6 +40,15 @@ const buttons: ButtonWithIconProps[] = [
     target: '_blank',
     version: 'primary',
   },
+  {
+    href: 'https://rshb.ru',
+    text: 'Подробнее',
+    target: '_blank',
+    version: 'secondary',
+  },
+];
+
+const buttonsSecond: ButtonWithIconProps[] = [
   {
     href: 'https://rshb.ru',
     text: 'Подробнее',
@@ -73,8 +82,32 @@ export default {
       <ProductBlock
         className="col-span-12"
         context={context}
+        backwardButton={backwardButton}
+        headingType="h1"
+        title="Потребительский кредит наличными"
+        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        benefits={benefits}
+        buttons={buttons}
+        image={image}
+      />
+
+      <ProductBlock
+        className="col-span-12"
+        context={context}
         title="Потребительский кредит наличными"
         headingType="h2"
+        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        benefits={benefits}
+        benefitsVersion="white"
+        buttons={buttons}
+        image={image}
+      />
+      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} image={image} />
+      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} />
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
         buttons={buttons}
@@ -85,48 +118,52 @@ export default {
   secondary: (
     <div className="container grid grid-cols-12">
       <ProductBlock
-        context={context}
         className="col-span-12"
+        context={context}
+        backwardButton={backwardButton}
+        headingType="h1"
         title="Потребительский кредит наличными"
-        headingType="h2"
-        version="secondary"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
-        buttons={[
-          {
-            href: 'https://rshb.ru',
-            text: 'Подробнее',
-            target: '_blank',
-            version: 'secondary',
-          },
-        ]}
-        items={items}
+        buttons={buttonsSecond}
         image={image}
+        version="secondary"
       />
-    </div>
-  ),
-  'with items': (
-    <div className="container grid grid-cols-12">
-      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} image={image} />
-    </div>
-  ),
-  'without image': (
-    <div className="container grid grid-cols-12">
-      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} />
-    </div>
-  ),
-  'default-h1': (
-    <div className="container grid grid-cols-12">
+
       <ProductBlock
         className="col-span-12"
         context={context}
         title="Потребительский кредит наличными"
-        headingType="h1"
+        headingType="h2"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
-        buttons={buttons}
+        benefitsVersion="white"
+        buttons={buttonsSecond}
         image={image}
-        backwardButton={backwardButton}
+        version="secondary"
+      />
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        {...PRODUCT_BLOCK}
+        image={image}
+        version="secondary"
+      />
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        {...PRODUCT_BLOCK}
+        version="secondary"
+      />
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        title="Потребительский кредит наличными"
+        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        benefits={benefits}
+        buttons={buttonsSecond}
+        image={image}
+        version="secondary"
       />
     </div>
   ),

@@ -1,4 +1,5 @@
 import type { IconName } from '../../icons/IconName';
+import type { IconVersion } from '../../model/IconVersion';
 
 export type { IconName };
 
@@ -18,4 +19,6 @@ export interface IconCompatibilityFields {
 export type IconProps = IconCompatibilityFields & {
   className?: string;
   name?: IconName;
+  /** @hidden */
+  iconVersion?: IconVersion;
 };

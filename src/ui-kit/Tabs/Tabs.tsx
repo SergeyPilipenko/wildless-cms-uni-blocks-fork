@@ -42,7 +42,7 @@ const renderTab =
 const renderIcon = (tab: Tab, isActive: boolean) => (
   <div className="h-full mt-1">
     <Img
-      className={`w-5 h-5 mr-3 ${isActive ? 'invert-full' : ''}`}
+      className={`w-5 h-5 mr-3 ${isActive ? 'invert' : ''}`}
       image={tab?.icon || 'CardIcon'}
       asSVG={!isActive}
     />

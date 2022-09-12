@@ -9,17 +9,19 @@ export const Icon = JSX<IconProps>(
     name = '',
     alt = `Иконка ${IconTitleMap[name] || name}`,
     title = alt,
+    iconVersion,
     asSVG,
     ...imgProps
   }) => {
     const href = `${projectSettings.CDN || ''}icons/${name}.svg`;
+    const svgUseStyle = iconVersion === 'white' ? 'text-black invert' : '';
 
     if (asSVG) {
       return (
         <svg className={className} {...imgProps} aria-hidden="true">
           {title ? <title>{title}</title> : null}
           {alt ? <desc>{alt}</desc> : null}
-          <use href={`${href}#icon`} xlinkHref={`${href}#icon`} />
+          <use className={svgUseStyle} href={`${href}#icon`} xlinkHref={`${href}#icon`} />
         </svg>
       );
     }

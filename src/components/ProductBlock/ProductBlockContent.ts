@@ -5,7 +5,14 @@ import type { DescriptionContent } from '../../ui-kit/Description/DescriptionCon
 import type { HeadingContent, HeadingTypeContent } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
+import type { IconVersion } from '../../model/IconVersion';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
+
+export type BenefitItemProps = {
+  benefit: Benefit;
+  version?: BlockVersion;
+  benefitsVersion?: IconVersion;
+};
 
 export type ProductBlockInnerContent = HeadingContent &
   HeadingTypeContent &
@@ -19,6 +26,7 @@ export type ProductBlockInnerContent = HeadingContent &
      * @maxItems 3
      */
     benefits?: Benefit[];
+    benefitsVersion?: IconVersion;
     version?: BlockVersion;
     /**
      *  @title Буллиты

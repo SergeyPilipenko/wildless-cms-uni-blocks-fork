@@ -1,6 +1,12 @@
 {
   "title": "Продукт",
   "description": "Описание",
+  "headingType": "h2",
+  "backwardButton": {
+    "href": "https://rshb.ru",
+    "text": "Кнопка возврата",
+    "icon": { "icon": "ArrowLeftIcon" }
+  },
   "image": {
     "format": "webp",
     "size": {

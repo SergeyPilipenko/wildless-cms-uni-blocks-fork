@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { ImgSource, Picture } from '../../model/Picture';
 import { Icon } from '../Icon/Icon';
+import { getIconVersion } from './getIconVersion';
+import type { ImgSource, Picture } from '../../model/Picture';
 import type { Image, ImageProps } from './ImgProps';
 
 export const Img = JSX<ImageProps<Image>>(
@@ -12,7 +13,14 @@ export const Img = JSX<ImageProps<Image>>(
     // backwards compatibility with existing icons in usage
     const icon = typeof image === 'string' ? image : image.icon;
     if (icon || icon === '') {
-      return icon.length ? <Icon className={className} name={icon} {...iconProps} /> : null;
+      return icon.length ? (
+        <Icon
+          className={className}
+          iconVersion={getIconVersion(image)}
+          name={icon}
+          {...iconProps}
+        />
+      ) : null;
     }
 
     return (

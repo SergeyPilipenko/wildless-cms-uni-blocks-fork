@@ -19,6 +19,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     headingType = 'h2',
     description,
     benefits,
+    benefitsVersion = 'normal',
     buttons,
     image,
     items,
@@ -43,7 +44,9 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             )}
             {benefits?.filter((items) => items.label)?.length ? (
               <div className="flex gap-6 mt-6">
-                {benefits.map((_, i) => renderBenefit(_, i, version))}
+                {benefits.map((benefit, i) =>
+                  renderBenefit({ benefit, version, benefitsVersion }, i),
+                )}
               </div>
             ) : null}
             {items?.length ? (

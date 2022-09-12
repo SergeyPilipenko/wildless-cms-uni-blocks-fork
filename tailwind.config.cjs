@@ -6,7 +6,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx,json}'],
   corePlugins: {
-    filter: false,
+    filter: true,
   },
   theme: {
     screens: {

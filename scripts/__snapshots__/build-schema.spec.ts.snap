@@ -94,6 +94,23 @@ Object {
       "title": "Преимущество",
       "type": "object",
     },
+    "BenefitItemProps": Object {
+      "properties": Object {
+        "benefit": Object {
+          "$ref": "#/definitions/Benefit",
+        },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "required": Array [
+        "benefit",
+      ],
+      "type": "object",
+    },
     "BenefitsBlockContent": Object {
       "properties": Object {
         "benefits": Object {
@@ -1102,6 +1119,13 @@ Object {
       "title": "Иконка",
       "type": "string",
     },
+    "IconVersion": Object {
+      "enum": Array [
+        "normal",
+        "white",
+      ],
+      "type": "string",
+    },
     "ImageContent": Object {
       "properties": Object {
         "image": Object {
@@ -1634,6 +1658,9 @@ Object {
           "title": "Преимущества",
           "type": "array",
         },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
         "blockListType": Object {
           "const": "ProductBlock",
           "type": "string",
@@ -1708,6 +1735,9 @@ Object {
           "title": "Преимущества",
           "type": "array",
         },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
         "breadcrumbs": Object {
           "items": Object {
             "$ref": "#/definitions/LinkProps",
@@ -1770,6 +1800,9 @@ Object {
           "minItems": 2,
           "title": "Преимущества",
           "type": "array",
+        },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
         },
         "buttons": Object {
           "items": Object {
