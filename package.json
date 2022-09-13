@@ -23,12 +23,12 @@
       "require": "./mobile/dist/index.js",
       "types": "./mobile/lib/index.d.ts"
     },
-    "./lib/*.js": {
+    "./lib/*": {
       "import": "./lib/*.js",
       "require": "./dist/*.js",
       "types": "./lib/*.d.ts"
     },
-    "./mobile/lib/*.js": {
+    "./mobile/lib/*": {
       "import": "./mobile/lib/*.js",
       "require": "./mobile/dist/*.js",
       "types": "./mobile/lib/*.d.ts"
@@ -40,15 +40,10 @@
       "require": "./dist/content-page-repository/index.js",
       "types": "./lib/content-page-repository/index.d.ts"
     },
-    "./lib/content-page-repository/*.js": {
+    "./lib/content-page-repository/*": {
       "import": "./lib/content-page-repository/*.js",
       "require": "./dist/content-page-repository/*.js",
       "types": "./lib/content-page-repository/*.d.ts"
-    },
-    "./lib/utils/*.js": {
-      "import": "./lib/utils/*.js",
-      "require": "./dist/utils/*.js",
-      "types": "./lib/utils/*.d.ts"
     },
     "./bundle/*.js": "./bundle/*.js",
     "./bundle/*.json": "./bundle/*.json",

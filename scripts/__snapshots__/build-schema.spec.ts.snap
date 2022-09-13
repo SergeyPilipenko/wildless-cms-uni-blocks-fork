@@ -167,6 +167,31 @@ Object {
       ],
       "title": "Содержимое блока",
     },
+    "BlockItemCommonProps": Object {
+      "properties": Object {
+        "blocks": Object {
+          "items": Object {
+            "$ref": "#/definitions/BlockDef",
+          },
+          "title": "Блоки",
+          "type": "array",
+        },
+        "columns": Object {
+          "$ref": "#/definitions/ColumnsCount",
+        },
+        "isExpanded": Object {
+          "title": "Отображать в раскрытом виде",
+          "type": "boolean",
+        },
+        "label": Object {
+          "default": "Список",
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Элемент списка",
+      "type": "object",
+    },
     "BlockVersion": Object {
       "enum": Array [
         "primary",
@@ -1499,7 +1524,7 @@ Object {
       "properties": Object {
         "blockItems": Object {
           "items": Object {
-            "$ref": "#/definitions/blockItemCommonProps",
+            "$ref": "#/definitions/BlockItemCommonProps",
           },
           "maxItems": 10,
           "title": "Список",
@@ -2655,31 +2680,6 @@ Object {
         "href",
       ],
       "title": "Ссылка",
-      "type": "object",
-    },
-    "blockItemCommonProps": Object {
-      "properties": Object {
-        "blocks": Object {
-          "items": Object {
-            "$ref": "#/definitions/BlockDef",
-          },
-          "title": "Блоки",
-          "type": "array",
-        },
-        "columns": Object {
-          "$ref": "#/definitions/ColumnsCount",
-        },
-        "isExpanded": Object {
-          "title": "Отображать в раскрытом виде",
-          "type": "boolean",
-        },
-        "label": Object {
-          "default": "Список",
-          "title": "Название",
-          "type": "string",
-        },
-      },
-      "title": "Элемент списка",
       "type": "object",
     },
   },

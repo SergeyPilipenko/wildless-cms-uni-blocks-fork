@@ -1,11 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useActiveHandler } from './useActiveHandler';
 import type { UniBlockProps } from '../../types';
-import type { blockItemCommonProps } from './OtherProductsContent';
 import { Icon } from '../../ui-kit/Icon/Icon';
+import type { BlockItemCommonProps } from './OtherProductsContent';
 import { OtherProductsItemInner } from './OtherProductsItemInner';
+import { useActiveHandler } from './useActiveHandler';
 
-export interface BlockItemProps extends blockItemCommonProps, UniBlockProps {}
+export interface BlockItemProps extends BlockItemCommonProps, UniBlockProps {}
 
 export const OtherProductsItem = JSX<BlockItemProps>(
   ({ label, isExpanded, blocks, columns, context }) => {

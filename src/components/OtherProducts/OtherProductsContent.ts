@@ -4,7 +4,7 @@ import type { BlockDef, ColumnsCount } from '../../ui-kit/BlocksList/BlocksListP
 /**
  * @title Элемент списка
  */
-export interface blockItemCommonProps {
+export interface BlockItemCommonProps {
   /**
    * @title Название
    * @default Список
@@ -29,6 +29,6 @@ export interface OtherProductsContent {
    * @title Список
    * @maxItems 10
    */
-  blockItems?: blockItemCommonProps[];
+  blockItems?: BlockItemCommonProps[];
   colorPalette?: ColorPalette;
 }
