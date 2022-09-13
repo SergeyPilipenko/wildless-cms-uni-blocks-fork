@@ -1,5 +1,5 @@
-import type { Picture } from '../../model/Picture';
 import type { LinkProps } from '../../model/LinkProps';
+import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { Recommendation, RecommendationProps } from './Recommendation';
 
@@ -68,11 +68,11 @@ export default {
   default: (
     <div>
       <div className="container grid grid-cols-12" data-theme="pc">
-        <Recommendation className="col-span-12 mb-1" version="secondary" {...defaultProps} />
+        <Recommendation className="col-span-12 mb-1" {...defaultProps} version="secondary" />
       </div>
 
       <div className="container grid grid-cols-12" data-theme="bc">
-        <Recommendation className="col-span-12 mb-1" version="secondary" {...defaultProps} />
+        <Recommendation className="col-span-12 mb-1" {...defaultProps} version="secondary" />
       </div>
 
       <div className="container grid grid-cols-12 mb-1">

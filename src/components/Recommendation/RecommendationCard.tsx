@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -8,7 +9,9 @@ import { BaseTile } from '../BaseTile/BaseTile';
 import { SocialMedia } from '../Footer/SocialMedia';
 import type { RecommendationCardTypes } from './RecommendationContent';
 
-export interface RecommendationCardProps extends RecommendationCardTypes, UniBlockProps {}
+export interface RecommendationCardProps extends RecommendationCardTypes, UniBlockProps {
+  version?: BlockVersion;
+}
 
 export const RecommendationCard = JSX<RecommendationCardProps>(
   ({ context, className = '', title, description, items, image, version, socialMedia }) => {

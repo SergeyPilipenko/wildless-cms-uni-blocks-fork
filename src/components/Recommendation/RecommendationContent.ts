@@ -5,11 +5,18 @@ import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 
-export type RecommendationCardTypes = HeadingContent &
-  DescriptionContent &
-  ListContent &
-  ImageContent &
-  RecommendationContent;
+export interface RecommendationCardTypes
+  extends HeadingContent,
+    DescriptionContent,
+    ListContent,
+    ImageContent {
+  /**
+   * @title Соц сети
+   * @minItems 3
+   */
+  socialMedia?: LinkProps[];
+}
+
 /**
  * @title Рекомендации
  */
@@ -17,9 +24,4 @@ export interface RecommendationContent extends HeadingContent {
   /** @title Карточки */
   recommendations?: RecommendationCardTypes[];
   version?: BlockVersion;
-  /**
-   * @title Ссылка
-   * @minItems 3
-   */
-  socialMedia?: LinkProps[];
 }

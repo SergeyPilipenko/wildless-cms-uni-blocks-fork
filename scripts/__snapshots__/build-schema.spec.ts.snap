@@ -2057,27 +2057,17 @@ Object {
           "title": "Список",
           "type": "array",
         },
-        "recommendations": Object {
-          "items": Object {
-            "$ref": "#/definitions/RecommendationCardTypes",
-          },
-          "title": "Карточки",
-          "type": "array",
-        },
         "socialMedia": Object {
           "items": Object {
             "$ref": "#/definitions/LinkProps",
           },
           "minItems": 3,
-          "title": "Ссылка",
+          "title": "Соц сети",
           "type": "array",
         },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
         },
       },
       "type": "object",
@@ -2089,14 +2079,6 @@ Object {
             "$ref": "#/definitions/RecommendationCardTypes",
           },
           "title": "Карточки",
-          "type": "array",
-        },
-        "socialMedia": Object {
-          "items": Object {
-            "$ref": "#/definitions/LinkProps",
-          },
-          "minItems": 3,
-          "title": "Ссылка",
           "type": "array",
         },
         "title": Object {
