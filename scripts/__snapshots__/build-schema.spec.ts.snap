@@ -211,13 +211,14 @@ Object {
                 "type": "string",
               },
               "name": Object {
-                "title": "Заголовок плитки",
+                "title": "Бонусы",
                 "type": "string",
               },
             },
-            "title": "Список плиток",
+            "title": "Плитка",
             "type": "object",
           },
+          "title": "Список плиток",
           "type": "array",
         },
         "description": Object {
@@ -229,7 +230,7 @@ Object {
           "type": "string",
         },
       },
-      "title": "Плитка",
+      "title": "Блок Бонусы",
       "type": "object",
     },
     "ButtonContent": Object {

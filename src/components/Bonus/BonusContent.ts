@@ -1,9 +1,9 @@
 import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
 import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 
-/** @title Список плиток */
+/** @title Плитка */
 interface BonusItems {
-  /** @title Заголовок плитки */
+  /** @title Бонусы */
   name?: string;
   /** @title Описание плитки */
   description?: string;
@@ -14,9 +14,10 @@ interface BonusItems {
 }
 
 /**
- * @title Плитка
+ * @title Блок Бонусы
  */
 export type BonusContent = HeadingContent &
   DescriptionContent & {
+    /** @title Список плиток */
     bonusItems?: BonusItems[];
   };

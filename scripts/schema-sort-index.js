@@ -6,6 +6,7 @@ export default [
   'columns',
   'align',
   'description',
+  'bonusItems',
   'image',
   'backwardButton',
   'breadcrumbs',
