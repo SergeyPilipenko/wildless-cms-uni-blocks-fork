@@ -1,0 +1,1 @@
+export { transformToTernaryRule } from './transformToTernaryRule';

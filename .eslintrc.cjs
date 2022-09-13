@@ -82,6 +82,13 @@ module.exports = {
             ],
           },
         ],
+        'local-eslint-rules/transform-to-ternary': [
+          'warn',
+          {
+            blocksDir: 'src',
+            exclude: BLOCKS_DIR_EXCLUSIONS,
+          },
+        ],
       },
     },
   ],
