@@ -6,7 +6,7 @@ import { List } from '../../ui-kit/List/List';
 import type { GalleryCard, GalleryItem } from './GalleryContent';
 
 export const GalleryCardInner = JSX<GalleryCard>(
-  ({ title, description, image, items, button, version }) => {
+  ({ title, description, image, items, button, version, isDotted = true }) => {
     const titleStyleClasses = getTitleStyle(version);
     return (
       <div className="h-full flex flex-col justify-between text-center">
@@ -20,7 +20,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
           {description ? (
             <div className={`font-light text-m-md-new ${title ? 'mt-2' : ''}`}>{description}</div>
           ) : null}
-          {items?.length ? renderItems(items, version) : null}
+          {items?.length ? renderItems(items, version, isDotted) : null}
         </div>
         {button?.text ? renderButton(button) : null}
       </div>
@@ -42,7 +42,7 @@ function renderCardTitle(title: string, className: string) {
   return <div className={`text-xl m-0 ${className}`}>{title}</div>;
 }
 
-function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
+function renderItems(items: GalleryItem[], version: BlockVersion = 'primary', isDotted: boolean) {
   return (
     <List
       className={`max-w-[308px] mt-2 text-sm ${
@@ -50,6 +50,7 @@ function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
       }`}
       itemClassName="mt-1 first:mt-0"
       items={items.filter((item) => item?.text).map((item) => item.text as string)}
+      isDotted={isDotted}
       version={version}
     />
   );

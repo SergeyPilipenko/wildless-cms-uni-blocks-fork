@@ -34,6 +34,11 @@ export interface GalleryCard {
   image?: Picture;
   /** @title Кнопка */
   button?: ButtonWithIconProps;
+  /**
+   * @title Буллиты
+   * @default true
+   */
+  isDotted?: boolean;
   /** @title Список */
   items?: GalleryItem[];
   version?: BlockVersion;

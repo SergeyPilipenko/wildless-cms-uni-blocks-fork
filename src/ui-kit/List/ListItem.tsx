@@ -38,7 +38,7 @@ export const ListItem = JSX<ListItemProps>(
   },
 );
 
-const getListStyle = (version: ListItemVersion) => {
+export const getListStyle = (version: ListItemVersion) => {
   const size = {
     primary: 'w-2 h-2 min-w-2 min-h-2',
     secondary: 'w-2 h-2 min-w-2 min-h-2',

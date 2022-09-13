@@ -748,6 +748,11 @@ Object {
             },
           },
         },
+        "isDotted": Object {
+          "default": true,
+          "title": "Буллиты",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "$ref": "#/definitions/GalleryItem",

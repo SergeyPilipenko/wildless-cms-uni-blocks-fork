@@ -1,9 +1,11 @@
+import { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
 import { Gallery } from './Gallery';
 import { GalleryCard } from './GalleryContent';
-import { ListOrientation } from '../../model/ListOrientation';
+
+const isDotted = true;
 
 const image: Picture = {
   src: 'money-1.png',
@@ -50,6 +52,7 @@ const cards: GalleryCard[] = [
   {
     image,
     title: 'Вклады в любой валюте',
+    isDotted,
     items: defaultItems,
   },
   {
@@ -75,6 +78,7 @@ const cards: GalleryCard[] = [
   {
     image,
     title: 'Вклады в любой валюте',
+    isDotted,
     items: defaultItems,
     version: 'secondary',
   },

@@ -4,6 +4,7 @@ import type { ListOrientation } from '../../model/ListOrientation';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
+import { getListStyle } from '../../ui-kit/List/ListItem';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import type { GalleryCard } from './GalleryContent';
 import { GalleryItem } from './GalleryContent';
@@ -63,7 +64,7 @@ function renderCard(card: GalleryCard, key: number) {
         ) : null}
         {card.title ? <h3 className={`font-medium text-m-title-xs m-0`}>{card.title}</h3> : null}
         {card.description ? renderDescription(card) : null}
-        {card.items?.length ? renderItems(card.items, card.version) : null}
+        {card.items?.length ? renderItems(card.items, card.version, card.isDotted) : null}
       </div>
       {card?.button?.text ? renderButton(card.button) : null}
     </div>
@@ -92,11 +93,12 @@ function renderDescription(card: GalleryCard) {
   );
 }
 
-function renderItems(items: GalleryItem[], version: BlockVersion = 'primary') {
+function renderItems(items: GalleryItem[], version: BlockVersion = 'primary', isDotted) {
   return (
     <section className="mt-3">
       {items.map((item, i) => (
         <div key={String(i)}>
+          {isDotted && <div className={getListStyle(version)} />}
           <span className="text-m-md font-medium">{item.title}</span>
           <span className={`text-m-sm pl-2 ${version === 'primary' ? 'text-secondary-text' : ''}`}>
             {item.text}

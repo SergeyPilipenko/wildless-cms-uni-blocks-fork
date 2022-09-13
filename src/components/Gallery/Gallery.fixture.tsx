@@ -4,6 +4,8 @@ import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
 import { Gallery } from './Gallery';
 import type { GalleryProps } from './GalleryProps';
 
+const isDotted = true;
+
 const image: Picture = {
   src: 'money-1.png',
   format: 'webp',
@@ -46,6 +48,7 @@ export const defaultProps: GalleryProps = {
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
       version: 'secondary',
     },
@@ -54,6 +57,7 @@ export const defaultProps: GalleryProps = {
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
       image,
       button: buttonPrimaryIcon,
+      isDotted,
       items: defaultItems,
     },
     {
@@ -61,6 +65,7 @@ export const defaultProps: GalleryProps = {
       description: 'Высокий процент даже при небольшой сумме денежных средств',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
     },
     {
@@ -69,6 +74,7 @@ export const defaultProps: GalleryProps = {
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
     },
   ],
@@ -117,24 +123,28 @@ const listAndButtonProps: GalleryProps = {
       title: 'Более 5000 товаров',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
     },
     {
       title: 'Более 1000 развлечений',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
     },
     {
       title: 'Фермерские продукты',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
     },
     {
       title: '«Моя выгода»',
       image,
       button: buttonPrimary,
+      isDotted,
       items: defaultItems,
     },
   ],
