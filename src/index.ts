@@ -3,6 +3,8 @@ export { DaDataAPI } from './api/DaDataAPI';
 export { LikeAPI } from './api/LikeAPI';
 export type { BlockContent } from './components/BlockContent';
 export { Blocks } from './components/Blocks';
+export { Button } from './ui-kit/Button/Button';
+export { Img as Image } from './ui-kit/Img/Img';
 export { ContentPage } from './components/ContentPage/ContentPage';
 export type { BlockDecorator } from './components/ContentPage/ContentPage';
 export type {
