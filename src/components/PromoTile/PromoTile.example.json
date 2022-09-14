@@ -6,7 +6,8 @@
     {
       "text": "Все акции",
       "href": "/credits",
-      "version": "secondary"
+      "version": "secondary",
+      "target": ""
     }
   ],
   "version": "secondary"

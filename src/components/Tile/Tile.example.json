@@ -16,6 +16,7 @@
     {
       "text": "Кнопка",
       "version": "primary",
+      "target": "",
       "icon": {
         "alt": "",
         "title": ""
