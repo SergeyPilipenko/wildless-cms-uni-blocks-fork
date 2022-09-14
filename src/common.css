@@ -72,6 +72,13 @@ html {
     width: 100%;
   }
 
+  .calc-rate-text {
+    background: linear-gradient(180deg, #42ab44 0%, #f6db7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+
   input[type='range'].slider {
     -webkit-appearance: none;
     height: 4px;

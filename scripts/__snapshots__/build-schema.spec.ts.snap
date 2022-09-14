@@ -219,6 +219,63 @@ Object {
       "title": "Цвет блока",
       "type": "string",
     },
+    "BonusCalculatorParams": Object {
+      "properties": Object {
+        "bonus": Object {
+          "type": "number",
+        },
+        "maxSumOther": Object {
+          "type": "number",
+        },
+        "maxSumTrip": Object {
+          "type": "number",
+        },
+        "minSumOther": Object {
+          "type": "number",
+        },
+        "minSumTrip": Object {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+    "BonusCalculatorParamsDef": Object {
+      "default": Object {
+        "calcType": "BonusCalculatorForm",
+      },
+      "properties": Object {
+        "bonus": Object {
+          "type": "number",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "type": "array",
+        },
+        "calcType": Object {
+          "const": "BonusCalculatorForm",
+          "type": "string",
+        },
+        "maxSumOther": Object {
+          "type": "number",
+        },
+        "maxSumTrip": Object {
+          "type": "number",
+        },
+        "minSumOther": Object {
+          "type": "number",
+        },
+        "minSumTrip": Object {
+          "type": "number",
+        },
+      },
+      "required": Array [
+        "calcType",
+      ],
+      "title": "Заголовок",
+      "type": "object",
+    },
     "BonusContent": Object {
       "properties": Object {
         "bonusItems": Object {
@@ -338,6 +395,56 @@ Object {
       },
       "type": "object",
     },
+    "CalculatorBlockDef": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "#/definitions/EmptyOption",
+        },
+        Object {
+          "$ref": "#/definitions/CreditCalculatorParamsDef",
+        },
+        Object {
+          "$ref": "#/definitions/MortgageCalculatorParamsDef",
+        },
+        Object {
+          "$ref": "#/definitions/DepositCalculatorParamsDef",
+        },
+        Object {
+          "$ref": "#/definitions/BonusCalculatorParamsDef",
+        },
+      ],
+      "title": "Калькулятор",
+    },
+    "CalculatorContent": Object {
+      "properties": Object {
+        "calcTabs": Object {
+          "items": Object {
+            "$ref": "#/definitions/CalculatorTab",
+          },
+          "title": "Вкладки",
+          "type": "array",
+        },
+      },
+      "title": "Калькулятор",
+      "type": "object",
+    },
+    "CalculatorNav": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Кнопка навигации",
+      "type": "object",
+    },
     "CalculatorParams": Object {
       "properties": Object {
         "isAnnuity": Object {
@@ -362,6 +469,19 @@ Object {
           "type": "number",
         },
       },
+      "type": "object",
+    },
+    "CalculatorTab": Object {
+      "properties": Object {
+        "calculatorBlock": Object {
+          "$ref": "#/definitions/CalculatorBlockDef",
+          "title": "Настройки калькулятора",
+        },
+        "nav": Object {
+          "$ref": "#/definitions/CalculatorNav",
+        },
+      },
+      "title": "Вкладка",
       "type": "object",
     },
     "CellData": Object {
@@ -447,6 +567,17 @@ Object {
       ],
       "title": "Количество колонок",
       "type": "number",
+    },
+    "CommonCalculatorProps": Object {
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "type": "array",
+        },
+      },
+      "type": "object",
     },
     "ComparisonTableContent": Object {
       "properties": Object {
@@ -537,6 +668,87 @@ Object {
       },
       "type": "object",
     },
+    "CreditCalculatorParams": Object {
+      "properties": Object {
+        "isAnnuity": Object {
+          "type": "boolean",
+        },
+        "isInsurance": Object {
+          "type": "boolean",
+        },
+        "isSalary": Object {
+          "type": "boolean",
+        },
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rateWithInsurance": Object {
+          "type": "number",
+        },
+        "rateWithoutInsurance": Object {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+    "CreditCalculatorParamsDef": Object {
+      "default": Object {
+        "calcType": "CreditCalculatorForm",
+      },
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "type": "array",
+        },
+        "calcType": Object {
+          "const": "CreditCalculatorForm",
+          "type": "string",
+        },
+        "isAnnuity": Object {
+          "type": "boolean",
+        },
+        "isInsurance": Object {
+          "type": "boolean",
+        },
+        "isSalary": Object {
+          "type": "boolean",
+        },
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rateWithInsurance": Object {
+          "type": "number",
+        },
+        "rateWithoutInsurance": Object {
+          "type": "number",
+        },
+      },
+      "required": Array [
+        "calcType",
+      ],
+      "title": "Заголовок",
+      "type": "object",
+    },
     "CreditCalculatorTab": Object {
       "properties": Object {
         "description": Object {
@@ -556,6 +768,63 @@ Object {
         },
       },
       "title": "Вкладка",
+      "type": "object",
+    },
+    "DepositCalculatorParams": Object {
+      "properties": Object {
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rate": Object {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+    "DepositCalculatorParamsDef": Object {
+      "default": Object {
+        "calcType": "DepositCalculatorForm",
+      },
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "type": "array",
+        },
+        "calcType": Object {
+          "const": "DepositCalculatorForm",
+          "type": "string",
+        },
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rate": Object {
+          "type": "number",
+        },
+      },
+      "required": Array [
+        "calcType",
+      ],
+      "title": "Заголовок",
       "type": "object",
     },
     "DescriptionContent": Object {
@@ -1564,6 +1833,81 @@ Object {
         },
       },
       "title": "Мобильное приложение",
+      "type": "object",
+    },
+    "MortgageCalculatorParams": Object {
+      "properties": Object {
+        "isAnnuity": Object {
+          "type": "boolean",
+        },
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minInitialContribution": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rateWithInsurance": Object {
+          "type": "number",
+        },
+        "rateWithoutInsurance": Object {
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+    "MortgageCalculatorParamsDef": Object {
+      "default": Object {
+        "calcType": "MortgageCalculatorForm",
+      },
+      "properties": Object {
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "type": "array",
+        },
+        "calcType": Object {
+          "const": "MortgageCalculatorForm",
+          "type": "string",
+        },
+        "isAnnuity": Object {
+          "type": "boolean",
+        },
+        "maxMonths": Object {
+          "type": "number",
+        },
+        "maxSum": Object {
+          "type": "number",
+        },
+        "minInitialContribution": Object {
+          "type": "number",
+        },
+        "minMonths": Object {
+          "type": "number",
+        },
+        "minSum": Object {
+          "type": "number",
+        },
+        "rateWithInsurance": Object {
+          "type": "number",
+        },
+        "rateWithoutInsurance": Object {
+          "type": "number",
+        },
+      },
+      "required": Array [
+        "calcType",
+      ],
+      "title": "Заголовок",
       "type": "object",
     },
     "NavigationContent": Object {

@@ -2,6 +2,7 @@ import { Accordion } from './Accordion/Accordion';
 import { BenefitsBlock } from './BenefitsBlock/BenefitsBlock';
 import { Bonus } from './Bonus/Bonus';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
+import { Calculator } from './Calculator/Calculator';
 import { CreditCalculator } from './CreditCalculator/CreditCalculator';
 import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
 import { Footer } from './Footer/Footer';
@@ -34,6 +35,7 @@ export const Blocks = {
   BenefitsBlock,
   Bonus,
   ComparisonTable,
+  Calculator,
   CreditCalculator,
   ExchangeRateTile,
   Footer,

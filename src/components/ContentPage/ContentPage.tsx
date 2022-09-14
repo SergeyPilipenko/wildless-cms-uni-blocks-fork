@@ -19,8 +19,8 @@ export type BlockDecorator<VNode = any> = (
   index?: number | string,
 ) => any;
 
-export type JSXBlock = (
-  props: PropsWithChildren<UniBlockProps & BlockContent, any>,
+export type JSXBlock<BlockProps = BlockContent> = (
+  props: PropsWithChildren<UniBlockProps & BlockProps, any>,
   context?: any,
 ) => any;
 

@@ -13,7 +13,7 @@ type EmbeddableBlocksProps = {
 export const renderBlocksList = ({ blocks, context, className, columns }: EmbeddableBlocksProps) =>
   blocks?.length ? blocks.map(renderBlock({ context, className, columns })) : null;
 
-export const renderBlock =
+const renderBlock =
   ({ context, columns, className }: EmbeddableBlocksProps) =>
   (block: BlockDef, i: number) => {
     const type = block?.blockListType;

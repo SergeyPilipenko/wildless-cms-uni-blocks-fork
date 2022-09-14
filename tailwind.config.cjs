@@ -59,6 +59,7 @@ module.exports = {
         'title-2xs': ['1.25rem', '1.75rem'], //20px 28px
         lg: ['2.188rem', '3rem'], // 35px 48px
         md: ['1.125rem', '1.5rem'], // 18px 24px
+        'md-new': ['1.125rem', '1.25rem'], // 18px 20px
         base: ['1rem', '1.5rem'], // 16px 24px
         sm: ['0.875rem', '1.375rem'], // 14px 22px
         xs: ['0.75rem', '1.125rem'], // 12px 18px

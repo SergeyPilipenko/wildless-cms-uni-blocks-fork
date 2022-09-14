@@ -1,7 +1,7 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { ProductBlock } from './ProductBlock';
-import { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 const title = 'Кредит до 5 000 000 Р\nбез залога и поручителей';

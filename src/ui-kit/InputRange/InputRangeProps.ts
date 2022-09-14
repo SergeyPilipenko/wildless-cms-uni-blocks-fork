@@ -1,3 +1,5 @@
+import type { FuncSetNumber } from '../../types';
+
 export interface InputRangeProps {
   className?: string;
   items?: string[];
@@ -6,5 +8,5 @@ export interface InputRangeProps {
   step?: number;
   value?: number;
   title?: string;
-  onChange?: (value: number) => void;
+  onChange?: FuncSetNumber;
 }
