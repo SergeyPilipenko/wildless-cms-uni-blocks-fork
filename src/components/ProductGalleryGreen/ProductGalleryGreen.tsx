@@ -28,7 +28,7 @@ const productSlideStyleMap: Record<BlockVersion, string> = {
 };
 
 export const ProductGalleryGreen = JSX<ProductGalleryProps>(
-  ({ className = '', context, slides = [], version = 'primary', duration = 0, anchor = null }) => {
+  ({ className = '', context, slides = [], version = 'primary', anchor = null }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
@@ -55,7 +55,6 @@ export const ProductGalleryGreen = JSX<ProductGalleryProps>(
               activeSlideIndex,
               onClick: () => setActiveSlideIndex(i),
               version,
-              duration,
             }),
           )}
         </div>
@@ -76,7 +75,7 @@ function renderProductBlock(block: ProductBlockInnerContent, i: number, context)
     >
       <div className="flex grow">
         <ProductBlockInner
-          className={`pl-[50px] pr-2 z-[1] ${additionalClass}`}
+          className={`pl-[50px] z-[1] ${additionalClass}`}
           context={context}
           textBlockClassName="mb-[154px]"
           {...block}
@@ -86,12 +85,12 @@ function renderProductBlock(block: ProductBlockInnerContent, i: number, context)
   );
 }
 
-function renderNavButton({ slide, i, activeSlideIndex, onClick, version, duration }) {
+function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
   const isActiveBtn = i === activeSlideIndex;
 
   const btnClassName = isActiveBtn
-    ? 'bg-white shadow-dark-blue/42 h-[102px] w-[354px] min-w-[354px] max-w-[354px] p-0 border-none'
-    : `min-w-[277px] px-0 pt-4 pb-[23px] hover:py-[26px] hover:py-[26px] ease-in duration-300
+    ? 'bg-white shadow-dark-blue/42 h-[102px] w-[354px] min-w-[354px] p-0 border-none'
+    : `min-w-[277px] px-0 pt-4 pb-[23px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
       ${productSlideStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
     ? 'text-primary-text text-title-2xs'
@@ -100,8 +99,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version, duratio
     ? 'text-secondary-text text-m-title-xs mt-2.5'
     : `text-m-md mt-1.5 ${productBlockStyleMap[version].text}`;
 
-  const additionalBorder = version === 'secondary' ? 'border-white/50' : '';
-  const progressBarClassName = isActiveBtn ? 'animate-slide' : '';
+  const additionalBorder = version === 'secondary' ? 'border-white/50' : 'border-black/50';
 
   return (
     <button
@@ -109,18 +107,14 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version, duratio
       key={String(i)}
       onClick={onClick}
       aria-label={slide?.title}
-      className={`box-border font-sans group relative overflow-hidden border-[1px] cursor-pointer text-left mx-1 grow basis-0 backdrop-blur-sm
-      ${btnClassName} ${additionalBorder}
+      className={`box-border font-sans relative overflow-hidden border-[1px] border-white/50 cursor-pointer text-left mx-1 grow basis-0
+        ${btnClassName} ${additionalBorder}
       `}
     >
       <div className="border-0 px-6">
         <div className={`font-medium ${btnTitleClassName}`}>{slide?.title}</div>
         <div className={`text-secondary-text ${btnDescClassName}`}>{slide.description}</div>
       </div>
-      <div
-        className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary-main -translate-x-full ${progressBarClassName}`}
-        style={{ animationDuration: `${duration}s`, animationFillMode: 'forwards' }}
-      ></div>
     </button>
   );
 }

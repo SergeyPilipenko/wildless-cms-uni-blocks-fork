@@ -173,6 +173,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BlockDef",
           },
+          "maxItems": 10,
           "title": "Блоки",
           "type": "array",
         },
@@ -1531,7 +1532,6 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BlockItemCommonProps",
           },
-          "maxItems": 10,
           "title": "Список",
           "type": "array",
         },

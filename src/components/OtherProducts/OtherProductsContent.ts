@@ -14,7 +14,10 @@ export interface BlockItemCommonProps {
    * @title Отображать в раскрытом виде
    */
   isExpanded?: boolean;
-  /** @title Блоки */
+  /**
+   * @title Блоки
+   * @maxItems 10
+   */
   blocks?: BlockDef[];
   columns?: ColumnsCount;
 }
@@ -27,7 +30,6 @@ export interface OtherProductsContent {
   title?: string;
   /**
    * @title Список
-   * @maxItems 10
    */
   blockItems?: BlockItemCommonProps[];
   colorPalette?: ColorPalette;

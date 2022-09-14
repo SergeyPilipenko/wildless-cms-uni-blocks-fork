@@ -60,7 +60,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             ) : null}
           </BaseTile>
         </div>
-        {image?.src && <Img className="mt-auto" image={image} />}
+        {image?.src && <Img className="mt-[-50px]" image={image} />}
       </div>
     );
   },
