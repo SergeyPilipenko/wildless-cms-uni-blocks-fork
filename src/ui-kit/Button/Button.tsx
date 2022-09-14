@@ -60,7 +60,6 @@ export const RegularButton = JSX<ButtonCommonProps>(
         onClick={onClick}
         aria-label={ariaLabel}
         role={href ? 'link' : 'button'}
-        data-theme={getColorPalette()}
         {...rest}
       >
         {children}
@@ -80,15 +79,9 @@ const DisabledButton = JSX<ButtonCommonProps>(
         className={`inline-block ${buttonStyle} ${buttonDisabledStyleMap[version] || ''} ${
           rounded ? 'rounded-full' : 'rounded-md'
         } ${className || ''}`}
-        data-theme={getColorPalette()}
       >
         {children}
       </div>
     );
   },
 );
-
-const getColorPalette = () => {
-  const currentTheme = globalThis?.document?.querySelector('[data-theme]');
-  return currentTheme?.getAttribute('data-theme') || 'pc';
-};
