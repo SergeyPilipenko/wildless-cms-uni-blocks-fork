@@ -13,13 +13,13 @@ export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data,
     <HeadComponent>
       <title>{title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      {description && <meta name="description" content={description} />}
-      {keywords && <meta name="keywords" content={keywords.join(',')} />}
-      {robots && <meta name="robots" content={robots.join(',')} />}
+      {description ? <meta name="description" content={description} /> : null}
+      {keywords ? <meta name="keywords" content={keywords.join(',')} /> : null}
+      {robots ? <meta name="robots" content={robots.join(',')} /> : null}
       {renderOpenGraph(og)}
       {renderTwitter(twitter)}
-      {canonical && <link rel="canonical" href={canonical} />}
-      {jsonLd && <script type="application/ld+json">{jsonLd}</script>}
+      {canonical ? <link rel="canonical" href={canonical} /> : null}
+      {jsonLd ? <script type="application/ld+json">{jsonLd}</script> : null}
       {children}
     </HeadComponent>
   );

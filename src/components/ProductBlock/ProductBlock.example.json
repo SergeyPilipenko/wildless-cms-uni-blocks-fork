@@ -12,7 +12,9 @@
     "size": {
       "width": 234,
       "height": 234
-    }
+    },
+    "alt": "",
+    "title": ""
   },
   "items": [
     "Элемент списка 1",
@@ -23,7 +25,11 @@
   "buttons": [
     {
       "text": "Кнопка",
-      "version": "secondary"
+      "version": "secondary",
+      "icon": {
+        "alt": "",
+        "title": ""
+      }
     }
   ],
   "version": "primary",

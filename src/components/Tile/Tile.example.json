@@ -7,13 +7,19 @@
     "format": "webp",
     "size": {
       "width": 445
-    }
+    },
+    "alt": "",
+    "title": ""
   },
   "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
   "buttons": [
     {
       "text": "Кнопка",
-      "version": "primary"
+      "version": "primary",
+      "icon": {
+        "alt": "",
+        "title": ""
+      }
     }
   ],
   "version": "primary"
