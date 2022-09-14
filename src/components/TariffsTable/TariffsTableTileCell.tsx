@@ -33,7 +33,7 @@ const renderCellInner = (
       <div className="text-m-sm text-secondary-text mt-[3px]">{description}</div>
     ) : null}
     {list?.items?.length ? renderList(list) : null}
-    {image && <Img image={{ ...image, className: 'm-0' }} />}
+    {image ? <Img image={{ ...image, className: 'm-0' }} /> : null}
     {buttons?.length ? renderButtons(buttons) : null}
   </div>
 );

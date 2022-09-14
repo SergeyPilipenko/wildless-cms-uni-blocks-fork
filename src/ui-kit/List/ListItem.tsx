@@ -31,7 +31,7 @@ export const ListItem = JSX<ListItemProps>(
   ({ className = '', isDotted = true, children, version = 'primary' }) => {
     return (
       <div className={`font-sans flex items-start ${className}`} role="listitem">
-        {isDotted && <div className={getListStyle(version)} />}
+        {isDotted ? <div className={getListStyle(version)} /> : null}
         <span>{children}</span>
       </div>
     );

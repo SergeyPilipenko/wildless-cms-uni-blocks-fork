@@ -98,7 +98,7 @@ function renderItems(items: GalleryItem[], version: BlockVersion = 'primary', is
     <section className="mt-3">
       {items.map((item, i) => (
         <div key={String(i)}>
-          {isDotted && <div className={getListStyle(version)} />}
+          {isDotted ? <div className={getListStyle(version)} /> : null}
           <span className="text-m-md font-medium">{item.title}</span>
           <span className={`text-m-sm pl-2 ${version === 'primary' ? 'text-secondary-text' : ''}`}>
             {item.text}

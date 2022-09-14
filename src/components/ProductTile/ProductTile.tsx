@@ -57,7 +57,9 @@ export const ProductTile = JSX<ProductTileProps>(
           }
           image={image?.src && <Img className="mt-auto ml-7" image={image} />}
         >
-          {description && <Description className="mt-4 max-w-[600px]" description={description} />}
+          {description ? (
+            <Description className="mt-4 max-w-[600px]" description={description} />
+          ) : null}
           <div className="flex mt-5 mb-1">
             {benefits?.length ? (
               <div className="mr-8">{benefits.map(renderBenefitLabel)}</div>
