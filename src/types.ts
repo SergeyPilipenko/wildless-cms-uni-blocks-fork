@@ -44,10 +44,16 @@ export interface ContentPageMeta {
   jsonLd?: string;
 }
 
+export interface CustomPageTemplate {
+  content?: Record<string, any>;
+  type?: string;
+}
+
 export interface ContentPageDef extends ContentPageMeta {
   style?: string[];
-  blocks?: BlockDef[]; //! for compatibility
+  blocks?: BlockDef[];
   slots?: SlotsMap;
+  customPageTmpl?: CustomPageTemplate;
   likeControl?: boolean;
   colorPalette?: ColorPalette;
 }

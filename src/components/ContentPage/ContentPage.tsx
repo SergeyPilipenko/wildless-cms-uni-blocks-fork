@@ -2,6 +2,7 @@ import { JSX, PropsWithChildren } from '@redneckz/uni-jsx';
 import type { BlockDef, ContentPageDef, UniBlockProps } from '../../types';
 import { changeHashOnScroll } from '../../utils/changeHashOnScroll';
 import { isSSR } from '../../utils/isSSR';
+import { style2className } from '../../utils/style2className';
 import type { BlockContent } from '../BlockContent';
 import { LikeControl } from '../LikeControl/LikeControl';
 import { Placeholder } from '../Placeholder/Placeholder';
@@ -127,8 +128,4 @@ function renderBlock(
     },
     `block-${i}`,
   );
-}
-
-function style2className(style: string[] | undefined | null): string {
-  return style ? style.join(' ') : '';
 }
