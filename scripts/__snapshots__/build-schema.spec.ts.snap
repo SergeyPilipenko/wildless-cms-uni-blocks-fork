@@ -867,6 +867,77 @@ Object {
       "title": "Льготный период",
       "type": "object",
     },
+    "GroupBlockCommonProps": Object {
+      "properties": Object {
+        "style": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Стиль",
+          "type": "array",
+        },
+        "tags": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Теги",
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+    "GroupBlockContent": Object {
+      "properties": Object {
+        "groupBlocks": Object {
+          "items": Object {
+            "$ref": "#/definitions/GroupBlockDef",
+          },
+          "title": "Блоки",
+          "type": "array",
+        },
+        "isShowCounter": Object {
+          "title": "Показывать счетчик блоков во вкладках",
+          "type": "boolean",
+        },
+        "tabs": Object {
+          "items": Object {
+            "$ref": "#/definitions/GroupBlockTab",
+          },
+          "title": "Табы",
+          "type": "array",
+        },
+      },
+      "title": "Блок-группировки",
+      "type": "object",
+    },
+    "GroupBlockDef": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "#/definitions/EmptyOption",
+        },
+        Object {
+          "$ref": "#/definitions/ProductBlockDef",
+        },
+        Object {
+          "$ref": "#/definitions/ProductTileDef",
+        },
+      ],
+      "title": "Содержимое блока",
+    },
+    "GroupBlockTab": Object {
+      "properties": Object {
+        "tag": Object {
+          "title": "Tег",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Таб",
+      "type": "object",
+    },
     "HeaderContent": Object {
       "properties": Object {
         "defaultLocation": Object {
@@ -1821,6 +1892,100 @@ Object {
       "title": "Продуктовый блок",
       "type": "object",
     },
+    "ProductBlockDef": Object {
+      "default": Object {
+        "blockType": "ProductBlock",
+      },
+      "properties": Object {
+        "backwardButton": Object {
+          "$ref": "#/definitions/ButtonWithIconProps",
+          "title": "Кнопка возврата",
+        },
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "maxItems": 3,
+          "minItems": 2,
+          "title": "Преимущества",
+          "type": "array",
+        },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
+        "blockType": Object {
+          "const": "ProductBlock",
+          "type": "string",
+        },
+        "breadcrumbs": Object {
+          "items": Object {
+            "$ref": "#/definitions/LinkProps",
+          },
+          "title": "Хлебные крошки",
+          "type": "array",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "isDotted": Object {
+          "default": true,
+          "title": "Буллиты",
+          "type": "boolean",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "label": Object {
+          "title": "Лейбл (моб.)",
+          "type": "string",
+        },
+        "style": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Стиль",
+          "type": "array",
+        },
+        "tags": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Теги",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "required": Array [
+        "blockType",
+      ],
+      "title": "Продуктовый блок",
+      "type": "object",
+    },
     "ProductBlockInnerContent": Object {
       "properties": Object {
         "benefits": Object {
@@ -2025,6 +2190,69 @@ Object {
           "$ref": "#/definitions/BlockVersion",
         },
       },
+      "title": "Продуктовая плитка",
+      "type": "object",
+    },
+    "ProductTileDef": Object {
+      "default": Object {
+        "blockType": "ProductTile",
+      },
+      "properties": Object {
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/TextBenefit",
+          },
+          "maxItems": 7,
+          "title": "Преимущества",
+          "type": "array",
+        },
+        "blockType": Object {
+          "const": "ProductTile",
+          "type": "string",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "maxItems": 4,
+          "title": "Кнопки",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "style": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Стиль",
+          "type": "array",
+        },
+        "tags": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Теги",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "required": Array [
+        "blockType",
+      ],
       "title": "Продуктовая плитка",
       "type": "object",
     },

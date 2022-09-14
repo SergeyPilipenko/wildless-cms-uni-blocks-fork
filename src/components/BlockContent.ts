@@ -5,6 +5,7 @@ import type { ExchangeRateTileContent } from './ExchangeRateTile/ExchangeRateTil
 import type { FooterContent } from './Footer/FooterContent';
 import type { GalleryContent } from './Gallery/GalleryContent';
 import type { GracePeriodContent } from './GracePeriod/GracePeriodContent';
+import type { GroupBlockContent } from './GroupBlock/GroupBlockContent';
 import type { HeaderContent } from './Header/HeaderContent';
 import type { LinkDocsContent } from './LinkDocs/LinkDocsContent';
 import type { LinkListContent } from './LinkList/LinkListContent';
@@ -48,4 +49,5 @@ export type BlockContent =
   | TextBlockContent
   | TileContent
   | NavigationContent
-  | LinkListContent;
+  | LinkListContent
+  | GroupBlockContent;
