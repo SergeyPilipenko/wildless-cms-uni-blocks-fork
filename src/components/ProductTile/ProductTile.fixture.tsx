@@ -17,6 +17,12 @@ const letterWithMoney: Picture = {
   format: 'webp',
 };
 
+const letterWithPhone: Picture = {
+  src: 'letter-with-phone.png',
+  alt: 'Пенсионный кредит в РСХБ',
+  format: 'webp',
+};
+
 const building: Picture = {
   src: 'building.png',
   alt: 'Кредит под залог недвижимости в РСХБ',
@@ -38,6 +44,13 @@ const benefits = [
   },
 ];
 
+const benefits2 = [
+  {
+    label: '1 год',
+    description: 'срок программы',
+  },
+];
+
 const buttons: ButtonProps[] = [
   {
     text: 'Подробнее',
@@ -46,7 +59,22 @@ const buttons: ButtonProps[] = [
   },
 ];
 
-const buttonsSecondary: ButtonProps[] = [
+const buttons2: ButtonProps[] = [
+  {
+    href: 'https://rshb.ru',
+    text: 'Подробнее',
+    target: '_blank',
+    version: 'secondary',
+  },
+];
+
+const buttons3: ButtonProps[] = [
+  {
+    href: 'https://rshb.ru',
+    text: 'Оформить',
+    target: '_blank',
+    version: 'primary',
+  },
   {
     href: 'https://rshb.ru',
     text: 'Подробнее',
@@ -68,7 +96,7 @@ export const PRODUCT_PENSION_TILE: ProductTileContent = {
   headingType: 'h3',
   description: 'Для людей в возрасте до 75 лет',
   benefits,
-  buttons: buttonsSecondary,
+  buttons: buttons2,
 };
 
 export default {
@@ -86,7 +114,7 @@ export default {
         headingType="h3"
         description={'Потребительский кредит на любые цели, без залога и поручительства'}
         benefits={benefits}
-        buttons={buttonsSecondary}
+        buttons={buttons2}
         image={letterWithMoney}
       />
     </div>
@@ -100,7 +128,7 @@ export default {
         headingType="h3"
         description={'Без переоформления залогой недвижимости на банк'}
         benefits={benefits}
-        buttons={buttonsSecondary}
+        buttons={buttons2}
         image={building}
       />
     </div>
@@ -114,7 +142,24 @@ export default {
         headingType="h3"
         description={'Для людей в возрасте до 75 лет'}
         benefits={benefits}
-        buttons={buttonsSecondary}
+        buttons={buttons2}
+      />
+    </div>
+  ),
+  'with-add-desc': (
+    <div className="container grid grid-cols-12">
+      <ProductTile
+        context={context}
+        className="col-span-6"
+        title="Ипотечное страхование"
+        headingType="h3"
+        description={'Финансовая защита заемщиков в случае непредвиденных обстоятельств'}
+        additionalDescription={
+          'Страховая сумма и страховой взнос зависит от остатка задолженности по ипотеке'
+        }
+        benefits={benefits2}
+        buttons={buttons3}
+        image={letterWithPhone}
       />
     </div>
   ),

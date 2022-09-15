@@ -19,4 +19,6 @@ export type ProductTileContent = HeadingContent &
      * @maxItems 7
      */
     benefits?: TextBenefit[];
+    /** @title Дополнительное описание */
+    additionalDescription?: string;
   };

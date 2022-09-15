@@ -2441,6 +2441,10 @@ Object {
         "blockListType": "ProductTile",
       },
       "properties": Object {
+        "additionalDescription": Object {
+          "title": "Дополнительное описание",
+          "type": "string",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/TextBenefit",
@@ -2487,6 +2491,10 @@ Object {
     },
     "ProductTileContent": Object {
       "properties": Object {
+        "additionalDescription": Object {
+          "title": "Дополнительное описание",
+          "type": "string",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/TextBenefit",
@@ -2529,6 +2537,10 @@ Object {
         "blockType": "ProductTile",
       },
       "properties": Object {
+        "additionalDescription": Object {
+          "title": "Дополнительное описание",
+          "type": "string",
+        },
         "benefits": Object {
           "items": Object {
             "$ref": "#/definitions/TextBenefit",
