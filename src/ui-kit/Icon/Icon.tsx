@@ -14,7 +14,7 @@ export const Icon = JSX<IconProps>(
     ...imgProps
   }) => {
     const href = `${projectSettings.CDN || ''}icons/${name}.svg`;
-    const svgUseStyle = iconVersion === 'white' ? 'text-black invert' : '';
+    const svgUseStyle = iconVersion === 'white' ? 'text-black invert' : 'text-primary-main';
 
     if (asSVG) {
       return (

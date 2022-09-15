@@ -1563,6 +1563,38 @@ Object {
       },
       "type": "object",
     },
+    "InsuranceContent": Object {
+      "properties": Object {
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/Benefit",
+          },
+          "maxItems": 6,
+          "title": "Список преимуществ",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "insuranceSum": Object {
+          "title": "Страховая сумма",
+          "type": "number",
+        },
+        "monthLimit": Object {
+          "title": "Ежемесячный лимит",
+          "type": "number",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
     "LinkColumnsMode": Object {
       "enum": Array [
         "single",
