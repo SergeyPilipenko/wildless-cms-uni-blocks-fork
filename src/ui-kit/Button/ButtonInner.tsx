@@ -7,7 +7,7 @@ interface ButtonInnerProps extends ButtonWithIconProps {
 }
 
 export const ButtonInner = JSX<ButtonInnerProps>((props) => {
-  const { text, aboveText, appendLeft } = props;
+  const { text, aboveText, appendLeft, appendRight } = props;
   return (
     <div className={getButtonStyle(props)}>
       {appendLeft ? appendLeft : null}
@@ -17,6 +17,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
           <div className="text-button text-left">{text}</div>
         </div>
       ) : null}
+      {appendRight ? appendRight : null}
     </div>
   );
 });

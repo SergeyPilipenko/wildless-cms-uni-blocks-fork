@@ -29,6 +29,8 @@ export interface ButtonWithIconProps extends ButtonProps {
   aboveText?: string;
   /** @hidden */
   appendLeft?: any;
+  /** @hidden */
+  appendRight?: any;
   /** @title Закругленные углы */
   rounded?: boolean;
   /** @hidden */
