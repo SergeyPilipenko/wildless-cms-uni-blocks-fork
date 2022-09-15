@@ -33,9 +33,7 @@ export const GroupBlock = JSX<GroupBlockProps>(
           <GroupBlockTabs currentTag={currentTag} onTabClick={setCurrentTag} tabs={tabsNewMap} />
         ) : null}
         {groupBlocks.length ? (
-          <div className="list-none">
-            <GroupBlocksItem context={context} groupBlocks={filteredBlocks} />
-          </div>
+          <GroupBlocksItem context={context} groupBlocks={filteredBlocks} />
         ) : null}
       </section>
     );

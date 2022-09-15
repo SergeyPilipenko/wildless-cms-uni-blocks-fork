@@ -15,13 +15,13 @@ export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
   const { tabs, currentTag, onTabClick, className = '', isShowCounter = true } = props;
 
   return (
-    <div className={`mb-2 box-border flex gap-x-1 h-12 ${className}`} role="tablist">
+    <div className={`mb-2 box-border flex gap-x-1 ${className}`} role="tablist">
       {tabs?.map(renderTab(onTabClick, isShowCounter, currentTag))}
     </div>
   );
 });
 
-const badgeStyle = 'w-[22px] h-[22px] rounded-full text-m-sm';
+const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-m-sm';
 
 const renderTab =
   (onTabClick: TabClickHandler, isShowCounter: boolean, currentTag?: string) =>
@@ -30,12 +30,12 @@ const renderTab =
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
     const tabText = isActive ? 'text-white' : 'text-secondary-text group-hover:text-primary-main';
     const counterBlockStyle = `${badgeStyle} 
-      ${isActive ? 'bg-white/30 text-white' : 'bg-secondary-text/10 text-secondary-text'}`;
+      ${isActive ? 'bg-white/30 text-white' : 'bg-secondary-light text-secondary-text'}`;
 
     return (
       <div
         key={String(i)}
-        className={`flex h-full w-full flex-1 cursor-pointer mr-2 last:mr-0 box-content ${tabBg}`}
+        className={`flex h-full w-full h-12 flex-1 cursor-pointer mr-2 last:mr-0 box-content ${tabBg}`}
         role="tab"
         onClick={() => onTabClick(tab.tag)}
         aria-selected={String(isActive)}
