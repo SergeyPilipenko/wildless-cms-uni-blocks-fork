@@ -30,6 +30,12 @@ export interface HeaderContent extends SitemapProps {
    */
   defaultLocation?: string;
   /**
+   * @title Показывать подменю
+   * @hidden
+   * @default true
+   */
+  showSubMenu?: boolean;
+  /**
    * @title Фон элемента
    * @hidden
    * @default white

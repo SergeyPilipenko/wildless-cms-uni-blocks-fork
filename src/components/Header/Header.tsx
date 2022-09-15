@@ -22,6 +22,7 @@ export const Header = JSX<HeaderProps>(
   ({
     className = '',
     defaultLocation = 'Москва',
+    showSubMenu = true,
     bgColor = 'bg-white',
     context,
     topItems,
@@ -58,7 +59,9 @@ export const Header = JSX<HeaderProps>(
             />
           </div>
           <div className={`mt-6 h-[1px] ${BORDER_COLORS[bgColor]}`} />
-          <HeaderSubMenu context={context} subItems={activeTopItem?.items} bgColor={bgColor} />
+          {showSubMenu && activeTopItem?.items?.length ? (
+            <HeaderSubMenu context={context} subItems={activeTopItem.items} bgColor={bgColor} />
+          ) : null}
         </div>
       </header>
     );

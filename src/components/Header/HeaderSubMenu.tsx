@@ -8,6 +8,11 @@ import { isSSR } from '../../utils/isSSR';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { headerSubMenuObserver } from './HeaderSubMenuObserver';
 
+const DOT_BG_COLORS_MAP: Record<BgColorVersion, string> = {
+  'bg-white': 'bg-primary-text',
+  transparent: 'bg-white',
+};
+
 export interface HeaderSubMenuProps {
   context: ContentPageContext;
   subItems?: LinkProps[];
@@ -51,6 +56,7 @@ export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems, bgCol
         subMenuIsShow,
         toggleSubMenu,
         subItems,
+        bgColor,
         router,
         handlerDecorator,
       })}
@@ -63,6 +69,7 @@ const renderDotsSubMenu = ({
   subMenuIsShow,
   toggleSubMenu,
   subItems,
+  bgColor,
   router,
   handlerDecorator,
 }) => (
@@ -77,9 +84,7 @@ const renderDotsSubMenu = ({
       onClick={toggleSubMenu}
       aria-label={`${subMenuIsShow ? 'Скрыть другие разделы' : 'Показать другие разделы'}`}
     >
-      {Array(3)
-        .fill(0)
-        .map((_, i) => renderDot(i))}
+      {Array(3).fill(bgColor).map(renderDot)}
     </button>
     <div
       className={`flex flex-col rounded-md bg-white p-6 pb-2 ${subMenuIsShow ? '' : 'hidden'}`}
@@ -103,6 +108,6 @@ const renderDotsSubMenuItems = (subItems, router, handlerDecorator) =>
     </a>
   ));
 
-const renderDot = (i: number) => (
-  <div key={String(i)} className="w-[3px] h-[3px] rounded bg-black mr-1" />
+const renderDot = (bgColor: BgColorVersion, i: number) => (
+  <div key={String(i)} className={`w-[3px] h-[3px] rounded mr-1 ${DOT_BG_COLORS_MAP[bgColor]}`} />
 );
