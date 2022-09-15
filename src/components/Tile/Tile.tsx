@@ -59,7 +59,11 @@ export const Tile = JSX<TileProps>((props) => {
         }
         buttons={
           buttons?.length ? (
-            <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+            <ButtonSection
+              context={context}
+              buttons={buttons.map((button) => ({ ...button, className: 'w-[158px]' }))}
+              className="flex mt-9 gap-3"
+            />
           ) : null
         }
         image={image?.src && <Img className="mt-auto ml-7" image={image} />}
