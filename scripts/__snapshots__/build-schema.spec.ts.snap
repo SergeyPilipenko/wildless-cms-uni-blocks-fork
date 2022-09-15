@@ -2398,19 +2398,6 @@ Object {
           "title": "Слайды",
           "type": "array",
         },
-      },
-      "title": "Продуктовая галерея (для мобильных горизонтальная прокрутка shift+mouseScroll)",
-      "type": "object",
-    },
-    "ProductGalleryGreenContent": Object {
-      "properties": Object {
-        "slides": Object {
-          "items": Object {
-            "$ref": "#/definitions/ProductSlide",
-          },
-          "title": "Слайды",
-          "type": "array",
-        },
         "version": Object {
           "$ref": "#/definitions/BlockVersion",
         },

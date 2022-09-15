@@ -20,7 +20,6 @@ import { PictureText } from './PictureText/PictureText';
 import { Placeholder } from './Placeholder/Placeholder';
 import { ProductBlock } from './ProductBlock/ProductBlock';
 import { ProductGallery } from './ProductGallery/ProductGallery';
-import { ProductGalleryGreen } from './ProductGalleryGreen/ProductGalleryGreen';
 import { ProductTile } from './ProductTile/ProductTile';
 import { PromoTile } from './PromoTile/PromoTile';
 import { Recommendation } from './Recommendation/Recommendation';
@@ -50,7 +49,6 @@ export const Blocks = {
   PictureText,
   ProductBlock,
   ProductGallery,
-  ProductGalleryGreen,
   ProductTile,
   PromoTile,
   OtherProducts,

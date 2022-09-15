@@ -1,16 +1,16 @@
 import { context } from '../../setup-fixture';
 import { ProductGallery } from './ProductGallery';
 import type { Picture } from '../../model/Picture';
-import type { ProductSlide } from './ProductGalleryContent';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
-const moneyImage: Picture = {
-  src: 'money-1.png',
+const percentImage: Picture = {
+  src: '3-6-percent.png',
   format: 'webp',
   size: {
-    width: 234,
-    height: 234,
+    width: 338,
+    height: 420,
   },
-  alt: 'Варианты потребительского кредита',
+  alt: 'Ставка от 3,6% годовых',
 };
 
 const worker: Picture = {
@@ -31,113 +31,155 @@ const creditCard: Picture = {
   },
 };
 
-const slides: ProductSlide[] = [
+const items = [
+  'Потребительский кредит по специальной процентной ставке',
+  'Получите деньги без залога и поручительства',
+  'Кредитный лимит до 5 млн рублей',
+];
+const buttons: ButtonWithIconProps[] = [
   {
-    nav: {
-      title: 'Деньги на любые цели',
-      description: 'Ставка от 12,5% годовых на срок до 5 лет',
-    },
-    productBlock: {
-      title: 'Ставка от 12,5% годовых на срок до 5 лет!',
-      headingType: 'h2',
-      items: [
-        'Потребительский кредит по специальной процентной ставке',
-        'Получите деньги без залога и поручительства',
-        'Кредитный лимит до 5 млн рублей',
-      ],
-      buttons: [
-        {
-          href: 'https://rshb.ru',
-          text: 'Подробнее',
-          target: '_blank',
-          version: 'primary',
-        },
-      ],
-      version: 'primary',
-      image: moneyImage,
-    },
+    href: 'https://rshb.ru',
+    text: 'Подробнее',
+    target: '_blank',
+    version: 'primary',
   },
+];
+
+const buttonsSecondary: ButtonWithIconProps[] = [
   {
-    nav: {
-      title: 'Для людей в возрасте',
-      description: 'Ставка от 12,5% годовых на срок до 3 лет',
-    },
-    productBlock: {
-      title: 'Ставка от 12,5% годовых на срок до 3 лет!',
-      headingType: 'h2',
-      items: [
-        'Потребительский кредит по специальной процентной ставке',
-        'Получите деньги без залога и поручительства',
-        'Кредитный лимит до 5 млн рублей',
-      ],
-      buttons: [
-        {
-          href: 'https://rshb.ru',
-          text: 'Подробнее',
-          target: '_blank',
-          version: 'primary',
-        },
-      ],
-      version: 'secondary',
-      image: worker,
-    },
-  },
-  {
-    nav: {
-      title: 'Выгодно покупать',
-      description: 'Дополнительные бонусные баллы за покупки',
-    },
-    productBlock: {
-      title: 'Дополнительные бонусные баллы за покупки!',
-      headingType: 'h2',
-      items: [
-        'Потребительский кредит по специальной процентной ставке',
-        'Получите деньги без залога и поручительства',
-        'Кредитный лимит до 5 млн рублей',
-      ],
-      buttons: [
-        {
-          href: 'https://rshb.ru',
-          text: 'Подробнее',
-          target: '_blank',
-          version: 'primary',
-        },
-      ],
-      version: 'primary',
-      image: creditCard,
-    },
-  },
-  {
-    nav: {
-      title: 'Карты Unionpay',
-      description: 'Кэшбэк до 20% у партнеров',
-    },
-    productBlock: {
-      title: 'Карты Unionpay',
-      headingType: 'h2',
-      items: [
-        'Потребительский кредит по специальной процентной ставке',
-        'Получите деньги без залога и поручительства',
-        'Кредитный лимит до 5 млн рублей',
-      ],
-      buttons: [
-        {
-          href: 'https://rshb.ru',
-          text: 'Подробнее',
-          target: '_blank',
-          version: 'primary',
-        },
-      ],
-      version: 'secondary',
-      image: creditCard,
-    },
+    href: 'https://rshb.ru',
+    text: 'Подробнее',
+    target: '_blank',
+    version: 'secondary',
   },
 ];
 
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <ProductGallery className="col-span-12" context={context} slides={slides} />
+      <ProductGallery
+        className="col-span-12"
+        context={context}
+        slides={[
+          {
+            nav: {
+              title: 'Кредит по одному документу',
+              description: 'Ставка от 5,5% годовых',
+            },
+            productBlock: {
+              title: 'Кредит по одному документу',
+              description: 'Ставка от 5,5% годовых',
+              headingType: 'h2',
+              items,
+              buttons,
+              image: percentImage,
+            },
+          },
+          {
+            nav: {
+              title: 'Для людей в возрасте',
+              description: 'Ставка до 7% годовых',
+            },
+            productBlock: {
+              title: 'Ставка от 12,5% годовых на срок до 3 лет!',
+              headingType: 'h2',
+              items,
+              buttons,
+              image: worker,
+            },
+          },
+          {
+            nav: {
+              title: 'Выгодно покупать',
+              description: 'Ставка от 5% годовых',
+            },
+            productBlock: {
+              title: 'Дополнительные бонусные баллы за покупки!',
+              headingType: 'h2',
+              items,
+              buttons,
+              image: creditCard,
+            },
+          },
+          {
+            nav: {
+              title: 'Карты Unionpay',
+              description: '120 дней льготный период',
+            },
+            productBlock: {
+              title: 'Карты Unionpay',
+              headingType: 'h2',
+              items,
+              buttons,
+              image: creditCard,
+            },
+          },
+        ]}
+      />
+    </div>
+  ),
+  primary: (
+    <div className="container grid grid-cols-12">
+      <ProductGallery
+        className="col-span-12"
+        context={context}
+        version={'secondary'}
+        slides={[
+          {
+            nav: {
+              title: 'Кредит по одному документу',
+              description: 'Ставка от 5,5% годовых',
+            },
+            productBlock: {
+              title: 'Кредит по одному документу',
+              description: 'Кредит наличными без залога и поручительства, только по паспорту',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: percentImage,
+            },
+          },
+          {
+            nav: {
+              title: 'Для людей в возрасте',
+              description: 'Ставка до 7% годовых',
+            },
+            productBlock: {
+              title: 'Ставка от 12,5% годовых на срок до 3 лет!',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: worker,
+            },
+          },
+          {
+            nav: {
+              title: 'Выгодно покупать',
+              description: 'Ставка от 5% годовых',
+            },
+            productBlock: {
+              title: 'Дополнительные бонусные баллы за покупки!',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: creditCard,
+            },
+          },
+          {
+            nav: {
+              title: 'Карты Unionpay',
+              description: '120 дней льготный период',
+            },
+            productBlock: {
+              title: 'Карты Unionpay',
+              headingType: 'h2',
+              items,
+              buttons: buttonsSecondary,
+              image: creditCard,
+            },
+          },
+        ]}
+      />
     </div>
   ),
 };

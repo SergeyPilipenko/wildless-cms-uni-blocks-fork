@@ -10,14 +10,13 @@
         "image": {
           "format": "webp",
           "size": {
-            "width": 234,
-            "height": 234
+            "width": 608,
+            "height": 299
           }
         },
+        "version": "primary",
         "description": "Описание",
-        "isDotted": "true",
-        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
-        "version": "primary"
+        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
       }
     },
     {
@@ -30,14 +29,13 @@
         "image": {
           "format": "webp",
           "size": {
-            "width": 234,
-            "height": 234
+            "width": 608,
+            "height": 299
           }
         },
+        "version": "primary",
         "description": "Описание",
-        "isDotted": "true",
-        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
-        "version": "primary"
+        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
       }
     }
   ]

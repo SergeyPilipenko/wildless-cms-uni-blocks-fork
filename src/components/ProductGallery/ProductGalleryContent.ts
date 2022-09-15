@@ -1,4 +1,5 @@
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
+import type { BlockVersion } from '../../model/BlockVersion';
 
 /** @title Кнопка под слайдом */
 interface ProductGalleryNav {
@@ -19,17 +20,13 @@ export interface ProductSlide {
 }
 
 /**
- * @title Продуктовая галерея (для мобильных горизонтальная прокрутка shift+mouseScroll)
+ * @title Продуктовая галерея
  */
 export interface ProductGalleryContent {
-  /**
-   * @title Задержка
-   * @hidden //! temporary not used
-   */
-  duration?: number;
   /**
    * @title Слайды
    * @minItems 2
    */
   slides?: ProductSlide[];
+  version?: BlockVersion;
 }

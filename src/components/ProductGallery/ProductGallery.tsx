@@ -1,39 +1,60 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ProductGalleryBlock } from './ProductGalleryBlock';
 import type { UniBlockProps } from '../../types';
+import type { BlockVersion } from '../../model/BlockVersion';
+import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
+import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent } from './ProductGalleryContent';
 
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
 
+type StyleType = {
+  title: string;
+  text: string;
+};
+
+const productGalleryStyleMap: Record<BlockVersion, string> = {
+  primary: 'bg-white text-primary-text',
+  secondary: 'bg-primary-main text-white',
+};
+
+const productBlockStyleMap: Record<BlockVersion, StyleType> = {
+  primary: { title: 'text-secondary-text', text: 'text-secondary-text' },
+  secondary: { title: 'text-white', text: 'text-white/80' },
+};
+
+const productSlideStyleMap: Record<BlockVersion, string> = {
+  primary: 'bg-white text-primary-text',
+  secondary: 'bg-primary-main text-white',
+};
+
 export const ProductGallery = JSX<ProductGalleryProps>(
-  ({ className, context, duration = 0, slides = [], anchor = null }) => {
+  ({ className = '', context, slides = [], version = 'primary', anchor = null }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
 
     return (
       <section
-        className={`font-sans bg-white overflow-hidden w-100 ${className || ''}`}
         id={anchor}
+        className={`box-border pt-[50px] overflow-hidden relative font-sans w-100 ${className}
+        ${productGalleryStyleMap[version]}`}
       >
         <div
-          className={`flex duration-1000`}
+          className="flex duration-1000 pb-14"
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}
           role="list"
         >
-          {galleryBlocks.map((_, i) => (
-            <ProductGalleryBlock key={String(i)} context={context} block={_} />
-          ))}
+          {galleryBlocks.map((_, i) => renderProductBlock({ ..._, version }, i, context))}
         </div>
 
-        <div className="flex">
+        <div className="flex items-center absolute bottom-6 left-0 right-0 px-[26px] box-border">
           {galleryNav.map((slide, i) =>
             renderNavButton({
               slide,
               i,
               activeSlideIndex,
               onClick: () => setActiveSlideIndex(i),
-              duration,
+              version,
             }),
           )}
         </div>
@@ -42,30 +63,58 @@ export const ProductGallery = JSX<ProductGalleryProps>(
   },
 );
 
-function renderNavButton({ slide, i, activeSlideIndex, onClick, duration }) {
+function renderProductBlock(block: ProductBlockInnerContent, i: number, context) {
+  const { version } = block;
+  const additionalClass = version ? productBlockStyleMap[version].title : '';
+
+  return (
+    <section
+      key={String(i)}
+      className="box-border relative flex grow-0 shrink-0 basis-full"
+      role="listitem"
+    >
+      <div className="flex grow">
+        <ProductBlockInner
+          className={`pl-[50px] z-[1] ${additionalClass}`}
+          context={context}
+          textBlockClassName="mb-[154px]"
+          {...block}
+        />
+      </div>
+    </section>
+  );
+}
+
+function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
   const isActiveBtn = i === activeSlideIndex;
-  const progressBarClassName = isActiveBtn ? 'animate-slide' : '';
-  const btnTitleClassName = isActiveBtn ? 'text-primary-text' : 'text-secondary-text';
+
+  const btnClassName = isActiveBtn
+    ? 'bg-white shadow-dark-blue/42 h-[102px] w-[354px] min-w-[354px] p-0 border-none'
+    : `min-w-[277px] px-0 pt-4 pb-[23px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
+      ${productSlideStyleMap[version]}`;
+  const btnTitleClassName = isActiveBtn
+    ? 'text-primary-text text-title-2xs'
+    : `text-base ${productBlockStyleMap[version].title}`;
+  const btnDescClassName = isActiveBtn
+    ? 'text-secondary-text text-m-title-xs mt-2.5'
+    : `text-m-md mt-1.5 ${productBlockStyleMap[version].text}`;
+
+  const additionalBorder = version === 'secondary' ? 'border-white/50' : 'border-black/50';
+
   return (
     <button
       type="button"
       key={String(i)}
       onClick={onClick}
       aria-label={slide?.title}
-      className={`font-sans group relative overflow-hidden border-0 bg-inherit cursor-pointer text-left px-0 pt-4 pb-[23px] grow basis-0`}
+      className={`box-border font-sans relative overflow-hidden border-[1px] border-white/50 cursor-pointer text-left mx-1 grow basis-0
+        ${btnClassName} ${additionalBorder}
+      `}
     >
-      <div className="border-0 border-r border-solid border-main-divider px-6">
-        <div
-          className={`text-sm font-medium pb-[3px] group-hover:text-primary-text ${btnTitleClassName}`}
-        >
-          {slide?.title}
-        </div>
-        <div className="text-xs text-secondary-text">{slide.desc}</div>
+      <div className="border-0 px-6">
+        <div className={`font-medium ${btnTitleClassName}`}>{slide?.title}</div>
+        <div className={`text-secondary-text ${btnDescClassName}`}>{slide.description}</div>
       </div>
-      <div
-        className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary-main -translate-x-full ${progressBarClassName}`}
-        style={{ animationDuration: `${duration}s`, animationFillMode: 'forwards' }}
-      ></div>
     </button>
   );
 }
