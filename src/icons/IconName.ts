@@ -3,6 +3,7 @@
 
 export enum IconMap {
   ActualBalanceIcon = 'ActualBalanceIcon',
+  AirPlane = 'AirPlane',
   AppleIcon = 'AppleIcon',
   ArrowDownIcon = 'ArrowDownIcon',
   ArrowLeftIcon = 'ArrowLeftIcon',
@@ -21,7 +22,9 @@ export enum IconMap {
   CardPosIcon = 'CardPosIcon',
   CardTickIcon = 'CardTickIcon',
   CardWithGemIcon = 'CardWithGemIcon',
+  CarIcon = 'CarIcon',
   ChartSquareIcon = 'ChartSquareIcon',
+  CinemaIcon = 'CinemaIcon',
   ClockIcon = 'ClockIcon',
   CloseIcon = 'CloseIcon',
   ComfortableCompIcon = 'ComfortableCompIcon',
@@ -29,6 +32,7 @@ export enum IconMap {
   DiscountShapeIcon = 'DiscountShapeIcon',
   DocIcon = 'DocIcon',
   DocIconMonoColor = 'DocIconMonoColor',
+  DocsIcon = 'DocsIcon',
   DocumentTextIcon = 'DocumentTextIcon',
   DollarIcon = 'DollarIcon',
   EarthIcon = 'EarthIcon',
@@ -62,13 +66,16 @@ export enum IconMap {
   PersonalCardIcon = 'PersonalCardIcon',
   PlayMarketIcon = 'PlayMarketIcon',
   PlusIcon = 'PlusIcon',
+  PowerIcon = 'PowerIcon',
   Profile2UserIcon = 'Profile2UserIcon',
   ProfileIcon = 'ProfileIcon',
+  PumpkinIcon = 'PumpkinIcon',
   RoundRubleIcon = 'RoundRubleIcon',
   SafeIcon = 'SafeIcon',
   ShieldTickIcon = 'ShieldTickIcon',
   SignDocsIcon = 'SignDocsIcon',
   SmallClockIcon = 'SmallClockIcon',
+  SoundIcon = 'SoundIcon',
   TelegramIcon = 'TelegramIcon',
   UnionPayIcon = 'UnionPayIcon',
   UserTickIcon = 'UserTickIcon',
@@ -78,15 +85,17 @@ export enum IconMap {
   WalletAddIcon = 'WalletAddIcon',
   WalletIcon = 'WalletIcon',
   WalletWithMoneyIcon = 'WalletWithMoneyIcon',
+  WateringCan = 'WateringCan',
 }
 
 export enum IconTitleMap {
   ActualBalanceIcon = 'Деньги',
+  AirPlane = 'Самолет',
   AppleIcon = 'Лого «Apple»',
   ArrowDownIcon = "Стрелка 'Вниз'",
   ArrowLeftIcon = 'Стрелка',
-  ArrowsRewindRight = 'ArrowsRewindRight',
-  ArrowUpIcon = 'ArrowUpIcon',
+  ArrowsRewindRight = 'Стрелка',
+  ArrowUpIcon = 'Стрелка вверх',
   AtmIcon = 'Банкомат',
   BankIcon = 'Банк',
   BurgerIcon = 'Бургер',
@@ -100,7 +109,9 @@ export enum IconTitleMap {
   CardPosIcon = 'Кред. карта под наклоном',
   CardTickIcon = 'Кред. карта с галочкой',
   CardWithGemIcon = 'Карта с драгоценностями',
+  CarIcon = 'Машина',
   ChartSquareIcon = 'Деньги внутри кошелька',
+  CinemaIcon = 'Кино',
   ClockIcon = 'Часы',
   CloseIcon = 'Крестик',
   ComfortableCompIcon = 'Кресло',
@@ -108,6 +119,7 @@ export enum IconTitleMap {
   DiscountShapeIcon = 'Скидка',
   DocIcon = 'Документ',
   DocIconMonoColor = 'Документ (одноцветный)',
+  DocsIcon = 'Документы',
   DocumentTextIcon = 'Документ с текстом',
   DollarIcon = 'Доллар',
   EarthIcon = 'Земля',
@@ -141,13 +153,16 @@ export enum IconTitleMap {
   PersonalCardIcon = 'Персональная карта',
   PlayMarketIcon = 'Лого «PlayMarket»',
   PlusIcon = 'Плюс',
+  PowerIcon = 'Щит',
   Profile2UserIcon = 'Профиль, 2 персоны',
   ProfileIcon = 'Профиль',
+  PumpkinIcon = 'Тыква',
   RoundRubleIcon = 'Рубль (круг.)',
   SafeIcon = 'Сейф',
   ShieldTickIcon = 'Безопасность',
   SignDocsIcon = 'Подписанные документы',
   SmallClockIcon = 'Маленькие часы',
+  SoundIcon = 'Звук',
   TelegramIcon = 'Лого «Telegram»',
   UnionPayIcon = 'UnionPay',
   UserTickIcon = 'Пользователь',
@@ -157,6 +172,7 @@ export enum IconTitleMap {
   WalletAddIcon = 'Кошелёк с плюсом',
   WalletIcon = 'Кошелёк',
   WalletWithMoneyIcon = 'Кошелёк с деньгами',
+  WateringCan = 'Добавить продукт',
 }
 
 /**
@@ -164,12 +180,13 @@ export enum IconTitleMap {
  * @title Иконка
  * @enumNames [
  *   "",
- *   "Деньги", "Лого «Apple»", "Стрелка 'Вниз'", "Стрелка", "ArrowsRewindRight", "ArrowUpIcon", "Банкомат", "Банк", "Бургер", "Бургер (белый)", "Календарь 2", "Скруглённый календарь", "Календарь", "Календарь с галочкой", "Календарь белый", "Кред. карта", "Кред. карта под наклоном", "Кред. карта с галочкой", "Карта с драгоценностями", "Деньги внутри кошелька", "Часы", "Крестик", "Кресло", "Кредитные карты", "Скидка", "Документ", "Документ (одноцветный)", "Документ с текстом", "Доллар", "Земля", "Пустой кошелёк с возвратом", "Пустой кошелёк", "Пустой кошелёк (белый)", "Евро", "Геолокация", "Зеркало", "Глобус", "Gps", "Сетка", "Сетка (белая)", "Диаграмма роста", "Скидка", "JCB", "Лупа", "MasterCard", "Минус", "МИР", "Деньги", "Денежное страхование", "Монитор и мобильный", "Новый документ", "Офис", "Лого «Одноклассники»", "Бизнес", "Проценты (круг.)", "Проценты", "Проценты белые", "Персональная карта", "Лого «PlayMarket»", "Плюс", "Профиль, 2 персоны", "Профиль", "Рубль (круг.)", "Сейф", "Безопасность", "Подписанные документы", "Маленькие часы", "Лого «Telegram»", "UnionPay", "Пользователь", "Visa", "Лого «VK»", "Пополнение карты", "Кошелёк с плюсом", "Кошелёк", "Кошелёк с деньгами"
+ *   "Деньги", "Самолет", "Лого «Apple»", "Стрелка 'Вниз'", "Стрелка", "Стрелка", "Стрелка вверх", "Банкомат", "Банк", "Бургер", "Бургер (белый)", "Календарь 2", "Скруглённый календарь", "Календарь", "Календарь с галочкой", "Календарь белый", "Кред. карта", "Кред. карта под наклоном", "Кред. карта с галочкой", "Карта с драгоценностями", "Машина", "Деньги внутри кошелька", "Кино", "Часы", "Крестик", "Кресло", "Кредитные карты", "Скидка", "Документ", "Документ (одноцветный)", "Документы", "Документ с текстом", "Доллар", "Земля", "Пустой кошелёк с возвратом", "Пустой кошелёк", "Пустой кошелёк (белый)", "Евро", "Геолокация", "Зеркало", "Глобус", "Gps", "Сетка", "Сетка (белая)", "Диаграмма роста", "Скидка", "JCB", "Лупа", "MasterCard", "Минус", "МИР", "Деньги", "Денежное страхование", "Монитор и мобильный", "Новый документ", "Офис", "Лого «Одноклассники»", "Бизнес", "Проценты (круг.)", "Проценты", "Проценты белые", "Персональная карта", "Лого «PlayMarket»", "Плюс", "Щит", "Профиль, 2 персоны", "Профиль", "Тыква", "Рубль (круг.)", "Сейф", "Безопасность", "Подписанные документы", "Маленькие часы", "Звук", "Лого «Telegram»", "UnionPay", "Пользователь", "Visa", "Лого «VK»", "Пополнение карты", "Кошелёк с плюсом", "Кошелёк", "Кошелёк с деньгами", "Добавить продукт"
  * ]
  */
 export type IconName =
   | ''
   | 'ActualBalanceIcon'
+  | 'AirPlane'
   | 'AppleIcon'
   | 'ArrowDownIcon'
   | 'ArrowLeftIcon'
@@ -188,7 +205,9 @@ export type IconName =
   | 'CardPosIcon'
   | 'CardTickIcon'
   | 'CardWithGemIcon'
+  | 'CarIcon'
   | 'ChartSquareIcon'
+  | 'CinemaIcon'
   | 'ClockIcon'
   | 'CloseIcon'
   | 'ComfortableCompIcon'
@@ -196,6 +215,7 @@ export type IconName =
   | 'DiscountShapeIcon'
   | 'DocIcon'
   | 'DocIconMonoColor'
+  | 'DocsIcon'
   | 'DocumentTextIcon'
   | 'DollarIcon'
   | 'EarthIcon'
@@ -229,13 +249,16 @@ export type IconName =
   | 'PersonalCardIcon'
   | 'PlayMarketIcon'
   | 'PlusIcon'
+  | 'PowerIcon'
   | 'Profile2UserIcon'
   | 'ProfileIcon'
+  | 'PumpkinIcon'
   | 'RoundRubleIcon'
   | 'SafeIcon'
   | 'ShieldTickIcon'
   | 'SignDocsIcon'
   | 'SmallClockIcon'
+  | 'SoundIcon'
   | 'TelegramIcon'
   | 'UnionPayIcon'
   | 'UserTickIcon'
@@ -244,4 +267,5 @@ export type IconName =
   | 'WalletAdd2Icon'
   | 'WalletAddIcon'
   | 'WalletIcon'
-  | 'WalletWithMoneyIcon';
+  | 'WalletWithMoneyIcon'
+  | 'WateringCan';

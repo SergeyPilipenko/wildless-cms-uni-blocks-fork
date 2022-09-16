@@ -1,0 +1,54 @@
+{
+  "title": "Вы можете оплатить бонусными баллами",
+  "subtitle": "Удобный каталог с большим ассортиментом товаров и сервисов",
+  "bonusBenefits": [
+    {
+      "label": "Более 5000 товаров",
+      "icon": {
+        "icon": "WateringCan"
+      }
+    },
+    {
+      "label": "750 авиакомпаний, 1,2 млн отелей, билеты РЖД",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    },
+    {
+      "label": "Аренда автомобилей",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    },
+    {
+      "label": "Болеее 1000 развлечений",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    },
+    {
+      "label": "Платежные гаджеты Pay Ring",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    },
+    {
+      "label": "Цифровые сервисы",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    },
+    {
+      "label": "Фермерские продукты",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    },
+    {
+      "label": "Страхование",
+      "icon": {
+        "icon": "SignDocsIcon"
+      }
+    }
+  ]
+}

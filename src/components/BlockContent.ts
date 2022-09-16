@@ -22,6 +22,7 @@ import type { StepsBlockContent } from './StepsBlock/StepsBlockContent';
 import type { TariffsTableContent } from './TariffsTable/TariffsTableContent';
 import type { TextBlockContent } from './TextBlock/TextBlockContent';
 import type { TileContent } from './Tile/TileContent';
+import type { BonusBenefitsBlockContent } from './BonusBenefitsBlock/BonusBenefitsBlockContent';
 
 /**
  * @hidden
@@ -50,4 +51,5 @@ export type BlockContent =
   | TileContent
   | NavigationContent
   | LinkListContent
-  | GroupBlockContent;
+  | GroupBlockContent
+  | BonusBenefitsBlockContent;

@@ -29,6 +29,7 @@ import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
 import { GroupBlock } from './GroupBlock/GroupBlock';
+import { BonusBenefitsBlock } from './BonusBenefitsBlock/BonusBenefitsBlock';
 
 export const Blocks = {
   Accordion,
@@ -62,4 +63,5 @@ export const Blocks = {
   Navigation,
   Placeholder,
   GroupBlock,
+  BonusBenefitsBlock,
 };
