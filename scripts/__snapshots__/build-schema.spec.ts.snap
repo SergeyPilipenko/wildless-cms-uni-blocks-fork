@@ -1221,6 +1221,20 @@ Object {
           "title": "Дополнительное меню",
           "type": "array",
         },
+        "logo": Object {
+          "properties": Object {
+            "image": Object {
+              "$ref": "#/definitions/Picture",
+              "title": "Иконка логотипа",
+            },
+            "title": Object {
+              "title": "Текст логотипа",
+              "type": "string",
+            },
+          },
+          "title": "Логотип",
+          "type": "object",
+        },
         "topItems": Object {
           "items": Object {
             "$ref": "#/definitions/TopMenuItem",

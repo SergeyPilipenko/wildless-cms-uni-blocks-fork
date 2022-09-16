@@ -1,6 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { BgColorVersion } from '../../model/BgColorVersion';
 import { SVG } from '../SVG';
+import { Img } from '../Img/Img';
+import type { Picture } from '../../model/Picture';
 
 export interface LogoProps {
   className: string;
@@ -8,6 +10,10 @@ export interface LogoProps {
   targetBlank: boolean;
   bgColor?: string;
   hideTitle?: boolean;
+  logo?: {
+    image?: Picture;
+    title?: string;
+  };
 }
 
 const LOGO_PATHS = [
@@ -27,25 +33,38 @@ const TEXT_COLOR: Record<BgColorVersion, string> = {
 };
 
 export const Logo = JSX<Partial<LogoProps>>(
-  ({ className, href, children, targetBlank, bgColor = 'bg-white', hideTitle }) => {
+  ({
+    className = '',
+    href,
+    logo,
+    children = logo?.title,
+    targetBlank,
+    bgColor = 'bg-white',
+    hideTitle,
+  }) => {
     return (
       <a
-        className={`inline-flex items-center font-sans no-underline ${className || ''}`}
+        className={`inline-flex items-center font-sans no-underline ${className}`}
         href={href || 'https://rshb.ru/'}
         target={targetBlank ? '_blank' : '_self'}
-        aria-label="Россельхозбанк"
+        aria-label={logo?.title || 'Россельхозбанк'}
       >
-        <SVG
-          className={`${SVG_COLOR[bgColor]} w-10`}
-          viewBox="0 0 40 45"
-          paths={LOGO_PATHS.map((d) => ({ d }))}
-        />
-        {!hideTitle && (
-          <span className={`${TEXT_COLOR[bgColor]} font-medium ml-2.5`}>
-            {children || 'Россельхозбанк'}
-          </span>
+        {logo?.image?.src ? (
+          <Img image={logo.image} className={SVG_COLOR[bgColor]} width="40" height="45" asSVG />
+        ) : (
+          <SVG
+            className={`${SVG_COLOR[bgColor]} w-10`}
+            viewBox="0 0 40 45"
+            paths={LOGO_PATHS.map((d) => ({ d }))}
+          />
         )}
+        {hideTitle ? null : renderTitle(children, bgColor, logo?.title)}
       </a>
     );
   },
 );
+
+const renderTitle = (children, bgColor, title) => {
+  const text = children || title || 'Россельхозбанк';
+  return <span className={`${TEXT_COLOR[bgColor]} font-medium ml-2.5`}>{text}</span>;
+};

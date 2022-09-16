@@ -1,3 +1,7 @@
 {
-  "defaultLocation": "Москва"
+  "defaultLocation": "Москва",
+  "logo": {
+    "image": {},
+    "title": "Россельхозбанк"
+  }
 }
