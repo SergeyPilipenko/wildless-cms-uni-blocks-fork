@@ -31,16 +31,16 @@ const renderCellInner =
           {rowHeader}
         </div>
         <div className="basis-1/2">
-          {label && (
+          {label ? (
             <div className={`text-right ${isFillGradient ? 'text-white' : ''}`}>{label}</div>
-          )}
-          {description && (
+          ) : null}
+          {description ? (
             <div
               className={`text-right ${isFillGradient ? 'text-white/80' : 'text-secondary-text'}`}
             >
               {description}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     );

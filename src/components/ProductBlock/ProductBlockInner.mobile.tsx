@@ -35,13 +35,13 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
           <BaseTile
             context={context}
             title={
-              title && (
+              title ? (
                 <Heading
                   headingType={headingType}
                   title={title}
                   className="whitespace-pre-wrap max-w-[600px]"
                 />
-              )
+              ) : null
             }
             buttons={
               buttons?.length ? (

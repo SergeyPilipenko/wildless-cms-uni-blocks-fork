@@ -28,13 +28,13 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
         <BaseTile
           context={context}
           title={
-            title && (
+            title ? (
               <Heading
                 headingType="h3"
                 title={title}
                 className={`whitespace-pre-wrap max-w-[600px] mb-[30px]`}
               />
-            )
+            ) : null
           }
           buttons={
             buttons?.length ? (

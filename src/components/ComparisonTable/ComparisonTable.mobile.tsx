@@ -39,9 +39,9 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
           className || ''
         }`}
       >
-        {title && (
+        {title ? (
           <Heading headingType="h3" className="font-medium text-center m-0 mb-5" title={title} />
-        )}
+        ) : null}
 
         {renderColumns({
           tableData,

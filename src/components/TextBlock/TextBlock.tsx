@@ -49,12 +49,12 @@ export const TextBlock = JSX<TextBlockProps>(
         {iconVersion === 'small' ? renderIcon(textBlockStyleMap.icon) : null}
         {iconVersion === 'big' ? renderImage(image) : null}
         <div className="py-0.5">
-          {title && (
+          {title ? (
             <div className={`font-medium text-base mb-1 ${textBlockStyleMap.title}`}>{title}</div>
-          )}
-          {description && (
+          ) : null}
+          {description ? (
             <div className={`text-sm ${textBlockStyleMap.description}`}>{description}</div>
-          )}
+          ) : null}
         </div>
       </section>
     );

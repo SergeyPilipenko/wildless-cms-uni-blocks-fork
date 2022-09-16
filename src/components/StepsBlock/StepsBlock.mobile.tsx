@@ -53,14 +53,14 @@ export const StepsBlock = JSX<StepsBlockProps>(
         className={`box-border font-sans bg-white px-4 py-6 flex flex-col
         ${style.background} ${style.title} ${className || ''}`}
       >
-        {title && (
+        {title ? (
           <Heading headingType="h3" className={`text-center ${style.title}`} title={title} />
-        )}
-        {description && (
+        ) : null}
+        {description ? (
           <p className={`text-m-md text-center ${style.description} ${title && 'mt-2'}`}>
             {description}
           </p>
-        )}
+        ) : null}
         {steps?.length ? (
           <div className={`box-border py-0.5 mb-0.5 mt-5`}>
             <div className="flex flex-col justify-between gap-x-[101px]">
@@ -94,17 +94,17 @@ const renderStepTitle = (params: RenderStepTitleParams) => {
       <div key={String(i)} className="flex flex-row text-center relative">
         <div className="overflow-hidden">
           {renderIconArea(params)}
-          {!isLastStep && (
+          {isLastStep ? null : (
             <div className={`min-h-8 h-full w-[2px] ${style.iconConnector} ${margin}`} />
           )}
         </div>
         <div
           className={`flex flex-col justify-center h-fit ${STEPS_TILE_DESCRIPTION_HEIGHT_MAP[size]}`}
         >
-          {step.label && (
+          {step.label ? (
             <div className="font-medium text-m-title-xs m-0 text-left">{step.label}</div>
-          )}
-          {step.description && (
+          ) : null}
+          {step.description ? (
             <div
               className={`font-normal text-sm ${style.description} text-left ${
                 step.label ? 'mt-1' : ''
@@ -112,7 +112,7 @@ const renderStepTitle = (params: RenderStepTitleParams) => {
             >
               {step.description}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>

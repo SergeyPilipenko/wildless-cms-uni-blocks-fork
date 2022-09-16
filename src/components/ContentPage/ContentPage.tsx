@@ -85,7 +85,7 @@ export const ContentPage = JSX<ContentPageProps>(
           </div>
         ) : null}
 
-        {likeControl && (
+        {likeControl ? (
           <div className="flex items-end absolute bottom-0 right-0 h-full pointer-events-none">
             <LikeControl
               key="LikeControl"
@@ -93,7 +93,7 @@ export const ContentPage = JSX<ContentPageProps>(
               context={context}
             />
           </div>
-        )}
+        ) : null}
       </section>
     );
   },

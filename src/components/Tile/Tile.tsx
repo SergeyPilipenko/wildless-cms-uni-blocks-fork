@@ -47,7 +47,7 @@ export const Tile = JSX<TileProps>((props) => {
       <BaseTile
         context={context}
         title={
-          title && (
+          title ? (
             <Heading
               headingType={headingType}
               as="h3"
@@ -55,7 +55,7 @@ export const Tile = JSX<TileProps>((props) => {
               className={`whitespace-pre-wrap max-w-[600px] ${title ? 'mb-3' : ''}
               ${version === 'primary' ? 'text-primary-text' : ''}`}
             />
-          )
+          ) : null
         }
         buttons={
           buttons?.length ? (
@@ -68,12 +68,12 @@ export const Tile = JSX<TileProps>((props) => {
         }
         image={image?.src && <Img className="mt-auto ml-7" image={image} />}
       >
-        {description && (
+        {description ? (
           <Description
             className="max-w-[600px] text-title-new-sm font-light"
             description={description}
           />
-        )}
+        ) : null}
         {children}
         {renderList(items, version)}
       </BaseTile>

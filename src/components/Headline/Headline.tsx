@@ -19,18 +19,18 @@ export const Headline = JSX<HeadlineProps>(
     const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
     return (
       <section className={`p-[50px] ${STYLE_MAPS.background} ${className}`} id={anchor}>
-        {title && (
+        {title ? (
           <Heading
             headingType="h2"
             className={`text-primary-text ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
             title={title}
           />
-        )}
-        {description && (
+        ) : null}
+        {description ? (
           <p className={`font-normal text-base mt-4 ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}>
             {description}
           </p>
-        )}
+        ) : null}
       </section>
     );
   },

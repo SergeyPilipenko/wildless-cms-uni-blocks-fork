@@ -42,14 +42,14 @@ export const ProductTile = JSX<ProductTileProps>(
         <BaseTile
           context={context}
           title={
-            title && (
+            title ? (
               <Heading
                 headingType={headingType}
                 as="h3"
                 title={title}
                 className={`whitespace-pre-wrap max-w-[600px]`}
               />
-            )
+            ) : null
           }
           buttons={
             buttons?.length ? (

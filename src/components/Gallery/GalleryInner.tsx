@@ -37,22 +37,22 @@ export const GalleryInner = JSX<GalleryInnerProps>(
           activeCardIndex={activeCardIndex}
           {...rest}
         />
-        {showPrevButton && (
+        {showPrevButton ? (
           <ArrowButton
             className="absolute top-1/2 left-8 z-10 mt-[25px]"
             onClick={handlePrevClick}
             ariaLabel="Пролистать влево"
             data-block-control="scroll-left"
           />
-        )}
-        {showNextButton && (
+        ) : null}
+        {showNextButton ? (
           <ArrowButton
             className="absolute top-1/2 right-8 z-10 mt-[25px] rotate-180"
             onClick={handleNextClick}
             ariaLabel="Пролистать вправо"
             data-block-control="scroll-right"
           />
-        )}
+        ) : null}
         <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-opacity-from-white" />
         <div className="absolute top-0 right-0 bottom-0 w-[100px] bg-opacity-to-white" />
       </section>

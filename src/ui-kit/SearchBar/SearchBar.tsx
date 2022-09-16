@@ -11,7 +11,7 @@ export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
         <div className="w-[24px] h-[24px]">
           <Img image="LoupeIcon" width="24" height="24" />
         </div>
-        {!term && (
+        {term ? null : (
           <label
             htmlFor="search-bar-input"
             className="font-sans font-light text-base text-secondary-text"

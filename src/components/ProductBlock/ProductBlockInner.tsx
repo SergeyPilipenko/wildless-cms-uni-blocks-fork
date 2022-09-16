@@ -36,12 +36,12 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             title={getTitle(title, headingType)}
             buttons={getButtons(context, buttons)}
           >
-            {description && (
+            {description ? (
               <Description
                 className={`mt-4 max-w-[600px] text-md font-light ${textColor}`}
                 description={description}
               />
-            )}
+            ) : null}
             {benefits?.filter((items) => items.label)?.length ? (
               <div className="flex gap-6 mt-6">
                 {benefits.map((benefit, i) =>
@@ -67,15 +67,13 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
 );
 
 const getTitle = (title, headingType) => {
-  return (
-    title && (
-      <Heading
-        headingType={headingType}
-        title={title}
-        className="whitespace-pre-wrap max-w-[600px]"
-      />
-    )
-  );
+  return title ? (
+    <Heading
+      headingType={headingType}
+      title={title}
+      className="whitespace-pre-wrap max-w-[600px]"
+    />
+  ) : null;
 };
 
 const getButtons = (context, buttons) => {

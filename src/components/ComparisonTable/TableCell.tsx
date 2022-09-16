@@ -30,15 +30,15 @@ export const TableCell = JSX<TableCellProps>(({ cell, isFirstRow, isLastRow, isF
 
 const renderCellInner = ({ label, description }: CellData, i: number, isFillGradient: boolean) => (
   <div key={String(i)} className="first:pt-7 pt-6 last:pb-7">
-    {label && (
+    {label ? (
       <h4 className={`text-xl font-medium m-0 ${isFillGradient ? 'text-white' : ''}`}>{label}</h4>
-    )}
-    {description && (
+    ) : null}
+    {description ? (
       <div
         className={`text-sm opacity-80 ${isFillGradient ? 'text-white' : 'text-secondary-text'}`}
       >
         {description}
       </div>
-    )}
+    ) : null}
   </div>
 );

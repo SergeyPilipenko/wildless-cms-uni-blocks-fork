@@ -21,8 +21,11 @@ export const transformToTernaryRule = ESLintUtils.RuleCreator.withoutDocs<
               _.value === '&&' &&
               tokens[i - 1]?.type === 'Identifier' &&
               tokens[i + 1]?.type === 'Punctuator' &&
-              tokens[i + 1]?.value === '<' &&
-              tokens[i + 2]?.type === 'JSXIdentifier',
+              ((tokens[i + 1]?.value === '<' && tokens[i + 2]?.type === 'JSXIdentifier') ||
+                (tokens[i + 1]?.value === '(' &&
+                  tokens[i + 2]?.type === 'Punctuator' &&
+                  tokens[i + 2]?.value === '<' &&
+                  tokens[i + 3]?.type === 'JSXIdentifier')),
           )
           .map((_) => _.loc);
       }

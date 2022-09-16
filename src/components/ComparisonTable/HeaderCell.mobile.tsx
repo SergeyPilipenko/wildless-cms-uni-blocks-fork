@@ -29,20 +29,20 @@ export const HeaderCell = JSX<HeaderCellProps>(
           <Img image={image} />
         </div>
       )}
-      {title && (
+      {title ? (
         <Heading
           headingType="h4"
           className={`${isFillGradient ? 'text-white' : ''}`}
           title={title}
         />
-      )}
-      {subtitle && (
+      ) : null}
+      {subtitle ? (
         <div
           className={`text-m-sm mb-3.5 ${isFillGradient ? 'text-white' : 'text-secondary-text/80'}`}
         >
           {subtitle}
         </div>
-      )}
+      ) : null}
     </div>
   ),
 );
