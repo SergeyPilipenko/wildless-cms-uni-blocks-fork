@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import type { AlignType } from '../BaseTile/BaseTileProps';
+import type { AlignType } from '../../model/AlignType';
 import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
 import { LinkDocsList } from './LinkDocsList';
 

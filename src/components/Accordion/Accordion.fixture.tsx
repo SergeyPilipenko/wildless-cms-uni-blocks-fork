@@ -61,7 +61,7 @@ const MINI_GALLERY_ACCORDION_BLOCK: MiniGalleryBlockListDef = {
   ...MINI_GALLERY,
 };
 
-const propsBlock: AccordionProps = {
+const propsDefaultBlock: AccordionProps = {
   context,
   title: 'Accordion title',
   description: 'Accordion description',
@@ -101,10 +101,32 @@ const propsBlock: AccordionProps = {
   ],
 };
 
+const propsRightAlignTitleBlock: AccordionProps = {
+  context,
+  title: 'Accordion title',
+  accordionAlignTitle: 'right',
+  description: 'Accordion description',
+  accordionItems: [
+    {
+      label: 'Accordion label 1',
+      blocks: [TEXT_BLOCK_ACCORDION_BLOCK, TEXT_BLOCK_ACCORDION_BLOCK],
+    },
+    {
+      label: 'Accordion label 2',
+      blocks: [PICTURE_TEXT_ACCORDION_BLOCK],
+    },
+  ],
+};
+
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <Accordion className="col-span-12" {...propsBlock} />
+      <Accordion className="col-span-12" {...propsDefaultBlock} />
+    </div>
+  ),
+  'right-align-title': (
+    <div className="container grid grid-cols-12">
+      <Accordion className="col-span-12" {...propsRightAlignTitleBlock} />
     </div>
   ),
 };

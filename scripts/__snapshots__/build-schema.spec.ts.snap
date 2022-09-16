@@ -6,6 +6,10 @@ Object {
   "definitions": Object {
     "AccordionContent": Object {
       "properties": Object {
+        "accordionAlignTitle": Object {
+          "$ref": "#/definitions/AlignType",
+          "title": "Выравнивание заголовка",
+        },
         "accordionItems": Object {
           "items": Object {
             "$ref": "#/definitions/AccordionItemCommonProps",

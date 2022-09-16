@@ -2,16 +2,7 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { HeadingType } from '../../ui-kit/Heading/HeadingContent';
-
-/**
- * @title Выравнивание
- * @enumNames [
- *    "По левому краю",
- *    "По центру",
- *    "По правому краю"
- * ]
- */
-export type AlignType = 'left' | 'center' | 'right';
+import type { AlignType } from '../../model/AlignType';
 
 /**
  * @title Общий компонент плиток

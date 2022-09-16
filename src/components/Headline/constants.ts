@@ -1,4 +1,4 @@
-import type { AlignType } from '../BaseTile/BaseTileProps';
+import type { AlignType } from '../../model/AlignType';
 import type { BlockVersionWithTransparent } from '../../model/BlockVersion';
 
 export const ALIGN_TEXT: Record<AlignType, string> = {

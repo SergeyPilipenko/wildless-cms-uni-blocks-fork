@@ -1,6 +1,7 @@
 import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
+import type { AlignType } from '../../model/AlignType';
 /**
  * @title Элемент списка
  */
@@ -30,6 +31,8 @@ export interface AccordionItemCommonProps {
 export interface AccordionContent {
   /** @title Заголовок */
   title?: string;
+  /** @title Выравнивание заголовка */
+  accordionAlignTitle?: AlignType;
   version?: BlockVersion;
   /** @title Список */
   accordionItems?: AccordionItemCommonProps[];
