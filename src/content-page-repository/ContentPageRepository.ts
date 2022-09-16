@@ -19,7 +19,7 @@ export function ContentPageRepository({
 
   async function getSecondaryContentPages() {
     const pages = await getAllContentPages();
-    return pages.filter((content) => content.slug !== INDEX_PAGE_SLUG);
+    return pages.filter((content) => content.slug !== INDEX_PAGE_SLUG && !content._customPageType);
   }
 
   async function getContentPageBySlug(slug: string): Promise<ContentPageDef | undefined> {

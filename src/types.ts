@@ -50,6 +50,7 @@ export interface ContentPageDef extends ContentPageMeta {
   slots?: SlotsMap;
   likeControl?: boolean;
   colorPalette?: ColorPalette;
+  _customPageType?: string;
 }
 
 export interface UniBlockProps {
