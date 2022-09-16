@@ -21,11 +21,17 @@ export const OtherProductsItem = JSX<BlockItemProps>(
       <div className="border-0 border-b border-solid border-main-divider">
         {blocks?.length ? (
           <Foldable
+            foldButtonDataTheme={dataTheme}
+            hiddenBlocksNum={blocks?.length}
             blocks={foldableBlocks}
             isUnfolded={isUnfolded}
             context={context}
             foldButtonLabel={label}
-            render={(children) => <Wrapper columns={columns}>{children}</Wrapper>}
+            render={(children, isActive) => (
+              <Wrapper columns={columns} isActive={isActive}>
+                {children}
+              </Wrapper>
+            )}
           />
         ) : null}
       </div>
@@ -33,8 +39,14 @@ export const OtherProductsItem = JSX<BlockItemProps>(
   },
 );
 
-const Wrapper = JSX<{ columns: number }>(({ columns, children }) => {
+const Wrapper = JSX<{ columns: number; isActive: boolean }>(({ columns, children, isActive }) => {
   return (
-    <div className={`box-border w-full p-9 ${columns > 1 ? 'flex flex-wrap' : ''}`}>{children}</div>
+    <div
+      className={`box-border w-full ${isActive ? 'p-9' : ''} ${
+        columns > 1 ? 'flex flex-wrap' : ''
+      }`}
+    >
+      {children}
+    </div>
   );
 });

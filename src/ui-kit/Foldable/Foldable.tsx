@@ -7,7 +7,7 @@ import { Icon } from '../Icon/Icon';
 import { foldableBlockClassNames, useActiveHandler } from './useActiveHandler';
 
 export type FoldableBlocks = VNode[];
-export type Render = (_: VNode) => VNode;
+export type Render = (_: VNode, isActive: boolean) => VNode;
 export interface FoldableProps {
   context: ContentPageContext;
   foldButtonLabel?: string;
@@ -17,6 +17,11 @@ export interface FoldableProps {
   foldButtonDataTheme?: ColorPalette;
   isUnfolded?: boolean;
   render?: Render;
+}
+
+export interface RenderBlocksParams {
+  blocksToHide: number;
+  isActive: boolean;
 }
 
 export const Foldable = JSX<FoldableProps>(
@@ -39,7 +44,7 @@ export const Foldable = JSX<FoldableProps>(
 
     return blocks ? (
       <div>
-        {renderBlocks(blocks, blocksToHide, render)}
+        {renderBlocks(blocks, render, { blocksToHide, isActive })}
         {hiddenBlocksNum ? (
           <button
             className={
@@ -58,7 +63,11 @@ export const Foldable = JSX<FoldableProps>(
   },
 );
 
-const renderBlocks = (blocks: FoldableBlocks, blocksToHide: number, render: Render) => {
+const renderBlocks = (
+  blocks: FoldableBlocks,
+  render: Render,
+  { blocksToHide, isActive }: RenderBlocksParams,
+) => {
   const visibleBlocks = blocks.slice(0, blocks.length - blocksToHide);
   const hiddenBlocks = blocks.slice(-blocksToHide);
 
@@ -67,5 +76,6 @@ const renderBlocks = (blocks: FoldableBlocks, blocksToHide: number, render: Rend
       {visibleBlocks}
       <div className={foldableBlockClassNames}>{hiddenBlocks}</div>
     </div>,
+    isActive,
   );
 };
