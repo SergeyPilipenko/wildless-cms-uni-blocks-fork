@@ -1,42 +1,40 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
-import { Icon } from '../../ui-kit/Icon/Icon';
+import type { VNode } from '../../model/VNode';
+import type { ColorPalette, UniBlockProps } from '../../types';
+import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
+import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import type { BlockItemCommonProps } from './OtherProductsContent';
-import { OtherProductsItemInner } from './OtherProductsItemInner';
-import { useActiveHandler } from './useActiveHandler';
-import { ColorPalette } from '../../types';
 
 export interface BlockItemProps extends BlockItemCommonProps, UniBlockProps {
   dataTheme?: ColorPalette;
 }
 
 export const OtherProductsItem = JSX<BlockItemProps>(
-  ({ label, isExpanded, blocks, columns, dataTheme = null, context }) => {
-    const { hasContent, icon, handleToggle, isActive } = useActiveHandler({
+  ({ label, blocks, columns = 1, context, dataTheme, isUnfolded }) => {
+    const foldableBlocks = renderBlocksList({
       context,
+      className: 'box-border p-5',
+      columns,
       blocks,
-      initialState: isExpanded,
-    });
-
+    }) as VNode[];
     return (
       <div className="border-0 border-b border-solid border-main-divider">
-        {hasContent ? (
-          <OtherProductsItemInner
-            isExpanded={isActive}
-            columns={columns}
-            blocks={blocks}
+        {blocks?.length ? (
+          <Foldable
+            blocks={foldableBlocks}
+            isUnfolded={isUnfolded}
             context={context}
+            foldButtonLabel={label}
+            render={(children) => <Wrapper columns={columns}>{children}</Wrapper>}
           />
         ) : null}
-        <button
-          className="border-none bg-primary-main px-0 py-[26px] mb-[1px] w-full font-sans text-white text-base flex justify-center cursor-pointer"
-          data-theme={dataTheme}
-          onClick={handleToggle}
-        >
-          <span className="pr-3">{isActive ? 'Скрыть' : label}</span>
-          {hasContent ? <Icon name={icon} width="20" height="20" asSVG /> : null}
-        </button>
       </div>
     );
   },
 );
+
+const Wrapper = JSX<{ columns: number }>(({ columns, children }) => {
+  return (
+    <div className={`box-border w-full p-9 ${columns > 1 ? 'flex flex-wrap' : ''}`}>{children}</div>
+  );
+});

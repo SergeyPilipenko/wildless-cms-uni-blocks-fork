@@ -1,11 +1,11 @@
-import type { CellData } from '../ComparisonTable/ComparisonTableContent';
 import type { ListOrientation } from '../../model/ListOrientation';
-import type { ImageContent } from '../../ui-kit/Img/ImgProps';
+import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
-import type { ListContent } from '../../ui-kit/List/ListContent';
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
-import { Picture } from '../../model/Picture';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { ImageContent } from '../../ui-kit/Img/ImgProps';
+import type { ListContent } from '../../ui-kit/List/ListContent';
+import type { CellData } from '../ComparisonTable/ComparisonTableContent';
 
 /**
  * @title Ряд
@@ -58,6 +58,8 @@ export type TariffsTableContent = HeadingContent &
     rowHeaders?: TariffsTableRowHeader[];
     /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
     orientation?: ListOrientation;
+    /** @title Скрывать строк */
+    hiddenRowsNum?: number;
   };
 
 /** @hidden */

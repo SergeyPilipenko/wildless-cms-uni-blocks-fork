@@ -13,7 +13,7 @@ export interface BlockItemCommonProps {
   /**
    * @title Отображать в раскрытом виде
    */
-  isExpanded?: boolean;
+  isUnfolded?: boolean;
   /**
    * @title Блоки
    * @maxItems 10

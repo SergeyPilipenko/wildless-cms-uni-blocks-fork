@@ -1,6 +1,6 @@
+import type { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { TariffsTable } from './TariffsTable';
-import type { Picture } from '../../model/Picture';
 import type { TariffsTableColumn, TariffsTableRowHeader } from './TariffsTableContent';
 
 const image: Picture = {
@@ -158,6 +158,7 @@ export default {
         context={context}
         rowHeaders={rowHeaders}
         columns={columns.slice(0, 1)}
+        hiddenRowsNum={2}
       />
     </div>
   ),
@@ -170,6 +171,7 @@ export default {
         context={context}
         rowHeaders={rowHeaders}
         columns={columns.slice(0, 2)}
+        hiddenRowsNum={2}
       />
     </div>
   ),
@@ -182,6 +184,7 @@ export default {
         context={context}
         rowHeaders={rowHeaders}
         columns={columns.slice(0, 3)}
+        hiddenRowsNum={2}
       />
     </div>
   ),

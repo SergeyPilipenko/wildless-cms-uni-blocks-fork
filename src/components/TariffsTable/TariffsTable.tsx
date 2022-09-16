@@ -1,8 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
+import type { VNode } from '../../model/VNode';
 import type { UniBlockProps } from '../../types';
+import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
+import { TableArrowScrollControlProps } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControlProps';
 import { COLS_LENGTH_FOR_SCROLL } from './constants';
 import type {
   TariffsTableCellData,
@@ -15,7 +18,16 @@ import { TariffsTableRow } from './TariffsTableRow';
 export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
 export const TariffsTable = JSX<TariffsTableProps>(
-  ({ className, context, title, description, rowHeaders, columns, anchor = null }) => {
+  ({
+    className,
+    context,
+    title,
+    description,
+    rowHeaders,
+    columns,
+    anchor = null,
+    hiddenRowsNum = 0,
+  }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const colData = getColData(columns);
@@ -27,7 +39,15 @@ export const TariffsTable = JSX<TariffsTableProps>(
       activeCardIndex,
       setActiveCardIndex,
     });
-    const { isScrollAvailable } = tableArrowScrollControlProps;
+
+    const foldableBlocks = rowData?.map((row, i, { length }) => (
+      <TariffsTableRow
+        key={String(i)}
+        row={row}
+        isLastRow={i + 1 === length}
+        activeCardIndex={activeCardIndex}
+      />
+    ));
 
     return (
       <section
@@ -45,22 +65,17 @@ export const TariffsTable = JSX<TariffsTableProps>(
         ) : null}
         {description ? <div className="mb-9 text-center text-m-base">{description}</div> : null}
         {rowData?.length ? (
-          <div role="table">
-            <div className="relative">
-              {rowData.map((row, i, { length }) => (
-                <TariffsTableRow
-                  key={String(i)}
-                  row={row}
-                  isLastRow={i + 1 === length}
-                  activeCardIndex={activeCardIndex}
-                />
-              ))}
-              <TableArrowScrollControl {...tableArrowScrollControlProps} />
-            </div>
-            {isScrollAvailable ? (
-              <div className="absolute top-0 right-0 bottom-0 w-[84px] bg-opacity-to-white" />
-            ) : null}
-          </div>
+          <Foldable
+            blocks={foldableBlocks}
+            hiddenBlocksNum={hiddenRowsNum}
+            context={context}
+            render={(children) => (
+              <Wrapper tableArrowScrollControlProps={tableArrowScrollControlProps}>
+                {children}
+              </Wrapper>
+            )}
+            foldButtonLabel="Развернуть"
+          />
         ) : null}
       </section>
     );
@@ -81,3 +96,25 @@ const getRowData = (
     header,
     data: colData.map((col) => col?.[i] || [{}]),
   }));
+
+const Wrapper = JSX<
+  {
+    tableArrowScrollControlProps: TableArrowScrollControlProps;
+  },
+  any,
+  VNode
+>(({ children, tableArrowScrollControlProps }) => {
+  const { isScrollAvailable } = tableArrowScrollControlProps;
+
+  return (
+    <div role="table">
+      <div className="relative">
+        {children}
+        <TableArrowScrollControl {...tableArrowScrollControlProps} />
+      </div>
+      {isScrollAvailable ? (
+        <div className="absolute top-0 right-0 bottom-0 w-[84px] bg-opacity-to-white" />
+      ) : null}
+    </div>
+  );
+});

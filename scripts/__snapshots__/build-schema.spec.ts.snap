@@ -180,7 +180,7 @@ Object {
         "columns": Object {
           "$ref": "#/definitions/ColumnsCount",
         },
-        "isExpanded": Object {
+        "isUnfolded": Object {
           "title": "Отображать в раскрытом виде",
           "type": "boolean",
         },
@@ -2994,6 +2994,10 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "hiddenRowsNum": Object {
+          "title": "Скрывать строк",
+          "type": "number",
         },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
