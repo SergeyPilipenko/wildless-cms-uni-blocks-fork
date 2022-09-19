@@ -20,8 +20,12 @@ export function ContentPageRepository({
   contentDir = 'content',
   publicDir = 'public',
 }: Partial<TransformationOptions> = {}) {
+  function listAllContentPages(): Promise<string[]> {
+    return find(`${contentDir}/**/*.page.json`);
+  }
+
   async function getAllContentPagesMap(): Promise<Record<string, ContentPageDef>> {
-    const pagePaths = await find(`${contentDir}/**/*.page.json`);
+    const pagePaths = await listAllContentPages();
     const pages = await Promise.all(pagePaths.map(readPage));
     return pagePaths.reduce(
       (result, path, i) => ({
@@ -62,10 +66,12 @@ export function ContentPageRepository({
   }
 
   return {
+    listAllContentPages,
     getAllContentPagesMap,
     getAllContentPages,
     getContentPageBySlug,
     getSecondaryContentPages,
     getIndexPage,
+    readPage,
   };
 }
