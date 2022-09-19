@@ -1,5 +1,8 @@
 import type { Tab } from '../../ui-kit/Tabs/TabsProps';
 
+/**
+ * @hidden
+ */
 export interface CalculatorParams {
   isAnnuity?: boolean;
   minSum?: number;

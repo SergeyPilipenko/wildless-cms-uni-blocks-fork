@@ -1,10 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { CalculatorContent, CalculatorBlockDef } from './CalculatorContent';
 import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
 import { Img } from '../../ui-kit/Img/Img';
-import { renderCalculatorList } from './renderCalculatorList';
+import type { CalculatorBlockDef, CalculatorContent } from './CalculatorContent';
 import { CalculatorNav } from './CalculatorContent';
+import { renderCalculatorBlock } from './renderCalculatorBlock';
 
 export interface CalculatorProps extends CalculatorContent, UniBlockProps {}
 
@@ -72,11 +72,9 @@ export const Calculator = JSX<CalculatorProps>(
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}
           role="list"
         >
-          {renderCalculatorList({
-            context,
-            className,
-            blockCalcTabs,
-          })}
+          {blockCalcTabs?.length
+            ? blockCalcTabs.map(renderCalculatorBlock({ context, className }))
+            : null}
         </div>
       </section>
     );
@@ -99,7 +97,7 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
       key={String(i)}
       onClick={onClick}
       aria-label={tab?.title}
-      className={`box-border font-sans relative border-[1px] border-main-stroke cursor-pointer text-left border-b-0 flex
+      className={`box-border font-sans relative border border-main-stroke cursor-pointer text-left border-b-0 flex
       ${btnClassName}`}
     >
       <Img

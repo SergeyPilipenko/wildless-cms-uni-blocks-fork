@@ -1,6 +1,7 @@
+import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
 import type { ProductBlockContent } from '../../components/ProductBlock/ProductBlockContent';
 import type { ProductTileContent } from '../../components/ProductTile/ProductTileContent';
-import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
+import type { EmptyOption } from '../../model/EmptyOptionType';
 
 export interface ActiveHandler {
   context: ContentPageContext;
@@ -28,11 +29,6 @@ export type ProductBlockDef = ProductBlockContent &
  */
 export type ProductTileDef = ProductTileContent &
   GroupBlockCommonProps & { blockType: 'ProductTile' };
-
-/**
- * @title Выберите блок
- */
-export type EmptyOption = null;
 
 /**
  * @title Содержимое блока

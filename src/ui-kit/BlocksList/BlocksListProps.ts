@@ -1,14 +1,15 @@
+import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
 import type { GalleryContent } from '../../components/Gallery/GalleryContent';
 import type { HeadlineContent } from '../../components/Headline/HeadlineContent';
 import type { LinkDocsContent } from '../../components/LinkDocs/LinkDocsContent';
+import type { LinkListContent } from '../../components/LinkList/LinkListContent';
 import type { MiniGalleryContent } from '../../components/MiniGallery/MiniGalleryContent';
 import type { PictureTextContent } from '../../components/PictureText/PictureTextContent';
 import type { ProductBlockContent } from '../../components/ProductBlock/ProductBlockContent';
 import type { ProductTileContent } from '../../components/ProductTile/ProductTileContent';
 import type { TextBlockContent } from '../../components/TextBlock/TextBlockContent';
 import type { TileContent } from '../../components/Tile/TileContent';
-import type { LinkListContent } from '../../components/LinkList/LinkListContent';
-import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
+import type { EmptyOption } from '../../model/EmptyOptionType';
 
 export interface ActiveHandler {
   context: ContentPageContext;
@@ -65,7 +66,7 @@ export type TileBlockListDef = TileContent & { blockListType: 'Tile' };
 export type ProductTileBlockListDef = ProductTileContent & { blockListType: 'ProductTile' };
 
 /**
- * @title Галлерея
+ * @title Галерея
  * @default {"blockListType": "Gallery"}
  */
 export type GalleryBlockListDef = GalleryContent & { blockListType: 'Gallery' };
@@ -81,11 +82,6 @@ export type MiniGalleryBlockListDef = MiniGalleryContent & { blockListType: 'Min
  * @default {"blockListType": "LinkList"}
  */
 export type LinkListBlockListDef = LinkListContent & { blockListType: 'LinkList' };
-
-/**
- * @title Выберите блок
- */
-export type EmptyOption = null;
 
 /**
  * @title Содержимое блока

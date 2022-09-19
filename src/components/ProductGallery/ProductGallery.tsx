@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../types';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent } from './ProductGalleryContent';
@@ -107,7 +107,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
       key={String(i)}
       onClick={onClick}
       aria-label={slide?.title}
-      className={`box-border font-sans relative overflow-hidden border-[1px] border-white/50 cursor-pointer text-left mx-1 grow basis-0
+      className={`box-border font-sans relative overflow-hidden border border-white/50 cursor-pointer text-left mx-1 grow basis-0
         ${btnClassName} ${additionalBorder}
       `}
     >

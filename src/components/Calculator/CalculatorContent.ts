@@ -1,49 +1,96 @@
-import { Picture } from '../../model/Picture';
+import type { EmptyOption } from '../../model/EmptyOptionType';
+import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface CommonCalculatorProps {
+  /** @title Кнопки */
   buttons?: ButtonWithIconProps[];
 }
 
+/**
+ * TODO: данные из справочника
+ **/
 export interface CreditCalculatorParams {
+  /** @hidden */
   isSalary?: boolean;
+  /** @hidden */
   isInsurance?: boolean;
+  /** @hidden */
   isAnnuity?: boolean;
+  /** @hidden */
   minSum?: number;
+  /** @hidden */
   maxSum?: number;
+  /** @hidden */
   minMonths?: number;
+  /** @hidden */
   maxMonths?: number;
+  /** @hidden */
   rateWithInsurance?: number;
+  /** @hidden */
   rateWithoutInsurance?: number;
 }
 
+/**
+ * TODO: данные из справочника
+ **/
 export interface MortgageCalculatorParams {
+  /** @hidden */
   isAnnuity?: boolean;
+  /** @hidden */
   minInitialContribution?: number;
+  /** @hidden */
   minSum?: number;
+  /** @hidden */
   maxSum?: number;
+  /** @hidden */
   minMonths?: number;
+  /** @hidden */
   maxMonths?: number;
+  /** @hidden */
   rateWithInsurance?: number;
+  /** @hidden */
   rateWithoutInsurance?: number;
 }
 
+/**
+ * TODO: данные из справочника
+ **/
 export interface DepositCalculatorParams {
+  /** @hidden */
   minSum?: number;
+  /** @hidden */
   maxSum?: number;
+  /** @hidden */
   minMonths?: number;
+  /** @hidden */
   maxMonths?: number;
+  /** @hidden */
   rate?: number;
 }
 
+/**
+ * TODO: данные из справочника
+ **/
+
 export interface BonusCalculatorParams {
+  /** @hidden */
   bonus?: number;
+  /** @hidden */
   minSumTrip?: number;
+  /** @hidden */
   maxSumTrip?: number;
+  /** @hidden */
   minSumOther?: number;
+  /** @hidden */
   maxSumOther?: number;
 }
 
+/**
+ * ? Общий интерфейс для всех типов калькуляторов?
+ * ? Используется во вложенных функциях. Может быть как то разбить это и вынести отсюда?
+ * @hidden
+ */
 export interface CalculatorParams {
   isAnnuity?: boolean;
   minSum?: number;
@@ -55,7 +102,7 @@ export interface CalculatorParams {
 }
 
 /**
- * @title Заголовок
+ * @title Кредитный калькулятор
  * @default {"calcType": "CreditCalculatorForm"}
  */
 export type CreditCalculatorParamsDef = CreditCalculatorParams &
@@ -64,7 +111,7 @@ export type CreditCalculatorParamsDef = CreditCalculatorParams &
   };
 
 /**
- * @title Заголовок
+ * @title Ипотечный калькулятор
  * @default {"calcType": "MortgageCalculatorForm"}
  */
 export type MortgageCalculatorParamsDef = MortgageCalculatorParams &
@@ -73,7 +120,7 @@ export type MortgageCalculatorParamsDef = MortgageCalculatorParams &
   };
 
 /**
- * @title Заголовок
+ * @title Калькулятор вкладов
  * @default {"calcType": "DepositCalculatorForm"}
  */
 export type DepositCalculatorParamsDef = DepositCalculatorParams &
@@ -82,7 +129,7 @@ export type DepositCalculatorParamsDef = DepositCalculatorParams &
   };
 
 /**
- * @title Заголовок
+ * @title Калькулятор бонусов
  * @default {"calcType": "BonusCalculatorForm"}
  */
 export type BonusCalculatorParamsDef = BonusCalculatorParams &
@@ -91,12 +138,7 @@ export type BonusCalculatorParamsDef = BonusCalculatorParams &
   };
 
 /**
- * @title Выберите калькулятор
- */
-export type EmptyOption = null;
-
-/**
- * @title Калькулятор
+ * @title Настройки калькулятора
  */
 export type CalculatorBlockDef =
   | EmptyOption
@@ -121,7 +163,6 @@ export interface CalculatorNav {
  */
 export interface CalculatorTab {
   nav?: CalculatorNav;
-  /** @title Настройки калькулятора */
   calculatorBlock?: CalculatorBlockDef;
 }
 
