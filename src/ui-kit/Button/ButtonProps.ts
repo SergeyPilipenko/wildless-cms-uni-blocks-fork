@@ -13,6 +13,9 @@ export interface ButtonAdditionalProps {
   onClick?: (ev: MouseEvent) => any;
 }
 
+/**
+ * @title Кнопка
+ */
 export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
   /**
    * @title Текст

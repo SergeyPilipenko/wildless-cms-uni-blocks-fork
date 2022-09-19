@@ -356,6 +356,7 @@ Object {
           "$ref": "#/definitions/ButtonVersion",
         },
       },
+      "title": "Кнопка",
       "type": "object",
     },
     "ButtonVersion": Object {
@@ -368,6 +369,7 @@ Object {
       "enumNames": Array [
         "Основная",
         "Второстепенная",
+        "Ссылка",
       ],
       "title": "Цвет кнопки",
       "type": "string",
@@ -2689,6 +2691,7 @@ Object {
           "type": "string",
         },
         "showLines": Object {
+          "default": true,
           "title": "Линии",
           "type": "boolean",
         },

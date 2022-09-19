@@ -23,7 +23,10 @@ export interface StepsBlockContent {
   title?: string;
   /** @title Описание */
   description?: string; // TODO: mobile content
-  /** @title Линии */
+  /**
+   * @title Линии
+   * @default true
+   */
   showLines?: boolean;
   /**
    * @title Шаги
