@@ -21,6 +21,7 @@ export default [
   'steps',
   'cards',
   'accordionItems',
+  'calendar',
   'columnsMode',
   'listMode',
   'hasBorder',

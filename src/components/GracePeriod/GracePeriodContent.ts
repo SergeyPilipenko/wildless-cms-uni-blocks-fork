@@ -1,4 +1,5 @@
 import type { Picture } from '../../model/Picture';
+import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 
 interface Month {
   /** @title Название месяца */
@@ -29,9 +30,7 @@ interface CalendarItem {
 /**
  * @title Льготный период
  */
-export interface GracePeriodContent {
-  /** @title Заголовок */
-  title?: string;
+export interface GracePeriodContent extends HeadingContent {
   /** @title Описание */
   description?: string;
   /** @title Календарь */
