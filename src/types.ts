@@ -45,12 +45,12 @@ export interface ContentPageMeta {
 }
 
 export interface ContentPageDef extends ContentPageMeta {
+  _customPageType?: string;
   style?: string[];
   blocks?: BlockDef[];
   slots?: SlotsMap;
   likeControl?: boolean;
   colorPalette?: ColorPalette;
-  _customPageType?: string;
 }
 
 export interface UniBlockProps {

@@ -7,24 +7,43 @@ import { transformContentPage } from './transformContentPage';
 const INDEX_PAGE_SLUG = 'index';
 const find = util.promisify(glob);
 
-// eslint-disable-next-line max-lines-per-function
+const bySlug = (slug: string) => (content: ContentPageDef) => content.slug === slug;
+const byCustomPageType = (type?: string) => (content: ContentPageDef) =>
+  type ? content._customPageType === type : !content._customPageType;
+
+const not =
+  <Arg>(predicate: (_: Arg) => boolean) =>
+  (_: Arg) =>
+    !predicate(_);
+
 export function ContentPageRepository({
   contentDir = 'content',
   publicDir = 'public',
 }: Partial<TransformationOptions> = {}) {
-  async function getAllContentPages(): Promise<ContentPageDef[]> {
+  async function getAllContentPagesMap(): Promise<Record<string, ContentPageDef>> {
     const pagePaths = await find(`${contentDir}/**/*.page.json`);
-    return await Promise.all(pagePaths.map(readPage));
+    const pages = await Promise.all(pagePaths.map(readPage));
+    return pagePaths.reduce(
+      (result, path, i) => ({
+        ...result,
+        [path]: pages[i],
+      }),
+      {},
+    );
   }
 
-  async function getSecondaryContentPages() {
+  async function getAllContentPages(): Promise<ContentPageDef[]> {
+    return Object.values(await getAllContentPagesMap());
+  }
+
+  async function getSecondaryContentPages(customPageType?: string) {
     const pages = await getAllContentPages();
-    return pages.filter((content) => content.slug !== INDEX_PAGE_SLUG && !content._customPageType);
+    return pages.filter(not(bySlug(INDEX_PAGE_SLUG))).filter(byCustomPageType(customPageType));
   }
 
   async function getContentPageBySlug(slug: string): Promise<ContentPageDef | undefined> {
     const pages = await getAllContentPages();
-    return pages.find((content) => content.slug === slug);
+    return pages.find(bySlug(slug));
   }
 
   async function getIndexPage() {
@@ -43,6 +62,7 @@ export function ContentPageRepository({
   }
 
   return {
+    getAllContentPagesMap,
     getAllContentPages,
     getContentPageBySlug,
     getSecondaryContentPages,

@@ -57,7 +57,7 @@ export enum IconMap {
 }
 
 export enum IconTitleMap {
-  ${iconTitles.map((_, i) => `${iconNames[i]} = "${_ || iconNames[i]}"`).join(', ')}
+  ${iconTitles.map((title, i) => `${iconNames[i]} = ${wrap(title || iconNames[i])}`).join(', ')}
 }
 
 /**
@@ -71,7 +71,7 @@ export enum IconTitleMap {
    .join(', ')}
  * ]
  */
-export type IconName = "" | ${iconNames.map(wrap).join(' | ')};
+export type IconName = '' | ${iconNames.map(wrap).join(' | ')};
 `;
 }
 
@@ -84,5 +84,5 @@ function iconTitle(svg) {
 }
 
 function wrap(_) {
-  return `"${_}"`;
+  return `'${_.replace(/'/g, "\\'")}'`;
 }

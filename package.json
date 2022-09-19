@@ -72,7 +72,7 @@
   "scripts": {
     "start": "npm run cosmos",
     "start:mobile": "npm run cosmos:mobile",
-    "prebuild": "rimraf ./mobile/src",
+    "prebuild": "rimraf ./mobile/src && npm run build:icons",
     "build": "npm run build:lib && npm run build:commonjs && npm run bundle && npm run build:style && npm run build:design && npm run size && npm run build:mobile",
     "prebuild:mobile": "rimraf ./mobile/src && node ./scripts/prebuild-mobile.js ./src ./mobile",
     "build:mobile": "npm run --prefix ./mobile build",
