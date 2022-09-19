@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { FuncSetNumber } from '../../types';
+import { FuncReturnVoid } from '../../types';
 
 /**
  * @title Вкладка
@@ -12,7 +12,7 @@ export interface Tab {
   icon?: Picture;
 }
 
-export type TabClickHandler = FuncSetNumber;
+export type TabClickHandler = FuncReturnVoid<number>;
 
 export interface TabsProps {
   tabs?: Tab[];

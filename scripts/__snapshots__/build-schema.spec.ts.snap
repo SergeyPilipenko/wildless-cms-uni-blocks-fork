@@ -749,7 +749,7 @@ Object {
       "type": "object",
     },
     "EmptyOption": Object {
-      "description": "Выберите блок",
+      "title": "Выберите блок",
       "type": "null",
     },
     "ExchangeCurrencyItem": Object {
@@ -1417,6 +1417,11 @@ Object {
         "normal",
         "white",
       ],
+      "enumNames": Array [
+        "Нормальный",
+        "Белый",
+      ],
+      "title": "Цвет иконки",
       "type": "string",
     },
     "ImageContent": Object {

@@ -73,4 +73,4 @@ export interface DaDataAddress {
   city?: string | null;
 }
 
-export type FuncSetNumber = (value: number) => void;
+export type FuncReturnVoid<Input = unknown> = (value: Input) => void;
