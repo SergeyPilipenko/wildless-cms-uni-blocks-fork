@@ -52,7 +52,7 @@ interface MediaButtonProps {
   version?: BlockVersion;
 }
 
-export const MediaButton = JSX<MediaButtonProps>(({ href, version }) => {
+export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' }) => {
   const { icon, width, height, label } =
     ICONS_MAP.find(({ origins }) => origins.some((_) => href?.includes(_))) || {};
 
@@ -60,18 +60,30 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version }) => {
 
   const classes =
     version === 'secondary'
-      ? 'text-white hover:text-primary-main hover:bg-white'
-      : 'text-primary-main hover:text-white hover:bg-primary-main hover:border-primary-main';
+      ? 'bg-secondary-light hover:bg-secondary-hover'
+      : 'border-main-divider border-solid border-[1px] hover:bg-primary-main';
+
+  const isPrimary = version === 'primary';
 
   return (
     <a
-      className={` flex items-center justify-center border border-solid rounded-md border-main-divider no-underline outline-none w-14 h-14 box-border ${classes}`}
+      className={`flex items-center justify-center rounded-md w-14 h-14 group box-border ${classes} ${
+        isPrimary ? 'hover:text-black' : ''
+      }`}
       href={href}
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
     >
-      {icon ? <Img image={icon} width={width} height={height} asSVG className="block" /> : null}
+      {icon ? (
+        <Img
+          image={{ ...icon, iconVersion: 'normal' }}
+          imageClassName={isPrimary ? 'group-hover:text-white' : ''}
+          width={width}
+          height={height}
+          asSVG
+        />
+      ) : null}
     </a>
   );
 });

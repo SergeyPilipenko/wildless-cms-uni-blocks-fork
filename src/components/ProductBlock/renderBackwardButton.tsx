@@ -8,6 +8,9 @@ export function renderBackwardButton(
   version: BlockVersion,
   className: string,
 ) {
+  const iconVersion = version === 'primary' ? 'white' : 'black';
+  const backwardIcon = button?.icon || { icon: 'ArrowLeftIcon' };
+
   return (
     <div className={`flex items-center ${className}`}>
       <Button
@@ -17,7 +20,7 @@ export function renderBackwardButton(
         ariaLabel={button?.text}
         href={button?.href}
       >
-        <Img className="w-4 h-4" image={button?.icon || { icon: 'ArrowLeftIcon' }} asSVG />
+        <Img className="w-4 h-4" image={{ ...backwardIcon, iconVersion }} asSVG />
       </Button>
       {button?.text ? <span className="text-m-md font-light">{button.text}</span> : null}
     </div>

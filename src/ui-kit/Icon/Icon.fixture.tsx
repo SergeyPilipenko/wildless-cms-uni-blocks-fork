@@ -27,4 +27,28 @@ export default {
       </div>
     </div>
   ),
+  'all (as svg) black': (
+    <div className="w-[1280px]">
+      <div className="grid grid-cols-6 gap-8">
+        {Object.values(IconMap).map((icon) => (
+          <div key={icon} className="flex flex-col items-center gap-3">
+            <div>{icon}</div>
+            <Icon name={icon} iconVersion="black" width="64" asSVG />
+          </div>
+        ))}
+      </div>
+    </div>
+  ),
+  'all (as svg) white': (
+    <div className="w-[1280px]">
+      <div className="grid grid-cols-6 gap-8">
+        {Object.values(IconMap).map((icon) => (
+          <div key={icon} className="flex flex-col items-center gap-3 bg-black">
+            <div className="text-white">{icon}</div>
+            <Icon name={icon} iconVersion="white" width="64" asSVG />
+          </div>
+        ))}
+      </div>
+    </div>
+  ),
 };

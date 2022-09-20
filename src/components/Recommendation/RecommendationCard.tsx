@@ -17,7 +17,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
   ({ context, className = '', title, description, items, image, version, socialMedia }) => {
     return (
       <section
-        className={`border border-solid box-border p-[30px] w-[524px] ${className}`}
+        className={`border border-solid box-border p-[30px] min-w-[524px] ${className}`}
         role="listitem"
       >
         <BaseTile

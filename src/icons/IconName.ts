@@ -7,17 +7,14 @@ export enum IconMap {
   AppleIcon = 'AppleIcon',
   ArrowDownIcon = 'ArrowDownIcon',
   ArrowLeftIcon = 'ArrowLeftIcon',
-  ArrowsRewindRight = 'ArrowsRewindRight',
   ArrowUpIcon = 'ArrowUpIcon',
   AtmIcon = 'AtmIcon',
   BankIcon = 'BankIcon',
   BurgerIcon = 'BurgerIcon',
-  BurgerIconWhite = 'BurgerIconWhite',
   Calendar2Icon = 'Calendar2Icon',
   CalendarCircleIcon = 'CalendarCircleIcon',
   CalendarIcon = 'CalendarIcon',
   CalendarTickIcon = 'CalendarTickIcon',
-  CalendarWhiteIcon = 'CalendarWhiteIcon',
   CardIcon = 'CardIcon',
   CardPosIcon = 'CardPosIcon',
   CardTickIcon = 'CardTickIcon',
@@ -38,14 +35,12 @@ export enum IconMap {
   EarthIcon = 'EarthIcon',
   EmptyWalletChangeIcon = 'EmptyWalletChangeIcon',
   EmptyWalletIcon = 'EmptyWalletIcon',
-  EmptyWalletWhiteIcon = 'EmptyWalletWhiteIcon',
   EuroIcon = 'EuroIcon',
   GeolocationIcon = 'GeolocationIcon',
   GlassIcon = 'GlassIcon',
   GlobalIcon = 'GlobalIcon',
   GpsIcon = 'GpsIcon',
   GridIcon = 'GridIcon',
-  GridIconWhite = 'GridIconWhite',
   InterestGrowthIcon = 'InterestGrowthIcon',
   InterestIcon = 'InterestIcon',
   JCBIcon = 'JCBIcon',
@@ -62,7 +57,6 @@ export enum IconMap {
   PassSendIcon = 'PassSendIcon',
   PercentageRoundIcon = 'PercentageRoundIcon',
   PercentageSquareIcon = 'PercentageSquareIcon',
-  PercentageSquareWhiteIcon = 'PercentageSquareWhiteIcon',
   PersonalCardIcon = 'PersonalCardIcon',
   PlayMarketIcon = 'PlayMarketIcon',
   PlusIcon = 'PlusIcon',
@@ -94,17 +88,14 @@ export enum IconTitleMap {
   AppleIcon = 'Лого «Apple»',
   ArrowDownIcon = "Стрелка 'Вниз'",
   ArrowLeftIcon = 'Стрелка',
-  ArrowsRewindRight = 'Стрелка',
   ArrowUpIcon = 'Стрелка вверх',
   AtmIcon = 'Банкомат',
   BankIcon = 'Банк',
   BurgerIcon = 'Бургер',
-  BurgerIconWhite = 'Бургер (белый)',
   Calendar2Icon = 'Календарь 2',
   CalendarCircleIcon = 'Скруглённый календарь',
   CalendarIcon = 'Календарь',
   CalendarTickIcon = 'Календарь с галочкой',
-  CalendarWhiteIcon = 'Календарь белый',
   CardIcon = 'Кред. карта',
   CardPosIcon = 'Кред. карта под наклоном',
   CardTickIcon = 'Кред. карта с галочкой',
@@ -125,14 +116,12 @@ export enum IconTitleMap {
   EarthIcon = 'Земля',
   EmptyWalletChangeIcon = 'Пустой кошелёк с возвратом',
   EmptyWalletIcon = 'Пустой кошелёк',
-  EmptyWalletWhiteIcon = 'Пустой кошелёк (белый)',
   EuroIcon = 'Евро',
   GeolocationIcon = 'Геолокация',
   GlassIcon = 'Зеркало',
   GlobalIcon = 'Глобус',
   GpsIcon = 'Gps',
-  GridIcon = 'Сетка',
-  GridIconWhite = 'Сетка (белая)',
+  GridIcon = 'Сетка (белая)',
   InterestGrowthIcon = 'Диаграмма роста',
   InterestIcon = 'Скидка',
   JCBIcon = 'JCB',
@@ -149,7 +138,6 @@ export enum IconTitleMap {
   PassSendIcon = 'Бизнес',
   PercentageRoundIcon = 'Проценты (круг.)',
   PercentageSquareIcon = 'Проценты',
-  PercentageSquareWhiteIcon = 'Проценты белые',
   PersonalCardIcon = 'Персональная карта',
   PlayMarketIcon = 'Лого «PlayMarket»',
   PlusIcon = 'Плюс',
@@ -180,7 +168,7 @@ export enum IconTitleMap {
  * @title Иконка
  * @enumNames [
  *   "",
- *   'Деньги', 'Самолет', 'Лого «Apple»', 'Стрелка \'Вниз\'', 'Стрелка', 'Стрелка', 'Стрелка вверх', 'Банкомат', 'Банк', 'Бургер', 'Бургер (белый)', 'Календарь 2', 'Скруглённый календарь', 'Календарь', 'Календарь с галочкой', 'Календарь белый', 'Кред. карта', 'Кред. карта под наклоном', 'Кред. карта с галочкой', 'Карта с драгоценностями', 'Машина', 'Деньги внутри кошелька', 'Кино', 'Часы', 'Крестик', 'Кресло', 'Кредитные карты', 'Скидка', 'Документ', 'Документ (одноцветный)', 'Документы', 'Документ с текстом', 'Доллар', 'Земля', 'Пустой кошелёк с возвратом', 'Пустой кошелёк', 'Пустой кошелёк (белый)', 'Евро', 'Геолокация', 'Зеркало', 'Глобус', 'Gps', 'Сетка', 'Сетка (белая)', 'Диаграмма роста', 'Скидка', 'JCB', 'Лупа', 'MasterCard', 'Минус', 'МИР', 'Деньги', 'Денежное страхование', 'Монитор и мобильный', 'Новый документ', 'Офис', 'Лого «Одноклассники»', 'Бизнес', 'Проценты (круг.)', 'Проценты', 'Проценты белые', 'Персональная карта', 'Лого «PlayMarket»', 'Плюс', 'Щит', 'Профиль, 2 персоны', 'Профиль', 'Тыква', 'Рубль (круг.)', 'Сейф', 'Безопасность', 'Подписанные документы', 'Маленькие часы', 'Звук', 'Лого «Telegram»', 'UnionPay', 'Пользователь', 'Visa', 'Лого «VK»', 'Пополнение карты', 'Кошелёк с плюсом', 'Кошелёк', 'Кошелёк с деньгами', 'Добавить продукт'
+ *   'Деньги', 'Самолет', 'Лого «Apple»', 'Стрелка \'Вниз\'', 'Стрелка', 'Стрелка вверх', 'Банкомат', 'Банк', 'Бургер', 'Календарь 2', 'Скруглённый календарь', 'Календарь', 'Календарь с галочкой', 'Кред. карта', 'Кред. карта под наклоном', 'Кред. карта с галочкой', 'Карта с драгоценностями', 'Машина', 'Деньги внутри кошелька', 'Кино', 'Часы', 'Крестик', 'Кресло', 'Кредитные карты', 'Скидка', 'Документ', 'Документ (одноцветный)', 'Документы', 'Документ с текстом', 'Доллар', 'Земля', 'Пустой кошелёк с возвратом', 'Пустой кошелёк', 'Евро', 'Геолокация', 'Зеркало', 'Глобус', 'Gps', 'Сетка (белая)', 'Диаграмма роста', 'Скидка', 'JCB', 'Лупа', 'MasterCard', 'Минус', 'МИР', 'Деньги', 'Денежное страхование', 'Монитор и мобильный', 'Новый документ', 'Офис', 'Лого «Одноклассники»', 'Бизнес', 'Проценты (круг.)', 'Проценты', 'Персональная карта', 'Лого «PlayMarket»', 'Плюс', 'Щит', 'Профиль, 2 персоны', 'Профиль', 'Тыква', 'Рубль (круг.)', 'Сейф', 'Безопасность', 'Подписанные документы', 'Маленькие часы', 'Звук', 'Лого «Telegram»', 'UnionPay', 'Пользователь', 'Visa', 'Лого «VK»', 'Пополнение карты', 'Кошелёк с плюсом', 'Кошелёк', 'Кошелёк с деньгами', 'Добавить продукт'
  * ]
  */
 export type IconName =
@@ -190,17 +178,14 @@ export type IconName =
   | 'AppleIcon'
   | 'ArrowDownIcon'
   | 'ArrowLeftIcon'
-  | 'ArrowsRewindRight'
   | 'ArrowUpIcon'
   | 'AtmIcon'
   | 'BankIcon'
   | 'BurgerIcon'
-  | 'BurgerIconWhite'
   | 'Calendar2Icon'
   | 'CalendarCircleIcon'
   | 'CalendarIcon'
   | 'CalendarTickIcon'
-  | 'CalendarWhiteIcon'
   | 'CardIcon'
   | 'CardPosIcon'
   | 'CardTickIcon'
@@ -221,14 +206,12 @@ export type IconName =
   | 'EarthIcon'
   | 'EmptyWalletChangeIcon'
   | 'EmptyWalletIcon'
-  | 'EmptyWalletWhiteIcon'
   | 'EuroIcon'
   | 'GeolocationIcon'
   | 'GlassIcon'
   | 'GlobalIcon'
   | 'GpsIcon'
   | 'GridIcon'
-  | 'GridIconWhite'
   | 'InterestGrowthIcon'
   | 'InterestIcon'
   | 'JCBIcon'
@@ -245,7 +228,6 @@ export type IconName =
   | 'PassSendIcon'
   | 'PercentageRoundIcon'
   | 'PercentageSquareIcon'
-  | 'PercentageSquareWhiteIcon'
   | 'PersonalCardIcon'
   | 'PlayMarketIcon'
   | 'PlusIcon'

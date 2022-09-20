@@ -13,7 +13,6 @@ export interface Img {
 export interface ImgSource {
   /** @title Иконка */
   icon?: IconName;
-  /** @hidden */
   iconVersion?: IconVersion;
   /** @title Картинка */
   src?: string;

@@ -16,7 +16,7 @@ export const ArrowButton = JSX<ButtonProps>(({ className, disabled, ...rest }) =
   >
     <Img
       className="w-4 h-4 min-w-4 min-h-4 rounded-full box-border"
-      image={{ icon: 'ArrowLeftIcon' }}
+      image={{ icon: 'ArrowLeftIcon', iconVersion: 'black' }}
       width="16"
       height="16"
       asSVG

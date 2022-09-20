@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { ImgSource, Picture } from '../../model/Picture';
 import { Icon } from '../Icon/Icon';
 import { getIconVersion } from './getIconVersion';
-import type { ImgSource, Picture } from '../../model/Picture';
 import type { Image, ImageProps } from './ImgProps';
 
 export const Img = JSX<ImageProps<Image>>(
@@ -16,6 +16,7 @@ export const Img = JSX<ImageProps<Image>>(
       return icon.length ? (
         <Icon
           className={className}
+          imageClassName={imageClassName}
           iconVersion={getIconVersion(image)}
           name={icon}
           {...iconProps}

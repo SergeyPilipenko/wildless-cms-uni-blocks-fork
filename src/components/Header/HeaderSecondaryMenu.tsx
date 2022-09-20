@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { IconName } from '../../icons/IconName';
+import type { IconVersion } from '../../model/IconVersion';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { UniBlockProps } from '../../types';
 import { Img } from '../../ui-kit/Img/Img';
@@ -21,9 +21,9 @@ const LINKS_COLORS_MAP: Record<BgColorVersion, string> = {
   'bg-white': 'text-secondary-light hover:text-secondary-hover',
   transparent: 'text-white',
 };
-const LINKS_ICON_NAME_MAP: Record<BgColorVersion, IconName> = {
-  'bg-white': 'GridIcon',
-  transparent: 'GridIconWhite',
+const LINKS_ICON_VERSION_MAP: Record<BgColorVersion, IconVersion> = {
+  'bg-white': 'black',
+  transparent: 'white',
 };
 
 export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
@@ -52,13 +52,21 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
           className={`mr-5 ${COLORS_MAP[bgColor]}`}
           ariaLabel="Поиск по сайту"
         >
-          <Img image="LoupeIcon" className="h-full" asSVG />
+          <Img
+            image={{ icon: 'LoupeIcon', iconVersion: LINKS_ICON_VERSION_MAP[bgColor] }}
+            className="h-full"
+            asSVG
+          />
         </HeaderSecondaryMenuButton>
         <HeaderSecondaryMenuButton
           className={`${LINKS_COLORS_MAP[bgColor]} min-w-[32px] min-h-[32px]`}
           ariaLabel="Дополнительные ссылки"
         >
-          <Img image={LINKS_ICON_NAME_MAP[bgColor]} className="h-full" asSVG />
+          <Img
+            image={{ icon: 'GridIcon', iconVersion: LINKS_ICON_VERSION_MAP[bgColor] }}
+            className="h-full bg-secondary-light rounded-full"
+            asSVG
+          />
         </HeaderSecondaryMenuButton>
       </div>
     );

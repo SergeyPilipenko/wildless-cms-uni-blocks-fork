@@ -2,7 +2,8 @@
  * @title Цвет иконки
  * @enumNames [
  *    "Нормальный",
- *    "Белый"
+ *    "Белый",
+ *    "Чёрный"
  * ]
  */
-export type IconVersion = 'normal' | 'white';
+export type IconVersion = 'normal' | 'white' | 'black';

@@ -16,7 +16,7 @@ export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
         aria-label="Открыть меню"
       >
         <Img
-          image={bgColor === 'bg-white' ? 'BurgerIcon' : 'BurgerIconWhite'}
+          image={{ icon: 'BurgerIcon', iconVersion: bgColor === 'bg-white' ? 'black' : 'white' }}
           className="text-primary-text"
           width="24"
           height="24"
