@@ -1,10 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { InsuranceContent } from './InsuranceContent';
-import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
+import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
+import type { InsuranceContent } from './InsuranceContent';
 
 export interface InsuranceProps extends InsuranceContent, UniBlockProps {}
 
@@ -50,8 +50,11 @@ function renderBenefit(benefit: Benefit, i: number) {
           asSVG
         />
       ) : null}
-      <div className="flex">
-        <div className="text-title-2xs">{benefit.label}</div>
+      <div>
+        {benefit?.label ? <div className="text-title-2xs">{benefit.label}</div> : null}
+        {benefit?.description ? (
+          <div className="mt-2 font-light text-secondary-text">{benefit.description}</div>
+        ) : null}
       </div>
     </div>
   );

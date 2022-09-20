@@ -1,11 +1,12 @@
-import { Insurance } from './Insurance';
+import { Picture } from '../../model/Picture';
 import { context } from '../../setup-fixture';
 import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
-import { Picture } from '../../model/Picture';
+import { Insurance } from './Insurance';
 
 const benefits: Benefit[] = [
   {
     label: 'Телесное повреждение',
+    description: 'Описание',
     icon: { icon: 'ShieldTickIcon' },
   },
   {
