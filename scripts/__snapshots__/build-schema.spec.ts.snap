@@ -1269,6 +1269,7 @@ Object {
         "DocsIcon",
         "DocumentTextIcon",
         "DollarIcon",
+        "DoneIcon",
         "EarthIcon",
         "EmptyWalletChangeIcon",
         "EmptyWalletIcon",
@@ -1350,6 +1351,7 @@ Object {
         "Документы",
         "Документ с текстом",
         "Доллар",
+        "Зелёная 'галочка'",
         "Земля",
         "Пустой кошелёк с возвратом",
         "Пустой кошелёк",
@@ -1484,6 +1486,43 @@ Object {
       },
       "type": "object",
     },
+    "InsuranceAmountBlockContent": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+        },
+        "insuranceTabs": Object {
+          "items": Object {
+            "$ref": "#/definitions/InsuranceAmountBlockTabs",
+          },
+          "title": "Список вкладок",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Страховые суммы",
+      "type": "object",
+    },
+    "InsuranceAmountBlockTabs": Object {
+      "properties": Object {
+        "cards": Object {
+          "items": Object {
+            "$ref": "#/definitions/cardItem",
+          },
+          "title": "Содержимое вкладки",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок вкладки",
+          "type": "string",
+        },
+      },
+      "title": "Вкладка",
+      "type": "object",
+    },
     "InsuranceContent": Object {
       "properties": Object {
         "benefits": Object {
@@ -1501,17 +1540,30 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
-        "insuranceSum": Object {
-          "title": "Страховая сумма",
-          "type": "number",
-        },
         "monthLimit": Object {
           "title": "Ежемесячный лимит",
+          "type": "number",
+        },
+        "sum": Object {
+          "title": "Страховая сумма",
           "type": "number",
         },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "InsuranceProps": Object {
+      "properties": Object {
+        "monthLimit": Object {
+          "title": "Ежемесячный лимит",
+          "type": "number",
+        },
+        "sum": Object {
+          "title": "Страховая сумма",
+          "type": "number",
         },
       },
       "type": "object",
@@ -3169,6 +3221,27 @@ Object {
         "href",
       ],
       "title": "Ссылка",
+      "type": "object",
+    },
+    "cardItem": Object {
+      "properties": Object {
+        "fee": Object {
+          "title": "Страховой взнос",
+          "type": "number",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "monthLimit": Object {
+          "title": "Ежемесячный лимит",
+          "type": "number",
+        },
+        "sum": Object {
+          "title": "Страховая сумма",
+          "type": "number",
+        },
+      },
+      "title": "Кнопка выбора программы",
       "type": "object",
     },
   },

@@ -43,19 +43,19 @@ export default {
             label: 'В мобильном приложении или интернет-банке',
             description: 'Для всех клиентов Россельхозбанка',
             icon: { icon: 'SignDocsIcon' },
-            button: { text: 'Войти в интернет-банк' },
+            button: { text: 'Войти в интернет-банк', href: 'https://www.rshb.ru/' },
           },
           {
             label: 'Через Госуслуги',
             description: 'При наличии данных в Единой биометрической системе',
             icon: { icon: 'ClockIcon' },
-            button: { text: 'Оформить' },
+            button: { text: 'Оформить', href: 'https://www.rshb.ru/' },
           },
           {
             label: 'В офисах Россельхозбанка',
             description: 'Откройте вклад',
             icon: { icon: 'ComfortableCompIcon' },
-            button: { text: 'Офисы на карте' },
+            button: { text: 'Офисы на карте', href: 'https://www.rshb.ru/' },
           },
         ]}
       />

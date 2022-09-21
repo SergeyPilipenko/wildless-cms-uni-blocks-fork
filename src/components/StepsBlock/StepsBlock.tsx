@@ -83,7 +83,7 @@ const renderStepTitle = (step: Step, i: number, isMainButton: boolean) => {
         <Button
           className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
           version="primary"
-          href="#"
+          href={step.button?.href}
         >
           {step.button.text}
         </Button>

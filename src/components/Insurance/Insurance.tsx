@@ -9,7 +9,7 @@ import type { InsuranceContent } from './InsuranceContent';
 export interface InsuranceProps extends InsuranceContent, UniBlockProps {}
 
 export const Insurance = JSX<InsuranceProps>(
-  ({ className = '', title, description, image, benefits, insuranceSum, monthLimit }) => {
+  ({ className = '', title, description, image, benefits, sum, monthLimit }) => {
     return (
       <section className={`px-[100px] py-[50px] bg-white text-primary-text ${className}`}>
         {title ? <Heading headingType="h3" title={title} className="text-center" /> : null}
@@ -23,11 +23,9 @@ export const Insurance = JSX<InsuranceProps>(
               ) : null}
 
               <div className="bg-secondary-light h-15 flex mt-7 gap-6 px-5 py-4">
-                {insuranceSum
-                  ? renderValueBlock('Страховая сумма:', insuranceSum, Boolean(monthLimit))
-                  : null}
+                {sum ? renderValueBlock('Страховая сумма:', sum, Boolean(monthLimit)) : null}
                 {monthLimit
-                  ? renderValueBlock('Ежемесячный лимит:', monthLimit, Boolean(insuranceSum))
+                  ? renderValueBlock('Ежемесячный лимит:', monthLimit, Boolean(sum))
                   : null}
               </div>
             </div>

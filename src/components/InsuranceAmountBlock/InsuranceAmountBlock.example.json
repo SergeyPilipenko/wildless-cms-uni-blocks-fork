@@ -1,0 +1,44 @@
+{
+  "title": "Заголовок",
+  "button": {
+    "href": "https://rshb.ru",
+    "text": "Текст кнопки"
+  },
+  "insuranceTabs": [
+    {
+      "title": "Описание",
+      "card": [
+        {
+          "sum": 200000,
+          "fee": 2100,
+          "icon": { "icon": "ActualBalanceIcon" }
+        },
+        {
+          "sum": 200000,
+          "fee": 2100,
+          "icon": { "icon": "ActualBalanceIcon" }
+        }
+      ]
+    },
+    {
+      "title": "Описание",
+      "card": [
+        {
+          "sum": 200000,
+          "fee": 2100,
+          "icon": { "icon": "ActualBalanceIcon" }
+        },
+        {
+          "sum": 200000,
+          "fee": 2100,
+          "icon": { "icon": "ActualBalanceIcon" }
+        },
+        {
+          "sum": 200000,
+          "fee": 2100,
+          "icon": { "icon": "ActualBalanceIcon" }
+        }
+      ]
+    }
+  ]
+}

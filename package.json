@@ -163,7 +163,7 @@
       "path": "lib/common.css"
     },
     {
-      "limit": "30 kB",
+      "limit": "45 kB",
       "path": "bundle/bundle.umd.min.js"
     }
   ],

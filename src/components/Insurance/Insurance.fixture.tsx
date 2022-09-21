@@ -49,7 +49,7 @@ export default {
         description="Покрываемые риски программы «Защита вас и ваших близких»"
         benefits={benefits}
         image={image}
-        insuranceSum={500000}
+        sum={500000}
       />
       <Insurance
         context={context}
@@ -58,7 +58,7 @@ export default {
         description="Покрываемые риски программы «Защита вас и ваших близких»"
         benefits={benefits}
         image={image}
-        insuranceSum={500000}
+        sum={500000}
         monthLimit={25000}
       />
     </div>

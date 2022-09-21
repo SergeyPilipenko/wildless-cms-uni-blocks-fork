@@ -7,6 +7,7 @@ import type { GalleryContent } from './Gallery/GalleryContent';
 import type { GracePeriodContent } from './GracePeriod/GracePeriodContent';
 import type { GroupBlockContent } from './GroupBlock/GroupBlockContent';
 import type { HeaderContent } from './Header/HeaderContent';
+import type { InsuranceAmountBlockContent } from './InsuranceAmountBlock/InsuranceAmountBlockContent';
 import type { LinkDocsContent } from './LinkDocs/LinkDocsContent';
 import type { LinkListContent } from './LinkList/LinkListContent';
 import type { MobileAppTileContent } from './MobileAppTile/MobileAppTileContent';
@@ -37,6 +38,7 @@ export type BlockContent =
   | GalleryContent
   | GracePeriodContent
   | HeaderContent
+  | InsuranceAmountBlockContent
   | LinkDocsContent
   | MobileAppTileContent
   | NavigatorTabsContent
