@@ -26,7 +26,7 @@ export const Footer = JSX<FooterProps>(
     anchor = null,
   }) => {
     return (
-      <footer className={`px-9 pt-9 pb-10 bg-white ${className || ''}`} id={anchor}>
+      <footer className={`p-9 bg-white ${className || ''}`} id={anchor}>
         <div className="flex items-stretch gap-[54px] pb-[30px] xl:gap-8">
           <Logo className={LEFT_COL_WIDTH_FULL_HD} />
           <SearchBar context={context} className="grow" />

@@ -1,15 +1,14 @@
 import type { AsyncDataHook } from '../components/ContentPage/ContentPageContext';
-import { CreditCalculatorData } from '../components/CreditCalculator/CreditCalculatorContent';
 
 export function useCreditCalculatorData(
   useAsyncData: AsyncDataHook,
   directoryName: string | undefined,
-): CreditCalculatorData {
+): any {
   const { data } = useAsyncData(creditCalculatorUrl(directoryName), fetchCreditCalculatorData);
   return data || {};
 }
 
-async function fetchCreditCalculatorData(url: string): Promise<CreditCalculatorData> {
+async function fetchCreditCalculatorData(url: string): Promise<any> {
   const response = await fetch(url);
   return await response.json();
 }

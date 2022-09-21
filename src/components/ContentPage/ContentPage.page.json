@@ -1954,11 +1954,6 @@
       }
     },
     {
-      "type": "CreditCalculator",
-      "anchor": "calculator",
-      "style": ["col-span-12"]
-    },
-    {
       "type": "Recommendation",
       "style": ["col-span-12"],
       "content": {

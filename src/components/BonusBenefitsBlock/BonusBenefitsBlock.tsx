@@ -11,13 +11,11 @@ export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
   ({ className = '', title, subtitle, bonusBenefits, anchor = null }) => {
     return (
       <section
-        className={`font-sans text-primary-text bg-white p-50 flex flex-col ${className}`}
+        className={`font-sans text-primary-text bg-white p-50 flex flex-col text-center ${className}`}
         id={anchor}
       >
-        {title ? (
-          <Heading headingType="h3" className="text-center mb-[10px]" title={title} />
-        ) : null}
-        {subtitle ? <span className="text-md font-normal text-center">{subtitle}</span> : null}
+        {title ? <Heading headingType="h3" className="mb-[10px]" title={title} /> : null}
+        {subtitle ? <span className="text-md font-normal">{subtitle}</span> : null}
         {bonusBenefits?.length ? (
           <div className={`grid gap-1 ${getElementsColsValue(className)}`}>
             {bonusBenefits.map(renderBonusBenefit)}
@@ -40,9 +38,7 @@ const renderBonusBenefit = (bonusBenefit: BonusBenefit, i: number) => {
         />
       ) : null}
       <div>
-        {bonusBenefit?.label ? (
-          <span className="title-2xs text-center m-0">{bonusBenefit.label}</span>
-        ) : null}
+        {bonusBenefit?.label ? <span className="title-2xs m-0">{bonusBenefit.label}</span> : null}
       </div>
     </div>
   );

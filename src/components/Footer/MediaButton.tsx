@@ -7,43 +7,31 @@ const ICONS_MAP: Array<{
   origins: string[];
   icon: Picture;
   label: string;
-  width: string;
-  height: string;
 }> = [
   {
     origins: ['t.me', 'telegram.org'],
     icon: { icon: 'TelegramIcon' },
     label: 'Телеграм',
-    width: '20px',
-    height: '16px',
   },
   {
     origins: ['vk.com'],
     icon: { icon: 'VKIcon' },
     label: 'ВКонтакте',
-    width: '24px',
-    height: '12px',
   },
   {
     origins: ['ok.ru'],
     icon: { icon: 'OkIcon' },
     label: 'Одноклассники',
-    width: '12px',
-    height: '20px',
   },
   {
     origins: ['apps.apple.com'],
     icon: { icon: 'AppleIcon' },
     label: 'App Store',
-    width: '20px',
-    height: '22px',
   },
   {
     origins: ['play.google.com'],
     icon: { icon: 'PlayMarketIcon' },
     label: 'Google Play',
-    width: '21px',
-    height: '21px',
   },
 ];
 
@@ -53,7 +41,7 @@ interface MediaButtonProps {
 }
 
 export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' }) => {
-  const { icon, width, height, label } =
+  const { icon, label } =
     ICONS_MAP.find(({ origins }) => origins.some((_) => href?.includes(_))) || {};
 
   if (!icon) return null;
@@ -77,10 +65,10 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
     >
       {icon ? (
         <Img
-          image={{ ...icon, iconVersion: 'normal' }}
+          image={icon}
           imageClassName={isPrimary ? 'group-hover:text-white' : ''}
-          width={width}
-          height={height}
+          width="24"
+          height="24"
           asSVG
         />
       ) : null}

@@ -13,6 +13,7 @@ export const Img = JSX<ImageProps<Image>>(
       return (
         <Icon
           className={className}
+          imageClassName={imageClassName}
           iconVersion={getIconVersion(image)}
           name={icon}
           {...iconProps}

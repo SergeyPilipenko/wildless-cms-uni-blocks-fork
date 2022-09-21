@@ -629,22 +629,6 @@ Object {
       "title": "Тип контакта",
       "type": "string",
     },
-    "CreditCalculatorContent": Object {
-      "properties": Object {
-        "tabs": Object {
-          "items": Object {
-            "$ref": "#/definitions/CreditCalculatorTab",
-          },
-          "title": "Вкладки",
-          "type": "array",
-        },
-      },
-      "title": "Кредитный калькулятор",
-      "type": "object",
-    },
-    "CreditCalculatorData": Object {
-      "type": "object",
-    },
     "CreditCalculatorParams": Object {
       "description": "TODO: данные из справочника",
       "type": "object",
@@ -670,27 +654,6 @@ Object {
         "calcType",
       ],
       "title": "Кредитный калькулятор",
-      "type": "object",
-    },
-    "CreditCalculatorTab": Object {
-      "properties": Object {
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "directoryName": Object {
-          "title": "Справочник",
-          "type": "string",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "title": Object {
-          "title": "Имя вкладки",
-          "type": "string",
-        },
-      },
-      "title": "Вкладка",
       "type": "object",
     },
     "DepositCalculatorParams": Object {
@@ -2757,23 +2720,6 @@ Object {
         },
       },
       "title": "Пункт подменю",
-      "type": "object",
-    },
-    "Tab": Object {
-      "properties": Object {
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "title": Object {
-          "title": "Имя вкладки",
-          "type": "string",
-        },
-      },
-      "title": "Вкладка",
       "type": "object",
     },
     "TableColumnData": Object {
