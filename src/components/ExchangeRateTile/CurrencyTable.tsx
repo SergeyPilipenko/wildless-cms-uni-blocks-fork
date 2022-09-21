@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { Img } from '../../ui-kit/Img/Img';
-import type { ExchangeCurrencyItem } from './ExchangeRateTileContent';
+import type { ExchangeCurrencyItem } from './ExchangeCurrencyCalculator';
 import { formatCurrency } from './formatCurrency';
 
 const TABLE_HEAD_STYLE = 'font-light text-left font-normal text-sm text-secondary-text';
@@ -31,7 +31,7 @@ export const CurrencyTable = JSX<CurrencyTableProps>(({ className, exchangeCurre
 });
 
 const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
-  const code = exchangeCurrencyItem?.currency?.currency;
+  const code = exchangeCurrencyItem?.code;
   return (
     <tr key={code} className="pb-1">
       <td className="pt-4">
@@ -41,10 +41,10 @@ const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
         </div>
       </td>
       <td className="pt-4 pl-11 m-title-md font-light">
-        {formatCurrency(exchangeCurrencyItem.buyExchangeRate)}
+        {formatCurrency(exchangeCurrencyItem.buy)}
       </td>
       <td className="pt-4 pl-11 m-title-md font-light">
-        {formatCurrency(exchangeCurrencyItem.saleExchangeRate)}
+        {formatCurrency(exchangeCurrencyItem.sell)}
       </td>
     </tr>
   );

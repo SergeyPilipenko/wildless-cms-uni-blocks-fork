@@ -1,3 +1,5 @@
+import type { FuncReturnVoid } from '../../types';
+
 export interface Router {
   pathname: string;
   query: Record<string, string | string[] | undefined>;
@@ -27,9 +29,14 @@ export type AsyncDataHook = <Data, Error = any>(
 
 export type GeolocationHook = (defaultLocation: string) => [string, () => void];
 
+export type SetStateAction<S> = S | ((prevState: S) => S);
+export type SetStateHook = <State>(
+  initialState: State | (() => State),
+) => [State, FuncReturnVoid<SetStateAction<State>>];
+
 export interface ContentPageContext {
   useRouter: () => Router;
-  useState: <State>(initialState: State) => [State, (_: State) => void];
+  useState: SetStateHook;
   useAsyncData: AsyncDataHook;
   useGeolocation: GeolocationHook;
   useLikeService: () => LikeService;
