@@ -11,6 +11,7 @@
     "alt": "",
     "title": ""
   },
+  "isDotted": true,
   "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
   "buttons": [
     {

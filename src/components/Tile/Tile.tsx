@@ -30,6 +30,7 @@ export const Tile = JSX<TileProps>((props) => {
     children,
     buttons,
     image,
+    isDotted = true,
     className = '',
     version = 'primary',
     role,
@@ -75,16 +76,17 @@ export const Tile = JSX<TileProps>((props) => {
           />
         ) : null}
         {children}
-        {renderList(items, version)}
+        {renderList(items, version, isDotted)}
       </BaseTile>
     </section>
   );
 });
 
-function renderList(items, version) {
+function renderList(items, version, isDotted: boolean) {
   return items?.length ? (
     <List
       items={items}
+      isDotted={isDotted}
       itemClassName="text-title-2xs font-light mt-2"
       version={version === 'primary' ? 'tile' : 'tile-white'}
     />

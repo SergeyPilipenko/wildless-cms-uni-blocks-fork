@@ -30,6 +30,7 @@ const image4: Picture = {
 export const TILE: TileContent = {
   title: 'Кредиты',
   headingType: 'h3',
+  isDotted: false,
   items: ['До 3 млн ₽', 'до 5 лет'],
   buttons: [
     {

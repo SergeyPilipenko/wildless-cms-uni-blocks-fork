@@ -3058,6 +3058,11 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
+        "isDotted": Object {
+          "default": true,
+          "title": "Буллиты",
+          "type": "boolean",
+        },
         "items": Object {
           "items": Object {
             "type": "string",
@@ -3098,6 +3103,11 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+        },
+        "isDotted": Object {
+          "default": true,
+          "title": "Буллиты",
+          "type": "boolean",
         },
         "items": Object {
           "items": Object {

@@ -14,5 +14,10 @@ export type TileContent = HeadingContent &
   ListContent &
   ButtonContent &
   ImageContent & {
+    /**
+     *  @title Буллиты
+     *  @default true
+     */
+    isDotted?: boolean;
     version?: BlockVersion;
   };
