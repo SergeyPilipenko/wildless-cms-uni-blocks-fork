@@ -11,6 +11,7 @@ export default [
   'backwardButton',
   'breadcrumbs',
   'benefits',
+  'bonusBenefits',
   'benefitsVersion',
   'recommendations',
   'isScroll',
