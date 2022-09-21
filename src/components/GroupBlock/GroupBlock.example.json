@@ -1,9 +1,10 @@
 {
   "tabs": [
-    { "title": "Еще программы", "index": 0 },
-    { "title": "Страхование жизни", "index": 1, "tag": "tag1" },
-    { "title": "Страхование здоровья", "index": 2, "tag": "tag2" }
+    { "title": "Таб 1", "index": 0 },
+    { "title": "Таб 2", "index": 1, "tag": "tag1" },
+    { "title": "Таб 3", "index": 2, "tag": "tag2" }
   ],
+  "isShowCounter": true,
   "blocks": [
     {
       "blockType": "ProductBlock",

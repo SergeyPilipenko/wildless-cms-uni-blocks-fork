@@ -967,6 +967,9 @@ Object {
     "GroupBlockCommonProps": Object {
       "properties": Object {
         "style": Object {
+          "default": Array [
+            "col-span-12",
+          ],
           "items": Object {
             "type": "string",
           },
@@ -2198,6 +2201,9 @@ Object {
           "type": "string",
         },
         "style": Object {
+          "default": Array [
+            "col-span-12",
+          ],
           "items": Object {
             "type": "string",
           },
@@ -2467,6 +2473,9 @@ Object {
           "$ref": "#/definitions/Picture",
         },
         "style": Object {
+          "default": Array [
+            "col-span-12",
+          ],
           "items": Object {
             "type": "string",
           },

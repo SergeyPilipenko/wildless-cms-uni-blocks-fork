@@ -11,7 +11,7 @@ export interface GroupBlocksProps extends GroupBlockContent, UniBlockProps {}
 
 export const GroupBlocksItem = JSX<GroupBlocksProps>(({ groupBlocks, context }) => {
   return (
-    <div className={'grid grid-cols-12 gap-2 box-border'}>
+    <div className="grid grid-cols-12 gap-2 box-border">
       {groupBlocks?.length ? groupBlocks.map(renderBlock(context)) : null}
     </div>
   );

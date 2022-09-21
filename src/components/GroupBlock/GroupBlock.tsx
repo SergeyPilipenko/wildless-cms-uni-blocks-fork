@@ -14,23 +14,28 @@ export interface GroupBlockProps extends GroupBlockContent, UniBlockProps {
 }
 
 export const GroupBlock = JSX<GroupBlockProps>(
-  ({ className = '', tabs, context, anchor = null, groupBlocks = [] }) => {
+  ({ className = '', tabs, context, anchor = null, groupBlocks = [], isShowCounter }) => {
     const [currentTag, setCurrentTag] = context.useState(tabs?.[0]?.tag);
 
     const filteredBlocks = filterBlocksByTag(groupBlocks, currentTag);
 
     const tabsNewMap = tabs?.map((tab) => {
       const count = tab.tag
-        ? groupBlocks.filter((block) => block?.tags?.includes(`${tab.tag}`)).length
+        ? groupBlocks.filter((block) => block?.tags?.includes(tab.tag as string)).length
         : groupBlocks.length;
 
       return { ...tab, count };
     });
 
     return (
-      <section id={anchor} className={`box-border gap-1 h-12 ${className}`}>
+      <section id={anchor} className={`box-border gap-1 ${className}`}>
         {tabsNewMap?.length ? (
-          <GroupBlockTabs currentTag={currentTag} onTabClick={setCurrentTag} tabs={tabsNewMap} />
+          <GroupBlockTabs
+            currentTag={currentTag}
+            onTabClick={setCurrentTag}
+            tabs={tabsNewMap}
+            isShowCounter={isShowCounter}
+          />
         ) : null}
         {groupBlocks.length ? (
           <GroupBlocksItem context={context} groupBlocks={filteredBlocks} />

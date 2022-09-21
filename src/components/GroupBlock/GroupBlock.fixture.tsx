@@ -39,6 +39,22 @@ export default {
         context={context}
         className="col-span-12"
         tabs={groupBlockExample.tabs}
+        isShowCounter={true}
+        groupBlocks={[
+          PRODUCT_TILE_GROUP_BLOCK,
+          PRODUCT_TILE_GROUP_BLOCK2,
+          PRODUCT_BLOCK_GROUP_BLOCK,
+          PRODUCT_BLOCK_GROUP_BLOCK2,
+        ]}
+      />
+    </div>
+  ),
+  'without-counter': (
+    <div className="container grid grid-cols-12">
+      <GroupBlock
+        context={context}
+        className="col-span-12"
+        tabs={groupBlockExample.tabs}
         groupBlocks={[
           PRODUCT_TILE_GROUP_BLOCK,
           PRODUCT_TILE_GROUP_BLOCK2,

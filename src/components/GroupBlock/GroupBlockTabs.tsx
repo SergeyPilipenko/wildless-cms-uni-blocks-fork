@@ -12,7 +12,7 @@ export interface GroupBlockTabsProps {
 }
 
 export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
-  const { tabs, currentTag, onTabClick, className = '', isShowCounter = true } = props;
+  const { tabs, currentTag, onTabClick, className = '', isShowCounter } = props;
 
   return (
     <div className={`mb-2 box-border flex gap-x-1 ${className}`} role="tablist">
@@ -24,7 +24,7 @@ export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
 const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-m-sm';
 
 const renderTab =
-  (onTabClick: TabClickHandler, isShowCounter: boolean, currentTag?: string) =>
+  (onTabClick: TabClickHandler, isShowCounter?: boolean, currentTag?: string) =>
   (tab: TabsItemProps, i: number) => {
     const isActive = currentTag === tab.tag;
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
@@ -42,9 +42,9 @@ const renderTab =
         tag={tab?.tag}
       >
         <div className="flex flex-1 items-center justify-center">
-          {tab?.title ? <h3 className={`mr-8 ${tabText}`}>{tab?.title}</h3> : null}
+          {tab?.title ? <h3 className={tabText}>{tab?.title}</h3> : null}
           {isShowCounter ? (
-            <div className={`flex items-center justify-center ${counterBlockStyle}`}>
+            <div className={`flex items-center justify-center ml-8 ${counterBlockStyle}`}>
               <span>{tab.count}</span>
             </div>
           ) : null}

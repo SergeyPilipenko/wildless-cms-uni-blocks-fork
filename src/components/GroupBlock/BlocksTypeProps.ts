@@ -10,7 +10,10 @@ export interface ActiveHandler {
 }
 
 export interface GroupBlockCommonProps {
-  /** @title Стиль */
+  /**
+   * @title Стиль
+   * @default ["col-span-12"]
+   */
   style?: string[];
   /** @title Теги */
   tags?: string[];
