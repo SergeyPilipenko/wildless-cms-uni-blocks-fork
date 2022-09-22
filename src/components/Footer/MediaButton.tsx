@@ -44,7 +44,9 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
   const { icon, label } =
     ICONS_MAP.find(({ origins }) => origins.some((_) => href?.includes(_))) || {};
 
-  if (!icon) return null;
+  if (!icon) {
+    return null;
+  }
 
   const classes =
     version === 'secondary'

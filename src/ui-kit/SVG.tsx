@@ -32,8 +32,8 @@ export const SVG = JSX<SVGProps>(
         width={width}
         height={height}
       >
-        {paths.map(({ d, fill, ...options }, i) => (
-          <path key={i} d={d} fill={fill || 'currentColor'} {...commonOptions} {...options} />
+        {paths.map(({ d, fill: pathFill, ...options }, i) => (
+          <path key={i} d={d} fill={pathFill || 'currentColor'} {...commonOptions} {...options} />
         ))}
       </svg>
     );

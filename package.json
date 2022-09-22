@@ -88,7 +88,7 @@
     "build:icons": "rimraf ./cosmos-static/icons && node ./scripts/prepare-icons.js ./src/icons ./cosmos-static/icons > ./src/icons/IconName.ts",
     "size": "size-limit",
     "lint": "eslint ./src",
-    "pretest": "npm run lint",
+    "pretest": "npm run prepare && npm run lint",
     "test": "jest --coverage",
     "cosmos": "cosmos",
     "cosmos:mobile": "cosmos --config cosmos.config.mobile.json",
@@ -163,7 +163,7 @@
       "path": "lib/common.css"
     },
     {
-      "limit": "45 kB",
+      "limit": "40 kB",
       "path": "bundle/bundle.umd.min.js"
     }
   ],

@@ -53,11 +53,13 @@ function generateIconNameType(iconNames, iconTitles) {
 /* eslint-disable max-lines */
 
 export enum IconMap {
-  ${iconNames.map((_) => `${_} = ${wrap(_)}`).join(', ')}
+  ${iconNames.map((_) => [_, wrap(_)].join(' = ')).join(', ')}
 }
 
 export enum IconTitleMap {
-  ${iconTitles.map((title, i) => `${iconNames[i]} = ${wrap(title || iconNames[i])}`).join(', ')}
+  ${iconTitles
+    .map((title, i) => [iconNames[i], wrap(title || iconNames[i])].join(' = '))
+    .join(', ')}
 }
 
 /**

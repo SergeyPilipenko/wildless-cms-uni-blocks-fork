@@ -61,7 +61,7 @@ export const ProductTile = JSX<ProductTileProps>(
           {description ? (
             <Description className="mt-4 max-w-[600px]" description={description} />
           ) : null}
-          {renderBenefits(benefits, version)}
+          {renderBenefits(benefits || [], version)}
 
           {additionalDescription
             ? renderAdditionalDescription(additionalDescription, version)
@@ -72,7 +72,7 @@ export const ProductTile = JSX<ProductTileProps>(
   },
 );
 
-function renderBenefits(benefits: TextBenefit[] = [], version: BlockVersion) {
+function renderBenefits(benefits: TextBenefit[], version: BlockVersion) {
   return (
     <div className="flex mt-5 mb-1">
       {benefits.length ? <div className="mr-8">{benefits.map(renderBenefitLabel)}</div> : null}

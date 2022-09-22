@@ -8,7 +8,9 @@ interface GetCalculatorParamsParams {
 export const getCalculatorParams = (params: GetCalculatorParamsParams) => {
   const { tableRows, isAnnuity = false } = params;
 
-  if (!tableRows) return {};
+  if (!tableRows) {
+    return {};
+  }
 
   const calculatorParams = tableRows.find((row) => row.isAnnuity === isAnnuity);
 

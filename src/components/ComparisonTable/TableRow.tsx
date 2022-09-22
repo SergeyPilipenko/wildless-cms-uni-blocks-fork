@@ -14,18 +14,15 @@ export interface TableRowProps {
   isLastRow: boolean;
 }
 
+const titleStyle = (isLastRow = false) =>
+  `text-sm py-7 ${DIVIDER_CLASSES} ${FIRST_CELL_CLASSES} ${
+    isLastRow ? 'border-b-0' : 'border-solid'
+  }`;
+
 export const TableRow = JSX<TableRowProps>(
   ({ row: { header, data }, activeCardIndex, isColoredFirstColumn, isFirstRow, isLastRow }) => (
     <TableRowContainer>
-      {header?.title ? (
-        <div
-          className={`text-sm py-7 ${DIVIDER_CLASSES} ${FIRST_CELL_CLASSES} ${
-            !isLastRow ? 'border-solid' : 'border-b-0'
-          }`}
-        >
-          {header.title}
-        </div>
-      ) : null}
+      {header?.title ? <div className={titleStyle(isLastRow)}>{header.title}</div> : null}
       {data?.length ? (
         <TableCarouselContainer activeCardIndex={activeCardIndex} columnWidth={COLUMN_WIDTH}>
           {data.map((cell, i) => (

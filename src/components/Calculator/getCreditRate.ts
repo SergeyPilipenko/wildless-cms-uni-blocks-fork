@@ -10,7 +10,9 @@ interface GetCreditRateParams {
 export const getCreditRate = (params: GetCreditRateParams) => {
   const { calculatorParams, isInsurance } = params;
 
-  if (!calculatorParams) return DEFAULT_RATE;
+  if (!calculatorParams) {
+    return DEFAULT_RATE;
+  }
 
   return isInsurance
     ? calculatorParams?.rateWithInsurance || DEFAULT_RATE

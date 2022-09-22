@@ -29,7 +29,7 @@ export function renderInput(props: InputProps) {
         <Select
           className="h-9 -translate-x-4"
           value={selected}
-          onChange={(value) => setSelected(value as Currency)}
+          onChange={(_) => setSelected(_ as Currency)}
         >
           {rates.map((_, i) => (
             <SelectOption key={String(i)} value={_.code}>

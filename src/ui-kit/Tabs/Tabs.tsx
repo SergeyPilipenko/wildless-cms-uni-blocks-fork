@@ -13,6 +13,9 @@ export const Tabs = JSX<TabsProps>(({ tabs, currentTabIndex, onTabClick }) => {
   );
 });
 
+const tabDescriptionStyle = (isActive = false) =>
+  `font-light text-xs ${isActive ? '' : 'text-secondary-text'}`;
+
 const renderTab =
   (currentTabIndex: number, onTabClick: TabClickHandler) => (tab: Tab, index: number) => {
     const isActive = currentTabIndex === index;
@@ -30,9 +33,7 @@ const renderTab =
         <div>
           {tab?.title ? <h3 className="font-medium m-0 text-base">{tab?.title}</h3> : null}
           {tab?.description ? (
-            <span className={`font-light text-xs ${isActive ? '' : 'text-secondary-text'}`}>
-              {tab?.description}
-            </span>
+            <span className={tabDescriptionStyle(isActive)}>{tab?.description}</span>
           ) : null}
         </div>
       </div>

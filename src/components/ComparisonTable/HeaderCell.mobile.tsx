@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
-import { Img } from '../../ui-kit/Img/Img';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { Img } from '../../ui-kit/Img/Img';
 
 export interface HeaderCellProps {
   icon?: Picture;
@@ -12,6 +12,10 @@ export interface HeaderCellProps {
   isFillGradient?: boolean;
   link?: LinkProps;
 }
+
+const headingStyle = (isFillGradient = false): string => (isFillGradient ? 'text-white' : '');
+const subtitleStyle = (isFillGradient = false): string =>
+  `text-m-sm mb-3.5 ${isFillGradient ? 'text-white' : 'text-secondary-text/80'}`;
 
 export const HeaderCell = JSX<HeaderCellProps>(
   ({ icon, image, title, subtitle, isFillGradient }) => (
@@ -30,19 +34,9 @@ export const HeaderCell = JSX<HeaderCellProps>(
         </div>
       )}
       {title ? (
-        <Heading
-          headingType="h4"
-          className={`${isFillGradient ? 'text-white' : ''}`}
-          title={title}
-        />
+        <Heading headingType="h4" className={headingStyle(isFillGradient)} title={title} />
       ) : null}
-      {subtitle ? (
-        <div
-          className={`text-m-sm mb-3.5 ${isFillGradient ? 'text-white' : 'text-secondary-text/80'}`}
-        >
-          {subtitle}
-        </div>
-      ) : null}
+      {subtitle ? <div className={subtitleStyle(isFillGradient)}>{subtitle}</div> : null}
     </div>
   ),
 );

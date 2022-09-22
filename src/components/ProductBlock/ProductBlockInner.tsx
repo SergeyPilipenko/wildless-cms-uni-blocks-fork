@@ -42,7 +42,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
                 description={description}
               />
             ) : null}
-            {benefits?.filter((items) => items.label)?.length ? (
+            {benefits?.filter((_) => _.label)?.length ? (
               <div className="flex gap-6 mt-6">
                 {benefits.map((benefit, i) =>
                   renderBenefit({ benefit, version, benefitsVersion }, i),

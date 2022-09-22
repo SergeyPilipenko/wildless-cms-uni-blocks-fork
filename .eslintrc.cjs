@@ -28,6 +28,11 @@ module.exports = {
     '@typescript-eslint/ban-types': 'warn',
     camelcase: ['error', { allow: ['node_ids', 'node_id', 'user_name'] }],
     'import/no-unresolved': 'off',
+    curly: 'error',
+    'no-param-reassign': 'error',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+    'default-param-last': 'error',
   },
   overrides: [
     {

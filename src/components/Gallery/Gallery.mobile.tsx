@@ -64,7 +64,7 @@ function renderCard(card: GalleryCard, key: number) {
         ) : null}
         {card.title ? <h3 className={`font-medium text-m-title-xs m-0`}>{card.title}</h3> : null}
         {card.description ? renderDescription(card) : null}
-        {card.items?.length ? renderItems(card.items, card.version, card.isDotted) : null}
+        {card.items?.length ? renderItems(card.items, card.isDotted, card.version) : null}
       </div>
       {card?.button?.text ? renderButton(card.button) : null}
     </div>
@@ -93,7 +93,7 @@ function renderDescription(card: GalleryCard) {
   );
 }
 
-function renderItems(items: GalleryItem[], version: BlockVersion = 'primary', isDotted) {
+function renderItems(items: GalleryItem[], isDotted, version: BlockVersion = 'primary') {
   return (
     <section className="mt-3">
       {items.map((item, i) => (

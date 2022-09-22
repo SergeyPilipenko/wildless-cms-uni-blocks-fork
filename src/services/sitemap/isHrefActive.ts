@@ -4,7 +4,8 @@ import { withoutMobilePath } from '../../utils/withoutMobilePath';
 export const isHrefActive = (
   href: string | undefined,
   router: { pathname?: string; href?: string },
-  cmp: (href: string, baseHref: string) => boolean = (href, baseHref) => baseHref.startsWith(href),
+  cmp: (targetHref: string, baseHref: string) => boolean = (targetHref, baseHref) =>
+    baseHref.startsWith(targetHref),
 ) => {
   return cmp(
     withoutQuery(href),

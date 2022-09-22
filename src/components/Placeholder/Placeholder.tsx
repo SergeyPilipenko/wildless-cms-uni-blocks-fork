@@ -50,8 +50,12 @@ const renderShimmer = (size = 3) =>
     .map((_) => Math.floor(_))
     .map(renderShimmerItem);
 
-const renderShimmerItem = (width = 100, index: number) => (
-  <div key={String(index)} style={{ width: `${width}%` }} className="h-4 mt-2 bg-secondary-light" />
+const renderShimmerItem = (width: number, index: number) => (
+  <div
+    key={String(index)}
+    style={{ width: `${width || 100}%` }}
+    className="h-4 mt-2 bg-secondary-light"
+  />
 );
 
 const goldenSequence = (first: number, size: number): number[] =>

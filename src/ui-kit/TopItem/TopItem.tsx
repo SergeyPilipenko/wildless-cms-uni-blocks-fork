@@ -44,7 +44,7 @@ export const TopItem = JSX<TopItemProps>(
   ),
 );
 
-const getLinkClasses = (bgColor: BgColorVersion, active?: boolean, flat?: boolean) => {
+const getLinkClasses = (bgColor: BgColorVersion, active = false, flat = false) => {
   let classes = 'border-transparent';
   if (active) {
     classes = `rounded-md ${bgColor === 'bg-white' ? 'border-primary-main' : 'border-white'}`;
@@ -53,13 +53,12 @@ const getLinkClasses = (bgColor: BgColorVersion, active?: boolean, flat?: boolea
   return `${classes} ${LINK_CLASSES} ${flat ? '' : 'px-4 py-2'}`;
 };
 
-const getTextClasses = (bgColor: BgColorVersion, active?: boolean, flat?: boolean) => {
-  let classes = 'text-white';
-  if (bgColor === 'bg-white') {
-    classes = active
-      ? 'text-primary-main'
-      : `${flat ? 'text-primary-text' : 'text-secondary-text'} hover:text-primary-main`;
+const getTextClasses = (bgColor: BgColorVersion, active = false, flat = false) => {
+  if (bgColor !== 'bg-white') {
+    return `text-white ${TEXT_CLASSES}`;
   }
-
-  return `${classes} ${TEXT_CLASSES}`;
+  const nonActiveAtoms = `${
+    flat ? 'text-primary-text' : 'text-secondary-text'
+  } hover:text-primary-main`;
+  return `${active ? 'text-primary-main' : nonActiveAtoms} ${TEXT_CLASSES}`;
 };

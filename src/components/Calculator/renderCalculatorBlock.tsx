@@ -1,13 +1,6 @@
 import type { JSXBlock } from '../../components/ContentPage/ContentPage';
-import type { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
 import type { CalculatorBlockDef } from './CalculatorContent';
 import { EmbeddableCalcBlocks, EmbeddableCalcProps } from './EmbeddableCalcBlocks';
-
-type EmbeddableCalcBlocks = {
-  blockCalcTabs?: CalculatorBlockDef[];
-  context: ContentPageContext;
-  className?: string;
-};
 
 export const renderCalculatorBlock =
   ({ context, className }: any) =>

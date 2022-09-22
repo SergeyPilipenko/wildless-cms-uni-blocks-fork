@@ -10,19 +10,19 @@
       "blockType": "ProductBlock",
       "title": "Продуктовый блок",
       "description": "Описание текстового блока",
-      "tags":["tag2"]
+      "tags": ["tag2"]
     },
     {
       "blockType": "ProductTile",
       "title": "Продуктовая плитка",
       "description": "Описание текстового блока",
-      "tags":["tag1"]
+      "tags": ["tag1"]
     },
     {
       "blockType": "ProductBlock",
       "title": "Продуктовый блок",
       "description": "Описание текстового блока",
-      "tags":["tag2"]
+      "tags": ["tag2"]
     }
   ]
 }

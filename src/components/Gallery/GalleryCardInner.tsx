@@ -20,7 +20,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
           {description ? (
             <div className={`font-light text-m-md-new ${title ? 'mt-2' : ''}`}>{description}</div>
           ) : null}
-          {items?.length ? renderItems(items, version, isDotted) : null}
+          {items?.length ? renderItems(items, isDotted, version) : null}
         </div>
         {button?.text ? renderButton(button) : null}
       </div>
@@ -42,7 +42,7 @@ function renderCardTitle(title: string, className: string) {
   return <div className={`text-xl m-0 ${className}`}>{title}</div>;
 }
 
-function renderItems(items: GalleryItem[], version: BlockVersion = 'primary', isDotted: boolean) {
+function renderItems(items: GalleryItem[], isDotted: boolean, version: BlockVersion = 'primary') {
   return (
     <List
       className={`max-w-[308px] mt-2 text-sm ${

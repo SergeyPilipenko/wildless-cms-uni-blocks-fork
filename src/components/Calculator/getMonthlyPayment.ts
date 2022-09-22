@@ -15,7 +15,9 @@ interface GetMonthlyPaymentParams {
 export const getMonthlyPayment = (params: GetMonthlyPaymentParams) => {
   const { calculatorParams, paymentType, rate, sum, months } = params;
 
-  if (!calculatorParams) return 0;
+  if (!calculatorParams) {
+    return 0;
+  }
 
   const finalSum = clamp(
     sum,

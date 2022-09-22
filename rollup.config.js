@@ -4,23 +4,23 @@
 /**
  * @type {import('rollup').RollupOptions}
  */
-const rollupTypescript = require('@rollup/plugin-typescript');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const { terser } = require('rollup-plugin-terser');
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import rollupTypescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
 
-const config = [
+export const config = (name) => [
   {
     input: 'src/index.ts',
     output: [
       {
         file: 'bundle/bundle.umd.js',
         format: 'umd',
-        name: 'UniBlocks',
+        name,
       },
       {
         file: 'bundle/bundle.umd.min.js',
         format: 'umd',
-        name: 'UniBlocks',
+        name,
         plugins: [terser()],
       },
     ],
@@ -28,4 +28,4 @@ const config = [
   },
 ];
 
-export default config;
+export default config('UniBlocks');

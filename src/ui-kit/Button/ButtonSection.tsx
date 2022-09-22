@@ -20,7 +20,9 @@ export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '',
 });
 
 function renderButton({ icon, ...button }: ButtonWithIconProps, i: number) {
-  if (!button?.text) return;
+  if (!button?.text) {
+    return;
+  }
 
   return icon ? (
     <Button

@@ -11,8 +11,12 @@ export const getIndexParts = (
   index: number;
   fraction: number;
 } => {
-  const index = scrollPoints.findIndex(([start, end]) => start <= scrollLeft && scrollLeft < end);
-  if (index < 0) return { index, fraction: 0 };
+  const index = scrollPoints.findIndex(
+    ([pointStart, pointEnd]) => pointStart <= scrollLeft && scrollLeft < pointEnd,
+  );
+  if (index < 0) {
+    return { index, fraction: 0 };
+  }
 
   const [start, end] = scrollPoints[index];
   const fraction = (scrollLeft - start) / (end - start);

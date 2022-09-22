@@ -4,18 +4,26 @@ import type { InputRangeProps } from './InputRangeProps';
 
 export const InputRange = JSX<InputRangeProps>(
   ({ className, title, items = [], min = 1, max = 100, step = 1, value = min, onChange }) => {
-    const handleChange = (value: string) => {
-      if (!onChange) return;
-      const sanitizedValue = Number(value.replace(/\D/g, ''));
+    const handleChange = (_: string) => {
+      if (!onChange) {
+        return;
+      }
+      const sanitizedValue = Number(_.replace(/\D/g, ''));
       onChange(sanitizedValue);
     };
     const inputStyle = {
       backgroundSize: `${(((value - min) * 100) / (max - min)).toFixed(2)}% 100%`,
     };
     const handleBlur = () => {
-      if (!onChange) return;
-      if (value < min) onChange(min);
-      if (value > max) onChange(max);
+      if (!onChange) {
+        return;
+      }
+      if (value < min) {
+        onChange(min);
+      }
+      if (value > max) {
+        onChange(max);
+      }
     };
     return (
       <div className={className}>

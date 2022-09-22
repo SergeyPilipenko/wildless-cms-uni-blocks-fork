@@ -9,9 +9,7 @@ export interface AccordionProps extends AccordionContent, UniBlockProps {}
 export const Accordion = JSX<AccordionProps>(
   ({ title, description, accordionItems, context, className = '', bordered }) => {
     return (
-      <section
-        className={`py-6 px-4 font-sans bg-white text-primary-text ${className}`}
-      >
+      <section className={`py-6 px-4 font-sans bg-white text-primary-text ${className}`}>
         {title ? <Heading headingType="h3" className="mb-2 text-center" title={title} /> : null}
         {description ? <div className="mb-5 text-m-md text-center">{description}</div> : null}
         {accordionItems?.length ? (

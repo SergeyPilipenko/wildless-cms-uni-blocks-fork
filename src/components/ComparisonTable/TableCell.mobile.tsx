@@ -22,6 +22,11 @@ export const TableCell = JSX<TableCellProps>(({ cell, rowHeader, isFillGradient 
   );
 });
 
+const labelStyle = (isFillGradient = false): string =>
+  `text-right ${isFillGradient ? 'text-white' : ''}`;
+const descriptionStyle = (isFillGradient = false): string =>
+  `text-right ${isFillGradient ? 'text-white/80' : 'text-secondary-text'}`;
+
 const renderCellInner =
   (isFillGradient: boolean, rowHeader?: string) =>
   ({ label, description }: CellData, i: number) =>
@@ -31,15 +36,9 @@ const renderCellInner =
           {rowHeader}
         </div>
         <div className="basis-1/2">
-          {label ? (
-            <div className={`text-right ${isFillGradient ? 'text-white' : ''}`}>{label}</div>
-          ) : null}
+          {label ? <div className={labelStyle(isFillGradient)}>{label}</div> : null}
           {description ? (
-            <div
-              className={`text-right ${isFillGradient ? 'text-white/80' : 'text-secondary-text'}`}
-            >
-              {description}
-            </div>
+            <div className={descriptionStyle(isFillGradient)}>{description}</div>
           ) : null}
         </div>
       </div>

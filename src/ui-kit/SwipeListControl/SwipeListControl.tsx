@@ -2,9 +2,9 @@ import { JSX } from '@redneckz/uni-jsx';
 import { DEFAULT_GAP, DEFAULT_PADDING } from './constants';
 import { SwipeListControlDots } from './SwipeListControlDots';
 import { SwipeListControlList } from './SwipeListControlList';
+import type { SwipeListControlProps } from './SwipeListControlProps';
 import { getIndexParts } from './utils/getIndexParts';
 import { getScrollPoints } from './utils/getScrollPoints';
-import type { SwipeListControlProps } from './SwipeListControlProps';
 
 export const SwipeListControl = JSX<SwipeListControlProps>(
   ({
@@ -27,12 +27,17 @@ export const SwipeListControl = JSX<SwipeListControlProps>(
     };
 
     const handleScroll = (e: UIEvent) => {
-      const { scrollLeft, clientWidth, childElementCount, scrollWidth, children } =
-        e.currentTarget as HTMLElement;
+      const {
+        scrollLeft,
+        clientWidth,
+        childElementCount,
+        scrollWidth,
+        children: childrenCollection,
+      } = e.currentTarget as HTMLElement;
 
       // horizontal PADDING / 2 to compensate padding-margin combo of child container
       // without CSS calc function, as wrapper element gets bigger in the DOM, remaining same visually
-      const itemWidth = (children[0] as HTMLElement).offsetWidth - padding / 2;
+      const itemWidth = (childrenCollection[0] as HTMLElement).offsetWidth - padding / 2;
       const scrollPoints = getScrollPoints({
         gap,
         padding,

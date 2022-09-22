@@ -7,15 +7,15 @@ interface TableFuncProps {
   handleConvert: (codeFrom?: Currency, codeTo?: Currency) => void;
 }
 
-export const callbackCurrencySelect = (_: TableFuncProps) =>
+export const callbackCurrencySelect = (props: TableFuncProps) =>
   tableFunc<TableFuncProps, () => void>([
     [
       (_) => _.value !== Currency.RUB && _.oppositeValue !== Currency.RUB,
-      () => _.handleConvert(_.value, Currency.RUB),
+      () => props.handleConvert(props.value, Currency.RUB),
     ],
     [
       (_) => _.value === Currency.RUB && _.oppositeValue === Currency.RUB,
-      () => _.handleConvert(_.value, Currency.USD),
+      () => props.handleConvert(props.value, Currency.USD),
     ],
-    [() => true, () => _.handleConvert(_.value)],
-  ])(_)?.();
+    [() => true, () => props.handleConvert(props.value)],
+  ])(props)?.();

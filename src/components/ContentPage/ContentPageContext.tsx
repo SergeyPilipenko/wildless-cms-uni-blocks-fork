@@ -22,10 +22,10 @@ export interface Search {
   setTerm: (t: string) => void;
 }
 
-export type AsyncDataHook = <Data, Error = any>(
+export type AsyncDataHook = <Data, Err = any>(
   key: string,
-  fetcher: (key: string) => Promise<Data>,
-) => { data?: Data; error?: Error };
+  fetcher: (fetcherKey: string) => Promise<Data>,
+) => { data?: Data; error?: Err };
 
 export type GeolocationHook = (defaultLocation: string) => [string, () => void];
 

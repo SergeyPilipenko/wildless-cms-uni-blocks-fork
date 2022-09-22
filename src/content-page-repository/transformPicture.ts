@@ -36,12 +36,15 @@ async function transformImg(
 
   const imgPath = `${path.dirname(pagePath)}/${src}`;
   let chain = sharp(imgPath);
-  if (size)
+  if (size) {
     chain = chain.resize(size?.width, size?.height, {
       fit: sharp.fit.contain,
       background: [0, 0, 0, 0],
     });
-  if (format) chain = chain.toFormat(format, options);
+  }
+  if (format) {
+    chain = chain.toFormat(format, options);
+  }
 
   const transformedSrc = transformSrc(src, transformationOptions);
   const transformedImgPath = `${publicDir}/${path.relative(
@@ -62,7 +65,9 @@ async function transformImg(
 
 function transformSrc(src: string, { format, size }: TransformationOptions & ImgSource): string {
   const noTransform = !format && !size;
-  if (noTransform) return src;
+  if (noTransform) {
+    return src;
+  }
 
   const suffix = [size?.width, size?.height].filter(Boolean).join('-');
   return `${path.basename(src, path.extname(src))}${suffix ? `-${suffix}` : ''}.${

@@ -5,7 +5,9 @@ export const changeHashOnScroll = (router: Router, blocks: NodeListOf<Element> |
     const currentHash = globalThis.location?.hash; // TODO: remove globalThis, use href from router
     const anchorHash = `#${block?.id}`;
 
-    if (currentHash === anchorHash) return;
+    if (currentHash === anchorHash) {
+      return;
+    }
 
     const position = block?.getBoundingClientRect();
     if (position && position.top > 0 && position.top < 150) {
