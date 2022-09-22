@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { DaDataAPI } from './api/DaDataAPI';
 import type { ContentPageContext } from './components/ContentPage/ContentPageContext';
+import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 setup(jsx, jsxs);
 
@@ -28,6 +29,7 @@ const Router = () => {
     },
   };
 };
+
 export const context: ContentPageContext = {
   useState,
   useRouter: Router,
@@ -78,6 +80,7 @@ export const context: ContentPageContext = {
       setTerm: (text: string) => setTerm(text),
     };
   },
+  IntersectionObserverTag,
 };
 
 export const mobileContext: ContentPageContext = {
