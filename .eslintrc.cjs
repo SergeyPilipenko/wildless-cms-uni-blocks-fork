@@ -23,7 +23,7 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'no-nested-ternary': 'warn',
+    'no-nested-ternary': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'warn',
     camelcase: ['error', { allow: ['node_ids', 'node_id', 'user_name'] }],

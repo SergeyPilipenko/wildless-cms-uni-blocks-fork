@@ -17,13 +17,6 @@ const image: Picture = {
   title: 'money',
 };
 
-const buttonPrimary: ButtonCommonProps = {
-  href: '/credit-cards',
-  text: 'Подробнее',
-  target: '_blank',
-  version: 'secondary',
-  icon: { icon: 'BankIcon' },
-};
 const link: ButtonCommonProps = {
   href: '/credit-cards',
   text: 'Подробнее',

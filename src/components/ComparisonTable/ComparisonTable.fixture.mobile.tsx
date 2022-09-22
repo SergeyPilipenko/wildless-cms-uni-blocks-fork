@@ -21,15 +21,6 @@ const image2: Picture = {
   },
 };
 
-const image3: Picture = {
-  src: 'card-3.png',
-  format: 'webp',
-  size: {
-    width: 100,
-    height: 63,
-  },
-};
-
 const rowHeaders = [
   { title: 'Начисление процентов на остаток по счету' },
   { title: 'Начисление процентов на остаток по счету' },
