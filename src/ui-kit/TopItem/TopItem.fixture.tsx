@@ -1,4 +1,4 @@
-import '../../setup-fixture';
+import '../../react/setup-fixture';
 
 import { TopItem } from './TopItem';
 

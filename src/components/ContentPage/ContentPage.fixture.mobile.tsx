@@ -1,4 +1,4 @@
-import { mobileContext } from '../../setup-fixture';
+import { mobileContext } from '../../react/setup-fixture';
 
 import type { ContentPageDef } from '../../types';
 import { Blocks } from '../Blocks';

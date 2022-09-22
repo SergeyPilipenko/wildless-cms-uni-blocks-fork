@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { mobileContext } from '../../setup-fixture';
+import { mobileContext } from '../../react/setup-fixture';
 import { TextBlock } from './TextBlock';
 import { TextBlockContent } from './TextBlockContent';
 

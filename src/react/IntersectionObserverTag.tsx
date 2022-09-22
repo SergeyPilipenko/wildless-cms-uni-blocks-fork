@@ -1,8 +1,8 @@
 import { FC, useCallback, useRef } from 'react';
-import { IntersectionObserverTagProps } from './components/ContentPage/ContentPageContext';
+import { IntersectionObserverTagProps } from '../components/ContentPage/ContentPageContext';
 
 export const IntersectionObserverTag: FC<IntersectionObserverTagProps> = (props) => {
-  const { Tag, className = '', observerCallback, observerOptions, children, ...rest } = props;
+  const { Tag, observerCallback, observerOptions, children, ...rest } = props;
 
   const intersectionObserver = useRef<IntersectionObserver>();
   const ref = useCallback(
@@ -12,11 +12,11 @@ export const IntersectionObserverTag: FC<IntersectionObserverTagProps> = (props)
         intersectionObserver.current.observe(tag);
       }
     },
-    [observerCallback, observerOptions, intersectionObserver.current],
+    [observerCallback, observerOptions],
   );
 
   return (
-    <Tag ref={ref} className={className} {...rest}>
+    <Tag ref={ref} {...rest}>
       {children}
     </Tag>
   );

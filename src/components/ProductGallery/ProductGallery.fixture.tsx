@@ -1,7 +1,7 @@
-import { context } from '../../setup-fixture';
-import { ProductGallery } from './ProductGallery';
 import type { Picture } from '../../model/Picture';
+import { context } from '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import { ProductGallery } from './ProductGallery';
 
 const percentImage: Picture = {
   src: '3-6-percent.png',

@@ -1,6 +1,6 @@
-import { mobileContext } from '../../setup-fixture';
-import { linkDocsContentExample } from './linkDocsContentExample';
+import { mobileContext } from '../../react/setup-fixture';
 import { LinkDocs } from './LinkDocs';
+import { linkDocsContentExample } from './linkDocsContentExample';
 
 export default {
   'vertical (default)': (

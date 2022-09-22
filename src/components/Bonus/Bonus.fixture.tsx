@@ -1,4 +1,4 @@
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { Bonus } from './Bonus';
 import type { BonusContent } from './BonusContent';
 

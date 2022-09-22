@@ -1,6 +1,6 @@
-import '../../setup-fixture';
-import { Icon } from './Icon';
 import { IconMap } from '../../icons/IconName';
+import '../../react/setup-fixture';
+import { Icon } from './Icon';
 
 export default {
   'all (as img)': (

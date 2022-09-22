@@ -1,4 +1,4 @@
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { NavigatorTabs } from './NavigatorTabs';
 import tabsExample from './NavigatorTabs.example.json';
 import type { NavigatorTabsContent } from './NavigatorTabsContent';

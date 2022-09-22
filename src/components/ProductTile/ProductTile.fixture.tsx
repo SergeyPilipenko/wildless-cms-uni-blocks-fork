@@ -1,4 +1,4 @@
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 
 import type { Picture } from '../../model/Picture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';

@@ -1,14 +1,4 @@
-import { context } from '../../setup-fixture';
-import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
-import { HEADLINE } from '../Headline/Headline.fixture';
-import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
-import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
-import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
-import { PRODUCT_TILE } from '../ProductTile/ProductTile.fixture';
-import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
-import { TILE } from '../Tile/Tile.fixture';
-import type { AccordionProps } from './Accordion';
-import { Accordion } from './Accordion';
+import { context } from '../../react/setup-fixture';
 import type {
   GalleryBlockListDef,
   HeadlineBlockListDef,
@@ -19,6 +9,16 @@ import type {
   TextBlockBlockListDef,
   TileBlockListDef,
 } from '../../ui-kit/BlocksList/BlocksListProps';
+import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
+import { HEADLINE } from '../Headline/Headline.fixture';
+import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
+import { defaultProps as MINI_GALLERY } from '../MiniGallery/MiniGallery.fixture';
+import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
+import { PRODUCT_TILE } from '../ProductTile/ProductTile.fixture';
+import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
+import { TILE } from '../Tile/Tile.fixture';
+import type { AccordionProps } from './Accordion';
+import { Accordion } from './Accordion';
 
 const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockBlockListDef = {
   blockListType: 'TextBlock',

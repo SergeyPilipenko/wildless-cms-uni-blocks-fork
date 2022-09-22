@@ -1,6 +1,6 @@
-import { context } from '../../setup-fixture';
-import { linkDocsContentExample } from './linkDocsContentExample';
+import { context } from '../../react/setup-fixture';
 import { LinkDocs } from './LinkDocs';
+import { linkDocsContentExample } from './linkDocsContentExample';
 
 export default {
   'two columns (default)': (

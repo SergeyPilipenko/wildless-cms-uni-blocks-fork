@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 import { ProductBlock } from './ProductBlock';

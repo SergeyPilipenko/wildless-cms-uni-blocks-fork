@@ -1,4 +1,4 @@
-import '../../setup-fixture';
+import '../../react/setup-fixture';
 import { Img } from '../Img/Img';
 import { Button } from './Button';
 

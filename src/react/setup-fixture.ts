@@ -2,8 +2,8 @@ import { setup } from '@redneckz/uni-jsx';
 
 import { useEffect, useState } from 'react';
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { DaDataAPI } from './api/DaDataAPI';
-import type { ContentPageContext } from './components/ContentPage/ContentPageContext';
+import { DaDataAPI } from '../api/DaDataAPI';
+import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 setup(jsx, jsxs);

@@ -1,5 +1,5 @@
+import { mobileContext } from '../../react/setup-fixture';
 import { SwipeListControl } from './SwipeListControl';
-import { mobileContext } from '../../setup-fixture';
 
 const generateChildren = (count: number) =>
   new Array(count).fill(0).map((_, i) => (

@@ -1,4 +1,4 @@
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 
 import { Headline } from './Headline';
 import { HeadlineContent } from './HeadlineContent';

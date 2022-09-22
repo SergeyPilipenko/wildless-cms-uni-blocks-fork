@@ -1,4 +1,4 @@
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { defaultProps as GALLERY } from '../Gallery/Gallery.fixture';
 import { HEADLINE } from '../Headline/Headline.fixture';
 import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';

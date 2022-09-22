@@ -1,4 +1,4 @@
-import { mobileContext } from '../../setup-fixture';
+import { mobileContext } from '../../react/setup-fixture';
 import { LinkList } from './LinkList';
 import { linkDocsContentExample } from './linkListContentExample';
 

@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { mobileContext } from '../../setup-fixture';
+import { mobileContext } from '../../react/setup-fixture';
 import { TariffsTable } from './TariffsTable';
 import type { TariffsTableColumn, TariffsTableRowHeader } from './TariffsTableContent';
 

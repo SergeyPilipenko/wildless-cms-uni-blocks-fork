@@ -38,7 +38,6 @@ export type SetStateHook = <State>(
 export interface IntersectionObserverTagProps {
   Tag: string;
   children?: VNode;
-  className?: string;
   observerCallback: IntersectionObserverCallback;
   observerOptions?: IntersectionObserverInit;
 }

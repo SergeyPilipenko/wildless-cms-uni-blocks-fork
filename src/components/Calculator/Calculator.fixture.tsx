@@ -1,13 +1,13 @@
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { Calculator } from './Calculator';
 
-import type {
-  CreditCalculatorParamsDef,
-  MortgageCalculatorParamsDef,
-  DepositCalculatorParamsDef,
-  BonusCalculatorParamsDef,
-} from './CalculatorContent';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type {
+  BonusCalculatorParamsDef,
+  CreditCalculatorParamsDef,
+  DepositCalculatorParamsDef,
+  MortgageCalculatorParamsDef,
+} from './CalculatorContent';
 
 const buttons: ButtonWithIconProps[] = [
   {

@@ -1,6 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { Recommendation, RecommendationProps } from './Recommendation';
 
 const creditCard: Picture = {

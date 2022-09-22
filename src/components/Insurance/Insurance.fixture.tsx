@@ -1,5 +1,5 @@
 import { Picture } from '../../model/Picture';
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 import { Insurance } from './Insurance';
 

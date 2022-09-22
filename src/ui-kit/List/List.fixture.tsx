@@ -1,4 +1,4 @@
-import '../../setup-fixture';
+import '../../react/setup-fixture';
 import { List } from './List';
 
 const items = ['List Item #1', 'List Item #2', 'List Item #3', 'List Item #4'];

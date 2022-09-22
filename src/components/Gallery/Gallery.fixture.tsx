@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
 import { Gallery } from './Gallery';
 import type { GalleryProps } from './GalleryProps';

@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../setup-fixture';
+import { context } from '../../react/setup-fixture';
 import { TextBlock } from './TextBlock';
 import { TextBlockContent } from './TextBlockContent';
 
