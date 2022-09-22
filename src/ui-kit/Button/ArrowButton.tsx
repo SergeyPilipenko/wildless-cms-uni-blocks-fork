@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { ButtonProps } from './ButtonProps';
 import { Button } from './Button';
-import { ButtonProps } from './ButtonProps';
 import { Img } from '../Img/Img';
 
 export const ArrowButton = JSX<ButtonProps>(({ className, disabled, ...rest }) => (

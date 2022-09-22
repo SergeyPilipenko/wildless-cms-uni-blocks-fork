@@ -1,10 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { GalleryVersion } from '../../model/GalleryVersion';
 import type { UniBlockProps } from '../../types';
-import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
+import type { GalleryContent } from './GalleryContent';
 import { galleryLengthForScrollMap } from './constants';
 import { GalleryContainer } from './GalleryContainer';
-import type { GalleryContent } from './GalleryContent';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 
 export interface GalleryInnerProps extends GalleryContent, UniBlockProps {
   version?: GalleryVersion;
@@ -37,24 +37,14 @@ export const GalleryInner = JSX<GalleryInnerProps>(
           activeCardIndex={activeCardIndex}
           {...rest}
         />
-        {showPrevButton ? (
-          <ArrowButton
-            className="absolute top-1/2 left-8 z-10 mt-[25px]"
-            onClick={handlePrevClick}
-            ariaLabel="Пролистать влево"
-            data-block-control="scroll-left"
-          />
-        ) : null}
-        {showNextButton ? (
-          <ArrowButton
-            className="absolute top-1/2 right-8 z-10 mt-[25px] rotate-180"
-            onClick={handleNextClick}
-            ariaLabel="Пролистать вправо"
-            data-block-control="scroll-right"
-          />
-        ) : null}
-        <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-opacity-from-white" />
-        <div className="absolute top-0 right-0 bottom-0 w-[100px] bg-opacity-to-white" />
+        {renderArrows({
+          handler: [handlePrevClick, handleNextClick],
+          isShown: [showPrevButton, showNextButton],
+          btnClass: ['left-8', 'right-8'],
+          className: 'top-1/2',
+        })}
+        <div className="absolute top-0 left-0 bottom-0 w-[82px] bg-opacity-from-white" />
+        <div className="absolute top-0 right-0 bottom-0 w-[82px] bg-opacity-to-white" />
       </section>
     );
   },

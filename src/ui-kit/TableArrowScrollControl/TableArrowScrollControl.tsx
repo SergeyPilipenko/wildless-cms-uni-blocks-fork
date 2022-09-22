@@ -1,27 +1,18 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ArrowButton } from '../Button/ArrowButton';
+import { renderArrows } from '../Button/renderArrows';
 import type { TableArrowScrollControlProps } from './TableArrowScrollControlProps';
 
 export const TableArrowScrollControl = JSX<TableArrowScrollControlProps>(
-  ({ isScrollAvailable, onNextClick, onPrevClick, showNextButton, showPrevButton }) => {
+  ({ isScrollAvailable, handleNextClick, handlePrevClick, showNextButton, showPrevButton }) => {
     return isScrollAvailable ? (
       <div>
-        <div className="absolute top-7 right-7 z-10">
-          <ArrowButton
-            className="mt-4 rotate-180"
-            onClick={onNextClick}
-            disabled={!showNextButton}
-            ariaLabel="Пролистать вправо"
-            data-block-control="scroll-right"
-          />
-          <ArrowButton
-            className="mt-4"
-            onClick={onPrevClick}
-            disabled={!showPrevButton}
-            ariaLabel="Пролистать влево"
-            data-block-control="scroll-left"
-          />
-        </div>
+        {renderArrows({
+          handler: [handlePrevClick, handleNextClick],
+          isShown: [showPrevButton, showNextButton],
+          btnClass: ['top-[108px]', 'top-11'],
+          className: 'right-7',
+          isDisabled: true,
+        })}
       </div>
     ) : null;
   },

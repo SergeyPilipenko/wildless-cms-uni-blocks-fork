@@ -1,7 +1,9 @@
+import { FuncReturnVoid } from '../../types';
+
 export interface TableArrowScrollControlProps {
   isScrollAvailable?: boolean;
-  onNextClick?: (ev?: MouseEvent) => void;
-  onPrevClick?: (ev?: MouseEvent) => void;
-  showNextButton?: boolean;
-  showPrevButton?: boolean;
+  handleNextClick: FuncReturnVoid<MouseEvent>;
+  handlePrevClick: FuncReturnVoid<MouseEvent>;
+  showNextButton: boolean;
+  showPrevButton: boolean;
 }

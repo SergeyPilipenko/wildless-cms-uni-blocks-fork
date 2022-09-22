@@ -1,10 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { FuncReturnVoid, UniBlockProps } from '../../types';
-import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
 import { Img } from '../../ui-kit/Img/Img';
-import type { CalculatorBlockDef, CalculatorContent } from './CalculatorContent';
-import { CalculatorNav } from './CalculatorContent';
+import type { CalculatorBlockDef, CalculatorContent, CalculatorNav } from './CalculatorContent';
 import { renderCalculatorBlock } from './renderCalculatorBlock';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 
 export interface CalculatorProps extends CalculatorContent, UniBlockProps {}
 
@@ -21,9 +20,6 @@ type NavButtonProps = {
   activeSlideIndex: number;
   onClick: FuncReturnVoid<MouseEvent>;
 };
-
-const arrowBtnStyle =
-  'absolute w-[56px] h-[56px] min-h-[56px] max-h-[56px] top-1 z-10 mt-[25px] bg-white rounded-full';
 
 export const Calculator = JSX<CalculatorProps>(
   ({ className = '', context, calcTabs = [], anchor = null }) => {
@@ -50,22 +46,12 @@ export const Calculator = JSX<CalculatorProps>(
           {tabsNav.length > 1
             ? renderTabs({ tabsShift, tabsNav, activeSlideIndex, setActiveSlideIndex })
             : null}
-          {showPrevButton ? (
-            <ArrowButton
-              className={`${arrowBtnStyle} left-3 top-3`}
-              onClick={handlePrevClick}
-              ariaLabel="Пролистать влево"
-              data-block-control="scroll-left"
-            />
-          ) : null}
-          {showNextButton ? (
-            <ArrowButton
-              className={`${arrowBtnStyle} right-3 top-3 rotate-180`}
-              onClick={handleNextClick}
-              ariaLabel="Пролистать вправо"
-              data-block-control="scroll-right"
-            />
-          ) : null}
+          {renderArrows({
+            handler: [handlePrevClick, handleNextClick],
+            isShown: [showPrevButton, showNextButton],
+            btnClass: ['left-3', 'right-3'],
+            className: 'top-8',
+          })}
         </div>
         <div
           className="flex"

@@ -11,12 +11,12 @@ export const useTableArrowScrollControl = ({
   activeCardIndex: number;
   setActiveCardIndex: (_: number) => void;
 }): Required<TableArrowScrollControlProps> => {
-  const onNextClick = () => setActiveCardIndex(activeCardIndex + 1);
-  const onPrevClick = () => setActiveCardIndex(activeCardIndex - 1);
+  const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
+  const handlePrevClick = () => setActiveCardIndex(activeCardIndex - 1);
 
   const isScrollAvailable = columnsLength > colsLengthForScroll;
   const showNextButton = isScrollAvailable && columnsLength - activeCardIndex > colsLengthForScroll;
   const showPrevButton = Boolean(isScrollAvailable && activeCardIndex > 0);
 
-  return { onNextClick, onPrevClick, isScrollAvailable, showNextButton, showPrevButton };
+  return { handleNextClick, handlePrevClick, isScrollAvailable, showNextButton, showPrevButton };
 };

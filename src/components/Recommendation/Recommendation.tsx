@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { RecommendationCard } from './RecommendationCard';
 import type { RecommendationCardTypes, RecommendationContent } from './RecommendationContent';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 
 const BLUR_BLOCK_CLASSES = 'absolute top-0 bottom-0 w-[84px]';
 const CARD_FULL_VIEW_COUNT = 2;
@@ -87,20 +87,12 @@ const renderNavButtons = ({
 
   return (
     <div>
-      {showPrevButton ? (
-        <ArrowButton
-          className="absolute top-1/2 left-8 z-10 mt-6"
-          onClick={handlePrevClick}
-          ariaLabel="Пролистать влево"
-        />
-      ) : null}
-      {showNextButton ? (
-        <ArrowButton
-          className="absolute top-1/2 right-8 z-10 mt-6 rotate-180"
-          onClick={handleNextClick}
-          ariaLabel="Пролистать вправо"
-        />
-      ) : null}
+      {renderArrows({
+        handler: [handlePrevClick, handleNextClick],
+        isShown: [showPrevButton, showNextButton],
+        btnClass: ['left-8', 'right-8'],
+        className: 'top-1/2 mt-6',
+      })}
     </div>
   );
 };

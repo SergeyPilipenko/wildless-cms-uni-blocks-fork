@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps, FuncReturnVoid } from '../../types';
 import type { InsuranceAmountBlockTabs, cardItem } from './InsuranceAmountBlockContent';
-import { ArrowButton } from '../../ui-kit/Button/ArrowButton';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 
 export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTabs, UniBlockProps {}
 
@@ -21,9 +21,6 @@ type InsuranceSlideProps = {
   activeSlideIndex: number;
   onClick: FuncReturnVoid<MouseEvent>;
 };
-
-const arrowBtnStyle =
-  'absolute w-12 h-12 min-h-12 max-h-12 top-1 z-10 mt-[25px] bg-white rounded-full text-primary-text';
 
 export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
   ({ className = '', context, cards = [], anchor = null }) => {
@@ -52,27 +49,17 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
                 setActiveSlideIndex,
               })
             : null}
+          {renderArrows({
+            handler: [handlePrevClick, handleNextClick],
+            isShown: [showPrevButton, showNextButton],
+            btnClass: ['left-[50px]', 'right-[50px]'],
+            className: 'top-[62px]',
+          })}
           {showPrevButton ? (
-            <div>
-              <ArrowButton
-                className={`${arrowBtnStyle} left-0 top-9`}
-                onClick={handlePrevClick}
-                ariaLabel="Пролистать влево"
-                data-block-control="scroll-left"
-              />
-              <div className="absolute top-0 left-0 h-[168px] w-[84px] bg-opacity-from-white" />
-            </div>
+            <div className="absolute top-0 left-0 h-full w-[136px] bg-opacity-from-white" />
           ) : null}
           {showNextButton ? (
-            <div>
-              <ArrowButton
-                className={`${arrowBtnStyle} right-0 top-9 rotate-180`}
-                onClick={handleNextClick}
-                ariaLabel="Пролистать вправо"
-                data-block-control="scroll-right"
-              />
-              <div className="absolute top-0 right-0 h-[168px] w-[100px] bg-opacity-to-white" />
-            </div>
+            <div className="absolute top-0 right-0 h-full w-[136px] bg-opacity-to-white" />
           ) : null}
         </div>
       </section>
@@ -89,8 +76,11 @@ function renderGallery({
 }: InsuranceGalleryProps) {
   const tabsShiftWidth = isLastShift ? tabsShift * 460 - 240 : tabsShift * 460;
   return (
-    <div style={{ transform: `translateX(-${tabsShiftWidth}px)` }} className="duration-1000">
-      <div className="w-full flex flex-nowrap gap-3.5 pb-[38px] px-[50px]">
+    <div
+      style={{ transform: `translateX(-${tabsShiftWidth}px)` }}
+      className="duration-1000 px-[50px]"
+    >
+      <div className="w-full flex flex-nowrap gap-3.5 pb-[38px]">
         {cards.map((slide, i) =>
           renderSlide({
             slide,
