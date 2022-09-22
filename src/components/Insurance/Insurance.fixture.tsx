@@ -40,7 +40,7 @@ const image: Picture = {
 };
 
 export default {
-  default: (
+  'without monthly payment': (
     <div className="container grid grid-cols-12">
       <Insurance
         context={context}
@@ -51,6 +51,10 @@ export default {
         image={image}
         sum={500000}
       />
+    </div>
+  ),
+  'with monthly payment': (
+    <div className="container grid grid-cols-12">
       <Insurance
         context={context}
         className="col-span-12"

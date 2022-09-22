@@ -77,7 +77,7 @@ export const PRODUCT_BLOCK: ProductBlockContent = {
 };
 
 export default {
-  default: (
+  'primary with back button': (
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
@@ -90,7 +90,10 @@ export default {
         buttons={buttons}
         image={image}
       />
-
+    </div>
+  ),
+  'primary with color benefits': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
@@ -102,8 +105,20 @@ export default {
         buttons={buttons}
         image={image}
       />
+    </div>
+  ),
+  'primary with list': (
+    <div className="container grid grid-cols-12">
       <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} image={image} />
+    </div>
+  ),
+  'primary without image': (
+    <div className="container grid grid-cols-12">
       <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} />
+    </div>
+  ),
+  'primary with default benefits': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
@@ -115,7 +130,7 @@ export default {
       />
     </div>
   ),
-  secondary: (
+  'secondary with back button': (
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
@@ -129,7 +144,10 @@ export default {
         image={image}
         version="secondary"
       />
-
+    </div>
+  ),
+  'secondary with benefits': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
@@ -142,6 +160,10 @@ export default {
         image={image}
         version="secondary"
       />
+    </div>
+  ),
+  'secondary with list': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
@@ -149,12 +171,20 @@ export default {
         image={image}
         version="secondary"
       />
+    </div>
+  ),
+  'secondary without image': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}
         {...PRODUCT_BLOCK}
         version="secondary"
       />
+    </div>
+  ),
+  'secondary without back button': (
+    <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
         context={context}

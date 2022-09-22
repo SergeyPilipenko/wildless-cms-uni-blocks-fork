@@ -1,7 +1,7 @@
+import type { Picture } from '../../model/Picture';
 import { mobileContext } from '../../setup-fixture';
 import { TariffsTable } from './TariffsTable';
 import type { TariffsTableColumn, TariffsTableRowHeader } from './TariffsTableContent';
-import type { Picture } from '../../model/Picture';
 
 const image: Picture = {
   src: 'payment-systems.png',
@@ -17,15 +17,11 @@ const image: Picture = {
 const rowHeaders: TariffsTableRowHeader[] = [
   { title: 'Начисление процентов на остаток по счету', icon: { icon: 'OkIcon' } },
   { title: 'Снятие наличных', icon: { icon: 'GlassIcon' } },
-  { title: 'Оформление онлайн', icon: { icon: 'ShieldTickIcon' } },
   { title: 'Кэшбэк баллами' },
   { title: 'Кнопки-иконки' },
-  { title: 'Стоимость SMS-сервиса' },
   { title: 'Дополнительная информация' },
   { title: 'Описание и кнопка' },
-  { title: 'Описание и кнопка' },
   { title: 'Описание и ссылка' },
-  { title: 'Описание и список' },
 ];
 
 const columns: TariffsTableColumn[] = [
@@ -42,7 +38,6 @@ const columns: TariffsTableColumn[] = [
           description: 'В сторонних банкоматах - 1 раз в месяц, далее 1% минимум 150 руб',
         },
       ],
-      [{ label: 'Нет' }],
       [{ label: 'Платёжные системы картинкой' }, { image: image }],
       [
         {
@@ -62,11 +57,6 @@ const columns: TariffsTableColumn[] = [
               target: '_blank',
             },
           ],
-        },
-      ],
-      [
-        {
-          label: 'Бесплатно',
         },
       ],
       [
@@ -100,29 +90,11 @@ const columns: TariffsTableColumn[] = [
           buttons: [
             {
               text: 'Подробнее',
-              version: 'secondary',
-              href: '/',
-              target: '_blank',
-            },
-          ],
-        },
-      ],
-      [
-        {
-          label: '30 тыс - 5 млн рублей',
-          buttons: [
-            {
-              text: 'Подробнее',
               href: '/',
               target: '_blank',
               version: 'link',
             },
           ],
-        },
-      ],
-      [
-        {
-          label: '30 тыс - 5 млн рублей',
           list: {
             items: ['item 1', 'item 2', 'item 3'],
           },

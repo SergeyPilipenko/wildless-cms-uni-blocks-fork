@@ -38,19 +38,39 @@ const secondaryProps: HeadlineContent = {
 };
 
 export default {
-  default: (
+  'default left alignment': (
     <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...defaultProps} align="left" />
+    </div>
+  ),
+  'default center alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...defaultProps} align="center" />
+    </div>
+  ),
+  'default right alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...defaultProps} align="right" />
     </div>
   ),
 
-  primary: (
+  'primary left alignment': (
     <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...primaryProps} align="left" />
+    </div>
+  ),
+  'primary center alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...primaryProps} align="center" />
+    </div>
+  ),
+  'primary right alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...primaryProps} align="right" />
+    </div>
+  ),
+  'primary without description': (
+    <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
         context={context}
@@ -58,6 +78,10 @@ export default {
         image={image}
         bgColorHeadline="primary"
       />
+    </div>
+  ),
+  'primary without title': (
+    <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
         context={context}
@@ -67,11 +91,24 @@ export default {
       />
     </div>
   ),
-  secondary: (
+
+  'secondary left alignment': (
     <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...secondaryProps} align="left" />
+    </div>
+  ),
+  'secondary center alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...secondaryProps} align="center" />
+    </div>
+  ),
+  'secondary right alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...secondaryProps} align="right" />
+    </div>
+  ),
+  'secondary without description': (
+    <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
         context={context}
@@ -79,6 +116,10 @@ export default {
         image={image}
         bgColorHeadline="secondary"
       />
+    </div>
+  ),
+  'secondary without title': (
+    <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
         context={context}

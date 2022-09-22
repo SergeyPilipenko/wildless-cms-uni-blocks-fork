@@ -20,12 +20,12 @@ describe('Desktop. Регресс отображения блоков', {}, () =
 
           switch (blockName) {
             case 'Header': {
-              blockFixture.headerMapIsLoaded();
+              blockFixture.firstLevelMenuIsLoaded();
               blockFixture.getBlock().compareSnapshot(screenshotName);
               break;
             }
             case 'Footer': {
-              blockFixture.footerMapIsLoaded();
+              blockFixture.firstLevelMenuIsLoaded();
               blockFixture.getBlock().compareSnapshot(screenshotName);
               break;
             }

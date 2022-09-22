@@ -27,12 +27,12 @@ describe(
 
             switch (blockName) {
               case 'Header': {
-                blockFixture.headerMapIsLoaded();
+                blockFixture.secondLevelMenuIsLoaded();
                 blockFixture.getBlock().compareSnapshot(screenshotName);
                 break;
               }
               case 'Footer': {
-                blockFixture.footerMapIsLoaded();
+                blockFixture.firstLevelMenuIsLoaded();
                 blockFixture.getBlock().compareSnapshot(screenshotName);
                 break;
               }

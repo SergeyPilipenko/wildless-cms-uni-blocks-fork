@@ -20,24 +20,48 @@ export const HEADLINE_SECONDARY: HeadlineContent = {
 };
 
 export default {
-  default: (
+  'default left alignment': (
+    <div className="container grid grid-cols-12">
+      <Headline className="col-span-12" context={context} {...HEADLINE} align="left" />
+    </div>
+  ),
+  'default center alignment': (
     <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...HEADLINE} />
-      <Headline className="col-span-12" context={context} {...HEADLINE} align="left" />
+    </div>
+  ),
+  'default right alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...HEADLINE} align="right" />
     </div>
   ),
-  primary: (
+  'primary left alignment': (
+    <div className="container grid grid-cols-12">
+      <Headline className="col-span-12" context={context} {...HEADLINE_PRIMARY} align="left" />
+    </div>
+  ),
+  'primary center alignment': (
     <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...HEADLINE_PRIMARY} />
-      <Headline className="col-span-12" context={context} {...HEADLINE_PRIMARY} align="left" />
+    </div>
+  ),
+  'primary right alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...HEADLINE_PRIMARY} align="right" />
     </div>
   ),
-  secondary: (
+  'secondary left alignment': (
+    <div className="container grid grid-cols-12">
+      <Headline className="col-span-12" context={context} {...HEADLINE_SECONDARY} align="left" />
+    </div>
+  ),
+  'secondary center alignment': (
     <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...HEADLINE_SECONDARY} />
-      <Headline className="col-span-12" context={context} {...HEADLINE_SECONDARY} align="left" />
+    </div>
+  ),
+  'secondary right alignment': (
+    <div className="container grid grid-cols-12">
       <Headline className="col-span-12" context={context} {...HEADLINE_SECONDARY} align="right" />
     </div>
   ),

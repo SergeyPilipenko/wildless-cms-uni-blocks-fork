@@ -66,18 +66,23 @@ export const defaultProps: RecommendationProps = {
 
 export default {
   default: (
-    <div>
-      <div className="container grid grid-cols-12" data-theme="pc">
-        <Recommendation className="col-span-12 mb-1" {...defaultProps} version="secondary" />
-      </div>
-
-      <div className="container grid grid-cols-12" data-theme="bc">
-        <Recommendation className="col-span-12 mb-1" {...defaultProps} version="secondary" />
-      </div>
-
-      <div className="container grid grid-cols-12 mb-1">
-        <Recommendation className="col-span-12" {...defaultProps} />
-      </div>
+    <div className="container grid grid-cols-12 mb-1">
+      <Recommendation className="col-span-12" {...defaultProps} />
+    </div>
+  ),
+  'secondary private clients': (
+    <div className="container grid grid-cols-12" data-theme="pc">
+      <Recommendation className="col-span-12" {...defaultProps} version="secondary" />
+    </div>
+  ),
+  'secondary business clients': (
+    <div className="container grid grid-cols-12" data-theme="bc">
+      <Recommendation className="col-span-12" {...defaultProps} version="secondary" />
+    </div>
+  ),
+  'secondary ecosystem own': (
+    <div className="container grid grid-cols-12" data-theme="eo">
+      <Recommendation className="col-span-12" {...defaultProps} version="secondary" />
     </div>
   ),
 };

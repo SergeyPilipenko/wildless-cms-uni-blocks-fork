@@ -14,8 +14,8 @@ export const getBlockFixtureURL = (path, fixture) => {
 
 export const getBlock = () => cy.get('div[data-theme]:first > *').should('exist');
 
-export const headerMapIsLoaded = () => cy.contains('Кредитные карты').should('exist');
-export const footerMapIsLoaded = () => cy.contains('Частным клиентам').should('exist');
+export const firstLevelMenuIsLoaded = () => cy.contains('Частным клиентам').should('exist');
+export const secondLevelMenuIsLoaded = () => cy.contains('Кредитные карты').should('exist');
 
 export const activeSearchBar = () => cy.get('#search-bar-input').should('exist').type('тест');
 

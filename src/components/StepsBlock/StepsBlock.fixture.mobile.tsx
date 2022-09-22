@@ -17,7 +17,7 @@ const steps = [
 ];
 
 export default {
-  default: (
+  primary: (
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
@@ -27,12 +27,24 @@ export default {
           size="normal"
           steps={steps}
         />
+      </div>
+    </div>
+  ),
+  'primary small': (
+    <div className="container grid grid-cols-12">
+      <div className="col-span-12">
         <StepsBlock
           context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           size="small"
           steps={steps}
         />
+      </div>
+    </div>
+  ),
+  'primary with images': (
+    <div className="container grid grid-cols-12">
+      <div className="col-span-12">
         <StepsBlock
           context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
@@ -58,6 +70,12 @@ export default {
             },
           ]}
         />
+      </div>
+    </div>
+  ),
+  'primary with icons': (
+    <div className="container grid grid-cols-12">
+      <div className="col-span-12">
         <StepsBlock
           context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
@@ -80,7 +98,6 @@ export default {
       </div>
     </div>
   ),
-
   secondary: (
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
@@ -92,6 +109,12 @@ export default {
           steps={steps}
           version="secondary"
         />
+      </div>
+    </div>
+  ),
+  'secondary small': (
+    <div className="container grid grid-cols-12">
+      <div className="col-span-12">
         <StepsBlock
           context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
@@ -99,6 +122,12 @@ export default {
           steps={steps}
           version="secondary"
         />
+      </div>
+    </div>
+  ),
+  'secondary with images': (
+    <div className="container grid grid-cols-12">
+      <div className="col-span-12">
         <StepsBlock
           context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
@@ -125,6 +154,12 @@ export default {
           ]}
           version="secondary"
         />
+      </div>
+    </div>
+  ),
+  'secondary with icons': (
+    <div className="container grid grid-cols-12">
+      <div className="col-span-12">
         <StepsBlock
           context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
