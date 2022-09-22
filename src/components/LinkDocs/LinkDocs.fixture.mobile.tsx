@@ -5,12 +5,7 @@ import { linkDocsContentExample } from './linkDocsContentExample';
 export default {
   'vertical (default)': (
     <div className="container grid grid-cols-12">
-      <LinkDocs
-        className="col-span-12"
-        context={mobileContext}
-        subtitle="Откройте мультивалютный вклад, чтобы распределить свои вложения"
-        {...linkDocsContentExample}
-      />
+      <LinkDocs className="col-span-12" context={mobileContext} {...linkDocsContentExample} />
     </div>
   ),
   'vertical, no border': (

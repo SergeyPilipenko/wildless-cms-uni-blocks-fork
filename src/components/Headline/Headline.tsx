@@ -15,21 +15,24 @@ export const Headline = JSX<HeadlineProps>(
     title,
     description,
     anchor = null,
+    headingType = 'h2',
   }) => {
     const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
+
     return (
-      <section className={`p-[50px] ${STYLE_MAPS.background} ${className}`} id={anchor}>
+      <section
+        className={`p-[50px] flex flex-col gap-4 ${STYLE_MAPS.background} ${className}`}
+        id={anchor}
+      >
         {title ? (
           <Heading
-            headingType="h2"
+            headingType={headingType}
             className={`text-primary-text ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
             title={title}
           />
         ) : null}
         {description ? (
-          <p className={`font-normal text-base mt-4 ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}>
-            {description}
-          </p>
+          <p className={`text-base ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}>{description}</p>
         ) : null}
       </section>
     );

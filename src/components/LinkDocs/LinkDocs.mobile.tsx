@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import type { LinkDocsContent } from './LinkDocsContent';
 import { LinkDocsHorizontalList } from './LinkDocsHorizontalList';
 import { LinkDocsVerticalList } from './LinkDocsVerticalList';
+import { Headline } from '../Headline/Headline';
 
 export interface LinkDocsProps extends LinkDocsContent, UniBlockProps {}
 
@@ -12,7 +12,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     className = '',
     context,
     title,
-    subtitle,
+    description,
     icon = { icon: 'DocIconMonoColor' },
     documents,
     orientation = 'vertical',
@@ -22,16 +22,14 @@ export const LinkDocs = JSX<LinkDocsProps>(
       <section
         className={`font-sans text-primary-text py-6 px-4 bg-white overflow-x-hidden ${className}`}
       >
-        {title ? (
-          <Heading
-            headingType="h2"
-            className={`text-center ${subtitle ? 'mb-2' : 'mb-5'}`}
-            title={title}
-          />
-        ) : null}
-        {subtitle ? (
-          <h3 className="mt-0 font-normal mb-5 text-center text-m-md">{subtitle}</h3>
-        ) : null}
+        <Headline
+          className={`!p-0 ${description ? 'gap-2' : 'gap-5'}`}
+          title={title}
+          description={description}
+          context={context}
+          align="center"
+          headingType="h3"
+        />
         {orientation === 'vertical' ? (
           <LinkDocsVerticalList hasBorder={hasBorder} documents={documents} icon={icon} />
         ) : (

@@ -11,7 +11,7 @@ export interface LinkDocsHorizontalListProps extends LinkDocsVerticalListProps {
 export const LinkDocsHorizontalList = JSX<LinkDocsHorizontalListProps>(
   ({ context, hasBorder = true, documents, icon }) => {
     return (
-      <SwipeListControl context={context} className="text-m-sm text-primary-main">
+      <SwipeListControl context={context} className="text-m-sm text-primary-main mt-5">
         {documents?.length
           ? documents.map((doc, i) => (
               <LinkDocsListItem

@@ -27,7 +27,7 @@ export interface LinkDocsContent {
   /** @title Заголовок */
   title?: string;
   /** @title Описание */
-  subtitle?: string;
+  description?: string;
   /** @title Название иконки */
   icon?: Picture;
   /** @title Список */

@@ -1,6 +1,6 @@
 import type { BlockVersionWithTransparent } from '../../model/BlockVersion';
 import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { HeadingContent, HeadingType } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { AlignType } from '../../model/AlignType';
 
@@ -12,4 +12,5 @@ export type HeadlineContent = HeadingContent &
   ImageContent & {
     align?: AlignType;
     bgColorHeadline?: BlockVersionWithTransparent;
+    headingType?: HeadingType;
   };

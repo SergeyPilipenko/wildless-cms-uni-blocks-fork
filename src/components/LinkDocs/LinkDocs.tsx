@@ -1,20 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import type { AlignType } from '../../model/AlignType';
+import { Headline } from '../Headline/Headline';
 import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
 import { LinkDocsList } from './LinkDocsList';
-
-const titleAlignStyleMap: Record<AlignType, string> = {
-  left: 'text-left',
-  center: 'text-center',
-  right: 'text-right',
-};
-
-const titleMarginsStyleMap: Record<LinkColumnsMode, string> = {
-  double: 'mb-8',
-  single: 'mb-[26px]',
-};
 
 const linkColumnsModeStyleMap: Record<LinkColumnsMode, string> = {
   double: 'flex gap-x-5 gap-y-[26px] flex-wrap',
@@ -25,10 +13,11 @@ export interface LinkDocsProps extends LinkDocsContent, UniBlockProps {}
 
 export const LinkDocs = JSX<LinkDocsProps>(
   ({
+    context,
     className = '',
     title,
-    subtitle,
-    align,
+    description,
+    align = 'center',
     documents,
     icon = { icon: 'DocIcon' },
     columnsMode = 'double',
@@ -36,26 +25,16 @@ export const LinkDocs = JSX<LinkDocsProps>(
   }) => {
     return (
       <section className={`font-sans text-primary-text p-[50px] bg-white ${className}`} id={anchor}>
-        {title ? (
-          <Heading
-            headingType="h2"
-            className={`${subtitle ? 'mb-2.5' : titleMarginsStyleMap[columnsMode]} ${
-              titleAlignStyleMap[align ?? 'center']
-            }`}
-            title={title}
-          />
-        ) : null}
-        {subtitle ? (
-          <h3
-            className={`text-base mt-0 font-normal ${titleMarginsStyleMap[columnsMode]} ${
-              titleAlignStyleMap[align ?? 'center']
-            }`}
-          >
-            {subtitle}
-          </h3>
-        ) : null}
+        <Headline
+          className="!p-0"
+          title={title}
+          description={description}
+          context={context}
+          align={align}
+          headingType="h3"
+        />
         <LinkDocsList
-          className={linkColumnsModeStyleMap[columnsMode]}
+          className={`mt-8 ${linkColumnsModeStyleMap[columnsMode]}`}
           columnsMode={columnsMode}
           documents={documents}
           icon={icon}

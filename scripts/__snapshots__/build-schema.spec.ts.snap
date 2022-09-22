@@ -1137,6 +1137,9 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
+        },
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
@@ -1162,6 +1165,9 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "headingType": Object {
+          "$ref": "#/definitions/HeadingType",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -1533,6 +1539,10 @@ Object {
         "columnsMode": Object {
           "$ref": "#/definitions/LinkColumnsMode",
         },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
         "documents": Object {
           "items": Object {
             "$ref": "#/definitions/LinkDocsItem",
@@ -1551,10 +1561,6 @@ Object {
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
           "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
-        },
-        "subtitle": Object {
-          "title": "Описание",
-          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
@@ -1575,6 +1581,10 @@ Object {
         "columnsMode": Object {
           "$ref": "#/definitions/LinkColumnsMode",
         },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
         "documents": Object {
           "items": Object {
             "$ref": "#/definitions/LinkDocsItem",
@@ -1593,10 +1603,6 @@ Object {
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
           "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
-        },
-        "subtitle": Object {
-          "title": "Описание",
-          "type": "string",
         },
         "title": Object {
           "title": "Заголовок",
