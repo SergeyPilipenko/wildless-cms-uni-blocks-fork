@@ -30,7 +30,9 @@ export const BenefitsBlock = JSX<BenefitsBlockProps>(
 
 const renderBenefits = (benefits: BenefitItem[]) => {
   return (
-    <div className="flex flex-wrap justify-center gap-x-20 mt-9">{benefits.map(renderStep)}</div>
+    <div className="flex flex-wrap w-full justify-center gap-x-20 mt-9">
+      {benefits.map(renderStep)}
+    </div>
   );
 };
 
