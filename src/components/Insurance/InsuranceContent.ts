@@ -12,6 +12,9 @@ export interface InsuranceBenefit {
   icon?: Picture;
 }
 
+/**
+ * @title Страховка
+ */
 export type InsuranceContent = InsuranceProps & {
   /** @title Заголовок */
   title?: string;

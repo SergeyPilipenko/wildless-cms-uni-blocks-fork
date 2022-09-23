@@ -1531,6 +1531,7 @@ Object {
           "type": "string",
         },
       },
+      "title": "Страховка",
       "type": "object",
     },
     "InsuranceProps": Object {

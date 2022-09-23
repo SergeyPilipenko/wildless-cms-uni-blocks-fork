@@ -17,5 +17,13 @@
         "icon": "ShieldTickIcon"
       }
     }
-  ]
+  ],
+  "image": {
+    "format": "webp",
+    "size": {
+      "width": 400,
+      "height": 300
+    }
+  },
+  "sum": 500000
 }

@@ -43,4 +43,6 @@ export default [
   'target',
   'documents',
   'bgColor',
+  'insurance',
+  'insuranceTabs',
 ];
