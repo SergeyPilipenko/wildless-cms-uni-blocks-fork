@@ -42,6 +42,10 @@ export interface IntersectionObserverTagProps {
   observerOptions?: IntersectionObserverInit;
 }
 
+export type IntersectionObserverComponent = (
+  props: IntersectionObserverTagProps & Record<string, any>,
+) => VNode;
+
 export interface ContentPageContext {
   useRouter: () => Router;
   useState: SetStateHook;
@@ -50,5 +54,5 @@ export interface ContentPageContext {
   useLikeService: () => LikeService;
   useSearch: () => Search;
   handlerDecorator?: HandlerDecorator;
-  IntersectionObserverTag: (props: IntersectionObserverTagProps & Record<string, any>) => VNode;
+  IntersectionObserverTag: IntersectionObserverComponent;
 }

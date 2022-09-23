@@ -1,7 +1,7 @@
-import { FC, useCallback, useRef } from 'react';
-import { IntersectionObserverTagProps } from '../components/ContentPage/ContentPageContext';
+import { useCallback, useRef } from 'react';
+import { IntersectionObserverComponent } from '../components/ContentPage/ContentPageContext';
 
-export const IntersectionObserverTag: FC<IntersectionObserverTagProps> = (props) => {
+export const IntersectionObserverTag: IntersectionObserverComponent = (props) => {
   const { Tag, observerCallback, observerOptions, children, ...rest } = props;
 
   const intersectionObserver = useRef<IntersectionObserver>();
