@@ -1,6 +1,6 @@
-import type { SizeVersion } from '../../model/SizeVersion';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
+import type { SizeVersion } from '../../model/SizeVersion';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 
 /**
@@ -35,7 +35,10 @@ export interface StepsBlockContent {
    */
   steps?: Step[];
   button?: ButtonProps;
-  /** @title Размер шагов (моб.) */
+  /**
+   * @title Размер шагов (моб.)
+   * @default normal
+   */
   size?: SizeVersion; // TODO: mobile content
   version?: BlockVersion; // TODO: mobile content
 }

@@ -46,7 +46,15 @@ const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
 const styleMaps = (version: BlockVersion): StyleType => STEPS_BLOCK_STYLE_MAPS[version];
 
 export const StepsBlock = JSX<StepsBlockProps>(
-  ({ className, title, description, steps, size = 'normal', version = 'primary' }) => {
+  ({
+    className,
+    title,
+    description,
+    showLines = true,
+    steps,
+    size = 'normal',
+    version = 'primary',
+  }) => {
     const style = styleMaps(version);
     return (
       <section
@@ -64,8 +72,15 @@ export const StepsBlock = JSX<StepsBlockProps>(
         {steps?.length ? (
           <div className={`box-border py-0.5 mb-0.5 mt-5`}>
             <div className="flex flex-col justify-between gap-x-[101px]">
-              {steps.map((step, i) =>
-                renderStepTitle({ step, size, i, length: steps.length, version: version }),
+              {steps.map((step, i, { length }) =>
+                renderStepTitle({
+                  step,
+                  size,
+                  i,
+                  length,
+                  version: version,
+                  showLines,
+                }),
               )}
             </div>
           </div>
@@ -81,10 +96,11 @@ interface RenderStepTitleParams {
   i: number;
   length: number;
   version: BlockVersion;
+  showLines: boolean;
 }
 
 const renderStepTitle = (params: RenderStepTitleParams) => {
-  const { step, size, i, length, version } = params;
+  const { step, size, i, length, version, showLines } = params;
   const isLastStep = length - 1 === i;
   const margin = size === 'normal' ? 'ml-[34px]' : 'ml-[24px]';
   const style = styleMaps(version);
@@ -95,7 +111,9 @@ const renderStepTitle = (params: RenderStepTitleParams) => {
         <div className="overflow-hidden">
           {renderIconArea(params)}
           {isLastStep ? null : (
-            <div className={`min-h-8 h-full w-[2px] ${style.iconConnector} ${margin}`} />
+            <div
+              className={`min-h-8 h-full w-[2px] ${showLines ? style.iconConnector : ''} ${margin}`}
+            />
           )}
         </div>
         <div
@@ -132,8 +150,7 @@ const renderIconArea = (params: RenderStepTitleParams) => {
       className={`${iconAreaSize} ${style.iconBackground} rounded-full z-10 mr-3 flex justify-center content-center`}
     >
       <span className={`font-medium flex self-center ${style.title} ${iconTextSize}`}>
-        {(step.icon?.icon && <Img image={step.icon} width={iconSize} height={iconSize} asSVG />) ||
-          i + 1}
+        {(step.icon?.icon && <Img image={step.icon} width={iconSize} height={iconSize} />) || i + 1}
       </span>
     </div>
   );
