@@ -8,8 +8,7 @@ import { Img } from '../../ui-kit/Img/Img';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
-import type { TextBenefit } from '../BenefitsBlock/BenefitsBlockContent';
-import type { ProductTileContent } from './ProductTileContent';
+import type { ProductTileContent, TextBenefit } from './ProductTileContent';
 
 export interface ProductTileProps extends ProductTileContent, UniBlockProps {}
 

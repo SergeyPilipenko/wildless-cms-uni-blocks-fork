@@ -6,10 +6,18 @@ import type { DescriptionContent } from '../../ui-kit/Description/DescriptionCon
 import type { HeadingContent, HeadingTypeContent } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
-import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
+import { Picture } from '../../model/Picture';
+
+export interface ProductBlockBenefit {
+  icon?: Picture;
+  /** @title Название */
+  label?: string;
+  /** @title Описание */
+  description?: string;
+}
 
 export type BenefitItemProps = {
-  benefit: Benefit;
+  benefit: ProductBlockBenefit;
   version?: BlockVersion;
   benefitsVersion?: IconVersion;
 };
@@ -25,7 +33,7 @@ export type ProductBlockInnerContent = HeadingContent &
      * @minItems 2
      * @maxItems 3
      */
-    benefits?: Benefit[];
+    benefits?: ProductBlockBenefit[];
     benefitsVersion?: IconVersion;
     version?: BlockVersion;
     /**

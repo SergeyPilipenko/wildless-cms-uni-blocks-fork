@@ -1,9 +1,9 @@
 import { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
+import type { InsuranceBenefit } from './InsuranceContent';
 import { Insurance } from './Insurance';
 
-const benefits: Benefit[] = [
+const benefits: InsuranceBenefit[] = [
   {
     label: 'Телесное повреждение',
     description: 'Описание',

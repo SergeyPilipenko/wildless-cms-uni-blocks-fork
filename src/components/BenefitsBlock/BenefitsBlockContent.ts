@@ -1,28 +1,58 @@
 import type { Picture } from '../../model/Picture';
+import type { HeadingContent, HeadingTypeContent } from '../../ui-kit/Heading/HeadingContent';
+import type { EmptyOption } from '../../model/EmptyOptionType';
 
-export interface TextBenefit {
-  /** @title Название */
-  label?: string;
-  /** @title Описание */
-  description?: string;
-}
+/**
+ * @title Пункты описания
+ * @default {"benefitType": "text"}
+ */
+export type TextBenefitDef = {
+  /**
+   * @title Описание
+   */
+  name?: string;
+  benefitType?: 'text';
+};
+
+/**
+ * @title Список
+ * @default {"benefitType": "list"}
+ */
+export type ListBenefitDef = {
+  /** @title Буллиты */
+  bullets?: boolean;
+  /**
+   * @title Пункты
+   * @example ["Пункт 1"]
+   */
+  items?: string[];
+  benefitType?: 'list';
+};
+
+/**
+ * @title Вид контента
+ */
+export type DescriptionType = EmptyOption | TextBenefitDef | ListBenefitDef;
 
 /**
  * @title Преимущество
  */
-export interface Benefit extends TextBenefit {
+export interface BenefitItem {
+  /** @title Название */
+  label?: string;
+  /** @title Описание */
+  description?: DescriptionType;
   icon?: Picture;
 }
 
 /**
  * @title Блок преимущества
  */
-export interface BenefitsBlockContent {
-  /** @title Заголовок */
-  title?: string;
-  /**
-   * @title Список преимуществ
-   * @maxItems 6
-   */
-  benefits?: Benefit[];
-}
+export type BenefitsBlockContent = HeadingContent &
+  HeadingTypeContent & {
+    /**
+     * @title Список преимуществ
+     * @maxItems 6
+     */
+    benefitList?: BenefitItem[];
+  };

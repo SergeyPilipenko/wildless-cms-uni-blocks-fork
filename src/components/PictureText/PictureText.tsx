@@ -1,11 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { PictureTextContent } from './PictureTextContent';
+import type { PictureTextContent, PictureTextBenefit } from './PictureTextContent';
 
 import { BlockVersion } from '../../model/BlockVersion';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
-import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 
@@ -43,7 +42,7 @@ export const PictureText = JSX<PictureTextProps>(
   },
 );
 
-function renderBenefit(benefit: Benefit, i: number, version: string) {
+function renderBenefit(benefit: PictureTextBenefit, i: number, version: string) {
   return (
     <div key={String(i)} className="flex flex-row mb-8">
       {benefit.icon ? (
@@ -56,7 +55,7 @@ function renderBenefit(benefit: Benefit, i: number, version: string) {
         />
       ) : null}
       <div className="flex gap-1 flex-col h-full ml-5 max-w-[490px]">
-        {benefit.label && (
+        {benefit?.label ? (
           <div
             className={`font-medium text-xl m-0 ${
               version === 'primary' ? 'text-primary-text' : ''
@@ -64,14 +63,14 @@ function renderBenefit(benefit: Benefit, i: number, version: string) {
           >
             {benefit.label}
           </div>
-        )}
-        {benefit.description && (
+        ) : null}
+        {benefit?.description ? (
           <div
             className={`font-normal text-sm ${version === 'primary' ? 'text-secondary-text' : ''}`}
           >
             {benefit.description}
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
 import { ProductBlock } from './ProductBlock';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { ProductBlockBenefit } from './ProductBlockContent';
 
 const title = 'Кредит до 5 000 000 Р\nбез залога и поручителей';
 const description =
@@ -25,7 +25,7 @@ const image: Picture = {
   ],
 };
 
-const benefits: Benefit[] = [
+const benefits: ProductBlockBenefit[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',

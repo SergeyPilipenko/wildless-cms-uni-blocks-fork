@@ -3,8 +3,7 @@ import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
-import type { Benefit } from '../BenefitsBlock/BenefitsBlockContent';
-import type { InsuranceContent } from './InsuranceContent';
+import type { InsuranceBenefit, InsuranceContent } from './InsuranceContent';
 
 export interface InsuranceProps extends InsuranceContent, UniBlockProps {}
 
@@ -36,7 +35,7 @@ export const Insurance = JSX<InsuranceProps>(
   },
 );
 
-function renderBenefit(benefit: Benefit, i: number) {
+function renderBenefit(benefit: InsuranceBenefit, i: number) {
   return (
     <div key={String(i)} className="flex items-center gap-5">
       {benefit?.icon ? (

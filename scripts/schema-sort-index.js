@@ -1,6 +1,7 @@
 export default [
   'title',
   'titleSize',
+  'benefitList',
   'subtitle',
   'date',
   'columns',

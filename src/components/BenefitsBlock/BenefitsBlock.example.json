@@ -1,14 +1,22 @@
 {
   "title": "Преимущества",
-  "benefits": [
+  "benefitList": [
     {
       "label": "Преимущество №1",
+      "description": {
+        "name": "Описание 1",
+        "benefitType": "description"
+      },
       "icon": {
         "icon": "ClockIcon"
       }
     },
     {
       "label": "Преимущество №2",
+      "description": {
+        "name": "Описание 2",
+        "benefitType": "description"
+      },
       "icon": {
         "icon": "SignDocsIcon"
       }

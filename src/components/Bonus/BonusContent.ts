@@ -8,7 +8,7 @@ interface BonusItems {
   /** @title Описание плитки */
   description?: string;
   /** @title Количество баллов */
-  bonusCount?: number;
+  bonusCount?: string;
   /** @title Наименование */
   bonusName?: string;
 }
