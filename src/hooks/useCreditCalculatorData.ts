@@ -5,11 +5,13 @@ export function useCreditCalculatorData(
   directoryName: string | undefined,
 ): any {
   const { data } = useAsyncData(creditCalculatorUrl(directoryName), fetchCreditCalculatorData);
+
   return data || {};
 }
 
 async function fetchCreditCalculatorData(url: string): Promise<any> {
   const response = await fetch(url);
+
   return await response.json();
 }
 

@@ -41,6 +41,7 @@ export const TextBlock = JSX<TextBlockProps>(
     anchor = null,
   }) => {
     const textBlockStyleMap = textBlockStyleMaps[blockVersion];
+
     return (
       <section
         className={`font-sans px-9 py-4 flex ${textBlockStyleMap.background} ${className || ''}`}

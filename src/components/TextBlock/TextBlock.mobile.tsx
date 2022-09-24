@@ -40,6 +40,7 @@ export const TextBlock = JSX<TextBlockProps>(
     isDotted = true,
   }) => {
     const textBlockStyleMap = textBlockStyleMaps[blockVersion];
+
     return (
       <section
         className={`font-sans px-4 py-[18px] flex flex-col ${textBlockStyleMap.background} ${className}`}

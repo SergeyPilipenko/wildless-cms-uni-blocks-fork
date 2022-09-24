@@ -20,5 +20,6 @@ export const getIndexParts = (
 
   const [start, end] = scrollPoints[index];
   const fraction = (scrollLeft - start) / (end - start);
+
   return { index, fraction };
 };

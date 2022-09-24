@@ -13,6 +13,7 @@ const benefitDescStyleMap: Record<BlockVersion, string> = {
 
 export function renderBenefit({ benefit, version = 'primary' }: BenefitItemProps, i: number) {
   const isIconWhite = version === 'secondary';
+
   return (
     <div key={String(i)} className="flex gap-3 items-center mb-2.5 last:mb-0">
       {benefit.icon ? (

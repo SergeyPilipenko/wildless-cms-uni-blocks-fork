@@ -16,6 +16,7 @@ export function renderMonthsInput(props: RenderMonthsInputProps) {
   const { title, minMonths, maxMonths, monthsValue, defaultMonths, setMonthsValue } = props;
   const monthText = (month) => {
     const text = Number(month) % 10 === 1 ? 'месяца' : 'месяцев';
+
     return `${month} ${text}`;
   };
 

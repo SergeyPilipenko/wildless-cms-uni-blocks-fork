@@ -60,5 +60,6 @@ const getTextClasses = (bgColor: BgColorVersion, active = false, flat = false) =
   const nonActiveAtoms = `${
     flat ? 'text-primary-text' : 'text-secondary-text'
   } hover:text-primary-main`;
+
   return `${active ? 'text-primary-main' : nonActiveAtoms} ${TEXT_CLASSES}`;
 };

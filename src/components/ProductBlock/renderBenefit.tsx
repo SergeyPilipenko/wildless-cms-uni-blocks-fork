@@ -16,6 +16,7 @@ export function renderBenefit(
   i: number,
 ) {
   const isIconWhite = benefitsVersion === 'white' || version === 'secondary';
+
   return (
     <div key={String(i)} className="flex gap-4 items-center">
       {benefit.icon ? (

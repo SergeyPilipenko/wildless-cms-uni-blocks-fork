@@ -10,6 +10,7 @@ export const renderCalculatorBlock =
       return null;
     }
     const EmbeddedBlock: JSXBlock<EmbeddableCalcProps> = EmbeddableCalcBlocks[type];
+
     return (
       <section
         key={String(i)}

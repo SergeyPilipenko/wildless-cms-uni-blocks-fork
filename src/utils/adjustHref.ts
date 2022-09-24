@@ -11,6 +11,7 @@ export const adjustHref = (
 
   const relativeHref = toRelativeHref(href, router) || '';
   const isMobilePage = router?.pathname.startsWith(MOBILE_URL_PATH);
+
   return isMobilePage && !isURL(relativeHref) ? `${MOBILE_URL_PATH}${relativeHref}` : relativeHref;
 };
 
@@ -20,5 +21,6 @@ const toRelativeHref = (href: string | undefined, router: { href?: string }) => 
   }
 
   const origin = getOrigin(router?.href);
+
   return origin ? href.replace(origin, '') || '/' : href;
 };

@@ -28,6 +28,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     textBlockClassName = '',
   }) => {
     const textColor = version === 'secondary' ? 'text-white' : 'text-primary-text';
+
     return (
       <div className={`flex grow justify-between items-stretch ${className}`}>
         <div className={`flex flex-col ${textBlockClassName}`}>

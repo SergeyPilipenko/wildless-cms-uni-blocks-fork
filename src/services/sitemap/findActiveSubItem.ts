@@ -10,5 +10,6 @@ export const findActiveSubItem =
     const activeSubItem = possibleActiveSubItems?.length
       ? maxBy((_: T) => _.href?.length || 0)(possibleActiveSubItems) // More specific item with max length
       : null;
+
     return activeSubItem;
   };

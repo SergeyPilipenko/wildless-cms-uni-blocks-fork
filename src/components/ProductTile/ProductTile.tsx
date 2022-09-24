@@ -97,6 +97,7 @@ function renderBenefitDescription(benefit: TextBenefit, i: number, version = 'pr
     primary: 'text-secondary-text',
     secondary: 'text-white',
   };
+
   return (
     <div key={String(i)} className={`text-sm ${i ? 'mt-4' : ''} ${labelStyleMap[version]}`}>
       {benefit.description}
@@ -109,5 +110,6 @@ function renderAdditionalDescription(additionalDescription: string, version = 'p
     primary: 'text-secondary-text',
     secondary: 'text-white',
   };
+
   return <div className={`text-sm mt-2.5 ${descStyleMap[version]}`}>{additionalDescription}</div>;
 }

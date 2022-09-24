@@ -28,6 +28,7 @@ export const Footer = JSX<FooterProps>(
   }) => {
     const sitemap = useSitemap(context.useAsyncData);
     const dispositions = sitemap?.dispositions;
+
     return (
       <footer className={`px-4 py-[26px] bg-white ${className}`}>
         <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
@@ -57,6 +58,7 @@ export const Footer = JSX<FooterProps>(
 
 const renderSubMenuItem = (menu: SubMenuItem, i: number) => {
   const { icon, href, text } = menu;
+
   return (
     <Button version="link" key={`footer-${i}`} href={href} className="flex text-sm mb-4">
       {icon ? <Img className="pr-1" image={icon} width="24" height="24" asSVG /> : null}

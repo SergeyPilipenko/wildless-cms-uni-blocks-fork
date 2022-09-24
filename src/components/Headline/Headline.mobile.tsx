@@ -18,6 +18,7 @@ export const Headline = JSX<HeadlineProps>(
     align = 'left',
   }) => {
     const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
+
     return (
       <section className={`px-4 py-6 flex flex-col gap-2.5 ${STYLE_MAPS.background} ${className}`}>
         {title ? (

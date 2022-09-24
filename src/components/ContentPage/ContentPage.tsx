@@ -108,12 +108,14 @@ function renderBlock(
     console.warn(`No block with "${type}" is registered`);
   }
   const BlockComponent = blocksRegistry[type || 'Placeholder'] || Placeholder;
+
   return blockDecorator(
     {
       blockClassName: `scroll-mt-12 ${style2className(block.style)}`,
       block,
       render: (props) => {
         const { version, content, anchor } = props.block;
+
         return (
           <BlockComponent
             key={`${type}-${i}`}

@@ -21,9 +21,11 @@ export function DaDataAPI(baseURL = '') {
       });
 
       const data = (await response.json()) as DaDataResult;
+
       return data?.suggestions?.[0]?.data?.city;
     } catch (e) {
       console.error(e);
+
       return null;
     }
   }

@@ -10,6 +10,7 @@ export interface ButtonSectionProps extends ButtonContent, UniBlockProps {}
 export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '', buttons }) => {
   const { handlerDecorator } = context;
   const router = context.useRouter();
+
   return buttons?.length ? (
     <div className={className}>
       {buttons.map((button, index) =>

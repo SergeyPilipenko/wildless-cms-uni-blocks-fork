@@ -38,6 +38,7 @@ const renderBenefits = (benefits: BenefitItem[]) => {
 
 const renderStep = (benefit: BenefitItem, i: number) => {
   const description = benefit?.description || undefined;
+
   return (
     <div key={String(i)} className="flex items-center basis-1/2 max-w-[500px] mb-[46px]">
       {benefit?.icon ? (
@@ -61,6 +62,7 @@ const renderDescription = (description?: DescriptionType) => {
   if (!benefitType) {
     return null;
   }
+
   return description ? (
     <div className="font-light text-base text-secondary-text mt-2">
       {benefitType === 'list'
@@ -74,6 +76,7 @@ const renderTextBenefit = (description?: TextBenefitDef) => (description ? descr
 
 const renderListBenefit = (description?: ListBenefitDef) => {
   const listStyleType = description?.bullets ? 'list-disc pl-6' : '';
+
   return description?.items && description.items.length > 0 ? (
     <ul className={listStyleType}>
       {description.items.map((_, i) => (

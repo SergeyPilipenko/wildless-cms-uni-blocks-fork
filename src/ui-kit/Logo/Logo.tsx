@@ -66,5 +66,6 @@ export const Logo = JSX<Partial<LogoProps>>(
 
 const renderTitle = (children, bgColor, title) => {
   const text = children || title || 'Россельхозбанк';
+
   return <span className={`${TEXT_COLOR[bgColor]} font-medium ml-2.5`}>{text}</span>;
 };

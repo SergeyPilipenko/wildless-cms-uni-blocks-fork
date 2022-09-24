@@ -18,6 +18,7 @@ export interface LinkDocsListItemBaseProps extends LinkDocsListItemProps {
 export const LinkDocsListItemBase = JSX<LinkDocsListItemBaseProps>(
   ({ className, iconClassName, textClassName, suffixClassName, doc, icon }) => {
     const { text, fileSize, ...linkProps } = doc;
+
     return (
       <a className={className} role="link" {...linkProps}>
         {icon ? (
@@ -40,6 +41,7 @@ const formatSuffix = (ext?: string, fileSize?: string) => {
   const prefix = ext || fileSize ? ',' : '';
   const extension = ext ? ` ${ext}` : '';
   const size = fileSize ? ` (${fileSize})` : '';
+
   return prefix + extension + size;
 };
 
@@ -49,5 +51,6 @@ const getExtFromHref = (href: string) => {
   }
 
   const index = href.lastIndexOf('.');
+
   return index !== -1 ? href.substring(index + 1) : '';
 };

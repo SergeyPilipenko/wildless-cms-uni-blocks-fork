@@ -14,6 +14,7 @@ export const SocialMedia = JSX<SocialMediaProps>(
   ({ className = '', media, version, context, children }) => {
     const router = context.useRouter();
     const { handlerDecorator } = context;
+
     return (
       <div>
         <div className={`flex gap-2.5 ${className}`}>

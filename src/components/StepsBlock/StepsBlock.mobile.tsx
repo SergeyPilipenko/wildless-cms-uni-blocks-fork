@@ -56,6 +56,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
     version = 'primary',
   }) => {
     const style = styleMaps(version);
+
     return (
       <section
         className={`box-border font-sans bg-white px-4 py-6 flex flex-col

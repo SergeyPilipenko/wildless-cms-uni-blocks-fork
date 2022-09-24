@@ -29,6 +29,7 @@ const LINKS_ICON_VERSION_MAP: Record<BgColorVersion, IconVersion> = {
 export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
   ({ context, className, defaultLocation = '', bgColor = 'bg-white' }) => {
     const [city, getCity] = context.useGeolocation(defaultLocation);
+
     return (
       <div className={`flex items-center ${className || ''}`}>
         <TopItem

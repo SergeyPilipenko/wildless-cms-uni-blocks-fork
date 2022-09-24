@@ -37,6 +37,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
       return likes || [];
     } catch (e) {
       console.error(e);
+
       return [];
     }
   }
@@ -67,6 +68,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
       return likes || 0;
     } catch (e) {
       console.error(e);
+
       return 0;
     }
   }
@@ -100,6 +102,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
       return likes || 0;
     } catch (e) {
       console.error(e);
+
       return 0;
     }
   }
@@ -133,6 +136,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
       return { token, name } as UserData;
     } catch (e) {
       console.error(e);
+
       return {} as UserData;
     }
   }

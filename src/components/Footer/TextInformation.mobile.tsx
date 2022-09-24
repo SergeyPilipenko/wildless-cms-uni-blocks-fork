@@ -6,6 +6,7 @@ import type { FooterLink } from './FooterLink';
 export const TextInformation = JSX<FooterLink>(({ className, links, context }) => {
   const router = context.useRouter();
   const { handlerDecorator } = context;
+
   return (
     <div className={`${className || ''}`}>
       <div className="py-6">

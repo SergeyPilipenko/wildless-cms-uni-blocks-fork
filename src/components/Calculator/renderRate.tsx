@@ -7,6 +7,7 @@ type rateType = {
 
 export function renderRate({ rate, title, sup, className = '' }: rateType) {
   const rateFormat = String(rate).replace('.', ',');
+
   return (
     <div>
       <div className="text-sm font-light ml-3">{title}</div>

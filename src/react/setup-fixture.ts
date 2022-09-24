@@ -40,6 +40,7 @@ export const context: ContentPageContext = {
         setData(_);
       });
     }, [key, fetcher]);
+
     return { data };
   },
   useGeolocation: (defaultLocation) => {

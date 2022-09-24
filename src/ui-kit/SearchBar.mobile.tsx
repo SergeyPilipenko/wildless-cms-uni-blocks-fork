@@ -5,6 +5,7 @@ import { Img } from './Img/Img';
 
 export const SearchBar = JSX<UniBlockProps>(({ className, context }) => {
   const { term, setTerm } = context.useSearch();
+
   return (
     <form className={`relative ${className || ''}`}>
       <div className="absolute rounded h-full flex items-center justify-center pl-4 max-w-[170px] gap-3.5 pointer-events-none">

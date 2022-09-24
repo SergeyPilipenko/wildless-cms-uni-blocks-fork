@@ -19,6 +19,7 @@ const tabDescriptionStyle = (isActive = false) =>
 const renderTab =
   (currentTabIndex: number, onTabClick: TabClickHandler) => (tab: Tab, index: number) => {
     const isActive = currentTabIndex === index;
+
     return (
       <div
         key={String(index)}

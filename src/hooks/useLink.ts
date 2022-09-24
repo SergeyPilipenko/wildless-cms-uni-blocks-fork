@@ -13,6 +13,7 @@ export function useLink(
   link: Partial<LinkProps & { className: string }>,
 ) {
   const href = adjustHref(link.href, router);
+
   return {
     ...link,
     href,

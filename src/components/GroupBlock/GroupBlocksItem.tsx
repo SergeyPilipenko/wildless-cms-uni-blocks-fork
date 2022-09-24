@@ -24,6 +24,7 @@ export const renderBlock = (context: ContentPageContext) => (block: GroupBlockDe
   }
   const classNameBlock = style2className(block?.style);
   const EmbeddedBlock: JSXBlock = EmbeddableGroupBlocks[type];
+
   return (
     <EmbeddedBlock key={`block_${i}`} context={context} {...block} className={classNameBlock} />
   );

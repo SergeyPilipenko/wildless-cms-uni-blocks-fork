@@ -19,6 +19,7 @@ export const renderBlock =
     }
     const classNameBlock = style2className(block?.style);
     const EmbeddedBlock: JSXBlock = EmbeddableGroupBlocks[type];
+
     return (
       <div className={className} key={`block_${i}`}>
         <EmbeddedBlock context={context} {...block} className={classNameBlock} />

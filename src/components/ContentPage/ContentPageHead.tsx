@@ -9,6 +9,7 @@ export interface ContentPageHeadProps {
 export const ContentPageHead = JSX<ContentPageHeadProps>(({ HeadComponent, data, children }) => {
   const { title, main, og, twitter, jsonLd } = data;
   const { description, keywords, canonical, robots } = main || {};
+
   return (
     <HeadComponent>
       <title>{title}</title>

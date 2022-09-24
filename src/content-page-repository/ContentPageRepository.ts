@@ -27,6 +27,7 @@ export function ContentPageRepository({
   async function getAllContentPagesMap(): Promise<Record<string, ContentPageDef>> {
     const pagePaths = await listAllContentPages();
     const pages = await Promise.all(pagePaths.map(readPage));
+
     return pagePaths.reduce(
       (result, path, i) => ({
         ...result,
@@ -42,11 +43,13 @@ export function ContentPageRepository({
 
   async function getSecondaryContentPages(customPageType?: string) {
     const pages = await getAllContentPages();
+
     return pages.filter(not(bySlug(INDEX_PAGE_SLUG))).filter(byCustomPageType(customPageType));
   }
 
   async function getContentPageBySlug(slug: string): Promise<ContentPageDef | undefined> {
     const pages = await getAllContentPages();
+
     return pages.find(bySlug(slug));
   }
 
@@ -55,6 +58,7 @@ export function ContentPageRepository({
   }
 
   const cache: Record<string, ContentPageDef> = {};
+
   async function readPage(filePath: string): Promise<ContentPageDef> {
     if (!(filePath in cache)) {
       cache[filePath] = await transformContentPage(filePath, {
@@ -62,6 +66,7 @@ export function ContentPageRepository({
         publicDir,
       });
     }
+
     return cache[filePath];
   }
 

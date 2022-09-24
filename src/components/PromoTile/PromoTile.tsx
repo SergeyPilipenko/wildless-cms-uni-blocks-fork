@@ -68,5 +68,6 @@ function formatDate(date: string) {
     month: 'long',
     year: 'numeric',
   };
+
   return dateObj.toLocaleString('ru-RU', dateFormat).replace('г.', '');
 }

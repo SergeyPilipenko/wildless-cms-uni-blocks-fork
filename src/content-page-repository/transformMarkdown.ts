@@ -8,5 +8,6 @@ export async function transformMarkdown(markdown: string | null | undefined): Pr
   }
 
   const result = await unified().use(remarkParse).use(remarkHtml).process(markdown);
+
   return result.toString('utf-8');
 }

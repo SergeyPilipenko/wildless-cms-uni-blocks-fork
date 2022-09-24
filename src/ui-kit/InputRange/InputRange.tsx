@@ -25,6 +25,7 @@ export const InputRange = JSX<InputRangeProps>(
         onChange(max);
       }
     };
+
     return (
       <div className={className}>
         <label className="block relative">

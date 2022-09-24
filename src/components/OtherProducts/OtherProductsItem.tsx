@@ -17,6 +17,7 @@ export const OtherProductsItem = JSX<BlockItemProps>(
       columns,
       blocks,
     }) as VNode[];
+
     return (
       <div className="border-0 border-b border-solid border-main-divider">
         {blocks?.length ? (

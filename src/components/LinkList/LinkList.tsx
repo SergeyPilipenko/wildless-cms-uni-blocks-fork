@@ -17,6 +17,7 @@ export const LinkList = JSX<LinkListProps>(({ className = '', documents, anchor 
 const renderLinkListItem = (documents) => {
   return documents.map((doc, i) => {
     const { text, ...linkProps } = doc;
+
     return (
       <li key={`list_item_${String(i)}`} className="mb-4 list-none">
         <a className="hover:text-primary-main" role="link" {...linkProps}>

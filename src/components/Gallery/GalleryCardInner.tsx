@@ -8,6 +8,7 @@ import type { GalleryCard, GalleryItem } from './GalleryContent';
 export const GalleryCardInner = JSX<GalleryCard>(
   ({ title, description, image, items, button, version, isDotted = true }) => {
     const titleStyleClasses = getTitleStyle(version);
+
     return (
       <div className="h-full flex flex-col justify-between text-center">
         <div>

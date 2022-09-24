@@ -75,6 +75,7 @@ function renderGallery({
   setActiveSlideIndex,
 }: InsuranceGalleryProps) {
   const tabsShiftWidth = isLastShift ? tabsShift * 460 - 240 : tabsShift * 460;
+
   return (
     <div
       style={{ transform: `translateX(-${tabsShiftWidth}px)` }}

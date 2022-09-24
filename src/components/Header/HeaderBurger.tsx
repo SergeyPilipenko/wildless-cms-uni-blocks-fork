@@ -15,6 +15,7 @@ export interface HeaderBurgerProps {
 export const HeaderBurger = JSX<HeaderBurgerProps>(
   ({ context, burgerSubMenu, onClick, defaultLocation = '', children }) => {
     const [city, getCity] = context.useGeolocation(defaultLocation);
+
     return (
       <div className="absolute top-0 left-0 w-full h-full bg-white p-4 box-border z-20">
         <button
@@ -46,6 +47,7 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
 
 const renderBurgerSubMenuItem = (menu: DispositionItem, i: number) => {
   const { icon, href, text } = menu;
+
   return (
     <a key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4 hover:text-primary-main">
       {icon ? (

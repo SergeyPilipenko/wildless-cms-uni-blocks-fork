@@ -13,6 +13,7 @@ export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
 
 export const ProductBlock = JSX<ProductBlockProps>((props /* Get rid of image and benefits */) => {
   const { className = '', version = 'primary' } = props;
+
   return (
     <section
       className={`font-sans bg-white px-4 py-6 ${productBlockStyleMap[version]} ${className}`}

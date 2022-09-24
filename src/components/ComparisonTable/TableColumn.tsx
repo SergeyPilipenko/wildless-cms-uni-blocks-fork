@@ -21,6 +21,7 @@ export const TableColumn = JSX<TableColumnProps>(
     const columnDataView = columnData?.slice(0, showRow ? columnData.length : visibleRowLength);
     const gradientClassName = isFillGradient ? GRADIENT : '';
     const buttonVersion: ButtonVersion = isFillGradient ? 'secondary' : 'primary';
+
     return (
       <div
         className={`border border-main-stroke rounded-md p-4 mb-3.5 ${gradientClassName}`}

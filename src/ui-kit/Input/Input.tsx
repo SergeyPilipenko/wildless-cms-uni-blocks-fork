@@ -8,6 +8,7 @@ export const Input = JSX<InputProps>(
       const validInputValue = e.target.validity.valid ? e.target.value : value;
       onChange(validInputValue);
     };
+
     return (
       <input
         className={className}

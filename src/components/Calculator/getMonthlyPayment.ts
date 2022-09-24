@@ -27,6 +27,7 @@ export const getMonthlyPayment = (params: GetMonthlyPaymentParams) => {
 
   if (paymentType === 'annuity') {
     const annuityCoef = Number(rate) / (MONTHS_IN_YEAR * 100);
+
     return finalSum * (annuityCoef + annuityCoef / (Math.pow(1 + annuityCoef, months) - 1));
   } else {
     return finalSum / months + finalSum * (Number(rate) / 12);

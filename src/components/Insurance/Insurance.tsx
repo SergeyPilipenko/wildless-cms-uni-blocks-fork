@@ -64,6 +64,7 @@ function renderInsuranceSumMonth(sum, monthLimit) {
 
 function renderValueBlock(title, sum, isAnotherBlock) {
   const widthStyle = isAnotherBlock ? 'w-fit' : 'w-full';
+
   return (
     <div className={`flex justify-between items-center gap-2 w-full ${widthStyle}`}>
       <span className="text-secondary-text text-base">{title}</span>

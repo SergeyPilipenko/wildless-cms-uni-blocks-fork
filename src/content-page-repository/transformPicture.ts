@@ -17,6 +17,7 @@ export async function transformPicture(
   const [transformedPicture, ...transformedSources] = await Promise.all(
     [picture].concat(sources).map((_) => transformImg(pagePath, src, { ...options, ..._ })),
   );
+
   return {
     ...picture,
     src: transformedPicture,
@@ -70,6 +71,7 @@ function transformSrc(src: string, { format, size }: TransformationOptions & Img
   }
 
   const suffix = [size?.width, size?.height].filter(Boolean).join('-');
+
   return `${path.basename(src, path.extname(src))}${suffix ? `-${suffix}` : ''}.${
     String(format) || path.extname(src)
   }`;

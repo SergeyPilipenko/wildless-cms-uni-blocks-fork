@@ -32,6 +32,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
   } = props;
   const router = context.useRouter();
   const { handlerDecorator } = context;
+
   return (
     <section
       className={`font-sans overflow-hidden pt-[50px] pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}

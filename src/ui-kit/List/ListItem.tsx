@@ -46,5 +46,6 @@ export const getListStyle = (version: ListItemVersion) => {
     tile: 'w-[7px] h-[7px] min-w-[7px] min-h-[7px]',
     'tile-white': 'w-[7px] h-[7px] min-w-[7px] min-h-[7px]',
   };
+
   return `${LIST_STYLE_CLASSES[version]} ${LIST_DOT_STYLE_MAP[version]} ${size[version]}`;
 };

@@ -32,6 +32,7 @@ export const CurrencyTable = JSX<CurrencyTableProps>(({ className, exchangeCurre
 
 const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
   const code = exchangeCurrencyItem?.code;
+
   return (
     <tr key={code} className="pb-1">
       <td className="pt-4">

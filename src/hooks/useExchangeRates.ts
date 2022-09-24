@@ -11,6 +11,7 @@ export function useExchangeRates(useAsyncData: AsyncDataHook): ExchangeCurrencyI
   const { data } = useAsyncData(EXCHANGE_RATES_URL, fetchExchangeRates);
 
   const result = data?.hits?.hits?.map((_) => _._source) || [];
+
   return result.length ? getCurrencyListByRate(result) : result;
 }
 
@@ -23,6 +24,7 @@ async function fetchExchangeRates(): Promise<any | undefined> {
       },
       body: JSON.stringify(EXCHANGE_RATES_BODY),
     });
+
     return await response.json();
   } catch (err) {
     console.error(err);
@@ -79,6 +81,7 @@ const getCurrencyListByRate = (currencyRates: RatesData[]) =>
         sell: Number(_.rate_sell),
       });
     }
+
     return result;
   }, []);
 
