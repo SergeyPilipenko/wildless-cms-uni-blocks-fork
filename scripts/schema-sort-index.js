@@ -34,6 +34,7 @@ export default [
   'visibleRowLength',
   'iconVersion',
   'buttons',
+  'button',
   'version',
   'blockVersion',
   'aboveText',
@@ -45,4 +46,6 @@ export default [
   'bgColor',
   'insurance',
   'insuranceTabs',
+  'sum',
+  'monthLimit',
 ];
