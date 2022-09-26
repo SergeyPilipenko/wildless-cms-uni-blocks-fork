@@ -7,12 +7,10 @@ import { Logo } from '../../ui-kit/Logo/Logo';
 export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps {}
 
 export const MobileAppTile = JSX<MobileAppTileProps>(
-  ({ className, title = 'Мобильное приложение', description, href = '#' }) => {
+  ({ className = '', title = 'Мобильное приложение', description, href = '#' }) => {
     return (
       <div
-        className={`col-span-12 rounded-md cursor-pointer p-4 mt-6 mb-6 bg-secondary-light ${
-          className || ''
-        }`}
+        className={`col-span-12 rounded-md cursor-pointer p-4 mt-6 mb-6 bg-secondary-light ${className}`}
       >
         {href ? (
           <div className="flex">

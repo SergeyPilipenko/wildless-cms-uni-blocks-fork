@@ -1887,12 +1887,25 @@ Object {
           "title": "Ссылка",
           "type": "string",
         },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
         "qr": Object {
           "$ref": "#/definitions/QRCode",
         },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "title": "Мобильное приложение",
