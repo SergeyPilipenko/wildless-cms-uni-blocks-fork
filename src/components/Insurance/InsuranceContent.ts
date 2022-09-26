@@ -1,5 +1,4 @@
 import type { Picture } from '../../model/Picture';
-import type { InsuranceProps } from '../../model/Insurance';
 
 /**
  * @title Преимущество
@@ -15,12 +14,16 @@ export interface InsuranceBenefit {
 /**
  * @title Страховка
  */
-export type InsuranceContent = InsuranceProps & {
+export type InsuranceContent = {
   /** @title Заголовок */
   title?: string;
   /** @title Описание */
   description?: string;
   image?: Picture;
+  /** @title Ежемесячный лимит */
+  monthLimit?: number;
+  /** @title Страховая сумма */
+  sum?: number;
   /**
    * @title Список преимуществ
    * @maxItems 6

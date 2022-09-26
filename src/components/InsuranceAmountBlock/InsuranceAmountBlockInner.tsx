@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps, FuncReturnVoid } from '../../types';
-import type { InsuranceAmountBlockTabs, cardItem } from './InsuranceAmountBlockContent';
+import type { InsuranceAmountBlockTabs, CardItem } from './InsuranceAmountBlockContent';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
@@ -9,14 +9,14 @@ export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTabs
 
 type InsuranceGalleryProps = {
   tabsShift: number;
-  cards: cardItem[];
+  cards: CardItem[];
   activeSlideIndex: number;
   isLastShift: boolean;
   setActiveSlideIndex: FuncReturnVoid<number>;
 };
 
 type InsuranceSlideProps = {
-  slide: cardItem;
+  slide: CardItem;
   i: number;
   activeSlideIndex: number;
   onClick: FuncReturnVoid<MouseEvent>;
@@ -30,7 +30,7 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
     const handleNextClick = () => setTabsShift(tabsShift + 1);
     const handlePrevClick = () => setTabsShift(tabsShift - 1);
 
-    const galleryLength = cards?.length;
+    const galleryLength = cards?.length ?? 0;
 
     const isGalleryScrollAvailable = cards?.length > 2;
     const showNextButton = isGalleryScrollAvailable && galleryLength > tabsShift + 2;
@@ -40,7 +40,7 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
     return (
       <section id={anchor} className={`min-w-full ${className}`}>
         <div className="relative mt-7 overflow-hidden">
-          {galleryLength > 1
+          {galleryLength
             ? renderGallery({
                 tabsShift,
                 cards,

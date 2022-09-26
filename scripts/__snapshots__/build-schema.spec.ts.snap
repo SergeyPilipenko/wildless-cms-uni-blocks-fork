@@ -471,6 +471,24 @@ Object {
       "title": "Вкладка",
       "type": "object",
     },
+    "CardItem": Object {
+      "properties": Object {
+        "fee": Object {
+          "title": "Страховой взнос",
+          "type": "number",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+          "title": "Иконка",
+        },
+        "sum": Object {
+          "title": "Страховая сумма",
+          "type": "number",
+        },
+      },
+      "title": "Кнопка выбора программы",
+      "type": "object",
+    },
     "CellData": Object {
       "properties": Object {
         "description": Object {
@@ -1471,7 +1489,7 @@ Object {
       "properties": Object {
         "cards": Object {
           "items": Object {
-            "$ref": "#/definitions/cardItem",
+            "$ref": "#/definitions/CardItem",
           },
           "title": "Содержимое вкладки",
           "type": "array",
@@ -1532,19 +1550,6 @@ Object {
         },
       },
       "title": "Страховка",
-      "type": "object",
-    },
-    "InsuranceProps": Object {
-      "properties": Object {
-        "monthLimit": Object {
-          "title": "Ежемесячный лимит",
-          "type": "number",
-        },
-        "sum": Object {
-          "title": "Страховая сумма",
-          "type": "number",
-        },
-      },
       "type": "object",
     },
     "LinkColumnsMode": Object {
@@ -3273,27 +3278,6 @@ Object {
         "href",
       ],
       "title": "Ссылка",
-      "type": "object",
-    },
-    "cardItem": Object {
-      "properties": Object {
-        "fee": Object {
-          "title": "Страховой взнос",
-          "type": "number",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "monthLimit": Object {
-          "title": "Ежемесячный лимит",
-          "type": "number",
-        },
-        "sum": Object {
-          "title": "Страховая сумма",
-          "type": "number",
-        },
-      },
-      "title": "Кнопка выбора программы",
       "type": "object",
     },
   },

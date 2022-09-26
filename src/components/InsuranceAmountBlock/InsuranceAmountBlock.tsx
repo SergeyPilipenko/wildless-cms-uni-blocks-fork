@@ -9,7 +9,6 @@ export interface InsuranceAmountBlockProps extends InsuranceAmountBlockContent, 
 
 export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
   ({ className = '', context, title, insuranceTabs = [], button, anchor = null }) => {
-    const insuranceGalleries = insuranceTabs.map((_) => _.cards);
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
 
     return (
@@ -36,7 +35,7 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
           {renderInsuranceGalleries({
             context,
             className,
-            insuranceGalleries,
+            insuranceTabs,
           })}
         </div>
         {button?.text ? (
@@ -55,7 +54,13 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
   },
 );
 
-const renderInsuranceGalleries = ({ insuranceGalleries, context, className }: any) => {
+const renderInsuranceGalleries = ({
+  insuranceTabs,
+  context,
+  className = '',
+}: InsuranceAmountBlockProps) => {
+  const insuranceGalleries = insuranceTabs?.map((_) => _.cards);
+
   return insuranceGalleries?.length
     ? insuranceGalleries.map((cards) => (
         <InsuranceAmountBlockInner context={context} className={className} cards={cards} />

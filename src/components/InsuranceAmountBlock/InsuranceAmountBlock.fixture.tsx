@@ -38,11 +38,6 @@ export default {
                 fee: 3600,
                 icon: { icon: 'ActualBalanceIcon' },
               },
-              {
-                sum: 600000,
-                fee: 3600,
-                icon: { icon: 'MoneyInsuranceIcon' },
-              },
             ],
           },
         ]}
