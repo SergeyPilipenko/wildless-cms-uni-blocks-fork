@@ -37,6 +37,7 @@ export default [
   'insuranceTabs',
   'sum',
   'monthLimit',
+  'additionalDescription',
   'buttons',
   'button',
   'version',
