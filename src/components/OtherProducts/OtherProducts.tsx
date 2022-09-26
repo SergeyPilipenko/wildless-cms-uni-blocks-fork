@@ -8,9 +8,9 @@ export interface OtherProductsProps extends OtherProductsContent, UniBlockProps 
 export const OtherProducts = JSX<OtherProductsProps>(
   ({ blockItems, colorPalette, context, className = '' }) => {
     return (
-      <section className={`font-sans bg-white text-primary-text ${className}`}>
+      <section className={`font-sans text-primary-text ${className}`}>
         {blockItems?.length ? (
-          <div className="list-none m-0 p-0">
+          <div className="box-border1">
             {blockItems.map((item, i) => (
               <OtherProductsItem
                 key={`BlockItem${i}`}

@@ -1,16 +1,14 @@
 import { context } from '../../react/setup-fixture';
-import { HEADLINE } from '../Headline/Headline.fixture';
-import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
-import { PICTURE_TEXT } from '../PictureText/PictureText.fixture';
-import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
-import type { AccordionProps } from './Accordion';
-import { Accordion } from './Accordion';
 import type {
   HeadlineBlockListDef,
   LinkDocsBlockListDef,
-  PictureTextBlockListDef,
   TextBlockBlockListDef,
 } from '../../ui-kit/BlocksList/BlocksListProps';
+import { HEADLINE } from '../Headline/Headline.fixture';
+import { linkDocsContentExample } from '../LinkDocs/linkDocsContentExample';
+import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
+import type { AccordionProps } from './Accordion';
+import { Accordion } from './Accordion';
 
 const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockBlockListDef = {
   blockListType: 'TextBlock',
@@ -20,11 +18,6 @@ const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockBlockListDef = {
 const HEADLINE_ACCORDION_BLOCK: HeadlineBlockListDef = {
   blockListType: 'Headline',
   ...HEADLINE,
-};
-
-const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextBlockListDef = {
-  blockListType: 'PictureText',
-  ...PICTURE_TEXT,
 };
 
 const LINK_DOCS_ACCORDION_BLOCK: LinkDocsBlockListDef = {
@@ -41,21 +34,17 @@ const propsTextBlock: AccordionProps = {
   accordionItems: [
     {
       label: 'Accordion label 1',
+      labelIcon: {
+        icon: 'CardIcon',
+      },
       blocks: [TEXT_BLOCK_ACCORDION_BLOCK, TEXT_BLOCK_ACCORDION_BLOCK],
     },
     {
       label: 'Accordion label 2',
-      labelIcon: {
-        icon: 'CardIcon',
-      },
-      blocks: [PICTURE_TEXT_ACCORDION_BLOCK],
-    },
-    {
-      label: 'Accordion label 3',
       blocks: [HEADLINE_ACCORDION_BLOCK],
     },
     {
-      label: 'Accordion label 4',
+      label: 'Accordion label 3',
       blocks: [LINK_DOCS_ACCORDION_BLOCK],
     },
   ],

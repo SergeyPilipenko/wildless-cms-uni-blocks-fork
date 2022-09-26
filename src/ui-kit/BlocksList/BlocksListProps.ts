@@ -17,71 +17,81 @@ export interface ActiveHandler {
   initialState?: boolean;
 }
 
-/**
- * @title Количество колонок
- * @enumNames ["1 колонка", "2 колонки"]
- */
-export type ColumnsCount = 1 | 2;
+export interface BlocksCommonProps {
+  /**
+   * @title Стиль
+   * @default ["col-span-12"]
+   **/
+  style?: string[];
+}
 
 /**
  * @title Заголовок
  * @default {"blockListType": "Headline"}
  */
-export type HeadlineBlockListDef = HeadlineContent & { blockListType: 'Headline' };
+export type HeadlineBlockListDef = HeadlineContent &
+  BlocksCommonProps & { blockListType: 'Headline' };
 
 /**
  * @title Список документов
  * @default {"blockListType": "LinkDocs"}
  */
-export type LinkDocsBlockListDef = LinkDocsContent & { blockListType: 'LinkDocs' };
+export type LinkDocsBlockListDef = LinkDocsContent &
+  BlocksCommonProps & { blockListType: 'LinkDocs' };
 
 /**
  * @title Текстовый блок
  * @default {"blockListType": "TextBlock"}
  */
-export type TextBlockBlockListDef = TextBlockContent & { blockListType: 'TextBlock' };
+export type TextBlockBlockListDef = TextBlockContent &
+  BlocksCommonProps & { blockListType: 'TextBlock' };
 
 /**
  * @title Картинка с текстом
  * @default {"blockListType": "PictureText"}
  */
-export type PictureTextBlockListDef = PictureTextContent & { blockListType: 'PictureText' };
+export type PictureTextBlockListDef = PictureTextContent &
+  BlocksCommonProps & { blockListType: 'PictureText' };
 
 /**
  * @title Продуктовый блок
  * @default {"blockListType": "ProductBlock"}
  */
-export type ProductBlockBlockListDef = ProductBlockContent & { blockListType: 'ProductBlock' };
+export type ProductBlockBlockListDef = ProductBlockContent &
+  BlocksCommonProps & { blockListType: 'ProductBlock' };
 
 /**
  * @title Плитка
  * @default {"blockListType": "Tile"}
  */
-export type TileBlockListDef = TileContent & { blockListType: 'Tile' };
+export type TileBlockListDef = TileContent & BlocksCommonProps & { blockListType: 'Tile' };
 
 /**
  * @title Продуктовая плитка
  * @default {"blockListType": "ProductTile"}
  */
-export type ProductTileBlockListDef = ProductTileContent & { blockListType: 'ProductTile' };
+export type ProductTileBlockListDef = ProductTileContent &
+  BlocksCommonProps & { blockListType: 'ProductTile' };
 
 /**
  * @title Галерея
  * @default {"blockListType": "Gallery"}
  */
-export type GalleryBlockListDef = GalleryContent & { blockListType: 'Gallery' };
+export type GalleryBlockListDef = GalleryContent & BlocksCommonProps & { blockListType: 'Gallery' };
 
 /**
  * @title Мини-галлерея
  * @default {"blockListType": "MiniGallery"}
  */
-export type MiniGalleryBlockListDef = MiniGalleryContent & { blockListType: 'MiniGallery' };
+export type MiniGalleryBlockListDef = MiniGalleryContent &
+  BlocksCommonProps & { blockListType: 'MiniGallery' };
 
 /**
  * @title Список ссылок
  * @default {"blockListType": "LinkList"}
  */
-export type LinkListBlockListDef = LinkListContent & { blockListType: 'LinkList' };
+export type LinkListBlockListDef = LinkListContent &
+  BlocksCommonProps & { blockListType: 'LinkList' };
 
 /**
  * @title Содержимое блока

@@ -8,6 +8,7 @@ import { foldableBlockClassNames, useActiveHandler } from './useActiveHandler';
 
 export type FoldableBlocks = VNode[];
 export type Render = (_: VNode, isActive: boolean) => VNode;
+
 export interface FoldableProps {
   context: ContentPageContext;
   foldButtonLabel?: string;
@@ -17,11 +18,13 @@ export interface FoldableProps {
   foldButtonDataTheme?: ColorPalette;
   isUnfolded?: boolean;
   render?: Render;
+  containerClasses?: string;
 }
 
 export interface RenderBlocksParams {
   blocksToHide: number;
   isActive: boolean;
+  containerClasses?: string;
 }
 
 export const Foldable = JSX<FoldableProps>(
@@ -33,6 +36,7 @@ export const Foldable = JSX<FoldableProps>(
     foldButtonLabel,
     foldButtonDataTheme,
     isUnfolded,
+    containerClasses,
     render = (_) => _,
   }) => {
     const blocksToHide = clamp(hiddenBlocksNum, 0, blocks.length);
@@ -44,7 +48,7 @@ export const Foldable = JSX<FoldableProps>(
 
     return blocks ? (
       <div>
-        {renderBlocks(blocks, render, { blocksToHide, isActive })}
+        {renderBlocks(blocks, render, { blocksToHide, isActive, containerClasses })}
         {hiddenBlocksNum ? (
           <button
             className={
@@ -55,7 +59,7 @@ export const Foldable = JSX<FoldableProps>(
             onClick={handleToggle}
           >
             <span className="pr-3">{isActive ? 'Скрыть' : foldButtonLabel}</span>
-            <Icon name={icon} iconVersion="white" width="20" height="20" asSVG />
+            {icon && <Icon name={icon} iconVersion="white" width="20" height="20" asSVG />}
           </button>
         ) : null}
       </div>
@@ -66,7 +70,7 @@ export const Foldable = JSX<FoldableProps>(
 const renderBlocks = (
   blocks: FoldableBlocks,
   render: Render,
-  { blocksToHide, isActive }: RenderBlocksParams,
+  { blocksToHide, isActive, containerClasses }: RenderBlocksParams,
 ) => {
   const visibleBlocks = blocks.slice(0, blocks.length - blocksToHide);
   const hiddenBlocks = blocks.slice(-blocksToHide);
@@ -74,7 +78,7 @@ const renderBlocks = (
   return render(
     <div>
       {visibleBlocks}
-      <div className={foldableBlockClassNames}>{hiddenBlocks}</div>
+      <div className={`${foldableBlockClassNames} ${containerClasses}`}>{hiddenBlocks}</div>
     </div>,
     isActive,
   );

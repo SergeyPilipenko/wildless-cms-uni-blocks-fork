@@ -1,13 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { AccordionItemProps } from './AccordionItem';
 import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
+import type { AccordionItemProps } from './AccordionItem';
 
 export const AccordionItemInner = JSX<AccordionItemProps>(({ blocks, context }) => {
-  const className = 'mb-5 last:mb-0 pb-5';
-
   return (
-    <div className="transition-all duration-300 max-h-0 overflow-hidden">
-      {renderBlocksList({ context, className, blocks })}
+    <div className="grid grid-cols-12 transition-all duration-300 max-h-0 overflow-hidden">
+      {renderBlocksList({ context, blocks, className: '!p-0 mb-5' })}
     </div>
   );
 });

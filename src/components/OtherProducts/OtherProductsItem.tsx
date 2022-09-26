@@ -10,11 +10,9 @@ export interface BlockItemProps extends BlockItemCommonProps, UniBlockProps {
 }
 
 export const OtherProductsItem = JSX<BlockItemProps>(
-  ({ label, blocks, columns = 1, context, dataTheme, isUnfolded }) => {
+  ({ label, blocks, context, dataTheme, isUnfolded }) => {
     const foldableBlocks = renderBlocksList({
       context,
-      className: 'box-border p-5',
-      columns,
       blocks,
     }) as VNode[];
 
@@ -28,11 +26,8 @@ export const OtherProductsItem = JSX<BlockItemProps>(
             isUnfolded={isUnfolded}
             context={context}
             foldButtonLabel={label}
-            render={(children, isActive) => (
-              <Wrapper columns={columns} isActive={isActive}>
-                {children}
-              </Wrapper>
-            )}
+            containerClasses="grid grid-cols-12 gap-1 border-box"
+            render={(children, isActive) => <Wrapper isActive={isActive}>{children}</Wrapper>}
           />
         ) : null}
       </div>
@@ -40,14 +35,6 @@ export const OtherProductsItem = JSX<BlockItemProps>(
   },
 );
 
-const Wrapper = JSX<{ columns: number; isActive: boolean }>(({ columns, children, isActive }) => {
-  return (
-    <div
-      className={`box-border w-full ${isActive ? 'p-9' : ''} ${
-        columns > 1 ? 'flex flex-wrap' : ''
-      }`}
-    >
-      {children}
-    </div>
-  );
+const Wrapper = JSX<{ isActive: boolean }>(({ children }) => {
+  return <div className="box-border">{children}</div>;
 });

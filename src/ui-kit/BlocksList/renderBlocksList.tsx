@@ -1,31 +1,35 @@
 import type { JSXBlock } from '../../components/ContentPage/ContentPage';
 import type { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
-import type { BlockDef, ColumnsCount } from './BlocksListProps';
+import type { UniBlockProps } from '../../types';
+import { style2className } from '../../utils/style2className';
+import type { BlockDef } from './BlocksListProps';
 import { EmbeddableBlocks } from './EmbeddableBlocks';
 
 type EmbeddableBlocksProps = {
   blocks?: BlockDef[];
   context: ContentPageContext;
-  columns?: ColumnsCount;
   className?: string;
 };
 
-export const renderBlocksList = ({ blocks, context, className, columns }: EmbeddableBlocksProps) =>
-  blocks?.length ? blocks.map(renderBlock({ context, className, columns })) : null;
+export const renderBlocksList = ({ blocks, context, className = '' }: EmbeddableBlocksProps) =>
+  blocks?.length ? blocks.map(renderBlock({ context, className })) : null;
 
 const renderBlock =
-  ({ context, columns, className }: EmbeddableBlocksProps) =>
+  ({ context, className }: UniBlockProps) =>
   (block: BlockDef, i: number) => {
     const type = block?.blockListType;
     if (!type || !(type in EmbeddableBlocks)) {
       return null;
     }
-    const columnsCountClass = columns === 2 ? 'w-1/2' : '';
+    const classNameBlock = style2className(block?.style);
     const EmbeddedBlock: JSXBlock = EmbeddableBlocks[type];
 
     return (
-      <div className={`${className} ${columnsCountClass}`} key={`block_${i}`}>
-        <EmbeddedBlock context={context} {...block} className="!p-0" />
-      </div>
+      <EmbeddedBlock
+        key={`block_${i}`}
+        context={context}
+        {...block}
+        className={`${className} ${classNameBlock}`}
+      />
     );
   };

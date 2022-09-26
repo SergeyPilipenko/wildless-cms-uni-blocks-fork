@@ -1,5 +1,5 @@
 import type { ColorPalette } from '../../types';
-import type { BlockDef, ColumnsCount } from '../../ui-kit/BlocksList/BlocksListProps';
+import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
 
 /**
  * @title Элемент списка
@@ -10,16 +10,13 @@ export interface BlockItemCommonProps {
    * @default Список
    */
   label?: string;
-  /**
-   * @title Отображать в раскрытом виде
-   */
+  /** @title Отображать в раскрытом виде */
   isUnfolded?: boolean;
   /**
    * @title Блоки
    * @maxItems 10
    */
   blocks?: BlockDef[];
-  columns?: ColumnsCount;
 }
 
 /**
@@ -28,9 +25,7 @@ export interface BlockItemCommonProps {
 export interface OtherProductsContent {
   /** @title Заголовок */
   title?: string;
-  /**
-   * @title Список
-   */
+  /** @title Список */
   blockItems?: BlockItemCommonProps[];
   colorPalette?: ColorPalette;
 }

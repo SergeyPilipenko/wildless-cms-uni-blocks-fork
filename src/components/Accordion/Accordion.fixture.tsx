@@ -22,42 +22,50 @@ import { Accordion } from './Accordion';
 
 const TEXT_BLOCK_ACCORDION_BLOCK: TextBlockBlockListDef = {
   blockListType: 'TextBlock',
+  style: ['col-span-12'],
   ...TEXT_BLOCK,
 };
 
 const HEADLINE_ACCORDION_BLOCK: HeadlineBlockListDef = {
   blockListType: 'Headline',
+  style: ['col-span-12'],
   ...HEADLINE,
 };
 
 const PICTURE_TEXT_ACCORDION_BLOCK: PictureTextBlockListDef = {
   blockListType: 'PictureText',
+  style: ['col-span-12'],
   ...PICTURE_TEXT,
 };
 
 const LINK_DOCS_ACCORDION_BLOCK: LinkDocsBlockListDef = {
   blockListType: 'LinkDocs',
+  style: ['col-span-12'],
   ...linkDocsContentExample,
   title: '',
 };
 
 const TILES_ACCORDION_BLOCK: TileBlockListDef = {
   blockListType: 'Tile',
+  style: ['col-span-6'],
   ...TILE,
 };
 
 const PRODUCT_TILES_ACCORDION_BLOCK: ProductTileBlockListDef = {
   blockListType: 'ProductTile',
+  style: ['col-span-6'],
   ...PRODUCT_TILE,
 };
 
 const GALLERY_ACCORDION_BLOCK: GalleryBlockListDef = {
   blockListType: 'Gallery',
+  style: ['col-span-12'],
   ...GALLERY,
 };
 
 const MINI_GALLERY_ACCORDION_BLOCK: MiniGalleryBlockListDef = {
   blockListType: 'MiniGallery',
+  style: ['col-span-12'],
   ...MINI_GALLERY,
 };
 
@@ -84,11 +92,11 @@ const propsDefaultBlock: AccordionProps = {
     },
     {
       label: 'Accordion label 5',
-      blocks: [TILES_ACCORDION_BLOCK],
+      blocks: [TILES_ACCORDION_BLOCK, TILES_ACCORDION_BLOCK],
     },
     {
       label: 'Accordion label 6',
-      blocks: [PRODUCT_TILES_ACCORDION_BLOCK],
+      blocks: [PRODUCT_TILES_ACCORDION_BLOCK, PRODUCT_TILES_ACCORDION_BLOCK],
     },
     {
       label: 'Accordion label 7',

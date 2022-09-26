@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { Img } from '../../ui-kit/Img/Img';
 import type { AccordionItemCommonProps } from './AccordionContent';
 import { AccordionItemInner } from './AccordionItemInner';
-import { Img } from '../../ui-kit/Img/Img';
 import { useActiveHandler } from './useActiveHandler';
 
 export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
@@ -40,6 +40,6 @@ export const AccordionItem = JSX<AccordionItemProps>(
   },
 );
 
-function borderedLiClass(bordered) {
+function borderedLiClass(bordered?: boolean) {
   return bordered ? 'border p-4 rounded mb-4' : 'border-0 border-b last:border-b-0';
 }

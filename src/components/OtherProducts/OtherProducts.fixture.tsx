@@ -25,56 +25,67 @@ import type {
 
 const TEXT_BLOCK_OTHER_BLOCK: TextBlockBlockListDef = {
   blockListType: 'TextBlock',
+  style: ['col-span-12'],
   ...TEXT_BLOCK,
 };
 
 const PRODUCT_BLOCK_OTHER_BLOCK: ProductBlockBlockListDef = {
   blockListType: 'ProductBlock',
+  style: ['col-span-6'],
   ...PRODUCT_BLOCK,
 };
 
 const TILES_OTHER_BLOCK: TileBlockListDef = {
   blockListType: 'Tile',
+  style: ['col-span-12'],
   ...TILE,
 };
 
 const TILES_PREMIUM_OTHER_BLOCK: TileBlockListDef = {
   blockListType: 'Tile',
+  style: ['col-span-6'],
   ...TILE_PREMIUM,
 };
 
 const PRODUCT_TILES_OTHER_BLOCK: ProductTileBlockListDef = {
   blockListType: 'ProductTile',
+  style: ['col-span-6'],
   ...PRODUCT_TILE,
 };
 
-const PRODUCT_PENSION_TILES__OTHER_BLOCK: ProductTileBlockListDef = {
+const PRODUCT_PENSION_TILES_OTHER_BLOCK: ProductTileBlockListDef = {
   blockListType: 'ProductTile',
+  style: ['col-span-6'],
   ...PRODUCT_PENSION_TILE,
 };
 
 const HEADLINE_OTHER_BLOCK: HeadlineBlockListDef = {
   blockListType: 'Headline',
+  style: ['col-span-12'],
   ...HEADLINE,
 };
 
 const PICTURE_TEXT_OTHER_BLOCK: PictureTextBlockListDef = {
   blockListType: 'PictureText',
+  style: ['col-span-12'],
   ...PICTURE_TEXT,
 };
 
 const LINK_DOCS_OTHER_BLOCK: LinkDocsBlockListDef = {
   blockListType: 'LinkDocs',
+  style: ['col-span-12'],
   ...linkDocsContentExample,
 };
 
 const GALLERY_OTHER_BLOCK: GalleryBlockListDef = {
   blockListType: 'Gallery',
+  style: ['col-span-12'],
   ...GALLERY,
 };
 
 const MINI_GALLERY_OTHER_BLOCK: MiniGalleryBlockListDef = {
   blockListType: 'MiniGallery',
+  style: ['col-span-12'],
   ...MINI_GALLERY,
 };
 
@@ -96,8 +107,8 @@ const propsBlock: OtherProductsProps = {
       blocks: [
         PRODUCT_TILES_OTHER_BLOCK,
         PRODUCT_TILES_OTHER_BLOCK,
-        PRODUCT_PENSION_TILES__OTHER_BLOCK,
-        PRODUCT_PENSION_TILES__OTHER_BLOCK,
+        PRODUCT_PENSION_TILES_OTHER_BLOCK,
+        PRODUCT_PENSION_TILES_OTHER_BLOCK,
       ],
     },
     {
@@ -127,53 +138,11 @@ const propsBlock: OtherProductsProps = {
     },
     {
       label: 'OtherProducts №8 Gallery',
-      blocks: [GALLERY_OTHER_BLOCK],
+      blocks: [GALLERY_OTHER_BLOCK, GALLERY_OTHER_BLOCK],
     },
     {
       label: 'OtherProducts №9 Mini_Gallery',
-      blocks: [MINI_GALLERY_OTHER_BLOCK],
-    },
-  ],
-};
-
-const propsTwoColumns: OtherProductsProps = {
-  context,
-  blockItems: [
-    {
-      label: 'Другие кредитные карты Россельхозбанка 1',
-      blocks: [
-        TILES_PREMIUM_OTHER_BLOCK,
-        TILES_PREMIUM_OTHER_BLOCK,
-        TILES_OTHER_BLOCK,
-        TILES_OTHER_BLOCK,
-      ],
-      columns: 2,
-    },
-    {
-      label: 'Другие кредитные карты Россельхозбанка 2',
-      blocks: [
-        PRODUCT_TILES_OTHER_BLOCK,
-        PRODUCT_TILES_OTHER_BLOCK,
-        PRODUCT_PENSION_TILES__OTHER_BLOCK,
-        PRODUCT_PENSION_TILES__OTHER_BLOCK,
-      ],
-      columns: 2,
-    },
-    {
-      label: 'Другие кредитные карты Россельхозбанка 3',
-      blocks: [PRODUCT_BLOCK_OTHER_BLOCK, PRODUCT_BLOCK_OTHER_BLOCK],
-      columns: 2,
-    },
-
-    {
-      label: 'Другие кредитные карты Россельхозбанка 4',
-      blocks: [
-        TEXT_BLOCK_OTHER_BLOCK,
-        TEXT_BLOCK_OTHER_BLOCK,
-        TEXT_BLOCK_OTHER_BLOCK,
-        TEXT_BLOCK_OTHER_BLOCK,
-      ],
-      columns: 2,
+      blocks: [MINI_GALLERY_OTHER_BLOCK, MINI_GALLERY_OTHER_BLOCK],
     },
   ],
 };
@@ -182,12 +151,6 @@ export default {
   default: (
     <div className="container grid grid-cols-12">
       <OtherProducts className="col-span-12" {...propsBlock} />
-    </div>
-  ),
-
-  'two columns': (
-    <div className="container grid grid-cols-12">
-      <OtherProducts className="col-span-12" {...propsTwoColumns} />
     </div>
   ),
 };

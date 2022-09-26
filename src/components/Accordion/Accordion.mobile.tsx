@@ -16,7 +16,7 @@ export const Accordion = JSX<AccordionProps>(
           <ul className="list-none m-0 p-0">
             {accordionItems.map((item, i) => (
               <AccordionItem
-                key={`AccordionItem${i}`}
+                key={`AccordionItem_${i}`}
                 {...item}
                 context={context}
                 bordered={bordered}
