@@ -14,12 +14,13 @@ const CARD_FULL_VIEW_COUNT = 3;
 const CARD_SHIFT = 430;
 
 export const Catalog = JSX<CatalogProps>(
-  ({ context, cards = [], className = '', title, description }) => {
+  ({ context, cards = [], className = '', title, description, anchor = null }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     return (
       <section
         className={`bg-white relative font-sans p-9 overflow-hidden text-center ${className}`}
+        id={anchor}
       >
         {title ? <Heading headingType="h2" className="mb-6" title={title} /> : null}
         {description ? <Description className="mb-6" description={description} /> : null}

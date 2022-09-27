@@ -538,6 +538,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/CatalogCardType",
           },
+          "title": "Список карточек",
           "type": "array",
         },
         "description": Object {

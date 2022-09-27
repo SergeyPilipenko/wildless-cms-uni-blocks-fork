@@ -22,5 +22,6 @@ export interface CatalogCardType extends HeadingContent, DescriptionContent, Ima
  */
 export type CatalogContent = HeadingContent &
   DescriptionContent & {
+    /** @title Список карточек */
     cards?: CatalogCardType[];
   };
