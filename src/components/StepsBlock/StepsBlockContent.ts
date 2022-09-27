@@ -40,5 +40,5 @@ export interface StepsBlockContent {
    * @default normal
    */
   size?: SizeVersion; // TODO: mobile content
-  version?: BlockVersion; // TODO: mobile content
+  version?: BlockVersion;
 }

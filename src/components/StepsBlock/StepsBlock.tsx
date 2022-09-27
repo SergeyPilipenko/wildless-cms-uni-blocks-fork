@@ -5,11 +5,21 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
+import { getStyleMap, StyleType } from './StepsBlockStyleMaps';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
 export const StepsBlock = JSX<StepsBlockProps>(
-  ({ className = '', title, showLines = true, steps = [], button, anchor = null }) => {
+  ({
+    className = '',
+    title,
+    showLines = true,
+    steps = [],
+    button,
+    anchor = null,
+    version = 'primary',
+  }) => {
+    const styleMap = getStyleMap(version);
     const shortGaps = steps.length > 3;
 
     return (
@@ -18,6 +28,8 @@ export const StepsBlock = JSX<StepsBlockProps>(
           'box-border font-sans text-primary-text bg-white',
           shortGaps ? 'px-20' : 'px-[70px]',
           'py-[50px] flex flex-col items-center',
+          styleMap.background,
+          styleMap.title,
           className,
         ].join(' ')}
         id={anchor}
@@ -30,10 +42,10 @@ export const StepsBlock = JSX<StepsBlockProps>(
                 <div
                   className={`h-0.5 w-full bg-secondary-light ${!showLines ? 'opacity-0' : ''}`}
                 />,
-              )(steps.map(renderStepIcon))}
+              )(steps.map(renderStepIcon(styleMap)))}
             </div>
             <div className={`flex justify-between ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
-              {steps.map((step, i) => renderStepTitle(step, i, Boolean(button?.text)))}
+              {steps.map(renderStepTitle(styleMap, Boolean(button?.text)))}
             </div>
           </div>
         ) : null}
@@ -51,33 +63,37 @@ export const StepsBlock = JSX<StepsBlockProps>(
   },
 );
 
-const renderStepIcon = (step: Step, i: number) => {
+const renderStepIcon = (styleMap: StyleType) => (step: Step, i: number) => {
   return (
     <div key={String(i)} className="flex flex-col items-center text-center relative">
-      <div className="h-[100px] w-[100px] min-w-[100px] min-h-[100px] bg-secondary-light rounded-full p-[26px] box-border z-10">
+      <div
+        className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10 ${styleMap.iconBackground}`}
+      >
         {(step.icon?.icon && <Img image={step.icon} width="48" height="48" />) || (
-          <span className="font-normal text-title-sm text-secondary-text">{i + 1}</span>
+          <span className={`font-normal text-title-sm ${styleMap.title}`}>{i + 1}</span>
         )}
       </div>
     </div>
   );
 };
 
-const renderStepTitle = (step: Step, i: number, isMainButton: boolean) => {
+const renderStepTitle = (styleMap: StyleType, isMainButton: boolean) => (step: Step, i: number) => {
   return (
     <div
       key={String(i)}
       className="flex flex-col items-center justify-between text-center relative w-[276px] whitespace-pre-line overflow-hidden"
     >
       <div>
-        {step.label && <div className="font-normal text-xl m-0 mt-4">{step.label}</div>}
-        {step.description && (
+        {step.label ? <div className="font-normal text-xl m-0 mt-4">{step.label}</div> : null}
+        {step.description ? (
           <div
-            className={`font-light text-base text-secondary-text ${step.label ? 'mt-2' : 'mt-4'}`}
+            className={`font-light text-base ${styleMap.description} ${
+              step.label ? 'mt-2' : 'mt-4'
+            }`}
           >
             {step.description}
           </div>
-        )}
+        ) : null}
       </div>
       {step?.button?.text && !isMainButton ? (
         <Button

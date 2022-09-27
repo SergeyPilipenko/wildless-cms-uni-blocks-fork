@@ -5,16 +5,9 @@ import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
+import { getStyleMap } from './StepsBlockStyleMaps';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
-
-type StyleType = {
-  background: string;
-  title: string;
-  description: string;
-  iconBackground: string;
-  iconConnector: string;
-};
 
 const STEPS_SIZE_MAP: Record<SizeVersion, string> = {
   normal: 'h-[70px] w-[70px] min-w-[70px] min-h-[70px]',
@@ -26,25 +19,6 @@ const STEPS_TILE_DESCRIPTION_HEIGHT_MAP: Record<SizeVersion, string> = {
   small: 'min-h-[50px]',
 };
 
-const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
-  primary: {
-    background: 'bg-white',
-    title: 'text-primary-text',
-    description: 'text-secondary-text',
-    iconBackground: 'bg-secondary-light',
-    iconConnector: 'bg-secondary-light',
-  },
-  secondary: {
-    background: 'bg-primary-main',
-    title: 'text-white',
-    description: 'text-white/80',
-    iconBackground: 'bg-white/30',
-    iconConnector: 'bg-white',
-  },
-};
-
-const styleMaps = (version: BlockVersion): StyleType => STEPS_BLOCK_STYLE_MAPS[version];
-
 export const StepsBlock = JSX<StepsBlockProps>(
   ({
     className,
@@ -55,34 +29,25 @@ export const StepsBlock = JSX<StepsBlockProps>(
     size = 'normal',
     version = 'primary',
   }) => {
-    const style = styleMaps(version);
+    const styleMap = getStyleMap(version);
 
     return (
       <section
         className={`box-border font-sans bg-white px-4 py-6 flex flex-col
-        ${style.background} ${style.title} ${className || ''}`}
+        ${styleMap.background} ${styleMap.title} ${className || ''}`}
       >
         {title ? (
-          <Heading headingType="h3" className={`text-center ${style.title}`} title={title} />
+          <Heading headingType="h3" className={`text-center ${styleMap.title}`} title={title} />
         ) : null}
         {description ? (
-          <p className={`text-m-md text-center ${style.description} ${title && 'mt-2'}`}>
+          <p className={`text-m-md text-center ${styleMap.description} ${title ? 'mt-2' : ''}`}>
             {description}
           </p>
         ) : null}
         {steps?.length ? (
           <div className={`box-border py-0.5 mb-0.5 mt-5`}>
             <div className="flex flex-col justify-between gap-x-[101px]">
-              {steps.map((step, i, { length }) =>
-                renderStepTitle({
-                  step,
-                  size,
-                  i,
-                  length,
-                  version: version,
-                  showLines,
-                }),
-              )}
+              {steps.map(renderStepTitle(size, version, showLines))}
             </div>
           </div>
         ) : null}
@@ -91,56 +56,49 @@ export const StepsBlock = JSX<StepsBlockProps>(
   },
 );
 
-interface RenderStepTitleParams {
-  step: Step;
-  size: SizeVersion;
-  i: number;
-  length: number;
-  version: BlockVersion;
-  showLines: boolean;
-}
+const renderStepTitle =
+  (size: SizeVersion, version: BlockVersion, showLines: boolean) =>
+  (step: Step, i: number, steps: Step[]) => {
+    const isLastStep = steps.length - 1 === i;
+    const margin = size === 'normal' ? 'ml-[34px]' : 'ml-6';
+    const styleMap = getStyleMap(version);
 
-const renderStepTitle = (params: RenderStepTitleParams) => {
-  const { step, size, i, length, version, showLines } = params;
-  const isLastStep = length - 1 === i;
-  const margin = size === 'normal' ? 'ml-[34px]' : 'ml-[24px]';
-  const style = styleMaps(version);
-
-  return (
-    <div key={String(i)}>
-      <div key={String(i)} className="flex flex-row text-center relative">
-        <div className="overflow-hidden">
-          {renderIconArea(params)}
-          {isLastStep ? null : (
-            <div
-              className={`min-h-8 h-full w-[2px] ${showLines ? style.iconConnector : ''} ${margin}`}
-            />
-          )}
-        </div>
-        <div
-          className={`flex flex-col justify-center h-fit ${STEPS_TILE_DESCRIPTION_HEIGHT_MAP[size]}`}
-        >
-          {step.label ? (
-            <div className="font-medium text-m-title-xs m-0 text-left">{step.label}</div>
-          ) : null}
-          {step.description ? (
-            <div
-              className={`font-normal text-sm ${style.description} text-left ${
-                step.label ? 'mt-1' : ''
-              }`}
-            >
-              {step.description}
-            </div>
-          ) : null}
+    return (
+      <div key={String(i)}>
+        <div className="flex flex-row text-center relative">
+          <div className="overflow-hidden">
+            {renderIconArea(size, version)}
+            {isLastStep ? null : (
+              <div
+                className={`min-h-8 h-full w-[2px] ${
+                  showLines ? styleMap.iconConnector : ''
+                } ${margin}`}
+              />
+            )}
+          </div>
+          <div
+            className={`flex flex-col justify-center h-fit ${STEPS_TILE_DESCRIPTION_HEIGHT_MAP[size]}`}
+          >
+            {step.label ? (
+              <div className="font-medium text-m-title-xs m-0 text-left">{step.label}</div>
+            ) : null}
+            {step.description ? (
+              <div
+                className={`font-normal text-sm ${styleMap.description} text-left ${
+                  step.label ? 'mt-1' : ''
+                }`}
+              >
+                {step.description}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-const renderIconArea = (params: RenderStepTitleParams) => {
-  const { step, size, i, version } = params;
-  const style = styleMaps(version);
+const renderIconArea = (size: SizeVersion, version: BlockVersion) => (step: Step, i: number) => {
+  const styleMap = getStyleMap(version);
   const iconAreaSize = STEPS_SIZE_MAP[size];
 
   const iconSize = size === 'normal' ? '38' : '27';
@@ -148,9 +106,9 @@ const renderIconArea = (params: RenderStepTitleParams) => {
 
   return (
     <div
-      className={`${iconAreaSize} ${style.iconBackground} rounded-full z-10 mr-3 flex justify-center content-center`}
+      className={`${iconAreaSize} ${styleMap.iconBackground} rounded-full z-10 mr-3 flex justify-center content-center`}
     >
-      <span className={`font-medium flex self-center ${style.title} ${iconTextSize}`}>
+      <span className={`font-medium flex self-center ${styleMap.title} ${iconTextSize}`}>
         {(step.icon?.icon && <Img image={step.icon} width={iconSize} height={iconSize} />) || i + 1}
       </span>
     </div>
