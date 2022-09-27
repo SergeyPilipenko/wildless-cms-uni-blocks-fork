@@ -15,7 +15,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
       {isWithText(props) ? (
         <div>
           <div className="text-m-2xs font-light text-left">{aboveText}</div>
-          <div className="text-button text-left">{text}</div>
+          <div className="text-base text-left">{text}</div>
         </div>
       ) : null}
       {appendRight ? appendRight : null}
@@ -30,7 +30,7 @@ const getButtonStyle = (props: ButtonInnerProps) => {
     return '';
   }
 
-  const withTextStyle = `px-8 gap-2 ${aboveText ? 'py-2' : 'py-[18px]'}`;
+  const withTextStyle = `px-9 gap-2 ${aboveText ? 'py-2' : 'py-4'}`;
 
   return [
     'flex items-center justify-center',

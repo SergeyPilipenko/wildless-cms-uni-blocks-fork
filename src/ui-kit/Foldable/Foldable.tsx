@@ -59,7 +59,7 @@ export const Foldable = JSX<FoldableProps>(
             onClick={handleToggle}
           >
             <span className="pr-3">{isActive ? 'Скрыть' : foldButtonLabel}</span>
-            {icon && <Icon name={icon} iconVersion="white" width="20" height="20" asSVG />}
+            {icon ? <Icon name={icon} iconVersion="white" width="20" height="20" asSVG /> : null}
           </button>
         ) : null}
       </div>

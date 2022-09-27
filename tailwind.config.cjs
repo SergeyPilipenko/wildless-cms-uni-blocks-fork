@@ -77,6 +77,9 @@ module.exports = {
         'm-xs': ['1.8125rem', '1.375rem'], // 13px 22px
         'm-2xs': ['0.75rem', '1.125rem'], // 12px 18px
         'm-3xs': ['0.625rem', '0.625rem'], // 10px 10px
+
+        h4: ['1.75rem', '2.25rem'], // 28px 36px
+        m: ['0.9375rem', '1.25rem'], // 15px 20px
       },
       colors: {
         main: {
