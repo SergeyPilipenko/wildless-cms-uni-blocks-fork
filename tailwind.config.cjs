@@ -50,6 +50,7 @@ module.exports = {
         'button-sm': ['1rem', '1.25rem'], // 16px 20px
 
         'title-extra': ['15.625rem','14.687rem'], // 250px 235px
+        'title-huge': ['12.5rem','15.625rem'], // 200px 250px
         'title-xl': ['3.125rem', '3.25rem'], //50px 52px
         'title-lg': ['2.5rem', '3rem'], //40px 48px
         title: ['2rem', '2.5rem'], //32px 40px
@@ -62,7 +63,7 @@ module.exports = {
         'md-new': ['1.125rem', '1.25rem'], // 18px 20px
         base: ['1rem', '1.5rem'], // 16px 24px
         sm: ['0.875rem', '1.375rem'], // 14px 22px
-        xs: ['0.75rem', '1.125rem'], // 12px 18px
+
         '2xs': ['0.625rem', '0.625rem'], // 10px 10px
 
         'm-button': ['0.875rem', '1.25rem'], // 14px 20px
@@ -78,8 +79,62 @@ module.exports = {
         'm-2xs': ['0.75rem', '1.125rem'], // 12px 18px
         'm-3xs': ['0.625rem', '0.625rem'], // 10px 10px
 
-        h4: ['1.75rem', '2.25rem'], // 28px 36px
-        m: ['0.9375rem', '1.25rem'], // 15px 20px
+        h0: ['3.5rem', { // 56px 56px
+          lineHeight: '3.5rem',
+          fontWeight: '400',
+        }],
+        h1: ['3.125rem', { // 50px 52px
+          lineHeight: '3.25rem',
+          fontWeight: '400',
+        }],
+        h2: ['2.5rem', { // 40px 48px
+          lineHeight: '3rem',
+          fontWeight: '400',
+        }],
+        h3: ['2rem', { // 32px 40px
+          lineHeight: '2.5rem',
+          fontWeight: '400',
+        }],
+        h4: ['1.75rem', { // 28px 36px
+          lineHeight: '2.25rem',
+          fontWeight: '400',
+        }],
+        h5: ['1.5rem', { // 24px 30px
+          lineHeight: '1.875rem',
+          fontWeight: '400',
+        }],
+        h6: ['1.25rem', { // 20px 28px
+          lineHeight: '1.75rem',
+          fontWeight: '400',
+        }],
+        xl: ['1.125rem', { // 18px 24px
+          lineHeight: '1.5rem',
+          fontWeight: '300',
+        }],
+        'l-bold': ['1rem', { // 16px 24px
+          lineHeight: '1.5rem',
+          fontWeight: '400',
+        }],
+        'l': ['1rem', { // 16px 24px
+          lineHeight: '1.5rem',
+          fontWeight: '400',
+        }],
+        'l-light': ['1rem', { // 16px 24px
+          lineHeight: '1.5rem',
+          fontWeight: '300',
+        }],
+        m: ['0.9375rem', { // 15px 20px
+          lineHeight: '1.25rem',
+          fontWeight: '300',
+        }],
+        s: ['0.875rem', { // 14px 20px
+          lineHeight: '1.25rem',
+          fontWeight: '300',
+        }],
+        xs: ['0.75rem', { // 12px 18px
+          lineHeight: '1.125rem',
+          fontWeight: '300',
+        }],
       },
       colors: {
         main: {
