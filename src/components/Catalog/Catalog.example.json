@@ -1,0 +1,57 @@
+{
+  "title": "Каталог",
+  "description": "Описание",
+  "cards": [
+    {
+      "title": "Заголовок карточки 1",
+      "description": "Описание карточки",
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 230,
+          "height": 230
+        }
+      },
+      "button": {
+        "href": "",
+        "text": "Подробнее",
+        "target": "_blank",
+        "version": "primary"
+      }
+    },
+    {
+      "title": "Заголовок карточки 2",
+      "description": "Описание карточки",
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 230,
+          "height": 230
+        }
+      },
+      "button": {
+        "href": "",
+        "text": "Подробнее",
+        "target": "_blank",
+        "version": "primary"
+      }
+    },
+    {
+      "title": "Заголовок карточки 3",
+      "description": "Описание карточки",
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 230,
+          "height": 230
+        }
+      },
+      "button": {
+        "href": "",
+        "text": "Подробнее",
+        "target": "_blank",
+        "version": "primary"
+      }
+    }
+  ]
+}

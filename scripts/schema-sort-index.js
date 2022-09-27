@@ -8,6 +8,8 @@ export default [
   'align',
   'text',
   'description',
+  'colors',
+  'price',
   'bonusItems',
   'image',
   'backwardButton',

@@ -501,6 +501,68 @@ Object {
       "title": "Кнопка выбора программы",
       "type": "object",
     },
+    "CatalogCardType": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonWithIconProps",
+          "title": "Кнопка",
+        },
+        "colors": Object {
+          "items": Object {
+            "$ref": "#/definitions/CatalogProductColor",
+          },
+          "title": "Доступные цвета",
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "price": Object {
+          "title": "Цена в рублях",
+          "type": "number",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "CatalogContent": Object {
+      "properties": Object {
+        "cards": Object {
+          "items": Object {
+            "$ref": "#/definitions/CatalogCardType",
+          },
+          "type": "array",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Каталог",
+      "type": "object",
+    },
+    "CatalogProductColor": Object {
+      "enum": Array [
+        "black",
+        "white",
+      ],
+      "enumNames": Array [
+        "Черный",
+        "Белый",
+      ],
+      "type": "string",
+    },
     "CellData": Object {
       "properties": Object {
         "description": Object {
