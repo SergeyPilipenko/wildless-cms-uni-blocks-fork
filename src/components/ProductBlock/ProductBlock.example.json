@@ -30,6 +30,7 @@
     }
   ],
   "version": "primary",
+  "benefitsVersion": "normal",
   "benefits": [
     {
       "label": "Преимущество №1",
