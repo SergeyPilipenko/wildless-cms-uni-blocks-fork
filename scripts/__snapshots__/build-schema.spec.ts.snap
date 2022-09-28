@@ -404,6 +404,10 @@ Object {
           "$ref": "#/definitions/Picture",
           "title": "Иконка",
         },
+        "iconRight": Object {
+          "$ref": "#/definitions/Picture",
+          "title": "Иконка справа",
+        },
         "rounded": Object {
           "title": "Закругленные углы",
           "type": "boolean",

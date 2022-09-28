@@ -28,6 +28,8 @@ export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
 export interface ButtonWithIconProps extends ButtonProps {
   /** @title Иконка */
   icon?: Picture;
+  /** @title Иконка справа */
+  iconRight?: Picture;
   /** @title Верхний текст */
   aboveText?: string;
   /** @hidden */
