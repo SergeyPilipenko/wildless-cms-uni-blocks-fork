@@ -10,19 +10,88 @@
       "blockType": "ProductBlock",
       "title": "Продуктовый блок",
       "description": "Описание текстового блока",
-      "tags": ["tag2"]
+      "tags": ["tag2"],
+      "backwardButton": {
+        "text": "Кнопка возврата",
+        "icon": { "icon": "ArrowLeftIcon" }
+      },
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 234,
+          "height": 234
+        }
+      }
     },
     {
       "blockType": "ProductTile",
       "title": "Продуктовая плитка",
       "description": "Описание текстового блока",
-      "tags": ["tag1"]
+      "tags": ["tag1"],
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 300
+        }
+      },
+      "version": "primary",
+      "benefits": [
+        {
+          "label": "Преимущество 1",
+          "description": "Описание"
+        },
+        {
+          "label": "Преимущество 2",
+          "description": "Описание"
+        },
+        {
+          "label": "Преимущество 3",
+          "description": "Описание"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Кнопка",
+          "version": "primary"
+        }
+      ]
     },
     {
       "blockType": "ProductBlock",
       "title": "Продуктовый блок",
       "description": "Описание текстового блока",
-      "tags": ["tag2"]
+      "tags": ["tag2"],
+      "headingType": "h2",
+      "backwardButton": {
+        "text": "Кнопка возврата",
+        "icon": { "icon": "ArrowLeftIcon" }
+      },
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 234,
+          "height": 234
+        }
+      },
+      "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
+      "isDotted": true,
+      "buttons": [
+        {
+          "text": "Кнопка",
+          "version": "secondary"
+        }
+      ],
+      "version": "primary",
+      "benefits": [
+        {
+          "label": "Преимущество №1",
+          "icon": {"icon": "ClockIcon"}
+        },
+        {
+          "label": "Преимущество №2",
+          "icon": {"icon": "SignDocsIcon"}
+        }
+      ]
     }
   ]
 }

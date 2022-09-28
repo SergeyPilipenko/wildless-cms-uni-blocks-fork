@@ -3,7 +3,6 @@
   "description": "Описание",
   "headingType": "h2",
   "backwardButton": {
-    "href": "https://rshb.ru",
     "text": "Кнопка возврата",
     "icon": { "icon": "ArrowLeftIcon" }
   },
@@ -12,21 +11,14 @@
     "size": {
       "width": 234,
       "height": 234
-    },
-    "alt": "",
-    "title": ""
+    }
   },
   "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
   "isDotted": true,
   "buttons": [
     {
       "text": "Кнопка",
-      "version": "secondary",
-      "target": "",
-      "icon": {
-        "alt": "",
-        "title": ""
-      }
+      "version": "secondary"
     }
   ],
   "version": "primary",

@@ -4,10 +4,10 @@ import type { GroupBlockDef } from './BlocksTypeProps';
  *  @title Таб
  */
 export interface GroupBlockTab {
-  /** @title Название */
-  title?: string;
   /** @title Tег */
   tag?: string;
+  /** @title Название */
+  title?: string;
 }
 
 /**
