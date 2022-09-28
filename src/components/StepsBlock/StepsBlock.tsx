@@ -5,7 +5,9 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
-import { getStyleMap, StyleType } from './StepsBlockStyleMaps';
+import type { StyleType } from './StepsBlockStyleMaps';
+import { getStyleMap } from './StepsBlockStyleMaps';
+import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -63,19 +65,23 @@ export const StepsBlock = JSX<StepsBlockProps>(
   },
 );
 
-const renderStepIcon = (styleMap: StyleType) => (step: Step, i: number) => {
-  return (
-    <div key={String(i)} className="flex flex-col items-center text-center relative">
-      <div
-        className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10 ${styleMap.iconBackground}`}
-      >
-        {(step.icon?.icon && <Img image={step.icon} width="48" height="48" />) || (
-          <span className={`font-normal text-title-sm ${styleMap.title}`}>{i + 1}</span>
-        )}
+const renderStepIcon =
+  (styleMap: StyleType) =>
+  ({ icon }: Step, i: number) => {
+    return (
+      <div key={String(i)} className="flex flex-col items-center text-center relative">
+        <div
+          className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10 ${styleMap.iconBackground}`}
+        >
+          {checkIsIconRenderable(icon) ? (
+            <Img image={icon} width="48" height="48" asSVG />
+          ) : (
+            <span className={`font-normal text-title-sm ${styleMap.title}`}>{i + 1}</span>
+          )}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 const renderStepTitle = (styleMap: StyleType, isMainButton: boolean) => (step: Step, i: number) => {
   return (

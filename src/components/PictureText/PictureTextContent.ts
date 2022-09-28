@@ -6,6 +6,7 @@ import type { Picture } from '../../model/Picture';
 export type TitleWithImageContent = HeadingContent & ImageContent;
 
 export interface PictureTextBenefit {
+  /** @title Иконка */
   icon?: Picture;
   /** @title Название */
   label?: string;

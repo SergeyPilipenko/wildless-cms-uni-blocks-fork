@@ -27,71 +27,93 @@ export interface BlocksCommonProps {
 
 /**
  * @title Заголовок
- * @default {"blockListType": "Headline"}
  */
 export type HeadlineBlockListDef = HeadlineContent &
-  BlocksCommonProps & { blockListType: 'Headline' };
+  BlocksCommonProps & {
+    /** @default "Headline" */
+    blockListType: 'Headline';
+  };
 
 /**
  * @title Список документов
- * @default {"blockListType": "LinkDocs"}
  */
 export type LinkDocsBlockListDef = LinkDocsContent &
-  BlocksCommonProps & { blockListType: 'LinkDocs' };
+  BlocksCommonProps & {
+    /** @default "LinkDocs" */
+    blockListType: 'LinkDocs';
+  };
 
 /**
  * @title Текстовый блок
- * @default {"blockListType": "TextBlock"}
  */
 export type TextBlockBlockListDef = TextBlockContent &
-  BlocksCommonProps & { blockListType: 'TextBlock' };
+  BlocksCommonProps & {
+    /** @default "TextBlock" */
+    blockListType: 'TextBlock';
+  };
 
 /**
  * @title Картинка с текстом
- * @default {"blockListType": "PictureText"}
  */
 export type PictureTextBlockListDef = PictureTextContent &
-  BlocksCommonProps & { blockListType: 'PictureText' };
+  BlocksCommonProps & {
+    /** @default "PictureText" */
+    blockListType: 'PictureText';
+  };
 
 /**
  * @title Продуктовый блок
- * @default {"blockListType": "ProductBlock"}
  */
 export type ProductBlockBlockListDef = ProductBlockContent &
-  BlocksCommonProps & { blockListType: 'ProductBlock' };
+  BlocksCommonProps & {
+    /** @default "ProductBlock" */
+    blockListType: 'ProductBlock';
+  };
 
 /**
  * @title Плитка
- * @default {"blockListType": "Tile"}
  */
-export type TileBlockListDef = TileContent & BlocksCommonProps & { blockListType: 'Tile' };
+export type TileBlockListDef = TileContent &
+  BlocksCommonProps & {
+    /** @default "Tile" */
+    blockListType: 'Tile';
+  };
 
 /**
  * @title Продуктовая плитка
- * @default {"blockListType": "ProductTile"}
  */
 export type ProductTileBlockListDef = ProductTileContent &
-  BlocksCommonProps & { blockListType: 'ProductTile' };
+  BlocksCommonProps & {
+    /** @default "ProductTile" */
+    blockListType: 'ProductTile';
+  };
 
 /**
  * @title Галерея
- * @default {"blockListType": "Gallery"}
  */
-export type GalleryBlockListDef = GalleryContent & BlocksCommonProps & { blockListType: 'Gallery' };
+export type GalleryBlockListDef = GalleryContent &
+  BlocksCommonProps & {
+    /** @default "Gallery" */
+    blockListType: 'Gallery';
+  };
 
 /**
  * @title Мини-галлерея
- * @default {"blockListType": "MiniGallery"}
  */
 export type MiniGalleryBlockListDef = MiniGalleryContent &
-  BlocksCommonProps & { blockListType: 'MiniGallery' };
+  BlocksCommonProps & {
+    /** @default "MiniGallery" */
+    blockListType: 'MiniGallery';
+  };
 
 /**
  * @title Список ссылок
- * @default {"blockListType": "LinkList"}
  */
 export type LinkListBlockListDef = LinkListContent &
-  BlocksCommonProps & { blockListType: 'LinkList' };
+  BlocksCommonProps & {
+    /** @default "LinkList" */
+    blockListType: 'LinkList';
+  };
 
 /**
  * @title Содержимое блока

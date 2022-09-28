@@ -5,6 +5,7 @@ import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
+import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { getStyleMap } from './StepsBlockStyleMaps';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
@@ -109,7 +110,11 @@ const renderIconArea = (size: SizeVersion, version: BlockVersion) => (step: Step
       className={`${iconAreaSize} ${styleMap.iconBackground} rounded-full z-10 mr-3 flex justify-center content-center`}
     >
       <span className={`font-medium flex self-center ${styleMap.title} ${iconTextSize}`}>
-        {(step.icon?.icon && <Img image={step.icon} width={iconSize} height={iconSize} />) || i + 1}
+        {checkIsIconRenderable(step?.icon) ? (
+          <Img image={step.icon} width={iconSize} height={iconSize} asSVG />
+        ) : (
+          <span>{i + 1}</span>
+        )}
       </span>
     </div>
   );

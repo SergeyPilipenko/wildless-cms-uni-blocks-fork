@@ -28,7 +28,16 @@ export interface LinkDocsContent {
   title?: string;
   /** @title Описание */
   description?: string;
-  /** @title Название иконки */
+  /**
+   *  @title Иконка
+   *  @default {
+   *   "size": {
+   *     "width": 24,
+   *     "height": 24
+   *   },
+   *   "format": "webp"
+   * }
+   */
   icon?: Picture;
   /** @title Список */
   documents?: LinkDocsItem[];

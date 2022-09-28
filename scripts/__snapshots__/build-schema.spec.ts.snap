@@ -889,12 +889,10 @@ Object {
       "type": "object",
     },
     "GalleryBlockListDef": Object {
-      "default": Object {
-        "blockListType": "Gallery",
-      },
       "properties": Object {
         "blockListType": Object {
           "const": "Gallery",
+          "default": "Gallery",
           "type": "string",
         },
         "cards": Object {
@@ -1227,9 +1225,6 @@ Object {
       "type": "object",
     },
     "HeadlineBlockListDef": Object {
-      "default": Object {
-        "blockListType": "Headline",
-      },
       "properties": Object {
         "align": Object {
           "$ref": "#/definitions/AlignType",
@@ -1239,6 +1234,7 @@ Object {
         },
         "blockListType": Object {
           "const": "Headline",
+          "default": "Headline",
           "type": "string",
         },
         "description": Object {
@@ -1648,15 +1644,13 @@ Object {
       "type": "string",
     },
     "LinkDocsBlockListDef": Object {
-      "default": Object {
-        "blockListType": "LinkDocs",
-      },
       "properties": Object {
         "align": Object {
           "$ref": "#/definitions/AlignType",
         },
         "blockListType": Object {
           "const": "LinkDocs",
+          "default": "LinkDocs",
           "type": "string",
         },
         "columnsMode": Object {
@@ -1679,7 +1673,14 @@ Object {
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
-          "title": "Название иконки",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 24,
+              "width": 24,
+            },
+          },
+          "title": "Иконка",
         },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
@@ -1731,7 +1732,14 @@ Object {
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
-          "title": "Название иконки",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 24,
+              "width": 24,
+            },
+          },
+          "title": "Иконка",
         },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
@@ -1767,12 +1775,10 @@ Object {
       "type": "object",
     },
     "LinkListBlockListDef": Object {
-      "default": Object {
-        "blockListType": "LinkList",
-      },
       "properties": Object {
         "blockListType": Object {
           "const": "LinkList",
+          "default": "LinkList",
           "type": "string",
         },
         "documents": Object {
@@ -1882,12 +1888,10 @@ Object {
       "type": "string",
     },
     "MiniGalleryBlockListDef": Object {
-      "default": Object {
-        "blockListType": "MiniGallery",
-      },
       "properties": Object {
         "blockListType": Object {
           "const": "MiniGallery",
+          "default": "MiniGallery",
           "type": "string",
         },
         "cards": Object {
@@ -2122,6 +2126,7 @@ Object {
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
+          "title": "Иконка",
         },
         "label": Object {
           "title": "Название",
@@ -2131,9 +2136,6 @@ Object {
       "type": "object",
     },
     "PictureTextBlockListDef": Object {
-      "default": Object {
-        "blockListType": "PictureText",
-      },
       "properties": Object {
         "benefits": Object {
           "items": Object {
@@ -2144,6 +2146,7 @@ Object {
         },
         "blockListType": Object {
           "const": "PictureText",
+          "default": "PictureText",
           "type": "string",
         },
         "directionRight": Object {
@@ -2223,9 +2226,6 @@ Object {
       "type": "object",
     },
     "ProductBlockBlockListDef": Object {
-      "default": Object {
-        "blockListType": "ProductBlock",
-      },
       "properties": Object {
         "backwardButton": Object {
           "$ref": "#/definitions/ButtonWithIconProps",
@@ -2245,6 +2245,7 @@ Object {
         },
         "blockListType": Object {
           "const": "ProductBlock",
+          "default": "ProductBlock",
           "type": "string",
         },
         "breadcrumbs": Object {
@@ -2586,9 +2587,6 @@ Object {
       "type": "object",
     },
     "ProductTileBlockListDef": Object {
-      "default": Object {
-        "blockListType": "ProductTile",
-      },
       "properties": Object {
         "additionalDescription": Object {
           "title": "Дополнительное описание",
@@ -2604,6 +2602,7 @@ Object {
         },
         "blockListType": Object {
           "const": "ProductTile",
+          "default": "ProductTile",
           "type": "string",
         },
         "buttons": Object {
@@ -2922,6 +2921,14 @@ Object {
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 48,
+              "width": 48,
+            },
+          },
+          "title": "Иконка",
         },
         "label": Object {
           "title": "Название",
@@ -3202,12 +3209,10 @@ Object {
       "type": "object",
     },
     "TextBlockBlockListDef": Object {
-      "default": Object {
-        "blockListType": "TextBlock",
-      },
       "properties": Object {
         "blockListType": Object {
           "const": "TextBlock",
+          "default": "TextBlock",
           "type": "string",
         },
         "blockVersion": Object {
@@ -3318,12 +3323,10 @@ Object {
       "type": "string",
     },
     "TileBlockListDef": Object {
-      "default": Object {
-        "blockListType": "Tile",
-      },
       "properties": Object {
         "blockListType": Object {
           "const": "Tile",
+          "default": "Tile",
           "type": "string",
         },
         "buttons": Object {
