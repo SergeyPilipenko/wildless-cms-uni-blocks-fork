@@ -4,7 +4,7 @@ import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 /** @title Плитка */
 interface BonusItems {
   /** @title Бонусы */
-  name?: string;
+  title?: string;
   /** @title Описание плитки */
   description?: string;
   /** @title Количество баллов */

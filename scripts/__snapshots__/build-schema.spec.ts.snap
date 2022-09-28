@@ -243,7 +243,7 @@ Object {
       "properties": Object {
         "icon": Object {
           "$ref": "#/definitions/Picture",
-          "title": "Бонус и преимущество",
+          "title": "Изображение",
         },
         "label": Object {
           "title": "Название",
@@ -318,7 +318,7 @@ Object {
                 "title": "Описание плитки",
                 "type": "string",
               },
-              "name": Object {
+              "title": Object {
                 "title": "Бонусы",
                 "type": "string",
               },
@@ -821,8 +821,14 @@ Object {
       "type": "null",
     },
     "ExchangeRateTileContent": Object {
-      "$ref": "#/definitions/HeadingContent",
-      "title": "Курсы валют",
+      "properties": Object {
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Курсы обмена валют",
+      "type": "object",
     },
     "FooterContent": Object {
       "properties": Object {
@@ -1025,10 +1031,6 @@ Object {
         "calendar": Object {
           "items": Object {
             "properties": Object {
-              "blackText": Object {
-                "title": "Основной текст",
-                "type": "string",
-              },
               "greenText": Object {
                 "title": "Вспомогательный текст",
                 "type": "string",
@@ -1047,7 +1049,7 @@ Object {
                       },
                       "title": "Изображение календарного месяца",
                     },
-                    "name": Object {
+                    "text": Object {
                       "title": "Название месяца",
                       "type": "string",
                     },
@@ -1056,6 +1058,10 @@ Object {
                 },
                 "title": "Месяц",
                 "type": "array",
+              },
+              "text": Object {
+                "title": "Основной текст",
+                "type": "string",
               },
             },
             "type": "object",

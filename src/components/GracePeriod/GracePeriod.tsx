@@ -49,7 +49,7 @@ const renderCalendar = (calendar) => {
           >
             <div className="flex">{renderMonthImages(_)}</div>
             <div className="font-light text-sm text-primary-text mt-3">
-              <span>{_.blackText}</span>&thinsp;
+              <span>{_.text}</span>&thinsp;
               <span className="text-primary-main">{_.greenText}</span>
             </div>
           </div>
@@ -60,9 +60,9 @@ const renderCalendar = (calendar) => {
 };
 
 const renderMonthNames = (item, colSize) =>
-  item.month.map((_) => (
-    <div key={`monthName-${_.name}`} style={{ flexBasis: `${colSize}%` }}>
-      {_.name}
+  item.month.map((_, i) => (
+    <div key={`monthName-${i}`} style={{ flexBasis: `${colSize}%` }}>
+      {_.text}
     </div>
   ));
 const renderMonthImages = (item) =>

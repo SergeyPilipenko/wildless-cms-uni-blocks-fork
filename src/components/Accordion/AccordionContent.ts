@@ -1,7 +1,7 @@
-import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
+import type { AlignType } from '../../model/AlignType';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
-import type { AlignType } from '../../model/AlignType';
+import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
 /**
  * @title Элемент списка
  */

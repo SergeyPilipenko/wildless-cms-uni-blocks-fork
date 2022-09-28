@@ -3,7 +3,7 @@ import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 
 interface Month {
   /** @title Название месяца */
-  name?: string;
+  text?: string;
   /**
    * @title Изображение календарного месяца
    * @default
@@ -22,7 +22,7 @@ interface CalendarItem {
   /** @title Месяц */
   month?: Month[];
   /** @title Основной текст */
-  blackText?: string;
+  text?: string;
   /** @title Вспомогательный текст */
   greenText?: string;
 }

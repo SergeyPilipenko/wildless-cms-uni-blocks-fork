@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { BonusContent } from './BonusContent';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import type { BonusContent } from './BonusContent';
 
 export interface BonusProps extends BonusContent, UniBlockProps {}
 
@@ -25,7 +25,7 @@ export const Bonus = JSX<BonusProps>((props) => {
                   >
                     <div className="flex justify-between w-full">
                       <div className="mr-4">
-                        <div className="text-title-sm">{_.name}</div>
+                        <div className="text-title-sm">{_.title}</div>
                         <div className="text-md font-light mt-[14px] max-w-[488px]">
                           {_.description}
                         </div>

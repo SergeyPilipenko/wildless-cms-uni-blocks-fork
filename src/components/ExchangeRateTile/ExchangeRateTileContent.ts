@@ -1,6 +1,7 @@
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
-
 /**
- * @title Курсы валют
+ * @title Курсы обмена валют
  */
-export type ExchangeRateTileContent = HeadingContent;
+export interface ExchangeRateTileContent {
+  /** @title Заголовок */
+  title?: string;
+}

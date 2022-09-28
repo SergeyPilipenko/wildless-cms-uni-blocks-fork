@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { FuncReturnVoid, UniBlockProps } from '../../types';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
 import type { CalculatorBlockDef, CalculatorContent, CalculatorNav } from './CalculatorContent';
 import { renderCalculatorBlock } from './renderCalculatorBlock';
-import { renderArrows } from '../../ui-kit/Button/renderArrows';
 
 export interface CalculatorProps extends CalculatorContent, UniBlockProps {}
 

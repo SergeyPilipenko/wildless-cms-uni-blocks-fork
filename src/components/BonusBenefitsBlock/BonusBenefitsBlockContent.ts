@@ -3,7 +3,7 @@ import type { Picture } from '../../model/Picture';
 export interface BonusBenefit {
   /** @title Название */
   label?: string;
-  /** @title Бонус и преимущество */
+  /** @title Изображение */
   icon?: Picture;
 }
 
