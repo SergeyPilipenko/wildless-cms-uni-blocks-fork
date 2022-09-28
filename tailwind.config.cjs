@@ -49,8 +49,8 @@ module.exports = {
         button: ['0.875rem', '1.25rem'], // 14px 20px
         'button-sm': ['1rem', '1.25rem'], // 16px 20px
 
-        'title-extra': ['15.625rem','14.687rem'], // 250px 235px
-        'title-huge': ['12.5rem','15.625rem'], // 200px 250px
+        'title-extra': ['15.625rem', '14.687rem'], // 250px 235px
+        'title-huge': ['12.5rem', '15.625rem'], // 200px 250px
         'title-xl': ['3.125rem', '3.25rem'], //50px 52px
         'title-lg': ['2.5rem', '3rem'], //40px 48px
         title: ['2rem', '2.5rem'], //32px 40px
@@ -127,6 +127,10 @@ module.exports = {
           lineHeight: '1.25rem',
           fontWeight: '300',
         }],
+        's-bold': ['0.875rem', { // 14px 20px
+          lineHeight: '1.25rem',
+          fontWeight: '400',
+        }],
         s: ['0.875rem', { // 14px 20px
           lineHeight: '1.25rem',
           fontWeight: '300',
@@ -162,7 +166,7 @@ module.exports = {
           // Text
           text: 'rgba(125, 126, 127, <alpha-value>)',
         },
-        gray:'rgba(201, 202, 204, <alpha-value>)',
+        gray: 'rgba(201, 202, 204, <alpha-value>)',
       },
       minHeight: (theme) => ({
         ...theme('spacing'),
