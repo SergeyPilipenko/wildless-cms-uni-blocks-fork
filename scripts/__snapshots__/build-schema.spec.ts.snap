@@ -250,6 +250,7 @@ Object {
           "type": "string",
         },
       },
+      "title": "Бонус и преимущество",
       "type": "object",
     },
     "BonusBenefitsBlockContent": Object {
@@ -258,7 +259,6 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BonusBenefit",
           },
-          "maxItems": 8,
           "title": "Список бонусов",
           "type": "array",
         },

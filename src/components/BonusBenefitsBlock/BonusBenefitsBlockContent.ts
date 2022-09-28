@@ -1,5 +1,8 @@
 import type { Picture } from '../../model/Picture';
 
+/**
+ * @title Бонус и преимущество
+ */
 export interface BonusBenefit {
   /** @title Название */
   label?: string;
@@ -15,9 +18,6 @@ export interface BonusBenefitsBlockContent {
   title?: string;
   /** @title Подзаголовок */
   subtitle?: string;
-  /**
-   * @title Список бонусов
-   * @maxItems 8
-   */
+  /** @title Список бонусов */
   bonusBenefits?: BonusBenefit[];
 }
