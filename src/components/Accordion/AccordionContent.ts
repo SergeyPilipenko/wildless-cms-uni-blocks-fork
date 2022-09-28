@@ -31,7 +31,10 @@ export interface AccordionItemCommonProps {
 export interface AccordionContent {
   /** @title Заголовок */
   title?: string;
-  /** @title Выравнивание заголовка */
+  /**
+   * @title Выравнивание заголовка
+   * @default center
+   */
   accordionAlignTitle?: AlignType;
   version?: BlockVersion;
   /** @title Список */

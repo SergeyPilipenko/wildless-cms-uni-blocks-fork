@@ -7,12 +7,14 @@
         {
           "blockListType": "TextBlock",
           "title": "Текстовый блок",
-          "description": "Описание текстового блока"
+          "description": "Описание текстового блока",
+          "style": ["col-span-12"]
         },
         {
           "blockListType": "TextBlock",
           "title": "Текстовый блок №2",
-          "description": "Описание текстового блока №2"
+          "description": "Описание текстового блока №2",
+          "style": ["col-span-12"]
         }
       ]
     },
@@ -22,12 +24,14 @@
         {
           "blockListType": "TextBlock",
           "title": "Текстовый блок",
-          "description": "Описание текстового блока"
+          "description": "Описание текстового блока",
+          "style": ["col-span-12"]
         },
         {
           "blockListType": "TextBlock",
           "title": "Текстовый блок №2",
-          "description": "Описание текстового блока №2"
+          "description": "Описание текстового блока №2",
+          "style": ["col-span-12"]
         }
       ]
     },
@@ -37,12 +41,14 @@
         {
           "blockListType": "TextBlock",
           "title": "Текстовый блок",
-          "description": "Описание текстового блока"
+          "description": "Описание текстового блока",
+          "style": ["col-span-12"]
         },
         {
           "blockListType": "TextBlock",
           "title": "Текстовый блок №2",
-          "description": "Описание текстового блока №2"
+          "description": "Описание текстового блока №2",
+          "style": ["col-span-12"]
         }
       ]
     }

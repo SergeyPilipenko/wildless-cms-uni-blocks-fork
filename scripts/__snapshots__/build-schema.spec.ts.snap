@@ -8,6 +8,7 @@ Object {
       "properties": Object {
         "accordionAlignTitle": Object {
           "$ref": "#/definitions/AlignType",
+          "default": "center",
           "title": "Выравнивание заголовка",
         },
         "accordionItems": Object {

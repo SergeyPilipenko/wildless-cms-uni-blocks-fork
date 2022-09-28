@@ -30,7 +30,7 @@ export interface BlocksCommonProps {
  */
 export type HeadlineBlockListDef = HeadlineContent &
   BlocksCommonProps & {
-    /** @default "Headline" */
+    /** @default Headline */
     blockListType: 'Headline';
   };
 
@@ -39,7 +39,7 @@ export type HeadlineBlockListDef = HeadlineContent &
  */
 export type LinkDocsBlockListDef = LinkDocsContent &
   BlocksCommonProps & {
-    /** @default "LinkDocs" */
+    /** @default LinkDocs */
     blockListType: 'LinkDocs';
   };
 
@@ -48,7 +48,7 @@ export type LinkDocsBlockListDef = LinkDocsContent &
  */
 export type TextBlockBlockListDef = TextBlockContent &
   BlocksCommonProps & {
-    /** @default "TextBlock" */
+    /** @default TextBlock */
     blockListType: 'TextBlock';
   };
 
@@ -57,7 +57,7 @@ export type TextBlockBlockListDef = TextBlockContent &
  */
 export type PictureTextBlockListDef = PictureTextContent &
   BlocksCommonProps & {
-    /** @default "PictureText" */
+    /** @default PictureText */
     blockListType: 'PictureText';
   };
 
@@ -66,7 +66,7 @@ export type PictureTextBlockListDef = PictureTextContent &
  */
 export type ProductBlockBlockListDef = ProductBlockContent &
   BlocksCommonProps & {
-    /** @default "ProductBlock" */
+    /** @default ProductBlock */
     blockListType: 'ProductBlock';
   };
 
@@ -75,7 +75,7 @@ export type ProductBlockBlockListDef = ProductBlockContent &
  */
 export type TileBlockListDef = TileContent &
   BlocksCommonProps & {
-    /** @default "Tile" */
+    /** @default Tile */
     blockListType: 'Tile';
   };
 
@@ -84,7 +84,7 @@ export type TileBlockListDef = TileContent &
  */
 export type ProductTileBlockListDef = ProductTileContent &
   BlocksCommonProps & {
-    /** @default "ProductTile" */
+    /** @default ProductTile */
     blockListType: 'ProductTile';
   };
 
@@ -93,7 +93,7 @@ export type ProductTileBlockListDef = ProductTileContent &
  */
 export type GalleryBlockListDef = GalleryContent &
   BlocksCommonProps & {
-    /** @default "Gallery" */
+    /** @default Gallery */
     blockListType: 'Gallery';
   };
 
@@ -102,7 +102,7 @@ export type GalleryBlockListDef = GalleryContent &
  */
 export type MiniGalleryBlockListDef = MiniGalleryContent &
   BlocksCommonProps & {
-    /** @default "MiniGallery" */
+    /** @default MiniGallery */
     blockListType: 'MiniGallery';
   };
 
@@ -111,7 +111,7 @@ export type MiniGalleryBlockListDef = MiniGalleryContent &
  */
 export type LinkListBlockListDef = LinkListContent &
   BlocksCommonProps & {
-    /** @default "LinkList" */
+    /** @default LinkList */
     blockListType: 'LinkList';
   };
 
