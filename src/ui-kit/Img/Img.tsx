@@ -43,8 +43,14 @@ export const ImgAsPicture = JSX<ImageProps<Picture>>(
     return (
       <picture className={`flex-none ${className}`}>
         {image?.sources?.length
-          ? image.sources.map(({ src, format }, index) => (
-              <source key={`${index}_${src}`} srcSet={src} type={formatToMimeType(format)} />
+          ? image.sources.map(({ src, format, media, size }, index) => (
+              <source
+                key={`${index}_${src}`}
+                srcSet={src}
+                type={formatToMimeType(format)}
+                media={media}
+                {...size}
+              />
             ))
           : null}
         {renderImg(image, imageClassName)}
@@ -54,23 +60,10 @@ export const ImgAsPicture = JSX<ImageProps<Picture>>(
 );
 
 const renderImg = (image: Picture, imageClassName = '') => {
-  const style = {
-    width: image.size?.width ? `${image.size?.width}px` : '100%',
-    height: image.size?.height ? `${image.size?.height}px` : '100%',
-  };
   const title = image.title || '';
   const alt = image.alt || image.title;
 
-  return (
-    <img
-      src={image.src}
-      className={imageClassName}
-      alt={alt}
-      title={title}
-      style={style}
-      {...image.size}
-    />
-  );
+  return <img src={image.src} className={imageClassName} alt={alt} title={title} {...image.size} />;
 };
 
 export function formatToMimeType(format: ImgSource['format']): string | undefined {

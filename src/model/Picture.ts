@@ -10,6 +10,12 @@ export interface Img {
   title?: string;
 }
 
+/**
+ * @title Брейкпоинт
+ * @enumNames ["1919px и меньше", "1439px и меньше", "1279px и меньше"]
+ */
+export type MediaQuery = '(max-width: 1919px)' | '(max-width: 1439px)' | '(max-width: 1279px)';
+
 export interface ImgSource {
   /** @title Иконка */
   icon?: IconName;
@@ -20,6 +26,7 @@ export interface ImgSource {
   format?: 'jpeg' | 'jpg' | 'png' | 'gif' | 'webp' | 'heif' | 'avif';
   /** @hidden */
   options?: Record<string, any>;
+  media?: MediaQuery;
   /** @title Размер изображения */
   size?: {
     /** @title Ширина */

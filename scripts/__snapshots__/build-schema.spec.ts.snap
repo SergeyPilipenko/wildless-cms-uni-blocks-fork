@@ -1524,6 +1524,9 @@ Object {
         "iconVersion": Object {
           "$ref": "#/definitions/IconVersion",
         },
+        "media": Object {
+          "$ref": "#/definitions/MediaQuery",
+        },
         "size": Object {
           "properties": Object {
             "height": Object {
@@ -1888,6 +1891,20 @@ Object {
       "title": "Направление списка",
       "type": "string",
     },
+    "MediaQuery": Object {
+      "enum": Array [
+        "(max-width: 1919px)",
+        "(max-width: 1439px)",
+        "(max-width: 1279px)",
+      ],
+      "enumNames": Array [
+        "1919px и меньше",
+        "1439px и меньше",
+        "1279px и меньше",
+      ],
+      "title": "Брейкпоинт",
+      "type": "string",
+    },
     "MiniGalleryBlockListDef": Object {
       "properties": Object {
         "blockListType": Object {
@@ -2085,6 +2102,9 @@ Object {
         },
         "iconVersion": Object {
           "$ref": "#/definitions/IconVersion",
+        },
+        "media": Object {
+          "$ref": "#/definitions/MediaQuery",
         },
         "size": Object {
           "properties": Object {
