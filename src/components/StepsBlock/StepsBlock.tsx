@@ -84,7 +84,7 @@ const renderStepTitle = (styleMap: StyleType, isMainButton: boolean) => (step: S
       className="flex flex-col items-center justify-between text-center relative w-[276px] whitespace-pre-line overflow-hidden"
     >
       <div>
-        {step.label ? <div className="font-normal text-xl m-0 mt-4">{step.label}</div> : null}
+        {step.label ? <div className="font-normal text-xl-light m-0 mt-4">{step.label}</div> : null}
         {step.description ? (
           <div
             className={`font-light text-base ${styleMap.description} ${

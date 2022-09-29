@@ -29,7 +29,7 @@ export const TableCell = JSX<TableCellProps>(({ cell, isFirstRow, isLastRow, isF
 });
 
 const labelStyle = (isFillGradient = false): string =>
-  `text-xl font-medium m-0 ${isFillGradient ? 'text-white' : ''}`;
+  `text-xl-light font-medium m-0 ${isFillGradient ? 'text-white' : ''}`;
 const descriptionStyle = (isFillGradient = false): string =>
   `text-sm opacity-80 ${isFillGradient ? 'text-white' : 'text-secondary-text'}`;
 

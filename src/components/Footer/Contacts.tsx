@@ -50,7 +50,7 @@ const renderText = (type: ContactInfo['type'], text = '') => {
     case 'tel':
       return (
         <a
-          className="font-sans text-xl text-primary-text no-underline"
+          className="font-sans text-xl-light text-primary-text no-underline"
           href={`tel:${formatTel(text)}`}
         >
           {text}
@@ -58,7 +58,10 @@ const renderText = (type: ContactInfo['type'], text = '') => {
       );
     case 'email':
       return (
-        <a className="font-sans text-xl text-primary-text no-underline" href={`mailto:${text}`}>
+        <a
+          className="font-sans text-xl-light text-primary-text no-underline"
+          href={`mailto:${text}`}
+        >
           {text}
         </a>
       );

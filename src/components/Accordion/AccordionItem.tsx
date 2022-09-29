@@ -22,7 +22,7 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, isExpanded, block
           `}
         onClick={handleToggle}
       >
-        <span className={`text-xl pr-2.5 font-medium`}>{label}</span>
+        <span className={`text-xl-light pr-2.5 font-medium`}>{label}</span>
         {hasContent ? (
           <Img image={icon} className="text-primary-main" width="24" height="24" asSVG />
         ) : null}

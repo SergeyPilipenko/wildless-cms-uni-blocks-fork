@@ -57,7 +57,7 @@ function renderBenefit(benefit: PictureTextBenefit, i: number, version: string) 
       <div className="flex gap-1 flex-col h-full ml-5 max-w-[490px]">
         {benefit?.label ? (
           <div
-            className={`font-medium text-xl m-0 ${
+            className={`font-medium text-xl-light m-0 ${
               version === 'primary' ? 'text-primary-text' : ''
             }`}
           >

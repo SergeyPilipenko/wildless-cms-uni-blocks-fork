@@ -109,11 +109,11 @@ module.exports = {
         }],
         xl: ['1.125rem', { // 18px 24px
           lineHeight: '1.5rem',
-          fontWeight: '300',
-        }],
-        'l-bold': ['1rem', { // 16px 24px
-          lineHeight: '1.5rem',
           fontWeight: '400',
+        }],
+        'xl-light': ['1.125rem', { // 18px 24px
+          lineHeight: '1.5rem',
+          fontWeight: '300',
         }],
         'l': ['1rem', { // 16px 24px
           lineHeight: '1.5rem',

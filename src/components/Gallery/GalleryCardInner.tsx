@@ -40,7 +40,7 @@ function renderButton(button) {
 }
 
 function renderCardTitle(title: string, className: string) {
-  return <div className={`text-xl m-0 ${className}`}>{title}</div>;
+  return <div className={`text-xl-light m-0 ${className}`}>{title}</div>;
 }
 
 function renderItems(items: GalleryItem[], isDotted: boolean, version: BlockVersion = 'primary') {
@@ -58,7 +58,7 @@ function renderItems(items: GalleryItem[], isDotted: boolean, version: BlockVers
 }
 
 function getTitleStyle(version) {
-  return `text-xl m-0
+  return `text-xl-light m-0
         ${version !== 'secondary' ? 'text-primary-text' : ''}
       `;
 }
