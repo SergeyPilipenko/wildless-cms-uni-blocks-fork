@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -8,9 +9,12 @@ import type { InsuranceBenefit, InsuranceContent } from './InsuranceContent';
 export interface InsuranceProps extends InsuranceContent, UniBlockProps {}
 
 export const Insurance = JSX<InsuranceProps>(
-  ({ className = '', title, description, image, benefits, sum, monthLimit }) => {
+  ({ className = '', title, description, image, benefits, sum, monthLimit, ...rest }) => {
     return (
-      <section className={`px-[100px] py-[50px] bg-white text-primary-text font-sans ${className}`}>
+      <BlockWrapper
+        className={`px-[100px] py-[50px] bg-white text-primary-text font-sans ${className}`}
+        {...rest}
+      >
         {title ? <Heading headingType="h3" title={title} className="text-center" /> : null}
         {description ? <div className="text-center text-md mt-3">{description}</div> : null}
         <div>
@@ -24,7 +28,7 @@ export const Insurance = JSX<InsuranceProps>(
             </div>
           </div>
         </div>
-      </section>
+      </BlockWrapper>
     );
   },
 );

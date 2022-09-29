@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -25,14 +26,15 @@ export const PromoTile = JSX<PromoTileProps>(
     description,
     buttons = [],
     version = 'primary',
-    anchor = null,
+    ...rest
   }) => {
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${
           promoTileStyleMap[version]
         } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
-        id={anchor}
+        {...rest}
       >
         <BaseTile
           context={context}
@@ -56,7 +58,7 @@ export const PromoTile = JSX<PromoTileProps>(
             <div className="text-base">{description}</div>
           </div>
         </BaseTile>
-      </section>
+      </BlockWrapper>
     );
   },
 );

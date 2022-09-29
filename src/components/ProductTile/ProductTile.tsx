@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -28,14 +29,15 @@ export const ProductTile = JSX<ProductTileProps>(
     buttons,
     image,
     version = 'primary',
-    anchor = null,
+    ...rest
   }) => {
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`bg-white overflow-hidden text-primary-text font-sans p-9 box-border min-h-[364px] relative justify-between grid ${className} ${
           productTileStyleMap[version]
         } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
-        id={anchor}
+        {...rest}
       >
         <div className="z-[1]">
           {title ? (
@@ -62,7 +64,7 @@ export const ProductTile = JSX<ProductTileProps>(
           />
         ) : null}
         {image?.src ? <Img className="absolute right-0 bottom-0" image={image} /> : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

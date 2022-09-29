@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import type { UniBlockProps } from '../../types';
 import { NavigationContent } from './NavigationContent';
@@ -8,18 +9,19 @@ import { NavigationItem } from './NavigationItem';
 export interface NavigationProps extends NavigationContent, UniBlockProps {}
 
 export const Navigation = JSX<NavigationProps>(
-  ({ className, context, title, buttons, anchor = null }) => {
+  ({ className, context, title, buttons, ...rest }) => {
     const router = context.useRouter();
     const { handlerDecorator } = context;
 
     const activeButton = findActiveSubItem(router)(buttons);
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`font-sans text-primary-text rounded-[40px] flex items-center justify-between ${
           className || ''
         }`}
-        id={anchor}
+        {...rest}
       >
         <h2 className="font-medium text-xl-light m-0">{title}</h2>
         {buttons?.length ? (
@@ -36,7 +38,7 @@ export const Navigation = JSX<NavigationProps>(
               ))}
           </div>
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

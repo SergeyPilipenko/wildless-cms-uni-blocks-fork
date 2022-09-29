@@ -11,7 +11,7 @@ const TEXT_CLASSES = 'font-sans font-normal text-m-md';
 const LINK_CLASSES = 'flex-1 flex items-center justify-center cursor-pointer';
 
 export const NavigatorTabItem = JSX<NavigatorTabItemProps>(
-  ({ className = '', text, active, children, onClick, href, target = '_self' }) => (
+  ({ className = '', text, active, onClick, href, target = '_self', children }) => (
     <a className={getLinkClasses(className, active)} target={target} href={href} onClick={onClick}>
       <span className={getTextClasses(active)}>{text || children}</span>
     </a>

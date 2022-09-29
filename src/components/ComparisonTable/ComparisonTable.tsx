@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { ComparisonTableBody } from './ComparisonTableBody';
@@ -16,17 +17,18 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
     columns,
     visibleRowLength = 0,
     isColoredFirstColumn = false,
-    anchor = null,
+    ...rest
   }) => {
     const [isShowAllRow, setIsShowAllRow] = context.useState(!visibleRowLength);
     const showToggle = () => setIsShowAllRow(!isShowAllRow);
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative ${
           className || ''
         }`}
-        id={anchor}
+        {...rest}
       >
         <Heading
           headingType="h2"
@@ -44,7 +46,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
         {visibleRowLength
           ? renderShowMoreToggleButton({ isShowAllRow, onClick: showToggle })
           : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

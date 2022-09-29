@@ -1,9 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { AlignType } from '../../model/AlignType';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { AccordionContent } from './AccordionContent';
 import { AccordionItem } from './AccordionItem';
-import { AlignType } from '../../model/AlignType';
 
 const ALIGN_TITLE: Record<AlignType, string> = {
   left: 'text-left',
@@ -20,11 +21,15 @@ export const Accordion = JSX<AccordionProps>(
     accordionItems,
     context,
     className = '',
-    anchor = null,
     accordionAlignTitle = 'center',
+    ...rest
   }) => {
     return (
-      <section className={`p-[50px] font-sans bg-white text-primary-text ${className}`} id={anchor}>
+      <BlockWrapper
+        context={context}
+        className={`p-[50px] font-sans bg-white text-primary-text ${className}`}
+        {...rest}
+      >
         {title ? (
           <Heading
             headingType="h4"
@@ -40,7 +45,7 @@ export const Accordion = JSX<AccordionProps>(
             ))}
           </ul>
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

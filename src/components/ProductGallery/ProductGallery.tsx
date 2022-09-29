@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
@@ -28,16 +29,17 @@ const productSlideStyleMap: Record<BlockVersion, string> = {
 };
 
 export const ProductGallery = JSX<ProductGalleryProps>(
-  ({ className = '', context, slides = [], version = 'primary', anchor = null }) => {
+  ({ className = '', context, slides = [], version = 'primary', ...rest }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
 
     return (
-      <section
-        id={anchor}
+      <BlockWrapper
+        context={context}
         className={`box-border pt-[50px] overflow-hidden relative font-sans w-100 ${className}
         ${productGalleryStyleMap[version]}`}
+        {...rest}
       >
         <div
           className="flex duration-1000 pb-14"
@@ -58,7 +60,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
             }),
           )}
         </div>
-      </section>
+      </BlockWrapper>
     );
   },
 );

@@ -1,16 +1,19 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { LikeButton } from '../../ui-kit/Button/LikeButton';
 
-export const LikeControl = JSX<UniBlockProps>(({ className, context, anchor = null }) => {
+export const LikeControl = JSX<UniBlockProps>(({ className, context, ...rest }) => {
   const likeService = context.useLikeService();
 
   return (
-    <div
+    <BlockWrapper
+      Tag="div"
+      context={context}
       className={`border-main border-2 border-solid bg-white flex w-[125px] items-center justify-center gap-3 p-2 font-sans ${
         className || ''
       }`}
-      id={anchor}
+      {...rest}
     >
       <LikeButton onClick={likeService.like} ariaLabel="Поставить отметку «лайк»" />
       <LikeButton
@@ -19,6 +22,6 @@ export const LikeControl = JSX<UniBlockProps>(({ className, context, anchor = nu
         ariaLabel="Поставить отметку «дизлайк»"
       />
       <span className="select-none">{likeService.likeCount}</span>
-    </div>
+    </BlockWrapper>
   );
 });

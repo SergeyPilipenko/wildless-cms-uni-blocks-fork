@@ -1,7 +1,5 @@
 import { JSX, PropsWithChildren } from '@redneckz/uni-jsx';
 import type { BlockDef, ContentPageDef, UniBlockProps } from '../../types';
-import { changeHashOnScroll } from '../../utils/changeHashOnScroll';
-import { isSSR } from '../../utils/isSSR';
 import { style2className } from '../../utils/style2className';
 import type { BlockContent } from '../BlockContent';
 import { LikeControl } from '../LikeControl/LikeControl';
@@ -39,8 +37,6 @@ export interface RenderBlockFunc {
   context: ContentPageContext;
 }
 
-const isClient = !isSSR();
-
 const defaultBlockDecorator: BlockDecorator = ({ blockClassName, block, render }) =>
   render({ blockClassName, block });
 
@@ -53,16 +49,6 @@ export const ContentPage = JSX<ContentPageProps>(
     blockDecorator = defaultBlockDecorator,
   }) => {
     const { header } = slots;
-    const router = context.useRouter();
-
-    // listener is for NavigatorTabs
-    isClient &&
-      globalThis.addEventListener('load', () => {
-        const sectionsWithAnchors = globalThis.document.querySelectorAll('section[id]');
-        globalThis.document.addEventListener('scroll', () =>
-          changeHashOnScroll(router, sectionsWithAnchors),
-        );
-      });
 
     return (
       <section

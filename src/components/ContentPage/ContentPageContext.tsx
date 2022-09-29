@@ -31,12 +31,15 @@ export type AsyncDataHook = <Data, Err = any>(
 export type GeolocationHook = (defaultLocation: string) => [string, () => void];
 
 export type SetStateAction<S> = S | ((prevState: S) => S);
+
 export type SetStateHook = <State>(
   initialState: State | (() => State),
 ) => [State, FuncReturnVoid<SetStateAction<State>>];
 
 export interface IntersectionObserverTagProps {
   Tag: string;
+  className?: string;
+  anchor?: string;
   children?: VNode;
   observerCallback: IntersectionObserverCallback;
   observerOptions?: IntersectionObserverInit;

@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps, FuncReturnVoid } from '../../types';
-import type { InsuranceAmountBlockTabs, CardItem } from './InsuranceAmountBlockContent';
+import type { FuncReturnVoid, UniBlockProps } from '../../types';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
-import { renderArrows } from '../../ui-kit/Button/renderArrows';
+import type { CardItem, InsuranceAmountBlockTabs } from './InsuranceAmountBlockContent';
 
 export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTabs, UniBlockProps {}
 
@@ -23,7 +23,7 @@ type InsuranceSlideProps = {
 };
 
 export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
-  ({ className = '', context, cards = [], anchor = null }) => {
+  ({ className = '', context, cards = [] }) => {
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
     const [tabsShift, setTabsShift] = context.useState(0);
 
@@ -38,7 +38,7 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
     const showPrevButton = tabsShift > 0;
 
     return (
-      <section id={anchor} className={`min-w-full ${className}`}>
+      <section className={`min-w-full ${className}`}>
         <div className="relative mt-7 overflow-hidden">
           {galleryLength
             ? renderGallery({

@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { PlaceholderContent } from '../../components/Placeholder/PlaceholderContent';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -15,13 +16,14 @@ export interface PlaceholderProps extends PlaceholderContent, UniBlockProps {
 const GOLDEN_RATIO = 1.618;
 
 export const Placeholder = JSX<PlaceholderProps>(
-  ({ className, context, title, description = 'Блок в разработке...', anchor = null }) => {
+  ({ className, context, title, description = 'Блок в разработке...', ...rest }) => {
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${getTileRightPadding(
           className,
         )} ${getTileMinHeight(className)} `}
-        id={anchor}
+        {...rest}
       >
         <BaseTile
           context={context}
@@ -40,7 +42,7 @@ export const Placeholder = JSX<PlaceholderProps>(
           ) : null}
           <figure className="m-0 min-w-[600px]">{renderShimmer()}</figure>
         </BaseTile>
-      </section>
+      </BlockWrapper>
     );
   },
 );

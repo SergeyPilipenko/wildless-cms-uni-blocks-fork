@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -8,11 +9,11 @@ import { getElementsColsValue } from './getElementsColsValue';
 export interface BenefitsBlockProps extends BonusBenefitsBlockContent, UniBlockProps {}
 
 export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ className = '', title, subtitle, bonusBenefits, anchor = null }) => {
+  ({ className = '', title, subtitle, bonusBenefits, ...rest }) => {
     return (
-      <section
+      <BlockWrapper
         className={`font-sans text-primary-text bg-white p-50 flex flex-col text-center ${className}`}
-        id={anchor}
+        {...rest}
       >
         {title ? <Heading headingType="h3" className="mb-[10px]" title={title} /> : null}
         {subtitle ? <span className="text-md font-normal">{subtitle}</span> : null}
@@ -21,7 +22,7 @@ export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
             {bonusBenefits.map(renderBonusBenefit)}
           </div>
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

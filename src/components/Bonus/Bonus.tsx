@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { BonusContent } from './BonusContent';
@@ -6,10 +7,10 @@ import type { BonusContent } from './BonusContent';
 export interface BonusProps extends BonusContent, UniBlockProps {}
 
 export const Bonus = JSX<BonusProps>((props) => {
-  const { className = '', title, description, bonusItems, anchor = null } = props;
+  const { className = '', title, description, bonusItems, ...rest } = props;
 
   return (
-    <section className={`font-sans bg-white p-[50px] pb-9 ${className}`} id={anchor}>
+    <BlockWrapper className={`font-sans bg-white p-[50px] pb-9 ${className}`} {...rest}>
       <div className="container">
         {title ? <Heading headingType="h3" className="text-center" title={title} /> : null}
         {description ? (
@@ -47,6 +48,6 @@ export const Bonus = JSX<BonusProps>((props) => {
             : null}
         </div>
       </div>
-    </section>
+    </BlockWrapper>
   );
 });

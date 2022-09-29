@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
@@ -23,10 +24,15 @@ export const Footer = JSX<FooterProps>(
     mobileApps,
     topItems,
     context,
-    anchor = null,
+    ...rest
   }) => {
     return (
-      <footer className={`p-9 bg-white ${className || ''}`} id={anchor}>
+      <BlockWrapper
+        Tag="footer"
+        context={context}
+        className={`p-9 bg-white ${className || ''}`}
+        {...rest}
+      >
         <div className="flex items-stretch gap-[54px] pb-[30px] xl:gap-8">
           <Logo className={LEFT_COL_WIDTH_FULL_HD} />
           <SearchBar context={context} className="grow" />
@@ -45,7 +51,7 @@ export const Footer = JSX<FooterProps>(
         </div>
         <HorizontalNavigation className="mt-[98px]" links={relatedEnterprises} context={context} />
         <TextInformation links={documents} context={context} />
-      </footer>
+      </BlockWrapper>
     );
   },
 );

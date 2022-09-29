@@ -1,20 +1,22 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { Button } from '../../ui-kit/Button/Button';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { InsuranceAmountBlockContent } from './InsuranceAmountBlockContent';
 import { InsuranceAmountBlockInner } from './InsuranceAmountBlockInner';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { Button } from '../../ui-kit/Button/Button';
 
 export interface InsuranceAmountBlockProps extends InsuranceAmountBlockContent, UniBlockProps {}
 
 export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
-  ({ className = '', context, title, insuranceTabs = [], button, anchor = null }) => {
+  ({ className = '', context, title, insuranceTabs = [], button, ...rest }) => {
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
 
     return (
-      <section
-        id={anchor}
+      <BlockWrapper
+        context={context}
         className={`box-border py-[50px] overflow-hidden relative font-sans w-100 bg-white ${className}`}
+        {...rest}
       >
         {title ? <Heading className="text-center" title={title} headingType="h3" /> : null}
         <div className="p-1.5 bg-secondary-light w-fit m-auto rounded-md mt-[34px]">
@@ -49,7 +51,7 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
             </Button>
           </div>
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

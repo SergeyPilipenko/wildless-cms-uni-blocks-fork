@@ -1,14 +1,19 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { OtherProductsContent } from './OtherProductsContent';
 import { OtherProductsItem } from './OtherProductsItem';
 
 export interface OtherProductsProps extends OtherProductsContent, UniBlockProps {}
 
 export const OtherProducts = JSX<OtherProductsProps>(
-  ({ blockItems, colorPalette, context, className = '' }) => {
+  ({ blockItems, colorPalette, context, className = '', ...rest }) => {
     return (
-      <section className={`font-sans text-primary-text ${className}`}>
+      <BlockWrapper
+        context={context}
+        className={`font-sans text-primary-text ${className}`}
+        {...rest}
+      >
         {blockItems?.length ? (
           <div className="box-border1">
             {blockItems.map((item, i) => (
@@ -21,7 +26,7 @@ export const OtherProducts = JSX<OtherProductsProps>(
             ))}
           </div>
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

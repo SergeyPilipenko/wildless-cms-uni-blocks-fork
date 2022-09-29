@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 import type { VNode } from '../../model/VNode';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -18,16 +19,7 @@ import { TariffsTableRow } from './TariffsTableRow';
 export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
 export const TariffsTable = JSX<TariffsTableProps>(
-  ({
-    className,
-    context,
-    title,
-    description,
-    rowHeaders,
-    columns,
-    anchor = null,
-    hiddenRowsNum = 0,
-  }) => {
+  ({ className, context, title, description, rowHeaders, columns, hiddenRowsNum = 0, ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const colData = getColData(columns);
@@ -50,11 +42,12 @@ export const TariffsTable = JSX<TariffsTableProps>(
     ));
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative ${
           className || ''
         }`}
-        id={anchor}
+        {...rest}
       >
         {title ? (
           <Heading
@@ -77,7 +70,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
             foldButtonLabel="Развернуть"
           />
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

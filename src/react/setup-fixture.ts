@@ -1,5 +1,4 @@
 import { setup } from '@redneckz/uni-jsx';
-
 import { useEffect, useState } from 'react';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { DaDataAPI } from '../api/DaDataAPI';

@@ -1,17 +1,18 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { GalleryVersion } from '../../model/GalleryVersion';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
-import type { GalleryContent } from './GalleryContent';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { galleryLengthForScrollMap } from './constants';
 import { GalleryContainer } from './GalleryContainer';
-import { renderArrows } from '../../ui-kit/Button/renderArrows';
+import type { GalleryContent } from './GalleryContent';
 
 export interface GalleryInnerProps extends GalleryContent, UniBlockProps {
   version?: GalleryVersion;
 }
 
 export const GalleryInner = JSX<GalleryInnerProps>(
-  ({ context, cards = [], className = '', version = 'normal', anchor = null, ...rest }) => {
+  ({ context, cards = [], className = '', version = 'normal', ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
@@ -26,9 +27,10 @@ export const GalleryInner = JSX<GalleryInnerProps>(
     const showPrevButton = isGalleryScrollAvailable && activeCardIndex > 0;
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`relative font-sans text-primary-text bg-white p-[42px] overflow-hidden ${className}`}
-        id={anchor}
+        {...rest}
       >
         <GalleryContainer
           context={context}
@@ -45,7 +47,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
         })}
         <div className="absolute top-0 left-0 bottom-0 w-[82px] bg-opacity-from-white" />
         <div className="absolute top-0 right-0 bottom-0 w-[82px] bg-opacity-to-white" />
-      </section>
+      </BlockWrapper>
     );
   },
 );

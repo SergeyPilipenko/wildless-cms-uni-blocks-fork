@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { FuncReturnVoid, UniBlockProps } from '../../types';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
@@ -22,7 +23,7 @@ type NavButtonProps = {
 };
 
 export const Calculator = JSX<CalculatorProps>(
-  ({ className = '', context, calcTabs = [], anchor = null }) => {
+  ({ className = '', context, calcTabs = [], ...rest }) => {
     const tabsNav = calcTabs.map((_) => _.nav || ({} as CalculatorNav));
     const blockCalcTabs = calcTabs.map(
       ({ calculatorBlock }) => calculatorBlock || ({} as CalculatorBlockDef),
@@ -38,9 +39,10 @@ export const Calculator = JSX<CalculatorProps>(
     const showPrevButton = tabsShift > 0;
 
     return (
-      <section
-        id={anchor}
+      <BlockWrapper
+        context={context}
         className={`box-border overflow-hidden relative font-sans w-100 bg-white text-primary-text ${className}`}
+        {...rest}
       >
         <div>
           {tabsNav.length > 1
@@ -62,7 +64,7 @@ export const Calculator = JSX<CalculatorProps>(
             ? blockCalcTabs.map(renderCalculatorBlock({ context, className }))
             : null}
         </div>
-      </section>
+      </BlockWrapper>
     );
   },
 );

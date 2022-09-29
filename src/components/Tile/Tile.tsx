@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
@@ -33,17 +34,16 @@ export const Tile = JSX<TileProps>((props) => {
     isDotted = true,
     className = '',
     version = 'primary',
-    role,
-    anchor = null,
+    ...rest
   } = props;
 
   return (
-    <section
+    <BlockWrapper
+      context={context}
       className={`overflow-hidden font-sans p-9 pr-3 box-border ${className} ${
         tileStyleMap[version]
       } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
-      role={role}
-      id={anchor}
+      {...rest}
     >
       <BaseTile
         context={context}
@@ -78,7 +78,7 @@ export const Tile = JSX<TileProps>((props) => {
         {children}
         {renderList(items, version, isDotted)}
       </BaseTile>
-    </section>
+    </BlockWrapper>
   );
 });
 

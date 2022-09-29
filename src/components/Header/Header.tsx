@@ -5,6 +5,7 @@ import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
 import type { HeaderContent } from './HeaderContent';
@@ -26,8 +27,8 @@ export const Header = JSX<HeaderProps>(
     bgColor = 'bg-white',
     context,
     topItems,
-    anchor = null,
     logo,
+    ...rest
   }) => {
     const router = context.useRouter();
     const sitemap = useSitemap(context.useAsyncData);
@@ -47,7 +48,12 @@ export const Header = JSX<HeaderProps>(
     ));
 
     return (
-      <header className={`pt-6 pb-8 px-20 ${bgColor} ${className}`} id={anchor}>
+      <BlockWrapper
+        Tag="header"
+        context={context}
+        className={`pt-6 pb-8 px-20 ${bgColor} ${className}`}
+        {...rest}
+      >
         <div className="container">
           <div className="flex items-center">
             <Logo className="mr-8" bgColor={bgColor} logo={logo} />
@@ -64,7 +70,7 @@ export const Header = JSX<HeaderProps>(
             <HeaderSubMenu context={context} subItems={activeTopItem.items} bgColor={bgColor} />
           ) : null}
         </div>
-      </header>
+      </BlockWrapper>
     );
   },
 );

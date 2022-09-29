@@ -1,8 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { PictureTextContent, PictureTextBenefit } from './PictureTextContent';
+import type { PictureTextBenefit, PictureTextContent } from './PictureTextContent';
 
 import { BlockVersion } from '../../model/BlockVersion';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 
@@ -21,12 +22,12 @@ export const PictureText = JSX<PictureTextProps>(
     benefits,
     version = 'primary',
     directionRight = false,
-    anchor = null,
+    ...rest
   }) => {
     return (
-      <section
+      <BlockWrapper
         className={`relative font-sans p-14 ${pictureTextStyleMap[version]} ${className}`}
-        id={anchor}
+        {...rest}
       >
         <Heading headingType="h2" className="text-center" title={title} />
         <div className={'flex justify-center mt-9'}>
@@ -37,7 +38,7 @@ export const PictureText = JSX<PictureTextProps>(
             </div>
           ) : null}
         </div>
-      </section>
+      </BlockWrapper>
     );
   },
 );

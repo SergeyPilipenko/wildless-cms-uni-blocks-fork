@@ -1,9 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { RecommendationCard } from './RecommendationCard';
 import type { RecommendationCardTypes, RecommendationContent } from './RecommendationContent';
-import { renderArrows } from '../../ui-kit/Button/renderArrows';
 
 const BLUR_BLOCK_CLASSES = 'absolute top-0 bottom-0 w-[84px]';
 const CARD_FULL_VIEW_COUNT = 2;
@@ -12,7 +13,7 @@ const CARD_SHIFT = 525;
 export interface RecommendationProps extends RecommendationContent, UniBlockProps {}
 
 export const Recommendation = JSX<RecommendationProps>(
-  ({ context, recommendations = [], className = '', title, version, anchor = null }) => {
+  ({ context, recommendations = [], className = '', title, version, ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     const blockClassName =
@@ -20,9 +21,10 @@ export const Recommendation = JSX<RecommendationProps>(
     const cardClassName = version === 'secondary' ? 'border-white/50' : 'border-main-stroke';
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`relative font-sans p-9 overflow-hidden text-center ${blockClassName} ${className}`}
-        id={anchor}
+        {...rest}
       >
         {title ? <Heading headingType="h2" className="mb-6" title={title} /> : null}
         <div
@@ -51,7 +53,7 @@ export const Recommendation = JSX<RecommendationProps>(
             version === 'secondary' ? 'bg-opacity-to-main' : 'bg-opacity-to-white'
           }`}
         />
-      </section>
+      </BlockWrapper>
     );
   },
 );

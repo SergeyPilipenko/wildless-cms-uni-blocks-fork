@@ -3,11 +3,13 @@ import type { UniBlockProps } from '../../types';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
+import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { joinList } from '../../utils/joinList';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
 import { getStyleMap } from './StepsBlockStyleMaps';
-import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
+
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -18,14 +20,14 @@ export const StepsBlock = JSX<StepsBlockProps>(
     showLines = true,
     steps = [],
     button,
-    anchor = null,
     version = 'primary',
+    ...rest
   }) => {
     const styleMap = getStyleMap(version);
     const shortGaps = steps.length > 3;
 
     return (
-      <section
+      <BlockWrapper
         className={[
           'box-border font-sans text-primary-text bg-white',
           shortGaps ? 'px-20' : 'px-[70px]',
@@ -34,7 +36,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
           styleMap.title,
           className,
         ].join(' ')}
-        id={anchor}
+        {...rest}
       >
         <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
         {steps?.length ? (
@@ -54,7 +56,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
         {button?.text ? (
           <Button className="mt-8 w-full max-w-[240px]" version="primary" {...button} />
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

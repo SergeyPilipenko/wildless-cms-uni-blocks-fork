@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -24,20 +25,21 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
     title = 'Мобильное приложение',
     qr,
     buttons,
-    anchor = null,
     version = 'primary',
     items,
     image,
+    ...rest
   }) => {
     const textColorClass = version === 'primary' ? 'text-primary-text' : '';
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`flex justify-between font-sans p-9 box-border relative
         ${getTileRightPadding(className)} ${getTileMinHeight(className)}
         ${mobileAppStyleMap[version]}
         ${className}`}
-        id={anchor}
+        {...rest}
       >
         <BaseTile
           context={context}
@@ -78,7 +80,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
             <Img image={image} />
           </div>
         ) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

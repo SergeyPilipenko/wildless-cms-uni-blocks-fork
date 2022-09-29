@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -14,13 +15,14 @@ const CARD_FULL_VIEW_COUNT = 3;
 const CARD_SHIFT = 430;
 
 export const Catalog = JSX<CatalogProps>(
-  ({ context, cards = [], className = '', title, description, anchor = null }) => {
+  ({ context, cards = [], className = '', title, description, ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = context.useState(0);
 
     return (
-      <section
+      <BlockWrapper
+        context={context}
         className={`bg-white relative font-sans p-9 overflow-hidden text-center ${className}`}
-        id={anchor}
+        {...rest}
       >
         {title ? <Heading headingType="h2" className="mb-6" title={title} /> : null}
         {description ? <Description className="mb-6" description={description} /> : null}
@@ -38,7 +40,7 @@ export const Catalog = JSX<CatalogProps>(
         })}
         <div className={`${BLUR_BLOCK_CLASSES} left-0 ${'bg-opacity-from-white'}`} />
         <div className={`${BLUR_BLOCK_CLASSES} right-0 ${'bg-opacity-to-white'}`} />
-      </section>
+      </BlockWrapper>
     );
   },
 );

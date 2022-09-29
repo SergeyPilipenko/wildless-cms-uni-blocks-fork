@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Headline } from '../Headline/Headline';
 import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
@@ -21,10 +22,14 @@ export const LinkDocs = JSX<LinkDocsProps>(
     documents,
     icon = { icon: 'DocIcon' },
     columnsMode = 'double',
-    anchor = null,
+    ...rest
   }) => {
     return (
-      <section className={`font-sans text-primary-text p-[50px] bg-white ${className}`} id={anchor}>
+      <BlockWrapper
+        context={context}
+        className={`font-sans text-primary-text p-[50px] bg-white ${className}`}
+        {...rest}
+      >
         <Headline
           className="!p-0"
           title={title}
@@ -39,7 +44,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
           documents={documents}
           icon={icon}
         />
-      </section>
+      </BlockWrapper>
     );
   },
 );

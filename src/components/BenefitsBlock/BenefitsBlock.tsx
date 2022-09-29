@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -8,11 +9,11 @@ import { DescriptionType, ListBenefitDef, TextBenefitDef } from './BenefitsBlock
 export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
 
 export const BenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ className = '', headingType = 'h2', title, benefitList, anchor = null }) => {
+  ({ className = '', headingType = 'h2', title, benefitList, ...rest }) => {
     return (
-      <section
+      <BlockWrapper
         className={`font-sans text-primary-text bg-white p-12 flex flex-col items-center ${className}`}
-        id={anchor}
+        {...rest}
       >
         {title ? (
           <Heading
@@ -23,7 +24,7 @@ export const BenefitsBlock = JSX<BenefitsBlockProps>(
           />
         ) : null}
         {benefitList?.length ? renderBenefits(benefitList) : null}
-      </section>
+      </BlockWrapper>
     );
   },
 );

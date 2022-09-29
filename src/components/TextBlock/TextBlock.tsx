@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { Picture } from '../../model/Picture';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Img } from '../../ui-kit/Img/Img';
 import type { TextBlockContent, TextBlockVersion } from './TextBlockContent';
@@ -31,21 +32,13 @@ const textBlockStyleMaps: Record<
 };
 
 export const TextBlock = JSX<TextBlockProps>(
-  ({
-    title,
-    description,
-    blockVersion = 'primary',
-    iconVersion,
-    image,
-    className,
-    anchor = null,
-  }) => {
+  ({ title, description, blockVersion = 'primary', iconVersion, image, className, ...rest }) => {
     const textBlockStyleMap = textBlockStyleMaps[blockVersion];
 
     return (
-      <section
+      <BlockWrapper
         className={`font-sans px-9 py-4 flex ${textBlockStyleMap.background} ${className || ''}`}
-        id={anchor}
+        {...rest}
       >
         {iconVersion === 'small' ? renderIcon(textBlockStyleMap.icon) : null}
         {iconVersion === 'big' ? renderImage(image) : null}
@@ -57,7 +50,7 @@ export const TextBlock = JSX<TextBlockProps>(
             <div className={`text-sm ${textBlockStyleMap.description}`}>{description}</div>
           ) : null}
         </div>
-      </section>
+      </BlockWrapper>
     );
   },
 );
