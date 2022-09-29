@@ -52,13 +52,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
           </div>
         ) : null}
         {button?.text ? (
-          <Button
-            className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
-            version="primary"
-            href="#"
-          >
-            {button.text}
-          </Button>
+          <Button className="mt-8 w-full max-w-[240px]" version="primary" {...button} />
         ) : null}
       </section>
     );
@@ -105,7 +99,7 @@ const renderStepTitle = (styleMap: StyleType, isMainButton: boolean) => (step: S
         <Button
           className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
           version="primary"
-          href={step.button?.href}
+          href={step?.button?.href}
         >
           {step.button.text}
         </Button>

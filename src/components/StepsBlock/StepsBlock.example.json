@@ -38,5 +38,10 @@
         "format": "webp"
       }
     }
-  ]
+  ],
+  "button": {
+    "text": "Кнопка",
+    "target": "_blank",
+    "version": "primary"
+  }
 }

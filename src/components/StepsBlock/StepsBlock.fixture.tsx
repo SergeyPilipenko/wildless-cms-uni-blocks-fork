@@ -85,7 +85,11 @@ export default {
             icon: { icon: 'ComfortableCompIcon' },
           },
         ]}
-        button={{ text: 'Отправить заявку' }}
+        button={{
+          text: 'Отправить заявку',
+          href: 'https://www.rshb.ru/',
+          target: '_blank',
+        }}
       />
     </div>
   ),
