@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { BgColorVersion } from '../../model/BgColorVersion';
-import { SVG } from '../SVG';
-import { Img } from '../Img/Img';
 import type { Picture } from '../../model/Picture';
+import { Img } from '../Img/Img';
+import { SVG } from '../SVG';
 
 export interface LogoProps {
   className: string;
@@ -45,7 +45,7 @@ export const Logo = JSX<Partial<LogoProps>>(
     return (
       <a
         className={`inline-flex items-center font-sans no-underline ${className}`}
-        href={href || 'https://rshb.ru/'}
+        href={href || '/'}
         target={targetBlank ? '_blank' : '_self'}
         aria-label={logo?.title || 'Россельхозбанк'}
       >
