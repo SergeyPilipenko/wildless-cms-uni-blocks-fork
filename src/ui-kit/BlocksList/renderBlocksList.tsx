@@ -21,15 +21,18 @@ const renderBlock =
     if (!type || !(type in EmbeddableBlocks)) {
       return null;
     }
-    const classNameBlock = style2className(block?.style);
+
+    const { style, ...rest } = block;
+
+    const classNameBlock = style2className(style);
     const EmbeddedBlock: JSXBlock = EmbeddableBlocks[type];
 
     return (
       <EmbeddedBlock
         key={`block_${i}`}
-        context={context}
-        {...block}
         className={`${className} ${classNameBlock}`}
+        context={context}
+        {...rest}
       />
     );
   };
