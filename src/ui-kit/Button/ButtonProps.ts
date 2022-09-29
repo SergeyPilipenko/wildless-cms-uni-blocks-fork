@@ -26,7 +26,7 @@ export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
 }
 
 export interface ButtonWithIconProps extends ButtonProps {
-  /** @title Иконка */
+  /** @title Иконка слева */
   icon?: Picture;
   /** @title Иконка справа */
   iconRight?: Picture;
@@ -48,4 +48,17 @@ export interface ButtonContent {
    * @maxItems 4
    */
   buttons?: ButtonWithIconProps[];
+}
+
+export interface BackwardButtonProps extends ButtonProps {
+  /** @title Иконка */
+  icon?: Picture;
+  /** @title Верхний текст */
+  aboveText?: string;
+  /** @hidden */
+  appendLeft?: any;
+  /** @title Закругленные углы */
+  rounded?: boolean;
+  /** @hidden */
+  asSVG?: boolean;
 }

@@ -82,6 +82,38 @@ Object {
       "title": "Выравнивание",
       "type": "string",
     },
+    "BackwardButtonProps": Object {
+      "properties": Object {
+        "aboveText": Object {
+          "title": "Верхний текст",
+          "type": "string",
+        },
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+          "title": "Иконка",
+        },
+        "rounded": Object {
+          "title": "Закругленные углы",
+          "type": "boolean",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+        "text": Object {
+          "default": "Кнопка",
+          "title": "Текст",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/ButtonVersion",
+        },
+      },
+      "type": "object",
+    },
     "BenefitItem": Object {
       "properties": Object {
         "description": Object {
@@ -402,7 +434,7 @@ Object {
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
-          "title": "Иконка",
+          "title": "Иконка слева",
         },
         "iconRight": Object {
           "$ref": "#/definitions/Picture",
@@ -2259,7 +2291,7 @@ Object {
     "ProductBlockBlockListDef": Object {
       "properties": Object {
         "backwardButton": Object {
-          "$ref": "#/definitions/ButtonWithIconProps",
+          "$ref": "#/definitions/BackwardButtonProps",
           "title": "Кнопка возврата",
         },
         "benefits": Object {
@@ -2347,7 +2379,7 @@ Object {
     "ProductBlockContent": Object {
       "properties": Object {
         "backwardButton": Object {
-          "$ref": "#/definitions/ButtonWithIconProps",
+          "$ref": "#/definitions/BackwardButtonProps",
           "title": "Кнопка возврата",
         },
         "benefits": Object {
@@ -2420,7 +2452,7 @@ Object {
       },
       "properties": Object {
         "backwardButton": Object {
-          "$ref": "#/definitions/ButtonWithIconProps",
+          "$ref": "#/definitions/BackwardButtonProps",
           "title": "Кнопка возврата",
         },
         "benefits": Object {

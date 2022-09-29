@@ -46,6 +46,7 @@ export default [
   'blockVersion',
   'aboveText',
   'icon',
+  'iconRight',
   'fileSize',
   'href',
   'target',

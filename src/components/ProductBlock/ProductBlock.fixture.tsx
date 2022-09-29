@@ -1,6 +1,6 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { BackwardButtonProps, ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { ProductBlock } from './ProductBlock';
 import type { ProductBlockBenefit, ProductBlockContent } from './ProductBlockContent';
 
@@ -62,7 +62,7 @@ const items = [
   'Расходы для бизнеса на УСН 15% позволят снизить налоговую базу',
 ];
 
-const backwardButton: ButtonWithIconProps = {
+const backwardButton: BackwardButtonProps = {
   href: 'https://rshb.ru',
   text: 'Все кредитные карты',
   icon: { icon: 'ArrowLeftIcon' },
