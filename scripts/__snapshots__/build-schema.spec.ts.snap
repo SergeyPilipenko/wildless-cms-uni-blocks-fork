@@ -908,6 +908,9 @@ Object {
     },
     "ExchangeRateTileContent": Object {
       "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",

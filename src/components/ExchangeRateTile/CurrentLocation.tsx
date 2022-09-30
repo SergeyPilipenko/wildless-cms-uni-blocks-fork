@@ -9,12 +9,14 @@ interface CurrentLocationProps {
 
 export const CurrentLocation = JSX<CurrentLocationProps>(
   ({ className = '', address, distance }) => (
-    <div className={`flex text-sm ${className}`}>
+    <div className={`flex ${className}`}>
       <Img image={{ icon: 'GpsIcon' }} width="24" height="24" asSVG />
-      <div className="ml-3 font-light">
-        {address ? <p className="m-0 mb-[3px]">{address}</p> : null}
+      <div className="ml-3">
+        {address ? <p className="text-primary-main  m-0 mb-1 text-l">{address}</p> : null}
         {distance ? (
-          <p className="text-secondary-text m-0">Курс указан для ближайшего офиса - {distance}</p>
+          <p className="text-secondary-text m-0 text-m">
+            Курс указан для ближайшего офиса - {distance}
+          </p>
         ) : null}
       </div>
     </div>

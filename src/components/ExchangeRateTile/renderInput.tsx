@@ -19,7 +19,7 @@ export function renderInput(props: InputProps) {
   return (
     <div className="relative flex items-center">
       <Input
-        className="h-10 border pl-4 pt-[7px] pb-[7px] rounded-md text-m-sm w-full appearance-none -mr-12"
+        className="h-13 border pl-4 pt-4 pb-4 rounded-md text-l w-full appearance-none -mr-12"
         placeholder={placeholder}
         type="text"
         value={value}
@@ -27,7 +27,7 @@ export function renderInput(props: InputProps) {
       />
       {rates.length ? (
         <Select
-          className="h-9 -translate-x-4"
+          className="h-9 -translate-x-4 bg-transparent"
           value={selected}
           onChange={(_) => setSelected(_ as Currency)}
         >

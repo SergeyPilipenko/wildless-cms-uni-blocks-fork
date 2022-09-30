@@ -5,6 +5,7 @@ import { callbackCurrencySelect } from './callbackCurrencySelect';
 import { Currency } from './CurrencyProps';
 import { renderButton } from './renderButton';
 import { renderInput } from './renderInput';
+import { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 
 export interface ExchangeCurrencyItem {
   code?: Currency;
@@ -15,6 +16,7 @@ export interface ExchangeCurrencyCalculatorProps extends UniBlockProps {
   className?: string;
   currencyRatesBuy: ExchangeCurrencyItem[];
   currencyRatesSell: ExchangeCurrencyItem[];
+  button?: ButtonProps;
 }
 export interface CalcState {
   inputSell: string;
@@ -24,7 +26,7 @@ export interface CalcState {
 }
 
 export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
-  ({ context, className = '', currencyRatesBuy, currencyRatesSell }) => {
+  ({ context, className = '', currencyRatesBuy, currencyRatesSell, button }) => {
     const [calcState, setCalcState] = context.useState<CalcState>({
       inputSell: '',
       inputBuy: '',
@@ -37,7 +39,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
     };
 
     return (
-      <div className={`grid gap-3.5 ${className}`}>
+      <div className={`grid gap-[18px] pt-2 ${className}`}>
         {renderInput({
           placeholder: 'Хочу продать',
           rates: currencyRatesBuy,
@@ -64,7 +66,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
               calcState.selectSell,
             ),
         })}
-        {renderButton()}
+        {button?.text ? renderButton(button) : null}
       </div>
     );
   },
