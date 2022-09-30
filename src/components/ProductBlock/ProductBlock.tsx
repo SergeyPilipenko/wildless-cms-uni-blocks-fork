@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Breadcrumb } from '../../ui-kit/Breadcrumb';
 import { joinList } from '../../utils/joinList';
 import type { ProductBlockContent } from './ProductBlockContent';
@@ -39,7 +39,13 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
       className={`font-sans overflow-hidden pt-[50px] pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
       {...otherProps}
     >
-      {backwardButton?.text ? renderBackwardButton(backwardButton, version, 'mb-10 -mt-2.5') : null}
+      {backwardButton?.text
+        ? renderBackwardButton(
+            useLink({ router, handlerDecorator }, backwardButton),
+            version,
+            'mb-10 -mt-2.5',
+          )
+        : null}
       {breadcrumbs?.length ? (
         <div className="text-xs mb-6">
           {joinList(<span className={`mx-2 ${breadcrumbsStyleMap[version]}`}>/</span>)(
