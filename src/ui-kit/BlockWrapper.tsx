@@ -10,7 +10,7 @@ interface BlockWrapperProps {
 }
 
 export const BlockWrapper = JSX<BlockWrapperProps>(
-  ({ anchor, className, context, children, Tag = 'section', ...rest }) => {
+  ({ anchor, className, context, children, Tag = 'section' }) => {
     const { IntersectionObserverTag } = context;
 
     return anchor ? (
@@ -20,14 +20,11 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
         observerCallback={changeHashOnObserve}
         observerOptions={{ threshold: 1 }} // Lower threshold when hash change needed
         anchor={anchor}
-        {...rest}
       >
         {children}
       </IntersectionObserverTag>
     ) : (
-      <Tag className={className} {...rest}>
-        {children}
-      </Tag>
+      <Tag className={className}>{children}</Tag>
     );
   },
 );
