@@ -1,8 +1,8 @@
 import type { JSXBlock } from '../../components/ContentPage/ContentPage';
 import type { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
+import { style2className } from '../../utils/style2className';
 import type { GroupBlockDef } from './BlocksTypeProps';
 import { EmbeddableGroupBlocks } from './EmbeddableGroupBlocks';
-import { style2className } from '../../utils/style2className';
 
 type EmbeddableBlocksProps = {
   groupBlocks?: GroupBlockDef[];
@@ -17,12 +17,15 @@ export const renderBlock =
     if (!type || !(type in EmbeddableGroupBlocks)) {
       return null;
     }
-    const classNameBlock = style2className(block?.style);
+
+    const { style, ...rest } = block;
+
+    const classNameBlock = style2className(style);
     const EmbeddedBlock: JSXBlock = EmbeddableGroupBlocks[type];
 
     return (
       <div className={className} key={`block_${i}`}>
-        <EmbeddedBlock context={context} {...block} className={classNameBlock} />
+        <EmbeddedBlock context={context} {...rest} className={classNameBlock} />
       </div>
     );
   };
