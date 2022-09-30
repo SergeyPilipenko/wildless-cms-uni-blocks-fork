@@ -1,35 +1,19 @@
-import { clamp } from '../../utils/clamp';
-import { DEFAULT_MAX_SUM, DEFAULT_MIN_SUM, MONTHS_IN_YEAR } from './constants';
-import type { CalculatorParams } from './CalculatorContent';
+/**
+ * Формулы расчёта аннуитетных и дифференцированных платежей:
+ * https://finuslugi.ru/potrebitelskie_kredity/stat_annuitetnye_i_differentsirovannye_platezhi
+ */
 
-type PaymentType = 'annuity' | 'differentiated';
+import { MONTHLY_INTEREST_RATE, MONTHS_IN_YEAR } from './constants';
+import type { CreditCalculatorUserInputParams } from './useCreditCalculatorParams';
 
-interface GetMonthlyPaymentParams {
-  calculatorParams?: CalculatorParams;
-  paymentType: PaymentType;
-  rate: number;
-  sum: number;
-  months: number;
-}
+export const getMonthlyPayment = (rate: number, params: CreditCalculatorUserInputParams) => {
+  const { isAnnuity, moneyValue, monthsValue } = params;
 
-export const getMonthlyPayment = (params: GetMonthlyPaymentParams) => {
-  const { calculatorParams, paymentType, rate, sum, months } = params;
+  if (isAnnuity) {
+    const i = rate / MONTHLY_INTEREST_RATE; // Используется значение ставки в процентах
 
-  if (!calculatorParams) {
-    return 0;
-  }
-
-  const finalSum = clamp(
-    sum,
-    calculatorParams.minSum || DEFAULT_MIN_SUM,
-    calculatorParams.maxSum || DEFAULT_MAX_SUM,
-  );
-
-  if (paymentType === 'annuity') {
-    const annuityCoef = Number(rate) / (MONTHS_IN_YEAR * 100);
-
-    return finalSum * (annuityCoef + annuityCoef / (Math.pow(1 + annuityCoef, months) - 1));
+    return moneyValue * (i + i / (Math.pow(1 + i, monthsValue) - 1));
   } else {
-    return finalSum / months + finalSum * (Number(rate) / 12);
+    return Math.round(moneyValue / monthsValue) + moneyValue * (rate / (MONTHS_IN_YEAR * 100)); // Используется значение ставки (rate) в процентах, делённое на сто.
   }
 };

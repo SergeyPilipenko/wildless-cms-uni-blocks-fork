@@ -4,8 +4,8 @@ import { EmbeddableCalcBlocks, EmbeddableCalcProps } from './EmbeddableCalcBlock
 
 export const renderCalculatorBlock =
   ({ context, className }: any) =>
-  (blockCalcTabs: CalculatorBlockDef, i: number) => {
-    const type = blockCalcTabs?.calcType;
+  (block: CalculatorBlockDef, i: number) => {
+    const type = block?.calcType;
     if (!type || !(type in EmbeddableCalcBlocks)) {
       return null;
     }
@@ -18,7 +18,7 @@ export const renderCalculatorBlock =
         role="listitem"
       >
         <div className="box-border p-9 w-full">
-          <EmbeddedBlock context={context} {...blockCalcTabs} className="flex justify-between" />
+          <EmbeddedBlock context={context} {...block} className="flex justify-between" />
         </div>
       </section>
     );

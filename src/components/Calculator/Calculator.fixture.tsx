@@ -26,13 +26,6 @@ const buttons: ButtonWithIconProps[] = [
 
 const CREDIT_CALCULATOR_BLOCK: CreditCalculatorParamsDef = {
   calcType: 'CreditCalculatorForm',
-  isAnnuity: true,
-  minSum: 30000,
-  maxSum: 5000000,
-  minMonths: 1,
-  maxMonths: 84,
-  rateWithInsurance: 10.2,
-  rateWithoutInsurance: 10.7,
   buttons: buttons,
 };
 
@@ -60,11 +53,6 @@ const DEPOSIT_CALCULATOR_BLOCK: DepositCalculatorParamsDef = {
 
 const BONUS_CALCULATOR_BLOCK: BonusCalculatorParamsDef = {
   calcType: 'BonusCalculatorForm',
-  bonus: 2528,
-  minSumTrip: 1,
-  maxSumTrip: 200000,
-  minSumOther: 1,
-  maxSumOther: 500000,
   buttons: buttons,
 };
 
@@ -74,7 +62,7 @@ export default {
       <Calculator
         className="col-span-12"
         context={context}
-        calcTabs={[
+        calculatorTabs={[
           {
             nav: {
               title: 'Кредит на любые цели',
@@ -115,7 +103,7 @@ export default {
       <Calculator
         className="col-span-12"
         context={context}
-        calcTabs={[
+        calculatorTabs={[
           {
             nav: {
               title: 'Кредит на любые цели',

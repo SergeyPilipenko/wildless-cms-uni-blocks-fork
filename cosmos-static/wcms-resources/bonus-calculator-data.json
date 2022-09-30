@@ -1,0 +1,12 @@
+{
+  "minSumTravel": 6000,
+  "maxSumTravel": 200000,
+  "minSumOther": 6000,
+  "maxSumOther": 200000,
+  "maxBonus": 5000,
+  "prefMonthsNum": 2,
+  "prefTravelBonusRate": 0.015,
+  "prefRestBonusRate": 0.01,
+  "travelBonusRate": 0.015,
+  "restBonusRate": 0.01
+}

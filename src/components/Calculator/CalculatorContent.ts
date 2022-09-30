@@ -5,6 +5,8 @@ import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 export interface CommonCalculatorProps {
   /** @title Кнопки */
   buttons?: ButtonWithIconProps[];
+  /** @title Адрес справочника */
+  sourceBookDir?: string;
 }
 
 /**
@@ -12,7 +14,9 @@ export interface CommonCalculatorProps {
  **/
 export interface CreditCalculatorParams {
   /** @hidden */
-  isSalary?: boolean;
+  isSalaryClient?: boolean;
+  /** @hidden */
+  isStateEmployee?: boolean;
   /** @hidden */
   isInsurance?: boolean;
   /** @hidden */
@@ -77,13 +81,19 @@ export interface BonusCalculatorParams {
   /** @hidden */
   bonus?: number;
   /** @hidden */
-  minSumTrip?: number;
+  minSumTravel?: number;
   /** @hidden */
-  maxSumTrip?: number;
+  maxSumTravel?: number;
   /** @hidden */
   minSumOther?: number;
   /** @hidden */
   maxSumOther?: number;
+  maxBonus?: number;
+  prefMonthsNum?: number;
+  prefTravelBonusRate?: number;
+  prefRestBonusRate?: number;
+  travelBonusRate?: number;
+  restBonusRate?: number;
 }
 
 /**
@@ -171,5 +181,5 @@ export interface CalculatorTab {
  */
 export interface CalculatorContent {
   /** @title Вкладки */
-  calcTabs?: CalculatorTab[];
+  calculatorTabs?: CalculatorTab[];
 }

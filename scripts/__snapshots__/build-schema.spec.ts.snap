@@ -308,6 +308,26 @@ Object {
     },
     "BonusCalculatorParams": Object {
       "description": "TODO: данные из справочника",
+      "properties": Object {
+        "maxBonus": Object {
+          "type": "number",
+        },
+        "prefMonthsNum": Object {
+          "type": "number",
+        },
+        "prefRestBonusRate": Object {
+          "type": "number",
+        },
+        "prefTravelBonusRate": Object {
+          "type": "number",
+        },
+        "restBonusRate": Object {
+          "type": "number",
+        },
+        "travelBonusRate": Object {
+          "type": "number",
+        },
+      },
       "type": "object",
     },
     "BonusCalculatorParamsDef": Object {
@@ -325,6 +345,28 @@ Object {
         "calcType": Object {
           "const": "BonusCalculatorForm",
           "type": "string",
+        },
+        "maxBonus": Object {
+          "type": "number",
+        },
+        "prefMonthsNum": Object {
+          "type": "number",
+        },
+        "prefRestBonusRate": Object {
+          "type": "number",
+        },
+        "prefTravelBonusRate": Object {
+          "type": "number",
+        },
+        "restBonusRate": Object {
+          "type": "number",
+        },
+        "sourceBookDir": Object {
+          "title": "Адрес справочника",
+          "type": "string",
+        },
+        "travelBonusRate": Object {
+          "type": "number",
         },
       },
       "required": Array [
@@ -480,7 +522,7 @@ Object {
     },
     "CalculatorContent": Object {
       "properties": Object {
-        "calcTabs": Object {
+        "calculatorTabs": Object {
           "items": Object {
             "$ref": "#/definitions/CalculatorTab",
           },
@@ -682,6 +724,10 @@ Object {
           "title": "Кнопки",
           "type": "array",
         },
+        "sourceBookDir": Object {
+          "title": "Адрес справочника",
+          "type": "string",
+        },
       },
       "type": "object",
     },
@@ -770,6 +816,10 @@ Object {
           "const": "CreditCalculatorForm",
           "type": "string",
         },
+        "sourceBookDir": Object {
+          "title": "Адрес справочника",
+          "type": "string",
+        },
       },
       "required": Array [
         "calcType",
@@ -795,6 +845,10 @@ Object {
         },
         "calcType": Object {
           "const": "DepositCalculatorForm",
+          "type": "string",
+        },
+        "sourceBookDir": Object {
+          "title": "Адрес справочника",
           "type": "string",
         },
       },
@@ -2056,6 +2110,10 @@ Object {
         },
         "calcType": Object {
           "const": "MortgageCalculatorForm",
+          "type": "string",
+        },
+        "sourceBookDir": Object {
+          "title": "Адрес справочника",
           "type": "string",
         },
       },

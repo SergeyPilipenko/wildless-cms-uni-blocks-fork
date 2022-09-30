@@ -1,19 +1,16 @@
 import { InputRange } from '../../ui-kit/InputRange/InputRange';
-import type { InputRangeProps } from '../../ui-kit/InputRange/InputRangeProps';
+import { clamp } from '../../utils/clamp';
 
 const STEP_MONTHS = 1;
 
-interface RenderMonthsInputProps {
-  title: string;
+interface RenderMonthsInputParams {
   minMonths: number;
   maxMonths: number;
-  monthsValue: number | undefined;
-  defaultMonths: number;
-  setMonthsValue: InputRangeProps['onChange'];
+  monthsValue: number;
 }
 
-export function renderMonthsInput(props: RenderMonthsInputProps) {
-  const { title, minMonths, maxMonths, monthsValue, defaultMonths, setMonthsValue } = props;
+export function renderMonthsInput(title: string, params: RenderMonthsInputParams, callback) {
+  const { minMonths, maxMonths, monthsValue } = params;
   const monthText = (month) => {
     const text = Number(month) % 10 === 1 ? 'месяца' : 'месяцев';
 
@@ -28,8 +25,8 @@ export function renderMonthsInput(props: RenderMonthsInputProps) {
       min={minMonths}
       max={maxMonths}
       step={STEP_MONTHS}
-      value={monthsValue || defaultMonths}
-      onChange={setMonthsValue}
+      value={clamp(monthsValue, minMonths, maxMonths)}
+      onChange={callback}
     />
   );
 }

@@ -1,68 +1,60 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
-import { getDefaultSum } from './getDefaultSum';
-import { renderWantedSumInput } from './renderWantedSumInput';
-import { renderRate } from './renderRate';
+import { DEFAULT_REST_MIN_SUM, DEFAULT_TRAVEL_MIN_SUM } from './constants';
+import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
-import { BonusCalculatorParams, CommonCalculatorProps } from './CalculatorContent';
+import { renderWantedSumInput } from './renderWantedSumInput';
+import { getBonusCalculatorParams } from './useBonusCalculatorParams';
 
-export interface BonusCalculatorProp
-  extends BonusCalculatorParams,
-    CommonCalculatorProps,
-    UniBlockProps {}
+export interface BonusCalculatorProps extends CommonCalculatorProps, UniBlockProps {}
 
-export const BonusCalculatorForm = JSX<BonusCalculatorProp>(
-  ({
-    context,
-    className = '',
-    buttons,
-    bonus,
-    minSumTrip,
-    maxSumTrip,
-    minSumOther,
-    maxSumOther,
-  }) => {
-    const [bonusTripValue, setBonusTripValue] = context.useState<number | undefined>(undefined);
-    const [bonusOtherValue, setBonusOtherValue] = context.useState<number | undefined>(undefined);
-    const calculatorTripParams = { minSum: minSumTrip, maxSum: maxSumTrip };
-    const calculatorOtherParams = { minSum: minSumOther, maxSum: maxSumOther };
-
-    const incomeBonus = 948841;
-    const bonusOrDef = bonus || 2528;
+export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
+  ({ context, className = '', sourceBookDir, buttons }) => {
+    const [travelExpenseValue, setTravelExpenseValue] = context.useState(DEFAULT_TRAVEL_MIN_SUM);
+    const [restExpenseValue, setRestExpenseValue] = context.useState(DEFAULT_REST_MIN_SUM);
+    const userInputParams = {
+      travelExpenseValue,
+      restExpenseValue,
+    };
+    const { minSumTravel, maxSumTravel, minSumOther, maxSumOther, monthBonus, yearBonus } =
+      getBonusCalculatorParams(context, userInputParams, sourceBookDir);
 
     return (
       <section className={className}>
         <div className="w-[468px]">
-          {renderWantedSumInput({
-            title: 'Сумма покупок в категории путешествия, ₽',
-            calculatorParams: calculatorTripParams,
-            moneyValue: bonusTripValue,
-            defaultSum: getDefaultSum(calculatorTripParams),
-            setMoneyValue: setBonusTripValue,
-            isShowItems: false,
-          })}
-          {renderWantedSumInput({
-            className: 'mt-6',
-            title: 'Сумма покупок в остальных категориях, ₽',
-            calculatorParams: calculatorOtherParams,
-            moneyValue: bonusOtherValue,
-            defaultSum: getDefaultSum(calculatorOtherParams),
-            setMoneyValue: setBonusOtherValue,
-            isShowItems: false,
-          })}
+          {renderWantedSumInput(
+            'Сумма покупок в категории путешествия, ₽',
+            {
+              minSum: minSumTravel,
+              maxSum: maxSumTravel,
+              moneyValue: travelExpenseValue,
+              step: 500,
+              isShowItems: false,
+            },
+            setTravelExpenseValue,
+          )}
+          {renderWantedSumInput(
+            'Сумма покупок в остальных категориях, ₽',
+            {
+              className: 'mt-6',
+              minSum: minSumOther,
+              maxSum: maxSumOther,
+              moneyValue: restExpenseValue,
+              step: 500,
+              isShowItems: false,
+            },
+            setRestExpenseValue,
+          )}
         </div>
         <div>
-          {bonusOrDef
-            ? renderRate({
-                rate: bonusOrDef,
-                title: 'Баллов за месяц',
-                className: 'tracking-[-14px]',
-              })
-            : null}
+          {monthBonus >= 0 ? (
+            <Rate title="Баллов за месяц" rate={monthBonus} rateBlockClassName="tracking-[-14px]" />
+          ) : null}
         </div>
         <div className="w-[240px]">
-          {incomeBonus ? <CalculatorValueBlock title="Баллов за год" value={incomeBonus} /> : null}
+          {yearBonus >= 0 ? <CalculatorValueBlock title="Баллов за год" value={yearBonus} /> : null}
           {renderButtonSection(context, buttons)}
         </div>
       </section>

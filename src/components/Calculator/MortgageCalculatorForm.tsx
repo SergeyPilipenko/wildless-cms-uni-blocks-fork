@@ -1,20 +1,17 @@
+// TEMP
 import { JSX } from '@redneckz/uni-jsx';
-import { useCreditCalculatorData } from '../../hooks/useCreditCalculatorData';
 import type { UniBlockProps } from '../../types';
 import { Checkbox } from '../../ui-kit/Checkbox/Checkbox';
-import { DEFAULT_MAX_MONTHS, DEFAULT_MIN_MONTHS } from './constants';
-import { renderRealEstateValue } from './renderRealEstateValue';
-import { renderInitialFeeInput } from './renderInitialFeeInput';
-import { getCreditRate } from './getCreditRate';
-import { getCalculatorParams } from './getCalculatorParams';
-import { getDefaultSum } from './getDefaultSum';
-import { getDefaultMonths } from './getDefaultMonths';
-import { renderMonthsInput } from './renderMonthsInput';
-import { renderButtonSection } from './renderButtonSection';
-import { renderProposalMortgage } from './renderProposalMortgage';
-import { renderRate } from './renderRate';
 import { CommonCalculatorProps, MortgageCalculatorParams } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
+import { DEFAULT_MAX_MONTHS, DEFAULT_MIN_MONTHS } from './constants';
+import { getCreditRate } from './getCreditRate';
+import { Rate } from './Rate';
+import { renderButtonSection } from './renderButtonSection';
+import { renderInitialFeeInput } from './renderInitialFeeInput';
+import { renderMonthsInput } from './renderMonthsInput';
+import { renderProposalMortgage } from './renderProposalMortgage';
+import { renderRealEstateValue } from './renderRealEstateValue';
 
 export interface MortgageCalculatorProp
   extends MortgageCalculatorParams,
@@ -23,19 +20,15 @@ export interface MortgageCalculatorProp
 
 export const MortgageCalculatorForm = JSX<MortgageCalculatorProp>(
   ({ context, className = '', buttons }) => {
-    const [moneyValue, setMoneyValue] = context.useState<number | undefined>(undefined);
-    const [monthsValue, setMonthsValue] = context.useState<number | undefined>(undefined);
+    const [moneyValue, setMoneyValue] = context.useState<number>(1000000);
+    const [monthsValue, setMonthsValue] = context.useState<number>(12);
     const [isInsurance, toggleIsInsurance] = context.useState(false);
     const [isFullInsurance, toggleIsFullInsurance] = context.useState(false);
 
-    const tableRows = useCreditCalculatorData(context.useAsyncData, 'directoryName').rows;
-    const calculatorParams = getCalculatorParams({ tableRows, isAnnuity: isInsurance });
+    const calculatorParams = {}; // getCalculatorParams(context, { isAnnuity: isInsurance });
 
-    const defaultSum = getDefaultSum(calculatorParams);
-    const defaultMonths = getDefaultMonths(calculatorParams);
-
-    const minMonths = calculatorParams?.minMonths || DEFAULT_MIN_MONTHS;
-    const maxMonths = calculatorParams?.maxMonths || DEFAULT_MAX_MONTHS;
+    const minMonths = /*calculatorParams?.minMonths ||*/ DEFAULT_MIN_MONTHS;
+    const maxMonths = /* calculatorParams?.maxMonths || */ DEFAULT_MAX_MONTHS;
 
     const rate = getCreditRate({ calculatorParams, isInsurance: isInsurance });
 
@@ -45,21 +38,23 @@ export const MortgageCalculatorForm = JSX<MortgageCalculatorProp>(
     return (
       <section className={className}>
         <div className="w-[468px]">
-          {renderRealEstateValue({ calculatorParams, moneyValue, defaultSum, setMoneyValue })}
-          {renderInitialFeeInput({
-            calculatorParams,
-            moneyValue,
-            defaultSum,
+          {renderRealEstateValue('Стоимость недвижимости, ₽', { moneyValue }, setMoneyValue)}
+          {renderInitialFeeInput(
+            'Первоначальный взнос, ₽',
+            {
+              moneyValue,
+            },
             setMoneyValue,
-          })}
-          {renderMonthsInput({
-            title: 'Срок ипотеки, месяцев',
-            minMonths,
-            maxMonths,
-            monthsValue,
-            defaultMonths,
+          )}
+          {renderMonthsInput(
+            'Срок ипотеки, месяцев',
+            {
+              minMonths,
+              maxMonths,
+              monthsValue,
+            },
             setMonthsValue,
-          })}
+          )}
           <div className="mt-7">
             <Checkbox text="Страхование жизни" checked={isInsurance} onChange={toggleIsInsurance} />
             <Checkbox
@@ -71,11 +66,8 @@ export const MortgageCalculatorForm = JSX<MortgageCalculatorProp>(
           </div>
         </div>
         <div>
-          <div>
-            {rate
-              ? renderRate({ rate: rate, title: 'Ставка', sup: '%', className: 'tracking-[-25px]' })
-              : null}
-          </div>
+          <Rate rate={rate} rateBlockClassName="tracking-[-25px]" unit="%" />
+
           <CalculatorValueBlock title="Ежемесячный платеж" value={monthlyPayment} postfix="₽" />
         </div>
         <div>

@@ -1,22 +1,100 @@
 {
   "rows": [
     {
-      "isAnnuity": true,
-      "minSum": 15000,
+      "rateBottomRange": 10,
+      "rateTopRange": 7,
+      "isSalaryClient": true,
+      "isStateEmployee": true,
+      "isInsurance": true,
+      "minSum": 60000,
       "maxSum": 2000000,
-      "minMonths": 12,
-      "maxMonths": 84,
-      "rateWithInsurance": 6,
-      "rateWithoutInsurance": 8.5
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
     },
     {
-      "isAnnuity": false,
-      "minSum": 30000,
-      "maxSum": 4500000,
-      "minMonths": 1,
-      "maxMonths": 84,
-      "rateWithInsurance": 7,
-      "rateWithoutInsurance": 9.5
+      "rateBottomRange": 15,
+      "rateTopRange": 10,
+      "isSalaryClient": true,
+      "isStateEmployee": true,
+      "isInsurance": false,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
+    },
+    {
+      "rateBottomRange": 10,
+      "rateTopRange": 7,
+      "isSalaryClient": true,
+      "isStateEmployee": false,
+      "isInsurance": true,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
+    },
+    {
+      "rateBottomRange": 15,
+      "rateTopRange": 10,
+      "isSalaryClient": true,
+      "isStateEmployee": false,
+      "isInsurance": false,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
+    },
+    {
+      "rateBottomRange": 12,
+      "rateTopRange": 8,
+      "isSalaryClient": false,
+      "isStateEmployee": true,
+      "isInsurance": true,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
+    },
+    {
+      "rateBottomRange": 17,
+      "rateTopRange": 11,
+      "isSalaryClient": false,
+      "isStateEmployee": true,
+      "isInsurance": false,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
+    },
+    {
+      "rateBottomRange": 12,
+      "rateTopRange": 8,
+      "isSalaryClient": false,
+      "isStateEmployee": false,
+      "isInsurance": true,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
+    },
+    {
+      "rateBottomRange": 17,
+      "rateTopRange": 11,
+      "isSalaryClient": false,
+      "isStateEmployee": false,
+      "isInsurance": false,
+      "minSum": 60000,
+      "maxSum": 2000000,
+      "sumBorder": 999999,
+      "minMonths": 13,
+      "maxMonths": 60
     }
   ]
 }

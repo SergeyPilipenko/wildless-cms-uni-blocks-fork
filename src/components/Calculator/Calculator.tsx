@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { FuncReturnVoid, UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
 import type { CalculatorBlockDef, CalculatorContent, CalculatorNav } from './CalculatorContent';
@@ -23,9 +23,9 @@ type NavButtonProps = {
 };
 
 export const Calculator = JSX<CalculatorProps>(
-  ({ className = '', context, calcTabs = [], ...rest }) => {
-    const tabsNav = calcTabs.map((_) => _.nav || ({} as CalculatorNav));
-    const blockCalcTabs = calcTabs.map(
+  ({ className = '', context, calculatorTabs = [], ...rest }) => {
+    const tabsNav = calculatorTabs.map((_) => _.nav || ({} as CalculatorNav));
+    const calculatorBlocks = calculatorTabs.map(
       ({ calculatorBlock }) => calculatorBlock || ({} as CalculatorBlockDef),
     );
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
@@ -34,8 +34,8 @@ export const Calculator = JSX<CalculatorProps>(
     const handleNextClick = () => setTabsShift(tabsShift + 1);
     const handlePrevClick = () => setTabsShift(tabsShift - 1);
 
-    const isGalleryScrollAvailable = calcTabs?.length > 3;
-    const showNextButton = isGalleryScrollAvailable && calcTabs?.length > tabsShift + 3;
+    const isGalleryScrollAvailable = calculatorTabs?.length > 3;
+    const showNextButton = isGalleryScrollAvailable && calculatorTabs?.length > tabsShift + 3;
     const showPrevButton = tabsShift > 0;
 
     return (
@@ -60,8 +60,8 @@ export const Calculator = JSX<CalculatorProps>(
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}
           role="list"
         >
-          {blockCalcTabs?.length
-            ? blockCalcTabs.map(renderCalculatorBlock({ context, className }))
+          {calculatorBlocks?.length
+            ? calculatorBlocks.map(renderCalculatorBlock({ context, className }))
             : null}
         </div>
       </BlockWrapper>

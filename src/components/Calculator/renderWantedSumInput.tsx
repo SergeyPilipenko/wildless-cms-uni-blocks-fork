@@ -1,34 +1,21 @@
 import { InputRange } from '../../ui-kit/InputRange/InputRange';
-import type { InputRangeProps } from '../../ui-kit/InputRange/InputRangeProps';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
-import { DEFAULT_MAX_SUM, DEFAULT_MIN_SUM } from './constants';
-import type { CalculatorParams } from './CalculatorContent';
+import { clamp } from '../../utils/clamp';
 
-const STEP_MONEY = 1000;
+const DEFAULT_MONEY_STEP = 1000;
 
-interface RenderWantedSumInputProps {
+interface RenderWantedSumParams {
+  minSum: number;
+  maxSum: number;
+  moneyValue: number;
   className?: string;
-  title: string;
+  step?: number;
   isShowItems?: boolean;
-  calculatorParams: CalculatorParams;
-  moneyValue: number | undefined;
-  defaultSum: number;
-  setMoneyValue: InputRangeProps['onChange'];
 }
 
-export function renderWantedSumInput(props: RenderWantedSumInputProps) {
-  const {
-    title,
-    className = '',
-    calculatorParams,
-    moneyValue,
-    defaultSum,
-    setMoneyValue,
-    isShowItems = true,
-  } = props;
+export function renderWantedSumInput(title: string, params: RenderWantedSumParams, callback) {
+  const { moneyValue, minSum, maxSum, step = DEFAULT_MONEY_STEP, isShowItems = true } = params;
 
-  const minSum = calculatorParams?.minSum || DEFAULT_MIN_SUM;
-  const maxSum = calculatorParams?.maxSum || DEFAULT_MAX_SUM;
   const items = [
     `От ${addSpacesBetweenNumbers(minSum)} ₽`,
     `До ${addSpacesBetweenNumbers(maxSum)} ₽`,
@@ -36,14 +23,13 @@ export function renderWantedSumInput(props: RenderWantedSumInputProps) {
 
   return (
     <InputRange
-      className={className}
       title={title}
       items={isShowItems ? items : []}
       min={minSum}
       max={maxSum}
-      step={STEP_MONEY}
-      value={moneyValue || defaultSum}
-      onChange={setMoneyValue}
+      step={step}
+      value={clamp(moneyValue, minSum, maxSum)}
+      onChange={callback}
     />
   );
 }

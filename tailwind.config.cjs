@@ -38,14 +38,14 @@ module.exports = {
           'linear-gradient(270deg, rgba(var(--color-primary-main), 1) 34.89%, rgba(var(--color-primary-main), 0) 92.52%);',
         'opacity-from-main':
           'linear-gradient(90deg, rgba(var(--color-primary-main), 1) 0%, rgba(var(--color-primary-main), 0) 80%);',
-        'green-to-yellow':
-          'linear-gradient(180deg, #42AB44 0%, #F6DB7D 100%)',
+        'green-to-yellow': 'linear-gradient(180deg, #42AB44 0%, #F6DB7D 100%)',
       },
       fontFamily: {
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
         mohave: ['Mohave', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
+        highlighted: ['12.5rem', '15.625rem'],
         button: ['0.875rem', '1.25rem'], // 14px 20px
         'button-sm': ['1rem', '1.25rem'], // 16px 20px
 
@@ -190,7 +190,7 @@ module.exports = {
       border: {
         'white/50': 'rgba(255,255,255,.5);',
         'gray/100': 'rgba(235, 237, 240, 1);',
-      }
+      },
     },
   },
   plugins: [],

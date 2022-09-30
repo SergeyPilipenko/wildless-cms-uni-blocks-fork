@@ -1,13 +1,13 @@
+import { BonusCalculatorForm, BonusCalculatorProps } from './BonusCalculatorForm';
 import { CreditCalculatorForm, CreditCalculatorProp } from './CreditCalculatorForm';
-import { MortgageCalculatorForm, MortgageCalculatorProp } from './MortgageCalculatorForm';
 import { DepositCalculatorForm, DepositCalculatorProp } from './DepositCalculatorForm';
-import { BonusCalculatorForm, BonusCalculatorProp } from './BonusCalculatorForm';
+import { MortgageCalculatorForm, MortgageCalculatorProp } from './MortgageCalculatorForm';
 
 export type EmbeddableCalcProps =
   | CreditCalculatorProp
   | MortgageCalculatorProp
   | DepositCalculatorProp
-  | BonusCalculatorProp;
+  | BonusCalculatorProps;
 
 export const EmbeddableCalcBlocks = {
   CreditCalculatorForm,
