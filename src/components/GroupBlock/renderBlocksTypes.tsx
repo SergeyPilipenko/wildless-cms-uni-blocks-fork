@@ -13,12 +13,15 @@ type EmbeddableBlocksProps = {
 export const renderBlock =
   ({ context, className }: EmbeddableBlocksProps) =>
   (block: GroupBlockDef, i: number) => {
-    const type = block?.blockType;
-    if (!type || !(type in EmbeddableGroupBlocks)) {
+    if (!block) {
       return null;
     }
 
-    const { style, ...rest } = block;
+    const { style, blockType: type, ...rest } = block;
+
+    if (!type || !(type in EmbeddableGroupBlocks)) {
+      return null;
+    }
 
     const classNameBlock = style2className(style);
     const EmbeddedBlock: JSXBlock = EmbeddableGroupBlocks[type];

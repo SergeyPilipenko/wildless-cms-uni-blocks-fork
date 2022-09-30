@@ -64,8 +64,13 @@ const renderInsuranceGalleries = ({
   const insuranceGalleries = insuranceTabs?.map((_) => _.cards);
 
   return insuranceGalleries?.length
-    ? insuranceGalleries.map((cards) => (
-        <InsuranceAmountBlockInner context={context} className={className} cards={cards} />
+    ? insuranceGalleries.map((cards, i) => (
+        <InsuranceAmountBlockInner
+          key={String(i)}
+          context={context}
+          className={className}
+          cards={cards}
+        />
       ))
     : null;
 };

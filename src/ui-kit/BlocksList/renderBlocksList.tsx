@@ -17,12 +17,15 @@ export const renderBlocksList = ({ blocks, context, className = '' }: Embeddable
 const renderBlock =
   ({ context, className }: UniBlockProps) =>
   (block: BlockDef, i: number) => {
-    const type = block?.blockListType;
-    if (!type || !(type in EmbeddableBlocks)) {
+    if (!block) {
       return null;
     }
 
-    const { style, ...rest } = block;
+    const { style, blockListType: type, ...rest } = block;
+
+    if (!type || !(type in EmbeddableBlocks)) {
+      return null;
+    }
 
     const classNameBlock = style2className(style);
     const EmbeddedBlock: JSXBlock = EmbeddableBlocks[type];

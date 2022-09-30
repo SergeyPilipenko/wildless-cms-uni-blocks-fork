@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Headline } from '../Headline/Headline';
 import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
 import { LinkDocsList } from './LinkDocsList';
