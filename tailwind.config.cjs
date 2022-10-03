@@ -45,9 +45,7 @@ module.exports = {
         mohave: ['Mohave', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        highlighted: ['12.5rem', '15.625rem'],
         button: ['0.875rem', '1.25rem'], // 14px 20px
-        'button-sm': ['1rem', '1.25rem'], // 16px 20px
 
         'title-extra': ['15.625rem', '14.687rem'], // 250px 235px
         'title-huge': ['12.5rem', '15.625rem'], // 200px 250px
@@ -55,7 +53,6 @@ module.exports = {
         'title-lg': ['2.5rem', '3rem'], //40px 48px
         title: ['2rem', '2.5rem'], //32px 40px
         'title-sm': ['1.75rem', '2.5rem'], //28px 40px
-        'title-new-sm': ['1.625rem', '2.25rem'], //26px 36px в рамках задачи ProductGalleryGreen #293
         'title-xs': ['1.5rem', '1.875rem'], //24px 30px
         'title-2xs': ['1.25rem', '1.75rem'], //20px 28px
         lg: ['2.188rem', '3rem'], // 35px 48px
@@ -100,6 +97,10 @@ module.exports = {
           lineHeight: '2.25rem',
           fontWeight: '400',
         }],
+        'h4-alt': ['1.625rem', { // 26px 36px // от Эльдара атом для главной страницы
+          lineHeight: '2.25rem',
+          fontWeight: '400',
+        }],
         h5: ['1.5rem', { // 24px 30px
           lineHeight: '1.875rem',
           fontWeight: '400',
@@ -128,11 +129,11 @@ module.exports = {
           lineHeight: '1.25rem',
           fontWeight: '300',
         }],
-        's-bold': ['0.875rem', { // 14px 20px
+        s: ['0.875rem', { // 14px 20px
           lineHeight: '1.25rem',
           fontWeight: '400',
         }],
-        s: ['0.875rem', { // 14px 20px
+        's-light': ['0.875rem', { // 14px 20px
           lineHeight: '1.25rem',
           fontWeight: '300',
         }],

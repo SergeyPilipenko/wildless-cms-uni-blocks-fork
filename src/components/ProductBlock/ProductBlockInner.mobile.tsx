@@ -53,9 +53,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               ) : null
             }
           >
-            {description ? (
-              <Description className="mt-3 text-m-md" description={description} />
-            ) : null}
+            {description ? <Description className="mt-3 text-m" description={description} /> : null}
             {benefits?.filter((_) => _.label)?.length ? (
               <div className="mt-3">
                 {benefits.map((benefit, i) =>
@@ -64,12 +62,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
               </div>
             ) : null}
             {items?.length ? (
-              <List
-                className="mt-3 text-m-md"
-                items={items}
-                version={version}
-                isDotted={isDotted}
-              />
+              <List className="mt-3 text-m" items={items} version={version} isDotted={isDotted} />
             ) : null}
           </BaseTile>
         </div>

@@ -37,8 +37,6 @@ export const Tile = JSX<TileProps>((props) => {
     ...rest
   } = props;
 
-  const headingTextClassName = version === 'primary' ? 'text-primary-text' : '';
-
   return (
     <BlockWrapper
       context={context}
@@ -55,7 +53,8 @@ export const Tile = JSX<TileProps>((props) => {
               headingType={headingType}
               as="h3"
               title={title}
-              className={`whitespace-pre-wrap max-w-[600px] mb-3 ${headingTextClassName}`}
+              className={`whitespace-pre-wrap max-w-[600px] text-h4
+              ${version === 'primary' ? 'text-primary-text' : ''}`}
             />
           ) : null
         }
@@ -71,10 +70,7 @@ export const Tile = JSX<TileProps>((props) => {
         image={image?.src && <Img className="mt-auto ml-7" image={image} />}
       >
         {description ? (
-          <Description
-            className="max-w-[600px] text-title-new-sm font-light"
-            description={description}
-          />
+          <Description className="max-w-[600px] text-xl-light mt-2" description={description} />
         ) : null}
         {children}
         {renderList(items, version, isDotted)}
@@ -84,14 +80,12 @@ export const Tile = JSX<TileProps>((props) => {
 });
 
 function renderList(items, version, isDotted: boolean) {
-  const listVersion = version === 'primary' ? 'tile' : 'tile-white';
-
   return items?.length ? (
     <List
       items={items}
       isDotted={isDotted}
-      itemClassName="text-title-2xs font-light mt-2"
-      version={listVersion}
+      itemClassName="text-h4-alt font-light mt-2"
+      version={version === 'primary' ? 'tile' : 'tile-white'}
     />
   ) : null;
 }

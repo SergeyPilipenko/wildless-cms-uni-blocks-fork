@@ -39,7 +39,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
           >
             {description ? (
               <Description
-                className={`mt-4 max-w-[600px] text-md font-light ${textColor}`}
+                className={`mt-4 max-w-[600px] text-xl-light ${textColor}`}
                 description={description}
               />
             ) : null}
@@ -52,7 +52,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             ) : null}
             {items?.length ? (
               <List
-                className="mt-5 text-title-2xs font-light"
+                className="mt-5 text-h6"
                 items={items}
                 itemClassName="mb-[7px]"
                 version={version}
