@@ -17,17 +17,15 @@ const blockStyle: Record<BlockVersion, string> = {
 
 export const Gallery = JSX<GalleryProps>(
   ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {
+    const headingClassName = description ? 'mb-2' : 'mb-5';
+
     return (
       <section
         className={`relative font-sans text-primary-text bg-white px-4 py-6 overflow-hidden ${className}`}
       >
         <div className="flex flex-col items-center mb-5">
           {title ? (
-            <Heading
-              headingType="h3"
-              className={`text-center ${description ? 'mb-2' : 'mb-5'}`}
-              title={title}
-            />
+            <Heading headingType="h3" className={`text-center ${headingClassName}`} title={title} />
           ) : null}
           {description ? (
             <div className="font-normal text-m-md max-w-[600px] text-center mb-5">

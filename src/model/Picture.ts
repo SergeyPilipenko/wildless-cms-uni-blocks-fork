@@ -1,6 +1,8 @@
 import type { IconName } from '../icons/IconName';
 import type { IconVersion } from './IconVersion';
 
+export type ImgFormats = 'jpeg' | 'jpg' | 'png' | 'gif' | 'webp' | 'heif' | 'avif';
+
 export interface Img {
   /** @title Картинка */
   src?: string;
@@ -23,7 +25,7 @@ export interface ImgSource {
   /** @title Картинка */
   src?: string;
   /** @title Формат */
-  format?: 'jpeg' | 'jpg' | 'png' | 'gif' | 'webp' | 'heif' | 'avif';
+  format?: ImgFormats;
   /** @hidden */
   options?: Record<string, any>;
   media?: MediaQuery;

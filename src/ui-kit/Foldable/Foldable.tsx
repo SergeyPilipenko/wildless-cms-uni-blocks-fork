@@ -46,19 +46,21 @@ export const Foldable = JSX<FoldableProps>(
       initialState: isUnfolded,
     });
 
+    const buttonClassName =
+      foldButtonClasses ||
+      'border-none bg-primary-main px-0 py-[26px] mb-[1px] w-full font-sans text-white text-base flex justify-center cursor-pointer';
+    const getFoldButtonLabel = isActive ? 'Скрыть' : foldButtonLabel;
+
     return blocks ? (
       <div>
         {renderBlocks(blocks, render, { blocksToHide, isActive, containerClasses })}
         {hiddenBlocksNum ? (
           <button
-            className={
-              foldButtonClasses ||
-              'border-none bg-primary-main px-0 py-[26px] mb-[1px] w-full font-sans text-white text-base flex justify-center cursor-pointer'
-            }
+            className={buttonClassName}
             data-theme={foldButtonDataTheme}
             onClick={handleToggle}
           >
-            <span className="pr-3">{isActive ? 'Скрыть' : foldButtonLabel}</span>
+            <span className="pr-3">{getFoldButtonLabel}</span>
             {icon ? <Icon name={icon} iconVersion="white" width="20" height="20" asSVG /> : null}
           </button>
         ) : null}

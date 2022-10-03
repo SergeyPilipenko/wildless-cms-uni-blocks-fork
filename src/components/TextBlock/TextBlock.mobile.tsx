@@ -40,6 +40,7 @@ export const TextBlock = JSX<TextBlockProps>(
     isDotted = true,
   }) => {
     const textBlockStyleMap = textBlockStyleMaps[blockVersion];
+    const listBlockVersion = blockVersion === 'secondary' ? 'secondary' : 'gray';
 
     return (
       <section
@@ -59,7 +60,7 @@ export const TextBlock = JSX<TextBlockProps>(
               className="mt-1 text-m-md"
               items={items}
               isDotted={isDotted}
-              version={blockVersion === 'secondary' ? 'secondary' : 'gray'}
+              version={listBlockVersion}
             />
           ) : null}
         </div>

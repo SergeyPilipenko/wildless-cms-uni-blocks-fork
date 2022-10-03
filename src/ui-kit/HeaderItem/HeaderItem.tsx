@@ -30,7 +30,7 @@ export const HeaderItem = JSX<TopItemProps>(
   ),
 );
 
-const getTextClasses = (bgColor: BgColorVersion, active?: boolean) => {
+const getTextClasses = (bgColor: BgColorVersion, active = false) => {
   let classes = 'text-white';
   if (bgColor === 'bg-white') {
     classes = active ? 'text-primary-main' : 'text-primary-text hover:text-primary-main';
@@ -39,7 +39,7 @@ const getTextClasses = (bgColor: BgColorVersion, active?: boolean) => {
   return `${classes} ${TEXT_CLASSES}`;
 };
 
-const getBorderClasses = (bgColor: BgColorVersion, active?: boolean) => {
+const getBorderClasses = (bgColor: BgColorVersion, active = false) => {
   if (!active) {
     return BORDER_CLASSES;
   }

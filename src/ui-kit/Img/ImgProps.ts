@@ -9,4 +9,5 @@ export interface ImageContent<T = Picture> {
 export interface ImageProps<T> extends ImageContent<T>, IconCompatibilityFields {
   className?: string;
   imageClassName?: string;
+  isMobile?: boolean;
 }

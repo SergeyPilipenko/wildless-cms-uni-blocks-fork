@@ -28,6 +28,8 @@ async function fetchExchangeRates(): Promise<any | undefined> {
     return await response.json();
   } catch (err) {
     console.error(err);
+
+    return Promise.resolve();
   }
 }
 

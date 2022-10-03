@@ -12,7 +12,7 @@ const BLOCKS_DIR_EXCLUSIONS = [
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'import', 'react', 'local-eslint-rules'],
+  plugins: ['@typescript-eslint', 'import', 'react', 'local-eslint-rules', 'sonarjs'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -28,7 +28,17 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'return' },
       { blankLine: 'always', prev: '*', next: 'function' },
     ],
+    'max-len': [
+      'warn',
+      180,
+      {
+        ignoreUrls: true,
+        ignoreTemplateLiterals: false,
+        ignoreStrings: false,
+      },
+    ],
     'no-nested-ternary': 'error',
+    'sonarjs/no-nested-template-literals': 'warn',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'warn',
     camelcase: ['error', { allow: ['node_ids', 'node_id', 'user_name'] }],
@@ -38,6 +48,7 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
     'default-param-last': 'error',
+    'consistent-return': 'warn',
   },
   overrides: [
     {

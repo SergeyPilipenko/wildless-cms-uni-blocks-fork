@@ -35,7 +35,8 @@ async function transformImg(
 ): Promise<string> {
   const { contentDir, publicDir, format, options, size } = transformationOptions;
 
-  const imgPath = `${path.dirname(pagePath)}/${src}`;
+  const pageDir = path.dirname(pagePath);
+  const imgPath = `${pageDir}/${src}`;
   let chain = sharp(imgPath);
   if (size) {
     chain = chain.resize(size?.width, size?.height, {
@@ -70,9 +71,10 @@ function transformSrc(src: string, { format, size }: TransformationOptions & Img
     return src;
   }
 
-  const suffix = [size?.width, size?.height].filter(Boolean).join('-');
+  const fileName = path.basename(src, path.extname(src));
+  const fileSizes = [size?.width, size?.height].filter(Boolean);
+  const suffix = fileSizes.length ? `-${fileSizes.join('-')}` : '';
+  const ext = String(format) || path.extname(src);
 
-  return `${path.basename(src, path.extname(src))}${suffix ? `-${suffix}` : ''}.${
-    String(format) || path.extname(src)
-  }`;
+  return `${fileName}${suffix}.${ext}`;
 }

@@ -62,6 +62,7 @@ module.exports = {
         md: ['1.125rem', '1.5rem'], // 18px 24px
         'md-new': ['1.125rem', '1.25rem'], // 18px 20px
         base: ['1rem', '1.5rem'], // 16px 24px
+        'base-sm': ['0.9375rem', '1.25rem'], // 15px 20px
         sm: ['0.875rem', '1.375rem'], // 14px 22px
 
         '2xs': ['0.625rem', '0.625rem'], // 10px 10px

@@ -1,4 +1,4 @@
-import type { JSXBlock } from '../../components/ContentPage/ContentPage';
+import type { JSXBlock } from '../ContentPage/ContentPage';
 import type { CalculatorBlockDef } from './CalculatorContent';
 import { EmbeddableCalcBlocks, EmbeddableCalcProps } from './EmbeddableCalcBlocks';
 

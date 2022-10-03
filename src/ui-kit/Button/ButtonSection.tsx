@@ -22,7 +22,7 @@ export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '',
 
 function renderButton({ icon, iconRight, ...button }: ButtonWithIconProps, i: number) {
   if (!button?.text) {
-    return;
+    return null;
   }
 
   return icon ? (

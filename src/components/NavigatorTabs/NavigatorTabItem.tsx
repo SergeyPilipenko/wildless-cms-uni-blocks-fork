@@ -18,13 +18,13 @@ export const NavigatorTabItem = JSX<NavigatorTabItemProps>(
   ),
 );
 
-const getLinkClasses = (className: string, active?: boolean) => {
+const getLinkClasses = (className: string, active = false) => {
   const classes = active ? 'bg-primary-main' : 'group bg-white';
 
   return `${classes} ${LINK_CLASSES} ${className}`;
 };
 
-const getTextClasses = (active?: boolean) => {
+const getTextClasses = (active = false) => {
   const classes = active ? 'text-white' : 'text-secondary-text group-hover:text-primary-main ';
 
   return `${classes} ${TEXT_CLASSES}`;

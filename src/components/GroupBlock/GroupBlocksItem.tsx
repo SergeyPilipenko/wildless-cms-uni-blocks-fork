@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { JSXBlock } from '../../components/ContentPage/ContentPage';
-import type { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
+import type { JSXBlock } from '../ContentPage/ContentPage';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { UniBlockProps } from '../../types';
 import { style2className } from '../../utils/style2className';
 import type { GroupBlockDef } from './BlocksTypeProps';

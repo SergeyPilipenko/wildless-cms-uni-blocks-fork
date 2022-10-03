@@ -81,14 +81,10 @@ const renderStepTitle =
             className={`flex flex-col justify-center h-fit ${STEPS_TILE_DESCRIPTION_HEIGHT_MAP[size]}`}
           >
             {step.label ? (
-              <div className="font-medium text-m-title-xs m-0 text-left">{step.label}</div>
+              <div className="font-medium text-m-title-xs m-0 text-left mb-1">{step.label}</div>
             ) : null}
             {step.description ? (
-              <div
-                className={`font-normal text-sm ${styleMap.description} text-left ${
-                  step.label ? 'mt-1' : ''
-                }`}
-              >
+              <div className={`font-normal text-sm ${styleMap.description} text-left`}>
                 {step.description}
               </div>
             ) : null}

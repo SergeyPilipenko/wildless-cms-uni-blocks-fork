@@ -19,7 +19,7 @@ export const Heading = JSX<HeadingProps>((props) => {
   const { className, headingType, title, as } = props;
 
   if (!headingType) {
-    return;
+    return null;
   }
 
   const Tag = as || headingType;

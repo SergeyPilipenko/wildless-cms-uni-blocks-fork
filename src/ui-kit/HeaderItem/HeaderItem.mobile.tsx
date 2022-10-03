@@ -8,12 +8,10 @@ const TEXT_CLASSES = 'font-sans font-normal text-sm';
 const BORDER_CLASSES = 'absolute left-0 -bottom-3 w-full h-[2px]';
 
 export const HeaderItem = JSX<HeaderItemProps>(
-  ({ className, text, href, target, active, onClick, children, bgColor = 'bg-white' }) => {
+  ({ className = '', text, href, target, active, onClick, children, bgColor = 'bg-white' }) => {
     return (
       <a
-        className={`relative inline-block bg-transparent text-center no-underline ${
-          className || ''
-        }`}
+        className={`relative inline-block bg-transparent text-center no-underline ${className}`}
         href={href}
         target={target}
         onClick={onClick}
@@ -25,7 +23,7 @@ export const HeaderItem = JSX<HeaderItemProps>(
   },
 );
 
-const getTextClasses = (bgColor: BgColorVersion, active?: boolean) => {
+const getTextClasses = (bgColor: BgColorVersion, active = false) => {
   let classes = 'text-white';
   if (bgColor === 'bg-white') {
     classes = active ? 'text-primary-main' : 'text-secondary-text hover:text-primary-main';
@@ -34,7 +32,7 @@ const getTextClasses = (bgColor: BgColorVersion, active?: boolean) => {
   return `${classes} ${TEXT_CLASSES}`;
 };
 
-const getBorderClasses = (bgColor: BgColorVersion, active?: boolean) => {
+const getBorderClasses = (bgColor: BgColorVersion, active = false) => {
   if (!active) {
     return BORDER_CLASSES;
   }

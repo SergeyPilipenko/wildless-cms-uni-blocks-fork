@@ -25,6 +25,8 @@ export const StepsBlock = JSX<StepsBlockProps>(
   }) => {
     const styleMap = getStyleMap(version);
     const shortGaps = steps.length > 3;
+    const stepGap = shortGaps ? 'gap-x-3' : 'gap-x-[101px]';
+    const lineOpacity = showLines ? '' : 'opacity-0';
 
     return (
       <BlockWrapper
@@ -38,17 +40,17 @@ export const StepsBlock = JSX<StepsBlockProps>(
         ].join(' ')}
         {...rest}
       >
-        <Heading headingType="h2" className="max-w-[47rem] text-center" title={title} />
+        {title ? (
+          <Heading headingType="h2" className="max-w-[47rem] text-center mb-9" title={title} />
+        ) : null}
         {steps?.length ? (
-          <div className={`box-border ${title ? 'mt-9' : ''}`}>
+          <div className="box-border">
             <div className="flex items-center px-[88px]">
-              {joinList(
-                <div
-                  className={`h-0.5 w-full bg-secondary-light ${!showLines ? 'opacity-0' : ''}`}
-                />,
-              )(steps.map(renderStepIcon(styleMap)))}
+              {joinList(<div className={`h-0.5 w-full bg-secondary-light ${lineOpacity}`} />)(
+                steps.map(renderStepIcon(styleMap)),
+              )}
             </div>
-            <div className={`flex justify-between ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
+            <div className={`flex justify-between ${stepGap}`}>
               {steps.map(renderStepTitle(styleMap, Boolean(button?.text)))}
             </div>
           </div>

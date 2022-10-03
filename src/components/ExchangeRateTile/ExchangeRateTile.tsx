@@ -1,10 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useExchangeRates } from '../../hooks/useExchangeRates';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTile } from '../BaseTile/BaseTile';
-import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { Currency } from './CurrencyProps';
 import { CurrencyTable } from './CurrencyTable';
 import { CurrentLocation } from './CurrentLocation';
@@ -36,16 +35,10 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
       >
         <BaseTile
           context={context}
-          title={
-            <Heading
-              headingType={getTileHeadingType(className)}
-              title={title}
-              className="whitespace-pre-wrap text-h4"
-            />
-          }
+          title={<Heading headingType="h4" title={title} className="whitespace-pre-wrap text-h4" />}
         >
           <div className="flex">
-            <div className="mr-11 pt-5">
+            <div className="mr-14 pt-4">
               {currencyRates ? (
                 <CurrencyTable className="mb-[30px]" exchangeCurrencyItems={currencyRates} />
               ) : null}

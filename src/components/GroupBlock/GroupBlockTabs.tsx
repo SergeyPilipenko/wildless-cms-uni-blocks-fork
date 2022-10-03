@@ -12,11 +12,11 @@ export interface GroupBlockTabsProps {
 }
 
 export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
-  const { tabs, currentTag, onTabClick, className = '', isShowCounter } = props;
+  const { tabs, currentTag, onTabClick, className = '', isShowCounter = false } = props;
 
   return (
     <div className={`mb-2 box-border flex gap-x-1 ${className}`} role="tablist">
-      {tabs?.map(renderTab(onTabClick, isShowCounter, currentTag))}
+      {tabs?.map(renderTab(onTabClick, currentTag, isShowCounter))}
     </div>
   );
 });
@@ -24,12 +24,12 @@ export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
 const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-m-sm';
 
 const renderTab =
-  (onTabClick: TabClickHandler, isShowCounter?: boolean, currentTag?: string) =>
+  (onTabClick: TabClickHandler, currentTag?: string, isShowCounter = false) =>
   (tab: TabsItemProps, i: number) => {
     const isActive = currentTag === tab.tag;
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
     const tabText = isActive ? 'text-white' : 'text-secondary-text group-hover:text-primary-main';
-    const counterBlockStyle = `${badgeStyle} 
+    const counterBlockStyle = `${badgeStyle}
       ${isActive ? 'bg-white/30 text-white' : 'bg-secondary-light text-secondary-text'}`;
 
     return (
