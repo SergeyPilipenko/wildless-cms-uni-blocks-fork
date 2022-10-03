@@ -41,8 +41,8 @@ const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
           <span className="ml-2">{code}</span>
         </div>
       </td>
-      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem.buy)}</td>
-      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem.sell)}</td>
+      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem?.sell)}</td>
+      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem?.buy)}</td>
     </tr>
   );
 };

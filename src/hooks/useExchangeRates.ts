@@ -72,19 +72,16 @@ interface FormatRatesData {
 const getCurrencyListByRate = (currencyRates: RatesData[]) =>
   currencyRates.reduce((result: FormatRatesData[], _) => {
     const currencyInfo = _['currency_first'];
-    if (!validateRate(_['rate_buy']) && !validateRate(_['rate_sell'])) {
-      return result;
-    }
-    const currencyCode = currencyInfo.code;
+    const currencyCode = currencyInfo?.code;
     if (!result.some((i) => i.code === currencyCode)) {
       result.push({
         code: currencyCode,
-        buy: Number(_.rate_buy),
-        sell: Number(_.rate_sell),
+        buy: roundRate(Number(_.rate_buy)),
+        sell: roundRate(Number(_.rate_sell)),
       });
     }
 
     return result;
   }, []);
 
-const validateRate = (value) => Math.round(value) > 0;
+const roundRate = (value) => Math.round(value * 1000) / 1000;
