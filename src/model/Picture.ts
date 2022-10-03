@@ -14,9 +14,9 @@ export interface Img {
 
 /**
  * @title Брейкпоинт
- * @enumNames ["1919px и меньше", "1439px и меньше", "1279px и меньше"]
+ * @enumNames ["Меньше 1920px", "Меньше 1440px", "Меньше 1280px"]
  */
-export type MediaQuery = '(max-width: 1919px)' | '(max-width: 1439px)' | '(max-width: 1279px)';
+export type MediaQuery = 1919 | 1439 | 1279;
 
 export interface ImgSource {
   /** @title Иконка */

@@ -1998,17 +1998,17 @@ Object {
     },
     "MediaQuery": Object {
       "enum": Array [
-        "(max-width: 1919px)",
-        "(max-width: 1439px)",
-        "(max-width: 1279px)",
+        1919,
+        1439,
+        1279,
       ],
       "enumNames": Array [
-        "1919px и меньше",
-        "1439px и меньше",
-        "1279px и меньше",
+        "Меньше 1920px",
+        "Меньше 1440px",
+        "Меньше 1280px",
       ],
       "title": "Брейкпоинт",
-      "type": "string",
+      "type": "number",
     },
     "MiniGalleryBlockListDef": Object {
       "properties": Object {

@@ -2,6 +2,14 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { ImgSource, Picture } from '../../model/Picture';
 import type { ImageProps } from './ImgProps';
 
+const sourcesComparator = (a: Picture, b: Picture) => {
+  if (a.media && b.media) {
+    return a.media - b.media;
+  }
+
+  return 0;
+};
+
 export const ImgAsPicture = JSX<ImageProps<Picture>>(
   ({ className = '', image, imageClassName = '', isMobile = false }) => {
     if (!image) {
@@ -13,15 +21,17 @@ export const ImgAsPicture = JSX<ImageProps<Picture>>(
     return (
       <picture className={`${pictureStyles} ${className}`}>
         {image?.sources?.length
-          ? image.sources.map(({ src, format, media, size }, index) => (
-              <source
-                key={`${index}_${src}`}
-                srcSet={src}
-                type={formatToMimeType(format)}
-                media={media}
-                {...size}
-              />
-            ))
+          ? image.sources
+              .sort(sourcesComparator)
+              .map(({ src, format, media, size }, index) => (
+                <source
+                  key={`${index}_${src}`}
+                  srcSet={src}
+                  type={formatToMimeType(format)}
+                  media={media ? `(max-width: ${media}px)` : ''}
+                  {...size}
+                />
+              ))
           : null}
         {renderImg(image, imageClassName, isMobile)}
       </picture>
