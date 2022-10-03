@@ -2,6 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { FuncReturnVoid, UniBlockProps } from '../../types';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
+import { Button } from '../../ui-kit/Button/Button';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
 import type { CardItem, InsuranceAmountBlockTabs } from './InsuranceAmountBlockContent';
 
@@ -36,9 +37,10 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
     const showNextButton = isGalleryScrollAvailable && galleryLength > tabsShift + 2;
     const isLastShift = galleryLength === tabsShift + 2;
     const showPrevButton = tabsShift > 0;
+    const activeHref = cards[activeSlideIndex]?.href;
 
     return (
-      <section className={`min-w-full ${className}`}>
+      <section className={`min-w-full text-center ${className}`}>
         <div className="relative mt-7 overflow-hidden">
           {galleryLength
             ? renderGallery({
@@ -62,6 +64,9 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
             <div className="absolute top-0 right-0 h-full w-[136px] bg-opacity-to-white" />
           ) : null}
         </div>
+        <Button className="w-[240px] p-4 text-center" version="primary" href={activeHref}>
+          Выбрать программу
+        </Button>
       </section>
     );
   },
@@ -111,10 +116,10 @@ function renderSlide({ slide, i, activeSlideIndex, onClick }: InsuranceSlideProp
     >
       {slide?.icon ? (
         <Img
-          className={`h-[108px] w-[108px] p-3 rounded-full bg-secondary-light mr-[30px]`}
+          className="p-3 rounded-full bg-secondary-light mr-[30px]"
           image={slide.icon}
-          width="24"
-          height="24"
+          width="70"
+          height="70"
         />
       ) : null}
 
@@ -129,9 +134,9 @@ function renderSlide({ slide, i, activeSlideIndex, onClick }: InsuranceSlideProp
 
 function renderValueBlock(title, sum) {
   return (
-    <div className="flex flex-col text-left">
-      <span className="whitespace-pre text-title-2xs">{addSpacesBetweenNumbers(sum)} ₽</span>
-      <span className="whitespace-pre text-secondary-text font-light text-base mt-1">{title}</span>
+    <div className="flex flex-col text-left whitespace-pre">
+      <span className="text-h6">{addSpacesBetweenNumbers(sum)} ₽</span>
+      <span className="text-secondary-text text-l mt-1">{title}</span>
     </div>
   );
 }

@@ -1,9 +1,5 @@
 {
   "title": "Заголовок",
-  "button": {
-    "href": "https://rshb.ru",
-    "text": "Текст кнопки"
-  },
   "insuranceTabs": [
     {
       "title": "Описание 1",
@@ -11,12 +7,28 @@
         {
           "sum": 200000,
           "fee": 2100,
-          "icon": { "icon": "ActualBalanceIcon" }
+          "icon": {
+            "format": "webp",
+            "size": {
+              "width": 70,
+              "height": 70
+            },
+            "icon": "ActualBalanceIcon"
+          },
+          "href": ""
         },
         {
           "sum": 200000,
           "fee": 2100,
-          "icon": { "icon": "ActualBalanceIcon" }
+          "icon": {
+            "format": "webp",
+            "size": {
+              "width": 70,
+              "height": 70
+            },
+            "icon": "ActualBalanceIcon"
+          },
+          "href": ""
         }
       ]
     },
@@ -26,17 +38,41 @@
         {
           "sum": 200000,
           "fee": 2100,
-          "icon": { "icon": "ActualBalanceIcon" }
+          "icon": {
+            "format": "webp",
+            "size": {
+              "width": 70,
+              "height": 70
+            },
+            "icon": "ActualBalanceIcon"
+          },
+          "href": ""
         },
         {
           "sum": 200000,
           "fee": 2100,
-          "icon": { "icon": "ActualBalanceIcon" }
+          "icon": {
+            "format": "webp",
+            "size": {
+              "width": 70,
+              "height": 70
+            },
+            "icon": "ActualBalanceIcon"
+          },
+          "href": ""
         },
         {
           "sum": 200000,
           "fee": 2100,
-          "icon": { "icon": "ActualBalanceIcon" }
+          "icon": {
+            "format": "webp",
+            "size": {
+              "width": 70,
+              "height": 70
+            },
+            "icon": "ActualBalanceIcon"
+          },
+          "href": ""
         }
       ]
     }

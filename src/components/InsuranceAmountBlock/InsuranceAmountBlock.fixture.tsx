@@ -8,7 +8,6 @@ export default {
         className="col-span-12"
         context={context}
         title="Выбор страховой суммы"
-        button={{ href: 'https://rshb.ru', text: 'Выбрать программу' }}
         insuranceTabs={[
           {
             title: 'Индивидуальный',
@@ -16,17 +15,22 @@ export default {
               {
                 sum: 200000,
                 fee: 2100,
-                icon: { icon: 'ActualBalanceIcon' },
+                icon: {
+                  icon: 'ActualBalanceIcon',
+                },
+                href: '',
               },
               {
                 sum: 200000,
                 fee: 2100,
                 icon: { icon: 'ActualBalanceIcon' },
+                href: '',
               },
               {
                 sum: 200000,
                 fee: 2100,
                 icon: { icon: 'ActualBalanceIcon' },
+                href: ']',
               },
             ],
           },
@@ -37,6 +41,7 @@ export default {
                 sum: 400000,
                 fee: 3600,
                 icon: { icon: 'ActualBalanceIcon' },
+                href: '',
               },
             ],
           },

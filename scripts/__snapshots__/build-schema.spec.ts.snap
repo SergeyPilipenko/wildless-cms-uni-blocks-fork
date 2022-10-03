@@ -568,6 +568,10 @@ Object {
           "title": "Страховой взнос",
           "type": "number",
         },
+        "href": Object {
+          "title": "Ссылка на программу",
+          "type": "string",
+        },
         "icon": Object {
           "$ref": "#/definitions/Picture",
           "title": "Иконка",
@@ -1654,9 +1658,6 @@ Object {
     },
     "InsuranceAmountBlockContent": Object {
       "properties": Object {
-        "button": Object {
-          "$ref": "#/definitions/ButtonProps",
-        },
         "insuranceTabs": Object {
           "items": Object {
             "$ref": "#/definitions/InsuranceAmountBlockTabs",
