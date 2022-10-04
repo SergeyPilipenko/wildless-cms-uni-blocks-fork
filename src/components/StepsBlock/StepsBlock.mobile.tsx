@@ -41,7 +41,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
           <Heading headingType="h3" className={`text-center ${styleMap.title}`} title={title} />
         ) : null}
         {description ? (
-          <p className={`text-m-md text-center ${styleMap.description} ${title ? 'mt-2' : ''}`}>
+          <p className={`text-m text-center ${styleMap.description} ${title ? 'mt-2' : ''}`}>
             {description}
           </p>
         ) : null}
@@ -84,9 +84,7 @@ const renderStepTitle =
               <div className="font-medium text-m-title-xs m-0 text-left mb-1">{step.label}</div>
             ) : null}
             {step.description ? (
-              <div className={`font-normal text-sm ${styleMap.description} text-left`}>
-                {step.description}
-              </div>
+              <div className={`text-s ${styleMap.description} text-left`}>{step.description}</div>
             ) : null}
           </div>
         </div>
