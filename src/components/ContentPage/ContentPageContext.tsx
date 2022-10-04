@@ -1,4 +1,5 @@
 import { VNode } from '../../model/VNode';
+import { EventBus } from '../../react/EventBus/EventBus';
 
 export interface Router {
   pathname: string;
@@ -55,4 +56,5 @@ export interface ContentPageContext {
   useSearch: () => Search;
   handlerDecorator?: HandlerDecorator;
   IntersectionObserverTag: IntersectionObserverComponent;
+  eventBus: EventBus;
 }
