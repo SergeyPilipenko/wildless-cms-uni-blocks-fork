@@ -16,7 +16,7 @@ const emptyFn = () => {
   /* For sure */
 };
 
-export const context: ContentPageContext = {
+const context: ContentPageContext = {
   useState,
   useRouter: () => ({
     pathname: '/credits',
