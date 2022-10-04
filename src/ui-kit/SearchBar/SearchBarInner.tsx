@@ -16,7 +16,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
     const SearchBarInputClassName = isMobile
       ? ' placeholder-transparent font-normal'
       : 'font-light h-full';
-    const inputPlaceholder = isMobile ? 'some search' : null;
+    const inputPlaceholder = isMobile ? 'some search' : undefined;
 
     return (
       <form className={`font-sans relative ${className}`}>
@@ -58,8 +58,8 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
             version="primary"
             text="Найти"
             className="invisible peer-focus:visible absolute top-1 right-1"
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={(ev) => {
+              ev?.preventDefault();
               console.log('click');
             }}
           >

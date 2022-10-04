@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -67,7 +67,7 @@ export const Tile = JSX<TileProps>((props) => {
             />
           ) : null
         }
-        image={image?.src && <Img className="mt-auto ml-7" image={image} />}
+        image={image?.src ? <Img className="mt-auto ml-7" image={image} /> : null}
       >
         {description ? (
           <Description className="max-w-[600px] text-xl-light mt-2" description={description} />

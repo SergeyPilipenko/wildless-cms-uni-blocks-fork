@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { ComparisonTableBody } from './ComparisonTableBody';
 import type { ComparisonTableContent } from './ComparisonTableContent';
@@ -10,7 +10,7 @@ export interface ComparisonTableProps extends ComparisonTableContent, UniBlockPr
 
 export const ComparisonTable = JSX<ComparisonTableProps>(
   ({
-    className,
+    className = '',
     context,
     title,
     rowHeaders,
@@ -25,9 +25,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative ${
-          className || ''
-        }`}
+        className={`bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative ${className}`}
         {...rest}
       >
         <Heading
@@ -56,7 +54,7 @@ const renderShowMoreToggleButton = ({
   onClick,
 }: {
   isShowAllRow: boolean;
-  onClick?: (ev?: MouseEvent) => void;
+  onClick: () => void;
 }) => {
   return (
     <div className="pr-[50px]">

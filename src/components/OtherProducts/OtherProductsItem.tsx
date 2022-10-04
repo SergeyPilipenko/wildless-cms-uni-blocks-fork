@@ -27,7 +27,7 @@ export const OtherProductsItem = JSX<BlockItemProps>(
             context={context}
             foldButtonLabel={label}
             containerClasses="grid grid-cols-12 gap-1 border-box"
-            render={(children, isActive) => <Wrapper isActive={isActive}>{children}</Wrapper>}
+            render={(children) => <Wrapper>{children}</Wrapper>}
           />
         ) : null}
       </div>
@@ -35,6 +35,6 @@ export const OtherProductsItem = JSX<BlockItemProps>(
   },
 );
 
-const Wrapper = JSX<{ isActive: boolean }>(({ children }) => {
+const Wrapper = JSX(({ children }) => {
   return <div className="box-border">{children}</div>;
 });

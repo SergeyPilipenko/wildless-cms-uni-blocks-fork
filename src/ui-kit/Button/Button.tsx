@@ -44,7 +44,7 @@ export const Button = JSX<ButtonCommonProps>((props) => {
   );
 });
 
-export const RegularButton = JSX<ButtonCommonProps>(
+const RegularButton = JSX<ButtonCommonProps>(
   ({
     className = '',
     ariaLabel,
@@ -81,7 +81,7 @@ const DisabledButton = JSX<ButtonCommonProps>(
         role="button"
         aria-disabled="true"
         aria-label={ariaLabel}
-        tabIndex="-1"
+        tabIndex={-1}
         className={`inline-block ${buttonStyle} ${buttonDisabledStyleMap[version] || ''} ${
           rounded ? 'rounded-full' : 'rounded-md'
         } ${className || ''}`}

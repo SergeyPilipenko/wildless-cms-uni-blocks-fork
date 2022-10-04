@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 
 export interface LikeButtonProps {
   className?: string;
-  onClick?: (ev: MouseEvent) => any;
+  onClick?: () => void;
   ariaLabel?: string;
 }
 

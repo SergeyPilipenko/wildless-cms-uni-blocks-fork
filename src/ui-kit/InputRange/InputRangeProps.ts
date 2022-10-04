@@ -1,5 +1,3 @@
-import type { FuncReturnVoid } from '../../types';
-
 export interface InputRangeProps {
   className?: string;
   items?: string[];
@@ -8,5 +6,5 @@ export interface InputRangeProps {
   step?: number;
   value?: number;
   title?: string;
-  onChange?: FuncReturnVoid<number>;
+  onChange?: (value: number) => void;
 }

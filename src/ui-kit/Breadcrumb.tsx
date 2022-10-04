@@ -3,7 +3,7 @@ import type { LinkProps } from '../model/LinkProps';
 
 export interface BreadcrumbProps extends LinkProps {
   className?: string;
-  onClick?: (ev: MouseEvent) => any;
+  onClick?: () => void;
 }
 
 export const Breadcrumb = JSX<BreadcrumbProps>(

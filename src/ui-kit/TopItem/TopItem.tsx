@@ -10,7 +10,7 @@ export interface TopItemProps extends TopItemContent {
   className?: string;
   flat?: boolean;
   ariaLabel?: string;
-  onClick?: (ev: MouseEvent) => any;
+  onClick?: () => void;
   bgColor?: BgColorVersion;
   dataItemName?: string;
 }

@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { ALIGN_TEXT, HEADLINE_BLOCK_STYLE_MAPS } from './constants';
 import type { HeadlineContent } from './HeadlineContent';

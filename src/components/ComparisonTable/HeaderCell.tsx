@@ -18,7 +18,6 @@ export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) =>
   <div
     className={`w-80 box-border flex flex-col items-center rounded-t-md border-b-0 px-7 pt-7 pb-[46px] ${BORDER_CLASSES} ${GRADIENT}`}
     role="columnheader"
-    scope="col"
   >
     {icon && !image?.src && (
       <Img

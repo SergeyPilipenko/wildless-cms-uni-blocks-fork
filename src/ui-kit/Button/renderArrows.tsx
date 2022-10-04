@@ -1,8 +1,7 @@
 import { ArrowButton } from './ArrowButton';
-import type { FuncReturnVoid } from '../../types';
 
-type renderArrowsProps = {
-  handler: FuncReturnVoid<MouseEvent>[];
+export type renderArrowsProps = {
+  handler: [() => void, () => void];
   isShown: [boolean, boolean];
   btnClass: [string, string];
   className?: string;

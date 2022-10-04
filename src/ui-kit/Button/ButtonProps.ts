@@ -10,7 +10,7 @@ export interface ButtonAdditionalProps {
   disabled?: boolean;
   rel?: string;
   ariaLabel?: string;
-  onClick?: (ev: MouseEvent) => any;
+  onClick?: (ev?: { preventDefault: () => void }) => void;
 }
 
 /**

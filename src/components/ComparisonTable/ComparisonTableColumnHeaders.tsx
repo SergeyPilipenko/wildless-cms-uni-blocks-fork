@@ -1,11 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { TableRowContainer } from './TableRowContainer';
-import { COLUMN_WIDTH, FIRST_CELL_CLASSES } from './constants';
-import { TableCarouselContainer } from './TableCarouselContainer';
-import { HeaderCell } from './HeaderCell';
 import { useLink } from '../../hooks/useLink';
-import type { ColumnHeader } from './ComparisonTableContent';
 import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
+import type { ColumnHeader } from './ComparisonTableContent';
+import { COLUMN_WIDTH, FIRST_CELL_CLASSES } from './constants';
+import { HeaderCell } from './HeaderCell';
+import { TableCarouselContainer } from './TableCarouselContainer';
+import { TableRowContainer } from './TableRowContainer';
 
 interface ComparisonTableColumnHeadersProps {
   colHeaders: ColumnHeader[];
@@ -18,7 +18,7 @@ export const ComparisonTableColumnHeaders = JSX<ComparisonTableColumnHeadersProp
   ({ colHeaders, activeCardIndex, router, handlerDecorator }) => {
     return (
       <TableRowContainer>
-        <div className={FIRST_CELL_CLASSES} role="columnheader" scope="col" />
+        <div className={FIRST_CELL_CLASSES} role="columnheader" />
         <TableCarouselContainer activeCardIndex={activeCardIndex} columnWidth={COLUMN_WIDTH}>
           {colHeaders.map((header, i) => (
             <HeaderCell

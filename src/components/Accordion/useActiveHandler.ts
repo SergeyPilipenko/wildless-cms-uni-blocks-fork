@@ -6,17 +6,17 @@ export const useActiveHandler = ({ context, blocks, initialState = false }: Acti
   const hasContent = blocks?.length;
   const icon: IconName = isActive ? 'MinusIcon' : 'PlusIcon';
 
-  const getContentBlock = ({ currentTarget }) => currentTarget.nextSibling;
+  const handleToggle = (e) => {
+    const currentTarget = e.currentTarget as HTMLElement;
 
-  const handleToggle = (e: MouseEvent) => {
-    if (!hasContent) {
+    if (!currentTarget) {
       return;
     }
 
     setIsActive(!isActive);
-    const contentBlock = getContentBlock(e);
+    const contentBlock = currentTarget.nextSibling as HTMLElement;
     contentBlock.style.maxHeight = contentBlock.style.maxHeight
-      ? null
+      ? ''
       : `${contentBlock.scrollHeight}px`;
   };
 

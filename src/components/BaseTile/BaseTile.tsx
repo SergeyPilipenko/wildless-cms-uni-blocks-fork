@@ -5,7 +5,7 @@ import type { BaseTileCommonProps } from './BaseTileProps';
 export interface BaseTileProps extends BaseTileCommonProps, UniBlockProps {}
 
 export const BaseTile = JSX<BaseTileProps>(
-  ({ className = '', title, children, buttons, image }) => {
+  ({ className = '', title = '', children, buttons, image }) => {
     return (
       <div className={`font-sans flex flex-col grow h-full items-start ${className}`}>
         {title}

@@ -1,5 +1,4 @@
 import { VNode } from '../../model/VNode';
-import type { FuncReturnVoid } from '../../types';
 
 export interface Router {
   pathname: string;
@@ -34,7 +33,7 @@ export type SetStateAction<S> = S | ((prevState: S) => S);
 
 export type SetStateHook = <State>(
   initialState: State | (() => State),
-) => [State, FuncReturnVoid<SetStateAction<State>>];
+) => [State, (action: SetStateAction<State>) => void];
 
 export interface IntersectionObserverTagProps {
   Tag: string;

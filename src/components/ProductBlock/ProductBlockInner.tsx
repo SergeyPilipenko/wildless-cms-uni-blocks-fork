@@ -1,11 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import type { HeadingType } from '../../ui-kit/Heading/HeadingContent';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { ProductBlockInnerContent } from './ProductBlockContent';
 import { renderBenefit } from './renderBenefit';
 
@@ -67,7 +70,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-const getTitle = (title, headingType) => {
+const getTitle = (title?: string, headingType?: HeadingType) => {
   return title ? (
     <Heading
       headingType={headingType}
@@ -77,8 +80,8 @@ const getTitle = (title, headingType) => {
   ) : null;
 };
 
-const getButtons = (context, buttons) => {
-  return buttons?.length ? (
+const getButtons = (context: ContentPageContext, buttons?: ButtonWithIconProps[]) => {
+  return buttons && buttons?.length ? (
     <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-4" />
   ) : null;
 };

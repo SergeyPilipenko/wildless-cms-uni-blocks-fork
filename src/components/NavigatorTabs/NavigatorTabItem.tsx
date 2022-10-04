@@ -4,7 +4,7 @@ import type { LinkProps } from '../../model/LinkProps';
 export interface NavigatorTabItemProps extends LinkProps {
   active?: boolean;
   className?: string;
-  onClick?: (ev: MouseEvent) => void;
+  onClick?: () => void;
 }
 
 const TEXT_CLASSES = 'font-sans font-normal text-m-md';

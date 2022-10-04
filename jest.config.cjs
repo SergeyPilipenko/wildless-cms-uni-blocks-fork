@@ -7,5 +7,6 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   coverageReporters: ['json', 'lcov'],
+  testEnvironment: 'jsdom',
   roots: ['<rootDir>/src/', '<rootDir>/scripts/'],
 };

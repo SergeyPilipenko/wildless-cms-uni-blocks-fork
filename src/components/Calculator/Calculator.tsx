@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { FuncReturnVoid, UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
@@ -12,14 +12,14 @@ type TabsProps = {
   tabsShift: number;
   tabsNav: CalculatorNav[];
   activeSlideIndex: number;
-  setActiveSlideIndex: FuncReturnVoid<number>;
+  setActiveSlideIndex: (index: number) => void;
 };
 
 type NavButtonProps = {
   tab: CalculatorNav;
   i: number;
   activeSlideIndex: number;
-  onClick: FuncReturnVoid<MouseEvent>;
+  onClick: () => void;
 };
 
 export const Calculator = JSX<CalculatorProps>(

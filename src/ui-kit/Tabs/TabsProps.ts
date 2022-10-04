@@ -1,5 +1,4 @@
 import type { Picture } from '../../model/Picture';
-import { FuncReturnVoid } from '../../types';
 
 /**
  * @title Вкладка
@@ -12,7 +11,7 @@ export interface Tab {
   icon?: Picture;
 }
 
-export type TabClickHandler = FuncReturnVoid<number>;
+export type TabClickHandler = (tabIndex: number) => void;
 
 export interface TabsProps {
   tabs?: Tab[];

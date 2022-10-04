@@ -72,5 +72,3 @@ export interface DaDataSuggestion<T> {
 export interface DaDataAddress {
   city?: string | null;
 }
-
-export type FuncReturnVoid<Input = unknown> = (value: Input) => void;

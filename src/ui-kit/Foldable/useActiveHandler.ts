@@ -12,7 +12,7 @@ export const useActiveHandler = ({ context, initialState = false }: ActiveHandle
   const [isActive, setIsActive] = context.useState(initialState);
   const icon: IconName = isActive ? 'ArrowUpIcon' : 'ArrowDownIcon';
 
-  const handleToggle = (e: MouseEvent) => {
+  const handleToggle = (e) => {
     const currentTarget = e.currentTarget as HTMLElement;
 
     if (!currentTarget) {

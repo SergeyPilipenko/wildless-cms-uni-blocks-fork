@@ -18,11 +18,11 @@ export function useLink(
     ...link,
     href,
     'aria-label': link.text,
-    onClick: handlerDecorator((ev: MouseEvent) => {
+    onClick: handlerDecorator((ev?: { preventDefault: () => void }) => {
       const isLocalHref = href && !isURL(href);
       const isLocalTarget = !link.target || link.target === '_self';
       if (isLocalHref && isLocalTarget) {
-        ev.preventDefault();
+        ev?.preventDefault();
         router.push(href);
       }
     }, link),

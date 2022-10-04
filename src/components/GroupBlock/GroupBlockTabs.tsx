@@ -1,22 +1,20 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { TabsItemProps } from './GroupBlock';
 
-export type TabClickHandler = (tag) => void;
-
 export interface GroupBlockTabsProps {
-  onTabClick: TabClickHandler;
-  currentTag?: string;
   className?: string;
+  currentTag?: string;
   tabs?: TabsItemProps[];
   isShowCounter?: boolean;
+  onTabClick: (tag?: string) => void;
 }
 
 export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
-  const { tabs, currentTag, onTabClick, className = '', isShowCounter = false } = props;
+  const { className = '', tabs, currentTag, isShowCounter = false, onTabClick } = props;
 
   return (
     <div className={`mb-2 box-border flex gap-x-1 ${className}`} role="tablist">
-      {tabs?.map(renderTab(onTabClick, currentTag, isShowCounter))}
+      {tabs?.map(renderTab({ currentTag, isShowCounter, onTabClick }))}
     </div>
   );
 });
@@ -24,7 +22,7 @@ export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
 const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-m-sm';
 
 const renderTab =
-  (onTabClick: TabClickHandler, currentTag?: string, isShowCounter = false) =>
+  ({ currentTag, isShowCounter, onTabClick }: GroupBlockTabsProps) =>
   (tab: TabsItemProps, i: number) => {
     const isActive = currentTag === tab.tag;
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
@@ -35,11 +33,10 @@ const renderTab =
     return (
       <div
         key={String(i)}
-        className={`flex h-full w-full h-12 flex-1 cursor-pointer mr-2 last:mr-0 box-content ${tabBg}`}
+        className={`flex w-full h-12 flex-1 cursor-pointer mr-2 last:mr-0 box-content ${tabBg}`}
         role="tab"
         onClick={() => onTabClick(tab.tag)}
-        aria-selected={String(isActive)}
-        tag={tab?.tag}
+        aria-selected={isActive}
       >
         <div className="flex flex-1 items-center justify-center">
           {tab?.title ? <h3 className={tabText}>{tab?.title}</h3> : null}

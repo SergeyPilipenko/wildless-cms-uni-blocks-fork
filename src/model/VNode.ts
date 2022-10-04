@@ -1,1 +1,1 @@
-export type VNode = unknown;
+export type VNode = any;

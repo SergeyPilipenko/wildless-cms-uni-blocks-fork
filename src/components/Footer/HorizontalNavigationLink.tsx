@@ -4,7 +4,7 @@ import type { LinkProps } from '../../model/LinkProps';
 interface HorizontalNavigationLinkProps extends LinkProps {
   className: string;
   index: number;
-  onClick: (ev: MouseEvent) => any;
+  onClick: () => void;
 }
 
 export const HorizontalNavigationLink = JSX<Partial<HorizontalNavigationLinkProps>>(

@@ -11,7 +11,7 @@ export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '',
   const { handlerDecorator } = context;
   const router = context.useRouter();
 
-  return buttons?.length ? (
+  return buttons && buttons?.length ? (
     <div className={className}>
       {buttons.map((button, index) =>
         renderButton(useLink({ router, handlerDecorator }, button), index),
