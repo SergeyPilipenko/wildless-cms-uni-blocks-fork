@@ -24,3 +24,5 @@ export const getHash = (href?: string) => {
 
   return hashIndex !== -1 ? href.substring(hashIndex, href.length) : undefined;
 };
+
+export const isHash = (href?: string) => href?.startsWith('#');

@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { filterBlocksByTag } from './filterBlocksByTag';
 import type { GroupBlockContent, GroupBlockTab } from './GroupBlockContent';
 import { GroupBlocksItem } from './GroupBlocksItem';
@@ -29,7 +29,7 @@ export const GroupBlock = JSX<GroupBlockProps>(
     });
 
     return (
-      <BlockWrapper context={context} className={`box-border gap-1 ${className}`} {...rest}>
+      <BlockWrapper context={context} className={`box-border ${className}`} {...rest}>
         {tabsNewMap?.length ? (
           <GroupBlockTabs
             currentTag={currentTag}
@@ -39,7 +39,9 @@ export const GroupBlock = JSX<GroupBlockProps>(
           />
         ) : null}
         {groupBlocks.length ? (
-          <GroupBlocksItem context={context} groupBlocks={filteredBlocks} />
+          <div className="mt-1">
+            <GroupBlocksItem context={context} groupBlocks={filteredBlocks} />
+          </div>
         ) : null}
       </BlockWrapper>
     );

@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { JSXBlock } from '../ContentPage/ContentPage';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { UniBlockProps } from '../../types';
 import { style2className } from '../../utils/style2className';
+import type { JSXBlock } from '../ContentPage/ContentPage';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { GroupBlockDef } from './BlocksTypeProps';
 import { EmbeddableGroupBlocks } from './EmbeddableGroupBlocks';
 import { GroupBlockContent } from './GroupBlockContent';
@@ -11,7 +11,7 @@ export interface GroupBlocksProps extends GroupBlockContent, UniBlockProps {}
 
 export const GroupBlocksItem = JSX<GroupBlocksProps>(({ groupBlocks, context }) => {
   return (
-    <div className="grid grid-cols-12 gap-2 box-border">
+    <div className="grid grid-cols-12 gap-1 box-border">
       {groupBlocks?.length ? groupBlocks.map(renderBlock(context)) : null}
     </div>
   );

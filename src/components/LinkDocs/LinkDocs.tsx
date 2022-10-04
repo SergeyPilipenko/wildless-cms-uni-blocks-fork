@@ -23,7 +23,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
     icon = { icon: 'DocIcon' },
     columnsMode = 'double',
     headlineVersion = 'M',
-     ...rest
+    ...rest
   }) => {
     return (
       <BlockWrapper

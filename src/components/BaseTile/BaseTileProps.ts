@@ -1,7 +1,7 @@
 import type { AlignType } from '../../model/AlignType';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { HeadingType } from '../../ui-kit/Heading/HeadingProps';
-import type { VNode } from "../../model/VNode";
+import type { VNode } from '../../model/VNode';
 
 export interface BaseTileCommonProps {
   title?: VNode;

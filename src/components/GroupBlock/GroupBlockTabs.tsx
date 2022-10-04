@@ -13,39 +13,43 @@ export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
   const { className = '', tabs, currentTag, isShowCounter = false, onTabClick } = props;
 
   return (
-    <div className={`mb-2 box-border flex gap-x-1 ${className}`} role="tablist">
+    <div className={`box-border flex gap-x-1 h-14 ${className}`} role="tablist">
       {tabs?.map(renderTab({ currentTag, isShowCounter, onTabClick }))}
     </div>
   );
 });
 
-const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-m-sm';
+const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-xs ml-2';
 
 const renderTab =
   ({ currentTag, isShowCounter, onTabClick }: GroupBlockTabsProps) =>
   (tab: TabsItemProps, i: number) => {
     const isActive = currentTag === tab.tag;
+
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
-    const tabText = isActive ? 'text-white' : 'text-secondary-text group-hover:text-primary-main';
+
+    const tabText = `text-m ${
+      isActive ? 'text-white' : 'text-secondary-text group-hover:text-primary-main'
+    }`;
     const counterBlockStyle = `${badgeStyle}
-      ${isActive ? 'bg-white/30 text-white' : 'bg-secondary-light text-secondary-text'}`;
+      ${
+        isActive
+          ? 'bg-white/30 text-white'
+          : 'bg-main-divider text-secondary-text group-hover:text-primary-main'
+      }`;
 
     return (
       <div
         key={String(i)}
-        className={`flex w-full h-12 flex-1 cursor-pointer mr-2 last:mr-0 box-content ${tabBg}`}
+        className={`flex-1 flex items-center justify-center cursor-pointer ${tabBg}`}
         role="tab"
         onClick={() => onTabClick(tab.tag)}
         aria-selected={isActive}
       >
-        <div className="flex flex-1 items-center justify-center">
-          {tab?.title ? <h3 className={tabText}>{tab?.title}</h3> : null}
-          {isShowCounter ? (
-            <div className={`flex items-center justify-center ml-8 text-s ${counterBlockStyle}`}>
-              <span>{tab.count}</span>
-            </div>
-          ) : null}
-        </div>
+        {tab?.title ? <div className={tabText}>{tab.title}</div> : null}
+        {isShowCounter ? (
+          <div className={`flex items-center justify-center ${counterBlockStyle}`}>{tab.count}</div>
+        ) : null}
       </div>
     );
   };
