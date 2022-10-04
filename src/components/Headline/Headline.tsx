@@ -3,8 +3,9 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import { ALIGN_TEXT, HEADLINE_BLOCK_STYLE_MAPS } from './constants';
+import { ALIGN_TEXT, HEADLINE_BLOCK_STYLE_MAPS, HEADLINE_VERSION } from './constants';
 import type { HeadlineContent } from './HeadlineContent';
+import { Description } from '../../ui-kit/Description/Description';
 
 export interface HeadlineProps extends UniBlockProps, HeadlineContent {}
 
@@ -15,25 +16,30 @@ export const Headline = JSX<HeadlineProps>(
     className = '',
     title,
     description,
-    headingType = 'h2',
+    headlineVersion = 'XL',
     ...rest
   }) => {
     const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
+    const SIZE_MAPS = HEADLINE_VERSION[headlineVersion];
 
     return (
       <BlockWrapper
-        className={`p-[50px] flex flex-col gap-4 ${STYLE_MAPS.background} ${className}`}
+        className={`font-sans flex flex-col p-[50px] ${SIZE_MAPS.gap} ${STYLE_MAPS.background} ${className}`}
         {...rest}
       >
         {title ? (
           <Heading
-            headingType={headingType}
-            className={`text-primary-text ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
+            headingType={SIZE_MAPS?.headingType}
+            as={SIZE_MAPS?.as}
+            className={`whitespace-pre-wrap ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
             title={title}
           />
         ) : null}
         {description ? (
-          <p className={`text-base ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}>{description}</p>
+          <Description
+            className={`${SIZE_MAPS.descriptionFont} ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
+            description={description}
+          />
         ) : null}
       </BlockWrapper>
     );

@@ -2,6 +2,7 @@ import type { LinkProps } from '../../model/LinkProps';
 import type { AlignType } from '../../model/AlignType';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
+import type { HeadlineProps } from '../../model/HeadlineType';
 
 /**
  * @title Отображение списка
@@ -23,11 +24,7 @@ export interface LinkDocsItem extends LinkProps {
 /**
  * @title Список документов
  */
-export interface LinkDocsContent {
-  /** @title Заголовок */
-  title?: string;
-  /** @title Описание */
-  description?: string;
+export type LinkDocsContent = HeadlineProps & {
   /**
    *  @title Иконка
    *  @default {
@@ -47,4 +44,4 @@ export interface LinkDocsContent {
   /** @title Рамка элементов (моб.) */ // TODO: мобильный проп
   hasBorder?: boolean;
   align?: AlignType;
-}
+};

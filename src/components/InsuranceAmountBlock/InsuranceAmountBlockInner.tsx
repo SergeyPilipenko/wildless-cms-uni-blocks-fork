@@ -40,7 +40,7 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
     const activeHref = cards[activeSlideIndex]?.href;
 
     return (
-      <section className={`min-w-full text-center ${className}`}>
+      <section role="listitem" className={`min-w-full text-center ${className}`}>
         <div className="relative mt-7 overflow-hidden">
           {galleryLength
             ? renderGallery({

@@ -1,16 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
-import { Description } from '../../ui-kit/Description/Description';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import type { HeadingType } from '../../ui-kit/Heading/HeadingContent';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { ProductBlockInnerContent } from './ProductBlockContent';
 import { renderBenefit } from './renderBenefit';
+import { Headline } from '../Headline/Headline';
 
 export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;
 
@@ -19,7 +15,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     className = '',
     context,
     title,
-    headingType = 'h2',
+    headlineVersion = 'L',
     description,
     benefits,
     benefitsVersion = 'normal',
@@ -30,22 +26,18 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     isDotted = true,
     textBlockClassName = '',
   }) => {
-    const textColor = version === 'secondary' ? 'text-white' : 'text-primary-text';
-
     return (
       <div className={`flex grow justify-between items-stretch ${className}`}>
         <div className={`flex flex-col ${textBlockClassName}`}>
-          <BaseTile
+          <Headline
             context={context}
-            title={getTitle(title, headingType)}
-            buttons={getButtons(context, buttons)}
-          >
-            {description ? (
-              <Description
-                className={`mt-4 max-w-[600px] text-xl-light ${textColor}`}
-                description={description}
-              />
-            ) : null}
+            title={title}
+            description={description}
+            className={`!p-0 max-w-[600px]`}
+            bgColorHeadline={version}
+            headlineVersion={headlineVersion}
+          />
+          <BaseTile context={context} buttons={getButtons(context, buttons)}>
             {benefits?.filter((_) => _.label)?.length ? (
               <div className="flex gap-6 mt-6">
                 {benefits.map((benefit, i) =>
@@ -55,7 +47,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             ) : null}
             {items?.length ? (
               <List
-                className="mt-5 text-h6"
+                className="mt-5 text-h6 font-light"
                 items={items}
                 itemClassName="mb-[7px]"
                 version={version}
@@ -70,18 +62,8 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-const getTitle = (title?: string, headingType?: HeadingType) => {
-  return title ? (
-    <Heading
-      headingType={headingType}
-      title={title}
-      className="whitespace-pre-wrap max-w-[600px]"
-    />
-  ) : null;
-};
-
-const getButtons = (context: ContentPageContext, buttons?: ButtonWithIconProps[]) => {
-  return buttons && buttons?.length ? (
+const getButtons = (context, buttons) => {
+  return buttons?.length ? (
     <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-4" />
   ) : null;
 };

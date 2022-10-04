@@ -69,7 +69,7 @@ export default {
             productBlock: {
               title: 'Кредит по одному документу',
               description: 'Ставка от 5,5% годовых',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons,
               image: percentImage,
@@ -82,7 +82,7 @@ export default {
             },
             productBlock: {
               title: 'Ставка от 12,5% годовых на срок до 3 лет!',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons,
               image: worker,
@@ -95,7 +95,7 @@ export default {
             },
             productBlock: {
               title: 'Дополнительные бонусные баллы за покупки!',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons,
               image: creditCard,
@@ -108,7 +108,7 @@ export default {
             },
             productBlock: {
               title: 'Карты Unionpay',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons,
               image: creditCard,
@@ -133,7 +133,7 @@ export default {
             productBlock: {
               title: 'Кредит по одному документу',
               description: 'Кредит наличными без залога и поручительства, только по паспорту',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons: buttonsSecondary,
               image: percentImage,
@@ -146,7 +146,7 @@ export default {
             },
             productBlock: {
               title: 'Ставка от 12,5% годовых на срок до 3 лет!',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons: buttonsSecondary,
               image: worker,
@@ -159,7 +159,7 @@ export default {
             },
             productBlock: {
               title: 'Дополнительные бонусные баллы за покупки!',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons: buttonsSecondary,
               image: creditCard,
@@ -172,7 +172,7 @@ export default {
             },
             productBlock: {
               title: 'Карты Unionpay',
-              headingType: 'h2',
+              headlineVersion: 'L',
               items,
               buttons: buttonsSecondary,
               image: creditCard,

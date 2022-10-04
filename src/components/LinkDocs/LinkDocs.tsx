@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Headline } from '../Headline/Headline';
-import type { LinkColumnsMode, LinkDocsContent } from './LinkDocsContent';
 import { LinkDocsList } from './LinkDocsList';
 
 const linkColumnsModeStyleMap: Record<LinkColumnsMode, string> = {
@@ -22,12 +22,13 @@ export const LinkDocs = JSX<LinkDocsProps>(
     documents,
     icon = { icon: 'DocIcon' },
     columnsMode = 'double',
-    ...rest
+    headlineVersion = 'M',
+     ...rest
   }) => {
     return (
       <BlockWrapper
-        context={context}
         className={`font-sans text-primary-text p-[50px] bg-white ${className}`}
+        context={context}
         {...rest}
       >
         <Headline
@@ -36,7 +37,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
           description={description}
           context={context}
           align={align}
-          headingType="h3"
+          headlineVersion={headlineVersion}
         />
         <LinkDocsList
           className={`mt-8 ${linkColumnsModeStyleMap[columnsMode]}`}

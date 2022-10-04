@@ -30,7 +30,7 @@ export const Headline = JSX<HeadlineProps>(
         ) : null}
         {description ? (
           <p
-            className={`font-normal text-m-md ${STYLE_MAPS.description} ${ALIGN_TEXT[align]}            `}
+            className={`font-normal text-m ${STYLE_MAPS.description} ${ALIGN_TEXT[align]}            `}
           >
             {description}
           </p>

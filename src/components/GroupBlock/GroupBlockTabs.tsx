@@ -41,9 +41,7 @@ const renderTab =
         <div className="flex flex-1 items-center justify-center">
           {tab?.title ? <h3 className={tabText}>{tab?.title}</h3> : null}
           {isShowCounter ? (
-            <div
-              className={`flex items-center justify-center ml-8 text-s-bold ${counterBlockStyle}`}
-            >
+            <div className={`flex items-center justify-center ml-8 text-s ${counterBlockStyle}`}>
               <span>{tab.count}</span>
             </div>
           ) : null}

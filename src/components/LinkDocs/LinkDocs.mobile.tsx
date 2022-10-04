@@ -28,7 +28,6 @@ export const LinkDocs = JSX<LinkDocsProps>(
           description={description}
           context={context}
           align="center"
-          headingType="h3"
         />
         {orientation === 'vertical' ? (
           <LinkDocsVerticalList hasBorder={hasBorder} documents={documents} icon={icon} />

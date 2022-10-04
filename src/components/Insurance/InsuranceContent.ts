@@ -1,4 +1,5 @@
 import type { Picture } from '../../model/Picture';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @title Преимущество
@@ -14,11 +15,7 @@ export interface InsuranceBenefit {
 /**
  * @title Страховка
  */
-export type InsuranceContent = {
-  /** @title Заголовок */
-  title?: string;
-  /** @title Описание */
-  description?: string;
+export type InsuranceContent = HeadlineCommonProps & {
   image?: Picture;
   /** @title Ежемесячный лимит */
   monthLimit?: number;

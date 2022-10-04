@@ -25,7 +25,7 @@ export function renderBackwardButton(
       >
         <Img className="w-4 h-4" image={{ ...backwardIcon, iconVersion }} asSVG />
       </Button>
-      {text ? <span className="text-m-md font-light">{text}</span> : null}
+      {text ? <span className="text-m">{text}</span> : null}
     </div>
   );
 }

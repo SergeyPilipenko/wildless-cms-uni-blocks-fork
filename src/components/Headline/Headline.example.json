@@ -3,6 +3,7 @@
   "description": "Описание",
   "align": "center",
   "bgColorHeadline": "transparent",
+  "headlineVersion": "M",
   "image": {
     "format": "webp",
     "size": {

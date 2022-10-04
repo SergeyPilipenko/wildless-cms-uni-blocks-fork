@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
+import type { HeadlineProps } from '../../model/HeadlineType';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
-import { HeadingType } from '../../ui-kit/Heading/HeadingContent';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
-import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 
 const productGalleryStyleMap: Record<BlockVersion, string> = {
   primary: 'bg-white text-primary-text',
@@ -11,12 +11,12 @@ const productGalleryStyleMap: Record<BlockVersion, string> = {
 };
 
 export interface ProductGalleryBlockProps extends UniBlockProps {
-  headingType?: HeadingType;
+  headlineVersion?: HeadlineProps;
   block?: ProductBlockInnerContent;
 }
 
 export const ProductGalleryBlock = JSX<ProductGalleryBlockProps>(
-  ({ block, headingType, context, className = '' }) => {
+  ({ block, context, className = '' }) => {
     const version = block?.version ?? 'primary';
 
     return (
@@ -25,7 +25,7 @@ export const ProductGalleryBlock = JSX<ProductGalleryBlockProps>(
         role="listitem"
       >
         <div className="flex grow">
-          <ProductBlockInner context={context} headingType={headingType || 'h2'} {...block} />
+          <ProductBlockInner context={context} {...block} />
         </div>
       </section>
     );

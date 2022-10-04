@@ -1,10 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { PlaceholderContent } from '../../components/Placeholder/PlaceholderContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { Headline } from '../Headline/Headline';
 import type { UniBlockProps } from '../../types';
-import { Description } from '../../ui-kit/Description/Description';
-import { Heading } from '../../ui-kit/Heading/Heading';
-import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
@@ -25,23 +23,14 @@ export const Placeholder = JSX<PlaceholderProps>(
         )} ${getTileMinHeight(className)} `}
         {...rest}
       >
-        <BaseTile
+        <Headline
           context={context}
-          title={
-            title ? (
-              <Heading
-                headingType={getTileHeadingType(className)}
-                title={title}
-                className={`whitespace-pre-wrap max-w-[600px]`}
-              />
-            ) : null
-          }
-        >
-          {description ? (
-            <Description className="mt-4 max-w-[600px]" description={description} />
-          ) : null}
-          <figure className="m-0 min-w-[600px]">{renderShimmer()}</figure>
-        </BaseTile>
+          className="!p-0 max-w-[600px]"
+          title={title}
+          description={description}
+          headlineVersion={getTileHeadingType(className)}
+        />
+        <figure className="m-0 min-w-[600px]">{renderShimmer()}</figure>
       </BlockWrapper>
     );
   },

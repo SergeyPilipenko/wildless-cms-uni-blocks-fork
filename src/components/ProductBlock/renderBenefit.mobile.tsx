@@ -25,13 +25,9 @@ export function renderBenefit({ benefit, version = 'primary' }: BenefitItemProps
           asSVG
         />
       ) : null}
-      <div className={`font-medium text-m-title-xs m-0 ${benefitTitleStyleMap[version]}`}>
-        {benefit.label}
-      </div>
+      <div className={`text-l m-0 ${benefitTitleStyleMap[version]}`}>{benefit.label}</div>
       {benefit.description && (
-        <div className={`font-normal text-m-sm ${benefitDescStyleMap[version]}`}>
-          {benefit.description}
-        </div>
+        <div className={`text-s ${benefitDescStyleMap[version]}`}>{benefit.description}</div>
       )}
     </div>
   );

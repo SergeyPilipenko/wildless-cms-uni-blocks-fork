@@ -50,8 +50,8 @@ exports[`Blocks Catalog should render block "Catalog" without content 1`] = `
 
 exports[`Blocks ComparisonTable should render block "ComparisonTable" without content 1`] = `
 <section>
-  <h2
-    class="font-sans m-0 text-title-lg max-w-[47rem] text-center mb-9 mx-auto"
+  <h3
+    class="font-sans m-0 text-h2 max-w-[47rem] text-center mb-9 mx-auto"
   />
   <div>
     <div
@@ -66,11 +66,11 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
   <div
     class="font-sans flex flex-col grow h-full items-start "
   >
-    <h4
-      class="font-sans m-0 text-title-sm whitespace-pre-wrap text-h4"
+    <h3
+      class="font-sans m-0 text-h4 whitespace-pre-wrap text-h4"
     >
       Курсы обмена валют
-    </h4>
+    </h3>
     <div
       class="flex grow w-full justify-between"
     >
@@ -339,7 +339,7 @@ exports[`Blocks Gallery should render block "Gallery" without content 1`] = `
 exports[`Blocks GracePeriod should render block "GracePeriod" without content 1`] = `
 <section>
   <h3
-    class="font-sans m-0 text-title text-center"
+    class="font-sans m-0 text-h3 text-center"
   />
   <div
     class="font-light text-base-md text-center mt-3"
@@ -473,6 +473,7 @@ exports[`Blocks Headline should render block "Headline" without content 1`] = `<
 
 exports[`Blocks Insurance should render block "Insurance" without content 1`] = `
 <section>
+  <section />
   <div>
     <div
       class="mt-5 mx-auto flex justify-center gap-[122px] mt-[30px]"
@@ -532,7 +533,7 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
     class="font-sans flex flex-col grow h-full items-start "
   >
     <h3
-      class="font-sans m-0 text-title-sm whitespace-pre-wrap max-w-[509px] mb-6
+      class="font-sans m-0 text-h4 whitespace-pre-wrap max-w-[509px] mb-6
                   text-primary-text"
     >
       Мобильное приложение
@@ -574,8 +575,8 @@ exports[`Blocks OtherProducts should render block "OtherProducts" without conten
 
 exports[`Blocks PictureText should render block "PictureText" without content 1`] = `
 <section>
-  <h2
-    class="font-sans m-0 text-title-lg text-center"
+  <h3
+    class="font-sans m-0 text-h2 text-center"
   />
   <div
     class="flex justify-center mt-9"
@@ -585,45 +586,33 @@ exports[`Blocks PictureText should render block "PictureText" without content 1`
 
 exports[`Blocks Placeholder should render block "Placeholder" without content 1`] = `
 <section>
-  <div
-    class="font-sans flex flex-col grow h-full items-start "
+  <section>
+    <div
+      class="text-xl-light text-primary-text text-left"
+    >
+      Блок в разработке...
+    </div>
+  </section>
+  <figure
+    class="m-0 min-w-[600px]"
   >
     <div
-      class="flex grow w-full justify-between"
-    >
-      <div
-        class="flex flex-col justify-between w-full"
-      >
-        <div>
-          <div
-            class="font-normal text-base mt-4 max-w-[600px]"
-          >
-            Блок в разработке...
-          </div>
-          <figure
-            class="m-0 min-w-[600px]"
-          >
-            <div
-              class="h-4 mt-2 bg-secondary-light"
-              style="width: 100%;"
-            />
-            <div
-              class="h-4 mt-2 bg-secondary-light"
-              style="width: 61%;"
-            />
-            <div
-              class="h-4 mt-2 bg-secondary-light"
-              style="width: 38%;"
-            />
-            <div
-              class="h-4 mt-2 bg-secondary-light"
-              style="width: 23%;"
-            />
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
+      class="h-4 mt-2 bg-secondary-light"
+      style="width: 100%;"
+    />
+    <div
+      class="h-4 mt-2 bg-secondary-light"
+      style="width: 61%;"
+    />
+    <div
+      class="h-4 mt-2 bg-secondary-light"
+      style="width: 38%;"
+    />
+    <div
+      class="h-4 mt-2 bg-secondary-light"
+      style="width: 23%;"
+    />
+  </figure>
 </section>
 `;
 
@@ -635,9 +624,11 @@ exports[`Blocks ProductBlock should render block "ProductBlock" without content 
     <div
       class="flex flex-col "
     >
+      <section />
       <div
         class="font-sans flex flex-col grow h-full items-start "
       >
+        
         <div
           class="flex grow w-full justify-between"
         >
@@ -671,6 +662,7 @@ exports[`Blocks ProductTile should render block "ProductTile" without content 1`
   <div
     class="z-[1]"
   >
+    <section />
     <div
       class="flex mt-4"
     />
@@ -683,11 +675,15 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
   <div
     class="font-sans flex flex-col grow h-full items-start "
   >
-    <h2
-      class="font-sans m-0 text-title-lg whitespace-pre-wrap max-w-[600px]"
-    >
-      Акции и спецпредложения
-    </h2>
+    <div>
+      <section>
+        <h2
+          class="font-sans m-0 text-h2 whitespace-pre-wrap text-primary-text text-left"
+        >
+          Акции и спецпредложения
+        </h2>
+      </section>
+    </div>
     <div
       class="flex grow w-full justify-between"
     >

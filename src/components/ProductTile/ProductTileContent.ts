@@ -1,7 +1,6 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
-import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
-import type { HeadingContent, HeadingTypeContent } from '../../ui-kit/Heading/HeadingContent';
+import type { HeadlineProps } from '../../model/HeadlineType';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 
 export interface TextBenefit {
@@ -14,9 +13,7 @@ export interface TextBenefit {
 /**
  * @title Продуктовая плитка
  */
-export type ProductTileContent = HeadingContent &
-  HeadingTypeContent &
-  DescriptionContent &
+export type ProductTileContent = HeadlineProps &
   ButtonContent &
   ImageContent & {
     version?: BlockVersion;

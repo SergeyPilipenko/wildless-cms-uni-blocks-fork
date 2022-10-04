@@ -1,12 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { HeadingContent, HeadingType, HeadingTypeContent } from './HeadingContent';
-
-export interface HeadingProps extends HeadingContent, HeadingTypeContent {
-  className?: string;
-  as?: HeadingType;
-}
+import type { HeadingProps, HeadingType } from './HeadingProps';
 
 const HeadingClass: Record<HeadingType, string> = {
+  h0: 'text-m-title',
   h1: 'text-m-title',
   h2: 'text-m-title',
   h3: 'text-m-title-md',
@@ -16,13 +12,7 @@ const HeadingClass: Record<HeadingType, string> = {
 };
 
 export const Heading = JSX<HeadingProps>((props) => {
-  const { className, headingType, title, as } = props;
-
-  if (!headingType) {
-    return null;
-  }
-
-  const Tag = as || headingType;
+  const { className, headingType = 'h3', title, as: Tag = 'h3' } = props;
 
   return (
     <Tag className={`font-sans font-medium m-0 ${HeadingClass[headingType]} ${className || ''}`}>

@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import type { HeadingContent, HeadingTypeContent } from '../../ui-kit/Heading/HeadingContent';
+import type { HeadingCommonProps } from '../../ui-kit/Heading/HeadingProps';
 import type { EmptyOption } from '../../model/EmptyOptionType';
 
 /**
@@ -48,11 +48,10 @@ export interface BenefitItem {
 /**
  * @title Блок преимущества
  */
-export type BenefitsBlockContent = HeadingContent &
-  HeadingTypeContent & {
-    /**
-     * @title Список преимуществ
-     * @maxItems 6
-     */
-    benefitList?: BenefitItem[];
-  };
+export type BenefitsBlockContent = HeadingCommonProps & {
+  /**
+   * @title Список преимуществ
+   * @maxItems 6
+   */
+  benefitList?: BenefitItem[];
+};

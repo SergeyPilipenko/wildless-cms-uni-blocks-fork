@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { DescriptionContent } from './DescriptionContent';
+import type { DescriptionProp } from '../../model/HeadlineType';
 
-export interface DescriptionProps extends DescriptionContent {
+export interface DescriptionProps extends DescriptionProp {
   className?: string;
 }
 
 export const Description = JSX<DescriptionProps>((props) => {
   const { className = '', description } = props;
 
-  return <div className={`font-normal text-base ${className}`}>{description}</div>;
+  return <div className={`${className}`}>{description}</div>;
 });

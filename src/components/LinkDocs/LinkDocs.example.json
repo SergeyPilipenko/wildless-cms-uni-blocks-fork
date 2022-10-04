@@ -1,6 +1,7 @@
 {
   "title": "Список документов",
   "description": "Описание",
+  "headlineVersion": "M",
   "icon": {
     "icon": "DocIcon"
   },

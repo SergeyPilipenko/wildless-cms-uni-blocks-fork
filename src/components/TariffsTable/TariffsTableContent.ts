@@ -1,11 +1,10 @@
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
-import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 import type { CellData } from '../ComparisonTable/ComparisonTableContent';
+import type { HeadlineCommonProps, TitleProp } from '../../model/HeadlineType';
 
 /**
  * @title Ряд
@@ -43,24 +42,23 @@ export type TariffsTableCellData = CellData &
 /**
  * @title Параметр
  */
-export type TariffsTableRowHeader = HeadingContent & {
+export type TariffsTableRowHeader = TitleProp & {
   icon?: Picture;
 };
 
 /**
  * @title Таблица тарифов
  */
-export type TariffsTableContent = HeadingContent &
-  DescriptionContent & {
-    /** @title Колонки */
-    columns?: TariffsTableColumn[];
-    /** @title Параметры */
-    rowHeaders?: TariffsTableRowHeader[];
-    /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
-    orientation?: ListOrientation;
-    /** @title Скрывать строк */
-    hiddenRowsNum?: number;
-  };
+export type TariffsTableContent = HeadlineCommonProps & {
+  /** @title Колонки */
+  columns?: TariffsTableColumn[];
+  /** @title Параметры */
+  rowHeaders?: TariffsTableRowHeader[];
+  /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
+  orientation?: ListOrientation;
+  /** @title Скрывать строк */
+  hiddenRowsNum?: number;
+};
 
 /** @hidden */
 export type TariffsTableTileCellProps = {

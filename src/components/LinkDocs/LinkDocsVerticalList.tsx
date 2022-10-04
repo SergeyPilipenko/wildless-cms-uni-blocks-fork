@@ -13,9 +13,7 @@ export const LinkDocsVerticalList = JSX<LinkDocsVerticalListProps>(
   ({ hasBorder = true, documents, icon }) => {
     return (
       <div
-        className={`text-m-sm text-primary-main flex flex-col mt-5 ${
-          hasBorder ? 'gap-3.5' : 'gap-2'
-        }`}
+        className={`text-s text-primary-main flex flex-col mt-5 ${hasBorder ? 'gap-3.5' : 'gap-2'}`}
         role="list"
       >
         {documents?.length

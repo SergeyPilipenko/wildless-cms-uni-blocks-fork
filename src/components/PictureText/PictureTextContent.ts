@@ -1,9 +1,9 @@
 import { BlockVersion } from '../../model/BlockVersion';
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { TitleProp } from '../../model/HeadlineType';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { Picture } from '../../model/Picture';
 
-export type TitleWithImageContent = HeadingContent & ImageContent;
+export type TitleWithImageContent = TitleProp & ImageContent;
 
 export interface PictureTextBenefit {
   /** @title Иконка */

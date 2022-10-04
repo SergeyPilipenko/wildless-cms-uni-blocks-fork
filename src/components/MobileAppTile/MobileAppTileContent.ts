@@ -1,9 +1,8 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
-import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @title QR код
@@ -18,8 +17,7 @@ export interface QRCode {
 /**
  * @title Мобильное приложение
  */
-export type MobileAppTileContent = HeadingContent &
-  DescriptionContent &
+export type MobileAppTileContent = HeadlineCommonProps &
   ButtonContent &
   ListContent &
   ImageContent & {

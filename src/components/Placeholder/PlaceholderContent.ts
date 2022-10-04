@@ -1,7 +1,6 @@
-import type { DescriptionContent } from '../../ui-kit/Description/DescriptionContent';
-import type { HeadingContent } from '../../ui-kit/Heading/HeadingContent';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @hidden
  */
-export type PlaceholderContent = HeadingContent & DescriptionContent;
+export type PlaceholderContent = HeadlineCommonProps;

@@ -85,7 +85,7 @@ const buttons3: ButtonProps[] = [
 
 export const PRODUCT_TILE: ProductTileContent = {
   title: 'Акция! “Кредит На все, что хочется!”',
-  headingType: 'h3',
+  headlineVersion: 'S',
   description: 'Потребительский кредит на любые цели, без залога и поручительства',
   benefits,
   buttons: buttons,
@@ -93,7 +93,7 @@ export const PRODUCT_TILE: ProductTileContent = {
 };
 export const PRODUCT_PENSION_TILE: ProductTileContent = {
   title: 'Кредит пенсионный',
-  headingType: 'h3',
+  headlineVersion: 'S',
   description: 'Для людей в возрасте до 75 лет',
   benefits,
   buttons: buttons2,
@@ -111,7 +111,6 @@ export default {
         context={context}
         className="col-span-6"
         title="Акция! “Пенсионный кредит”"
-        headingType="h3"
         description={'Потребительский кредит на любые цели, без залога и поручительства'}
         benefits={benefits}
         buttons={buttons2}
@@ -125,7 +124,6 @@ export default {
         context={context}
         className="col-span-8"
         title="Кредит под залог недвижимости"
-        headingType="h3"
         description={'Без переоформления залогой недвижимости на банк'}
         benefits={benefits}
         buttons={buttons2}
@@ -139,7 +137,6 @@ export default {
         context={context}
         className="col-span-4"
         title="Кредит пенсионный"
-        headingType="h3"
         description={'Для людей в возрасте до 75 лет'}
         benefits={benefits}
         buttons={buttons2}
@@ -152,7 +149,6 @@ export default {
         context={context}
         className="col-span-6"
         title="Ипотечное страхование"
-        headingType="h3"
         description={'Финансовая защита заемщиков в случае непредвиденных обстоятельств'}
         additionalDescription={
           'Страховая сумма и страховой взнос зависит от остатка задолженности по ипотеке'
