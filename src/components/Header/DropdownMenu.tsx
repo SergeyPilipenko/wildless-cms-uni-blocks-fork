@@ -20,13 +20,13 @@ interface DropdownMenuProps extends UniBlockProps {
   menuItems: LinkProps[];
   bgColor?: BgColorVersion;
   context: ContentPageContext;
+  activeSubItem?: LinkProps;
 }
 
 export const DropdownMenu = JSX<DropdownMenuProps>((props) => {
-  const { menuVisible, toggleMenu, menuItems, bgColor, context } = props;
+  const { menuVisible, toggleMenu, menuItems, bgColor, context, activeSubItem } = props;
 
   const { useRouter, handlerDecorator } = context;
-
   const router = useRouter();
 
   return (
@@ -46,26 +46,39 @@ export const DropdownMenu = JSX<DropdownMenuProps>((props) => {
         className={`flex flex-col rounded-md bg-white p-6 pb-2 ${menuVisible ? '' : 'hidden'}`}
         aria-hidden={!menuVisible}
       >
-        {renderDotsSubMenuItems(menuItems, router, handlerDecorator)}
+        {renderDotsSubMenuItems({ menuItems, router, handlerDecorator, activeSubItem })}
       </div>
     </div>
   );
 });
 
-const renderDotsSubMenuItems = (
-  menuItems: LinkProps[],
-  router: Router,
-  handlerDecorator: HandlerDecorator | undefined,
-) =>
-  menuItems?.map((_) => (
+type DotsSubMenuItemsProps = {
+  menuItems: LinkProps[];
+  router: Router;
+  handlerDecorator: HandlerDecorator | undefined;
+  activeSubItem?: LinkProps;
+};
+
+const renderDotsSubMenuItems = ({
+  menuItems,
+  router,
+  handlerDecorator,
+  activeSubItem,
+}: DotsSubMenuItemsProps) => {
+  const isActive = (item) => item === activeSubItem;
+
+  return menuItems?.map((_) => (
     <a
       key={_.href}
       {...useLink({ router, handlerDecorator }, _)}
-      className="text-base font-light pb-4 hover:text-primary-main"
+      className={`text-base font-light pb-4 hover:text-primary-main ${
+        isActive(_) ? 'text-primary-main' : ''
+      }`}
     >
       {_.text}
     </a>
   ));
+};
 
 const renderDot = (bgColor: BgColorVersion, i: number) => (
   <div key={String(i)} className={`w-[3px] h-[3px] rounded mr-1 ${DOT_BG_COLORS_MAP[bgColor]}`} />

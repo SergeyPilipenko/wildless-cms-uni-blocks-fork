@@ -51,7 +51,7 @@ export const Header = JSX<HeaderProps>(
       <BlockWrapper
         Tag="header"
         context={context}
-        className={`pt-6 pb-8 px-20 ${bgColor} ${className}`}
+        className={`pt-6 pb-5 px-20 ${bgColor} ${className}`}
         {...rest}
       >
         <div className="container">
