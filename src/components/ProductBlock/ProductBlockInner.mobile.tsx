@@ -36,6 +36,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             className="!p-0 max-w-[600px]"
             title={title}
             description={description}
+            bgColorHeadline={version}
             headlineVersion={headlineVersion}
           />
           <BaseTile

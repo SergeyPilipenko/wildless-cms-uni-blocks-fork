@@ -47,6 +47,7 @@ export const PromoTile = JSX<PromoTileProps>(
                   className={`!p-0 max-w-[600px]`}
                   headlineVersion={getTileHeadingType(className)}
                   bgColorHeadline={version}
+                  align="left"
                 />
               </div>
             ) : null

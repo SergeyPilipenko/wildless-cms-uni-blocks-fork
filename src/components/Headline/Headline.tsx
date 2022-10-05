@@ -12,11 +12,12 @@ export interface HeadlineProps extends UniBlockProps, HeadlineContent {}
 export const Headline = JSX<HeadlineProps>(
   ({
     bgColorHeadline = 'transparent',
-    align = 'left',
+    align = 'center',
     className = '',
     title,
     description,
     headlineVersion = 'XL',
+    as,
     ...rest
   }) => {
     const STYLE_MAPS = HEADLINE_BLOCK_STYLE_MAPS[bgColorHeadline];
@@ -30,7 +31,7 @@ export const Headline = JSX<HeadlineProps>(
         {title ? (
           <Heading
             headingType={SIZE_MAPS?.headingType}
-            as={SIZE_MAPS?.as}
+            as={as || SIZE_MAPS?.as}
             className={`whitespace-pre-wrap ${STYLE_MAPS.text} ${ALIGN_TEXT[align]}`}
             title={title}
           />

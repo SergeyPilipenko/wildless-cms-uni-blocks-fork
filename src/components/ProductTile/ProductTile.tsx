@@ -45,6 +45,8 @@ export const ProductTile = JSX<ProductTileProps>(
             title={title}
             description={description}
             headlineVersion={headlineVersion}
+            bgColorHeadline={version}
+            align="left"
           />
           {renderBenefits(benefits || [], version)}
           {additionalDescription

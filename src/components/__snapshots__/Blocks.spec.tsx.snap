@@ -588,7 +588,7 @@ exports[`Blocks Placeholder should render block "Placeholder" without content 1`
 <section>
   <section>
     <div
-      class="text-xl-light text-primary-text text-left"
+      class="text-xl-light text-primary-text text-center"
     >
       Блок в разработке...
     </div>

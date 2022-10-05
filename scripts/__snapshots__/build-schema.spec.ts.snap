@@ -1824,9 +1824,6 @@ Object {
           "title": "Рамка элементов (моб.)",
           "type": "boolean",
         },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
-        },
         "icon": Object {
           "$ref": "#/definitions/Picture",
           "default": Object {
@@ -1885,9 +1882,6 @@ Object {
         "hasBorder": Object {
           "title": "Рамка элементов (моб.)",
           "type": "boolean",
-        },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
@@ -3010,9 +3004,6 @@ Object {
     },
     "RecommendationContent": Object {
       "properties": Object {
-        "headingType": Object {
-          "$ref": "#/definitions/HeadingType",
-        },
         "recommendations": Object {
           "items": Object {
             "$ref": "#/definitions/RecommendationCardTypes",

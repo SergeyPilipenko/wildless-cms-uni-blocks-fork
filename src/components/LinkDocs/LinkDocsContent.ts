@@ -2,7 +2,7 @@ import type { LinkProps } from '../../model/LinkProps';
 import type { AlignType } from '../../model/AlignType';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
-import type { HeadlineProps } from '../../model/HeadlineType';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @title Отображение списка
@@ -24,7 +24,7 @@ export interface LinkDocsItem extends LinkProps {
 /**
  * @title Список документов
  */
-export type LinkDocsContent = HeadlineProps & {
+export type LinkDocsContent = HeadlineCommonProps & {
   /**
    *  @title Иконка
    *  @default {

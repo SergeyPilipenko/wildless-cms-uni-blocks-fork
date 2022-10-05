@@ -1,10 +1,12 @@
 export default [
   'title',
   'titleSize',
+  'headingType',
   'headlineVersion',
   'as',
   'benefitList',
   'subtitle',
+  'bgColorHeadline',
   'date',
   'columns',
   'align',

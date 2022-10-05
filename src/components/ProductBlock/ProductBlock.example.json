@@ -1,7 +1,7 @@
 {
   "title": "Продукт",
   "description": "Описание",
-  "headingType": "h2",
+  "headlineVersion": "XL",
   "backwardButton": {
     "text": "Кнопка возврата",
     "icon": { "icon": "ArrowLeftIcon" }

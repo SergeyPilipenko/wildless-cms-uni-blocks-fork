@@ -22,7 +22,6 @@ export const LinkDocs = JSX<LinkDocsProps>(
     documents,
     icon = { icon: 'DocIcon' },
     columnsMode = 'double',
-    headlineVersion = 'M',
     ...rest
   }) => {
     return (
@@ -37,7 +36,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
           description={description}
           context={context}
           align={align}
-          headlineVersion={headlineVersion}
+          headlineVersion="M"
         />
         <LinkDocsList
           className={`mt-8 ${linkColumnsModeStyleMap[columnsMode]}`}

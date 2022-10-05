@@ -36,6 +36,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             className={`!p-0 max-w-[600px]`}
             bgColorHeadline={version}
             headlineVersion={headlineVersion}
+            align="left"
           />
           <BaseTile context={context} buttons={getButtons(context, buttons)}>
             {benefits?.filter((_) => _.label)?.length ? (
