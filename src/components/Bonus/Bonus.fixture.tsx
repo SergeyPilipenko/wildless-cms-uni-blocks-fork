@@ -5,6 +5,7 @@ import type { BonusContent } from './BonusContent';
 export const BONUS: BonusContent = {
   title: 'Начисление баллов',
   description:
+    /* eslint-disable max-len */
     'Получайте 1% бонусными баллами с любых покупок и 1,5% баллами с покупок в категории «Путешествия». Обменивайте бонусные баллы на авиа и ж/д билеты, бронирование отелей и прокат автомобилей.',
   bonusItems: [
     {

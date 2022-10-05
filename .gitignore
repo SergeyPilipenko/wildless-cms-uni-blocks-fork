@@ -16,3 +16,4 @@ cypress/videos/
 cypress/snapshots/actual/
 cypress/snapshots/diff/
 cypress/fixtures/blockFixturesMap.json
+/.idea/codeStyles/Project.xml
