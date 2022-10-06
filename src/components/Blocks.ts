@@ -28,6 +28,7 @@ import { ProductTile } from './ProductTile/ProductTile';
 import { PromoTile } from './PromoTile/PromoTile';
 import { Recommendation } from './Recommendation/Recommendation';
 import { StepsBlock } from './StepsBlock/StepsBlock';
+import { Tabs } from './Tabs/Tabs';
 import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
@@ -66,4 +67,5 @@ export const Blocks = {
   Placeholder,
   GroupBlock,
   BonusBenefitsBlock,
+  Tabs,
 };

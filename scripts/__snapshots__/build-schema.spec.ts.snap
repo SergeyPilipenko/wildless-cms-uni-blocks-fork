@@ -3165,6 +3165,20 @@ Object {
       "title": "Пункт подменю",
       "type": "object",
     },
+    "Tab": Object {
+      "properties": Object {
+        "id": Object {
+          "title": "Tег",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Таб",
+      "type": "object",
+    },
     "TableColumnData": Object {
       "properties": Object {
         "cell": Object {
@@ -3194,6 +3208,23 @@ Object {
         },
       },
       "title": "Параметр",
+      "type": "object",
+    },
+    "TabsContent": Object {
+      "properties": Object {
+        "showCounter": Object {
+          "title": "Показывать счетчик блоков во вкладках",
+          "type": "boolean",
+        },
+        "tabs": Object {
+          "items": Object {
+            "$ref": "#/definitions/Tab",
+          },
+          "title": "Табы",
+          "type": "array",
+        },
+      },
+      "title": "Вкладки",
       "type": "object",
     },
     "Target": Object {

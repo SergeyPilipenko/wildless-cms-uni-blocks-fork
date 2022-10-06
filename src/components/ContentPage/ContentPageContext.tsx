@@ -1,5 +1,4 @@
 import { VNode } from '../../model/VNode';
-import { EventBus } from '../../react/EventBus/EventBus';
 
 export interface Router {
   pathname: string;
@@ -54,7 +53,7 @@ export interface ContentPageContext {
   useGeolocation: GeolocationHook;
   useLikeService: () => LikeService;
   useSearch: () => Search;
+  useEffect: <Deps extends any[]>(effect: () => (() => void) | void, deps?: Deps) => void;
   handlerDecorator?: HandlerDecorator;
   IntersectionObserverTag: IntersectionObserverComponent;
-  eventBus: EventBus;
 }

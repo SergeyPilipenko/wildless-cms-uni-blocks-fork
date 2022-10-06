@@ -15,6 +15,7 @@ export interface BaseBlockDef {
   version?: BlockVersion;
   hidden?: boolean;
   anchor?: string;
+  labels?: string[];
 }
 
 export interface BlockDef extends BaseBlockDef {
@@ -56,6 +57,8 @@ export interface ContentPageDef extends ContentPageMeta {
 export interface UniBlockProps {
   className?: string;
   context: ContentPageContext;
+  page?: ContentPageDef;
+  labels?: string[];
   anchor?: string;
 }
 

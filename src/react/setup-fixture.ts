@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import runtime from 'react/jsx-runtime';
 import { DaDataAPI } from '../api/DaDataAPI';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
-import { EventBus } from './EventBus/EventBus';
 import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 const { jsx, jsxs } = runtime as any;
@@ -84,8 +83,8 @@ export const context: ContentPageContext = {
       setTerm: (text: string) => setTerm(text),
     };
   },
+  useEffect,
   IntersectionObserverTag,
-  eventBus: new EventBus((callback) => useEffect(callback, [])),
 };
 
 export const mobileContext: ContentPageContext = {

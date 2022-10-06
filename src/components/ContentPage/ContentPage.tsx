@@ -32,6 +32,7 @@ export interface ContentPageProps extends UniBlockProps {
 
 export interface RenderBlockFunc {
   block: BlockDef;
+  page: ContentPageDef;
   blockDecorator: BlockDecorator;
   blocksRegistry: BlocksRegistry;
   context: ContentPageContext;
@@ -59,7 +60,7 @@ export const ContentPage = JSX<ContentPageProps>(
         {header?.blocks?.length ? (
           <div className={`${style2className(header?.style)}`}>
             {header.blocks.map((block, i) =>
-              renderBlock({ block, blockDecorator, blocksRegistry, context }, i),
+              renderBlock({ block, page: data, blockDecorator, blocksRegistry, context }, i),
             )}
           </div>
         ) : null}
@@ -67,7 +68,7 @@ export const ContentPage = JSX<ContentPageProps>(
         {blocks?.length ? (
           <div className="container grid grid-cols-12 gap-1">
             {blocks.map((block, i) =>
-              renderBlock({ block, blockDecorator, blocksRegistry, context }, i),
+              renderBlock({ block, blockDecorator, blocksRegistry, context, page: data }, i),
             )}
           </div>
         ) : null}
@@ -87,7 +88,7 @@ export const ContentPage = JSX<ContentPageProps>(
 );
 
 function renderBlock(
-  { block, blockDecorator, blocksRegistry, context }: RenderBlockFunc,
+  { block, blockDecorator, blocksRegistry, context, page }: RenderBlockFunc,
   i: number,
 ) {
   const { type } = block;
@@ -101,7 +102,7 @@ function renderBlock(
       blockClassName: `scroll-mt-12 ${style2className(block.style)}`,
       block,
       render: (props) => {
-        const { version, content, anchor } = props.block;
+        const { version, content, anchor, labels } = props.block;
 
         return (
           <BlockComponent
@@ -109,7 +110,9 @@ function renderBlock(
             className={props.blockClassName}
             version={version}
             context={context}
+            page={page}
             anchor={anchor}
+            labels={labels}
             {...content}
           />
         );

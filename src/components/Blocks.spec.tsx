@@ -1,6 +1,6 @@
 import { setup } from '@redneckz/uni-jsx';
 import { render } from '@testing-library/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import runtime from 'react/jsx-runtime';
 import { Blocks } from './Blocks';
 import type { ContentPageContext } from './ContentPage/ContentPageContext';
@@ -15,6 +15,7 @@ const emptyFn = () => {
 
 const context: ContentPageContext = {
   useState,
+  useEffect,
   useRouter: () => ({
     pathname: '/credits',
     query: {},
