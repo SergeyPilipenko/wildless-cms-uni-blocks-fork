@@ -1,16 +1,13 @@
 import { setup } from '@redneckz/uni-jsx';
 import { render } from '@testing-library/react';
 import { useState } from 'react';
-import { jsx, jsxs } from 'react/jsx-runtime';
+import runtime from 'react/jsx-runtime';
 import { Blocks } from './Blocks';
 import type { ContentPageContext } from './ContentPage/ContentPageContext';
 
-setup(jsx, jsxs);
+const { jsx, jsxs } = runtime as any;
 
-jest.mock('../ui-kit/BlockWrapper', () => ({
-  __esModule: true,
-  BlockWrapper: ({ children }) => <section>{children}</section>,
-}));
+setup(jsx, jsxs);
 
 const emptyFn = () => {
   /* For sure */

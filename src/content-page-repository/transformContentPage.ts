@@ -15,6 +15,7 @@ export async function transformContentPage(
 ): Promise<ContentPageDef> {
   const content = await readFile(pagePath, 'utf8');
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   return mapJSON<ContentPageDef>(JSON.parse(content), async (value: any, [key]) => {
     const isMarkdown = typeof value === 'string' && key?.endsWith('__md');
     const isPicture = value && isLocalPath(value?.src);

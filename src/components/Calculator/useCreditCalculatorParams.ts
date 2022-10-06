@@ -35,7 +35,7 @@ export type CreditCalculatorData = {
   rows: CreditCalculatorSourceBookParams[];
 };
 
-export const getCreditCalculatorParams = (
+export const useCreditCalculatorParams = (
   context: ContentPageContext,
   userInputParams: CreditCalculatorUserInputParams,
   sourceBookDir?: string,

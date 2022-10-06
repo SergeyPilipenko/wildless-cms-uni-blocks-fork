@@ -6,12 +6,12 @@ import { DEFAULT_REST_MIN_SUM, DEFAULT_TRAVEL_MIN_SUM } from './constants';
 import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
 import { renderWantedSumInput } from './renderWantedSumInput';
-import { getBonusCalculatorParams } from './useBonusCalculatorParams';
+import { useBonusCalculatorParams } from './useBonusCalculatorParams';
 
 export interface BonusCalculatorProps extends CommonCalculatorProps, UniBlockProps {}
 
 export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
-  ({ context, className = '', sourceBookDir, buttons }) => {
+  ({ context, className = '', sourceBookDir = '', buttons }) => {
     const [travelExpenseValue, setTravelExpenseValue] = context.useState(DEFAULT_TRAVEL_MIN_SUM);
     const [restExpenseValue, setRestExpenseValue] = context.useState(DEFAULT_REST_MIN_SUM);
     const userInputParams = {
@@ -19,7 +19,7 @@ export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
       restExpenseValue,
     };
     const { minSumTravel, maxSumTravel, minSumOther, maxSumOther, monthBonus, yearBonus } =
-      getBonusCalculatorParams(context, userInputParams, sourceBookDir);
+      useBonusCalculatorParams(context, userInputParams, sourceBookDir);
 
     return (
       <section className={className}>

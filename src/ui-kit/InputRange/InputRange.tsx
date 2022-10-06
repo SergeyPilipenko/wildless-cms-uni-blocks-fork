@@ -34,7 +34,7 @@ export const InputRange = JSX<InputRangeProps>(
             className={`m-0 mt-[5px] font-sans text-h3 w-full h-14 border border-solid border-main-stroke rounded-md
                         outline-none p-0 pl-4 box-border text-primary-text`}
             value={addSpacesBetweenNumbers(value)}
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={(e) => handleChange(e.target.value as string)}
             onBlur={handleBlur}
           />
           <div className="absolute inset-x-0 bottom-[-4px] px-4 leading-[18px]">
@@ -45,7 +45,7 @@ export const InputRange = JSX<InputRangeProps>(
               max={max}
               step={step}
               value={value}
-              onChange={(e) => handleChange(e.target.value)}
+              onChange={(e) => handleChange(e.target.value as string)}
               style={inputStyle}
             />
           </div>

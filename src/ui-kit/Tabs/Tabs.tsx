@@ -28,7 +28,7 @@ const renderTab =
         }`}
         role="tab"
         onClick={() => onTabClick(index)}
-        aria-selected={String(isActive)}
+        aria-selected={isActive}
       >
         {tab?.icon ? renderIcon(tab, isActive) : null}
         <div>

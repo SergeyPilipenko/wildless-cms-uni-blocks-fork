@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { SVGPathOptions } from '../SVG';
 
 export interface LikeButtonProps {
   className?: string;
@@ -23,7 +24,7 @@ const renderLikeIcon = () => {
     strokeLinecap: 'round',
     strokeLinejoin: 'round',
     strokeWidth: '1.5',
-  };
+  } as SVGPathOptions;
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

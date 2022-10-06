@@ -43,7 +43,7 @@ export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], 
       <div className="overflow-hidden whitespace-nowrap mr-52 pb-3">
         {subItems.map((_, i) => (
           <IntersectionObserverTag
-            Tag="span"
+            tag="span"
             observerCallback={observerCallback(i)}
             observerOptions={{ threshold: 1 }}
             key={String(i)}

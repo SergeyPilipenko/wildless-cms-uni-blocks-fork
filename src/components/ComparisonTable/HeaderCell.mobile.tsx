@@ -19,7 +19,7 @@ const subtitleStyle = (isFillGradient = false): string =>
 
 export const HeaderCell = JSX<HeaderCellProps>(
   ({ icon, image, title, subtitle, isFillGradient }) => (
-    <div role="columnheader" scope="col">
+    <div role="columnheader">
       {icon ? (
         <Img
           className="h-[63px] w-[63px] min-w-[63px] min-h-[63px] mb-4"

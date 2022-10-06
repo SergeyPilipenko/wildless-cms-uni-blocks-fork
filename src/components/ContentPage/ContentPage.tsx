@@ -26,7 +26,7 @@ export type BlocksRegistry = Record<string, JSXBlock>;
 
 export interface ContentPageProps extends UniBlockProps {
   blocksRegistry: BlocksRegistry;
-  data: ContentPageDef;
+  data?: ContentPageDef;
   blockDecorator?: BlockDecorator;
 }
 
@@ -45,9 +45,10 @@ export const ContentPage = JSX<ContentPageProps>(
     className = '',
     context,
     blocksRegistry,
-    data: { style: pageStyle, blocks, slots = {}, likeControl, colorPalette = 'pc' },
+    data = {},
     blockDecorator = defaultBlockDecorator,
   }) => {
+    const { style: pageStyle, blocks, slots = {}, likeControl, colorPalette = 'pc' } = data;
     const { header } = slots;
 
     return (

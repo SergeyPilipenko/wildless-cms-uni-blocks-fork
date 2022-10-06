@@ -1,6 +1,7 @@
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
+import type { VNode } from '../../model/VNode';
 
 /**
  * @hidden
@@ -33,9 +34,9 @@ export interface ButtonWithIconProps extends ButtonProps {
   /** @title Верхний текст */
   aboveText?: string;
   /** @hidden */
-  appendLeft?: any;
+  appendLeft?: VNode;
   /** @hidden */
-  appendRight?: any;
+  appendRight?: VNode;
   /** @title Закругленные углы */
   rounded?: boolean;
   /** @hidden */
@@ -56,7 +57,7 @@ export interface BackwardButtonProps extends ButtonProps {
   /** @title Верхний текст */
   aboveText?: string;
   /** @hidden */
-  appendLeft?: any;
+  appendLeft?: VNode;
   /** @title Закругленные углы */
   rounded?: boolean;
   /** @hidden */

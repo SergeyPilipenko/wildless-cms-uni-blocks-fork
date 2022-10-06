@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { LikeButton } from '../../ui-kit/Button/LikeButton';
 
 export const LikeControl = JSX<UniBlockProps>(({ className, context, ...rest }) => {
@@ -8,7 +8,7 @@ export const LikeControl = JSX<UniBlockProps>(({ className, context, ...rest }) 
 
   return (
     <BlockWrapper
-      Tag="div"
+      tag="div"
       context={context}
       className={`border-main border-2 border-solid bg-white flex w-[125px] items-center justify-center gap-3 p-2 font-sans ${
         className || ''

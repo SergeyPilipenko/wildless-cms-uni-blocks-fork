@@ -132,7 +132,7 @@ function renderSlide({ slide, i, activeSlideIndex, onClick }: InsuranceSlideProp
   );
 }
 
-function renderValueBlock(title, sum) {
+function renderValueBlock(title: string, sum: number) {
   return (
     <div className="flex flex-col text-left whitespace-pre">
       <span className="text-h6">{addSpacesBetweenNumbers(sum)} ₽</span>
@@ -141,7 +141,7 @@ function renderValueBlock(title, sum) {
   );
 }
 
-function renderDoneIcon(isActive) {
+function renderDoneIcon(isActive: boolean) {
   return isActive ? (
     <Img
       className={`h-[24px] w-[24px] min-w-[24px] min-h-[24px] absolute right-4 top-4`}

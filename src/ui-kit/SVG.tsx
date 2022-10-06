@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 
-interface SVGPathOptions {
+export interface SVGPathOptions {
   fill?: string;
   stroke?: string;
   strokeLinecap?: 'inherit' | 'butt' | 'round' | 'square';
@@ -9,7 +9,7 @@ interface SVGPathOptions {
   strokeMiterlimit?: string;
 }
 
-interface SVGPath extends SVGPathOptions {
+export interface SVGPath extends SVGPathOptions {
   d: string;
 }
 

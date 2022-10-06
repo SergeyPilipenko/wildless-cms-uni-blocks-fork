@@ -21,7 +21,7 @@ export const Checkbox = JSX<CheckboxProps>(({ className, text, checked, isRadio,
         checked:border-primary-main m-0`}
         type="checkbox"
         onChange={(e) => {
-          onChange(e.target.checked);
+          onChange(e.target.checked as boolean);
         }}
         checked={checked}
       />

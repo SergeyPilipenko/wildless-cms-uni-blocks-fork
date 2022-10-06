@@ -14,7 +14,7 @@ export interface SwipeListControlDotsProps {
 
 export const SwipeListControlDots = JSX<SwipeListControlDotsProps>(
   ({ children, activeIndex, indexFraction, showDots }) => {
-    const handleClick = (idx: number) => (e: Event) => {
+    const handleClick = (idx: number) => (e) => {
       if (idx === activeIndex) {
         return;
       }
@@ -27,7 +27,7 @@ export const SwipeListControlDots = JSX<SwipeListControlDotsProps>(
 
     return showDots && children?.length ? (
       <div className="flex gap-2 mx-auto mt-5 w-fit">
-        {children?.map((_, idx) => (
+        {children?.map((_, idx: number) => (
           <div
             key={String(idx)}
             onClick={handleClick(idx)}
@@ -45,9 +45,9 @@ const getDotStyles = (
   currentIdx: number,
   activeIndex: number,
   indexFraction: number,
-): Record<string, string> | null => {
+): Record<string, string> | undefined => {
   if (currentIdx < activeIndex || currentIdx > activeIndex + 1) {
-    return null;
+    return;
   }
 
   const leftIndexMod = 1 - indexFraction;

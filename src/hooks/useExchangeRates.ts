@@ -12,7 +12,7 @@ export function useExchangeRates(useAsyncData: AsyncDataHook): ExchangeCurrencyI
 
   const result = data?.hits?.hits?.map((_) => _._source) || [];
 
-  return result.length ? getCurrencyListByRate(result) : result;
+  return result.length ? getCurrencyListByRate(result as RatesData[]) : result;
 }
 
 async function fetchExchangeRates(): Promise<any | undefined> {

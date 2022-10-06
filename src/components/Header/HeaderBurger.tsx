@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { VNode } from '../../model/VNode';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
@@ -9,7 +10,7 @@ export interface HeaderBurgerProps {
   onClick: () => void;
   burgerSubMenu?: DispositionItem[];
   defaultLocation?: string;
-  children?: any;
+  children?: VNode;
 }
 
 export const HeaderBurger = JSX<HeaderBurgerProps>(

@@ -12,7 +12,14 @@ const BLOCKS_DIR_EXCLUSIONS = [
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'import', 'react', 'local-eslint-rules', 'sonarjs'],
+  plugins: [
+    '@typescript-eslint',
+    'import',
+    'react',
+    'react-hooks',
+    'local-eslint-rules',
+    'sonarjs',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -23,6 +30,7 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: '*', next: 'return' },
@@ -41,6 +49,7 @@ module.exports = {
     'sonarjs/no-nested-template-literals': 'warn',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
     camelcase: ['error', { allow: ['node_ids', 'node_id', 'user_name'] }],
     'import/no-unresolved': 'off',
     curly: 'error',
@@ -60,6 +69,9 @@ module.exports = {
         'src/**/*.spec.tsx',
         'src/**/*.spec.ts',
       ],
+      parserOptions: {
+        project: './tsconfig.json',
+      },
       rules: {
         complexity: ['error', 7],
         'max-lines': ['error', { max: 150, skipBlankLines: true, skipComments: true }],
@@ -71,6 +83,7 @@ module.exports = {
         'no-multiple-empty-lines': ['error', { max: 1 }],
         'import/no-default-export': 'error',
         'import/no-unresolved': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'error',
         'local-eslint-rules/consistent-blocks-registry': [
           'error',
           {

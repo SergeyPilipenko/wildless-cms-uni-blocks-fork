@@ -1,11 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { InputProps } from './InputProps';
-import { ChangeEvent } from 'react';
 
 export const Input = JSX<InputProps>(
   ({ className = '', id, name, type = 'text', placeholder, pattern, value, onChange }) => {
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      const validInputValue = e.target.validity.valid ? e.target.value : value;
+    const handleChange = (e) => {
+      const validInputValue = e.target.validity.valid ? (e.target.value as string) : value;
       onChange(validInputValue);
     };
 
@@ -18,7 +17,7 @@ export const Input = JSX<InputProps>(
         pattern={pattern}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => handleChange(e)}
+        onChange={handleChange}
       />
     );
   },

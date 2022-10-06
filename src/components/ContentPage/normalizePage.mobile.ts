@@ -1,4 +1,4 @@
-import type { BlockDef, ContentPageDef } from '../../types';
+import type { BlockDef, ContentPageDef, Slot } from '../../types';
 import { Blocks } from '../Blocks';
 import { isBlockInRegistry } from './isBlockInRegistry';
 import { normalizeBlock } from './normalizeBlock';
@@ -7,7 +7,7 @@ export function normalizePage(
   contentPage: ContentPageDef | undefined | null,
 ): ContentPageDef | undefined {
   if (!contentPage) {
-    return undefined;
+    return;
   }
 
   const { blocks, slots } = contentPage;
@@ -22,7 +22,7 @@ export function normalizePage(
           ...res,
           [key]: {
             ...slots[key],
-            blocks: getMobileBlocks(slots[key].blocks),
+            blocks: getMobileBlocks((slots[key] as Slot).blocks),
           },
         }),
         {},

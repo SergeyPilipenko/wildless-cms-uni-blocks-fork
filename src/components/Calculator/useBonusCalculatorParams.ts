@@ -28,10 +28,10 @@ export interface BonusCalculatorParams
   yearBonus: number;
 }
 
-export const getBonusCalculatorParams = (
+export const useBonusCalculatorParams = (
   context: ContentPageContext,
   userInputParams: BonusCalculatorUserInputParams,
-  sourceBookDir,
+  sourceBookDir: string,
 ) => {
   const { travelExpenseValue, restExpenseValue } = userInputParams;
   const bonusCalculatorSourceBookParams =

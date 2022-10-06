@@ -38,7 +38,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
           className={`h-12 pl-12 w-full peer text-l text-black border border-solid rounded box-border
               outline-none pr-[6%] border-main-divider focus:border-primary-text ${SearchBarInputClassName}`}
           value={term}
-          onChange={(e) => setTerm(e.target.value)}
+          onChange={(e) => setTerm(e.target.value as string)}
           type="text"
           name="search-bar-input"
           placeholder={inputPlaceholder}

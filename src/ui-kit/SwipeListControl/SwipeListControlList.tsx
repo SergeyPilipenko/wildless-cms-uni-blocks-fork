@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { SwipeListControlItem } from './SwipeListControlItem';
-import { getContainerStyle } from './utils/getContainerStyle';
 import { DEFAULT_GAP, DEFAULT_PADDING } from './constants';
+import { SwipeListControlItem } from './SwipeListControlItem';
 import { SwipeContainer } from './SwipeListControlProps';
+import { getContainerStyle } from './utils/getContainerStyle';
 
 /**
  * @title Список
@@ -10,7 +10,7 @@ import { SwipeContainer } from './SwipeListControlProps';
 export interface SwipeListControlListProps extends SwipeContainer {
   className?: string;
   activeIndex: number;
-  onScroll?: (e: UIEvent) => void;
+  onScroll?: (e) => void;
 }
 
 export const SwipeListControlList = JSX<SwipeListControlListProps>(

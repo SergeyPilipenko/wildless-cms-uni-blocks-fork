@@ -9,7 +9,7 @@ import { renderButtonSection } from './renderButtonSection';
 import { renderMonthsInput } from './renderMonthsInput';
 import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
 import { renderWantedSumInput } from './renderWantedSumInput';
-import { getCreditCalculatorParams } from './useCreditCalculatorParams';
+import { useCreditCalculatorParams } from './useCreditCalculatorParams';
 
 export const ANNUITY = 'annuity';
 export const DIFFERENTIAL = 'differential';
@@ -43,7 +43,7 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
       moneyValue,
       monthsValue,
     };
-    const calculatorParams = getCreditCalculatorParams(context, userInputParams, sourceBookDir);
+    const calculatorParams = useCreditCalculatorParams(context, userInputParams, sourceBookDir);
 
     return (
       <section className={className}>

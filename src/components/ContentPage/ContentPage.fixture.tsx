@@ -32,7 +32,7 @@ export default {
       className="bg-main"
       context={context}
       blocksRegistry={Blocks}
-      data={normalizePage(data as ContentPageDef)}
+      data={normalizePage(data as ContentPageDef) as ContentPageDef}
     />
   ),
   editor: (

@@ -16,7 +16,7 @@ export const Select = JSX<SelectProps>(
         id={id}
         name={name || id}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value as string)}
       >
         {children}
       </select>

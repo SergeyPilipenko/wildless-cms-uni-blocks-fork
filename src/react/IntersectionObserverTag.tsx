@@ -1,15 +1,14 @@
-import { useCallback, useRef } from 'react';
+import React, { ReactNode, useCallback, useRef } from 'react';
 import type { IntersectionObserverComponent } from '../components/ContentPage/ContentPageContext';
 
 export const IntersectionObserverTag: IntersectionObserverComponent = (props) => {
   const {
-    Tag,
+    tag: _tag = 'section',
     observerCallback,
     observerOptions,
     className = '',
     anchor = null,
     children,
-    ...rest
   } = props;
 
   const intersectionObserver = useRef<IntersectionObserver>();
@@ -23,9 +22,5 @@ export const IntersectionObserverTag: IntersectionObserverComponent = (props) =>
     [observerCallback, observerOptions],
   );
 
-  return (
-    <Tag ref={ref} className={className} id={anchor} {...rest}>
-      {children}
-    </Tag>
-  );
+  return React.createElement(_tag, { ref, className, id: anchor }, children as ReactNode);
 };

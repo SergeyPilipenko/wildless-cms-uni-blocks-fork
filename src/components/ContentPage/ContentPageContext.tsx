@@ -36,7 +36,7 @@ export type SetStateHook = <State>(
 ) => [State, (action: SetStateAction<State>) => void];
 
 export interface IntersectionObserverTagProps {
-  Tag: string;
+  tag: keyof HTMLElementTagNameMap;
   className?: string;
   anchor?: string;
   children?: VNode;
@@ -44,9 +44,7 @@ export interface IntersectionObserverTagProps {
   observerOptions?: IntersectionObserverInit;
 }
 
-export type IntersectionObserverComponent = (
-  props: IntersectionObserverTagProps & Record<string, any>,
-) => VNode;
+export type IntersectionObserverComponent = (props: IntersectionObserverTagProps) => VNode;
 
 export interface ContentPageContext {
   useRouter: () => Router;

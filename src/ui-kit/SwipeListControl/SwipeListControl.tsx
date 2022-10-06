@@ -26,14 +26,14 @@ export const SwipeListControl = JSX<SwipeListControlProps>(
       children,
     };
 
-    const handleScroll = (e: UIEvent) => {
+    const handleScroll = (e) => {
       const {
         scrollLeft,
         clientWidth,
         childElementCount,
         scrollWidth,
         children: childrenCollection,
-      } = e.currentTarget as HTMLElement;
+      } = e?.currentTarget as HTMLElement;
 
       // horizontal PADDING / 2 to compensate padding-margin combo of child container
       // without CSS calc function, as wrapper element gets bigger in the DOM, remaining same visually

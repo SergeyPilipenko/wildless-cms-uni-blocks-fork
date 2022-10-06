@@ -49,7 +49,7 @@ export const Header = JSX<HeaderProps>(
 
     return (
       <BlockWrapper
-        Tag="header"
+        tag="header"
         context={context}
         className={`pt-6 pb-5 px-20 ${bgColor} ${className}`}
         {...rest}

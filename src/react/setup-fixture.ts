@@ -1,10 +1,13 @@
 import { setup } from '@redneckz/uni-jsx';
 import { useEffect, useState } from 'react';
-import { jsx, jsxs } from 'react/jsx-runtime';
+import runtime from 'react/jsx-runtime';
 import { DaDataAPI } from '../api/DaDataAPI';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import { IntersectionObserverTag } from './IntersectionObserverTag';
 
+const { jsx, jsxs } = runtime as any;
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 setup(jsx, jsxs);
 
 const TEST_ORIGIN = 'http://localhost:5001';
@@ -33,7 +36,7 @@ export const context: ContentPageContext = {
   useState,
   useRouter: Router,
   useAsyncData: (key, fetcher) => {
-    const [data, setData] = useState();
+    const [data, setData] = useState<any>();
     useEffect(() => {
       fetcher(key).then((_) => {
         setData(_);
