@@ -707,13 +707,15 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
 
 exports[`Blocks Recommendation should render block "Recommendation" without content 1`] = `
 <section>
-  <div
-    class="flex duration-1000 gap-3.5"
-    role="list"
-    style="transform: translateX(-0px);"
-  />
   <div>
-    <div />
+    <div
+      class="flex duration-1000 gap-3.5"
+      role="list"
+      style="transform: translateX(-0px);"
+    />
+    <div>
+      <div />
+    </div>
   </div>
   <div
     class="absolute top-0 bottom-0 w-[84px] left-0 bg-opacity-from-white"

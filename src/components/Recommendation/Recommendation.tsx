@@ -27,22 +27,24 @@ export const Recommendation = JSX<RecommendationProps>(
         {...rest}
       >
         {title ? <Heading headingType="h3" className="mb-6" title={title} /> : null}
-        <div
-          className="flex duration-1000 gap-3.5"
-          style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}
-          role="list"
-        >
-          {recommendations?.length
-            ? recommendations.map(
-                renderRecommendationCard({ context, version, className: cardClassName }),
-              )
-            : null}
+        <div>
+          <div
+            className="flex duration-1000 gap-3.5"
+            style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}
+            role="list"
+          >
+            {recommendations?.length
+              ? recommendations.map(
+                  renderRecommendationCard({ context, version, className: cardClassName }),
+                )
+              : null}
+          </div>
+          {renderNavButtons({
+            cardsCount: recommendations.length,
+            activeCardIndex,
+            setActiveCardIndex,
+          })}
         </div>
-        {renderNavButtons({
-          cardsCount: recommendations.length,
-          activeCardIndex,
-          setActiveCardIndex,
-        })}
         <div
           className={`${BLUR_BLOCK_CLASSES} left-0 ${
             version === 'secondary' ? 'bg-opacity-from-main' : 'bg-opacity-from-white'
@@ -93,7 +95,7 @@ const renderNavButtons = ({
         handler: [handlePrevClick, handleNextClick],
         isShown: [showPrevButton, showNextButton],
         btnClass: ['left-8', 'right-8'],
-        className: 'top-1/2 mt-6',
+        className: 'top-1/2 mt-3',
       })}
     </div>
   );

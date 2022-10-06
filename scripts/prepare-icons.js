@@ -44,14 +44,14 @@ async function optimizeIcon(iconPath) {
   const result = injectIconId(optimized.data);
   await mkdir(outDir, { recursive: true });
   await writeFile(join(outDir, basename(iconPath)), result);
+
   return [iconTitle(icon), result];
 }
 
 function generateIconNameType(iconNames, iconTitles) {
   return `
 // Generated. Do not touch
-/* eslint-disable max-lines */
-
+/* eslint-disable max-len, max-lines */
 export enum IconMap {
   ${iconNames.map((_) => [_, wrap(_)].join(' = ')).join(', ')}
 }

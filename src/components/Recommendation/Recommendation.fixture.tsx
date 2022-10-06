@@ -3,24 +3,44 @@ import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
 import { Recommendation, RecommendationProps } from './Recommendation';
 
-const creditCard: Picture = {
-  src: 'credit-card-1.png',
+const cowCard: Picture = {
+  src: 'cow-card.png',
   format: 'webp',
   size: {
-    width: 180,
-    height: 180,
+    width: 290,
+    height: 290,
   },
-  title: 'credit-card-1',
+  title: 'cow-card',
 };
 
-const chair: Picture = {
-  src: 'chair.png',
+const productBasket: Picture = {
+  src: 'product-basket.png',
   format: 'webp',
   size: {
-    width: 180,
-    height: 180,
+    width: 290,
+    height: 290,
   },
-  title: 'chair',
+  title: 'product-basket',
+};
+
+const five: Picture = {
+  src: '5.svg',
+  format: 'webp',
+  size: {
+    width: 268,
+    height: 218,
+  },
+  title: 'five',
+};
+
+const card: Picture = {
+  src: '120.png',
+  format: 'webp',
+  size: {
+    width: 268,
+    height: 218,
+  },
+  title: '120',
 };
 
 const socialMedia: LinkProps[] = [
@@ -35,31 +55,58 @@ export const defaultProps: RecommendationProps = {
   recommendations: [
     {
       title: 'РоссельхозБанк',
-      items: ['Свежие новости', 'Акции и предложения', 'Ставки и катировки'],
-      image: chair,
+      items: ['Свежие новости', 'Акции и предложения', 'Ставки и котировки'],
+      image: cowCard,
       socialMedia,
     },
     {
       title: 'Своё Родное',
       description: 'Льготный период 120 дней',
-      image: creditCard,
+      image: productBasket,
       socialMedia,
     },
     {
       title: 'Своё Фермерство',
       description: 'Льготный период 120 дней',
-      image: creditCard,
+      image: cowCard,
       socialMedia,
     },
     {
       title: 'Кредитные карты',
       description: 'Льготный период 120 дней',
-      image: creditCard,
+      image: productBasket,
     },
     {
       title: 'Кредитные карты',
       description: 'Льготный период 120 дней',
-      image: creditCard,
+      image: cowCard,
+    },
+  ],
+};
+
+export const shortProps: RecommendationProps = {
+  context,
+  title: 'Также интересуются',
+  recommendations: [
+    {
+      title: 'Кредиты',
+      items: ['Свежие новости', 'Акции и предложения', 'Ставки и котировки'],
+      image: five,
+    },
+    {
+      title: 'Кредитная карта с длинным заголовком',
+      description: 'Льготный период 120 дней',
+      image: card,
+    },
+    {
+      title: 'Кредиты',
+      items: ['Свежие новости', 'Акции и предложения', 'Ставки и котировки'],
+      image: five,
+    },
+    {
+      title: 'Кредитная карта с длинным заголовком',
+      description: 'Льготный период 120 дней',
+      image: card,
     },
   ],
 };
@@ -83,6 +130,11 @@ export default {
   'secondary ecosystem own': (
     <div className="container grid grid-cols-12" data-theme="eo">
       <Recommendation className="col-span-12" {...defaultProps} version="secondary" />
+    </div>
+  ),
+  'secondary private short': (
+    <div className="container grid grid-cols-12" data-theme="pc">
+      <Recommendation className="col-span-12" {...shortProps} version="secondary" />
     </div>
   ),
 };

@@ -15,35 +15,40 @@ export interface RecommendationCardProps extends RecommendationCardTypes, UniBlo
 
 export const RecommendationCard = JSX<RecommendationCardProps>(
   ({ context, className = '', title, description, items, image, version, socialMedia }) => {
+    const tileTitle = title ? (
+      <Heading headingType="h5" as="h3" className="font-normal mb-3.5 z-10" title={title} />
+    ) : null;
+    const tileImage = image?.src ? (
+      <Img className="absolute bottom-0 right-0 m-0" image={image} />
+    ) : null;
+
     return (
       <section
-        className={`border border-solid box-border p-[30px] min-w-[524px] ${className}`}
+        className={`relative overflow-hidden text-left border border-solid box-border p-7 min-w-[524px] min-h-[218px] ${className}`}
         role="listitem"
       >
         <BaseTile
           context={context}
           className="flex justify-between"
-          title={
-            title ? (
-              <Heading headingType="h5" as="h3" className="font-normal mb-3.5" title={title} />
-            ) : null
-          }
-          image={image?.src && <Img className="mt-auto ml-7" image={image} />}
+          title={tileTitle}
+          image={tileImage}
         >
-          {description ? <Description className="text-left" description={description} /> : null}
+          {description ? <Description className="mb-2" description={description} /> : null}
           {items?.length ? (
             <List
-              className="text-xl-light text-left flex flex-col flex-1 gap-2"
+              className="text-md font-light flex flex-col flex-1 gap-2 max-w-[236px]"
               items={items}
               version={version}
             />
           ) : null}
-          <SocialMedia
-            className="pt-[42px] pb-0"
-            media={socialMedia}
-            version={version}
-            context={context}
-          />
+          {socialMedia ? (
+            <SocialMedia
+              className="pt-[42px] pb-0"
+              media={socialMedia}
+              version={version}
+              context={context}
+            />
+          ) : null}
         </BaseTile>
       </section>
     );
