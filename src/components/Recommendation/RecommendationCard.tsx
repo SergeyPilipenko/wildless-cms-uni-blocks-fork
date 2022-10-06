@@ -25,7 +25,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           className="flex justify-between"
           title={
             title ? (
-              <Heading headingType="h4" as="h3" className="font-normal mb-3.5" title={title} />
+              <Heading headingType="h5" as="h3" className="font-normal mb-3.5" title={title} />
             ) : null
           }
           image={image?.src && <Img className="mt-auto ml-7" image={image} />}
@@ -33,7 +33,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           {description ? <Description className="text-left" description={description} /> : null}
           {items?.length ? (
             <List
-              className="text-md text-left font-light flex flex-col flex-1 gap-2"
+              className="text-xl-light text-left flex flex-col flex-1 gap-2"
               items={items}
               version={version}
             />

@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { RecommendationCard } from './RecommendationCard';
@@ -26,7 +26,7 @@ export const Recommendation = JSX<RecommendationProps>(
         className={`relative font-sans p-9 overflow-hidden text-center ${blockClassName} ${className}`}
         {...rest}
       >
-        {title ? <Heading headingType="h2" className="mb-6" title={title} /> : null}
+        {title ? <Heading headingType="h3" className="mb-6" title={title} /> : null}
         <div
           className="flex duration-1000 gap-3.5"
           style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}

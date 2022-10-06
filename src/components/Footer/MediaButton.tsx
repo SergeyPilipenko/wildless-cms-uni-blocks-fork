@@ -54,7 +54,6 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
       : 'border-main-divider border-solid border-[1px] hover:bg-primary-main';
 
   const isPrimary = version === 'primary';
-  const imageClassName = isPrimary ? 'group-hover:text-white' : '';
 
   return (
     <a
@@ -67,7 +66,7 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
       rel="noopener noreferrer"
     >
       {icon ? (
-        <Img image={icon} imageClassName={imageClassName} width="24" height="24" asSVG />
+        <Img image={icon} imageClassName="group-hover:text-white" width="24" height="24" asSVG />
       ) : null}
     </a>
   );
