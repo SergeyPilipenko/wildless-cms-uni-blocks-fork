@@ -36,7 +36,10 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
   return (
     <BlockWrapper
       context={context}
-      className={`font-sans overflow-hidden pt-[50px] pl-[50px] pb-[50px] pr-[7.5rem] box-border min-h-[420px] ${productBlockStyleMap[version]} ${className}`}
+      className={`font-sans overflow-hidden pt-[50px] pl-[50px] pb-[50px] pr-[7.5rem] box-border
+      ${backwardButton?.text ? 'min-h-[542px] max-h-[542]' : 'min-h-[454px] max-h-[454px]'} ${
+        productBlockStyleMap[version]
+      } ${className}`}
       {...otherProps}
     >
       {backwardButton?.text
@@ -61,7 +64,12 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
           )}
         </div>
       ) : null}
-      <ProductBlockInner context={context} version={version} {...otherProps} />
+      <ProductBlockInner
+        context={context}
+        version={version}
+        {...otherProps}
+        className={backwardButton?.text ? 'pb-[88px]' : ''}
+      />
     </BlockWrapper>
   );
 });
