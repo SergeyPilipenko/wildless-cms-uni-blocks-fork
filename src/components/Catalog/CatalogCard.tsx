@@ -22,18 +22,21 @@ export const CatalogCard = JSX<CatalogCardProps>(
         className={`border border-solid box-border p-[30px] min-w-[402px] flex flex-col justify-left ${className}`}
         role="listitem"
       >
-        {image?.src ? <Img className="mb-5" image={image} /> : null}
+        {image?.src ? <Img className="mb-5 flex justify-center" image={image} /> : null}
         {title ? (
-          <Heading headingType="h6" as="h5" className="text-left mb-1.5" title={title} />
+          <Heading headingType="h6" as="h4" className="text-left mb-1.5" title={title} />
         ) : null}
-        {description ? <div className="text-m-md text-left mb-4">{description}</div> : null}
+        {description ? (
+          <div className="text-m-md text-left mb-4 font-light">{description}</div>
+        ) : null}
         {colors?.length ? (
-          <div className="flex mb-4 text-m-md text-secondary-text">
-            Доступные цвета: {colors.map(renderColorOption)}
+          <div className="flex mb-4 text-m-md text-secondary-text font-light">
+            <div className="mr-1.5">Доступные цвета: </div>
+            {colors.map(renderColorOption)}
           </div>
         ) : null}
-        {price ? <div className="text-title-sm text-left">{price}&nbsp;₽</div> : null}
-        {button?.text ? <Button className="mt-6 w-full" {...button} /> : null}
+        {price ? <div className="text-title text-left">{price}&nbsp;₽</div> : null}
+        {button?.text ? <Button className="mt-5 w-full" {...button} /> : null}
       </section>
     );
   },

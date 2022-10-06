@@ -21,10 +21,10 @@ export const Catalog = JSX<CatalogProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`bg-white relative font-sans p-9 overflow-hidden text-center ${className}`}
+        className={`bg-white relative font-sans p-12 overflow-hidden text-center ${className}`}
         {...rest}
       >
-        {title ? <Heading headingType="h2" className="mb-6" title={title} /> : null}
+        {title ? <Heading headingType="h3" className="mb-6" title={title} /> : null}
         {description ? <Description className="mb-6" description={description} /> : null}
         <div
           className="flex duration-1000 gap-3.5"
