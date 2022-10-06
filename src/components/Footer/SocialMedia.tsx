@@ -26,7 +26,7 @@ export const SocialMedia = JSX<SocialMediaProps>(
             />
           ))}
         </div>
-        <span className="font-light text-sm text-secondary-text">{children}</span>
+        <span className="text-s-light text-secondary-text">{children}</span>
       </div>
     );
   },

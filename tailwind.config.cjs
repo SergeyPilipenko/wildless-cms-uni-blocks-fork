@@ -45,37 +45,15 @@ module.exports = {
         mohave: ['Mohave', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        button: ['0.875rem', '1.25rem'], // 14px 20px
-
         'title-extra': ['15.625rem', '14.687rem'], // 250px 235px
         'title-huge': ['12.5rem', '15.625rem'], // 200px 250px
-        'title-xl': ['3.125rem', '3.25rem'], //50px 52px
-        'title-lg': ['2.5rem', '3rem'], //40px 48px
-        title: ['2rem', '2.5rem'], //32px 40px
-        'title-sm': ['1.75rem', '2.5rem'], //28px 40px
-        'title-xs': ['1.5rem', '1.875rem'], //24px 30px
-        'title-2xs': ['1.25rem', '1.75rem'], //20px 28px
-        lg: ['2.188rem', '3rem'], // 35px 48px
-        md: ['1.125rem', '1.5rem'], // 18px 24px
-        'md-new': ['1.125rem', '1.25rem'], // 18px 20px
         base: ['1rem', '1.5rem'], // 16px 24px
-        'base-sm': ['0.9375rem', '1.25rem'], // 15px 20px
         sm: ['0.875rem', '1.375rem'], // 14px 22px
 
-        '2xs': ['0.625rem', '0.625rem'], // 10px 10px
-
-        'm-button': ['0.875rem', '1.25rem'], // 14px 20px
-
         'm-title': ['1.375rem', '1.8125rem'], //22px 29px
-        'm-title-md': ['1.25rem', '1.625rem'], //20px 26px
         'm-title-xs': ['1.0625rem', '1.375rem'], // 17px 22px
-        'm-base': ['1rem', '1.5rem'], // 16px 24px
         'm-md': ['0.9375rem', '1.5rem'], // 15px 24px
-        'm-md-new': ['0.9375rem', '1.375rem'], // 15px 22px
         'm-sm': ['0.875rem', '1.375rem'], // 14px 22px
-        'm-xs': ['1.8125rem', '1.375rem'], // 13px 22px
-        'm-2xs': ['0.75rem', '1.125rem'], // 12px 18px
-        'm-3xs': ['0.625rem', '0.625rem'], // 10px 10px
 
         h0: ['3.5rem', { // 56px 56px
           lineHeight: '3.5rem',

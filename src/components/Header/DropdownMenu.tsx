@@ -71,7 +71,7 @@ const renderDotsSubMenuItems = ({
     <a
       key={_.href}
       {...useLink({ router, handlerDecorator }, _)}
-      className={`text-base font-light pb-4 hover:text-primary-main ${
+      className={`text-l-light pb-4 hover:text-primary-main ${
         isActive(_) ? 'text-primary-main' : ''
       }`}
     >

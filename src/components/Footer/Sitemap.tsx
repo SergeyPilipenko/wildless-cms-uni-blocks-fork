@@ -31,7 +31,7 @@ const renderColumn = (c: TopMenuItem, index: number, { router, handlerDecorator 
   return (
     <div key={String(index)} className="flex flex-col w-1/5 last:w-1/4 gap-[14px]">
       <a
-        className="block font-sans leading-5 text-base text-primary-text no-underline"
+        className="block font-sans leading-5 text-l text-primary-text no-underline"
         href={href}
         target={target || '_self'}
       >
@@ -50,7 +50,7 @@ interface ColumnItemProps extends LinkProps {
 
 const ColumnItem = JSX<ColumnItemProps>(({ text, href, target, index }) => (
   <a
-    className="block font-sans font-light text-base text-secondary-text hover:text-primary-main no-underline"
+    className="block font-sans text-l-light text-secondary-text hover:text-primary-main no-underline"
     href={href}
     target={target || '_self'}
   >

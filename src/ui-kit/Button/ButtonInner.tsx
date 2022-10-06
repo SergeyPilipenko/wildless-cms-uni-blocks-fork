@@ -15,7 +15,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
       {isWithText(props) ? (
         <div>
           <div className="text-xs text-left">{aboveText}</div>
-          <div className={`text-left ${aboveText ? 'text-s -mt-0.5' : 'text-base'}`}>{text}</div>
+          <div className={`text-left ${aboveText ? 'text-s -mt-0.5' : 'text-l'}`}>{text}</div>
         </div>
       ) : null}
       {appendRight ? appendRight : null}

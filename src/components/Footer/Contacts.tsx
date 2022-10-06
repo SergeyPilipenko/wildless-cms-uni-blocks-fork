@@ -40,7 +40,7 @@ const renderContact = (item: ContactInfo, index: number) => {
   return (
     <div className="mb-4" key={String(index)}>
       <div>{renderText(type, text)}</div>
-      <div className="mt-1 font-sans font-light text-sm text-secondary-text">{description}</div>
+      <div className="mt-1 font-sans text-s-light text-secondary-text">{description}</div>
     </div>
   );
 };

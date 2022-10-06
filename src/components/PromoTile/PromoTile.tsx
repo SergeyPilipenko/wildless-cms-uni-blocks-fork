@@ -60,7 +60,7 @@ export const PromoTile = JSX<PromoTileProps>(
         >
           <div className="mt-1.5">
             {date ? <div className="text-sm mb-2">{formatDate(date)}</div> : null}
-            <div className="text-base">{description}</div>
+            <div className="text-l">{description}</div>
           </div>
         </BaseTile>
       </BlockWrapper>

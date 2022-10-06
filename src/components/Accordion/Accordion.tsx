@@ -37,7 +37,7 @@ export const Accordion = JSX<AccordionProps>(
             title={title}
           />
         ) : null}
-        {description ? <div className="mb-2.5 text-base">{description}</div> : null}
+        {description ? <div className="mb-2.5 text-l">{description}</div> : null}
         {accordionItems?.length ? (
           <ul className="list-none m-0 p-0">
             {accordionItems.map((item, i) => (

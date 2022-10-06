@@ -29,9 +29,9 @@ export const InputRange = JSX<InputRangeProps>(
     return (
       <div className={className}>
         <label className="block relative">
-          {title ? <span className="text-base text-secondary-text pl-4">{title}</span> : null}
+          {title ? <span className="text-l text-secondary-text pl-4">{title}</span> : null}
           <input
-            className={`m-0 mt-[5px] font-sans text-title w-full h-14 border border-solid border-main-stroke rounded-md
+            className={`m-0 mt-[5px] font-sans text-h3 w-full h-14 border border-solid border-main-stroke rounded-md
                         outline-none p-0 pl-4 box-border text-primary-text`}
             value={addSpacesBetweenNumbers(value)}
             onChange={(e) => handleChange(e.target.value)}

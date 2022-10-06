@@ -65,7 +65,7 @@ const renderDescription = (description?: DescriptionType) => {
   }
 
   return description ? (
-    <div className="font-light text-base text-secondary-text mt-2">
+    <div className="text-l-light text-secondary-text mt-2">
       {benefitType === 'list'
         ? renderListBenefit(description as ListBenefitDef)
         : renderTextBenefit(description as TextBenefitDef)}

@@ -18,9 +18,7 @@ export const GalleryCardInner = JSX<GalleryCard>(
             </div>
           ) : null}
           {title ? renderCardTitle(title, titleStyleClasses) : null}
-          {description ? (
-            <div className={`font-light text-m-md-new ${title ? 'mt-2' : ''}`}>{description}</div>
-          ) : null}
+          {description ? <div className={`text-m${title ? 'mt-2' : ''}`}>{description}</div> : null}
           {items?.length ? renderItems(items, isDotted, version) : null}
         </div>
         {button?.text ? renderButton(button) : null}

@@ -25,7 +25,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
         <div className="flex flex-col items-center mb-8">
           {title ? <Heading headingType="h2" className="text-center" title={title} /> : null}
           {description ? (
-            <div className="font-light text-md max-w-[600px] mt-2.5">{description}</div>
+            <div className="text-xl-light max-w-[600px] mt-2.5">{description}</div>
           ) : null}
         </div>
         <div

@@ -39,7 +39,7 @@ const renderBonusBenefit = (bonusBenefit: BonusBenefit, i: number) => {
         />
       ) : null}
       <div>
-        {bonusBenefit?.label ? <span className="title-2xs m-0">{bonusBenefit.label}</span> : null}
+        {bonusBenefit?.label ? <span className="text-h6 m-0">{bonusBenefit.label}</span> : null}
       </div>
     </div>
   );

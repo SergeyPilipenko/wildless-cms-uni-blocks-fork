@@ -82,7 +82,7 @@ const labelStyleMap: Record<BlockVersion, string> = {
 
 const renderLabel = (label: string, version: BlockVersion) => (
   <div
-    className={`m-xs px-2.5 py-1.5 mb-5 rounded-md border-2 border-solid w-fit ${labelStyleMap[version]}`}
+    className={`px-2.5 py-1.5 mb-5 rounded-md border-2 border-solid w-fit ${labelStyleMap[version]}`}
   >
     {label}
   </div>

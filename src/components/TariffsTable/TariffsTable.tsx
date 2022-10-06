@@ -56,7 +56,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
             title={title}
           />
         ) : null}
-        {description ? <div className="mb-9 text-center text-m-base">{description}</div> : null}
+        {description ? <div className="mb-9 text-center text-l">{description}</div> : null}
         {rowData?.length ? (
           <Foldable
             blocks={foldableBlocks}

@@ -35,7 +35,7 @@ export const CatalogCard = JSX<CatalogCardProps>(
             {colors.map(renderColorOption)}
           </div>
         ) : null}
-        {price ? <div className="text-title text-left">{price}&nbsp;₽</div> : null}
+        {price ? <div className="text-h3 text-left">{price}&nbsp;₽</div> : null}
         {button?.text ? <Button className="mt-5 w-full" {...button} /> : null}
       </section>
     );

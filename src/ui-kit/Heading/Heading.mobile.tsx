@@ -5,7 +5,7 @@ const HeadingClass: Record<HeadingType, string> = {
   h0: 'text-m-title',
   h1: 'text-m-title',
   h2: 'text-m-title',
-  h3: 'text-m-title-md',
+  h3: 'text-h6',
   h4: 'text-m-title-xs',
   h5: 'text-m-title-xs',
   h6: 'text-m-title-xs',

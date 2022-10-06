@@ -75,8 +75,8 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
   const btnClassName = isActiveBtn
     ? 'h-[88px] w-[387px] min-w-[387px] p-5 border-none bg-primary-main text-white'
     : `h-[77px] w-[322px] min-w-[322px] px-5 py-4 ease-in duration-300 bg-white text-primary-text`;
-  const btnTitleClassName = isActiveBtn ? 'text-md-new mb-1.5' : `text-base mb-[3px]`;
-  const btnDescClassName = isActiveBtn ? 'text-base text-white' : `text-m-md`;
+  const btnTitleClassName = isActiveBtn ? 'text-xl mb-1.5' : `text-l mb-[3px]`;
+  const btnDescClassName = isActiveBtn ? 'text-l text-white' : `text-m-md`;
   const iconClassName = isActiveBtn ? '' : `text-primary-main`;
 
   return (

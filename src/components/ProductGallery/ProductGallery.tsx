@@ -95,8 +95,8 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
     : `min-w-[277px] px-0 pt-4 pb-[23px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
       ${productSlideStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
-    ? 'text-primary-text text-title-2xs'
-    : `text-base ${productBlockStyleMap[version].title}`;
+    ? 'text-primary-text text-h6'
+    : `text-l ${productBlockStyleMap[version].title}`;
   const btnDescClassName = isActiveBtn
     ? 'text-secondary-text text-m-title-xs mt-2.5'
     : `text-m-md mt-1.5 ${productBlockStyleMap[version].text}`;

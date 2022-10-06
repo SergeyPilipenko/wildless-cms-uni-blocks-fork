@@ -13,7 +13,7 @@ export const GracePeriod = JSX<GracePeriodProps>(
     return (
       <BlockWrapper className={`font-sans bg-white p-[50px] ${className}`} {...rest}>
         <Heading headingType="h3" className="text-center" title={title} />
-        <div className="font-light text-base-md text-center mt-3">{description}</div>
+        <div className="text-l-light-md text-center mt-3">{description}</div>
         {calendar ? renderCalendar(calendar) : null}
       </BlockWrapper>
     );
@@ -38,7 +38,7 @@ const renderCalendar = (calendar) => {
 
   return (
     <div className="w-full flex flex-col justify-center mt-[54px]">
-      <div className="flex w-full mb-3 font-light text-m-title-md text-center">
+      <div className="flex w-full mb-3 font-light text-h6 text-center">
         {mappedCalendar.map((_) => renderMonthNames(_, colSize))}
       </div>
       <div className="flex w-full">

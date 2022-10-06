@@ -12,7 +12,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
     const { term, setTerm } = context.useSearch();
 
     const LoupeIconClassName = isMobile ? 'w-[20px] h-[20px]' : 'w-[24px] h-[24px]';
-    const SearchBarLabelClassName = isMobile ? 'font-normal text-sm' : 'font-light text-base';
+    const SearchBarLabelClassName = isMobile ? 'font-normal text-sm' : 'text-l-light';
     const SearchBarInputClassName = isMobile
       ? ' placeholder-transparent font-normal'
       : 'font-light h-full';
@@ -35,7 +35,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
         </div>
         <input
           id="search-bar-input"
-          className={`h-12 pl-12 w-full peer text-base text-black border border-solid rounded box-border
+          className={`h-12 pl-12 w-full peer text-l text-black border border-solid rounded box-border
               outline-none pr-[6%] border-main-divider focus:border-primary-text ${SearchBarInputClassName}`}
           value={term}
           onChange={(e) => setTerm(e.target.value)}
