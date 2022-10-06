@@ -2,11 +2,7 @@ name: main
 
 on:
   push:
-  workflow_run:
-    workflows:
-      - e2e-update-snapshots
-    types:
-      - completed
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
