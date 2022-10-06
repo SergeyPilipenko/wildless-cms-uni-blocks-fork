@@ -47,7 +47,7 @@ export const useCreditCalculatorParams = (
     sourceBookDir || CREDIT_CALC_DEFAULT_DIR,
   );
   const creditCalculatorSourceBookParams =
-    data?.rows.find((_) => {
+    data?.rows?.find((_) => {
       return (
         isInsurance === _.isInsurance &&
         isSalaryClient === _.isSalaryClient &&
