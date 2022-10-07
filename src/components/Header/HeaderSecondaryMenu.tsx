@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { IconVersion } from '../../model/IconVersion';
 import type { BgColorVersion } from '../../model/BgColorVersion';
+import type { IconVersion } from '../../model/IconVersion';
 import type { UniBlockProps } from '../../types';
 import { Img } from '../../ui-kit/Img/Img';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
@@ -50,22 +50,24 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
           bgColor={bgColor}
         />
         <HeaderSecondaryMenuButton
-          className={`mr-5 ${COLORS_MAP[bgColor]}`}
+          className={`mr-5 group ${COLORS_MAP[bgColor]}`}
           ariaLabel="Поиск по сайту"
         >
           <Img
             image={{ icon: 'LoupeIcon', iconVersion: LINKS_ICON_VERSION_MAP[bgColor] }}
-            className="h-full"
+            className="h-full pointer-events-none"
+            imageClassName="group-hover:text-primary-main pointer-events-none"
             asSVG
           />
         </HeaderSecondaryMenuButton>
         <HeaderSecondaryMenuButton
-          className={`${LINKS_COLORS_MAP[bgColor]} min-w-[32px] min-h-[32px]`}
+          className={`${LINKS_COLORS_MAP[bgColor]} group min-w-[32px] min-h-[32px]`}
           ariaLabel="Дополнительные ссылки"
         >
           <Img
             image={{ icon: 'GridIcon', iconVersion: LINKS_ICON_VERSION_MAP[bgColor] }}
-            className="h-full bg-secondary-light rounded-full"
+            className="h-full bg-main-divider rounded-full pointer-events-none"
+            imageClassName="group-hover:text-primary-main"
             asSVG
           />
         </HeaderSecondaryMenuButton>
