@@ -178,7 +178,7 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
 
 exports[`Blocks Footer should render block "Footer" without content 1`] = `
 <footer
-  class="p-9 bg-white "
+  class="p-9 bg-white font-sans "
 >
   <div
     class="flex items-stretch gap-[54px] pb-[30px] xl:gap-8"
@@ -240,7 +240,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
         </label>
       </div>
       <input
-        class="h-12 pl-12 w-full peer text-l text-black border border-solid rounded box-border
+        class="h-12 pl-12 w-full peer text-l text-black border border-solid rounded-md box-border
               outline-none pr-[6%] border-main-divider focus:border-primary-text font-light h-full"
         id="search-bar-input"
         name="search-bar-input"
@@ -291,7 +291,9 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           </div>
         </a>
       </div>
-      <div>
+      <div
+        class="font-sans"
+      >
         <div
           class="flex gap-2.5 "
         />
@@ -301,7 +303,9 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           Соцсети
         </span>
       </div>
-      <div>
+      <div
+        class="font-sans"
+      >
         <div
           class="flex gap-2.5 mt-6"
         />
@@ -313,7 +317,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
       </div>
     </div>
     <div
-      class="flex items-start justify-between gap-11 xl:gap-5 pt-[3px]"
+      class="flex items-start justify-between gap-[54px] xl:gap-5 pt-[3px]"
     />
   </div>
   <div
@@ -326,7 +330,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
       class="pt-5"
     >
       <span
-        class="font-sans font-light text-xs text-secondary-text"
+        class="font-light text-xs text-secondary-text"
       >
         © 2000-2022 АО «Россельхозбанк» Генеральная лицензия Банка России № 3349 от 12.08.2015 г.
       </span>

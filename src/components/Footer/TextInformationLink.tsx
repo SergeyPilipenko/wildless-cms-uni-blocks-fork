@@ -10,7 +10,7 @@ interface TextInformationLinkProps extends LinkProps {
 export const TextInformationLink = JSX<Partial<TextInformationLinkProps>>(
   ({ className = '', index, text, href, target, onClick }) => (
     <a
-      className={`font-sans text-xs text-secondary-text visited:text-secondary-text hover:text-primary-text inline-block no-underline max-w-[292px] ${className}`}
+      className={`text-xs text-secondary-text visited:text-secondary-text hover:text-primary-main inline-block no-underline max-w-[292px] ${className}`}
       href={href}
       target={target}
       onClick={onClick}

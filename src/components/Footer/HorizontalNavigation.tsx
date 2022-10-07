@@ -21,7 +21,7 @@ export const HorizontalNavigation = JSX<HorizontalNavigationProps>(
               <HorizontalNavigationLink
                 key={String(i)}
                 index={i}
-                className="font-light max-w-[292px]"
+                className="font-l-light max-w-[292px]"
                 {...useLink({ router, handlerDecorator }, _)}
               />
             ))}

@@ -30,7 +30,7 @@ export const Footer = JSX<FooterProps>(
     const dispositions = sitemap?.dispositions;
 
     return (
-      <footer className={`px-4 py-[26px] bg-white ${className}`}>
+      <footer className={`font-sans px-4 py-[26px] bg-white ${className}`}>
         <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
         <Accordion
           context={context}

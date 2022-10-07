@@ -30,7 +30,7 @@ export const Footer = JSX<FooterProps>(
       <BlockWrapper
         tag="footer"
         context={context}
-        className={`p-9 bg-white ${className || ''}`}
+        className={`p-9 bg-white font-sans ${className || ''}`}
         {...rest}
       >
         <div className="flex items-stretch gap-[54px] pb-[30px] xl:gap-8">

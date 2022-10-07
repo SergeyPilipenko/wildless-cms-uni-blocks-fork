@@ -19,7 +19,7 @@ export const Sitemap = JSX<SitemapProps>(({ className = '', items, context }) =>
   };
 
   return (
-    <div className={`flex items-start justify-between gap-11 xl:gap-5 ${className}`}>
+    <div className={`flex items-start justify-between gap-[54px] xl:gap-5 ${className}`}>
       {mergedItems?.map((_, i) => renderColumn(_, i, linkParams))}
     </div>
   );
@@ -29,9 +29,9 @@ const renderColumn = (c: TopMenuItem, index: number, { router, handlerDecorator 
   const { text, href, items, target } = c;
 
   return (
-    <div key={String(index)} className="flex flex-col w-1/5 last:w-1/4 gap-[14px]">
+    <div key={String(index)} className="flex flex-col w-1/5 last:w-1/4 gap-3.5">
       <a
-        className="block font-sans leading-5 text-l text-primary-text no-underline"
+        className="block leading-5 text-l text-primary-text hover:text-primary-main no-underline"
         href={href}
         target={target || '_self'}
       >
@@ -50,7 +50,7 @@ interface ColumnItemProps extends LinkProps {
 
 const ColumnItem = JSX<ColumnItemProps>(({ text, href, target, index }) => (
   <a
-    className="block font-sans text-l-light text-secondary-text hover:text-primary-main no-underline"
+    className="block text-l-light text-secondary-text hover:text-primary-main no-underline"
     href={href}
     target={target || '_self'}
   >

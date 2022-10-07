@@ -40,7 +40,7 @@ const renderContact = (item: ContactInfo, index: number) => {
   return (
     <div className="mb-4" key={String(index)}>
       <div>{renderText(type, text)}</div>
-      <div className="mt-1 font-sans text-s-light text-secondary-text">{description}</div>
+      <div className="mt-1 text-s-light text-secondary-text">{description}</div>
     </div>
   );
 };
@@ -50,7 +50,7 @@ const renderText = (type: ContactInfo['type'], text = '') => {
     case 'tel':
       return (
         <a
-          className="font-sans text-xl-light text-primary-text no-underline"
+          className="text-h6 text-primary-text hover:text-primary-main no-underline"
           href={`tel:${formatTel(text)}`}
         >
           {text}
@@ -58,10 +58,7 @@ const renderText = (type: ContactInfo['type'], text = '') => {
       );
     case 'email':
       return (
-        <a
-          className="font-sans text-xl-light text-primary-text no-underline"
-          href={`mailto:${text}`}
-        >
+        <a className="text-xl-light text-primary-text no-underline" href={`mailto:${text}`}>
           {text}
         </a>
       );
