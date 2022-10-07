@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useLink } from '../../hooks/useLink';
 import type { UniBlockProps } from '../../types';
+import { Button } from '../../ui-kit/Button/Button';
 import { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { calculateResult, formatValue } from './calculateResult';
 import { callbackCurrencySelect } from './callbackCurrencySelect';
 import { Currency } from './CurrencyProps';
-import { renderButton } from './renderButton';
 import { renderInput } from './renderInput';
-
 export interface ExchangeCurrencyItem {
   code?: Currency;
   buy?: number;
@@ -27,6 +27,9 @@ export interface CalcState {
 
 export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
   ({ context, className = '', currencyRatesBuy, currencyRatesSell, button }) => {
+    const { useRouter, handlerDecorator } = context;
+    const router = useRouter();
+
     const [calcState, setCalcState] = context.useState<CalcState>({
       inputSell: '',
       inputBuy: '',
@@ -66,7 +69,15 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
               calcState.selectSell,
             ),
         })}
-        {button?.text ? renderButton(button) : null}
+        {button?.text ? (
+          <Button
+            className="py-4 mr-1"
+            version={button?.version}
+            {...useLink({ router, handlerDecorator }, button)}
+          >
+            {button.text}
+          </Button>
+        ) : null}
       </div>
     );
   },
