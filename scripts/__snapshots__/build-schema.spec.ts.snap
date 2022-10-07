@@ -3109,7 +3109,8 @@ Object {
     "Step": Object {
       "properties": Object {
         "button": Object {
-          "$ref": "#/definitions/ButtonProps",
+          "$ref": "#/definitions/ButtonWithIconProps",
+          "title": "Кнопка",
         },
         "description": Object {
           "title": "Описание",
@@ -3137,7 +3138,8 @@ Object {
     "StepsBlockContent": Object {
       "properties": Object {
         "button": Object {
-          "$ref": "#/definitions/ButtonProps",
+          "$ref": "#/definitions/ButtonWithIconProps",
+          "title": "Кнопка",
         },
         "description": Object {
           "title": "Описание",

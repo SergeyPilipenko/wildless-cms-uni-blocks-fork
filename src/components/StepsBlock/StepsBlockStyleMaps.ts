@@ -9,7 +9,7 @@ export type StyleType = {
   iconConnector: string;
 };
 
-const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
+export const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
   primary: {
     background: 'bg-white',
     title: 'text-primary-text',
@@ -27,5 +27,3 @@ const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
     iconConnector: 'bg-white',
   },
 };
-
-export const getStyleMap = (version: BlockVersion): StyleType => STEPS_BLOCK_STYLE_MAPS[version];

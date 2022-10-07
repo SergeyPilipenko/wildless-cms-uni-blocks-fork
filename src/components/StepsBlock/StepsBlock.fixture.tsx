@@ -28,6 +28,7 @@ export default {
         context={context}
         title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
         steps={steps.slice(0, 3)}
+        version="secondary"
       />
     </div>
   ),
@@ -43,19 +44,19 @@ export default {
             label: 'В мобильном приложении или интернет-банке',
             description: 'Для всех клиентов Россельхозбанка',
             icon: { icon: 'SignDocsIcon' },
-            button: { text: 'Войти в интернет-банк', href: 'https://www.rshb.ru/' },
+            button: { text: 'Войти в интернет-банк' },
           },
           {
             label: 'Через Госуслуги',
             description: 'При наличии данных в Единой биометрической системе',
             icon: { icon: 'ClockIcon' },
-            button: { text: 'Оформить', href: 'https://www.rshb.ru/' },
+            button: { text: 'Оформить' },
           },
           {
             label: 'В офисах Россельхозбанка',
             description: 'Откройте вклад',
             icon: { icon: 'ComfortableCompIcon' },
-            button: { text: 'Офисы на карте', href: 'https://www.rshb.ru/' },
+            button: { text: 'Офисы на карте' },
           },
         ]}
       />

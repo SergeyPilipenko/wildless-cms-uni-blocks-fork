@@ -14,6 +14,11 @@
           "height": 48
         },
         "format": "webp"
+      },
+      "button": {
+        "text": "Кнопка",
+        "target": "_blank",
+        "version": "primary"
       }
     },
     {
@@ -25,6 +30,11 @@
           "height": 48
         },
         "format": "webp"
+      },
+      "button": {
+        "text": "Кнопка",
+        "target": "_blank",
+        "version": "primary"
       }
     },
     {
@@ -36,6 +46,11 @@
           "height": 48
         },
         "format": "webp"
+      },
+      "button": {
+        "text": "Кнопка",
+        "target": "_blank",
+        "version": "primary"
       }
     }
   ],

@@ -693,7 +693,7 @@ exports[`Blocks Placeholder should render block "Placeholder" without content 1`
 
 exports[`Blocks ProductBlock should render block "ProductBlock" without content 1`] = `
 <section
-  class="font-sans overflow-hidden p-[50px] box-border min-h-[528px] bg-white text-primary-text "
+  class="font-sans overflow-hidden p-[50px] flex flex-col box-border min-h-[528px] bg-white text-primary-text "
 >
   <div
     class="flex grow justify-between items-stretch h-full "

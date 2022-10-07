@@ -44,6 +44,7 @@ export default [
   'sum',
   'monthLimit',
   'additionalDescription',
+  'icon',
   'buttons',
   'button',
   'version',

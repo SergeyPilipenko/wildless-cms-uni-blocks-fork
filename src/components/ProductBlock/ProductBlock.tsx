@@ -36,7 +36,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
   return (
     <BlockWrapper
       context={context}
-      className={`font-sans overflow-hidden p-[50px] box-border min-h-[528px] ${productBlockStyleMap[version]} ${className}`}
+      className={`font-sans overflow-hidden p-[50px] flex flex-col box-border min-h-[528px] ${productBlockStyleMap[version]} ${className}`}
       {...otherProps}
     >
       {backwardButton?.text
