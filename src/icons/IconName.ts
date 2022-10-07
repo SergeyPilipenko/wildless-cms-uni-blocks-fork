@@ -1,6 +1,5 @@
 // Generated. Do not touch
-/* eslint-disable max-lines */
-
+/* eslint-disable max-len, max-lines */
 export enum IconMap {
   ActualBalanceIcon = 'ActualBalanceIcon',
   AirPlane = 'AirPlane',

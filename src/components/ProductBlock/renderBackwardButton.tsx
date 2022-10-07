@@ -13,7 +13,7 @@ export function renderBackwardButton(
   const backwardIcon = button?.icon || { icon: 'ArrowLeftIcon' };
 
   return (
-    <div className={`flex items-center ${className}`}>
+    <div className={`flex items-center cursor-pointer ${className}`} onClick={onClick}>
       <Button
         version={version}
         rounded
@@ -21,7 +21,6 @@ export function renderBackwardButton(
         ariaLabel={text}
         href={href}
         target={target}
-        onClick={onClick}
       >
         <Img className="w-4 h-4" image={{ ...backwardIcon, iconVersion }} asSVG />
       </Button>
