@@ -1,6 +1,6 @@
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
-import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @enumNames ["Черный", "Белый"]
@@ -12,7 +12,13 @@ export interface CatalogCardType extends HeadlineCommonProps, ImageContent {
   price?: number;
   /** @title Доступные цвета */
   colors?: CatalogProductColor[];
-  /** @title Кнопка */
+  /**
+   * @title Кнопка
+   * @default {
+   *  "icon": { "format": "webp", "size": { "width": 24, "height": 24 } },
+   *  "iconRight" : { "format": "webp", "size": { "width": 24, "height": 24 } }
+   * }
+   */
   button?: ButtonWithIconProps;
 }
 
