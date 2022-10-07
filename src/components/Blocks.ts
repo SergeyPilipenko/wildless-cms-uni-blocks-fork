@@ -27,6 +27,7 @@ import { ProductGallery } from './ProductGallery/ProductGallery';
 import { ProductTile } from './ProductTile/ProductTile';
 import { PromoTile } from './PromoTile/PromoTile';
 import { Recommendation } from './Recommendation/Recommendation';
+import { SafeDepositRental } from './SafeDepositRental/SafeDepositRental';
 import { StepsBlock } from './StepsBlock/StepsBlock';
 import { Tabs } from './Tabs/Tabs';
 import { TariffsTable } from './TariffsTable/TariffsTable';
@@ -67,5 +68,6 @@ export const Blocks = {
   Placeholder,
   GroupBlock,
   BonusBenefitsBlock,
+  SafeDepositRental,
   Tabs,
 };

@@ -819,6 +819,87 @@ exports[`Blocks Recommendation should render block "Recommendation" without cont
 </section>
 `;
 
+exports[`Blocks SafeDepositRental should render block "SafeDepositRental" without content 1`] = `
+<section
+  class="bg-white px-8 py-12 "
+>
+  <div
+    class="flex justify-between align-top mb-6"
+  >
+    <div
+      class="flex flex-col justify-between"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="mr-11"
+        >
+          <span
+            class="block font-light text-m mb-1"
+          >
+            Аренда за
+          </span>
+          <span
+            class="text-h3"
+          >
+            26
+          </span>
+        </div>
+        <div
+          class=""
+        >
+          <span
+            class="block font-light text-m mb-1"
+          >
+            Цена
+          </span>
+          <span
+            class="text-h3"
+          >
+            26 ₽
+          </span>
+        </div>
+      </div>
+      <div
+        class="bg-primary-main px-10 pt-10 pb-4 text-center"
+      >
+        <svg
+          aria-hidden="true"
+          class=""
+          height="257"
+          width="290"
+        >
+          <title>
+            Иконка PackA4
+          </title>
+          <desc>
+            Иконка PackA4
+          </desc>
+          <use
+            class="text-primary-main "
+            href="icons/PackA4.svg#icon"
+            xlink:href="icons/PackA4.svg#icon"
+          />
+        </svg>
+        <span
+          class="font-light text-white opacity-80 mt-2 inline-block"
+        >
+          На рисунки изображена пачка
+          <br />
+           листов формата А4
+        </span>
+      </div>
+    </div>
+  </div>
+  <p
+    class="text-button font-light text-secondary-text"
+  >
+    Аренда СЯ, в случае проведения процедуры купли-продажи, с использованием наличных денег или процедуры ипотечной сделки
+  </p>
+</section>
+`;
+
 exports[`Blocks StepsBlock should render block "StepsBlock" without content 1`] = `
 <section
   class="box-border font-sans text-primary-text bg-white px-[70px] py-[50px] flex flex-col items-center bg-white text-primary-text "

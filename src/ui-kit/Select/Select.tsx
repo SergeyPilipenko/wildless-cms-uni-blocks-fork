@@ -8,11 +8,16 @@ export interface SelectProps {
   onChange: (value: string) => void;
 }
 
+const selectStyle = {
+  background: `url('/icons/ArrowDownIcon.svg') no-repeat right 16px top 50%`,
+};
+
 export const Select = JSX<SelectProps>(
   ({ className = '', id, name, children, value, onChange }) => {
     return (
       <select
-        className={className}
+        className={`appearance-none ${className}`}
+        style={selectStyle}
         id={id}
         name={name || id}
         value={value}

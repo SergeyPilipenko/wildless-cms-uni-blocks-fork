@@ -1,0 +1,60 @@
+{
+  "cities": [
+    {
+      "city": "Москва",
+      "offices": [
+        {
+          "office": "МоскваОфис1",
+          "rate": 1
+        },
+        {
+          "office": "МоскваОфис2",
+          "rate": 2
+        },
+        {
+          "office": "МоскваОфис3",
+          "rate": 3
+        }
+      ]
+    },
+    {
+      "city": "Краснодар",
+      "offices": [
+        {
+          "office": "КраснодарОфис1",
+          "rate": 2
+        },
+        {
+          "office": "КраснодарОфис2",
+          "rate": 4
+        },
+        {
+          "office": "КраснодарОфис3",
+          "rate": 6
+        }
+      ]
+    }
+  ],
+  "cellDimensions": [
+    {
+      "dimension": "маленькая"
+    },
+    {
+      "dimension": "средняя"
+    },
+    {
+      "dimension": "большая"
+    }
+  ],
+  "cellOptions": [
+    {
+      "option": "125x225x375"
+    },
+    {
+      "option": "200x300x400"
+    },
+    {
+      "option": "300x400x500"
+    }
+  ]
+}

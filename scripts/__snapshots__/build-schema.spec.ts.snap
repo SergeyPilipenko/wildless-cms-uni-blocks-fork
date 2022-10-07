@@ -1499,6 +1499,7 @@ Object {
         "NewDocIcon",
         "OfficeIcon",
         "OkIcon",
+        "PackA4",
         "PassSendIcon",
         "PercentageRoundIcon",
         "PercentageSquareIcon",
@@ -1582,6 +1583,7 @@ Object {
         "Новый документ",
         "Офис",
         "Лого «Одноклассники»",
+        "PackA4",
         "Бизнес",
         "Проценты (круг.)",
         "Проценты",
@@ -3030,6 +3032,16 @@ Object {
         },
       },
       "title": "Параметр",
+      "type": "object",
+    },
+    "SafeDepositRentalContent": Object {
+      "properties": Object {
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Аренда сейфовых ячеек",
       "type": "object",
     },
     "SitemapProps": Object {
