@@ -107,7 +107,7 @@ module.exports = {
           lineHeight: '1.25rem',
           fontWeight: '300',
         }],
-        's': ['0.875rem', { // 14px 20px
+        s: ['0.875rem', { // 14px 20px
           lineHeight: '1.25rem',
           fontWeight: '400',
         }],
