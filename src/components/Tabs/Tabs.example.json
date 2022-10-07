@@ -2,15 +2,15 @@
   "showCounter": true,
   "tabs": [
     {
-      "id": "tab1",
+      "ref": "tab1",
       "title": "Вкладка 1"
     },
     {
-      "id": "tab2",
+      "ref": "tab2",
       "title": "Вкладка 2"
     },
     {
-      "id": "tab3",
+      "ref": "tab3",
       "title": "Вкладка 3"
     }
   ]

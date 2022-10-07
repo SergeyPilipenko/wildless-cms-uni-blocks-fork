@@ -3140,17 +3140,32 @@ Object {
     },
     "Tab": Object {
       "properties": Object {
-        "id": Object {
-          "title": "Tег",
+        "ref": Object {
+          "title": "Тег или ссылка",
           "type": "string",
         },
         "title": Object {
           "title": "Название",
           "type": "string",
         },
+        "type": Object {
+          "$ref": "#/definitions/TabType",
+          "enumNames": Array [
+            "Группирующий",
+            "Ссылочный",
+          ],
+          "title": "Тип",
+        },
       },
       "title": "Таб",
       "type": "object",
+    },
+    "TabType": Object {
+      "enum": Array [
+        "group",
+        "link",
+      ],
+      "type": "string",
     },
     "TableColumnData": Object {
       "properties": Object {

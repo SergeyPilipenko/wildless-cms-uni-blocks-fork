@@ -4,9 +4,10 @@ import { EventBus } from '../../EventBus/EventBus';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderTab } from './renderTab';
-import type { Tab, TabsContent } from './TabsContent';
+import type { Tab, TabsContent, TabType } from './TabsContent';
 
 export interface TabActivationEvent {
+  type?: TabType;
   label?: string;
 }
 
@@ -17,10 +18,10 @@ export const Tabs = JSX<TabsProps>((props) => {
 
   const [currentTab, setCurrentTab] = useState(tabs ? tabs[0] : undefined);
 
-  useEffect(() => EventBus.inst.subject('tab', { label: currentTab?.id }), [currentTab]);
+  useEffect(() => EventBus.inst.subject('tab', { label: currentTab?.ref }), [currentTab]);
 
   const handleClick = (selectedTab: Tab) => {
-    EventBus.inst.fire('tab', { label: selectedTab.id });
+    EventBus.inst.fire('tab', { type: selectedTab.type, label: selectedTab.ref });
     setCurrentTab(selectedTab);
   };
 
@@ -30,7 +31,7 @@ export const Tabs = JSX<TabsProps>((props) => {
       className={`mb-2 box-border flex gap-x-1 ${className}`}
       role="tablist"
     >
-      {tabs?.map(renderTab({ onClick: handleClick, currentTab, page, showCounter }))}
+      {tabs?.map(renderTab({ onClick: handleClick, currentTab, page, showCounter, context }))}
     </BlockWrapper>
   );
 });

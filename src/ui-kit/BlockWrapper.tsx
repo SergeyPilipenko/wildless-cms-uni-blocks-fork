@@ -22,7 +22,12 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
     useEffect(
       () =>
         EventBus.inst.subscribe('tab', (event) => {
-          setShouldRenderBlock(!labels?.length || !event.label || labels.includes(event.label));
+          if (event.type === 'group') {
+            setShouldRenderBlock(!labels?.length || !event.label || labels.includes(event.label));
+          } else {
+            setShouldRenderBlock(true);
+            scrollToBlock(event.label);
+          }
         }),
       [labels],
     );
@@ -46,3 +51,9 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
     );
   },
 );
+
+function scrollToBlock(label?: string) {
+  setTimeout(() =>
+    globalThis.document.getElementById(`#${label}`)?.scrollIntoView({ behavior: 'smooth' }),
+  );
+}

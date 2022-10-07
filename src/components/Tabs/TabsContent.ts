@@ -1,9 +1,16 @@
+export type TabType = 'group' | 'link';
+
 /**
  *  @title Таб
  */
 export interface Tab {
-  /** @title Tег */
-  id?: string;
+  /** @title Тег или ссылка */
+  ref?: string;
+  /**
+   * @title Тип
+   * @enumNames ['Группирующий', 'Ссылочный']
+   */
+  type?: TabType;
   /** @title Название */
   title?: string;
 }
