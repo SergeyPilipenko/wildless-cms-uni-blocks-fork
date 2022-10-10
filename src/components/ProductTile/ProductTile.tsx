@@ -96,7 +96,7 @@ function renderBenefitDescription(benefit: TextBenefit, i: number, version = 'pr
   };
 
   return (
-    <div key={String(i)} className={`text-m ${i ? 'mt-4' : ''} ${labelStyleMap[version]}`}>
+    <div key={String(i)} className={`text-m-light ${i ? 'mt-4' : ''} ${labelStyleMap[version]}`}>
       {benefit.description}
     </div>
   );
@@ -108,5 +108,7 @@ function renderAdditionalDescription(additionalDescription: string, version = 'p
     secondary: 'text-white',
   };
 
-  return <div className={`text-m mt-2.5 ${descStyleMap[version]}`}>{additionalDescription}</div>;
+  return (
+    <div className={`text-m-light mt-2.5 ${descStyleMap[version]}`}>{additionalDescription}</div>
+  );
 }

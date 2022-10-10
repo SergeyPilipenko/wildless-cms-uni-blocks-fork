@@ -83,7 +83,7 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
           ) : null}
           <SafeDepositRentalTotal days={days} />
         </div>
-        <p className="text-button font-light text-secondary-text">
+        <p className="text-s-light text-secondary-text">
           Аренда СЯ, в случае проведения процедуры купли-продажи, с использованием наличных денег
           или процедуры ипотечной сделки
         </p>

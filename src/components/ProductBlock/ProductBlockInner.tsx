@@ -48,7 +48,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             ) : null}
             {items?.length ? (
               <List
-                className="mt-5 text-h6 font-light"
+                className="mt-5 text-h6"
                 items={items}
                 itemClassName="mb-[7px]"
                 version={version}

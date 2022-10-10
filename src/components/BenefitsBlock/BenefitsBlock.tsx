@@ -51,7 +51,7 @@ const renderStep = (benefit: BenefitItem, i: number) => {
         />
       ) : null}
       <div>
-        {benefit?.label ? <h3 className="font-medium text-xl-light m-0">{benefit.label}</h3> : null}
+        {benefit?.label ? <h3 className="text-xl m-0">{benefit.label}</h3> : null}
         {renderDescription(description)}
       </div>
     </div>

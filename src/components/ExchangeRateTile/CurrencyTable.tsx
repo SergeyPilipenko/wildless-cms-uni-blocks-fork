@@ -3,7 +3,7 @@ import { Img } from '../../ui-kit/Img/Img';
 import type { ExchangeCurrencyItem } from './ExchangeCurrencyCalculator';
 import { formatCurrency } from './formatCurrency';
 
-const TABLE_HEAD_STYLE = 'text-left text-m text-secondary-text';
+const TABLE_HEAD_STYLE = 'text-left text-m-light text-secondary-text';
 
 const CURRENCY_ICONS_MAP = {
   USD: 'DollarIcon',

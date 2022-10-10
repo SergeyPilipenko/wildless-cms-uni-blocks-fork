@@ -23,7 +23,7 @@ export const Navigation = JSX<NavigationProps>(
         }`}
         {...rest}
       >
-        <h2 className="font-medium text-xl-light m-0">{title}</h2>
+        <h2 className="text-xl font-medium m-0">{title}</h2>
         {buttons?.length ? (
           <div className="flex rounded-md overflow-hidden bg-white">
             {buttons

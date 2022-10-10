@@ -28,10 +28,8 @@ const renderCellInner = (
     {i > 0 && (
       <div className="border-main-divider border border-solid border-t-0 border-x-0 my-2" />
     )}
-    {label ? <div className="text-m-sm m-0">{label}</div> : null}
-    {description ? (
-      <div className="text-m-sm text-secondary-text mt-[3px]">{description}</div>
-    ) : null}
+    {label ? <div className="text-s m-0">{label}</div> : null}
+    {description ? <div className="text-s text-secondary-text mt-[3px]">{description}</div> : null}
     {list?.items?.length ? renderList(list) : null}
     {image ? <Img image={{ ...image, className: 'm-0' }} /> : null}
     {buttons?.length ? renderButtons(buttons) : null}
@@ -40,7 +38,7 @@ const renderCellInner = (
 
 const renderList = (list: TariffsTableList) => (
   <List
-    className="flex flex-col justify-between items-start text-m-sm"
+    className="flex flex-col justify-between items-start text-s"
     version="gray"
     items={list.items}
     isDotted={list.isDotted ?? true}

@@ -6,7 +6,7 @@ export const LinkDocsListItem = JSX<LinkDocsListItemProps>(({ className = '', do
   <LinkDocsListItemBase
     className={`flex h-full box-border ${className}`}
     iconClassName="mr-2.5 min-w-6 min-h-6"
-    textClassName="self-center font-light"
+    textClassName="self-center text-l-light"
     suffixClassName="text-secondary-text group-hover:text-primary-main"
     doc={doc}
     icon={icon}

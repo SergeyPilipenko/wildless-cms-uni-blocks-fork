@@ -60,7 +60,7 @@ const renderSubMenuItem = (menu: SubMenuItem, i: number) => {
   const { icon, href, text } = menu;
 
   return (
-    <Button version="link" key={`footer-${i}`} href={href} className="flex text-sm mb-4">
+    <Button version="link" key={`footer-${i}`} href={href} className="flex text-s mb-4 w-6">
       {icon ? <Img className="pr-1" image={icon} width="24" height="24" asSVG /> : null}
       <span className="pl-2.5 font-medium text-primary-text">{text}</span>
     </Button>

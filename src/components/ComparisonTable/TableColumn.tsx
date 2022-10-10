@@ -51,7 +51,7 @@ const renderButton = ({ header, buttonVersion }) => (
     href={header.link.href}
     target={header.link.target}
     version={buttonVersion}
-    className="font-medium text-m-sm mt-4 py-[11px]"
+    className="text-s font-medium mt-4 py-[11px]"
   >
     {header.link.text}
   </Button>
@@ -62,7 +62,7 @@ const renderToggleButton = ({ onToggleColumn, isFillGradient, showRow }) => (
     <a
       role="link"
       onClick={onToggleColumn}
-      className={`font-medium text-m-sm cursor-pointer ${
+      className={`text-s font-medium cursor-pointer ${
         isFillGradient ? 'text-white/80' : 'text-primary-main'
       }`}
     >

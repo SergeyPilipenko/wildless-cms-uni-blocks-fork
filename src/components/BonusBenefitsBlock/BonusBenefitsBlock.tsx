@@ -16,7 +16,7 @@ export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
         {...rest}
       >
         {title ? <Heading headingType="h3" className="mb-[10px]" title={title} /> : null}
-        {subtitle ? <span className="text-md font-normal">{subtitle}</span> : null}
+        {subtitle ? <span className="text-xl-light">{subtitle}</span> : null}
         {bonusBenefits?.length ? (
           <div className={`grid gap-1 ${getElementsColsValue(className)}`}>
             {bonusBenefits.map(renderBonusBenefit)}

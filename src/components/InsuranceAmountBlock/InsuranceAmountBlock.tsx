@@ -78,7 +78,7 @@ function renderNavButton({ title, i, activeSlideIndex, onClick }) {
       key={String(i)}
       onClick={onClick}
       aria-label={title}
-      className={`box-border px-4 py-3 text-m ${btnClassName}`}
+      className={`box-border px-4 py-3 text-m-light ${btnClassName}`}
     >
       {title}
     </button>

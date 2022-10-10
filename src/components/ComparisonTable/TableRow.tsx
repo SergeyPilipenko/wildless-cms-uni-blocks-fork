@@ -15,7 +15,7 @@ export interface TableRowProps {
 }
 
 const titleStyle = (isLastRow = false) =>
-  `text-sm py-7 ${DIVIDER_CLASSES} ${FIRST_CELL_CLASSES} ${
+  `text-s py-7 ${DIVIDER_CLASSES} ${FIRST_CELL_CLASSES} ${
     isLastRow ? 'border-b-0' : 'border-solid'
   }`;
 

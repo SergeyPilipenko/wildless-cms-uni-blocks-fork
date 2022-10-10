@@ -42,7 +42,7 @@ export const HEADLINE_BLOCK_STYLE_MAPS: Record<BlockVersionWithTransparent, Styl
 
 export const HEADLINE_VERSION: Record<HeadlineVersion, VersionStyleType> = {
   XXL: {
-    descriptionFont: 'text-h4-alt',
+    descriptionFont: 'text-h5',
     gap: 'gap-[18px]',
     headingType: 'h0', // 56
     as: 'h1',

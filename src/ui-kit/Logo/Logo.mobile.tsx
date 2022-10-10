@@ -30,7 +30,7 @@ export const Logo = JSX<Partial<LogoProps>>(
       >
         <Img image={{ icon: 'Logo' }} className={`${SVG_COLOR[bgColor]} w-10 h-[38px]`} asSVG />
         {hideTitle ? null : (
-          <span className={`${TEXT_COLOR[bgColor]} text-sm font-medium ml-2.5`}>
+          <span className={`${TEXT_COLOR[bgColor]} text-s font-medium ml-2.5`}>
             {children || 'Россельхозбанк'}
           </span>
         )}

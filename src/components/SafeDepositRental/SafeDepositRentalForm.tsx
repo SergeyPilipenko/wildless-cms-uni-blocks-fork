@@ -22,7 +22,7 @@ export const SafeDepositRentalForm = ({
       {cellDimensions.length && cellOptions.length
         ? renderDimensionsOptions(cellDimensions, cellOptions, context)
         : null}
-      <span className="text-secondary-text font-light">Тип договора</span>
+      <span className="text-secondary-text text-l-light">Тип договора</span>
       <div className="flex justify-between items-center mt-5">
         {renderRadioButtons(context)}
         <Button text="Офисы на карте" version="primary" />
@@ -111,9 +111,9 @@ const renderSelect = (props: SelectProps) => {
 
   return (
     <div>
-      <span className="block font-light text-m mb-2">{label}</span>
+      <span className="block text-m-light mb-2">{label}</span>
       <Select
-        className="h-14 border border-gray p-4 rounded-md text-m-sm w-full cursor-pointer"
+        className="h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer"
         value={selected}
         onChange={(_) => setSelected(_)}
       >
@@ -132,7 +132,7 @@ export const renderRentalPeriod = (days, setDays) => {
 
   return (
     <div className="mb-6">
-      <span className="block font-light text-m mb-[3px]">Срок аренды</span>
+      <span className="block text-m-light mb-[3px]">Срок аренды</span>
       <InputRange min={1} max={365} value={days} items={items} onChange={setDays} />
     </div>
   );

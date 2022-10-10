@@ -16,7 +16,7 @@ export interface RecommendationCardProps extends RecommendationCardTypes, UniBlo
 export const RecommendationCard = JSX<RecommendationCardProps>(
   ({ context, className = '', title, description, items, image, version, socialMedia }) => {
     const tileTitle = title ? (
-      <Heading headingType="h5" as="h3" className="font-normal mb-3.5 z-10" title={title} />
+      <Heading headingType="h5" as="h3" className="mb-3.5 z-10" title={title} />
     ) : null;
     const tileImage = image?.src ? (
       <Img className="absolute bottom-0 right-0 m-0" image={image} />
@@ -36,7 +36,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           {description ? <Description className="mb-2" description={description} /> : null}
           {items?.length ? (
             <List
-              className="text-md font-light flex flex-col flex-1 gap-2 max-w-[236px]"
+              className="text-xl-light flex flex-col flex-1 gap-2 max-w-[236px]"
               items={items}
               version={version}
             />

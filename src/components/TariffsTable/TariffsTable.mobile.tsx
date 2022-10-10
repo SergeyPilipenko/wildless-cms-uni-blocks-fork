@@ -25,7 +25,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
         {title ? (
           <Heading headingType="h2" className={`text-center ${headingMargin}`} title={title} />
         ) : null}
-        {description ? <div className="mb-5 text-center text-m-md">{description}</div> : null}
+        {description ? <div className="mb-5 text-center text-m">{description}</div> : null}
         {tiles?.length ? renderOrientationTable(orientation, tiles, context) : null}
       </section>
     );

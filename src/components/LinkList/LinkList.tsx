@@ -8,7 +8,7 @@ export interface LinkListProps extends LinkListContent, UniBlockProps {}
 export const LinkList = JSX<LinkListProps>(({ className = '', documents, ...rest }) => {
   return (
     <BlockWrapper className={`font-sans bg-white mt-[10px] ${className}`} {...rest}>
-      <ul className="flex flex-col text-sm text-secondary-text p-0">
+      <ul className="flex flex-col text-s text-secondary-text p-0">
         {documents?.length ? renderLinkListItem(documents) : null}
       </ul>
     </BlockWrapper>

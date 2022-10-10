@@ -12,10 +12,8 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
     const { term, setTerm } = context.useSearch();
 
     const LoupeIconClassName = isMobile ? 'w-[20px] h-[20px]' : 'w-[24px] h-[24px]';
-    const SearchBarLabelClassName = isMobile ? 'font-normal text-sm' : 'text-l-light';
-    const SearchBarInputClassName = isMobile
-      ? ' placeholder-transparent font-normal'
-      : 'font-light h-full';
+    const SearchBarLabelClassName = isMobile ? 'text-s' : 'text-l-light';
+    const SearchBarInputClassName = isMobile ? ' placeholder-transparent' : 'h-full';
     const inputPlaceholder = isMobile ? 'some search' : undefined;
 
     return (
@@ -63,7 +61,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(
               console.log('click');
             }}
           >
-            <div className="font-normal text-sm px-9 py-[9px]">Найти</div>
+            <div className="text-s px-9 py-2.5">Найти</div>
           </Button>
         )}
       </form>

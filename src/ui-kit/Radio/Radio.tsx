@@ -12,7 +12,7 @@ export const Radio = JSX<RadioProps>(({ name, text, value, checked, onChange, cl
         checked={checked}
         onChange={onChange}
       />
-      {text ? <span className="font-sans ml-3 text-m-base cursor-pointer">{text}</span> : null}
+      {text ? <span className="font-sans ml-3 cursor-pointer">{text}</span> : null}
     </label>
   </div>
 ));

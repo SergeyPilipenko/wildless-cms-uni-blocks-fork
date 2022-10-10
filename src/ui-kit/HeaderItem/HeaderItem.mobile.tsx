@@ -4,7 +4,7 @@ import type { TopItemProps } from '../TopItem/TopItem';
 
 export type HeaderItemProps = TopItemProps;
 
-const TEXT_CLASSES = 'font-sans font-normal text-sm';
+const TEXT_CLASSES = 'font-sans text-s';
 const BORDER_CLASSES = 'absolute left-0 -bottom-3 w-full h-[2px]';
 
 export const HeaderItem = JSX<HeaderItemProps>(

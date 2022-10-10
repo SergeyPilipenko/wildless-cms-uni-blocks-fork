@@ -90,11 +90,11 @@ const renderList = (version: string, items?: string[]) => {
   return items?.length ? (
     <List
       items={items}
-      itemClassName="base font-light mb-2 last:mb-0"
+      itemClassName="text-l-light mb-2 last:mb-0"
       version={version === 'primary' ? 'tile' : 'tile-white'}
     />
   ) : (
-    <span className="text-m text-secondary-text">
+    <span className="text-m-light text-secondary-text">
       Наведите камеру телефона на QR-код и скачайте приложение
     </span>
   );

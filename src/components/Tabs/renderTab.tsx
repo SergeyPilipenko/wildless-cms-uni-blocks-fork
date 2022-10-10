@@ -10,7 +10,7 @@ interface RenderTabProps {
 
 type OnTabClick = (tab: Tab) => void;
 
-const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-xs ml-2';
+const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-xs-light ml-2';
 
 export const renderTab =
   ({ onClick, currentTab, showCounter, page }: RenderTabProps) =>
@@ -18,7 +18,7 @@ export const renderTab =
     const isActive = currentTab === tab;
 
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
-    const tabText = `text-m ${
+    const tabText = `text-m-light ${
       isActive ? 'text-white' : 'text-secondary-text group-hover:text-primary-main'
     }`;
     const counterBlockStyle = `${badgeStyle}

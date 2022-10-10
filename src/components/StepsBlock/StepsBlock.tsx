@@ -91,7 +91,7 @@ const renderStepIcon =
     return (
       <div key={String(i)} className="flex flex-col items-center text-center">
         <div
-          className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10 
+          className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10
             ${styleMap.iconBackground} ${styleMap.title}`}
         >
           {checkIsIconRenderable(icon) ? (
@@ -124,14 +124,12 @@ const renderStepTitle =
     return (
       <div
         key={String(i)}
-        className="flex flex-col items-center justify-between text-center relative w-[276px] 
+        className="flex flex-col items-center justify-between text-center relative w-[276px]
         whitespace-pre-line overflow-hidden"
       >
-        {step?.label ? (
-          <div className="font-normal text-xl-light m-0 mt-4">{step.label}</div>
-        ) : null}
+        {step?.label ? <div className="text-xl m-0 mt-4">{step.label}</div> : null}
         {step?.description ? (
-          <div className={`font-light text-base ${styleMap.description} ${additionalMarginClass}`}>
+          <div className={`text-l-light ${styleMap.description} ${additionalMarginClass}`}>
             {step.description}
           </div>
         ) : null}

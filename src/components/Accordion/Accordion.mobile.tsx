@@ -11,7 +11,7 @@ export const Accordion = JSX<AccordionProps>(
     return (
       <section className={`py-6 px-4 font-sans bg-white text-primary-text ${className}`}>
         {title ? <Heading headingType="h3" className="mb-2 text-center" title={title} /> : null}
-        {description ? <div className="mb-5 text-m-md text-center">{description}</div> : null}
+        {description ? <div className="mb-5 text-m-light text-center">{description}</div> : null}
         {accordionItems?.length ? (
           <ul className="list-none m-0 p-0">
             {accordionItems.map((item, i) => (

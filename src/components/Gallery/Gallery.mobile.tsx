@@ -28,9 +28,7 @@ export const Gallery = JSX<GalleryProps>(
             <Heading headingType="h3" className={`text-center ${headingClassName}`} title={title} />
           ) : null}
           {description ? (
-            <div className="font-normal text-m-md max-w-[600px] text-center mb-5">
-              {description}
-            </div>
+            <div className="text-m max-w-[600px] text-center mb-5">{description}</div>
           ) : null}
         </div>
         {renderCardsLayout(orientation, cards, context)}
@@ -60,7 +58,7 @@ function renderCard(card: GalleryCard, key: number) {
             <Img className="mb-3.5" image={card.image} />
           </div>
         ) : null}
-        {card.title ? <h3 className={`font-medium text-m-title-xs m-0`}>{card.title}</h3> : null}
+        {card.title ? <h3 className={`text-m-title-xs font-medium m-0`}>{card.title}</h3> : null}
         {card.description ? renderDescription(card) : null}
         {card.items?.length ? renderItems(card.items, card.isDotted, card.version) : null}
       </div>
@@ -82,7 +80,7 @@ function renderButton(button) {
 function renderDescription(card: GalleryCard) {
   return (
     <div
-      className={`text-secondary-text mt-1 text-m-sm ${
+      className={`text-secondary-text mt-1 text-s ${
         card.version === 'secondary' ? 'text-white opacity-80' : ''
       }`}
     >
@@ -97,8 +95,8 @@ function renderItems(items: GalleryItem[], isDotted, version: BlockVersion = 'pr
       {items.map((item, i) => (
         <div key={String(i)}>
           {isDotted ? <div className={getListStyle(version)} /> : null}
-          <span className="text-m-md font-medium">{item.title}</span>
-          <span className={`text-m-sm pl-2 ${version === 'primary' ? 'text-secondary-text' : ''}`}>
+          <span className="text-m font-medium">{item.title}</span>
+          <span className={`text-s pl-2 ${version === 'primary' ? 'text-secondary-text' : ''}`}>
             {item.text}
           </span>
         </div>

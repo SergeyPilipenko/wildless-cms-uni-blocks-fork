@@ -38,7 +38,7 @@ const renderCalendar = (calendar) => {
 
   return (
     <div className="w-full flex flex-col justify-center mt-[54px]">
-      <div className="flex w-full mb-3 font-light text-h6 text-center">
+      <div className="flex w-full mb-3 text-h6 text-center">
         {mappedCalendar.map((_) => renderMonthNames(_, colSize))}
       </div>
       <div className="flex w-full">
@@ -49,7 +49,7 @@ const renderCalendar = (calendar) => {
             style={{ flexBasis: _.flexBasis }}
           >
             <div className="flex">{renderMonthImages(_)}</div>
-            <div className="font-light text-sm text-primary-text mt-3">
+            <div className="text-s-light text-primary-text mt-3">
               <span>{_.text}</span>&thinsp;
               <span className="text-primary-main">{_.greenText}</span>
             </div>

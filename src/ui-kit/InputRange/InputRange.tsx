@@ -52,7 +52,7 @@ export const InputRange = JSX<InputRangeProps>(
         </label>
         <div className="flex justify-between my-3">
           {items.map((item, i) => (
-            <span key={String(i)} className="text-sm leading-[14px] text-secondary-text pl-4">
+            <span key={String(i)} className="text-s leading-[14px] text-secondary-text pl-4">
               {item}
             </span>
           ))}

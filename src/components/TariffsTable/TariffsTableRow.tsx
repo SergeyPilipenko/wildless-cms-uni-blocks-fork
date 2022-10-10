@@ -18,7 +18,7 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
     return (
       <TableRowContainer>
         <div
-          className={`text-sm py-5 ${FIRST_CELL_CLASSES} ${DIVIDER_CLASSES} ${
+          className={`text-s py-5 ${FIRST_CELL_CLASSES} ${DIVIDER_CLASSES} ${
             !isLastRow ? 'border-solid' : ''
           }`}
         >

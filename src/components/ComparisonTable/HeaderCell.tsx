@@ -38,7 +38,7 @@ export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) =>
           target={link.target}
           className="mt-4 w-full text-primary-main bg-white hover:bg-secondary-hover active:bg-secondary-active"
         >
-          <div className="font-medium text-xs py-[11px]">{link.text}</div>
+          <div className="text-xs-light font-medium py-[11px]">{link.text}</div>
         </Button>
       </div>
     )}

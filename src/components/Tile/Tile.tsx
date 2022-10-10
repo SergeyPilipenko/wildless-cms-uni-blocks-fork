@@ -83,11 +83,6 @@ function renderList(items, version, isDotted: boolean) {
   const listVersion = version === 'primary' ? 'tile' : 'tile-white';
 
   return items?.length ? (
-    <List
-      items={items}
-      isDotted={isDotted}
-      itemClassName="text-h6 font-light mt-2"
-      version={listVersion}
-    />
+    <List items={items} isDotted={isDotted} itemClassName="text-h6 mt-2" version={listVersion} />
   ) : null;
 }

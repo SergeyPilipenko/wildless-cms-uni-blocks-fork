@@ -44,10 +44,8 @@ function renderCardTitle(title: string, className: string) {
 function renderItems(items: GalleryItem[], isDotted: boolean, version: BlockVersion = 'primary') {
   return (
     <List
-      className={`max-w-[308px] mt-2 text-sm ${
-        version === 'primary' ? '!text-secondary-text' : ''
-      }`}
-      itemClassName="mt-1 first:mt-0"
+      className={`max-w-[308px] mt-2 text-s ${version === 'primary' ? '!text-secondary-text' : ''}`}
+      itemClassName="mt-1 text-left first:mt-0"
       items={items.filter((item) => item?.text).map((item) => item.text as string)}
       isDotted={isDotted}
       version={version}

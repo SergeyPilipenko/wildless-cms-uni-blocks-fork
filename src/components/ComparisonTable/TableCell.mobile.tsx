@@ -26,7 +26,7 @@ const renderCellInner =
   (isFillGradient: boolean, rowHeader?: string) =>
   ({ label, description }: CellData, i: number) =>
     (
-      <div key={String(i)} className="flex justify-between text-m-sm py-3.5">
+      <div key={String(i)} className="flex justify-between text-s py-3.5">
         <div className={`${isFillGradient ? 'text-white/80' : 'text-secondary-text'}`}>
           {rowHeader}
         </div>

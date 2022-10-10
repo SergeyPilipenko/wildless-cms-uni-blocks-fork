@@ -19,7 +19,7 @@ export const GroupBlockTabs = JSX<GroupBlockTabsProps>((props) => {
   );
 });
 
-const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-xs ml-2';
+const badgeStyle = 'min-w-[22px] w-[22px] h-[22px] rounded-full text-xs-light ml-2';
 
 const renderTab =
   ({ currentTag, isShowCounter, onTabClick }: GroupBlockTabsProps) =>
@@ -28,7 +28,7 @@ const renderTab =
 
     const tabBg = isActive ? 'bg-primary-main' : 'group bg-white';
 
-    const tabText = `text-m ${
+    const tabText = `text-m-light ${
       isActive ? 'text-white' : 'text-secondary-text group-hover:text-primary-main'
     }`;
     const counterBlockStyle = `${badgeStyle}

@@ -68,5 +68,5 @@ export const Header = JSX<HeaderProps>(
 );
 
 const renderSubItem = (item: TopItemProps, i: number) => (
-  <HeaderItem key={String(i)} className="mr-8 whitespace-nowrap text-sm" {...item} />
+  <HeaderItem key={String(i)} className="mr-8 whitespace-nowrap text-s" {...item} />
 );

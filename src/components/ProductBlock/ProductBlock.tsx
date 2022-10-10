@@ -47,7 +47,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
           )
         : null}
       {breadcrumbs?.length ? (
-        <div className="text-xs mb-6">
+        <div className="text-xs-light mb-6">
           {joinList(<span className={`mx-2 ${breadcrumbsStyleMap[version]}`}>/</span>)(
             breadcrumbs.map((breadcrumb, i) => (
               <Breadcrumb

@@ -28,7 +28,7 @@ export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
     <button
       className={`${
         bgColor === 'bg-white' ? 'text-primary-main' : 'text-white'
-      } text-sm  border-0 bg-transparent cursor-pointer`}
+      } text-s border-0 bg-transparent cursor-pointer`}
     >
       Войти
     </button>

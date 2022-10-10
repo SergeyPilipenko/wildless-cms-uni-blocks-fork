@@ -31,7 +31,9 @@ export function renderBenefit(
       <div className="flex gap-0.5 flex-col h-full max-w-[149px] min-w-[149px]">
         <div className={`text-h6 m-0 ${benefitTitleStyleMap[version]}`}>{benefit.label}</div>
         {benefit.description ? (
-          <div className={`text-m ${benefitDescStyleMap[version]}`}>{benefit.description}</div>
+          <div className={`text-m-light ${benefitDescStyleMap[version]}`}>
+            {benefit.description}
+          </div>
         ) : null}
       </div>
     </div>

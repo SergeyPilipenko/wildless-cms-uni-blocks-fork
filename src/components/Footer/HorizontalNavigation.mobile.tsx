@@ -15,14 +15,14 @@ export const HorizontalNavigation = JSX<HorizontalNavigationProps>(
 
     return (
       <div className={className}>
-        <span className="text-primary-text font-medium text-sm">{title}</span>
+        <span className="text-primary-text text-s font-medium">{title}</span>
         {links?.length ? (
           <div className="flex flex-col gap-2 pt-3">
             {links.map((_, i) => (
               <HorizontalNavigationLink
                 key={String(i)}
                 index={i}
-                className="font-normal text-sm"
+                className="text-s"
                 {...useLink({ router, handlerDecorator }, _)}
               />
             ))}

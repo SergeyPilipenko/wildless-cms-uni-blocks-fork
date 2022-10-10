@@ -29,9 +29,9 @@ export const TableCell = JSX<TableCellProps>(({ cell, isFirstRow, isLastRow, isF
 });
 
 const labelStyle = (isFillGradient = false): string =>
-  `text-xl-light font-medium m-0 ${isFillGradient ? 'text-white' : ''}`;
+  `text-xl m-0 ${isFillGradient ? 'text-white' : ''}`;
 const descriptionStyle = (isFillGradient = false): string =>
-  `text-sm opacity-80 ${isFillGradient ? 'text-white' : 'text-secondary-text'}`;
+  `text-s opacity-80 ${isFillGradient ? 'text-white' : 'text-secondary-text'}`;
 
 const renderCellInner = ({ label, description }: CellData, i: number, isFillGradient: boolean) => (
   <div key={String(i)} className="first:pt-7 pt-6 last:pb-7">

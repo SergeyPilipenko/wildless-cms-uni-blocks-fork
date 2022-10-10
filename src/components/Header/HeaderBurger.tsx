@@ -27,7 +27,7 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
         </button>
         <button
           onClick={getCity}
-          className="flex items-center text-sm text-secondary-text p-0 mb-4 bg-transparent cursor-pointer"
+          className="flex items-center text-s text-secondary-text p-0 mb-4 bg-transparent cursor-pointer"
         >
           <Img
             image="GeolocationIcon"
@@ -50,11 +50,11 @@ const renderBurgerSubMenuItem = (menu: DispositionItem, i: number) => {
   const { icon, href, text } = menu;
 
   return (
-    <a key={`headerSubMenu-${i}`} href={href} className="flex text-sm mb-4 hover:text-primary-main">
+    <a key={`headerSubMenu-${i}`} href={href} className="flex text-s mb-4 hover:text-primary-main">
       {icon ? (
         <Img className="text-primary-main pr-1" image={icon} width="24" height="24" asSVG />
       ) : null}
-      <span className="pl-0.5 font-medium">{text}</span>
+      <span className="font-medium pl-0.5">{text}</span>
     </a>
   );
 };

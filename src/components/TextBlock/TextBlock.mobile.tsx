@@ -50,14 +50,14 @@ export const TextBlock = JSX<TextBlockProps>(
         {iconVersion === 'big' ? renderImage(image) : null}
         <div className="py-0.5">
           {title ? (
-            <div className={`font-medium text-base mb-1 ${textBlockStyleMap.title}`}>{title}</div>
+            <div className={`text-l font-medium mb-1 ${textBlockStyleMap.title}`}>{title}</div>
           ) : null}
           {description ? (
-            <div className={`text-sm ${textBlockStyleMap.description}`}>{description}</div>
+            <div className={`text-s ${textBlockStyleMap.description}`}>{description}</div>
           ) : null}
           {items?.length ? (
             <List
-              className="mt-1 text-m-md"
+              className="mt-1 text-m"
               items={items}
               isDotted={isDotted}
               version={listBlockVersion}
@@ -72,7 +72,7 @@ export const TextBlock = JSX<TextBlockProps>(
 function renderIcon(className: string) {
   return (
     <div className="mb-3">
-      <div className={`rounded-full h-4 w-4 text-center text-xs ${className}`}>i</div>
+      <div className={`rounded-full h-4 w-4 text-center text-xs-light ${className}`}>i</div>
     </div>
   );
 }

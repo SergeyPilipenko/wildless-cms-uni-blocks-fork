@@ -23,7 +23,7 @@ export const AccordionItem = JSX<AccordionItemProps>(
           onClick={handleToggle}
         >
           <span
-            className={`text-m-title-xs pr-2.5 font-medium flex ${
+            className={`text-m-title-xs font-medium pr-2.5 flex ${
               hasContent ? 'group-hover:text-primary-main' : ''
             }`}
           >
@@ -32,7 +32,7 @@ export const AccordionItem = JSX<AccordionItemProps>(
             ) : null}
             {label}
           </span>
-          {hasContent ? <Img image={icon} width="24" height="24" asSVG /> : null}
+          {hasContent ? <Img className="w-6" image={icon} width="24" height="24" asSVG /> : null}
         </button>
         {hasContent ? <AccordionItemInner blocks={blocks} context={context} /> : null}
       </li>

@@ -19,7 +19,7 @@ export const SafeDepositRentalTotal = ({ days }: Days) => {
       <div className="bg-primary-main px-10 pt-10 pb-4 text-center">
         <Img image={{ icon: 'PackA4' }} width="290" height="257" asSVG />
 
-        <span className="font-light text-white opacity-80 mt-2 inline-block">
+        <span className="text-s-light text-white opacity-80 mt-2 inline-block">
           На рисунки изображена пачка<br></br> листов формата А4
         </span>
       </div>
@@ -30,7 +30,7 @@ export const SafeDepositRentalTotal = ({ days }: Days) => {
 const renderTotal = (label, total, className = '') => {
   return (
     <div className={className}>
-      <span className="block font-light text-m mb-1">{label}</span>
+      <span className="block text-m-light mb-1">{label}</span>
       <span className="text-h3">{total}</span>
     </div>
   );

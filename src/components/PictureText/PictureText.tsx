@@ -57,18 +57,12 @@ function renderBenefit(benefit: PictureTextBenefit, i: number, version: string) 
       ) : null}
       <div className="flex gap-1 flex-col h-full ml-5 max-w-[490px]">
         {benefit?.label ? (
-          <div
-            className={`font-medium text-xl-light m-0 ${
-              version === 'primary' ? 'text-primary-text' : ''
-            }`}
-          >
+          <div className={`text-xl m-0 ${version === 'primary' ? 'text-primary-text' : ''}`}>
             {benefit.label}
           </div>
         ) : null}
         {benefit?.description ? (
-          <div
-            className={`font-normal text-sm ${version === 'primary' ? 'text-secondary-text' : ''}`}
-          >
+          <div className={`text-s ${version === 'primary' ? 'text-secondary-text' : ''}`}>
             {benefit.description}
           </div>
         ) : null}

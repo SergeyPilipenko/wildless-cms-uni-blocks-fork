@@ -15,7 +15,7 @@ export interface HeaderCellProps {
 
 const headingStyle = (isFillGradient = false): string => (isFillGradient ? 'text-white' : '');
 const subtitleStyle = (isFillGradient = false): string =>
-  `text-m-sm mb-3.5 ${isFillGradient ? 'text-white' : 'text-secondary-text/80'}`;
+  `text-s mb-3.5 ${isFillGradient ? 'text-white' : 'text-secondary-text/80'}`;
 
 export const HeaderCell = JSX<HeaderCellProps>(
   ({ icon, image, title, subtitle, isFillGradient }) => (

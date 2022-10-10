@@ -99,7 +99,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
     : `text-l ${productBlockStyleMap[version].title}`;
   const btnDescClassName = isActiveBtn
     ? 'text-secondary-text text-m-title-xs mt-2.5'
-    : `text-m-md mt-1.5 ${productBlockStyleMap[version].text}`;
+    : `text-m mt-1.5 ${productBlockStyleMap[version].text}`;
 
   const additionalBorder = version === 'secondary' ? 'border-white/50' : 'border-black/50';
 

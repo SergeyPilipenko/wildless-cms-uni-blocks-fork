@@ -29,11 +29,7 @@ export const Headline = JSX<HeadlineProps>(
           />
         ) : null}
         {description ? (
-          <p
-            className={`font-normal text-m ${STYLE_MAPS.description} ${ALIGN_TEXT[align]}            `}
-          >
-            {description}
-          </p>
+          <p className={`text-m ${STYLE_MAPS.description} ${ALIGN_TEXT[align]}`}>{description}</p>
         ) : null}
         {image?.src && (
           <div className="mt-2.5 mx-auto flex justify-center">
