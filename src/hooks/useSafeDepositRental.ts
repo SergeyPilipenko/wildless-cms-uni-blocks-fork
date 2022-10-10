@@ -12,7 +12,11 @@ export function useSafeDepositRental(useAsyncData: AsyncDataHook) {
 
 async function fetchSafeDepositRental(): Promise<any | undefined> {
   try {
-    const response = await fetch(SAFE_DEPOSIT_RENTAL_URL);
+    const response = await fetch(SAFE_DEPOSIT_RENTAL_URL, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
     return await response.json();
   } catch (err) {

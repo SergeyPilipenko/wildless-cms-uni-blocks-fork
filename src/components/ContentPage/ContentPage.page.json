@@ -2231,6 +2231,10 @@
         ]
       }
     },
+    {
+      "type": "SafeDepositRental",
+      "style": ["col-span-12"]
+    },
 
     {
       "type": "Footer",

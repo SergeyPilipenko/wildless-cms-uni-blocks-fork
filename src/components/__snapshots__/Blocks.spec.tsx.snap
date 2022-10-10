@@ -826,6 +826,262 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
     class="flex justify-between align-top mb-6"
   >
     <div
+      class="flex-1 mr-9"
+    >
+      <div
+        class="flex justify-between mb-6"
+      >
+        <div
+          class="w-full mr-4"
+        >
+          <div>
+            <span
+              class="block font-light text-m mb-2"
+            >
+              Город
+            </span>
+            <select
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-m-sm w-full cursor-pointer"
+              style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
+            >
+              <option
+                class=""
+                value="Москва"
+              >
+                Москва
+              </option>
+              <option
+                class=""
+                value="Краснодар"
+              >
+                Краснодар
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="w-full"
+        >
+          <div>
+            <span
+              class="block font-light text-m mb-2"
+            >
+              Отделение
+            </span>
+            <select
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-m-sm w-full cursor-pointer"
+              style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
+            >
+              <option
+                class=""
+                value="МоскваОфис1"
+              >
+                МоскваОфис1
+              </option>
+              <option
+                class=""
+                value="МоскваОфис2"
+              >
+                МоскваОфис2
+              </option>
+              <option
+                class=""
+                value="МоскваОфис3"
+              >
+                МоскваОфис3
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mb-6"
+      >
+        <span
+          class="block font-light text-m mb-[3px]"
+        >
+          Срок аренды
+        </span>
+        <div>
+          <label
+            class="block relative"
+          >
+            <input
+              class="m-0 mt-[5px] font-sans text-h3 w-full h-14 border border-solid border-main-stroke rounded-md
+                        outline-none p-0 pl-4 box-border text-primary-text"
+              value="26"
+            />
+            <div
+              class="absolute inset-x-0 bottom-[-4px] px-4 leading-[18px]"
+            >
+              <input
+                class="box-border w-full m-0 cursor-pointer slider"
+                max="365"
+                min="1"
+                step="1"
+                style="background-size: 6.87% 100%;"
+                type="range"
+                value="26"
+              />
+            </div>
+          </label>
+          <div
+            class="flex justify-between my-3"
+          >
+            <span
+              class="text-sm leading-[14px] text-secondary-text pl-4"
+            >
+              От 1 дня
+            </span>
+            <span
+              class="text-sm leading-[14px] text-secondary-text pl-4"
+            >
+              До 365 дней
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex justify-between mb-6"
+      >
+        <div
+          class="mr-4 w-full"
+        >
+          <div>
+            <span
+              class="block font-light text-m mb-2"
+            >
+              Размер ячейки
+            </span>
+            <select
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-m-sm w-full cursor-pointer"
+              style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
+            >
+              <option
+                class=""
+                value="маленькая"
+              >
+                маленькая
+              </option>
+              <option
+                class=""
+                value="средняя"
+              >
+                средняя
+              </option>
+              <option
+                class=""
+                value="большая"
+              >
+                большая
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="w-full"
+        >
+          <div>
+            <span
+              class="block font-light text-m mb-2"
+            >
+              Параметры ячейки, мм (ВхШхД)
+            </span>
+            <select
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-m-sm w-full cursor-pointer"
+              style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
+            >
+              <option
+                class=""
+                value="125x225x375"
+              >
+                125x225x375
+              </option>
+              <option
+                class=""
+                value="200x300x400"
+              >
+                200x300x400
+              </option>
+              <option
+                class=""
+                value="300x400x500"
+              >
+                300x400x500
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <span
+        class="text-secondary-text font-light"
+      >
+        Тип договора
+      </span>
+      <div
+        class="flex justify-between items-center mt-5"
+      >
+        <div>
+          <div
+            class="mb-2"
+          >
+            <label
+              class="flex items-center relative cursor-pointer"
+            >
+              <input
+                checked=""
+                class="appearance-none flex justify-center items-center w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+                name="contractType"
+                type="radio"
+                value="option1"
+              />
+              <span
+                class="font-sans ml-3 text-m-base cursor-pointer"
+              >
+                Простое хранение
+              </span>
+            </label>
+          </div>
+          <div>
+            <label
+              class="flex items-center relative cursor-pointer"
+            >
+              <input
+                class="appearance-none flex justify-center items-center w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+                name="contractType"
+                type="radio"
+                value="option2"
+              />
+              <span
+                class="font-sans ml-3 text-m-base cursor-pointer"
+              >
+                Сделка с недвижимостью
+              </span>
+            </label>
+          </div>
+        </div>
+        <a
+          class="text-center font-sans select-none inline-block cursor-pointer no-underline focus:border-primary-focus focus:border text-white bg-primary-main hover:bg-primary-hover active:bg-primary-active rounded-md "
+          role="button"
+        >
+          <div
+            class="flex items-center justify-center gap-2 py-4 px-9 "
+          >
+            <div>
+              <div
+                class="text-xs text-left"
+              />
+              <div
+                class="text-left text-l"
+              >
+                Офисы на карте
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
       class="flex flex-col justify-between"
     >
       <div
