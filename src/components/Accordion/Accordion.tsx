@@ -27,12 +27,12 @@ export const Accordion = JSX<AccordionProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`p-[50px] font-sans bg-white text-primary-text ${className}`}
+        className={`p-[50px] mb-1 last:mb-0 font-sans bg-white text-primary-text ${className}`}
         {...rest}
       >
         {title ? (
           <Heading
-            headingType="h4"
+            headingType="h3"
             className={`mb-2.5 ${ALIGN_TITLE[accordionAlignTitle]}`}
             title={title}
           />

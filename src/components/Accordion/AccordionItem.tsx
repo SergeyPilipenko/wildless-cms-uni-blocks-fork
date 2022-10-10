@@ -17,8 +17,8 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, isExpanded, block
   return (
     <li className="border-0 border-b border-solid border-main-divider last:border-b-0">
       <button
-        className={`border-none bg-transparent px-0 py-5 flex justify-between text-left w-full font-sans
-            ${hasContent ? 'group cursor-pointer' : ''}
+        className={`border-none bg-transparent px-0 pt-5 pb-3.5 flex justify-between text-left w-full 
+            font-sans text-h6 ${hasContent ? 'group cursor-pointer' : ''}
           `}
         onClick={handleToggle}
       >

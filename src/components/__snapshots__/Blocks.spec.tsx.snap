@@ -2,7 +2,7 @@
 
 exports[`Blocks Accordion should render block "Accordion" without content 1`] = `
 <section
-  class="p-[50px] font-sans bg-white text-primary-text "
+  class="p-[50px] mb-1 last:mb-0 font-sans bg-white text-primary-text "
 />
 `;
 
