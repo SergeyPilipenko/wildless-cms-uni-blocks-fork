@@ -41,7 +41,7 @@ const renderTab =
     return (
       <div
         key={String(i)}
-        className={`flex-1 flex items-center justify-center cursor-pointer ${tabBg}`}
+        className={`flex-1 flex items-center justify-center cursor-pointer m-1 ${tabBg}`}
         role="tab"
         onClick={() => onTabClick(tab.tag)}
         aria-selected={isActive}
