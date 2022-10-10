@@ -1,7 +1,6 @@
 { 
   "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
   "image": {
-    "src": "icon-phone.png",
     "format": "webp",
     "size": {
       "width": 529,
