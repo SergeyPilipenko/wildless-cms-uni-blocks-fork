@@ -17,13 +17,13 @@ export const HeaderTop = JSX<HeaderTopProps>(({ onClick, bgColor }) => (
       >
         <Img
           image={{ icon: 'BurgerIcon', iconVersion: bgColor === 'bg-white' ? 'black' : 'white' }}
-          className="text-primary-text"
+          className="text-primary-text w-6 h-6"
           width="24"
           height="24"
           asSVG
         />
       </button>
-      <Logo bgColor={bgColor} />
+      <Logo className="mr-8" bgColor={bgColor} />
     </div>
     <button
       className={`${

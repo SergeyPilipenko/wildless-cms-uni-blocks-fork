@@ -669,7 +669,7 @@ exports[`Blocks Placeholder should render block "Placeholder" without content 1`
     </div>
   </section>
   <figure
-    class="m-0 min-w-[600px]"
+    class="m-0 min-w-[80%]"
   >
     <div
       class="h-4 mt-2 bg-secondary-light"

@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { PlaceholderContent } from '../../components/Placeholder/PlaceholderContent';
+import type { PlaceholderContent } from './PlaceholderContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Headline } from '../Headline/Headline';
 import type { UniBlockProps } from '../../types';
@@ -30,7 +30,7 @@ export const Placeholder = JSX<PlaceholderProps>(
           description={description}
           headlineVersion={getTileHeadingType(className)}
         />
-        <figure className="m-0 min-w-[600px]">{renderShimmer()}</figure>
+        <figure className="m-0 min-w-[80%]">{renderShimmer()}</figure>
       </BlockWrapper>
     );
   },

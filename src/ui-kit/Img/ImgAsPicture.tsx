@@ -12,7 +12,7 @@ const sourcesComparator = (a: Picture, b: Picture) => {
 
 export const ImgAsPicture = JSX<ImageProps<Picture>>(
   ({ className = '', image, imageClassName = '', isMobile = false }) => {
-    if (!image) {
+    if (!image || (!image?.sources && !image?.src)) {
       return null;
     }
 

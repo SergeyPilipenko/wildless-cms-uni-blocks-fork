@@ -2,9 +2,9 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { SizeVersion } from '../../model/SizeVersion';
 import type { UniBlockProps } from '../../types';
+import type { Step, StepsBlockContent } from './StepsBlockContent';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
-import type { Step, StepsBlockContent } from './StepsBlockContent';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
 
@@ -68,7 +68,7 @@ const renderStepTitle =
       <div key={String(i)}>
         <div className="flex flex-row text-center relative">
           <div className="overflow-hidden">
-            {renderIconArea(size, version)}
+            {renderIconArea(size, version)(step, i)}
             {isLastStep ? null : (
               <div
                 className={`min-h-8 h-full w-[2px] ${
