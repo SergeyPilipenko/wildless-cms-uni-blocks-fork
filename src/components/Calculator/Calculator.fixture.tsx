@@ -75,7 +75,7 @@ export default {
             nav: {
               title: 'Ипотека с господдержкой',
               description: 'Ставка от 6%, срок до 30 лет',
-              icon: { icon: 'WalletAdd2Icon' },
+              icon: { icon: 'StateMortgageIcon' },
             },
             calculatorBlock: MORTGAGE_CALCULATOR_BLOCK,
           },
