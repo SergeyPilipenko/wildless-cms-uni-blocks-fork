@@ -1,24 +1,31 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { BonusBenefit, BonusBenefitsBlockContent } from './BonusBenefitsBlockContent';
 import { getElementsColsValue } from './getElementsColsValue';
+import { Headline } from '../Headline/Headline';
 
 export interface BenefitsBlockProps extends BonusBenefitsBlockContent, UniBlockProps {}
 
 export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ className = '', title, subtitle, bonusBenefits, ...rest }) => {
+  ({ context, className = '', title, subtitle, bonusBenefits, ...rest }) => {
     return (
       <BlockWrapper
         className={`font-sans text-primary-text bg-white p-50 flex flex-col text-center ${className}`}
+        context={context}
         {...rest}
       >
-        {title ? <Heading headingType="h3" className="mb-[10px]" title={title} /> : null}
-        {subtitle ? <span className="text-xl-light">{subtitle}</span> : null}
+        <Headline
+          context={context}
+          className="!p-0"
+          title={title}
+          description={subtitle}
+          headlineVersion="M"
+          align="center"
+        />
         {bonusBenefits?.length ? (
-          <div className={`grid gap-1 ${getElementsColsValue(className)}`}>
+          <div className={`grid gap-1 mt-8 ${getElementsColsValue(className)}`}>
             {bonusBenefits.map(renderBonusBenefit)}
           </div>
         ) : null}

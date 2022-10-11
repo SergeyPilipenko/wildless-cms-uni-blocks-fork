@@ -6,6 +6,7 @@ import { cardStyleMap, cardVersionMap, cardWidthMap, galleryLengthForScrollMap }
 import { GalleryCardInner } from './GalleryCardInner';
 import type { GalleryCard } from './GalleryContent';
 import type { GalleryInnerProps } from './GalleryInner';
+import { Headline } from '../Headline/Headline';
 
 export interface GalleryContainerProps extends Omit<GalleryInnerProps, 'className'> {
   activeCardIndex: number;
@@ -22,14 +23,16 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
     return (
       <div>
         <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent" />
-        <div className="flex flex-col items-center mb-8">
-          {title ? <Heading headingType="h2" className="text-center" title={title} /> : null}
-          {description ? (
-            <div className="text-xl-light max-w-[600px] mt-2.5">{description}</div>
-          ) : null}
-        </div>
+        <Headline
+          context={context}
+          className="!p-0"
+          title={title}
+          description={description}
+          headlineVersion="L"
+          align="center"
+        />
         <div
-          className={`flex ${
+          className={`flex mt-8 ${
             cards?.length <= galleryLengthForScrollMap[version] ? 'justify-center' : ''
           } duration-1000`}
           style={{ transform: `translateX(-${activeCardIndex * cardWidthMap[version]}px)` }}

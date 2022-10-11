@@ -2,11 +2,10 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
-import { Description } from '../../ui-kit/Description/Description';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { CatalogCard } from './CatalogCard';
 import type { CatalogCardType, CatalogContent } from './CatalogContent';
+import { Headline } from '../Headline/Headline';
 
 export interface CatalogProps extends CatalogContent, UniBlockProps {}
 
@@ -24,10 +23,16 @@ export const Catalog = JSX<CatalogProps>(
         className={`bg-white relative font-sans p-12 overflow-hidden text-center ${className}`}
         {...rest}
       >
-        {title ? <Heading headingType="h3" className="mb-6" title={title} /> : null}
-        {description ? <Description className="mb-6" description={description} /> : null}
+        <Headline
+          context={context}
+          className="!p-0"
+          title={title}
+          description={description}
+          headlineVersion="M"
+          align="center"
+        />
         <div
-          className="flex duration-1000 gap-3.5"
+          className="flex duration-1000 gap-3.5 mt-8"
           style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}
           role="list"
         >

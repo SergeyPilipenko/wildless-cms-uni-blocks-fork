@@ -19,6 +19,9 @@ exports[`Blocks Bonus should render block "Bonus" without content 1`] = `
   <div
     class="container"
   >
+    <section
+      class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
+    />
     <div
       class="flex flex-wrap w-full mt-9"
     />
@@ -29,7 +32,11 @@ exports[`Blocks Bonus should render block "Bonus" without content 1`] = `
 exports[`Blocks BonusBenefitsBlock should render block "BonusBenefitsBlock" without content 1`] = `
 <section
   class="font-sans text-primary-text bg-white p-50 flex flex-col text-center "
-/>
+>
+  <section
+    class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
+  />
+</section>
 `;
 
 exports[`Blocks Calculator should render block "Calculator" without content 1`] = `
@@ -51,8 +58,11 @@ exports[`Blocks Catalog should render block "Catalog" without content 1`] = `
 <section
   class="bg-white relative font-sans p-12 overflow-hidden text-center "
 >
+  <section
+    class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
+  />
   <div
-    class="flex duration-1000 gap-3.5"
+    class="flex duration-1000 gap-3.5 mt-8"
     role="list"
     style="transform: translateX(-0px);"
   />
@@ -347,11 +357,11 @@ exports[`Blocks Gallery should render block "Gallery" without content 1`] = `
     <div
       class="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent"
     />
-    <div
-      class="flex flex-col items-center mb-8"
+    <section
+      class="font-sans flex flex-col p-[50px] gap-4 bg-transparent !p-0"
     />
     <div
-      class="flex justify-center duration-1000"
+      class="flex mt-8 justify-center duration-1000"
       role="list"
       style="transform: translateX(-0px);"
     />
@@ -370,11 +380,8 @@ exports[`Blocks GracePeriod should render block "GracePeriod" without content 1`
 <section
   class="font-sans bg-white p-[50px] "
 >
-  <h3
-    class="font-sans m-0 text-h3 text-center"
-  />
-  <div
-    class="text-l-light-md text-center mt-3"
+  <section
+    class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
   />
 </section>
 `;
@@ -562,11 +569,11 @@ exports[`Blocks MiniGallery should render block "MiniGallery" without content 1`
     <div
       class="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent"
     />
-    <div
-      class="flex flex-col items-center mb-8"
+    <section
+      class="font-sans flex flex-col p-[50px] gap-4 bg-transparent !p-0"
     />
     <div
-      class="flex justify-center duration-1000"
+      class="flex mt-8 justify-center duration-1000"
       role="list"
       style="transform: translateX(-0px);"
     />

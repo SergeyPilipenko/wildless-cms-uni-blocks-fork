@@ -1,21 +1,29 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import type { BonusContent } from './BonusContent';
+import { Headline } from '../Headline/Headline';
 
 export interface BonusProps extends BonusContent, UniBlockProps {}
 
 export const Bonus = JSX<BonusProps>((props) => {
-  const { className = '', title, description, bonusItems, ...rest } = props;
+  const { context, className = '', title, description, bonusItems, ...rest } = props;
 
   return (
-    <BlockWrapper className={`font-sans bg-white p-[50px] pb-9 ${className}`} {...rest}>
+    <BlockWrapper
+      className={`font-sans bg-white p-[50px] pb-9 ${className}`}
+      context={context}
+      {...rest}
+    >
       <div className="container">
-        {title ? <Heading headingType="h3" className="text-center" title={title} /> : null}
-        {description ? (
-          <div className="text-xl-light text-center mt-[10px]">{description}</div>
-        ) : null}
+        <Headline
+          context={context}
+          className="!p-0"
+          title={title}
+          description={description}
+          headlineVersion="M"
+          align="center"
+        />
         <div className="flex flex-wrap w-full mt-9">
           {bonusItems
             ? bonusItems.map((_, i) => {
