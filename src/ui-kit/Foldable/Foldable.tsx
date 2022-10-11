@@ -75,7 +75,7 @@ const renderBlocks = (
   { blocksToHide, isActive, containerClasses }: RenderBlocksParams,
 ) => {
   const visibleBlocks = blocks.slice(0, blocks.length - blocksToHide);
-  const hiddenBlocks = blocks.slice(-blocksToHide);
+  const hiddenBlocks = blocksToHide > 0 ? blocks.slice(-blocksToHide) : [];
 
   return render(
     <div>
