@@ -1,8 +1,8 @@
 import { context } from '../../react/setup-fixture';
 
-import { Picture } from '../../model/Picture';
+import type { Picture } from '../../model/Picture';
 import { Headline } from './Headline';
-import { HeadlineContent } from './HeadlineContent';
+import type { HeadlineContent } from './HeadlineContent';
 
 export const HEADLINE: HeadlineContent = {
   title: 'Своя кредитная карта',

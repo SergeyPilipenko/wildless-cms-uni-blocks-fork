@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
-import { Picture } from '../../model/Picture';
+import type { Picture } from '../../model/Picture';
 import type { UniBlockProps } from '../../types';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';

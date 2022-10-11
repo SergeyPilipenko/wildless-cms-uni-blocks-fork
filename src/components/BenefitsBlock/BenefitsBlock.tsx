@@ -3,25 +3,20 @@ import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
-import type { BenefitItem, BenefitsBlockContent } from './BenefitsBlockContent';
+import type { BenefitItemProps, BenefitsBlockContent } from './BenefitsBlockContent';
 import { DescriptionType, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
 
 export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
 
 export const BenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ className = '', headingType = 'h2', title, benefitList, ...rest }) => {
+  ({ className = '', title, benefitList, ...rest }) => {
     return (
       <BlockWrapper
         className={`font-sans text-primary-text bg-white p-12 flex flex-col items-center ${className}`}
         {...rest}
       >
         {title ? (
-          <Heading
-            headingType={headingType}
-            as="h2"
-            className="max-w-[47rem] text-center"
-            title={title}
-          />
+          <Heading headingType="h3" as="h2" className="max-w-[47rem] text-center" title={title} />
         ) : null}
         {benefitList?.length ? renderBenefits(benefitList) : null}
       </BlockWrapper>
@@ -29,29 +24,29 @@ export const BenefitsBlock = JSX<BenefitsBlockProps>(
   },
 );
 
-const renderBenefits = (benefits: BenefitItem[]) => {
+const renderBenefits = (benefits: BenefitItemProps[]) => {
   return (
-    <div className="flex flex-wrap w-full justify-center gap-x-20 mt-9">
+    <div className="flex flex-wrap w-full justify-center gap-x-20 mt-8">
       {benefits.map(renderStep)}
     </div>
   );
 };
 
-const renderStep = (benefit: BenefitItem, i: number) => {
+const renderStep = (benefit: BenefitItemProps, i: number) => {
   const description = benefit?.description || undefined;
 
   return (
-    <div key={String(i)} className="flex items-center basis-1/2 max-w-[500px] mb-[46px]">
-      {benefit?.icon ? (
+    <div key={String(i)} className="flex items-center basis-1/2 max-w-[500px] mb-14">
+      {benefit?.icon?.icon ? (
         <Img
-          className="h-[70px] w-[70px] min-w-[70px] min-h-[70px] mr-5"
+          className="w-[50px] h-[50px] min-w-[50px] p-3 rounded-full bg-main-divider"
           image={benefit.icon}
-          width="70"
-          height="70"
+          asSVG
         />
       ) : null}
-      <div>
-        {benefit?.label ? <h3 className="text-xl m-0">{benefit.label}</h3> : null}
+      {benefit?.icon?.src ? <Img image={benefit.icon} /> : null}
+      <div className="ml-5">
+        {benefit?.label ? <h3 className="text-h6 m-0">{benefit.label}</h3> : null}
         {renderDescription(description)}
       </div>
     </div>

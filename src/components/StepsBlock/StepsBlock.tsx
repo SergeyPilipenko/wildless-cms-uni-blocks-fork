@@ -91,7 +91,7 @@ const renderStepIcon =
     return (
       <div key={String(i)} className="flex flex-col items-center text-center">
         <div
-          className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10
+          className={`h-[100px] w-[100px] min-w-[100px] min-h-[100px] rounded-full p-[26px] box-border z-10 flex justify-center items-center
             ${styleMap.iconBackground} ${styleMap.title}`}
         >
           {checkIsIconRenderable(icon) ? (

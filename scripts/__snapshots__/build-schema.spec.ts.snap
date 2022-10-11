@@ -114,7 +114,7 @@ Object {
       },
       "type": "object",
     },
-    "BenefitItem": Object {
+    "BenefitItemProps": Object {
       "properties": Object {
         "description": Object {
           "$ref": "#/definitions/DescriptionType",
@@ -131,35 +131,15 @@ Object {
       "title": "Преимущество",
       "type": "object",
     },
-    "BenefitItemProps": Object {
-      "properties": Object {
-        "benefit": Object {
-          "$ref": "#/definitions/ProductBlockBenefit",
-        },
-        "benefitsVersion": Object {
-          "$ref": "#/definitions/IconVersion",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
-        },
-      },
-      "required": Array [
-        "benefit",
-      ],
-      "type": "object",
-    },
     "BenefitsBlockContent": Object {
       "properties": Object {
         "benefitList": Object {
           "items": Object {
-            "$ref": "#/definitions/BenefitItem",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "maxItems": 6,
           "title": "Список преимуществ",
           "type": "array",
-        },
-        "headingType": Object {
-          "$ref": "#/definitions/HeadingType",
         },
         "title": Object {
           "title": "Заголовок",

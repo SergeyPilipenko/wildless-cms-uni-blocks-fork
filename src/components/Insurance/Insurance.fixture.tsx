@@ -1,4 +1,4 @@
-import { Picture } from '../../model/Picture';
+import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
 import type { InsuranceBenefit } from './InsuranceContent';
 import { Insurance } from './Insurance';

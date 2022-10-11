@@ -1,6 +1,7 @@
 import { context } from '../../react/setup-fixture';
 
 import { BenefitsBlock } from './BenefitsBlock';
+import type { Picture } from '../../model/Picture';
 
 const itemsList = [
   'Комиссия за выдачу',
@@ -9,8 +10,18 @@ const itemsList = [
   'частичное погашение кредита',
 ];
 
+const image: Picture = {
+  src: 'money-1.png',
+  format: 'webp',
+  alt: 'Потребительский кредит наличными',
+  size: {
+    width: 70,
+    height: 70,
+  },
+};
+
 export default {
-  description: (
+  'desc-img': (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
         context={context}
@@ -23,7 +34,7 @@ export default {
               name: 'Комиссия за выдачу кредита не взимается. Допускается полное или частичное погашение кредита',
               benefitType: 'text',
             },
-            icon: { icon: 'ClockIcon' },
+            icon: image,
           },
           {
             label: 'Оформление по паспорту',
@@ -31,7 +42,7 @@ export default {
               name: 'Обеспечение не требуется. Кредит можно получить на любые цели',
               benefitType: 'text',
             },
-            icon: { icon: 'SignDocsIcon' },
+            icon: image,
           },
           {
             label: 'Без залога и поручительства',
@@ -39,7 +50,7 @@ export default {
               name: 'Единовременное перечисление суммы кредита в полном объёме на текущий счет в Банке',
               benefitType: 'text',
             },
-            icon: { icon: 'ComfortableCompIcon' },
+            icon: image,
           },
           {
             label: 'Деньги за 3 дня',
@@ -47,12 +58,56 @@ export default {
               name: 'Рассмотрение заявки с момента предоставления полного комплекта документов',
               benefitType: 'text',
             },
-            icon: { icon: 'ActualBalanceIcon' },
+            icon: image,
           },
         ]}
       />
     </div>
   ),
+  'desc-icon': (
+    <div className="container grid grid-cols-12">
+      <BenefitsBlock
+        context={context}
+        className="col-span-12"
+        title="Преимущества кредита"
+        benefitList={[
+          {
+            label: 'Без комиссии',
+            description: {
+              name: 'Комиссия за выдачу ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'MoneyIcon' },
+          },
+          {
+            label: 'Оформление',
+            description: {
+              name: 'Обеспечение ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'PersonalCardIcon' },
+          },
+          {
+            label: 'Без залога ',
+            description: {
+              name: 'Единовременное перечисление ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'CalendarTickIcon' },
+          },
+          {
+            label: 'Деньги за 3 дня',
+            description: {
+              name: 'Рассмотрение  ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'GlobalIcon' },
+          },
+        ]}
+      />
+    </div>
+  ),
+
   list: (
     <div className="container grid grid-cols-12">
       <BenefitsBlock

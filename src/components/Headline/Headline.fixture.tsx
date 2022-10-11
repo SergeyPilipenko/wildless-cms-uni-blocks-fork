@@ -1,7 +1,7 @@
 import { context } from '../../react/setup-fixture';
 
 import { Headline } from './Headline';
-import { HeadlineContent } from './HeadlineContent';
+import type { HeadlineContent } from './HeadlineContent';
 
 export const HEADLINE: HeadlineContent = {
   title: 'Своя кредитная карта',
