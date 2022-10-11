@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
-import type { InsuranceAmountBlockContent } from './InsuranceAmountBlockContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import type { InsuranceAmountBlockContent } from './InsuranceAmountBlockContent';
 import { InsuranceAmountBlockInner } from './InsuranceAmountBlockInner';
 
 export interface InsuranceAmountBlockProps extends InsuranceAmountBlockContent, UniBlockProps {}
 
 export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
-  ({ className = '', context, title, insuranceTabs = [], ...rest }) => {
+  ({ className = '', context, title, insuranceTabs = [], button, ...rest }) => {
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
 
     return (
@@ -39,6 +39,7 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
             context,
             className,
             insuranceTabs,
+            button,
           })}
         </div>
       </BlockWrapper>
@@ -48,6 +49,7 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
 
 const renderInsuranceGalleries = ({
   insuranceTabs,
+  button,
   context,
   className = '',
 }: InsuranceAmountBlockProps) => {
@@ -59,6 +61,7 @@ const renderInsuranceGalleries = ({
           key={String(i)}
           context={context}
           className={className}
+          button={button}
           cards={cards}
         />
       ))

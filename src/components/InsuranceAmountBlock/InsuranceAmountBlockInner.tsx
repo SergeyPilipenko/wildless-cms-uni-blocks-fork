@@ -1,12 +1,15 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Button } from '../../ui-kit/Button/Button';
+import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
 import type { CardItem, InsuranceAmountBlockTabs } from './InsuranceAmountBlockContent';
 
-export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTabs, UniBlockProps {}
+export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTabs, UniBlockProps {
+  button?: ButtonProps;
+}
 
 type InsuranceGalleryProps = {
   tabsShift: number;
@@ -24,7 +27,7 @@ type InsuranceSlideProps = {
 };
 
 export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
-  ({ className = '', context, cards = [] }) => {
+  ({ className = '', context, cards = [], button }) => {
     const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
     const [tabsShift, setTabsShift] = context.useState(0);
 
@@ -64,9 +67,7 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
             <div className="absolute top-0 right-0 h-full w-[136px] bg-opacity-to-white" />
           ) : null}
         </div>
-        <Button className="w-[240px] p-4 text-center" version="primary" href={activeHref}>
-          Выбрать программу
-        </Button>
+        <Button className="w-[240px] text-center" version="primary" {...button} href={activeHref} />
       </section>
     );
   },

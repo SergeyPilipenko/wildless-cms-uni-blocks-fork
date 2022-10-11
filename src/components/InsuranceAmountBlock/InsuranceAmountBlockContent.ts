@@ -1,4 +1,5 @@
 import type { Picture } from '../../model/Picture';
+import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 
 /**
  * @title Кнопка выбора программы
@@ -32,4 +33,6 @@ export interface InsuranceAmountBlockContent {
   title?: string;
   /** @title Список вкладок */
   insuranceTabs?: InsuranceAmountBlockTabs[];
+  /** @title Кнопка */
+  button?: ButtonProps;
 }

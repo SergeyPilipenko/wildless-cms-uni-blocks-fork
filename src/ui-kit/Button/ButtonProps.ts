@@ -23,6 +23,8 @@ export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
    * @default Кнопка
    */
   text?: string;
+  /** @title Закругленные углы */
+  rounded?: boolean;
   version?: ButtonVersion;
 }
 
@@ -37,8 +39,6 @@ export interface ButtonWithIconProps extends ButtonProps {
   appendLeft?: VNode;
   /** @hidden */
   appendRight?: VNode;
-  /** @title Закругленные углы */
-  rounded?: boolean;
   /** @hidden */
   asSVG?: boolean;
 }

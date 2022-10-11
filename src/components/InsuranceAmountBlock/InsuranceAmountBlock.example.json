@@ -76,5 +76,11 @@
         }
       ]
     }
-  ]
+  ],
+  "button": {
+    "href": "",
+    "text": "Выбрать программу",
+    "target": "_self",
+    "version": "primary"
+  }
 }
