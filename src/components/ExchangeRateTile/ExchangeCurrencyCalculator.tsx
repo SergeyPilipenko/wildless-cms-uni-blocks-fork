@@ -45,7 +45,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
       <div className={`grid gap-[18px] pt-2 ${className}`}>
         {renderInput({
           placeholder: 'Хочу продать',
-          rates: currencyRatesBuy,
+          rates: currencyRatesSell,
           selected: calcState.selectSell,
           setSelected: handleSelectSell(calcState, handleSetCalcState, currencyRatesSell),
           value: calcState.inputSell,
@@ -58,7 +58,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
         })}
         {renderInput({
           placeholder: 'Получу',
-          rates: currencyRatesSell,
+          rates: currencyRatesBuy,
           selected: calcState.selectBuy,
           setSelected: handleSelectBuy(calcState, handleSetCalcState, currencyRatesBuy),
           value: calcState.inputBuy,
