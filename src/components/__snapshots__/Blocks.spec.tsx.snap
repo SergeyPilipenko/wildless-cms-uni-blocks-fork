@@ -583,13 +583,13 @@ exports[`Blocks MiniGallery should render block "MiniGallery" without content 1`
 
 exports[`Blocks MobileAppTile should render block "MobileAppTile" without content 1`] = `
 <section
-  class="flex justify-between font-sans p-9 box-border relative
-        pr-[9.4rem] min-h-[360px]
+  class="flex justify-between font-sans p-9 box-border relative min-h-[320px]
+        min-h-[360px]
         bg-white text-primary-text
         "
 >
   <div
-    class="font-sans flex flex-col grow h-full items-start "
+    class="font-sans flex flex-col grow h-full items-start z-[1]"
   >
     <h3
       class="font-sans m-0 text-h4 whitespace-pre-wrap max-w-[509px] mb-6

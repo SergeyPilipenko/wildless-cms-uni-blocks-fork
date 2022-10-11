@@ -8,7 +8,6 @@ import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
-import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import type { MobileAppTileContent } from './MobileAppTileContent';
 
 export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps {}
@@ -28,25 +27,28 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
     version = 'primary',
     items,
     image,
+    headingType = 'h4',
     ...rest
   }) => {
     const textColorClass = version === 'primary' ? 'text-primary-text' : '';
+    const containerStyle = version === 'secondary' ? 'p-3.5 min-w-[120px]' : 'min-w-[92px]';
 
     return (
       <BlockWrapper
         context={context}
-        className={`flex justify-between font-sans p-9 box-border relative
-        ${getTileRightPadding(className)} ${getTileMinHeight(className)}
+        className={`flex justify-between font-sans p-9 box-border relative min-h-[320px]
+        ${getTileMinHeight(className)}
         ${mobileAppStyleMap[version]}
         ${className}`}
         {...rest}
       >
         <BaseTile
           context={context}
+          className="z-[1]"
           title={
             title ? (
               <Heading
-                headingType="h4"
+                headingType={headingType}
                 as="h3"
                 title={title}
                 className={`whitespace-pre-wrap max-w-[509px] mb-6
@@ -56,22 +58,15 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
           }
           buttons={
             buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex mt-[30px] gap-4" />
+              <ButtonSection context={context} buttons={buttons} className="flex mt-8 gap-4" />
             ) : null
           }
         >
           <div className="flex flex-1 items-center">
-            {qr?.src && qr?.href && (
-              <a href={qr.href} target="_blank" aria-label={title}>
-                <img
-                  src={qr.src}
-                  alt={title}
-                  title={title}
-                  width="122"
-                  height="122"
-                  className="w-[122px] h-[122px] min-w-[122px] min-h-[122px] bg-secondary-light mr-4 rounded-md"
-                />
-              </a>
+            {qr?.src && (
+              <div className={`flex justify-center mr-5 bg-white rounded-md ${containerStyle}`}>
+                <Img image={qr} />
+              </div>
             )}
             {renderList(version, items)}
           </div>
