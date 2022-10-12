@@ -19,7 +19,7 @@ export const Sitemap = JSX<SitemapProps>(({ className = '', items, context }) =>
   };
 
   return (
-    <div className={`flex items-start justify-between gap-[54px] xl:gap-5 ${className}`}>
+    <div className={`flex flex-grow items-start justify-between gap-[54px] xl:gap-5 ${className}`}>
       {mergedItems?.map((_, i) => renderColumn(_, i, linkParams))}
     </div>
   );

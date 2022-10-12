@@ -327,7 +327,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
       </div>
     </div>
     <div
-      class="flex items-start justify-between gap-[54px] xl:gap-5 pt-[3px]"
+      class="flex flex-grow items-start justify-between gap-[54px] xl:gap-5 pt-[3px]"
     />
   </div>
   <div
