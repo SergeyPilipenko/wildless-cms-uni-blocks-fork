@@ -14,7 +14,7 @@ export const renderCalculatorBlock =
     return (
       <section
         key={String(i)}
-        className={`box-border relative flex shrink-0 basis-full ${className}`}
+        className={`box-border relative bg-white flex shrink-0 self-start basis-full ${className}`}
         role="listitem"
       >
         <div className="box-border p-9 w-full">

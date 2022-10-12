@@ -41,9 +41,11 @@ exports[`Blocks BonusBenefitsBlock should render block "BonusBenefitsBlock" with
 
 exports[`Blocks Calculator should render block "Calculator" without content 1`] = `
 <section
-  class="box-border overflow-hidden relative font-sans w-100 bg-white text-primary-text "
+  class="box-border overflow-hidden relative font-sans w-100 text-primary-text "
 >
-  <div>
+  <div
+    class="bg-white"
+  >
     <div />
   </div>
   <div

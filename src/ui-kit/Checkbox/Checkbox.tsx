@@ -11,33 +11,35 @@ const CHECK_PATHS = [
   },
 ];
 
-export const Checkbox = JSX<CheckboxProps>(({ className, text, checked, isRadio, onChange }) => (
-  <div className={className}>
-    <label className="flex items-center cursor-pointer relative">
-      <input
-        className={`peer appearance-none w-5 h-5 border-solid
+export const Checkbox = JSX<CheckboxProps>(({ className, text, checked, isRadio, onChange }) => {
+  return (
+    <div className={className}>
+      <label className="flex items-center relative cursor-pointer group">
+        <input
+          className={`peer appearance-none w-5 h-5 border-solid cursor-pointer group-hover:border-checkbox-hover
         ${isRadio ? 'rounded-full border-2' : 'rounded checked:bg-primary-main border'}
         ${checked ? 'border-black' : 'border-main-stroke'}
         checked:border-primary-main m-0`}
-        type="checkbox"
-        onChange={(e) => {
-          onChange(e.target.checked as boolean);
-        }}
-        checked={checked}
-      />
-      {isRadio ? (
-        <div className="left-1 w-3 h-3 rounded-full bg-primary-main hidden absolute peer-checked:block"></div>
-      ) : (
-        <SVG
-          paths={CHECK_PATHS}
-          className="hidden absolute left-1 ml-px peer-checked:block"
-          width="11"
-          height="9"
-          fill="white"
-          viewBox="0 0 11 9"
+          type="checkbox"
+          onChange={(e) => {
+            onChange(e.target.checked as boolean);
+          }}
+          checked={checked}
         />
-      )}
-      {text ? <span className="font-sans ml-3 text-l cursor-pointer">{text}</span> : null}
-    </label>
-  </div>
-));
+        {isRadio ? (
+          <div className="left-1 w-3 h-3 rounded-full bg-primary-main hidden absolute peer-checked:block"></div>
+        ) : (
+          <SVG
+            paths={CHECK_PATHS}
+            className="hidden absolute left-1 ml-px peer-checked:block"
+            width="11"
+            height="9"
+            fill="white"
+            viewBox="0 0 11 9"
+          />
+        )}
+        {text ? <span className="font-sans ml-3 text-l-light">{text}</span> : null}
+      </label>
+    </div>
+  );
+});

@@ -231,6 +231,7 @@ module.exports = {
         'gray/100': 'rgba(235, 237, 240, 1);',
         'primary-hover': 'rgba(134, 134, 134, 1);',
         'primary-focus': 'rgba(28, 28, 28, 1);',
+        'checkbox-hover': 'rgba(134, 134, 134, 1);',
       },
     },
   },
