@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { DEFAULT_GAP, DEFAULT_PADDING } from './constants';
 import { SwipeListControlDots } from './SwipeListControlDots';
 import { SwipeListControlList } from './SwipeListControlList';
@@ -9,15 +10,14 @@ import { getScrollPoints } from './utils/getScrollPoints';
 export const SwipeListControl = JSX<SwipeListControlProps>(
   ({
     className,
-    context,
     children,
     gap = DEFAULT_GAP,
     padding = DEFAULT_PADDING,
     showDots = true,
     onSlideChange,
   }) => {
-    const [activeIndex, setActiveIndex] = context.useState<number>(0);
-    const [indexFraction, setIndexFraction] = context.useState<number>(0);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [indexFraction, setIndexFraction] = useState(0);
 
     const dotsProps = {
       activeIndex,

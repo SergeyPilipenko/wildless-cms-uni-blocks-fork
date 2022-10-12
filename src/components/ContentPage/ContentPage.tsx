@@ -1,4 +1,5 @@
-import { JSX, PropsWithChildren } from '@redneckz/uni-jsx';
+import type { UNIComponent } from '@redneckz/uni-jsx';
+import { JSX } from '@redneckz/uni-jsx';
 import type { BlockDef, ContentPageDef, UniBlockProps } from '../../types';
 import { style2className } from '../../utils/style2className';
 import type { BlockContent } from '../BlockContent';
@@ -17,10 +18,7 @@ export type BlockDecorator<VNode = any> = (
   index?: number | string,
 ) => any;
 
-export type JSXBlock<BlockProps = BlockContent> = (
-  props: PropsWithChildren<UniBlockProps & BlockProps, any>,
-  context?: any,
-) => any;
+export type JSXBlock<BlockProps = BlockContent> = UNIComponent<BlockProps & UniBlockProps>;
 
 export type BlocksRegistry = Record<string, JSXBlock>;
 

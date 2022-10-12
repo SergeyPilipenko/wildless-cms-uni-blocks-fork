@@ -1,4 +1,3 @@
-import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
 import type { GalleryContent } from '../../components/Gallery/GalleryContent';
 import type { HeadlineContent } from '../../components/Headline/HeadlineContent';
 import type { LinkDocsContent } from '../../components/LinkDocs/LinkDocsContent';
@@ -12,7 +11,6 @@ import type { TileContent } from '../../components/Tile/TileContent';
 import type { EmptyOption } from '../../model/EmptyOptionType';
 
 export interface ActiveHandler {
-  context: ContentPageContext;
   blocks?: BlockDef[];
   initialState?: boolean;
 }

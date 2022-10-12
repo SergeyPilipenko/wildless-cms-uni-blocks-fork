@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
 import type { UniBlockProps } from '../../types';
 import { Button } from '../../ui-kit/Button/Button';
@@ -30,7 +31,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
     const { useRouter, handlerDecorator } = context;
     const router = useRouter();
 
-    const [calcState, setCalcState] = context.useState<CalcState>({
+    const [calcState, setCalcState] = useState<CalcState>({
       inputSell: '',
       inputBuy: '',
       selectSell: currencyRatesBuy?.[0]?.code || Currency.RUB,

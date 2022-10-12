@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -9,7 +10,7 @@ export interface InsuranceAmountBlockProps extends InsuranceAmountBlockContent, 
 
 export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
   ({ className = '', context, title, insuranceTabs = [], button, ...rest }) => {
-    const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     return (
       <BlockWrapper

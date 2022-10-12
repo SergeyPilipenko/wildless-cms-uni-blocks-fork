@@ -1,7 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { GalleryVersion } from '../../model/GalleryVersion';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { galleryLengthForScrollMap } from './constants';
 import { GalleryContainer } from './GalleryContainer';
@@ -13,7 +14,7 @@ export interface GalleryInnerProps extends GalleryContent, UniBlockProps {
 
 export const GalleryInner = JSX<GalleryInnerProps>(
   ({ context, cards = [], className = '', version = 'normal', ...rest }) => {
-    const [activeCardIndex, setActiveCardIndex] = context.useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
     const handlePrevClick = () => setActiveCardIndex(activeCardIndex - 1);

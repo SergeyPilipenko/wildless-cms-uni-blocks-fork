@@ -1,16 +1,17 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
-import type { TopItemProps } from '../../ui-kit/TopItem/TopItem';
-import type { HeaderContent } from './HeaderContent';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import { useSitemap } from '../../services/sitemap/useSitemap';
+import type { UniBlockProps } from '../../types';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
+import type { TopItemProps } from '../../ui-kit/TopItem/TopItem';
 import { getAccordionItems } from '../../utils/getAccordionItems';
 import { Accordion } from '../Accordion/Accordion';
 import { HeaderBurger } from './HeaderBurger';
+import type { HeaderContent } from './HeaderContent';
 import { HeaderTop } from './HeaderTop';
 
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
@@ -26,7 +27,7 @@ export const Header = JSX<HeaderProps>(
     const activeTopItem = mergedItems.find(isTopItemActive(router));
     const subItems = activeTopItem?.items;
     const activeSubItem = findActiveSubItem(router)(subItems);
-    const [burgerMenuShow, setBurgerMenuShow] = context.useState(false);
+    const [burgerMenuShow, setBurgerMenuShow] = useState(false);
     const toggleBurgerMenu = () => setBurgerMenuShow(!burgerMenuShow);
 
     return (

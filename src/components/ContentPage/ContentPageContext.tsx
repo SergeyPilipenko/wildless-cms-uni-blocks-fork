@@ -31,10 +31,6 @@ export type GeolocationHook = (defaultLocation: string) => [string, () => void];
 
 export type SetStateAction<S> = S | ((prevState: S) => S);
 
-export type SetStateHook = <State>(
-  initialState: State | (() => State),
-) => [State, (action: SetStateAction<State>) => void];
-
 export interface IntersectionObserverTagProps {
   tag: keyof HTMLElementTagNameMap;
   className?: string;
@@ -48,7 +44,6 @@ export type IntersectionObserverComponent = (props: IntersectionObserverTagProps
 
 export interface ContentPageContext {
   useRouter: () => Router;
-  useState: SetStateHook;
   useAsyncData: AsyncDataHook;
   useGeolocation: GeolocationHook;
   useLikeService: () => LikeService;

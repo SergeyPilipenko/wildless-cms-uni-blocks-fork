@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { SafeDepositRentalContent } from './SafeDepositRentalContent';
@@ -72,14 +73,14 @@ const DATA = {
 
 export const SafeDepositRental = JSX<SafeDepositRentalProps>(
   ({ context, className = '', ...rest }) => {
-    const [days, setDays] = context.useState(DEFAULT_DAYS);
+    const [days, setDays] = useState(DEFAULT_DAYS);
     const data = DATA;
 
     return (
       <BlockWrapper context={context} className={`bg-white px-8 py-12 ${className}`} {...rest}>
         <div className="flex justify-between align-top mb-6">
           {data?.cities?.length ? (
-            <SafeDepositRentalForm {...data} days={days} setDays={setDays} context={context} />
+            <SafeDepositRentalForm {...data} days={days} setDays={setDays} />
           ) : null}
           <SafeDepositRentalTotal days={days} />
         </div>

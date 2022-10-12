@@ -1,11 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
+import { Headline } from '../Headline/Headline';
 import { CatalogCard } from './CatalogCard';
 import type { CatalogCardType, CatalogContent } from './CatalogContent';
-import { Headline } from '../Headline/Headline';
 
 export interface CatalogProps extends CatalogContent, UniBlockProps {}
 
@@ -15,7 +16,7 @@ const CARD_SHIFT = 430;
 
 export const Catalog = JSX<CatalogProps>(
   ({ context, cards = [], className = '', title, description, ...rest }) => {
-    const [activeCardIndex, setActiveCardIndex] = context.useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     return (
       <BlockWrapper

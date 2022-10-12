@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
@@ -27,9 +28,9 @@ type InsuranceSlideProps = {
 };
 
 export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
-  ({ className = '', context, cards = [], button }) => {
-    const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
-    const [tabsShift, setTabsShift] = context.useState(0);
+  ({ className = '', cards = [], button }) => {
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+    const [tabsShift, setTabsShift] = useState(0);
 
     const handleNextClick = () => setTabsShift(tabsShift + 1);
     const handlePrevClick = () => setTabsShift(tabsShift - 1);

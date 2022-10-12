@@ -1,3 +1,5 @@
+import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { UniBlockProps } from '../../types';
 import { Button } from '../../ui-kit/Button/Button';
 import { InputRange } from '../../ui-kit/InputRange/InputRange';
@@ -7,32 +9,29 @@ import { SelectOption } from '../../ui-kit/Select/SelectOption';
 
 export type SafeDepositRentalFormProps = UniBlockProps;
 
-export const SafeDepositRentalForm = ({
-  cities,
-  cellDimensions,
-  cellOptions,
-  days,
-  setDays,
-  context,
-}) => {
-  return (
-    <div className="flex-1 mr-9">
-      {cities.length ? renderCitiesOffices(cities, context) : null}
-      {renderRentalPeriod(days, setDays)}
-      {cellDimensions.length && cellOptions.length
-        ? renderDimensionsOptions(cellDimensions, cellOptions, context)
-        : null}
-      <span className="text-secondary-text text-l-light">Тип договора</span>
-      <div className="flex justify-between items-center mt-5">
-        {renderRadioButtons(context)}
-        <Button text="Офисы на карте" version="primary" />
-      </div>
-    </div>
-  );
-};
+// TODO: Добавить типизацию
 
-const renderCitiesOffices = (cities, context) => {
-  const [selectedCity, setSelectedCity] = context.useState(cities[0].city);
+export const SafeDepositRentalForm = JSX<any>(
+  ({ cities, cellDimensions, cellOptions, days, setDays }) => {
+    return (
+      <div className="flex-1 mr-9">
+        {cities.length ? <CitiesOffices cities={cities} /> : null}
+        {renderRentalPeriod(days, setDays)}
+        {cellDimensions.length && cellOptions.length ? (
+          <DimensionsOptions cellDimensions={cellDimensions} cellOptions={cellOptions} />
+        ) : null}
+        <span className="text-secondary-text text-l-light">Тип договора</span>
+        <div className="flex justify-between items-center mt-5">
+          <RadioButtons />
+          <Button text="Офисы на карте" version="primary" />
+        </div>
+      </div>
+    );
+  },
+);
+
+const CitiesOffices = JSX<any>(({ cities }) => {
+  const [selectedCity, setSelectedCity] = useState(cities[0].city);
 
   const setSelected = (_) => setSelectedCity(_);
 
@@ -64,11 +63,11 @@ const renderCitiesOffices = (cities, context) => {
       </div>
     </div>
   );
-};
+});
 
-const renderDimensionsOptions = (cellDimensions, cellOptions, context) => {
-  const [selectedDimension, setSelectedDimension] = context.useState(cellDimensions[0].dimension);
-  const [selectedOption, setSelectedOption] = context.useState(cellOptions[0].option);
+const DimensionsOptions = JSX<any>(({ cellDimensions, cellOptions }) => {
+  const [selectedDimension, setSelectedDimension] = useState(cellDimensions[0].dimension);
+  const [selectedOption, setSelectedOption] = useState(cellOptions[0].option);
 
   return (
     <div className="flex justify-between mb-6">
@@ -96,7 +95,7 @@ const renderDimensionsOptions = (cellDimensions, cellOptions, context) => {
       </div>
     </div>
   );
-};
+});
 
 interface SelectProps {
   data: any[];
@@ -138,8 +137,9 @@ export const renderRentalPeriod = (days, setDays) => {
   );
 };
 
-const renderRadioButtons = (context) => {
-  const [selected, setSelected] = context.useState('option1');
+// TODO: В качестве компонента не годится
+const RadioButtons = JSX<any>(() => {
+  const [selected, setSelected] = useState('option1');
   const onChange = (_: React.ChangeEvent<HTMLInputElement>) => setSelected(_.target.value);
 
   return (
@@ -161,4 +161,4 @@ const renderRadioButtons = (context) => {
       />
     </div>
   );
-};
+});

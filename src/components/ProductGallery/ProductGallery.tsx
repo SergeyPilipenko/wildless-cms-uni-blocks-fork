@@ -1,7 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { BlockVersion } from '../../model/BlockVersion';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent } from './ProductGalleryContent';
@@ -32,7 +33,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
   ({ className = '', context, slides = [], version = 'primary', ...rest }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
-    const [activeSlideIndex, setActiveSlideIndex] = context.useState(0);
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     return (
       <BlockWrapper

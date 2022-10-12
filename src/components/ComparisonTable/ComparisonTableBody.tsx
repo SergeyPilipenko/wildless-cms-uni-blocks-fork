@@ -1,10 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ComparisonTableColumnHeaders } from './ComparisonTableColumnHeaders';
-import { ComparisonTableRows } from './ComparisonTableRows';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
-import { COLS_LENGTH_FOR_SCROLL } from './constants';
 import { ContentPageContext } from '../ContentPage/ContentPageContext';
+import { ComparisonTableColumnHeaders } from './ComparisonTableColumnHeaders';
 import { Column, RowHeader } from './ComparisonTableContent';
+import { ComparisonTableRows } from './ComparisonTableRows';
+import { COLS_LENGTH_FOR_SCROLL } from './constants';
 
 interface ComparisonTableBodyProps {
   context: ContentPageContext;
@@ -29,7 +30,7 @@ export const ComparisonTableBody = JSX<ComparisonTableBodyProps>(
       }))
       .slice(0, isShowAllRow ? rowHeaders.length : visibleRowLength);
 
-    const [activeCardIndex, setActiveCardIndex] = context.useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     const tableArrowScrollProps = useTableArrowScrollControl({
       columnsLength: colData.length,

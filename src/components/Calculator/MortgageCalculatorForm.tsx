@@ -1,5 +1,6 @@
 // TEMP
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { Checkbox } from '../../ui-kit/Checkbox/Checkbox';
 import { CommonCalculatorProps, MortgageCalculatorParams } from './CalculatorContent';
@@ -20,10 +21,10 @@ export interface MortgageCalculatorProp
 
 export const MortgageCalculatorForm = JSX<MortgageCalculatorProp>(
   ({ context, className = '', buttons }) => {
-    const [moneyValue, setMoneyValue] = context.useState<number>(1000000);
-    const [monthsValue, setMonthsValue] = context.useState<number>(12);
-    const [isInsurance, toggleIsInsurance] = context.useState(false);
-    const [isFullInsurance, toggleIsFullInsurance] = context.useState(false);
+    const [moneyValue, setMoneyValue] = useState(1000000);
+    const [monthsValue, setMonthsValue] = useState(12);
+    const [isInsurance, toggleIsInsurance] = useState(false);
+    const [isFullInsurance, toggleIsFullInsurance] = useState(false);
 
     const calculatorParams = {}; // getCalculatorParams(context, { isAnnuity: isInsurance });
 

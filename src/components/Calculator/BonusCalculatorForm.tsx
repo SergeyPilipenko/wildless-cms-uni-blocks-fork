@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
@@ -12,8 +13,8 @@ export interface BonusCalculatorProps extends CommonCalculatorProps, UniBlockPro
 
 export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
   ({ context, className = '', sourceBookDir = '', buttons }) => {
-    const [travelExpenseValue, setTravelExpenseValue] = context.useState(DEFAULT_TRAVEL_MIN_SUM);
-    const [restExpenseValue, setRestExpenseValue] = context.useState(DEFAULT_REST_MIN_SUM);
+    const [travelExpenseValue, setTravelExpenseValue] = useState(DEFAULT_TRAVEL_MIN_SUM);
+    const [restExpenseValue, setRestExpenseValue] = useState(DEFAULT_REST_MIN_SUM);
     const userInputParams = {
       travelExpenseValue,
       restExpenseValue,

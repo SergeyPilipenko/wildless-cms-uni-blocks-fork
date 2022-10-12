@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import { EventBus } from '../EventBus/EventBus';
 import type { UniBlockProps } from '../types';
@@ -16,7 +17,7 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
     const Tag: any = tag;
 
     const { IntersectionObserverTag } = context;
-    const [shouldRenderBlock, setShouldRenderBlock] = context.useState(true);
+    const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
 
     context.useEffect(
       () =>

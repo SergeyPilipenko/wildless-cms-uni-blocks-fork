@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
@@ -14,11 +15,11 @@ export interface HeaderSubMenuProps {
 }
 
 export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], bgColor }) => {
-  const [menuVisible, setMenuVisible] = context.useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
   const router = context.useRouter();
   const { handlerDecorator, IntersectionObserverTag } = context;
 
-  const [visibleItemsCount, setVisibleItemsCount] = context.useState<number>(subItems.length);
+  const [visibleItemsCount, setVisibleItemsCount] = useState(subItems.length);
   const dropDownMenuItems = subItems.slice(visibleItemsCount);
 
   const activeSubItem = findActiveSubItem(router)(subItems);

@@ -1,8 +1,9 @@
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { IconName } from '../../icons/IconName';
 import { ActiveHandler } from '../../ui-kit/BlocksList/BlocksListProps';
 
-export const useActiveHandler = ({ context, blocks, initialState = false }: ActiveHandler) => {
-  const [isActive, setIsActive] = context.useState(initialState);
+export const useActiveHandler = ({ blocks, initialState = false }: ActiveHandler) => {
+  const [isActive, setIsActive] = useState(initialState);
   const hasContent = blocks?.length;
   const icon: IconName = isActive ? 'MinusIcon' : 'PlusIcon';
 

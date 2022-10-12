@@ -9,10 +9,7 @@ export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockPr
 
 export const AccordionItem = JSX<AccordionItemProps>(
   ({ label, labelIcon, blocks, bordered, context }) => {
-    const { hasContent, icon, handleToggle } = useActiveHandler({
-      context,
-      blocks,
-    });
+    const { hasContent, icon, handleToggle } = useActiveHandler({ blocks });
 
     return (
       <li className={`${borderedLiClass(bordered)} border-solid border-main-divider`}>

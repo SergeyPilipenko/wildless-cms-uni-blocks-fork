@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { filterBlocksByTag } from './filterBlocksByTag';
@@ -16,7 +17,7 @@ export interface GroupBlockProps extends GroupBlockContent, UniBlockProps {
 
 export const GroupBlock = JSX<GroupBlockProps>(
   ({ className = '', tabs, context, groupBlocks = [], isShowCounter, ...rest }) => {
-    const [currentTag, setCurrentTag] = context.useState(tabs?.[0]?.tag);
+    const [currentTag, setCurrentTag] = useState(tabs?.[0]?.tag);
 
     const filteredBlocks = filterBlocksByTag(groupBlocks, currentTag);
 

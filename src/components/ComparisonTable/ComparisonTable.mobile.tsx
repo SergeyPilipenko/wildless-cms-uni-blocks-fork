@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
@@ -24,8 +25,8 @@ export const ComparisonTable = JSX<ComparisonTableProps>(
         column: data?.map((cell, i) => ({ cell, rowHeader: rowHeaders?.[i]?.title })),
       })) || [];
 
-    const [columnsViewState, setColumnsViewState] = context.useState<boolean[]>(
-      new Array(columns?.length).fill(!visibleRowLength),
+    const [columnsViewState, setColumnsViewState] = useState(
+      new Array<boolean>(columns?.length || 0).fill(!visibleRowLength),
     );
 
     const handleToggleColumn = (i: number) => {

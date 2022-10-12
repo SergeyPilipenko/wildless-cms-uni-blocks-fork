@@ -1,4 +1,5 @@
-export { setup } from '@redneckz/uni-jsx';
+export { setupHooks } from '@redneckz/uni-jsx/lib/hooks';
+export { setup } from '@redneckz/uni-jsx/lib/setup';
 export { DaDataAPI } from './api/DaDataAPI';
 export { LikeAPI } from './api/LikeAPI';
 export { Blocks } from './components/Blocks';

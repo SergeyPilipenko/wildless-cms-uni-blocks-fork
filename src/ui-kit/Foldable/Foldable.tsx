@@ -30,7 +30,6 @@ export interface RenderBlocksParams {
 export const Foldable = JSX<FoldableProps>(
   ({
     blocks = [],
-    context,
     hiddenBlocksNum = 0,
     foldButtonClasses,
     foldButtonLabel,
@@ -42,7 +41,6 @@ export const Foldable = JSX<FoldableProps>(
     const blocksToHide = clamp(hiddenBlocksNum, 0, blocks.length);
 
     const { icon, handleToggle, isActive } = useActiveHandler({
-      context,
       initialState: isUnfolded,
     });
 

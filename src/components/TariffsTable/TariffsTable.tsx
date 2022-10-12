@@ -1,8 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 import type { VNode } from '../../model/VNode';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
@@ -20,7 +21,7 @@ export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
 export const TariffsTable = JSX<TariffsTableProps>(
   ({ className, context, title, description, rowHeaders, columns, hiddenRowsNum = 0, ...rest }) => {
-    const [activeCardIndex, setActiveCardIndex] = context.useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     const colData = getColData(columns);
     const rowData = getRowData(rowHeaders, colData);

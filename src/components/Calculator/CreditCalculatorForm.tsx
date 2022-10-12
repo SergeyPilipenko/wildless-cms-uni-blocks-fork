@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { Checkbox } from '../../ui-kit/Checkbox/Checkbox';
 import { CommonCalculatorProps } from './CalculatorContent';
@@ -29,12 +30,12 @@ export interface CreditCalculatorProp extends CommonCalculatorProps, UniBlockPro
 
 export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
   ({ context, className = '', sourceBookDir, buttons }) => {
-    const [isAnnuity, toggleIsAnnuity] = context.useState(false);
-    const [isInsurance, toggleIsInsurance] = context.useState(true);
-    const [isSalaryClient, toggleIsSalaryClient] = context.useState(false);
-    const [isStateEmployee, toggleIsStateEmployee] = context.useState(false);
-    const [moneyValue, setMoneyValue] = context.useState(DEFAULT_SUM);
-    const [monthsValue, setMonthsValue] = context.useState(DEFAULT_MONTHS);
+    const [isAnnuity, toggleIsAnnuity] = useState(false);
+    const [isInsurance, toggleIsInsurance] = useState(true);
+    const [isSalaryClient, toggleIsSalaryClient] = useState(false);
+    const [isStateEmployee, toggleIsStateEmployee] = useState(false);
+    const [moneyValue, setMoneyValue] = useState(DEFAULT_SUM);
+    const [monthsValue, setMonthsValue] = useState(DEFAULT_MONTHS);
     const userInputParams = {
       isAnnuity,
       isInsurance,

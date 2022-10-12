@@ -9,7 +9,6 @@ export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockPr
 
 export const AccordionItem = JSX<AccordionItemProps>(({ label, isExpanded, blocks, context }) => {
   const { isActive, hasContent, icon, handleToggle } = useActiveHandler({
-    context,
     blocks,
     initialState: isExpanded,
   });

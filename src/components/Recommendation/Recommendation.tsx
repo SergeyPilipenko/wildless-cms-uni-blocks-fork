@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
@@ -14,7 +15,7 @@ export interface RecommendationProps extends RecommendationContent, UniBlockProp
 
 export const Recommendation = JSX<RecommendationProps>(
   ({ context, recommendations = [], className = '', title, version, ...rest }) => {
-    const [activeCardIndex, setActiveCardIndex] = context.useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     const blockClassName =
       version === 'secondary' ? 'bg-primary-main text-white' : 'bg-white text-primary-text';

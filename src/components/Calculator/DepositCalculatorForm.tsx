@@ -1,6 +1,7 @@
 // TEMP
 
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { CommonCalculatorProps, DepositCalculatorParams } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
@@ -24,8 +25,8 @@ export interface DepositCalculatorProp
 
 export const DepositCalculatorForm = JSX<DepositCalculatorProp>(
   ({ context, className = '', buttons, rate }) => {
-    const [moneyValue, setMoneyValue] = context.useState<number>(DEFAULT_SUM);
-    const [monthsValue, setMonthsValue] = context.useState<number>(DEFAULT_MONTHS);
+    const [moneyValue, setMoneyValue] = useState(DEFAULT_SUM);
+    const [monthsValue, setMonthsValue] = useState(DEFAULT_MONTHS);
 
     const income = 948841;
     const finallySum = 1218841;
