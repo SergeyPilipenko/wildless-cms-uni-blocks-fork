@@ -84,7 +84,10 @@ html {
     height: 4px;
     background: transparent;
     border-radius: 5px;
-    background-image: linear-gradient(#42ab44, #42ab44);
+    background-image: linear-gradient(
+      rgb(var(--color-primary-main)),
+      rgb(var(--color-primary-main))
+    );
     background-repeat: no-repeat;
   }
 
@@ -93,30 +96,45 @@ html {
     height: 18px;
     width: 18px;
     border-radius: 50%;
-    background: #fff;
+    background: rgb(var(--color-primary-main));
     cursor: pointer;
     box-shadow: none;
-    border: 3px solid #42ab44;
   }
 
   input[type='range'].slider::-moz-range-thumb {
     height: 12px;
     width: 12px;
     border-radius: 50%;
-    background: #fff;
+    background: rgb(var(--color-primary-main));
     cursor: pointer;
     box-shadow: none;
-    border: 3px solid #42ab44;
   }
 
   input[type='range'].slider::-ms-thumb {
     height: 18px;
     width: 18px;
     border-radius: 50%;
-    background: #fff;
+    background: rgb(var(--color-primary-main));
     cursor: pointer;
     box-shadow: none;
-    border: 3px solid #42ab44;
+  }
+
+  input[type='range'].slider:disabled {
+    background-image: linear-gradient(rgb(201, 202, 204), rgb(201, 202, 204));
+    pointer-events: none;
+    cursor: default;
+  }
+
+  input[type='range'].slider:disabled::-webkit-slider-thumb {
+    background: rgb(201, 202, 204);
+  }
+
+  input[type='range'].slider:disabled::-moz-range-thumb {
+    background: rgb(201, 202, 204);
+  }
+
+  input[type='range'].slider:disabled::-ms-thumb {
+    background: rgb(201, 202, 204);
   }
 
   /* Hide arrows */

@@ -6,5 +6,6 @@ export interface InputRangeProps {
   step?: number;
   value?: number;
   title?: string;
+  disabled?: boolean;
   onChange?: (value: number) => void;
 }
