@@ -52,11 +52,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             }
           >
             {benefits?.filter((_) => _.label)?.length ? (
-              <div className="mt-3">
-                {benefits.map((benefit, i) =>
-                  renderBenefit({ benefit, version, benefitsVersion }, i),
-                )}
-              </div>
+              <div className="mt-3">{benefits.map(renderBenefit(version, benefitsVersion))}</div>
             ) : null}
             {items?.length ? (
               <List className="mt-3 text-m" items={items} version={version} isDotted={isDotted} />

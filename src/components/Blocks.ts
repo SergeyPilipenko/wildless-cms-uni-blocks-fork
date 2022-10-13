@@ -12,7 +12,6 @@ import { GracePeriod } from './GracePeriod/GracePeriod';
 import { GroupBlock } from './GroupBlock/GroupBlock';
 import { Header } from './Header/Header';
 import { Headline } from './Headline/Headline';
-import { Insurance } from './Insurance/Insurance';
 import { InsuranceAmountBlock } from './InsuranceAmountBlock/InsuranceAmountBlock';
 import { LinkDocs } from './LinkDocs/LinkDocs';
 import { MiniGallery } from './MiniGallery/MiniGallery';
@@ -47,7 +46,6 @@ export const Blocks = {
   GracePeriod,
   Header,
   Headline,
-  Insurance,
   InsuranceAmountBlock,
   LinkDocs,
   MiniGallery,

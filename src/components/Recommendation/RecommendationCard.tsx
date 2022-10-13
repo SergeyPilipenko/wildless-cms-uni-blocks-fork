@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockVersion } from '../../model/BlockVersion';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';

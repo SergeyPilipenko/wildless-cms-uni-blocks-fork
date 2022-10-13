@@ -4,33 +4,19 @@ import type { LinkProps } from '../../model/LinkProps';
 import type { ButtonContent, BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
-import type { Picture } from '../../model/Picture';
 import type { HeadlineProps } from '../../model/HeadlineType';
-
-export interface ProductBlockBenefit {
-  icon?: Picture;
-  /** @title Название */
-  label?: string;
-  /** @title Описание */
-  description?: string;
-}
-
-export type BenefitItemProps = {
-  benefit: ProductBlockBenefit;
-  version?: BlockVersion;
-  benefitsVersion?: IconVersion;
-};
+import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
 
 export type ProductBlockInnerContent = HeadlineProps &
   ListContent &
   ButtonContent &
   ImageContent & {
     /**
-     * @title Преимущества
+     * @title Список преимуществ
      * @minItems 2
      * @maxItems 3
      */
-    benefits?: ProductBlockBenefit[];
+    benefits?: BenefitItemProps[];
     benefitsVersion?: IconVersion;
     version?: BlockVersion;
     /**

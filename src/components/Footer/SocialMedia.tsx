@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import { BlockVersion } from '../../model/BlockVersion';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import type { UniBlockProps } from '../../types';
 import { MediaButton } from './MediaButton';

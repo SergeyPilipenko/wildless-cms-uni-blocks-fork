@@ -41,9 +41,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
           <BaseTile context={context} buttons={getButtons(context, buttons)}>
             {benefits?.filter((_) => _.label)?.length ? (
               <div className="flex gap-6 mt-6">
-                {benefits.map((benefit, i) =>
-                  renderBenefit({ benefit, version, benefitsVersion }, i),
-                )}
+                {benefits.map(renderBenefit(version, benefitsVersion))}
               </div>
             ) : null}
             {items?.length ? (

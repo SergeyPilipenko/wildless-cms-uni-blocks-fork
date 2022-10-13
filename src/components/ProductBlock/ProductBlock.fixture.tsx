@@ -1,8 +1,9 @@
-import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import type { BackwardButtonProps, ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { ProductBlock } from './ProductBlock';
-import type { ProductBlockBenefit, ProductBlockContent } from './ProductBlockContent';
+import type { Picture } from '../../model/Picture';
+import type { BackwardButtonProps, ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { ProductBlockContent } from './ProductBlockContent';
+import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -14,7 +15,7 @@ const image: Picture = {
   },
 };
 
-const benefits: ProductBlockBenefit[] = [
+const benefits: BenefitItemProps[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',
@@ -81,13 +82,34 @@ export default {
       <ProductBlock
         className="col-span-12"
         context={context}
-        backwardButton={backwardButton}
-        headlineVersion="XL"
+        headlineVersion="L"
         title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
+        benefitsVersion="normal"
         buttons={buttons}
         image={image}
+      />
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        title="Потребительский кредит наличными"
+        headlineVersion="L"
+        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        benefits={benefits}
+        benefitsVersion="white"
+        image={image}
+      />
+      <ProductBlock
+        className="col-span-12"
+        context={context}
+        title="Потребительский кредит наличными"
+        headlineVersion="L"
+        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
+        benefits={benefits}
+        benefitsVersion="white"
+        image={image}
+        version="secondary"
       />
     </div>
   ),

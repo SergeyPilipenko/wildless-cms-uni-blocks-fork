@@ -1947,10 +1947,49 @@
           "alt": "Варианты потребительского кредита",
           "format": "webp",
           "size": {
-            "width": 200,
-            "height": 200
+            "width": 400,
+            "height": 300
           }
         }
+      }
+    },
+    {
+      "type": "PictureText",
+      "style": ["col-span-12"],
+      "content": {
+        "title": "Страховые риски и продукты",
+        "description": "Описание",
+        "sum": 500000,
+        "image": {
+          "src": "insurance.png",
+          "title": "страхование",
+          "format": "webp",
+          "alt": "Страховые риски и продукты",
+          "size": {
+            "width": 400,
+            "height": 300
+          },
+          "sources": [
+            {
+              "src": "insurance.png 1x, insurance-2x.png 2x",
+              "format": "png"
+            }
+          ]
+        },
+        "benefits": [
+          {
+            "label": "Ликвидация организации",
+            "icon": {
+              "icon": "ShieldTickIcon"
+            }
+          },
+          {
+            "label": "Сокращение численности работников организации",
+            "icon": {
+              "icon": "ShieldTickIcon"
+            }
+          }
+        ]
       }
     },
     {
@@ -2140,45 +2179,6 @@
             "description": "Повышенное начисление баллов за операции оплаты товаров и услуг в сети АЗС Роснефть",
             "bonusCount": 300,
             "bonusName": "баллов"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Insurance",
-      "style": ["col-span-12"],
-      "content": {
-        "title": "Страховые риски и продукты",
-        "description": "Описание",
-        "sum": 500000,
-        "image": {
-          "src": "insurance.png",
-          "title": "страхование",
-          "format": "webp",
-          "alt": "Страховые риски и продукты",
-          "size": {
-            "width": 400,
-            "height": 300
-          },
-          "sources": [
-            {
-              "src": "insurance.png 1x, insurance-2x.png 2x",
-              "format": "png"
-            }
-          ]
-        },
-        "benefits": [
-          {
-            "label": "Ликвидация организации",
-            "icon": {
-              "icon": "ShieldTickIcon"
-            }
-          },
-          {
-            "label": "Сокращение численности работников организации",
-            "icon": {
-              "icon": "ShieldTickIcon"
-            }
           }
         ]
       }

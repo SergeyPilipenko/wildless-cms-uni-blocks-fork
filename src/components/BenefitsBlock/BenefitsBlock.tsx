@@ -4,7 +4,7 @@ import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { BenefitItemProps, BenefitsBlockContent } from './BenefitsBlockContent';
-import { DescriptionType, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
+import { DescriptionDef, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
 
 export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
 
@@ -53,7 +53,7 @@ const renderStep = (benefit: BenefitItemProps, i: number) => {
   );
 };
 
-const renderDescription = (description?: DescriptionType) => {
+const renderDescription = (description?: DescriptionDef) => {
   const benefitType = description ? description?.benefitType : null;
   if (!benefitType) {
     return null;

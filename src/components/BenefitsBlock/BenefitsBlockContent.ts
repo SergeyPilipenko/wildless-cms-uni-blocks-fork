@@ -32,7 +32,7 @@ export type ListBenefitDef = {
 /**
  * @title Вид контента
  */
-export type DescriptionType = EmptyOption | TextBenefitDef | ListBenefitDef;
+export type DescriptionDef = EmptyOption | TextBenefitDef | ListBenefitDef;
 
 /**
  * @title Преимущество
@@ -41,7 +41,7 @@ export interface BenefitItemProps {
   /** @title Название */
   label?: string;
   /** @title Описание */
-  description?: DescriptionType;
+  description?: DescriptionDef;
   icon?: Picture;
 }
 

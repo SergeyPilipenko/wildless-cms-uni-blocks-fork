@@ -114,11 +114,19 @@ Object {
       },
       "type": "object",
     },
+    "BenefitItemCommonProps": Object {
+      "properties": Object {
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
+      },
+      "type": "object",
+    },
     "BenefitItemProps": Object {
       "properties": Object {
         "description": Object {
-          "$ref": "#/definitions/DescriptionType",
           "title": "Описание",
+          "type": "string",
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
@@ -128,7 +136,6 @@ Object {
           "type": "string",
         },
       },
-      "title": "Преимущество",
       "type": "object",
     },
     "BenefitsBlockContent": Object {
@@ -147,6 +154,22 @@ Object {
         },
       },
       "title": "Блок преимущества",
+      "type": "object",
+    },
+    "BenefitsProps": Object {
+      "properties": Object {
+        "benefits": Object {
+          "items": Object {
+            "$ref": "#/definitions/BenefitItemProps",
+          },
+          "title": "Список преимуществ",
+          "type": "array",
+        },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
+      },
+      "title": "Преимущество",
       "type": "object",
     },
     "BlockDef": Object {
@@ -862,16 +885,7 @@ Object {
       "title": "Калькулятор вкладов",
       "type": "object",
     },
-    "DescriptionProp": Object {
-      "properties": Object {
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-      },
-      "type": "object",
-    },
-    "DescriptionType": Object {
+    "DescriptionDef": Object {
       "anyOf": Array [
         Object {
           "$ref": "#/definitions/EmptyOption",
@@ -884,6 +898,15 @@ Object {
         },
       ],
       "title": "Вид контента",
+    },
+    "DescriptionProp": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+      },
+      "type": "object",
     },
     "DispositionItem": Object {
       "properties": Object {
@@ -1742,56 +1765,6 @@ Object {
       "title": "Вкладка",
       "type": "object",
     },
-    "InsuranceBenefit": Object {
-      "properties": Object {
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "label": Object {
-          "title": "Название",
-          "type": "string",
-        },
-      },
-      "title": "Преимущество",
-      "type": "object",
-    },
-    "InsuranceContent": Object {
-      "properties": Object {
-        "benefits": Object {
-          "items": Object {
-            "$ref": "#/definitions/InsuranceBenefit",
-          },
-          "maxItems": 6,
-          "title": "Список преимуществ",
-          "type": "array",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "monthLimit": Object {
-          "title": "Ежемесячный лимит",
-          "type": "number",
-        },
-        "sum": Object {
-          "title": "Страховая сумма",
-          "type": "number",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "title": "Страховка",
-      "type": "object",
-    },
     "LinkColumnsMode": Object {
       "enum": Array [
         "single",
@@ -2294,35 +2267,25 @@ Object {
       "title": "Изображение",
       "type": "object",
     },
-    "PictureTextBenefit": Object {
-      "properties": Object {
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-          "title": "Иконка",
-        },
-        "label": Object {
-          "title": "Название",
-          "type": "string",
-        },
-      },
-      "type": "object",
-    },
     "PictureTextBlockListDef": Object {
       "properties": Object {
         "benefits": Object {
           "items": Object {
-            "$ref": "#/definitions/PictureTextBenefit",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "title": "Список преимуществ",
           "type": "array",
         },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
         "blockListType": Object {
           "const": "PictureText",
           "default": "PictureText",
+          "type": "string",
+        },
+        "description": Object {
+          "title": "Описание",
           "type": "string",
         },
         "directionRight": Object {
@@ -2332,6 +2295,10 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+        },
+        "monthLimit": Object {
+          "title": "Ежемесячный лимит",
+          "type": "number",
         },
         "style": Object {
           "default": Array [
@@ -2343,12 +2310,13 @@ Object {
           "title": "Стиль",
           "type": "array",
         },
+        "sum": Object {
+          "title": "Страховая сумма",
+          "type": "number",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
         },
       },
       "required": Array [
@@ -2361,10 +2329,17 @@ Object {
       "properties": Object {
         "benefits": Object {
           "items": Object {
-            "$ref": "#/definitions/PictureTextBenefit",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "title": "Список преимуществ",
           "type": "array",
+        },
+        "benefitsVersion": Object {
+          "$ref": "#/definitions/IconVersion",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
         },
         "directionRight": Object {
           "default": false,
@@ -2374,31 +2349,20 @@ Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
         },
+        "monthLimit": Object {
+          "title": "Ежемесячный лимит",
+          "type": "number",
+        },
+        "sum": Object {
+          "title": "Страховая сумма",
+          "type": "number",
+        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
         },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
-        },
       },
       "title": "Картинка с текстом",
-      "type": "object",
-    },
-    "ProductBlockBenefit": Object {
-      "properties": Object {
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "label": Object {
-          "title": "Название",
-          "type": "string",
-        },
-      },
       "type": "object",
     },
     "ProductBlockBlockListDef": Object {
@@ -2409,11 +2373,11 @@ Object {
         },
         "benefits": Object {
           "items": Object {
-            "$ref": "#/definitions/ProductBlockBenefit",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "maxItems": 3,
           "minItems": 2,
-          "title": "Преимущества",
+          "title": "Список преимуществ",
           "type": "array",
         },
         "benefitsVersion": Object {
@@ -2497,11 +2461,11 @@ Object {
         },
         "benefits": Object {
           "items": Object {
-            "$ref": "#/definitions/ProductBlockBenefit",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "maxItems": 3,
           "minItems": 2,
-          "title": "Преимущества",
+          "title": "Список преимуществ",
           "type": "array",
         },
         "benefitsVersion": Object {
@@ -2570,11 +2534,11 @@ Object {
         },
         "benefits": Object {
           "items": Object {
-            "$ref": "#/definitions/ProductBlockBenefit",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "maxItems": 3,
           "minItems": 2,
-          "title": "Преимущества",
+          "title": "Список преимуществ",
           "type": "array",
         },
         "benefitsVersion": Object {
@@ -2660,11 +2624,11 @@ Object {
       "properties": Object {
         "benefits": Object {
           "items": Object {
-            "$ref": "#/definitions/ProductBlockBenefit",
+            "$ref": "#/definitions/BenefitItemProps",
           },
           "maxItems": 3,
           "minItems": 2,
-          "title": "Преимущества",
+          "title": "Список преимуществ",
           "type": "array",
         },
         "benefitsVersion": Object {
@@ -3645,6 +3609,10 @@ Object {
     },
     "TitleWithImageContent": Object {
       "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
         "image": Object {
           "$ref": "#/definitions/Picture",
         },

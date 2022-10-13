@@ -1,4 +1,4 @@
-import { BlockVersion } from '../../model/BlockVersion';
+import type { BlockVersion } from '../../model/BlockVersion';
 
 export type StyleType = {
   background: string;

@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockVersion } from '../../model/BlockVersion';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import { Img } from '../../ui-kit/Img/Img';
 

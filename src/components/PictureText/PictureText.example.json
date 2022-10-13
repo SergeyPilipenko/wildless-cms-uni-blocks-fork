@@ -4,7 +4,8 @@
   "image": {
     "format": "webp",
     "size": {
-      "width": 300
+      "width": 400,
+      "height": 300
     }
   },
   "version": "primary",
@@ -13,14 +14,16 @@
     {
       "label": "Преимущество №1",
       "icon": {
-        "icon": "DocumentTextIcon"
+        "icon": "ShieldTickIcon"
       }
     },
     {
       "label": "Преимущество №2",
       "icon": {
-        "icon": "DocumentTextIcon"
+        "icon": "ShieldTickIcon"
       }
     }
-  ]
+  ],
+  "sum": 500000,
+  "monthLimit": 25000
 }

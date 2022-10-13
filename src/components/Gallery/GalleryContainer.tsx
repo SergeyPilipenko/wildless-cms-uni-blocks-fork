@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { GalleryVersion } from '../../model/GalleryVersion';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { cardStyleMap, cardVersionMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
 import { GalleryCardInner } from './GalleryCardInner';

@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockVersion } from '../../model/BlockVersion';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { ListOrientation } from '../../model/ListOrientation';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
