@@ -19,7 +19,7 @@ export interface HeaderProps extends HeaderContent, UniBlockProps {}
 export const Header = JSX<HeaderProps>(
   ({ className = '', defaultLocation, bgColor = 'bg-white', context, topItems }) => {
     const router = context.useRouter();
-    const sitemap = useSitemap(context.useAsyncData);
+    const sitemap = useSitemap();
     const dispositions = sitemap?.dispositions;
     const { handlerDecorator } = context;
 

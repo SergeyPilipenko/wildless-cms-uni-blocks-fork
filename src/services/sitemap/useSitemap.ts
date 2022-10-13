@@ -1,8 +1,8 @@
-import type { AsyncDataHook } from '../../components/ContentPage/ContentPageContext';
+import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
 import type { HeaderContent } from '../../components/Header/HeaderContent';
 import { projectSettings } from '../../ProjectSettings';
 
-export function useSitemap(useAsyncData: AsyncDataHook): HeaderContent {
+export function useSitemap(): HeaderContent {
   const { data } = useAsyncData(sitemapURL(), fetchSitemap);
 
   return data || {};

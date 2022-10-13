@@ -1,8 +1,8 @@
-import type { AsyncDataHook } from '../components/ContentPage/ContentPageContext';
+import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
 
 const SAFE_DEPOSIT_RENTAL_URL = '/api/v1/safe-deposit-rental.json';
 
-export function useSafeDepositRental(useAsyncData: AsyncDataHook) {
+export function useSafeDepositRental() {
   const { data } = useAsyncData(SAFE_DEPOSIT_RENTAL_URL, fetchSafeDepositRental);
 
   const result = data || [];

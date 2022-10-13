@@ -9,27 +9,12 @@ export interface Router {
   replace: (url: string) => void;
 }
 
-export interface LikeService {
-  likeCount: number;
-  like: () => void;
-  dislike: () => void;
-}
-
-export type HandlerDecorator = <F extends Function>(handler: F, targetContent: any) => F;
+export type HandlerDecorator = <F extends Function>(handler: F, targetContent?: any) => F;
 
 export interface Search {
   term: string;
   setTerm: (t: string) => void;
 }
-
-export type AsyncDataHook = <Data, Err = any>(
-  key: string,
-  fetcher: (fetcherKey: string) => Promise<Data>,
-) => { data?: Data; error?: Err };
-
-export type GeolocationHook = (defaultLocation: string) => [string, () => void];
-
-export type SetStateAction<S> = S | ((prevState: S) => S);
 
 export interface IntersectionObserverTagProps {
   tag: keyof HTMLElementTagNameMap;
@@ -44,11 +29,6 @@ export type IntersectionObserverComponent = (props: IntersectionObserverTagProps
 
 export interface ContentPageContext {
   useRouter: () => Router;
-  useAsyncData: AsyncDataHook;
-  useGeolocation: GeolocationHook;
-  useLikeService: () => LikeService;
-  useSearch: () => Search;
-  useEffect: <Deps extends any[]>(effect: () => (() => void) | void, deps?: Deps) => void;
   handlerDecorator?: HandlerDecorator;
   IntersectionObserverTag: IntersectionObserverComponent;
 }

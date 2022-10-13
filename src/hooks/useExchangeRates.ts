@@ -1,4 +1,4 @@
-import type { AsyncDataHook } from '../components/ContentPage/ContentPageContext';
+import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
 import type { ExchangeCurrencyItem } from '../components/ExchangeRateTile/ExchangeCurrencyCalculator';
 
 interface RatesData {
@@ -7,7 +7,7 @@ interface RatesData {
   rate_sell: number;
 }
 
-export function useExchangeRates(useAsyncData: AsyncDataHook): ExchangeCurrencyItem[] {
+export function useExchangeRates(): ExchangeCurrencyItem[] {
   const { data } = useAsyncData(EXCHANGE_RATES_URL, fetchExchangeRates);
 
   const result = data?.hits?.hits?.map((_) => _._source) || [];

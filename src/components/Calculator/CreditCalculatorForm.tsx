@@ -44,7 +44,7 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
       moneyValue,
       monthsValue,
     };
-    const calculatorParams = useCreditCalculatorParams(context, userInputParams, sourceBookDir);
+    const calculatorParams = useCreditCalculatorParams(userInputParams, sourceBookDir);
 
     return (
       <section className={className}>

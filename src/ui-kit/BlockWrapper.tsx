@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import { EventBus } from '../EventBus/EventBus';
 import type { UniBlockProps } from '../types';
@@ -19,7 +19,7 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
     const { IntersectionObserverTag } = context;
     const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
 
-    context.useEffect(
+    useEffect(
       () =>
         EventBus.inst.subscribe('tab', (event) => {
           setShouldRenderBlock(!labels?.length || !event.label || labels.includes(event.label));

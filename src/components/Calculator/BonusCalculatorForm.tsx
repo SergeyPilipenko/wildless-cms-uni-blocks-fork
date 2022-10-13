@@ -20,7 +20,7 @@ export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
       restExpenseValue,
     };
     const { minSumTravel, maxSumTravel, minSumOther, maxSumOther, monthBonus, yearBonus } =
-      useBonusCalculatorParams(context, userInputParams, sourceBookDir);
+      useBonusCalculatorParams(userInputParams, sourceBookDir);
 
     return (
       <section className={className}>

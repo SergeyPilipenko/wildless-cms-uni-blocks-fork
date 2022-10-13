@@ -19,7 +19,7 @@ export interface ExchangeRateTileProps extends ExchangeRateTileContent, UniBlock
 
 export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
   ({ className = '', context, title = 'Курсы обмена валют', button, ...rest }) => {
-    const currencyRates = useExchangeRates(context.useAsyncData);
+    const currencyRates = useExchangeRates();
 
     const currencyRatesBuy = currencyRates.filter((_) => _.buy);
     currencyRatesBuy.unshift({ code: Currency.RUB });

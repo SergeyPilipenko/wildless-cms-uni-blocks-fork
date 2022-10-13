@@ -3,7 +3,7 @@ import type { LinkProps } from '../model/LinkProps';
 import { adjustHref } from '../utils/adjustHref';
 import { isURL } from '../utils/url';
 
-const defaultHandlerDecorator: HandlerDecorator = (handler) => handler;
+export const defaultHandlerDecorator: HandlerDecorator = (handler) => handler;
 
 export function useLink(
   {

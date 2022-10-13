@@ -1,4 +1,3 @@
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { BONUS_CALC_DEFAULT_DIR, DEFAULT_BONUS_CALCULATOR_PARAMS } from './constants';
 import { getBonus } from './getBonus';
 import { useCalculatorParams } from './useCalculatorParams';
@@ -29,16 +28,13 @@ export interface BonusCalculatorParams
 }
 
 export const useBonusCalculatorParams = (
-  context: ContentPageContext,
   userInputParams: BonusCalculatorUserInputParams,
   sourceBookDir: string,
 ) => {
   const { travelExpenseValue, restExpenseValue } = userInputParams;
   const bonusCalculatorSourceBookParams =
-    useCalculatorParams<BonusCalculatorSourceBookParams>(
-      context.useAsyncData,
-      sourceBookDir || BONUS_CALC_DEFAULT_DIR,
-    ) || DEFAULT_BONUS_CALCULATOR_PARAMS;
+    useCalculatorParams<BonusCalculatorSourceBookParams>(sourceBookDir || BONUS_CALC_DEFAULT_DIR) ||
+    DEFAULT_BONUS_CALCULATOR_PARAMS;
 
   const [monthBonus, yearBonus] = getBonus(
     bonusCalculatorSourceBookParams,

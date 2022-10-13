@@ -16,27 +16,20 @@ const emptyFn = () => {
 };
 
 const context: ContentPageContext = {
-  useEffect: React.useEffect,
   useRouter: () => ({
     pathname: '/credits',
     query: {},
     push: emptyFn,
     replace: emptyFn,
   }),
-  useAsyncData: () => ({}),
-  useGeolocation: (defaultLocation) => [defaultLocation, emptyFn],
-  useLikeService: () => ({
-    likeCount: 0,
-    like: emptyFn,
-    dislike: emptyFn,
-  }),
   handlerDecorator: (): any => emptyFn,
-  useSearch: () => ({
-    term: '',
-    setTerm: emptyFn,
-  }),
   IntersectionObserverTag: ({ children }) => children,
 };
+
+jest.mock('@redneckz/uni-jsx/lib/hooks/useAsyncData', () => ({
+  __esModule: true,
+  useAsyncData: () => ({}),
+}));
 
 describe('Blocks', () => {
   beforeEach(() => {

@@ -11,7 +11,7 @@ export interface SitemapProps extends UniBlockProps {
 }
 
 export const Sitemap = JSX<SitemapProps>(({ className = '', items, context }) => {
-  const sitemap = useSitemap(context.useAsyncData);
+  const sitemap = useSitemap();
   const mergedItems = mergeTopItems(sitemap.topItems, items);
   const linkParams = {
     router: context.useRouter(),

@@ -31,7 +31,7 @@ export const Header = JSX<HeaderProps>(
     ...rest
   }) => {
     const router = context.useRouter();
-    const sitemap = useSitemap(context.useAsyncData);
+    const sitemap = useSitemap();
     const { handlerDecorator } = context;
 
     const mergedItems = mergeTopItems(sitemap.topItems, topItems);
@@ -60,7 +60,6 @@ export const Header = JSX<HeaderProps>(
             <Logo className="mr-8" bgColor={bgColor} logo={logo} />
             {topMenu}
             <HeaderSecondaryMenu
-              context={context}
               className="ml-auto"
               defaultLocation={defaultLocation}
               bgColor={bgColor}

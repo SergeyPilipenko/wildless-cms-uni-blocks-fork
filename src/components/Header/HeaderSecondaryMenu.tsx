@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useGeolocation } from '../../hooks/useGeolocation';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { IconVersion } from '../../model/IconVersion';
-import type { UniBlockProps } from '../../types';
 import { Img } from '../../ui-kit/Img/Img';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
 import { HeaderSecondaryMenuButton } from './HeaderSecondaryMenuButton';
@@ -11,7 +11,9 @@ interface HeaderSecondaryMenuContent {
   bgColor?: BgColorVersion;
 }
 
-export interface HeaderSecondaryMenuProps extends HeaderSecondaryMenuContent, UniBlockProps {}
+export interface HeaderSecondaryMenuProps extends HeaderSecondaryMenuContent {
+  className?: string;
+}
 
 const COLORS_MAP: Record<BgColorVersion, string> = {
   'bg-white': 'text-primary-text hover:text-primary-main',
@@ -27,8 +29,8 @@ const LINKS_ICON_VERSION_MAP: Record<BgColorVersion, IconVersion> = {
 };
 
 export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
-  ({ context, className, defaultLocation = '', bgColor = 'bg-white' }) => {
-    const [city, getCity] = context.useGeolocation(defaultLocation);
+  ({ className, defaultLocation = '', bgColor = 'bg-white' }) => {
+    const [city, getCity] = useGeolocation(defaultLocation);
 
     return (
       <div className={`flex items-center ${className || ''}`}>

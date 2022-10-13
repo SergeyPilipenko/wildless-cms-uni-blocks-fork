@@ -26,7 +26,7 @@ export const Footer = JSX<FooterProps>(
     context,
     horizontalNavigationTitle,
   }) => {
-    const sitemap = useSitemap(context.useAsyncData);
+    const sitemap = useSitemap();
     const dispositions = sitemap?.dispositions;
 
     return (

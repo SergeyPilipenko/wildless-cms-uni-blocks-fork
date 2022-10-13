@@ -1,4 +1,3 @@
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { CREDIT_CALC_DEFAULT_DIR, DEFAULT_CREDIT_CALCULATOR_PARAMS } from './constants';
 import { getMonthlyPayment } from './getMonthlyPayment';
 import { useCalculatorParams } from './useCalculatorParams';
@@ -36,16 +35,12 @@ export type CreditCalculatorData = {
 };
 
 export const useCreditCalculatorParams = (
-  context: ContentPageContext,
   userInputParams: CreditCalculatorUserInputParams,
   sourceBookDir?: string,
 ): CreditCalculatorParams => {
   const { isInsurance, isSalaryClient, isStateEmployee, moneyValue } = userInputParams;
 
-  const data = useCalculatorParams<CreditCalculatorData>(
-    context.useAsyncData,
-    sourceBookDir || CREDIT_CALC_DEFAULT_DIR,
-  );
+  const data = useCalculatorParams<CreditCalculatorData>(sourceBookDir || CREDIT_CALC_DEFAULT_DIR);
   const creditCalculatorSourceBookParams =
     data?.rows?.find((_) => {
       return (

@@ -1,10 +1,15 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useLikeService } from '../../hooks/useLikeService';
+import { defaultHandlerDecorator } from '../../hooks/useLink';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { LikeButton } from '../../ui-kit/Button/LikeButton';
 
 export const LikeControl = JSX<UniBlockProps>(({ className, context, ...rest }) => {
-  const likeService = context.useLikeService();
+  const { useRouter, handlerDecorator = defaultHandlerDecorator } = context;
+
+  const router = useRouter();
+  const likeService = useLikeService(router.pathname);
 
   return (
     <BlockWrapper
@@ -15,9 +20,12 @@ export const LikeControl = JSX<UniBlockProps>(({ className, context, ...rest }) 
       }`}
       {...rest}
     >
-      <LikeButton onClick={likeService.like} ariaLabel="Поставить отметку «лайк»" />
       <LikeButton
-        onClick={likeService.dislike}
+        onClick={handlerDecorator(likeService.like)}
+        ariaLabel="Поставить отметку «лайк»"
+      />
+      <LikeButton
+        onClick={handlerDecorator(likeService.dislike)}
         className="rotate-180"
         ariaLabel="Поставить отметку «дизлайк»"
       />

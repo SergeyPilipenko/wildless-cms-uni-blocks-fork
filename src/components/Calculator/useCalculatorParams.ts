@@ -1,6 +1,6 @@
-import type { AsyncDataHook } from '../ContentPage/ContentPageContext';
+import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
 
-export function useCalculatorParams<Data>(useAsyncData: AsyncDataHook, dir: string) {
+export function useCalculatorParams<Data>(dir: string) {
   const { data } = useAsyncData<Data>(
     `/wcms-resources/${dir}.json`,
     fetchCalculatorSourceBookParams,

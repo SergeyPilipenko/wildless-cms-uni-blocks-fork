@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useGeolocation } from '../../hooks/useGeolocation';
 import type { VNode } from '../../model/VNode';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
@@ -15,7 +16,7 @@ export interface HeaderBurgerProps {
 
 export const HeaderBurger = JSX<HeaderBurgerProps>(
   ({ context, burgerSubMenu, onClick, defaultLocation = '', children }) => {
-    const [city, getCity] = context.useGeolocation(defaultLocation);
+    const [city, getCity] = useGeolocation(defaultLocation);
 
     return (
       <div className="absolute top-0 left-0 w-full h-full bg-white p-4 box-border z-20">
