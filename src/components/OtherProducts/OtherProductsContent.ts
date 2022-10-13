@@ -12,10 +12,7 @@ export interface BlockItemCommonProps {
   label?: string;
   /** @title Отображать в раскрытом виде */
   isUnfolded?: boolean;
-  /**
-   * @title Блоки
-   * @maxItems 10
-   */
+  /** @title Блоки */
   blocks?: BlockDef[];
 }
 

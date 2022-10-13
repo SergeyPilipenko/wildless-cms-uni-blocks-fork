@@ -216,7 +216,6 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BlockDef",
           },
-          "maxItems": 10,
           "title": "Блоки",
           "type": "array",
         },
