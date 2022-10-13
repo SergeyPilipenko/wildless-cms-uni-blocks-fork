@@ -46,7 +46,7 @@ export const Foldable = JSX<FoldableProps>(
 
     const buttonClassName =
       foldButtonClasses ||
-      'border-none bg-primary-main px-0 py-[26px] mb-[1px] w-full font-sans text-white text-l flex justify-center cursor-pointer';
+      'border-none bg-primary-main hover:bg-primary-hover px-0 py-[26px] mb-[1px] w-full font-sans text-white text-h4 flex justify-center cursor-pointer';
     const getFoldButtonLabel = isActive ? 'Скрыть' : foldButtonLabel;
 
     return blocks ? (
