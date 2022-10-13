@@ -6,8 +6,8 @@ import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
-import type { ProductTileContent, TextBenefit } from './ProductTileContent';
 import { Headline } from '../Headline/Headline';
+import type { ProductTileContent, TextBenefit } from './ProductTileContent';
 
 export interface ProductTileProps extends ProductTileContent, UniBlockProps {}
 
@@ -42,6 +42,7 @@ export const ProductTile = JSX<ProductTileProps>(
           <Headline
             context={context}
             className="!p-0"
+            as="h2"
             title={title}
             description={description}
             headlineVersion={headlineVersion}

@@ -1,7 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
-import type { TileContent } from './TileContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
@@ -11,6 +10,7 @@ import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
+import type { TileContent } from './TileContent';
 
 export interface TileProps extends TileContent, UniBlockProps {
   role?: string;
@@ -51,7 +51,7 @@ export const Tile = JSX<TileProps>((props) => {
           title ? (
             <Heading
               headingType={headingType}
-              as="h3"
+              as="h2"
               title={title}
               className={`whitespace-pre-wrap max-w-[600px] text-h4
               ${version === 'primary' ? 'text-primary-text' : ''}`}

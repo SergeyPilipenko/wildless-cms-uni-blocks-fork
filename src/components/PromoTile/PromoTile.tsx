@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
-import type { PromoTileContent } from './PromoTileContent';
 import { Headline } from '../Headline/Headline';
+import type { PromoTileContent } from './PromoTileContent';
 
 export interface PromoTileProps extends PromoTileContent, UniBlockProps {}
 
@@ -48,6 +48,7 @@ export const PromoTile = JSX<PromoTileProps>(
                   headlineVersion={getTileHeadingType(className)}
                   bgColorHeadline={version}
                   align="left"
+                  as="h2"
                 />
               </div>
             ) : null

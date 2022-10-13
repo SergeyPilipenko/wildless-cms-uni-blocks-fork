@@ -37,6 +37,7 @@ export const LinkDocs = JSX<LinkDocsProps>(
           context={context}
           align={align}
           headlineVersion="M"
+          as="h2"
         />
         <LinkDocsList
           className={`mt-8 ${linkColumnsModeStyleMap[columnsMode]}`}

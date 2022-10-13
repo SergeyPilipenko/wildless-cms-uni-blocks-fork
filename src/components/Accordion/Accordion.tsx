@@ -33,6 +33,7 @@ export const Accordion = JSX<AccordionProps>(
         {title ? (
           <Heading
             headingType="h3"
+            as="h2"
             className={`mb-2.5 ${ALIGN_TITLE[accordionAlignTitle]}`}
             title={title}
           />
