@@ -69,7 +69,7 @@ export const ProductTile = JSX<ProductTileProps>(
 
 function renderBenefits(benefits: TextBenefit[], version: BlockVersion) {
   return (
-    <div className="flex mt-4">
+    <div className="flex mt-3.5">
       {benefits.length ? (
         <div className="mr-6 gap-2.5 text-h6">{benefits.map(renderBenefitLabel)}</div>
       ) : null}
