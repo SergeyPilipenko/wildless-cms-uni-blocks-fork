@@ -10,9 +10,9 @@ export const BaseTile = JSX<BaseTileProps>(
       <div className={`font-sans flex flex-col grow h-full items-start ${className}`}>
         {title}
         <div className="flex grow w-full justify-between">
-          <div className="flex flex-col justify-between w-full">
+          <div className="flex flex-col w-full">
             <div>{children}</div>
-            {buttons ? <div>{buttons}</div> : null}
+            {buttons ? <div className="mt-9">{buttons}</div> : null}
           </div>
           {image}
         </div>

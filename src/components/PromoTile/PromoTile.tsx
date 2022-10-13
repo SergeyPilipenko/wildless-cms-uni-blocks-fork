@@ -55,7 +55,7 @@ export const PromoTile = JSX<PromoTileProps>(
           }
           buttons={
             buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex mt-9 gap-3" />
+              <ButtonSection context={context} buttons={buttons} className="flex gap-3" />
             ) : null
           }
         >

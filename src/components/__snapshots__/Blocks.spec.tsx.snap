@@ -109,7 +109,7 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
       class="flex grow w-full justify-between"
     >
       <div
-        class="flex flex-col justify-between w-full"
+        class="flex flex-col w-full"
       >
         <div>
           <div
@@ -591,7 +591,7 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
       class="flex grow w-full justify-between"
     >
       <div
-        class="flex flex-col justify-between w-full"
+        class="flex flex-col w-full"
       >
         <div>
           <div
@@ -706,7 +706,7 @@ exports[`Blocks ProductBlock should render block "ProductBlock" without content 
           class="flex grow w-full justify-between"
         >
           <div
-            class="flex flex-col justify-between w-full"
+            class="flex flex-col w-full"
           >
             <div />
           </div>
@@ -728,7 +728,7 @@ exports[`Blocks ProductGallery should render block "ProductGallery" without cont
     style="transform: translateX(-000%);"
   />
   <div
-    class="flex items-center absolute bottom-6 left-0 right-0 px-[26px] box-border"
+    class="flex items-center absolute bottom-6 left-0 right-0 px-[26px] box-border h-28"
   />
 </section>
 `;
@@ -772,7 +772,7 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
       class="flex grow w-full justify-between"
     >
       <div
-        class="flex flex-col justify-between w-full"
+        class="flex flex-col w-full"
       >
         <div>
           <div
@@ -1188,7 +1188,7 @@ exports[`Blocks Tile should render block "Tile" without content 1`] = `
       class="flex grow w-full justify-between"
     >
       <div
-        class="flex flex-col justify-between w-full"
+        class="flex flex-col w-full"
       >
         <div />
       </div>

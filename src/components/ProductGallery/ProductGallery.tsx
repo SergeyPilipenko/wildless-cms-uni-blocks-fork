@@ -50,7 +50,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
           {galleryBlocks.map((_, i) => renderProductBlock({ ..._, version }, i, context))}
         </div>
 
-        <div className="flex items-center absolute bottom-6 left-0 right-0 px-[26px] box-border">
+        <div className="flex items-center absolute bottom-6 left-0 right-0 px-[26px] box-border h-28">
           {galleryNav.map((slide, i) =>
             renderNavButton({
               slide,
@@ -82,6 +82,7 @@ function renderProductBlock(block: ProductBlockInnerContent, i: number, context)
           context={context}
           textBlockClassName="mb-[154px]"
           {...block}
+          headlineVersion="XXL"
         />
       </div>
     </section>
@@ -92,8 +93,8 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
   const isActiveBtn = i === activeSlideIndex;
 
   const btnClassName = isActiveBtn
-    ? 'bg-white shadow-dark-blue/42 h-[102px] w-[354px] min-w-[354px] p-0 border-none'
-    : `min-w-[277px] px-0 pt-4 pb-[23px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
+    ? 'bg-white shadow-dark-blue/42 w-[354px] min-w-[354px] border-none'
+    : `min-w-[277px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
       ${productSlideStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
     ? 'text-primary-text text-h6'
@@ -110,7 +111,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
       key={String(i)}
       onClick={onClick}
       aria-label={slide?.title}
-      className={`box-border font-sans relative overflow-hidden border border-white/50 cursor-pointer text-left mx-1 grow basis-0
+      className={`box-border font-sans relative overflow-hidden border border-white/50 cursor-pointer text-left mx-1 grow basis-0 pt-5 pb-[23px]
         ${btnClassName} ${additionalBorder}
       `}
     >
