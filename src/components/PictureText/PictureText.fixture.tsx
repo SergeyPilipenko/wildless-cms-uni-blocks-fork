@@ -63,7 +63,7 @@ export const INSURANCE_TEXT: PictureTextContent = {
       icon: { icon: 'ShieldTickIcon' },
     },
     {
-      label: 'Сокращение численности работников организации',
+      label: 'Сокращение численности работников организации и другой текст для теста длинны текста',
       icon: { icon: 'ShieldTickIcon' },
     },
     {

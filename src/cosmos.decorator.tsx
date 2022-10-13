@@ -10,7 +10,7 @@ export default ({ children }) => {
   return (
     <div
       style={{
-        backgroundColor: 'rgba(51, 51, 51, 0.07)',
+        backgroundColor: 'rgba(235, 237, 240, 1)',
         position: 'absolute',
         left: 0,
         right: 0,

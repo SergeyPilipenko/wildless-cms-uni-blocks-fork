@@ -16,7 +16,7 @@
   },
   "jsonLd": "json",
   "date": "2022-04-08",
-  "style": ["bg-secondary-light"],
+  "style": ["bg-main-divider"],
   "likeControl": true,
   "slots": {
     "header": {

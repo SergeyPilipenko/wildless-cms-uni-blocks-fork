@@ -27,7 +27,7 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   const isIconWhite = benefitsVersion === 'white' || version === 'secondary';
 
   return (
-    <div className={`flex items-center gap-5 ${className}`}>
+    <div className={`flex items-start gap-5 ${className}`}>
       {icon ? (
         <Img
           className={renderBenefitIconBgStyle(version, benefitsVersion)}
@@ -54,5 +54,5 @@ function renderBenefitIconBgStyle(version, benefitsVersion) {
     bgColorStyle = 'bg-secondary-light text-primary-main';
   }
 
-  return `w-[50px] h-[50px] rounded-full p-[10px] box-border ${bgColorStyle}`;
+  return `w-[50px] h-[50px] min-w-[50px] rounded-full p-[10px] box-border ${bgColorStyle}`;
 }
