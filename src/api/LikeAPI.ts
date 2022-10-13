@@ -1,3 +1,5 @@
+import { projectSettings } from '../ProjectSettings';
+
 interface UserData {
   token: string;
   name: string;
@@ -11,7 +13,7 @@ const AUTH_PREFIX = 'guest';
 const STORAGE_KEY = 'likesToken';
 
 // eslint-disable-next-line max-lines-per-function
-export function LikeAPI(projectId: string, baseURL = '') {
+export function LikeAPI() {
   async function getLikeCount(...nodeIds: string[]): Promise<LikeData[]> {
     if (!nodeIds.length) {
       return [];
@@ -21,7 +23,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
 
     try {
       const response = await fetch(
-        `${baseURL}/assist/v1/public/projects/${projectId}/nodes/likes`,
+        `/assist/v1/public/projects/${projectSettings.ASSIST_PROJECT_ID}/nodes/likes`,
         {
           method: 'POST',
           mode: 'cors',
@@ -50,19 +52,22 @@ export function LikeAPI(projectId: string, baseURL = '') {
     const { token: Authorization, name } = await auth();
 
     try {
-      const response = await fetch(`${baseURL}/assist/v1/public/projects/${projectId}/nodes/like`, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization,
-          UserID: name,
+      const response = await fetch(
+        `/assist/v1/public/projects/${projectSettings.ASSIST_PROJECT_ID}/nodes/like`,
+        {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization,
+            UserID: name,
+          },
+          body: JSON.stringify({
+            node_id: nodeId,
+            user_name: name,
+          }),
         },
-        body: JSON.stringify({
-          node_id: nodeId,
-          user_name: name,
-        }),
-      });
+      );
       const { likes } = await response.json();
 
       return likes || 0;
@@ -82,7 +87,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
 
     try {
       const response = await fetch(
-        `${baseURL}/assist/v1/public/projects/${projectId}/nodes/unlike`,
+        `/assist/v1/public/projects/${projectSettings.ASSIST_PROJECT_ID}/nodes/unlike`,
         {
           method: 'POST',
           mode: 'cors',
@@ -118,7 +123,7 @@ export function LikeAPI(projectId: string, baseURL = '') {
     }
 
     try {
-      const response = await fetch(`${baseURL}/assist/v1/public/auth`, {
+      const response = await fetch(`/assist/v1/public/auth`, {
         method: 'POST',
         mode: 'cors',
         headers: {

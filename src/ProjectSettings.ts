@@ -3,10 +3,9 @@ export interface ProjectSettings {
   RC_BRANCH?: string;
   PROD_BRANCH: string;
   FORCED_DRAFT_FLOW: boolean;
-  ENABLE_ASSIST?: boolean;
+  ASSIST_PROJECT_ID?: string;
   SITEMAP?: string;
   CDN?: string; // Should ends with "/"
-  CREDIT_CALCULATOR?: string;
 }
 
 export const projectSettings = new (class implements ProjectSettings {
@@ -31,8 +30,8 @@ export const projectSettings = new (class implements ProjectSettings {
   get FORCED_DRAFT_FLOW() {
     return this._.FORCED_DRAFT_FLOW;
   }
-  get ENABLE_ASSIST() {
-    return this._.ENABLE_ASSIST;
+  get ASSIST_PROJECT_ID() {
+    return this._.ASSIST_PROJECT_ID;
   }
   get SITEMAP() {
     return this._.SITEMAP;

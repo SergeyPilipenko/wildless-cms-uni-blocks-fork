@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { LikeAPI } from '../api/LikeAPI';
 
-const ASSIST_BASE_URL = process.env.NEXT_PUBLIC_ASSIST_BASE_URL || '';
-const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID || '';
-
-const api = LikeAPI(PROJECT_ID, ASSIST_BASE_URL);
+const api = LikeAPI();
 
 export function useLikeService(pagePath: string) {
   const [likeCount, setLikeCount] = useState(0);
