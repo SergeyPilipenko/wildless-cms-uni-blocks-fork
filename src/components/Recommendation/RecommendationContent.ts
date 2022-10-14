@@ -1,5 +1,5 @@
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { LinkProps } from '../../model/LinkProps';
+import type { LinkCommonProps } from '../../model/LinkProps';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 import type { HeadlineCommonProps, TitleProp } from '../../model/HeadlineType';
@@ -9,7 +9,7 @@ export interface RecommendationCardTypes extends HeadlineCommonProps, ListConten
    * @title Соц сети
    * @minItems 3
    */
-  socialMedia?: LinkProps[];
+  socialMedia?: LinkCommonProps[];
 }
 
 /**

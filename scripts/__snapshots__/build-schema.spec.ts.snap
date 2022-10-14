@@ -1776,6 +1776,18 @@ Object {
       "title": "Отображение списка",
       "type": "string",
     },
+    "LinkCommonProps": Object {
+      "properties": Object {
+        "href": Object {
+          "title": "URL (href)",
+          "type": "string",
+        },
+        "target": Object {
+          "$ref": "#/definitions/Target",
+        },
+      },
+      "type": "object",
+    },
     "LinkDocsBlockListDef": Object {
       "properties": Object {
         "align": Object {
@@ -2981,7 +2993,7 @@ Object {
         },
         "socialMedia": Object {
           "items": Object {
-            "$ref": "#/definitions/LinkProps",
+            "$ref": "#/definitions/LinkCommonProps",
           },
           "minItems": 3,
           "title": "Соц сети",
@@ -3067,13 +3079,8 @@ Object {
     },
     "SocialMedia": Object {
       "properties": Object {
-        "href": Object {
-          "title": "URL (href)",
-          "type": "string",
-        },
-        "target": Object {
-          "$ref": "#/definitions/Target",
-        },
+        "href": Object {},
+        "target": Object {},
       },
       "required": Array [
         "href",

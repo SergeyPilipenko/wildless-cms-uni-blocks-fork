@@ -10,14 +10,17 @@
  */
 export type Target = '' | '_self' | '_blank' | '_parent' | '_top';
 
+export interface LinkCommonProps {
+  /** @title URL (href) */
+  href?: string;
+  target?: Target;
+}
+
 /**
  * @title Ссылка
  * @required ["text", "href"]
  */
-export interface LinkProps {
+export interface LinkProps extends LinkCommonProps {
   /** @title Текст */
   text?: string;
-  /** @title URL (href) */
-  href?: string;
-  target?: Target;
 }
