@@ -23,7 +23,13 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label, isExpanded, block
       >
         <span className={`text-xl font-medium pr-2.5`}>{label}</span>
         {hasContent ? (
-          <Img image={icon} className="text-primary-main" width="24" height="24" asSVG />
+          <Img
+            image={icon}
+            className="text-primary-main flex-shrink-0"
+            width="24"
+            height="24"
+            asSVG
+          />
         ) : null}
       </button>
       {hasContent ? (

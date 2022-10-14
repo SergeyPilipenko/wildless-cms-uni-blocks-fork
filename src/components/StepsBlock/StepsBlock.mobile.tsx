@@ -67,7 +67,7 @@ const renderStepTitle =
     return (
       <div key={String(i)}>
         <div className="flex flex-row text-center relative">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden flex-shrink-0">
             {renderIconArea(size, version)(step, i)}
             {isLastStep ? null : (
               <div
