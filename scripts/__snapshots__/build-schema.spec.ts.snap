@@ -2411,6 +2411,14 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 299,
+              "width": 608,
+            },
+          },
+          "title": "Иконка",
         },
         "isDotted": Object {
           "default": true,
@@ -2494,6 +2502,14 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 299,
+              "width": 608,
+            },
+          },
+          "title": "Иконка",
         },
         "isDotted": Object {
           "default": true,
@@ -2571,6 +2587,14 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 299,
+              "width": 608,
+            },
+          },
+          "title": "Иконка",
         },
         "isDotted": Object {
           "default": true,
@@ -2650,6 +2674,14 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 299,
+              "width": 608,
+            },
+          },
+          "title": "Иконка",
         },
         "isDotted": Object {
           "default": true,

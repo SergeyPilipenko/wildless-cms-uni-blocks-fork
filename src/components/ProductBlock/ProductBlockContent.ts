@@ -2,15 +2,26 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { IconVersion } from '../../model/IconVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import type { ButtonContent, BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
-import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 import type { HeadlineProps } from '../../model/HeadlineType';
 import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
+import type { Picture } from '../../model/Picture';
 
 export type ProductBlockInnerContent = HeadlineProps &
   ListContent &
-  ButtonContent &
-  ImageContent & {
+  ButtonContent & {
+    /**
+     *  @title Иконка
+     *  @default
+     * {
+     *   "size": {
+     *     "width": 608,
+     *     "height": 299
+     *   },
+     *   "format": "webp"
+     * }
+     */
+    image?: Picture;
     /**
      * @title Список преимуществ
      * @minItems 2
