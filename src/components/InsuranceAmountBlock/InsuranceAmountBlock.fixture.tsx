@@ -1,8 +1,8 @@
 import { context } from '../../react/setup-fixture';
-import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { InsuranceAmountBlock } from './InsuranceAmountBlock';
 
-const buttonPrimary: ButtonCommonProps = {
+const buttonPrimary: ButtonWithIconProps = {
   href: '/insurance',
   text: 'Выбрать программу',
   target: '_blank',

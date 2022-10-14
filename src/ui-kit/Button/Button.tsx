@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import { ButtonInner } from './ButtonInner';
-import type { ButtonProps, ButtonWithIconProps } from './ButtonProps';
+import type { ButtonWithIconProps } from './ButtonProps';
 
 const buttonStyleMap: Record<ButtonVersion, string> = {
   primary: 'text-white bg-primary-main hover:bg-primary-hover active:bg-primary-active',
@@ -18,9 +18,7 @@ const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
 
 const buttonStyle = 'text-center font-sans select-none';
 
-export interface ButtonCommonProps extends ButtonProps, ButtonWithIconProps {}
-
-export const Button = JSX<ButtonCommonProps>((props) => {
+export const Button = JSX<ButtonWithIconProps>((props) => {
   const { text, aboveText, appendLeft, appendRight, children, disabled, rounded, ...rest } = props;
 
   const buttonInner = children ?? (
@@ -44,7 +42,7 @@ export const Button = JSX<ButtonCommonProps>((props) => {
   );
 });
 
-const RegularButton = JSX<ButtonCommonProps>(
+const RegularButton = JSX<ButtonWithIconProps>(
   ({
     className = '',
     ariaLabel,
@@ -74,7 +72,7 @@ const RegularButton = JSX<ButtonCommonProps>(
   },
 );
 
-const DisabledButton = JSX<ButtonCommonProps>(
+const DisabledButton = JSX<ButtonWithIconProps>(
   ({ className, children, ariaLabel, version = 'none', rounded }) => {
     return (
       <div

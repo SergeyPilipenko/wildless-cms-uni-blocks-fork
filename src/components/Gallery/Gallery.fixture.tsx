@@ -1,6 +1,6 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Gallery } from './Gallery';
 import type { GalleryProps } from './GalleryProps';
 
@@ -16,14 +16,14 @@ const image: Picture = {
   title: 'money',
 };
 
-const buttonPrimary: ButtonCommonProps = {
+const buttonPrimary: ButtonWithIconProps = {
   href: '/credit-cards',
   text: 'Подробнее',
   target: '_blank',
   version: 'secondary',
 };
 
-const buttonPrimaryIcon: ButtonCommonProps = {
+const buttonPrimaryIcon: ButtonWithIconProps = {
   href: '/credit-cards',
   text: 'Подробнее',
   target: '_blank',

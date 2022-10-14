@@ -12,6 +12,12 @@ export interface CatalogCardProps extends CatalogCardType, UniBlockProps {
   version?: BlockVersion;
 }
 
+const iconVersionMap = {
+  default: 'normal',
+  primary: 'white',
+  secondary: 'black',
+};
+
 const cardStyleMap: Record<CatalogProductColor, string> = {
   black: 'bg-black',
   white: 'bg-white',
@@ -50,22 +56,23 @@ const renderColorOption = (color: CatalogProductColor, i: number) => (
 );
 
 const renderButton = (button: ButtonWithIconProps) => {
-  const { icon, iconRight, text } = button;
+  const { icon, iconRight, ...other } = button;
 
-  if (!text) {
+  if (!button?.text) {
     return null;
   }
 
-  const leftIcon = renderButtonIcon(icon);
-  const rightIcon = renderButtonIcon(iconRight);
+  const iconVersion = iconVersionMap[button?.version || 'default'];
+  const leftIcon = renderButtonIcon({ ...icon, iconVersion });
+  const rightIcon = renderButtonIcon({ ...iconRight, iconVersion });
 
   return (
-    <Button className="mt-5 w-full" appendLeft={leftIcon} appendRight={rightIcon} {...button} />
+    <Button className="mt-5 w-full" appendLeft={leftIcon} appendRight={rightIcon} {...other} />
   );
 };
 
 const renderButtonIcon = (buttonIcon?: Picture) => {
-  if (!buttonIcon || !buttonIcon.icon) {
+  if (!buttonIcon || (!buttonIcon?.icon && !buttonIcon?.src)) {
     return null;
   }
 

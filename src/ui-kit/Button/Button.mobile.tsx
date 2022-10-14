@@ -4,7 +4,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import { ButtonInner } from './ButtonInner';
-import type { ButtonProps, ButtonWithIconProps } from './ButtonProps';
+import type { ButtonWithIconProps } from './ButtonProps';
 
 const buttonStyleMap: Record<ButtonVersion, string> = {
   primary: 'text-white bg-primary-main hover:bg-primary-hover active:bg-primary-active',
@@ -21,9 +21,7 @@ const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
 
 const styleButton = 'w-full text-center font-sans select-none';
 
-export interface ButtonCommonProps extends ButtonProps, ButtonWithIconProps {}
-
-export const Button = JSX<ButtonCommonProps>(
+export const Button = JSX<ButtonWithIconProps>(
   ({
     className,
     text,

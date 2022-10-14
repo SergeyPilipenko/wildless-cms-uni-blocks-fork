@@ -1,6 +1,6 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Catalog, CatalogProps } from './Catalog';
 import type { CatalogProductColor } from './CatalogContent';
 
@@ -16,11 +16,14 @@ const payRing: Picture = {
 
 const colors: CatalogProductColor[] = ['black', 'white'];
 
-const buttonPrimary: ButtonCommonProps = {
+const buttonPrimary: ButtonWithIconProps = {
   href: '/credit-cards',
   text: 'Подробнее',
   target: '_blank',
   version: 'primary',
+  icon: {
+    icon: 'AppleIcon',
+  },
 };
 
 const catalogCard = {

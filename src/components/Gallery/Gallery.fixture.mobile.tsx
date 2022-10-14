@@ -1,7 +1,7 @@
 import { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
-import type { ButtonCommonProps } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Gallery } from './Gallery';
 import { GalleryCard } from './GalleryContent';
 
@@ -17,7 +17,7 @@ const image: Picture = {
   title: 'money',
 };
 
-const link: ButtonCommonProps = {
+const link: ButtonWithIconProps = {
   href: '/credit-cards',
   text: 'Подробнее',
   target: '_blank',

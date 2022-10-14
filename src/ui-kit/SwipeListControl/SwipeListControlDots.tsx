@@ -47,7 +47,7 @@ const getDotStyles = (
   indexFraction: number,
 ): Record<string, string> | undefined => {
   if (currentIdx < activeIndex || currentIdx > activeIndex + 1) {
-    return;
+    return undefined;
   }
 
   const leftIndexMod = 1 - indexFraction;
