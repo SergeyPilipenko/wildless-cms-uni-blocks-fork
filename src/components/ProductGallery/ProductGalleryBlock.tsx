@@ -1,14 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { HeadlineProps } from '../../model/HeadlineType';
-import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
-
-const productGalleryStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface ProductGalleryBlockProps extends UniBlockProps {
   headlineVersion?: HeadlineProps;
@@ -21,7 +16,7 @@ export const ProductGalleryBlock = JSX<ProductGalleryBlockProps>(
 
     return (
       <section
-        className={`flex grow-0 shrink-0 basis-full px-4 pt-6 ${productGalleryStyleMap[version]} ${className}`}
+        className={`flex grow-0 shrink-0 basis-full px-4 pt-6 ${VersionStyleMap[version]} ${className}`}
         role="listitem"
       >
         <div className="flex grow">

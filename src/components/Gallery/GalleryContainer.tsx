@@ -1,18 +1,19 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { GalleryCardInner } from './GalleryCardInner';
+import { Headline } from '../Headline/Headline';
+import type { GalleryCardProps } from './GalleryContent';
+import type { GalleryInnerProps } from './GalleryInner';
 import type { GalleryVersion } from '../../model/GalleryVersion';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
-import { cardStyleMap, cardVersionMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
-import { GalleryCardInner } from './GalleryCardInner';
-import type { GalleryCard } from './GalleryContent';
-import type { GalleryInnerProps } from './GalleryInner';
-import { Headline } from '../Headline/Headline';
+import { cardStyleMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface GalleryContainerProps extends Omit<GalleryInnerProps, 'className'> {
   activeCardIndex: number;
 }
 
 export interface GalleryCardData {
-  card: GalleryCard;
+  card: GalleryCardProps;
   version: GalleryVersion;
   context: ContentPageContext;
 }
@@ -49,7 +50,7 @@ function renderCard({ card, version }: GalleryCardData, i: number) {
     <section
       className={`box-border border-solid border border-main-stroke p-6 mx-2 flex flex-col justify-between
         items-stretch ${cardStyleMap[version]} ${
-        cardVersionMap[card.version ?? 'primary']
+        VersionStyleMap[card.version ?? 'primary']
       } w-full col-span-4`}
       key={String(i)}
       role="listitem"

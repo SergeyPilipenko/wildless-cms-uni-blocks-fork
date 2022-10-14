@@ -3,7 +3,7 @@ import { useLink } from '../../hooks/useLink';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import type { UniBlockProps } from '../../types';
-import { NavigationContent } from './NavigationContent';
+import type { NavigationContent } from './NavigationContent';
 import { NavigationItem } from './NavigationItem';
 
 export interface NavigationProps extends NavigationContent, UniBlockProps {}

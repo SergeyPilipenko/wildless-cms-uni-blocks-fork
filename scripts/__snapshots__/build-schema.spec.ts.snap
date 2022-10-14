@@ -1023,7 +1023,7 @@ Object {
         },
         "cards": Object {
           "items": Object {
-            "$ref": "#/definitions/GalleryCard",
+            "$ref": "#/definitions/GalleryCardProps",
           },
           "minItems": 3,
           "title": "Карточки",
@@ -1058,7 +1058,7 @@ Object {
       "title": "Галерея",
       "type": "object",
     },
-    "GalleryCard": Object {
+    "GalleryCardProps": Object {
       "properties": Object {
         "button": Object {
           "$ref": "#/definitions/ButtonWithIconProps",
@@ -1085,7 +1085,7 @@ Object {
         },
         "items": Object {
           "items": Object {
-            "$ref": "#/definitions/GalleryItem",
+            "$ref": "#/definitions/GalleryItemProps",
           },
           "title": "Список",
           "type": "array",
@@ -1105,7 +1105,7 @@ Object {
       "properties": Object {
         "cards": Object {
           "items": Object {
-            "$ref": "#/definitions/GalleryCard",
+            "$ref": "#/definitions/GalleryCardProps",
           },
           "minItems": 3,
           "title": "Карточки",
@@ -1127,7 +1127,7 @@ Object {
       "title": "Галерея",
       "type": "object",
     },
-    "GalleryItem": Object {
+    "GalleryItemProps": Object {
       "properties": Object {
         "text": Object {
           "title": "Текст",
@@ -2055,7 +2055,7 @@ Object {
         },
         "cards": Object {
           "items": Object {
-            "$ref": "#/definitions/GalleryCard",
+            "$ref": "#/definitions/GalleryCardProps",
           },
           "minItems": 3,
           "title": "Карточки",

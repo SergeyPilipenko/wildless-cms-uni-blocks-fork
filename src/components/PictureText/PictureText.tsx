@@ -8,13 +8,9 @@ import { Img } from '../../ui-kit/Img/Img';
 import { BenefitItem } from '../../ui-kit/BenefitItem/BenefitItem';
 import { Headline } from '../Headline/Headline';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
-
-const pictureTextStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
 
 export const PictureText = JSX<PictureTextProps>(
   ({
@@ -32,7 +28,7 @@ export const PictureText = JSX<PictureTextProps>(
   }) => {
     return (
       <BlockWrapper
-        className={`relative font-sans p-14 ${pictureTextStyleMap[version]} ${className}`}
+        className={`relative font-sans p-14 ${VersionStyleMap[version]} ${className}`}
         context={context}
         {...rest}
       >

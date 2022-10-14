@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
+import type { PromoTileContent } from './PromoTileContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { BaseTile } from '../BaseTile/BaseTile';
@@ -8,14 +8,9 @@ import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import { Headline } from '../Headline/Headline';
-import type { PromoTileContent } from './PromoTileContent';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface PromoTileProps extends PromoTileContent, UniBlockProps {}
-
-const promoTileStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
 
 export const PromoTile = JSX<PromoTileProps>(
   ({
@@ -32,7 +27,7 @@ export const PromoTile = JSX<PromoTileProps>(
       <BlockWrapper
         context={context}
         className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${
-          promoTileStyleMap[version]
+          VersionStyleMap[version]
         } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
         {...rest}
       >

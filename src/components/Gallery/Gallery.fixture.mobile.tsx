@@ -1,9 +1,9 @@
-import { ListOrientation } from '../../model/ListOrientation';
-import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
+import type { ListOrientation } from '../../model/ListOrientation';
+import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { GalleryCardProps } from './GalleryContent';
 import { Gallery } from './Gallery';
-import { GalleryCard } from './GalleryContent';
 
 const isDotted = true;
 
@@ -30,7 +30,7 @@ const defaultItems = [
   { title: 'До 15% ', text: 'Кэшбэк от покупок' },
 ];
 
-const cards: GalleryCard[] = [
+const cards: GalleryCardProps[] = [
   {
     image,
     title: 'Вклады в любой валюте',

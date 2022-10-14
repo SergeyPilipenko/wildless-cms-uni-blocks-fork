@@ -5,7 +5,7 @@ import type { JSXBlock } from '../ContentPage/ContentPage';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { GroupBlockDef } from './BlocksTypeProps';
 import { EmbeddableGroupBlocks } from './EmbeddableGroupBlocks';
-import { GroupBlockContent } from './GroupBlockContent';
+import type { GroupBlockContent } from './GroupBlockContent';
 
 export interface GroupBlocksProps extends GroupBlockContent, UniBlockProps {}
 

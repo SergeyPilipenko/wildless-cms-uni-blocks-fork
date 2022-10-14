@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
+import type { MobileAppTileContent } from './MobileAppTileContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -8,14 +8,9 @@ import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
-import type { MobileAppTileContent } from './MobileAppTileContent';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps {}
-
-const mobileAppStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
 
 export const MobileAppTile = JSX<MobileAppTileProps>(
   ({
@@ -38,7 +33,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
         context={context}
         className={`flex justify-between font-sans p-9 box-border relative min-h-[320px]
         ${getTileMinHeight(className)}
-        ${mobileAppStyleMap[version]}
+        ${VersionStyleMap[version]}
         ${className}`}
         {...rest}
       >

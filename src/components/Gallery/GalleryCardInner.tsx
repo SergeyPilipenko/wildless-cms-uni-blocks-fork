@@ -1,11 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
-import type { GalleryCard, GalleryItem } from './GalleryContent';
+import type { BlockVersion } from '../../model/BlockVersion';
+import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 
-export const GalleryCardInner = JSX<GalleryCard>(
+export const GalleryCardInner = JSX<GalleryCardProps>(
   ({ title, description, image, items, button, version, isDotted = true }) => {
     const titleStyleClasses = getTitleStyle(version);
 
@@ -41,7 +41,11 @@ function renderCardTitle(title: string, className: string) {
   return <div className={`text-xl-light m-0 ${className}`}>{title}</div>;
 }
 
-function renderItems(items: GalleryItem[], isDotted: boolean, version: BlockVersion = 'primary') {
+function renderItems(
+  items: GalleryItemProps[],
+  isDotted: boolean,
+  version: BlockVersion = 'primary',
+) {
   return (
     <List
       className={`max-w-[308px] mt-2 text-s ${version === 'primary' ? '!text-secondary-text' : ''}`}

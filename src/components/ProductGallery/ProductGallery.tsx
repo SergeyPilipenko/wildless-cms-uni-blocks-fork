@@ -2,10 +2,11 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
-import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent } from './ProductGalleryContent';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
 
@@ -14,19 +15,9 @@ type StyleType = {
   text: string;
 };
 
-const productGalleryStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
-
 const productBlockStyleMap: Record<BlockVersion, StyleType> = {
   primary: { title: 'text-secondary-text', text: 'text-secondary-text' },
   secondary: { title: 'text-white', text: 'text-white/80' },
-};
-
-const productSlideStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
 };
 
 export const ProductGallery = JSX<ProductGalleryProps>(
@@ -39,7 +30,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
       <BlockWrapper
         context={context}
         className={`box-border pt-[50px] overflow-hidden relative font-sans w-100 ${className}
-        ${productGalleryStyleMap[version]}`}
+        ${VersionStyleMap[version]}`}
         {...rest}
       >
         <div
@@ -95,7 +86,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
   const btnClassName = isActiveBtn
     ? 'bg-white shadow-dark-blue/42 w-[354px] min-w-[354px] border-none'
     : `min-w-[277px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
-      ${productSlideStyleMap[version]}`;
+      ${VersionStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
     ? 'text-primary-text text-h6'
     : `text-l ${productBlockStyleMap[version].title}`;

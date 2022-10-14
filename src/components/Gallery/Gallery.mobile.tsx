@@ -1,19 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { ListOrientation } from '../../model/ListOrientation';
+import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
+import type { GalleryProps } from './GalleryProps';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { getListStyle } from '../../ui-kit/List/ListItem';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
-import type { GalleryCard } from './GalleryContent';
-import { GalleryItem } from './GalleryContent';
-import type { GalleryProps } from './GalleryProps';
-
-const blockStyle: Record<BlockVersion, string> = {
-  primary: 'bg-white',
-  secondary: 'bg-primary-main text-white',
-};
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export const Gallery = JSX<GalleryProps>(
   ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {
@@ -37,7 +32,7 @@ export const Gallery = JSX<GalleryProps>(
   },
 );
 
-function renderCardsLayout(orientation: ListOrientation, cards: GalleryCard[], context) {
+function renderCardsLayout(orientation: ListOrientation, cards: GalleryCardProps[], context) {
   return orientation === 'horizontal' ? (
     <SwipeListControl context={context}>{cards?.map(renderCard)}</SwipeListControl>
   ) : (
@@ -45,11 +40,11 @@ function renderCardsLayout(orientation: ListOrientation, cards: GalleryCard[], c
   );
 }
 
-function renderCard(card: GalleryCard, key: number) {
+function renderCard(card: GalleryCardProps, key: number) {
   return (
     <div
       className={`h-full justify-between box-border horizontal-list-item border-solid border rounded-md border-main-stroke p-4 flex flex-col
-      ${blockStyle[card.version ?? 'primary']}`}
+      ${VersionStyleMap[card.version ?? 'primary']}`}
       key={key}
     >
       <div>
@@ -77,7 +72,7 @@ function renderButton(button) {
   );
 }
 
-function renderDescription(card: GalleryCard) {
+function renderDescription(card: GalleryCardProps) {
   return (
     <div
       className={`text-secondary-text mt-1 text-s ${
@@ -89,7 +84,7 @@ function renderDescription(card: GalleryCard) {
   );
 }
 
-function renderItems(items: GalleryItem[], isDotted, version: BlockVersion = 'primary') {
+function renderItems(items: GalleryItemProps[], isDotted, version: BlockVersion = 'primary') {
   return (
     <section className="mt-3">
       {items.map((item, i) => (

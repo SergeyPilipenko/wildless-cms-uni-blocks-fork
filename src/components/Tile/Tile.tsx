@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
+import type { TileContent } from './TileContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
@@ -10,16 +10,11 @@ import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
-import type { TileContent } from './TileContent';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface TileProps extends TileContent, UniBlockProps {
   role?: string;
 }
-
-const tileStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
 
 export const Tile = JSX<TileProps>((props) => {
   const {
@@ -41,7 +36,7 @@ export const Tile = JSX<TileProps>((props) => {
     <BlockWrapper
       context={context}
       className={`overflow-hidden font-sans p-9 pr-3 box-border ${className} ${
-        tileStyleMap[version]
+        VersionStyleMap[version]
       } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
       {...rest}
     >

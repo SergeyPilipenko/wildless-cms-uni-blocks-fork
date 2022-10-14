@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ButtonVersion } from '../../model/ButtonVersion';
+import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { ButtonWithIconProps } from './ButtonProps';
 
 interface ButtonInnerProps extends ButtonWithIconProps {

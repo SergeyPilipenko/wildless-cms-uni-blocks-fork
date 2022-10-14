@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BgColorVersion } from '../../model/BgColorVersion';
+import type { BgColorVersion } from '../../model/BgColorVersion';
 import { Img } from '../Img/Img';
 
 export interface LogoProps {

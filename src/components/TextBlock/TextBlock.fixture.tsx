@@ -1,7 +1,7 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
 import { TextBlock } from './TextBlock';
-import { TextBlockContent } from './TextBlockContent';
+import type { TextBlockContent } from './TextBlockContent';
 
 const image: Picture = {
   src: 'bank-card.png',

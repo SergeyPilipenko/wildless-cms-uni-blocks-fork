@@ -2,19 +2,15 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../types';
+import type { ProductBlockContent } from './ProductBlockContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Breadcrumb } from '../../ui-kit/Breadcrumb';
 import { joinList } from '../../utils/joinList';
-import type { ProductBlockContent } from './ProductBlockContent';
 import { ProductBlockInner } from './ProductBlockInner';
 import { renderBackwardButton } from './renderBackwardButton';
+import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
-
-const productBlockStyleMap: Record<BlockVersion, string> = {
-  primary: 'bg-white text-primary-text',
-  secondary: 'bg-primary-main text-white',
-};
 
 const breadcrumbsStyleMap: Record<BlockVersion, string> = {
   primary: 'text-secondary-text',
@@ -36,7 +32,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
   return (
     <BlockWrapper
       context={context}
-      className={`font-sans overflow-hidden p-[50px] flex flex-col box-border min-h-[528px] ${productBlockStyleMap[version]} ${className}`}
+      className={`font-sans overflow-hidden p-[50px] flex flex-col box-border min-h-[528px] ${VersionStyleMap[version]} ${className}`}
       {...otherProps}
     >
       {backwardButton?.text

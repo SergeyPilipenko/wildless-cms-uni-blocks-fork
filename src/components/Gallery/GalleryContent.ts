@@ -6,7 +6,7 @@ import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 /**
  * @title Элемент списка
  */
-export interface GalleryItem {
+export interface GalleryItemProps {
   /** @title Заголовок (моб.) */
   title?: string; //TODO: for mobile
   /** @title Текст */
@@ -16,7 +16,7 @@ export interface GalleryItem {
 /**
  * @title Карточка
  */
-export interface GalleryCard {
+export interface GalleryCardProps {
   /** @title Заголовок */
   title?: string;
   /** @title Описание */
@@ -40,7 +40,7 @@ export interface GalleryCard {
    */
   isDotted?: boolean;
   /** @title Список */
-  items?: GalleryItem[];
+  items?: GalleryItemProps[];
   version?: BlockVersion;
 }
 
@@ -56,7 +56,7 @@ export interface GalleryContent {
    * @title Карточки
    * @minItems 3
    */
-  cards?: GalleryCard[];
+  cards?: GalleryCardProps[];
   /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
   orientation?: ListOrientation; //TODO: for mobile
 }
