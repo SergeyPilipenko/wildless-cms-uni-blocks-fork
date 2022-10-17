@@ -22,31 +22,49 @@
       "title": "Параметр 4"
     }
   ],
-  "columns": [
+  "tariffsColumns": [
     {
       "data": [
         [
           {
-            "label": "Ячейка 1"
+            "tableCellType": "LabelDescription",
+            "label": "Ячейка 1-1",
+            "description": "Описание для ячейки 2-1"
+          },
+          {
+            "tableCellType": "List",
+            "isDotted": true,
+            "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
+          },
+          {
+            "label": "Ячейка 1-2",
+            "tableCellType": "LabelDescription",
+            "description": "Описание"
+          },
+          {
+            "tableCellType": "List",
+            "isDotted": false,
+            "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
           }
         ],
         [
           {
-            "label": "Ячейка 2-1",
-            "description": "Описание для ячейки 2-1"
+            "tableCellType": "LabelDescription",
+            "label": "Ячейка 2-1"
           },
           {
-            "label": "Ячейка 2-2",
-            "description": "Описание для ячейки 2-2"
+            "tableCellType": "List",
+            "isDotted": true,
+            "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
           }
         ],
         [
           {
             "label": "Ячейка 3-1",
-            "description": "Описание для ячейки 3-1"
+            "tableCellType": "LabelDescription"
           },
           {
-            "label": "Ячейка 3-2",
+            "tableCellType": "Button",
             "buttons": [
               {
                 "icon": {
@@ -55,8 +73,7 @@
                 "rounded": true,
                 "version": "secondary",
                 "href": "/",
-                "target": "_blank",
-                "text": ""
+                "target": "_blank"
               },
               {
                 "icon": {
@@ -65,29 +82,13 @@
                 "rounded": true,
                 "version": "secondary",
                 "href": "/",
-                "target": "_blank",
-                "text": ""
+                "target": "_blank"
               }
             ]
-          }
-        ],
-        [
-          {
-            "image": {
-              "format": "webp",
-              "size": {
-                "width": 288,
-                "height": 56
-              }
-            }
-          },
-          {
-            "list": {
-              "items": ["item 1", "item 2", "item 3"]
-            }
           }
         ]
       ]
     }
-  ]
+  ],
+  "hiddenRowsNum": 2
 }

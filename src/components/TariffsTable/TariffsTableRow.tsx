@@ -1,28 +1,29 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { UniBlockProps } from '../../types';
 import { Img } from '../../ui-kit/Img/Img';
 import { TableCarouselContainer } from '../ComparisonTable/TableCarouselContainer';
-import { TableRowContainer } from '../ComparisonTable/TableRowContainer';
 import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
 import { TariffsTableCell } from './TariffsTableCell';
-import type { TariffsTableRowData } from './TariffsTableContent';
+import type { Data } from './TariffsTableContent';
+import { TariffsTableRowContainer } from './TariffsTableRowContainer';
 
-export interface TariffsTableRowProps {
-  className?: string;
-  row: TariffsTableRowData;
+export interface TariffsTableRowProps extends UniBlockProps {
+  row: Data;
   activeCardIndex: number;
   isLastRow: boolean;
+  rowIdx: number;
 }
 
 export const TariffsTableRow = JSX<TariffsTableRowProps>(
-  ({ row: { header, data }, activeCardIndex, isLastRow }) => {
+  ({ row: { header, data }, activeCardIndex, isLastRow, context, rowIdx }) => {
     return (
-      <TableRowContainer>
+      <TariffsTableRowContainer context={context} rowIdx={rowIdx}>
         <div
           className={`text-s py-5 ${FIRST_CELL_CLASSES} ${DIVIDER_CLASSES} ${
             !isLastRow ? 'border-solid' : ''
           }`}
         >
-          <div className="flex items-center text-primary-text">
+          <div className="flex items-center text-primary-text" role="cell">
             {header?.icon ? (
               <Img
                 className="mr-[14px] max-w-6 max-h-6"
@@ -41,12 +42,19 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
             columnWidth={COLUMN_WIDTH}
             version="tariff"
           >
-            {data.map((cell, i) => (
-              <TariffsTableCell key={String(i)} cell={cell} isLastRow={isLastRow} />
+            {data.map((cells, i) => (
+              <TariffsTableCell
+                key={String(i)}
+                cells={cells}
+                isLastRow={isLastRow}
+                rowIdx={rowIdx}
+                cellIdx={i}
+                context={context}
+              />
             ))}
           </TableCarouselContainer>
         ) : null}
-      </TableRowContainer>
+      </TariffsTableRowContainer>
     );
   },
 );

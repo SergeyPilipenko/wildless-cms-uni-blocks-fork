@@ -5,7 +5,7 @@ import { style2className } from '../../utils/style2className';
 import type { BlockDef } from './BlocksListProps';
 import { EmbeddableBlocks } from './EmbeddableBlocks';
 
-type EmbeddableBlocksProps = {
+export type EmbeddableBlocksProps = {
   blocks?: BlockDef[];
   context: ContentPageContext;
   className?: string;

@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type {
-  TariffsTableCellData,
+  CellDef,
   TariffsTableColumn,
   TariffsTableContent,
   TariffsTableRowHeader,
@@ -13,7 +13,15 @@ import { TariffsTableVertical } from './TariffsTableVertical';
 export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 
 export const TariffsTable = JSX<TariffsTableProps>(
-  ({ className, context, title, description, columns, rowHeaders, orientation = 'vertical' }) => {
+  ({
+    className,
+    context,
+    title,
+    description,
+    tariffsColumns: columns,
+    rowHeaders,
+    orientation = 'vertical',
+  }) => {
     const colData = getColData(columns);
     const tiles = getTiles(rowHeaders, colData);
     const headingMargin = description ? 'mb-2' : 'mb-5';
@@ -34,7 +42,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
 
 function renderOrientationTable(orientation, tiles, context) {
   return orientation === 'vertical' ? (
-    <TariffsTableVertical tiles={tiles} />
+    <TariffsTableVertical context={context} tiles={tiles} />
   ) : (
     <TariffsTableHorizontal context={context} tiles={tiles} />
   );
@@ -43,10 +51,7 @@ function renderOrientationTable(orientation, tiles, context) {
 const getColData = (columns: TariffsTableColumn[] | undefined) =>
   columns?.[0].data ? columns[0].data : [];
 
-const getTiles = (
-  rowHeaders: TariffsTableRowHeader[] | undefined,
-  colData: TariffsTableCellData[][],
-) =>
+const getTiles = (rowHeaders: TariffsTableRowHeader[] | undefined, colData: CellDef[][]) =>
   rowHeaders?.map((header, i) => ({
     header,
     data: colData?.[i] || [{}],

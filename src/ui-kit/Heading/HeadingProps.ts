@@ -1,4 +1,4 @@
-import type { TitleProp } from '../../model/HeadlineType';
+import type { TitleProps } from '../../model/HeadlineType';
 
 /**
  *
@@ -14,11 +14,14 @@ export type HeadingType = 'h0' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
  */
 export type HeadingTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-export interface HeadingCommonProps extends TitleProp {
+export interface HeadingCommonProps extends TitleProps {
   as?: HeadingTagType;
   headingType?: HeadingType;
 }
 
 export interface HeadingProps extends HeadingCommonProps {
+  /**
+   * @hidden
+   */
   className?: string;
 }

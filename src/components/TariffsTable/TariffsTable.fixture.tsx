@@ -1,151 +1,20 @@
-import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
+import {
+  columns,
+  columnsTable,
+  TARIFFS_TABLE_FIXTURE_EXAMPLE,
+  TARIFFS_TABLE_INNER_TABLE_FIXTURE_EXAMPLE,
+} from './dataFixture';
 import { TariffsTable } from './TariffsTable';
-import type { TariffsTableColumn, TariffsTableRowHeader } from './TariffsTableContent';
-
-const image: Picture = {
-  src: 'payment-systems.png',
-  format: 'webp',
-  size: {
-    width: 288,
-    height: 56,
-  },
-  alt: 'Платёжные системы',
-  title: 'Платёжные системы',
-};
-
-const rowHeaders: TariffsTableRowHeader[] = [
-  { title: 'Начисление процентов на остаток по счету', icon: { icon: 'OkIcon' } },
-  { title: 'Снятие наличных', icon: { icon: 'GlassIcon' } },
-  { title: 'Оформление онлайн', icon: { icon: 'ShieldTickIcon' } },
-  { title: 'Кэшбэк баллами' },
-  { title: 'Стоимость обслуживания' },
-  { title: 'Стоимость SMS-сервиса' },
-  { title: 'Дополнительная информация' },
-];
-
-const columns: TariffsTableColumn[] = [
-  {
-    data: [
-      [{ label: 'Нет' }],
-      [
-        {
-          label: 'Бесплатно',
-          description: 'В банкоматах и кассах Россельхозбанка и банков-партнеров',
-        },
-        {
-          label: 'Бесплатно',
-          description: 'В сторонних банкоматах - 1 раз в месяц, далее 1% минимум 150 руб',
-        },
-      ],
-      [{ label: 'Нет' }],
-      [{ label: 'Платёжные системы картинкой' }, { image: image }],
-      [
-        { label: 'Кнопки-иконки' },
-        {
-          buttons: [
-            {
-              icon: { icon: 'AppleIcon' },
-              rounded: true,
-              version: 'secondary',
-              href: '/',
-              target: '_blank',
-            },
-            {
-              icon: { icon: 'PlayMarketIcon' },
-              rounded: true,
-              version: 'secondary',
-              href: '/',
-              target: '_blank',
-            },
-          ],
-        },
-      ],
-      [
-        {
-          label: 'Бесплатно',
-        },
-      ],
-      [
-        {
-          image: {
-            src: 'money-1.png',
-            format: 'webp',
-            size: {
-              width: 140,
-              height: 140,
-            },
-            alt: 'Деньги',
-          },
-        },
-      ],
-    ],
-  },
-  {
-    data: [
-      [{ label: 'Нет' }],
-      [
-        {
-          label: 'Бесплатно',
-          description: 'В банкоматах и кассах Россельхозбанка и банков-партнеров',
-        },
-        {
-          label: '1%',
-          description: 'В сторонних банкоматах, минимум 150 руб',
-        },
-      ],
-      [{ label: 'Нет' }],
-      [{ label: 'До 20%' }],
-      [
-        {
-          label: 'Бесплатно',
-          description: 'При обороте по карте от 10000 ₽ в месяц',
-        },
-      ],
-      [
-        { label: '69 рублей в месяц' },
-        {
-          list: {
-            items: ['item 1', 'item 2', 'item 3'],
-          },
-        },
-      ],
-      [
-        {
-          description:
-            'Копите баллы каждый день и обменивайте их на скидки на электронику и бытовую технику Panasonic',
-        },
-      ],
-    ],
-  },
-  {
-    data: [
-      [{ label: 'Нет' }],
-      [{ label: 'Бесплатно' }],
-      [{ label: 'Есть' }],
-      [{ label: 'До 20%' }],
-      [
-        {
-          label: 'Бесплатно',
-          description: 'При обороте по карте от 10000 ₽ в месяц',
-        },
-      ],
-      [{ label: '69 рублей в месяц' }],
-      [{ description: 'Для членов профсоюзных организаций' }],
-    ],
-  },
-];
 
 export default {
   default: (
     <div className="container grid grid-cols-12">
       <TariffsTable
         className="col-span-12"
-        title="Другие дебетовые карты Россельхозбанка"
-        description="Описание предоставляемого продукта"
         context={context}
-        rowHeaders={rowHeaders}
-        columns={Array(2).fill(columns).flat()}
+        {...TARIFFS_TABLE_FIXTURE_EXAMPLE}
+        tariffsColumns={Array(2).fill(columns).flat()}
       />
     </div>
   ),
@@ -153,11 +22,9 @@ export default {
     <div className="container grid grid-cols-12">
       <TariffsTable
         className="col-span-12"
-        title="Другие дебетовые карты Россельхозбанка"
-        description="Описание предоставляемого продукта"
         context={context}
-        rowHeaders={rowHeaders}
-        columns={columns.slice(0, 1)}
+        {...TARIFFS_TABLE_FIXTURE_EXAMPLE}
+        tariffsColumns={columns.slice(0, 1)}
         hiddenRowsNum={2}
       />
     </div>
@@ -166,11 +33,9 @@ export default {
     <div className="container grid grid-cols-12">
       <TariffsTable
         className="col-span-12"
-        title="Другие дебетовые карты Россельхозбанка"
-        description="Описание предоставляемого продукта"
         context={context}
-        rowHeaders={rowHeaders}
-        columns={columns.slice(0, 2)}
+        {...TARIFFS_TABLE_FIXTURE_EXAMPLE}
+        tariffsColumns={Array(2).fill(columns).flat()}
         hiddenRowsNum={2}
       />
     </div>
@@ -179,12 +44,20 @@ export default {
     <div className="container grid grid-cols-12">
       <TariffsTable
         className="col-span-12"
-        title="Другие дебетовые карты Россельхозбанка"
-        description="Описание предоставляемого продукта"
         context={context}
-        rowHeaders={rowHeaders}
-        columns={columns.slice(0, 3)}
+        {...TARIFFS_TABLE_FIXTURE_EXAMPLE}
+        tariffsColumns={Array(3).fill(columns).flat()}
         hiddenRowsNum={2}
+      />
+    </div>
+  ),
+  '1 columns with inner table': (
+    <div className="container grid grid-cols-12">
+      <TariffsTable
+        className="col-span-12"
+        context={context}
+        {...TARIFFS_TABLE_INNER_TABLE_FIXTURE_EXAMPLE}
+        tariffsColumns={Array(1).fill(columnsTable).flat()}
       />
     </div>
   ),

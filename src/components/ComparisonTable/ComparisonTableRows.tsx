@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { TableRow } from './TableRow';
+import type { TitleProps } from '../../model/HeadlineType';
 import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
 import type { TableArrowScrollControlProps } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControlProps';
 import type { CellData } from './ComparisonTableContent';
-import type { TitleProp } from '../../model/HeadlineType';
+import { TableRow } from './TableRow';
 
 type ComparisonTableRowsProps = TableArrowScrollControlProps & {
-  rowData: { header: TitleProp; data: CellData[][] }[];
+  rowData: { header: TitleProps; data: CellData[][] }[];
   activeCardIndex: number;
   isColoredFirstColumn: boolean;
 };

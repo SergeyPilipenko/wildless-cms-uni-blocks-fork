@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import type { TitleProp } from '../../model/HeadlineType';
+import type { TitleProps } from '../../model/HeadlineType';
 import type { EmptyOption } from '../../model/EmptyOptionType';
 
 /**
@@ -48,7 +48,7 @@ export interface BenefitItemProps {
 /**
  * @title Блок преимущества
  */
-export type BenefitsBlockContent = TitleProp & {
+export type BenefitsBlockContent = TitleProps & {
   /**
    * @title Список преимуществ
    * @maxItems 6

@@ -54,12 +54,10 @@ export const useCreditCalculatorParams = (
   const finalRate = moneyValue <= sumBorder ? rateBottomRange : rateTopRange;
   const monthlyPayment = getMonthlyPayment(finalRate, userInputParams);
 
-  const extendedCalculatorParams = {
+  return {
     ...creditCalculatorSourceBookParams,
     ...userInputParams,
     finalRate,
     monthlyPayment,
   };
-
-  return extendedCalculatorParams;
 };

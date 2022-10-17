@@ -4,17 +4,17 @@
  */
 export type HeadlineVersion = 'XXL' | 'XL' | 'L' | 'M' | 'S';
 
-export type TitleProp = {
+export type TitleProps = {
   /** @title Заголовок */
   title?: string;
 };
 
-export type DescriptionProp = {
+export type DescriptionProps = {
   /** @title Описание */
   description?: string;
 };
 
-export type HeadlineCommonProps = TitleProp & DescriptionProp;
+export type HeadlineCommonProps = TitleProps & DescriptionProps;
 
 export type HeadlineProps = HeadlineCommonProps & {
   headlineVersion?: HeadlineVersion;

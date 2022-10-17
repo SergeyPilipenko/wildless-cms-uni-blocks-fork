@@ -10,9 +10,11 @@ export type ListItemVersion = 'primary' | 'secondary' | 'gray' | 'tile' | 'tile-
  * @title Содержимое списка
  */
 export interface ListProps extends ListContent {
+  /** @hidden */
   className?: string;
+  /** @hidden */
+  itemClassName?: string;
   /** @title Буллиты */
   isDotted?: boolean;
   version?: ListItemVersion;
-  itemClassName?: string;
 }

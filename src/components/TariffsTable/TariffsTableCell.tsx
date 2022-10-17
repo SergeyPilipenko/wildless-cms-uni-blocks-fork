@@ -1,64 +1,59 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Button } from '../../ui-kit/Button/Button';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import { Img } from '../../ui-kit/Img/Img';
-import { List } from '../../ui-kit/List/List';
-import type { TariffsTableCellData, TariffsTableList } from './TariffsTableContent';
-import { getButtonAriaLabel } from './utils/getButtonAriaLabel';
+import type { UniBlockProps } from '../../types';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
+import { EmbeddableCellData } from './EmbeddableCellData';
+import type { CellDef, TariffsTableCellIndexProps } from './TariffsTableContent';
 
-export interface TariffsTableCellProps {
-  cell: TariffsTableCellData[];
+export interface TariffsTableCellProps extends UniBlockProps {
+  rowIdx: number;
+  cellIdx: number;
+  cells: CellDef[];
   isLastRow: boolean;
 }
 
-export const TariffsTableCell = JSX<TariffsTableCellProps>(({ cell, isLastRow }) => {
-  const cellWrapperClasses = `first:pl-0 pl-10 w-80 flex-grow flex flex-col border-solid border-main-divider border border-t-0 border-x-0 ${
-    isLastRow ? 'border-t-0 rounded-b-md' : ''
-  }`;
+export const TariffsTableCell = JSX<TariffsTableCellProps>(
+  ({ context, cells, isLastRow, rowIdx, cellIdx }) => {
+    const cellWrapperClasses = `first:pl-0 w-80 flex-grow flex flex-col border-solid border-main-divider border border-t-0 border-x-0 ${
+      isLastRow ? 'border-t-0 rounded-b-md' : ''
+    }`;
 
-  return (
-    <div className={cellWrapperClasses} role="cell">
-      <div>{cell.map(renderCellInner)}</div>
-    </div>
-  );
-});
-
-const renderCellInner = (
-  { label, description, list, image, buttons }: TariffsTableCellData,
-  i: number,
-) => (
-  <div key={String(i)} className="first:pt-5 last:pb-5">
-    {i > 0 && (
-      <div className="border-main-divider border border-solid border-t-0 border-x-0 my-4" />
-    )}
-    {label ? <div className="text-xl m-0">{label}</div> : null}
-    {description ? <div className="text-s text-secondary-text">{description}</div> : null}
-    {list?.items?.length ? renderList(list) : null}
-    {image ? <Img image={image} /> : null}
-    {buttons?.length ? renderButtons(buttons) : null}
-  </div>
+    return (
+      <div className={cellWrapperClasses} role="cell">
+        {cells.map(renderCellInner(rowIdx, context, cellIdx))}
+      </div>
+    );
+  },
 );
 
-const renderList = (list: TariffsTableList) => (
-  <List
-    className="flex flex-col justify-between items-start text-s"
-    version="gray"
-    items={list.items}
-    isDotted={list.isDotted ?? true}
-  />
-);
+const renderCellInner =
+  (rowIdx: number, context: ContentPageContext, cellIdx: number) => (cell: CellDef, i: number) => {
+    return (
+      <div
+        key={String(i)}
+        className={cell?.tableCellType === 'Table' ? 'mx-0.5' : `first:pt-5 last:pb-5 pl-10`}
+      >
+        {i > 0 ? <div className="h-5" /> : null}
+        {renderCell(cell, context, { rowIdx, cellIdx, fieldIdx: i })}
+      </div>
+    );
+  };
 
-const renderButtons = (buttons: ButtonWithIconProps[]) => (
-  <div>
-    {buttons.map(({ icon, rounded, ...buttonProps }, idx) => (
-      <Button
-        className={`${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`}
-        key={String(idx)}
-        ariaLabel={getButtonAriaLabel(icon)}
-        rounded={rounded}
-        appendLeft={icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null}
-        {...buttonProps}
-      />
-    ))}
-  </div>
-);
+const renderCell = (
+  cell: CellDef,
+  context: ContentPageContext,
+  indexes: TariffsTableCellIndexProps,
+) => {
+  if (!cell) {
+    return null;
+  }
+
+  const { tableCellType: type, ...rest } = cell;
+
+  if (!type || !(type in EmbeddableCellData)) {
+    return null;
+  }
+
+  const EmbeddableCellInner = EmbeddableCellData[type];
+
+  return <EmbeddableCellInner context={context} {...rest} {...indexes} />;
+};

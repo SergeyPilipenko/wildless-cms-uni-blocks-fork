@@ -1,8 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { TariffsTableTileCell } from './TariffsTableTileCell';
-import type { TariffsTableTileCellProps } from './TariffsTableContent';
+import type { UniBlockProps } from '../../types';
+import { TariffsTableTileCell, TariffsTableTileCellProps } from './TariffsTableTileCell';
 
-export const TariffsTableVertical = JSX<{ tiles: TariffsTableTileCellProps[] }>(({ tiles }) => (
+export interface TariffsTableVerticalProps extends UniBlockProps {
+  tiles: TariffsTableTileCellProps[];
+}
+
+export const TariffsTableVertical = JSX<TariffsTableVerticalProps>(({ tiles }) => (
   <div className="flex flex-col gap-3.5">
     {tiles.map((tile, i) => (
       <TariffsTableTileCell key={String(i)} {...tile} />

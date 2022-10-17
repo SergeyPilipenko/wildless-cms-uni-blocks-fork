@@ -39,7 +39,6 @@ export const Foldable = JSX<FoldableProps>(
     render = (_) => _,
   }) => {
     const blocksToHide = clamp(hiddenBlocksNum, 0, blocks.length);
-
     const { icon, handleToggle, isActive } = useActiveHandler({
       initialState: isUnfolded,
     });
@@ -70,7 +69,7 @@ export const Foldable = JSX<FoldableProps>(
 const renderBlocks = (
   blocks: FoldableBlocks,
   render: Render,
-  { blocksToHide, isActive, containerClasses }: RenderBlocksParams,
+  { blocksToHide, isActive, containerClasses = '' }: RenderBlocksParams,
 ) => {
   const visibleBlocks = blocks.slice(0, blocks.length - blocksToHide);
   const hiddenBlocks = blocksToHide > 0 ? blocks.slice(-blocksToHide) : [];

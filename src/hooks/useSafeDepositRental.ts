@@ -5,9 +5,7 @@ const SAFE_DEPOSIT_RENTAL_URL = '/api/v1/safe-deposit-rental.json';
 export function useSafeDepositRental() {
   const { data } = useAsyncData(SAFE_DEPOSIT_RENTAL_URL, fetchSafeDepositRental);
 
-  const result = data || [];
-
-  return result;
+  return data || [];
 }
 
 async function fetchSafeDepositRental(): Promise<any | undefined> {

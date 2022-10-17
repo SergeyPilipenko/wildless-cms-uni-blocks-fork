@@ -1163,7 +1163,7 @@ exports[`Blocks Tabs should render block "Tabs" without content 1`] = `
 
 exports[`Blocks TariffsTable should render block "TariffsTable" without content 1`] = `
 <section
-  class="bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative "
+  class="bg-white font-sans p-[50px] overflow-hidden text-primary-text relative  "
 />
 `;
 

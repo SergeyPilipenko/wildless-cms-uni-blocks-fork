@@ -1,67 +1,127 @@
+import type { EmptyOption } from '../../model/EmptyOptionType';
+import type { DescriptionProps } from '../../model/HeadlineType';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { HeadingProps } from '../../ui-kit/Heading/HeadingProps';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
-import type { ListContent } from '../../ui-kit/List/ListContent';
-import type { CellData } from '../ComparisonTable/ComparisonTableContent';
-import type { HeadlineCommonProps, TitleProp } from '../../model/HeadlineType';
+import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
+import type { ListProps } from '../../ui-kit/List/ListProps';
+
+/**
+ * @hidden
+ */
+export interface TariffsTableCellIndexProps {
+  rowIdx: number;
+  cellIdx: number;
+  fieldIdx: number;
+}
+
+/**
+ * @title Параметр
+ */
+export type TariffsTableRowHeader = HeadingProps & {
+  icon?: Picture;
+};
 
 /**
  * @title Ряд
  */
-export type TariffsTableRowData = {
+export type Data = {
   header: TariffsTableRowHeader;
-  data: TariffsTableCellData[][];
+  data: CellDef[][];
 };
+
+/**
+ * @title Изображение
+ */
+export type ImageCellDef = ImageContent & {
+  /**
+   * @default Img
+   */
+  tableCellType: 'Img';
+};
+
+/**
+ * @title Кнопки
+ */
+export type ButtonsCellDef = ButtonContent & {
+  /**
+   * @default Buttons
+   */
+  tableCellType: 'Buttons';
+};
+
+/**
+ * @title Заголовок и описание
+ */
+export interface LabelDescriptionCell {
+  /** @title Заголовок */
+  label?: string;
+  /** @title Описание */
+  description?: string;
+}
+
+/**
+ * @title Заголовок и описание
+ */
+export type LabelDescriptionCellDef = LabelDescriptionCell & {
+  /**
+   * @default LabelDescription
+   */
+  tableCellType: 'LabelDescription';
+};
+
+/**
+ * @title Список
+ */
+export type ListBlockDef = ListProps & {
+  /**
+   * @default List
+   */
+  tableCellType: 'List';
+};
+
+/**
+ * @title Таблица
+ */
+export type InnerTableBlockDef = TariffsTableInnerContent & {
+  /**
+   * @default Table
+   */
+  tableCellType: 'Table';
+};
+
+/**
+ * @title Содержимое ячейки
+ */
+export type CellDef =
+  | EmptyOption
+  | ImageCellDef
+  | ButtonsCellDef
+  | LabelDescriptionCellDef
+  | ListBlockDef
+  | InnerTableBlockDef;
 
 /**
  * @title Колонка
  */
 export interface TariffsTableColumn {
   /** @title Данные */
-  data?: TariffsTableCellData[][];
+  data?: CellDef[][];
 }
-
-/**
- * @title Список
- */
-export type TariffsTableList = ListContent & {
-  /** @title Маркеры */
-  isDotted?: boolean;
-};
-
-/**
- * @title Ячейка
- */
-export type TariffsTableCellData = CellData &
-  ImageContent &
-  ButtonContent & {
-    list?: TariffsTableList;
-  };
-
-/**
- * @title Параметр
- */
-export type TariffsTableRowHeader = TitleProp & {
-  icon?: Picture;
-};
 
 /**
  * @title Таблица тарифов
  */
-export type TariffsTableContent = HeadlineCommonProps & {
-  /** @title Колонки */
-  columns?: TariffsTableColumn[];
-  /** @title Параметры */
-  rowHeaders?: TariffsTableRowHeader[];
-  /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
-  orientation?: ListOrientation;
-  /** @title Скрывать строк */
-  hiddenRowsNum?: number;
-};
-
-/** @hidden */
-export type TariffsTableTileCellProps = {
-  header: TariffsTableRowHeader;
-  data: TariffsTableCellData[];
-};
+export type TariffsTableContent = HeadingProps &
+  DescriptionProps & {
+    /** @title Колонки */
+    tariffsColumns?: TariffsTableColumn[];
+    /** @title Параметры */
+    rowHeaders?: TariffsTableRowHeader[];
+    /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
+    orientation?: ListOrientation;
+    /** @title Скрывать строк */
+    hiddenRowsNum?: number;
+  };

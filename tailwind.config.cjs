@@ -26,6 +26,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      transitionProperty: {
+        height: 'height',
+      },
       backgroundColor: {
         'white/10': 'rgba(255,255,255,0.1);',
       },
@@ -214,12 +217,12 @@ module.exports = {
         ...theme('spacing'),
       }),
       animation: {
-        slide: 'progress linear', //TODO: I'm not sure, but it doesn't seem to be used. Need to check
+        expansion: 'expansion 0.3s ease-out',
       },
       keyframes: {
-        progress: {
-          from: { transform: 'translateX(-100%)' },
-          to: { transform: 'translateX(0px)' },
+        expansion: {
+          from: { transform: 'scaleY(0)' },
+          to: { transform: 'scaleY(1)' },
         },
       },
       boxShadow: {

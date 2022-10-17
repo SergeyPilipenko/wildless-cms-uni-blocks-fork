@@ -1,5 +1,5 @@
+import type { TitleProps } from '../../model/HeadlineType';
 import type { Picture } from '../../model/Picture';
-import type { TitleProp } from '../../model/HeadlineType';
 
 interface Month {
   /** @title Название месяца */
@@ -30,7 +30,7 @@ interface CalendarItem {
 /**
  * @title Льготный период
  */
-export interface GracePeriodContent extends TitleProp {
+export interface GracePeriodContent extends TitleProps {
   /** @title Описание */
   description?: string;
   /** @title Календарь */
