@@ -56,7 +56,7 @@ const RegularButton = JSX<ButtonWithIconProps>(
   }) => {
     return (
       <a
-        className={`${buttonStyle} inline-block cursor-pointer no-underline focus:border-primary-focus focus:border ${
+        className={`${buttonStyle} border border-transparent inline-block cursor-pointer no-underline focus:border-primary-focus focus:border ${
           buttonStyleMap[version] || ''
         } ${rounded ? 'rounded-full' : 'rounded-md'} ${className}`}
         href={href}
