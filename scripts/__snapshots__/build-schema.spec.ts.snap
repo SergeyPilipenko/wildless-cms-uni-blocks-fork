@@ -1734,6 +1734,15 @@ Object {
       "type": "string",
     },
     "ImageCellDef": Object {
+      "default": Object {
+        "image": Object {
+          "format": "webp",
+          "size": Object {
+            "height": 24,
+            "width": 24,
+          },
+        },
+      },
       "properties": Object {
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -3566,6 +3575,13 @@ Object {
         },
         "icon": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 24,
+              "width": 24,
+            },
+          },
         },
         "title": Object {
           "title": "Заголовок",

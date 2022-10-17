@@ -21,6 +21,9 @@ export interface TariffsTableCellIndexProps {
  * @title Параметр
  */
 export type TariffsTableRowHeader = HeadingProps & {
+  /**
+   * @default { "format": "webp", "size": { "width": 24, "height": 24 } }
+   */
   icon?: Picture;
 };
 
@@ -34,6 +37,7 @@ export type Data = {
 
 /**
  * @title Изображение
+ * @default { "image": { "format": "webp", "size": { "width": 24, "height": 24 } } }
  */
 export type ImageCellDef = ImageContent & {
   /**
