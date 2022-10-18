@@ -1,6 +1,6 @@
 import { useLink } from '../../hooks/useLink';
 import type { ContentPageDef } from '../../types';
-import { isURL } from '../../utils/url';
+import { assertUnreachable } from '../../utils/assertUnreachable';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { renderGroupTab } from './renderGroupTab';
 import { renderLinkTab } from './renderLinkTab';
@@ -16,16 +16,27 @@ export interface RenderTabProps {
 
 export const renderTab =
   ({ onClick, currentTab, showCounter, page, context }: RenderTabProps) =>
+  // Linter doesn't understand that switch processes all cases
+  // eslint-disable-next-line consistent-return
   (tab: Tab, i: number) => {
     const { useRouter, handlerDecorator } = context;
     const router = useRouter();
 
-    if (isURL(tab?.ref)) {
-      return renderLinkTab({
-        ...useLink({ router, handlerDecorator }, { href: tab.ref, text: tab.title }),
-        i,
-      });
+    const type = tab.type;
+
+    if (!(type === 'group' || type === 'link')) {
+      return null;
     }
 
-    return renderGroupTab({ onClick, currentTab, showCounter, page, context })(tab, i);
+    switch (type) {
+      case 'group':
+        return renderGroupTab({ onClick, currentTab, showCounter, page, context })(tab, i);
+      case 'link':
+        return renderLinkTab({
+          ...useLink({ router, handlerDecorator }, tab),
+          i,
+        });
+      default:
+        assertUnreachable(type);
+    }
   };

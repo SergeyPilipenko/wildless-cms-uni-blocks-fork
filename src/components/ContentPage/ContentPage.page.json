@@ -555,39 +555,6 @@
       }
     },
     {
-      "type": "NavigatorTabs",
-      "style": ["col-span-12"],
-      "content": {
-        "navigatorTabs": [
-          {
-            "text": "Калькулятор",
-            "href": "#calculator"
-          },
-          {
-            "text": "Преимущества",
-            "href": "#advantages"
-          },
-          {
-            "text": "Как оформить",
-            "href": "#howToApply"
-          },
-          {
-            "text": "Тарифы",
-            "href": "#tariffs"
-          },
-          {
-            "text": "Документы",
-            "href": "#documents"
-          },
-          {
-            "text": "Урожай",
-            "href": "https://rshb.ru/",
-            "target": "_blank"
-          }
-        ]
-      }
-    },
-    {
       "type": "ProductTile",
       "style": ["col-span-6"],
       "content": {

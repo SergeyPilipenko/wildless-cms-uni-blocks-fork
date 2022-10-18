@@ -8,9 +8,9 @@ export default {
         context={context}
         className="col-span-12"
         tabs={[
-          { ref: 'tab1', title: 'Вкладка 1' },
-          { ref: 'tab2', title: 'Вкладка 2' },
-          { ref: 'https://google.com', title: 'Вкладка 3' },
+          { type: 'group', ref: 'tab1', title: 'Вкладка 1' },
+          { type: 'group', ref: 'tab2', title: 'Вкладка 2' },
+          { type: 'link', href: 'https://google.com', text: 'Вкладка 3' },
         ]}
       />
     </div>

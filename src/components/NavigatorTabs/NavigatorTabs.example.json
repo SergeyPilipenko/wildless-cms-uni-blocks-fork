@@ -1,7 +1,0 @@
-{
-  "navigatorTabs": [
-    { "text": "Таб 1", "href": "", "target": "_self" },
-    { "text": "Таб 2", "href": "", "target": "_self" },
-    { "text": "Таб 3", "href": "", "target": "_self" }
-  ]
-}

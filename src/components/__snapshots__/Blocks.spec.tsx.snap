@@ -388,12 +388,6 @@ exports[`Blocks GracePeriod should render block "GracePeriod" without content 1`
 </section>
 `;
 
-exports[`Blocks GroupBlock should render block "GroupBlock" without content 1`] = `
-<section
-  class="box-border "
-/>
-`;
-
 exports[`Blocks Header should render block "Header" without content 1`] = `
 <header
   class="pt-6 pb-5 px-20 bg-white "
@@ -618,12 +612,6 @@ exports[`Blocks Navigation should render block "Navigation" without content 1`] 
     class="text-xl font-medium m-0"
   />
 </section>
-`;
-
-exports[`Blocks NavigatorTabs should render block "NavigatorTabs" without content 1`] = `
-<section
-  class="sticky top-0 z-20 box-border flex gap-x-1 h-14 "
-/>
 `;
 
 exports[`Blocks OtherProducts should render block "OtherProducts" without content 1`] = `

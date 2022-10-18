@@ -2,14 +2,17 @@
   "showCounter": true,
   "tabs": [
     {
+      "type": "group",
       "ref": "tab1",
       "title": "Вкладка 1"
     },
     {
+      "type": "group",
       "ref": "tab2",
       "title": "Вкладка 2"
     },
     {
+      "type": "group",
       "ref": "tab3",
       "title": "Вкладка 3"
     }

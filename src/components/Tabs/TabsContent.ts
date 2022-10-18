@@ -1,19 +1,23 @@
-export type TabType = 'group' | 'link';
+import type { LinkProps } from '../../model/LinkProps';
+
+export interface GroupTab {
+  /** @default group */
+  type: 'group';
+  /** @title Тег */
+  ref?: string;
+  /** @title Название */
+  title?: string;
+}
+
+export type LinkTab = LinkProps & {
+  /** @default link */
+  type: 'link';
+};
 
 /**
  *  @title Таб
  */
-export interface Tab {
-  /** @title Тег или ссылка */
-  ref?: string;
-  /**
-   * @title Тип
-   * @enumNames ['Группирующий', 'Ссылочный']
-   */
-  type?: TabType;
-  /** @title Название */
-  title?: string;
-}
+export type Tab = GroupTab | LinkTab;
 
 /**
  * @title Вкладки
