@@ -20,7 +20,7 @@ export const ProductTile = JSX<ProductTileProps>(
     headlineVersion = 'S',
     description,
     additionalDescription,
-    benefits,
+    benefits = [],
     buttons,
     image,
     version = 'primary',
@@ -29,32 +29,28 @@ export const ProductTile = JSX<ProductTileProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`bg-white overflow-hidden text-primary-text font-sans p-9 box-border min-h-[364px] relative justify-between grid ${className} ${
+        className={`overflow-hidden font-sans p-9 box-border relative justify-between grid ${className} ${
           VersionStyleMap[version]
-        } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
+        } ${getTileRightPadding(className)} ${getTileMinHeight(className)}`}
         {...rest}
       >
-        <div className="z-[1]">
-          <Headline
-            context={context}
-            className="!p-0"
-            as="h2"
-            title={title}
-            description={description}
-            headlineVersion={headlineVersion}
-            bgColorHeadline={version}
-            align="left"
-          />
-          {renderBenefits(benefits || [], version)}
-          {additionalDescription
-            ? renderAdditionalDescription(additionalDescription, version)
-            : null}
-        </div>
+        <Headline
+          context={context}
+          className={`!p-0 z-10 ${title || description ? 'mb-3.5' : ''}`}
+          as="h2"
+          title={title}
+          description={description}
+          headlineVersion={headlineVersion}
+          bgColorHeadline={version}
+          align="left"
+        />
+        {renderBenefits(benefits, version)}
+        {additionalDescription ? renderAdditionalDescription(additionalDescription, version) : null}
         {buttons?.length ? (
           <ButtonSection
             context={context}
             buttons={buttons}
-            className="flex self-end mt-5 gap-4 z-[1] text-l"
+            className="flex self-end mt-5 gap-4 z-10 text-l"
           />
         ) : null}
         {image?.src ? <Img className="absolute right-0 bottom-0" image={image} /> : null}
@@ -63,40 +59,37 @@ export const ProductTile = JSX<ProductTileProps>(
   },
 );
 
+// picture width = 242px. Text can overlay picture 20px deep. Outer paddings_x = 36px. 242-36-20 = 186px
+const BENEFITS_WIDTH = 'max-w-[calc(100%-186px)]';
+
 function renderBenefits(benefits: TextBenefit[], version: BlockVersion) {
   return (
-    <div className="flex mt-3.5">
-      {benefits.length ? (
-        <div className="mr-6 gap-2.5 text-h6">{benefits.map(renderBenefitLabel)}</div>
-      ) : null}
-      {benefits.length ? (
-        <div className="pt-1 text-m">
-          {benefits.map((_, i) => renderBenefitDescription(_, i, version))}
-        </div>
-      ) : null}
+    <div
+      className={`z-10 grid grid-cols-[max-content_1fr] auto-rows-auto gap-x-6 gap-y-2.5 items-baseline ${BENEFITS_WIDTH}`}
+    >
+      {benefits.length ? benefits.map(renderBenefit(version)) : null}
     </div>
   );
 }
 
-function renderBenefitLabel(benefit: TextBenefit, i: number) {
-  return (
-    <div key={String(i)} className={`${i ? 'mt-2.5' : ''}`}>
-      {benefit.label}
-    </div>
-  );
-}
-
-function renderBenefitDescription(benefit: TextBenefit, i: number, version = 'primary') {
+function renderBenefit(version: BlockVersion = 'primary') {
   const labelStyleMap: Record<BlockVersion, string> = {
     primary: 'text-secondary-text',
     secondary: 'text-white',
   };
 
-  return (
-    <div key={String(i)} className={`text-m-light ${i ? 'mt-4' : ''} ${labelStyleMap[version]}`}>
-      {benefit.description}
-    </div>
-  );
+  return function renderVersionedBenefit(benefit: TextBenefit, i) {
+    const { label = '', description = '' } = benefit;
+
+    return [
+      <div key={`label-${i}`} className="text-h6">
+        {label}
+      </div>,
+      <div key={`desc-${i}`} className={`text-m-light ${labelStyleMap[version]}`}>
+        {description}
+      </div>,
+    ];
+  };
 }
 
 function renderAdditionalDescription(additionalDescription: string, version = 'primary') {

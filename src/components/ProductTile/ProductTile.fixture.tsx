@@ -1,32 +1,40 @@
 import { context } from '../../react/setup-fixture';
-
 import type { Picture } from '../../model/Picture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { ProductTile } from './ProductTile';
 import type { ProductTileContent } from './ProductTileContent';
 
+const imageSize = {
+  height: 242,
+  width: 242,
+};
+
 const cardWithMoney: Picture = {
   src: 'card-with-diamond.png',
   alt: 'Кредиты в РСХБ',
   format: 'webp',
+  size: imageSize,
 };
 
 const letterWithMoney: Picture = {
   src: 'letter-with-money.png',
   alt: 'Пенсионный кредит в РСХБ',
   format: 'webp',
+  size: imageSize,
 };
 
 const letterWithPhone: Picture = {
   src: 'letter-with-phone.png',
   alt: 'Пенсионный кредит в РСХБ',
   format: 'webp',
+  size: imageSize,
 };
 
 const building: Picture = {
   src: 'building.png',
   alt: 'Кредит под залог недвижимости в РСХБ',
   format: 'webp',
+  size: imageSize,
 };
 
 const benefits = [
@@ -48,6 +56,21 @@ const benefits2 = [
   {
     label: '1 год',
     description: 'срок программы',
+  },
+];
+
+const multilineBenefits = [
+  {
+    label: 'Широкий',
+    description: 'выбор платёжных систем',
+  },
+  {
+    label: 'Специальные',
+    description: 'условия по снятию наличных условия по снятию наличных',
+  },
+  {
+    label: '0,5 балла',
+    description: '«Урожай» за 100 рублей «Урожай» за 100 рублей',
   },
 ];
 
@@ -156,6 +179,17 @@ export default {
         benefits={benefits2}
         buttons={buttons3}
         image={letterWithPhone}
+      />
+    </div>
+  ),
+  'stretching with long description': (
+    <div className="container grid grid-cols-12">
+      <ProductTile
+        context={context}
+        className="col-span-6"
+        {...PRODUCT_TILE}
+        benefits={multilineBenefits}
+        title="Многострочные преимущества"
       />
     </div>
   ),

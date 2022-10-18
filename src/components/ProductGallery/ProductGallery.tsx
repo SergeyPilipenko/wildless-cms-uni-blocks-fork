@@ -69,7 +69,7 @@ function renderProductBlock(block: ProductBlockInnerContent, i: number, context)
     >
       <div className="flex grow">
         <ProductBlockInner
-          className={`pl-[50px] z-[1] ${additionalClass}`}
+          className={`pl-[50px] z-10 ${additionalClass}`}
           context={context}
           textBlockClassName="mb-[154px]"
           {...block}
