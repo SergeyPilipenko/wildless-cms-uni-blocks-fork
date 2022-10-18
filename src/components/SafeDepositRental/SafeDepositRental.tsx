@@ -16,6 +16,10 @@ const DATA = {
       city: 'Москва',
       offices: [
         {
+          office: 'выберите отделение',
+          rate: null,
+        },
+        {
           office: 'МоскваОфис1',
           rate: 1,
         },

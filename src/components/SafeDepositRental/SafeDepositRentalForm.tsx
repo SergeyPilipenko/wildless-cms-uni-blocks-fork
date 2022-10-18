@@ -139,7 +139,7 @@ export const renderRentalPeriod = (days, setDays) => {
 
 // TODO: В качестве компонента не годится
 const RadioButtons = JSX<any>(() => {
-  const [selected, setSelected] = useState('option1');
+  const [selected, setSelected] = useState('option2');
   const onChange = (_: React.ChangeEvent<HTMLInputElement>) => setSelected(_.target.value);
 
   return (
