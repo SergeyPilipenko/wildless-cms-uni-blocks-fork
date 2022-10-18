@@ -101,6 +101,14 @@ module.exports = {
             fontWeight: '400',
           },
         ],
+        'h5-light': [
+          '1.5rem',
+          {
+            // 24px 30px
+            lineHeight: '1.875rem',
+            fontWeight: '300',
+          },
+        ],
         h6: [
           '1.25rem',
           {

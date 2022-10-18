@@ -1,6 +1,12 @@
 import type { ListContent } from './ListContent';
 
 /**
+ * @title Размер пунктов списка
+ * @enumNames ["Средний", "Большой"]
+ */
+export type ListItemSize = 'M' | 'L';
+
+/**
  * @title Версия списка
  * @enumNames ["Основной", "Второстепенный", "Серый"]
  */
@@ -16,5 +22,6 @@ export interface ListProps extends ListContent {
   itemClassName?: string;
   /** @title Буллиты */
   isDotted?: boolean;
+  listItemSize?: ListItemSize;
   version?: ListItemVersion;
 }

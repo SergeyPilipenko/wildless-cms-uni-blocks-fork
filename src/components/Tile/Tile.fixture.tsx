@@ -29,8 +29,9 @@ const image4: Picture = {
 
 export const TILE: TileContent = {
   title: 'Кредиты',
-  headingType: 'h3',
-  isDotted: false,
+  headingType: 'h4',
+  isDotted: true,
+  listItemSize: 'L',
   items: ['До 3 млн ₽', 'до 5 лет'],
   buttons: [
     {
@@ -44,7 +45,7 @@ export const TILE: TileContent = {
 
 export const TILE_PREMIUM: TileContent = {
   title: 'Премиальные продукты',
-  headingType: 'h3',
+  headingType: 'h4',
   description:
     'Выделенные зоны обслуживания и персональный финансовый консультант. Полный спектр премиальных продуктов, подчеркивающих ваш статус',
   buttons: [
@@ -71,7 +72,7 @@ export default {
         version="secondary"
         className="col-span-4"
         title="Ипотека"
-        headingType="h3"
+        headingType="h4"
         items={[
           'Качественные фермерские продукты напрямую от производителей',
           'Самая большая база сельских туров по России',
@@ -95,7 +96,7 @@ export default {
         context={context}
         className="col-span-6"
         title="Банковские пластиковые карты"
-        headingType="h3"
+        headingType="h4"
         items={['Счета в разных валютах', 'Бесплатное обслуживание', 'Кэшбэк до 15% от покупок']}
         buttons={[
           {
@@ -120,7 +121,7 @@ export default {
         context={context}
         className="col-span-12 pr-28"
         title="Экосистема «СВОЕ», созданная для людей"
-        headingType="h3"
+        headingType="h4"
         items={[
           'Качественные фермерские продукты напрямую от производителей',
           'Самая большая база сельских туров по России',

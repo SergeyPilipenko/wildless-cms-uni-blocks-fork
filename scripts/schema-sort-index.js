@@ -25,6 +25,7 @@ export default [
   'isScroll',
   'orientation',
   'isDotted',
+  'listItemSize',
   'items',
   'socialMedia',
   'steps',
