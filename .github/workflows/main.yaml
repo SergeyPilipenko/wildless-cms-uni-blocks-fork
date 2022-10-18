@@ -1,0 +1,33 @@
+name: main
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - e2e-update-snapshots
+    types:
+      - completed
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required" '
+
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: 'echo "No lighthouse required" '
+
+  lighthouse-mobile:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: 'echo "No lighthouse-mobile required" '
