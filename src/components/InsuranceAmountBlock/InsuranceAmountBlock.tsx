@@ -18,9 +18,9 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
         className={`box-border py-[50px] overflow-hidden relative font-sans w-100 bg-white ${className}`}
         {...rest}
       >
-        {title ? <Heading className="text-center" title={title} headingType="h3" /> : null}
+        {title ? <Heading className="text-center mb-8" title={title} headingType="h3" /> : null}
         {insuranceTabs?.length > 1 ? (
-          <div className="p-1.5 bg-secondary-light w-fit m-auto rounded-md mt-[34px]">
+          <div className="p-1.5 bg-secondary-light w-fit mx-auto mb-7 rounded-md">
             {insuranceTabs.map((item, i) =>
               renderNavButton({
                 title: item?.title,

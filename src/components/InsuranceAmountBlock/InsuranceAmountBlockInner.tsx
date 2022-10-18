@@ -45,7 +45,7 @@ export const InsuranceAmountBlockInner = JSX<InsuranceAmountBlockInnerProps>(
 
     return (
       <section role="listitem" className={`min-w-full text-center ${className}`}>
-        <div className="relative mt-7 overflow-hidden">
+        <div className="relative overflow-hidden">
           {galleryLength
             ? renderGallery({
                 tabsShift,
@@ -82,13 +82,14 @@ function renderGallery({
   setActiveSlideIndex,
 }: InsuranceGalleryProps) {
   const tabsShiftWidth = isLastShift ? tabsShift * 460 - 240 : tabsShift * 460;
+  const cardsAlignStyle = cards.length > 2 ? 'justify-start' : 'justify-center';
 
   return (
     <div
       style={{ transform: `translateX(-${tabsShiftWidth}px)` }}
       className="duration-1000 px-[50px]"
     >
-      <div className="w-full flex flex-nowrap gap-3.5 pb-[38px]">
+      <div className={`w-full flex flex-nowrap gap-3.5 pb-12 ${cardsAlignStyle}`}>
         {cards.map((slide, i) =>
           renderSlide({
             slide,
@@ -118,10 +119,10 @@ function renderSlide({ slide, i, activeSlideIndex, onClick }: InsuranceSlideProp
     >
       {slide?.icon ? (
         <Img
-          className="p-3 rounded-full bg-secondary-light mr-[30px]"
+          className="p-6 rounded-full bg-secondary-light mr-[30px]"
           image={slide.icon}
-          width="70"
-          height="70"
+          width="108"
+          height="108"
         />
       ) : null}
 

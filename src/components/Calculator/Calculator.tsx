@@ -109,7 +109,7 @@ function renderTabs({ tabsShift, tabsNav, activeSlideIndex, setActiveSlideIndex 
     <div>
       <div
         style={{ transform: `translateX(-${tabsShift * 388}px)` }}
-        className="flex flex-col justify-end items-center h-[126px] pt-[38px] box-border duration-1000"
+        className="flex flex-col justify-end items-center h-[126px] pt-9 box-border duration-1000"
       >
         <div className="w-full flex flex-nowrap items-end gap-2">
           {tabsNav.map((tab, i) =>
