@@ -220,7 +220,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
         />
       </svg>
       <span
-        class="text-black font-medium ml-2.5"
+        class="text-black font-light ml-2.5"
       >
         Россельхозбанк
       </span>
@@ -429,7 +429,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
           />
         </svg>
         <span
-          class="text-black font-medium ml-2.5"
+          class="text-black font-light ml-2.5"
         >
           Россельхозбанк
         </span>
@@ -478,7 +478,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
               Иконка Лупа
             </desc>
             <use
-              class="text-black group-hover:text-primary-main pointer-events-none"
+              class="text-black group-hover:text-primary-hover group-hover:invert-0 pointer-events-none"
               href="icons/LoupeIcon.svg#icon"
               xlink:href="icons/LoupeIcon.svg#icon"
             />
@@ -492,7 +492,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="h-full bg-main-divider rounded-full pointer-events-none"
+            class="h-full bg-main-divider/20 rounded-full pointer-events-none"
           >
             <title>
               Иконка Сетка (белая)
@@ -501,7 +501,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
               Иконка Сетка (белая)
             </desc>
             <use
-              class="text-black group-hover:text-primary-main"
+              class="text-black group-hover:text-primary-hover group-hover:invert-0"
               href="icons/GridIcon.svg#icon"
               xlink:href="icons/GridIcon.svg#icon"
             />

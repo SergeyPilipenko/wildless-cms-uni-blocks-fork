@@ -164,7 +164,7 @@
   },
   "size-limit": [
     {
-      "limit": "7 kB",
+      "limit": "10 kB",
       "path": "lib/common.css"
     },
     {

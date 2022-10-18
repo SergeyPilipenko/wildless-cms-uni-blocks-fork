@@ -58,7 +58,7 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
           <Img
             image={{ icon: 'LoupeIcon', iconVersion: LINKS_ICON_VERSION_MAP[bgColor] }}
             className="h-full pointer-events-none"
-            imageClassName="group-hover:text-primary-main pointer-events-none"
+            imageClassName="group-hover:text-primary-hover group-hover:invert-0 pointer-events-none"
             asSVG
           />
         </HeaderSecondaryMenuButton>
@@ -68,8 +68,8 @@ export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
         >
           <Img
             image={{ icon: 'GridIcon', iconVersion: LINKS_ICON_VERSION_MAP[bgColor] }}
-            className="h-full bg-main-divider rounded-full pointer-events-none"
-            imageClassName="group-hover:text-primary-main"
+            className="h-full bg-main-divider/20 rounded-full pointer-events-none"
+            imageClassName="group-hover:text-primary-hover group-hover:invert-0"
             asSVG
           />
         </HeaderSecondaryMenuButton>

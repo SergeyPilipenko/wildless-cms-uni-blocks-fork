@@ -36,8 +36,9 @@ export const Header = JSX<HeaderProps>(
 
     const mergedItems = mergeTopItems(sitemap.topItems, topItems);
     const [firstPortal] = mergedItems;
-    // Если по слагу невозможно понять к какому подпорталу этот слаг относиться, то выбираем первый подпортал.
-    const activeTopItem = mergedItems.find(isTopItemActive(router)) || firstPortal;
+    const activeTopItem = showSubMenu
+      ? mergedItems.find(isTopItemActive(router)) || firstPortal // Если по слагу невозможно понять к какому подпорталу этот слаг относиться, то выбираем первый подпортал.
+      : null;
     const topMenu = mergedItems.map((_, i) => (
       <TopItem
         key={String(i)}
