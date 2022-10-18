@@ -27,6 +27,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
   }) => {
     const textColorClass = version === 'primary' ? 'text-primary-text' : '';
     const containerStyle = version === 'secondary' ? 'p-3.5 min-w-[120px]' : 'min-w-[92px]';
+    const buttonsWithClass = buttons?.map((_) => ({ ..._, className: 'min-w-[168px]' }));
 
     return (
       <BlockWrapper
@@ -53,16 +54,16 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
           }
           buttons={
             buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex mt-8 gap-4" />
+              <ButtonSection context={context} buttons={buttonsWithClass} className="flex gap-4" />
             ) : null
           }
         >
           <div className="flex flex-1 items-center">
-            {qr?.src && (
+            {qr?.src ? (
               <div className={`flex justify-center mr-5 bg-white rounded-md ${containerStyle}`}>
-                <Img image={qr} />
+                <Img className="w-fit" image={qr} />
               </div>
-            )}
+            ) : null}
             {renderList(version, items)}
           </div>
         </BaseTile>

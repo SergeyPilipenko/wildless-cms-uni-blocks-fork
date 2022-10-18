@@ -12,7 +12,7 @@ export const BaseTile = JSX<BaseTileProps>(
         <div className="flex grow w-full justify-between">
           <div className="flex flex-col w-full">
             <div>{children}</div>
-            {buttons ? <div className="mt-9">{buttons}</div> : null}
+            {buttons ? <div className="mt-8">{buttons}</div> : null}
           </div>
           {image}
         </div>

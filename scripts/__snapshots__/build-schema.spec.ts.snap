@@ -2328,6 +2328,7 @@ Object {
         },
         "qr": Object {
           "$ref": "#/definitions/Picture",
+          "title": "QR-код",
         },
         "title": Object {
           "title": "Заголовок",

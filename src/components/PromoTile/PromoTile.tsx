@@ -35,17 +35,15 @@ export const PromoTile = JSX<PromoTileProps>(
           context={context}
           title={
             title ? (
-              <div>
-                <Headline
-                  context={context}
-                  title={title}
-                  className={`!p-0 max-w-[600px]`}
-                  headlineVersion={getTileHeadingType(className)}
-                  bgColorHeadline={version}
-                  align="left"
-                  as="h2"
-                />
-              </div>
+              <Headline
+                context={context}
+                title={title}
+                className={`!p-0 max-w-[600px]`}
+                headlineVersion={getTileHeadingType(className)}
+                bgColorHeadline={version}
+                align="left"
+                as="h2"
+              />
             ) : null
           }
           buttons={

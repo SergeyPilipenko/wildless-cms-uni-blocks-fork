@@ -15,6 +15,7 @@ export type MobileAppTileContent = HeadlineCommonProps &
   ListContent &
   ImageContent & {
     // TODO: description для мобильной версии
+    /** @title QR-код */
     qr?: Picture;
     /** @title Ссылка */
     href?: string; // TODO: для мобильной версии
