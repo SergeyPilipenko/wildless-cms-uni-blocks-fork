@@ -767,9 +767,21 @@ Object {
       "properties": Object {
         "icon": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "width": 24,
+            },
+          },
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "width": 100,
+            },
+          },
         },
         "link": Object {
           "$ref": "#/definitions/LinkProps",

@@ -1,6 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
-import type { Picture } from '../../model/Picture';
 import type { ListOrientation } from '../../model/ListOrientation';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @hidden
@@ -28,7 +28,13 @@ export interface ColumnHeader {
   title?: string;
   /** @title Подзаголовок */
   subtitle?: string;
+  /**
+   * @default { "format": "webp", "size": { "width": 24 } }
+   */
   icon?: Picture;
+  /**
+   * @default { "format": "webp", "size": { "width": 100 } }
+   */
   image?: Picture;
   link?: LinkProps;
 }
@@ -64,6 +70,7 @@ export interface TableColumnData {
 export interface TableColumnHeader {
   /** @title Заголовок */
   title?: string;
+
   icon?: Picture;
 }
 
