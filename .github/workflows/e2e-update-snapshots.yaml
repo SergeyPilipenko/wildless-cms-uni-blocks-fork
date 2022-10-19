@@ -1,3 +1,4 @@
+#
 name: e2e-update-snapshots
 
 on: [workflow_dispatch]
