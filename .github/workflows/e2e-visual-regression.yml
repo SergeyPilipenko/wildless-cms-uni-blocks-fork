@@ -3,11 +3,6 @@ name: e2e-visual-regression
 on:
   push:
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - e2e-update-snapshots
-    types:
-      - completed
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
