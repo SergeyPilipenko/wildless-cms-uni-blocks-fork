@@ -1,5 +1,5 @@
-export const roundTo = (value: number, precision = 2) => {
-  const factor = Math.pow(10, precision);
+export const roundTo = (value: number | string, precision = 2) => {
+  const factor = 10 ** precision;
 
   return Math.round(parseFloat(String(value)) * factor) / factor;
 };

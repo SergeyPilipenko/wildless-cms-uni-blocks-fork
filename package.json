@@ -6,6 +6,9 @@
   "author": "ЦК",
   "description": "Инструмент для просмотра UI Kit",
   "type": "module",
+  "bin": {
+    "wcms-migrate": "./bin/migrate.js"
+  },
   "main": "./dist/index.js",
   "types": "./lib/index.d.ts",
   "engines": {

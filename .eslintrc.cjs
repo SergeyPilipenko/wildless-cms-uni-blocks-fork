@@ -28,6 +28,7 @@ module.exports = {
   ],
   env: {
     jest: true,
+    node: true,
   },
   rules: {
     'react-hooks/rules-of-hooks': 'error',

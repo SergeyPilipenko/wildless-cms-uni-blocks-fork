@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { GalleryCardInner } from './GalleryCardInner';
-import { Headline } from '../Headline/Headline';
-import type { GalleryCardProps } from './GalleryContent';
-import type { GalleryInnerProps } from './GalleryInner';
+import { VersionStyleMap } from '../../model/BlockVersion';
 import type { GalleryVersion } from '../../model/GalleryVersion';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
+import { Headline } from '../Headline/Headline';
 import { cardStyleMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
-import { VersionStyleMap } from '../../model/BlockVersion';
+import { GalleryCardInner } from './GalleryCardInner';
+import type { GalleryCardProps } from './GalleryContent';
+import type { GalleryInnerProps } from './GalleryInner';
 
 export interface GalleryContainerProps extends Omit<GalleryInnerProps, 'className'> {
   activeCardIndex: number;

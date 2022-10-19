@@ -7,7 +7,7 @@ export function normalizePage(
   contentPage: ContentPageDef | undefined | null,
 ): ContentPageDef | undefined {
   if (!contentPage) {
-    return;
+    return undefined;
   }
 
   const { blocks, slots } = contentPage;

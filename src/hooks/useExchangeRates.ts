@@ -1,5 +1,7 @@
 import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
 import type { ExchangeCurrencyItem } from '../components/ExchangeRateTile/ExchangeCurrencyCalculator';
+import { fetchJSON } from '../utils/fetchJSON';
+import { roundTo } from '../utils/roundTo';
 
 interface RatesData {
   code: string;
@@ -15,22 +17,11 @@ export function useExchangeRates(): ExchangeCurrencyItem[] {
   return result.length ? getCurrencyListByRate(result as RatesData[]) : result;
 }
 
-async function fetchExchangeRates(): Promise<any | undefined> {
-  try {
-    const response = await fetch(EXCHANGE_RATES_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(EXCHANGE_RATES_BODY),
-    });
-
-    return await response.json();
-  } catch (err) {
-    console.error(err);
-
-    return Promise.resolve();
-  }
+function fetchExchangeRates(): Promise<any | undefined> {
+  return fetchJSON(EXCHANGE_RATES_URL, {
+    method: 'POST',
+    body: JSON.stringify(EXCHANGE_RATES_BODY),
+  });
 }
 
 const EXCHANGE_RATES_URL =
@@ -76,12 +67,10 @@ const getCurrencyListByRate = (currencyRates: RatesData[]) =>
     if (!result.some((i) => i.code === currencyCode)) {
       result.push({
         code: currencyCode,
-        buy: roundRate(Number(_.rate_buy)),
-        sell: roundRate(Number(_.rate_sell)),
+        buy: roundTo(Number(_.rate_buy), 3),
+        sell: roundTo(Number(_.rate_sell), 3),
       });
     }
 
     return result;
   }, []);
-
-const roundRate = (value) => Math.round(value * 1000) / 1000;
