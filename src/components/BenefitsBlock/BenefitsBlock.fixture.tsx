@@ -61,6 +61,7 @@ export default {
             icon: image,
           },
         ]}
+        benefitsBlockVersion="primary"
       />
     </div>
   ),
@@ -104,10 +105,10 @@ export default {
             icon: { icon: 'GlobalIcon' },
           },
         ]}
+        benefitsBlockVersion="primary"
       />
     </div>
   ),
-
   list: (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
@@ -152,6 +153,98 @@ export default {
             icon: { icon: 'ActualBalanceIcon' },
           },
         ]}
+      />
+    </div>
+  ),
+  'list-green': (
+    <div className="container grid grid-cols-12">
+      <BenefitsBlock
+        context={context}
+        className="col-span-12"
+        title="Преимущества кредита"
+        benefitList={[
+          {
+            label: 'Без комиссии',
+            icon: { icon: 'ClockIcon' },
+            description: {
+              bullets: true,
+              items: itemsList,
+              benefitType: 'list',
+            },
+          },
+          {
+            label: 'Оформление по паспорту',
+            description: {
+              bullets: true,
+              items: itemsList,
+              benefitType: 'list',
+            },
+            icon: { icon: 'SignDocsIcon' },
+          },
+          {
+            label: 'Без залога и поручительства',
+            description: {
+              bullets: true,
+              items: itemsList,
+              benefitType: 'list',
+            },
+            icon: { icon: 'ComfortableCompIcon' },
+          },
+          {
+            label: 'Деньги за 3 дня',
+            description: {
+              bullets: true,
+              items: itemsList,
+              benefitType: 'list',
+            },
+            icon: { icon: 'ActualBalanceIcon' },
+          },
+        ]}
+        benefitsBlockVersion="secondary"
+      />
+    </div>
+  ),
+  'desc-icon-green': (
+    <div className="container grid grid-cols-12">
+      <BenefitsBlock
+        context={context}
+        className="col-span-12"
+        title="Преимущества кредита"
+        benefitList={[
+          {
+            label: 'Без комиссии',
+            description: {
+              name: 'Комиссия за выдачу ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'MoneyIcon' },
+          },
+          {
+            label: 'Оформление',
+            description: {
+              name: 'Обеспечение ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'PersonalCardIcon' },
+          },
+          {
+            label: 'Без залога ',
+            description: {
+              name: 'Единовременное перечисление ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'CalendarTickIcon' },
+          },
+          {
+            label: 'Деньги за 3 дня',
+            description: {
+              name: 'Рассмотрение  ',
+              benefitType: 'text',
+            },
+            icon: { icon: 'GlobalIcon' },
+          },
+        ]}
+        benefitsBlockVersion="secondary"
       />
     </div>
   ),

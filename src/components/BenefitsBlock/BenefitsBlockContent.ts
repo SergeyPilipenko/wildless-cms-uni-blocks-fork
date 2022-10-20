@@ -37,13 +37,19 @@ export type DescriptionDef = EmptyOption | TextBenefitDef | ListBenefitDef;
 /**
  * @title Преимущество
  */
-export interface BenefitItemProps {
+export interface BenefitBlockItemProps {
   /** @title Название */
   label?: string;
   /** @title Описание */
   description?: DescriptionDef;
   icon?: Picture;
 }
+
+/**
+ * @title Цвет блока
+ * @enumNames ["Основная", "Второстепенная"]
+ */
+export type BenefitsBlockVersion = 'primary' | 'secondary';
 
 /**
  * @title Блок преимущества
@@ -53,5 +59,7 @@ export type BenefitsBlockContent = TitleProps & {
    * @title Список преимуществ
    * @maxItems 6
    */
-  benefitList?: BenefitItemProps[];
+  benefitList?: BenefitBlockItemProps[];
+  /** @default primary */
+  benefitsBlockVersion?: BenefitsBlockVersion;
 };

@@ -114,6 +114,23 @@ Object {
       },
       "type": "object",
     },
+    "BenefitBlockItemProps": Object {
+      "properties": Object {
+        "description": Object {
+          "$ref": "#/definitions/DescriptionDef",
+          "title": "Описание",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "label": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Преимущество",
+      "type": "object",
+    },
     "BenefitItemCommonProps": Object {
       "properties": Object {
         "benefitsVersion": Object {
@@ -142,11 +159,15 @@ Object {
       "properties": Object {
         "benefitList": Object {
           "items": Object {
-            "$ref": "#/definitions/BenefitItemProps",
+            "$ref": "#/definitions/BenefitBlockItemProps",
           },
           "maxItems": 6,
           "title": "Список преимуществ",
           "type": "array",
+        },
+        "benefitsBlockVersion": Object {
+          "$ref": "#/definitions/BenefitsBlockVersion",
+          "default": "primary",
         },
         "title": Object {
           "title": "Заголовок",
@@ -155,6 +176,18 @@ Object {
       },
       "title": "Блок преимущества",
       "type": "object",
+    },
+    "BenefitsBlockVersion": Object {
+      "enum": Array [
+        "primary",
+        "secondary",
+      ],
+      "enumNames": Array [
+        "Основная",
+        "Второстепенная",
+      ],
+      "title": "Цвет блока",
+      "type": "string",
     },
     "BenefitsProps": Object {
       "properties": Object {

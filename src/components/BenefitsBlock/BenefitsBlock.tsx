@@ -3,64 +3,114 @@ import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { UniBlockProps } from '../../types';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
-import type { BenefitItemProps, BenefitsBlockContent } from './BenefitsBlockContent';
-import { DescriptionDef, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
+import type { BenefitsBlockContent, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
+import {
+  BenefitBlockItemProps,
+  BenefitsBlockVersion,
+  DescriptionDef,
+} from './BenefitsBlockContent';
+import { Picture } from '../../model/Picture';
 
 export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
 
+const benefitsBlockStyleMap = {
+  primary: 'bg-white',
+  secondary: 'bg-primary-main',
+};
+
+const benefitsTextStyleMap = {
+  primary: '',
+  secondary: 'text-white',
+};
+
+const benefitsDescriptionStyleMap = {
+  primary: 'text-secondary-text',
+  secondary: 'text-white opacity-80',
+};
+
+const benefitsIconStyleMap = {
+  primary: 'bg-main-divider text-primary-main',
+  secondary: 'bg-white/30 text-black',
+};
+
 export const BenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ className = '', title, benefitList, ...rest }) => {
+  ({ className = '', title, benefitList, benefitsBlockVersion = 'primary', ...rest }) => {
     return (
       <BlockWrapper
-        className={`font-sans text-primary-text bg-white p-12 flex flex-col items-center ${className}`}
+        className={`font-sans text-primary-text p-12 flex flex-col items-center ${className} ${benefitsBlockStyleMap[benefitsBlockVersion]}`}
         {...rest}
       >
         {title ? (
-          <Heading headingType="h3" as="h2" className="max-w-[47rem] text-center" title={title} />
+          <Heading
+            headingType="h3"
+            as="h2"
+            className={`max-w-[47rem] text-center ${benefitsTextStyleMap[benefitsBlockVersion]}`}
+            title={title}
+          />
         ) : null}
-        {benefitList?.length ? renderBenefits(benefitList) : null}
+        {benefitList?.length ? renderBenefits(benefitList, benefitsBlockVersion) : null}
       </BlockWrapper>
     );
   },
 );
 
-const renderBenefits = (benefits: BenefitItemProps[]) => {
+const renderBenefits = (
+  benefitList: BenefitBlockItemProps[],
+  benefitsBlockVersion: BenefitsBlockVersion,
+) => {
   return (
     <div className="flex flex-wrap w-full justify-center gap-x-20 mt-8">
-      {benefits.map(renderStep)}
+      {benefitList.map(renderStep(benefitsBlockVersion))}
     </div>
   );
 };
 
-const renderStep = (benefit: BenefitItemProps, i: number) => {
-  const description = benefit?.description || undefined;
+const setIconVersion = (benefitIcon: Picture, benefitsBlockVersion: BenefitsBlockVersion) => {
+  if (!benefitIcon.icon) {
+    return benefitIcon;
+  }
+  benefitIcon.iconVersion = benefitsBlockVersion === 'secondary' ? 'white' : 'normal';
 
-  return (
-    <div key={String(i)} className="flex items-center basis-1/2 max-w-[500px] mb-14">
-      {benefit?.icon?.icon ? (
-        <Img
-          className="w-[50px] h-[50px] min-w-[50px] p-3 rounded-full bg-main-divider"
-          image={benefit.icon}
-          asSVG
-        />
-      ) : null}
-      {benefit?.icon?.src ? <Img image={benefit.icon} /> : null}
-      <div className="ml-5">
-        {benefit?.label ? <h3 className="text-h6 m-0">{benefit.label}</h3> : null}
-        {renderDescription(description)}
+  return benefitIcon;
+};
+
+const renderStep =
+  (benefitsBlockVersion: BenefitsBlockVersion) => (benefit: BenefitBlockItemProps, i: number) => {
+    const description = (benefit?.description || undefined) as DescriptionDef;
+
+    return (
+      <div key={String(i)} className="flex items-center basis-1/2 max-w-[500px] mb-14">
+        {benefit?.icon?.icon ? (
+          <Img
+            className={`w-[50px] h-[50px] min-w-[50px] p-3 rounded-full ${benefitsIconStyleMap[benefitsBlockVersion]}`}
+            image={setIconVersion(benefit.icon, benefitsBlockVersion)}
+            asSVG
+          />
+        ) : null}
+        {benefit?.icon?.src ? <Img image={benefit.icon} /> : null}
+        <div className="ml-5">
+          {benefit?.label ? (
+            <h3 className={`text-h6 m-0 ${benefitsTextStyleMap[benefitsBlockVersion]}`}>
+              {benefit.label}
+            </h3>
+          ) : null}
+          {renderDescription(description, benefitsBlockVersion)}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-const renderDescription = (description?: DescriptionDef) => {
+const renderDescription = (
+  description: DescriptionDef,
+  benefitsBlockVersion: BenefitsBlockVersion,
+) => {
   const benefitType = description ? description?.benefitType : null;
   if (!benefitType) {
     return null;
   }
 
   return description ? (
-    <div className="text-l-light text-secondary-text mt-2">
+    <div className={`text-l-light mt-2 ${benefitsDescriptionStyleMap[benefitsBlockVersion]}`}>
       {benefitType === 'list'
         ? renderListBenefit(description as ListBenefitDef)
         : renderTextBenefit(description as TextBenefitDef)}
