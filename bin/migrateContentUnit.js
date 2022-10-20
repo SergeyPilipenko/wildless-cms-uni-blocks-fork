@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'fs/promises';
 
 export function migrateContentUnit(migrationScripts) {
-  const contentProcessor = migrationScripts.reduce(composeMigrationScripts);
+  const contentProcessor = migrationScripts.map((_) => _.default).reduce(composeMigrationScripts);
 
   return async (unitPath) => {
     console.log('Start processing of:', unitPath);
@@ -22,5 +22,5 @@ export function migrateContentUnit(migrationScripts) {
 }
 
 function composeMigrationScripts(scriptA, scriptB) {
-  return (unitPath, content) => scriptB.default(unitPath, scriptA.default(unitPath, content));
+  return (unitPath, content) => scriptB(unitPath, scriptA(unitPath, content));
 }
