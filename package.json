@@ -127,6 +127,7 @@
     "@testing-library/react": "^12.1.5",
     "@types/glob": "^8.0.0",
     "@types/jest": "^28.1.5",
+    "@types/sharp": "^0.31.0",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/experimental-utils": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",

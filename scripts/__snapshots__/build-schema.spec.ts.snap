@@ -1776,6 +1776,33 @@ Object {
       },
       "type": "object",
     },
+    "ImgAlignment": Object {
+      "default": "center",
+      "enum": Array [
+        "northwest",
+        "north",
+        "northeast",
+        "west",
+        "center",
+        "east",
+        "southwest",
+        "south",
+        "southeast",
+      ],
+      "enumNames": Array [
+        "Сверху слева",
+        "Сверху по центру",
+        "Сверху справа",
+        "Посередине слева",
+        "Посередине по центру",
+        "Посередине справа",
+        "Снизу слева",
+        "Снизу по центру",
+        "Снизу справа",
+      ],
+      "title": "Позиционирование",
+      "type": "string",
+    },
     "ImgFormats": Object {
       "enum": Array [
         "jpeg",
@@ -1790,6 +1817,9 @@ Object {
     },
     "ImgSource": Object {
       "properties": Object {
+        "alignment": Object {
+          "$ref": "#/definitions/ImgAlignment",
+        },
         "format": Object {
           "$ref": "#/definitions/ImgFormats",
           "title": "Формат",
@@ -2474,6 +2504,9 @@ Object {
     },
     "Picture": Object {
       "properties": Object {
+        "alignment": Object {
+          "$ref": "#/definitions/ImgAlignment",
+        },
         "alt": Object {
           "title": "Альтернативный текст (alt)",
           "type": "string",

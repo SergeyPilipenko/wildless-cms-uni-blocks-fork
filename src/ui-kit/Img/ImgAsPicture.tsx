@@ -23,13 +23,13 @@ export const ImgAsPicture = JSX<ImageProps<Picture>>(
         {image?.sources?.length
           ? image.sources
               .sort(sourcesComparator)
-              .map(({ src, format, media, size }, index) => (
+              .map(({ src, format, media }, index) => (
                 <source
                   key={`${index}_${src}`}
                   srcSet={src}
                   type={formatToMimeType(format)}
                   media={media ? `(max-width: ${media}px)` : ''}
-                  {...size}
+                  {...image.size}
                 />
               ))
           : null}
@@ -40,6 +40,11 @@ export const ImgAsPicture = JSX<ImageProps<Picture>>(
 );
 
 const renderImg = (image: Picture, imageClassName = '', isMobile = false) => {
+  const style = {
+    width: image.size?.width ? `${image.size?.width}px` : '100%',
+    height: image.size?.height ? `${image.size?.height}px` : '100%',
+  };
+
   const title = image.title || '';
   const alt = image.alt || image.title;
   const imgStyle = isMobile ? 'm-auto' : 'm-0';
@@ -50,6 +55,7 @@ const renderImg = (image: Picture, imageClassName = '', isMobile = false) => {
       className={`${imgStyle} ${imageClassName}`}
       alt={alt}
       title={title}
+      style={style}
       {...image.size}
     />
   );

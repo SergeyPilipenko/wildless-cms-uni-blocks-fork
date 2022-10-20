@@ -1,7 +1,34 @@
 import type { IconName } from '../icons/IconName';
 import type { IconVersion } from './IconVersion';
+import { ImageSize } from './ImageSize';
 
 export type ImgFormats = 'jpeg' | 'jpg' | 'png' | 'gif' | 'webp' | 'heif' | 'avif';
+
+/**
+ * @title Позиционирование
+ * @enumNames [
+ *    "Сверху слева",
+ *    "Сверху по центру",
+ *    "Сверху справа",
+ *    "Посередине слева",
+ *    "Посередине по центру",
+ *    "Посередине справа",
+ *    "Снизу слева",
+ *    "Снизу по центру",
+ *    "Снизу справа"
+ *  ]
+ * @default "center"
+ */
+export type ImgAlignment =
+  | 'northwest'
+  | 'north'
+  | 'northeast'
+  | 'west'
+  | 'center'
+  | 'east'
+  | 'southwest'
+  | 'south'
+  | 'southeast';
 
 export interface Img {
   /** @title Картинка */
@@ -19,6 +46,7 @@ export interface Img {
 export type MediaQuery = 1919 | 1439 | 1279;
 
 export interface ImgSource {
+  alignment?: ImgAlignment;
   /** @title Иконка */
   icon?: IconName;
   iconVersion?: IconVersion;
@@ -30,12 +58,7 @@ export interface ImgSource {
   options?: Record<string, any>;
   media?: MediaQuery;
   /** @title Размер изображения */
-  size?: {
-    /** @title Ширина */
-    width?: number;
-    /** @title Высота */
-    height?: number;
-  };
+  size?: Partial<ImageSize>;
 }
 
 /** @title Изображение */
