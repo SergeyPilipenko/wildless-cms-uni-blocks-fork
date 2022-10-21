@@ -18,7 +18,7 @@ export const InnerTable = JSX<InnerTableProps>(({ context, dataUrl, pdfUrl }) =>
   const currencies = tableData?.map((item) => item.currency ?? '');
 
   return tableData ? (
-    <div className="bg-white z-10 pr-[50px]">
+    <div className="bg-white z-10">
       <InnerTableHeader
         currencies={currencies}
         activeTabIndex={activeTabIndex}

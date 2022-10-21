@@ -13,11 +13,11 @@ export default {
         bonusBenefits={[
           {
             label: 'Более 5000 товаров',
-            icon: { icon: 'WateringCan' },
+            icon: { icon: 'WateringCanIcon' },
           },
           {
             label: '750 авиакомпаний, 1,2 млн отелей, билеты РЖД',
-            icon: { icon: 'AirPlane' },
+            icon: { icon: 'AirPlaneIcon' },
           },
           {
             label: 'Аренда автомобилей',

@@ -6,6 +6,7 @@ import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import { TableInnerButton, TableInnerButtonProps } from '../../ui-kit/InnerTable/InnerTableButton';
+import { TariffsTableInnerEvent } from '../../ui-kit/InnerTable/InnerTableProps';
 import { List } from '../../ui-kit/List/List';
 import type { ListProps } from '../../ui-kit/List/ListProps';
 import type { LabelDescriptionCell, TariffsTableCellIndexProps } from './TariffsTableContent';
@@ -60,8 +61,8 @@ const renderListCellData = ({ isDotted, ...rest }: ListProps) => (
 
 const renderTableCellData = JSX((props: TableInnerButtonProps) => {
   const [showBtn, setShowBtn] = useState(true);
-
-  const tariffInnerTableSubscriber = (event) => {
+  console.log(props);
+  const tariffInnerTableSubscriber = (event: TariffsTableInnerEvent) => {
     const _showBtn = (
       ['rowIdx', 'cellIdx', 'fieldIdx'] as Array<keyof TariffsTableCellIndexProps>
     ).every((key) => props[key] === event[key]);

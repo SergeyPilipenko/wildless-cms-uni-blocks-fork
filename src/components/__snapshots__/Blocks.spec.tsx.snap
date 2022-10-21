@@ -215,8 +215,8 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
         </desc>
         <use
           class="text-primary-main "
-          href="icons/Logo.svg#icon"
-          xlink:href="icons/Logo.svg#icon"
+          href="icons/LogoIcon.svg#icon"
+          xlink:href="icons/LogoIcon.svg#icon"
         />
       </svg>
       <span
@@ -418,8 +418,8 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
           </desc>
           <use
             class="text-primary-main "
-            href="icons/Logo.svg#icon"
-            xlink:href="icons/Logo.svg#icon"
+            href="icons/LogoIcon.svg#icon"
+            xlink:href="icons/LogoIcon.svg#icon"
           />
         </svg>
         <span
@@ -1108,15 +1108,15 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           width="290"
         >
           <title>
-            Иконка PackA4
+            Иконка PackA4Icon
           </title>
           <desc>
-            Иконка PackA4
+            Иконка PackA4Icon
           </desc>
           <use
             class="text-primary-main "
-            href="icons/PackA4.svg#icon"
-            xlink:href="icons/PackA4.svg#icon"
+            href="icons/PackA4Icon.svg#icon"
+            xlink:href="icons/PackA4Icon.svg#icon"
           />
         </svg>
         <span

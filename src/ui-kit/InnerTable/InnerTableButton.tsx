@@ -10,9 +10,9 @@ export interface TableInnerButtonProps extends TariffsTableInnerEvent, UniBlockP
 }
 
 export const TableInnerButton = JSX<TableInnerButtonProps>(
-  ({ isOpen, dataUrl, rowIdx, cellIdx, fieldIdx }) => {
+  ({ isOpen, dataUrl, pdfUrl, rowIdx, cellIdx, fieldIdx }) => {
     const handleClick = () => {
-      EventBus.inst.fire('tariffInnerTable', { dataUrl, rowIdx, cellIdx, fieldIdx });
+      EventBus.inst.fire('tariffInnerTable', { dataUrl, pdfUrl, rowIdx, cellIdx, fieldIdx });
     };
 
     return (

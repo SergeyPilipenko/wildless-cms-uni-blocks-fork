@@ -17,7 +17,7 @@ export const SafeDepositRentalTotal = ({ days }: Days) => {
         {renderTotal('Цена', price + ' ₽')}
       </div>
       <div className="bg-primary-main px-10 pt-10 pb-4 text-center">
-        <Img image={{ icon: 'PackA4' }} width="290" height="257" asSVG />
+        <Img image={{ icon: 'PackA4Icon' }} width="290" height="257" asSVG />
 
         <span className="text-s-light text-white opacity-80 mt-2 inline-block">
           На рисунки изображена пачка<br></br> листов формата А4

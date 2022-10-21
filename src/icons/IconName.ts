@@ -2,7 +2,7 @@
 /* eslint-disable max-len, max-lines */
 export enum IconMap {
   ActualBalanceIcon = 'ActualBalanceIcon',
-  AirPlane = 'AirPlane',
+  AirPlaneIcon = 'AirPlaneIcon',
   AppleIcon = 'AppleIcon',
   ArrowDownIcon = 'ArrowDownIcon',
   ArrowLeftIcon = 'ArrowLeftIcon',
@@ -26,7 +26,7 @@ export enum IconMap {
   ComfortableCompIcon = 'ComfortableCompIcon',
   CreditCardsIcon = 'CreditCardsIcon',
   DiscountShapeIcon = 'DiscountShapeIcon',
-  DocDownload = 'DocDownload',
+  DocDownloadIcon = 'DocDownloadIcon',
   DocIcon = 'DocIcon',
   DocIconMonoColor = 'DocIconMonoColor',
   DocsIcon = 'DocsIcon',
@@ -45,7 +45,7 @@ export enum IconMap {
   InterestGrowthIcon = 'InterestGrowthIcon',
   InterestIcon = 'InterestIcon',
   JCBIcon = 'JCBIcon',
-  Logo = 'Logo',
+  LogoIcon = 'LogoIcon',
   LoupeIcon = 'LoupeIcon',
   MasterCardIcon = 'MasterCardIcon',
   MinusIcon = 'MinusIcon',
@@ -56,7 +56,7 @@ export enum IconMap {
   NewDocIcon = 'NewDocIcon',
   OfficeIcon = 'OfficeIcon',
   OkIcon = 'OkIcon',
-  PackA4 = 'PackA4',
+  PackA4Icon = 'PackA4Icon',
   PassSendIcon = 'PassSendIcon',
   PercentageRoundIcon = 'PercentageRoundIcon',
   PercentageSquareIcon = 'PercentageSquareIcon',
@@ -83,12 +83,12 @@ export enum IconMap {
   WalletAddIcon = 'WalletAddIcon',
   WalletIcon = 'WalletIcon',
   WalletWithMoneyIcon = 'WalletWithMoneyIcon',
-  WateringCan = 'WateringCan',
+  WateringCanIcon = 'WateringCanIcon',
 }
 
 export enum IconTitleMap {
   ActualBalanceIcon = 'Деньги',
-  AirPlane = 'Самолет',
+  AirPlaneIcon = 'Самолет',
   AppleIcon = 'Лого «Apple»',
   ArrowDownIcon = "Стрелка 'Вниз'",
   ArrowLeftIcon = 'Стрелка',
@@ -112,7 +112,7 @@ export enum IconTitleMap {
   ComfortableCompIcon = 'Кресло',
   CreditCardsIcon = 'Кредитные карты',
   DiscountShapeIcon = 'Скидка',
-  DocDownload = 'Скачать документ',
+  DocDownloadIcon = 'Скачать документ',
   DocIcon = 'Документ',
   DocIconMonoColor = 'Документ (одноцветный)',
   DocsIcon = 'Документы',
@@ -131,7 +131,7 @@ export enum IconTitleMap {
   InterestGrowthIcon = 'Диаграмма роста',
   InterestIcon = 'Скидка',
   JCBIcon = 'JCB',
-  Logo = 'Logo',
+  LogoIcon = 'Logo',
   LoupeIcon = 'Лупа',
   MasterCardIcon = 'MasterCard',
   MinusIcon = 'Минус',
@@ -142,7 +142,7 @@ export enum IconTitleMap {
   NewDocIcon = 'Новый документ',
   OfficeIcon = 'Офис',
   OkIcon = 'Лого «Одноклассники»',
-  PackA4 = 'PackA4',
+  PackA4Icon = 'PackA4Icon',
   PassSendIcon = 'Бизнес',
   PercentageRoundIcon = 'Проценты (круг.)',
   PercentageSquareIcon = 'Проценты',
@@ -169,7 +169,7 @@ export enum IconTitleMap {
   WalletAddIcon = 'Кошелёк с плюсом',
   WalletIcon = 'Кошелёк',
   WalletWithMoneyIcon = 'Кошелёк с деньгами',
-  WateringCan = 'Добавить продукт',
+  WateringCanIcon = 'Добавить продукт',
 }
 
 /**
@@ -177,13 +177,13 @@ export enum IconTitleMap {
  * @title Иконка
  * @enumNames [
  *   "",
- *   'Деньги', 'Самолет', 'Лого «Apple»', 'Стрелка \'Вниз\'', 'Стрелка', 'Стрелка вверх', 'Банкомат', 'Банк', 'Бургер', 'Календарь 2', 'Скруглённый календарь', 'Календарь', 'Календарь с галочкой', 'Кред. карта', 'Кред. карта под наклоном', 'Кред. карта с галочкой', 'Карта с драгоценностями', 'Машина', 'Деньги внутри кошелька', 'Кино', 'Часы', 'Крестик', 'Кресло', 'Кредитные карты', 'Скидка', 'Скачать документ', 'Документ', 'Документ (одноцветный)', 'Документы', 'Документ с текстом', 'Доллар', 'Зелёная \'галочка\'', 'Земля', 'Пустой кошелёк с возвратом', 'Пустой кошелёк', 'Евро', 'Геолокация', 'Зеркало', 'Глобус', 'Gps', 'Сетка (белая)', 'Диаграмма роста', 'Скидка', 'JCB', 'Logo', 'Лупа', 'MasterCard', 'Минус', 'МИР', 'Деньги', 'Денежное страхование', 'Монитор и мобильный', 'Новый документ', 'Офис', 'Лого «Одноклассники»', 'PackA4', 'Бизнес', 'Проценты (круг.)', 'Проценты', 'Персональная карта', 'Лого «PlayMarket»', 'Плюс', 'Щит', 'Профиль, 2 персоны', 'Профиль', 'Тыква', 'Рубль (круг.)', 'Сейф', 'Безопасность', 'Подписанные документы', 'Маленькие часы', 'Звук', 'StateMortgageIcon', 'Лого «Telegram»', 'UnionPay', 'Пользователь', 'Visa', 'Лого «VK»', 'Пополнение карты', 'Кошелёк с плюсом', 'Кошелёк', 'Кошелёк с деньгами', 'Добавить продукт'
+ *   'Деньги', 'Самолет', 'Лого «Apple»', 'Стрелка \'Вниз\'', 'Стрелка', 'Стрелка вверх', 'Банкомат', 'Банк', 'Бургер', 'Календарь 2', 'Скруглённый календарь', 'Календарь', 'Календарь с галочкой', 'Кред. карта', 'Кред. карта под наклоном', 'Кред. карта с галочкой', 'Карта с драгоценностями', 'Машина', 'Деньги внутри кошелька', 'Кино', 'Часы', 'Крестик', 'Кресло', 'Кредитные карты', 'Скидка', 'Скачать документ', 'Документ', 'Документ (одноцветный)', 'Документы', 'Документ с текстом', 'Доллар', 'Зелёная \'галочка\'', 'Земля', 'Пустой кошелёк с возвратом', 'Пустой кошелёк', 'Евро', 'Геолокация', 'Зеркало', 'Глобус', 'Gps', 'Сетка (белая)', 'Диаграмма роста', 'Скидка', 'JCB', 'Logo', 'Лупа', 'MasterCard', 'Минус', 'МИР', 'Деньги', 'Денежное страхование', 'Монитор и мобильный', 'Новый документ', 'Офис', 'Лого «Одноклассники»', 'PackA4Icon', 'Бизнес', 'Проценты (круг.)', 'Проценты', 'Персональная карта', 'Лого «PlayMarket»', 'Плюс', 'Щит', 'Профиль, 2 персоны', 'Профиль', 'Тыква', 'Рубль (круг.)', 'Сейф', 'Безопасность', 'Подписанные документы', 'Маленькие часы', 'Звук', 'StateMortgageIcon', 'Лого «Telegram»', 'UnionPay', 'Пользователь', 'Visa', 'Лого «VK»', 'Пополнение карты', 'Кошелёк с плюсом', 'Кошелёк', 'Кошелёк с деньгами', 'Добавить продукт'
  * ]
  */
 export type IconName =
   | ''
   | 'ActualBalanceIcon'
-  | 'AirPlane'
+  | 'AirPlaneIcon'
   | 'AppleIcon'
   | 'ArrowDownIcon'
   | 'ArrowLeftIcon'
@@ -207,7 +207,7 @@ export type IconName =
   | 'ComfortableCompIcon'
   | 'CreditCardsIcon'
   | 'DiscountShapeIcon'
-  | 'DocDownload'
+  | 'DocDownloadIcon'
   | 'DocIcon'
   | 'DocIconMonoColor'
   | 'DocsIcon'
@@ -226,7 +226,7 @@ export type IconName =
   | 'InterestGrowthIcon'
   | 'InterestIcon'
   | 'JCBIcon'
-  | 'Logo'
+  | 'LogoIcon'
   | 'LoupeIcon'
   | 'MasterCardIcon'
   | 'MinusIcon'
@@ -237,7 +237,7 @@ export type IconName =
   | 'NewDocIcon'
   | 'OfficeIcon'
   | 'OkIcon'
-  | 'PackA4'
+  | 'PackA4Icon'
   | 'PassSendIcon'
   | 'PercentageRoundIcon'
   | 'PercentageSquareIcon'
@@ -264,4 +264,4 @@ export type IconName =
   | 'WalletAddIcon'
   | 'WalletIcon'
   | 'WalletWithMoneyIcon'
-  | 'WateringCan';
+  | 'WateringCanIcon';

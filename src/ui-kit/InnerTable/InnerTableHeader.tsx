@@ -33,7 +33,7 @@ export const InnerTableHeader = JSX<InnerTableHeaderProps>(
           version="secondary"
           className="flex justify-center items-center text-l-light text-primary-main px-8"
         >
-          <Img image="DocDownload" className="mr-[10px]" width="24" height="24" asSVG />
+          <Img image="DocDownloadIcon" className="mr-[10px]" width="24" height="24" asSVG />
           <span>Скачать в PDF</span>
         </Button>
       ) : null}

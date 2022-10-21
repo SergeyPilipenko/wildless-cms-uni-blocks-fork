@@ -28,7 +28,7 @@ export const Logo = JSX<Partial<LogoProps>>(
         target={targetBlank ? '_blank' : '_self'}
         aria-label="Россельхозбанк"
       >
-        <Img image={{ icon: 'Logo' }} className={`${SVG_COLOR[bgColor]} w-10 h-[38px]`} asSVG />
+        <Img image={{ icon: 'LogoIcon' }} className={`${SVG_COLOR[bgColor]} w-10 h-[38px]`} asSVG />
         {hideTitle ? null : (
           <span className={`${TEXT_COLOR[bgColor]} text-s font-medium ml-2.5`}>
             {children || 'Россельхозбанк'}

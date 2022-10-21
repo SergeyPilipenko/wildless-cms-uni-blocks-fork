@@ -1,12 +1,12 @@
+import type { Picture } from '../../model/Picture';
 import type {
+  InnerTableBlockDef,
+  LabelDescriptionCellDef,
+  ListBlockDef,
   TariffsTableColumn,
   TariffsTableContent,
   TariffsTableRowHeader,
-  LabelDescriptionCellDef,
-  ListBlockDef,
-  InnerTableBlockDef,
 } from './TariffsTableContent';
-import type { Picture } from '../../model/Picture';
 
 const title = 'Заголовок';
 const description = 'Описание предоставляемого продукта';
@@ -36,6 +36,7 @@ const LABEL_DESCRIPTION_BLOCK: LabelDescriptionCellDef = {
 const TABLE_BLOCK: InnerTableBlockDef = {
   tableCellType: 'Table',
   dataUrl: 'tariffs-inner-table-data',
+  pdfUrl: '#',
 };
 
 const DESCRIPTION_BLOCK: LabelDescriptionCellDef = {
