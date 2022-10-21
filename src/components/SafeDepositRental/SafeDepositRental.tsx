@@ -1,93 +1,23 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { SafeDepositRentalContent } from './SafeDepositRentalContent';
 import { SafeDepositRentalForm } from './SafeDepositRentalForm';
-import { SafeDepositRentalTotal } from './SafeDepositRentalTotal';
+import { useGetRegions } from './useGetRegions';
 
 export interface SafeDepositRentalProps extends SafeDepositRentalContent, UniBlockProps {}
 
-const DEFAULT_DAYS = 26;
-
-const DATA = {
-  cities: [
-    {
-      city: 'Москва',
-      offices: [
-        {
-          office: 'выберите отделение',
-          rate: null,
-        },
-        {
-          office: 'МоскваОфис1',
-          rate: 1,
-        },
-        {
-          office: 'МоскваОфис2',
-          rate: 2,
-        },
-        {
-          office: 'МоскваОфис3',
-          rate: 3,
-        },
-      ],
-    },
-    {
-      city: 'Краснодар',
-      offices: [
-        {
-          office: 'КраснодарОфис1',
-          rate: 2,
-        },
-        {
-          office: 'КраснодарОфис2',
-          rate: 4,
-        },
-        {
-          office: 'КраснодарОфис3',
-          rate: 6,
-        },
-      ],
-    },
-  ],
-  cellDimensions: [
-    {
-      dimension: 'маленькая',
-    },
-    {
-      dimension: 'средняя',
-    },
-    {
-      dimension: 'большая',
-    },
-  ],
-  cellOptions: [
-    {
-      option: '125x225x375',
-    },
-    {
-      option: '200x300x400',
-    },
-    {
-      option: '300x400x500',
-    },
-  ],
-};
-
 export const SafeDepositRental = JSX<SafeDepositRentalProps>(
-  ({ context, className = '', ...rest }) => {
-    const [days, setDays] = useState(DEFAULT_DAYS);
-    const data = DATA;
+  ({ title, context, className = '', ...rest }) => {
+    const regions = useGetRegions();
 
     return (
       <BlockWrapper context={context} className={`bg-white px-8 py-12 ${className}`} {...rest}>
-        <div className="flex justify-between align-top mb-6">
-          {data?.cities?.length ? (
-            <SafeDepositRentalForm {...data} days={days} setDays={setDays} />
-          ) : null}
-          <SafeDepositRentalTotal days={days} />
-        </div>
+        {title ? (
+          <Heading title={title} headingType="h3" as="h2" className="mb-2.5 text-center" />
+        ) : null}
+        <SafeDepositRentalForm regions={regions} />
         <p className="text-s-light text-secondary-text">
           Аренда СЯ, в случае проведения процедуры купли-продажи, с использованием наличных денег
           или процедуры ипотечной сделки

@@ -869,20 +869,15 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Город
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer"
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              placeholder="12321321312"
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
                 class=""
-                value="Москва"
+                value=""
               >
-                Москва
-              </option>
-              <option
-                class=""
-                value="Краснодар"
-              >
-                Краснодар
+                Выберите значение
               </option>
             </select>
           </div>
@@ -897,32 +892,15 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Отделение
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer"
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              placeholder="12321321312"
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
                 class=""
-                value="выберите отделение"
+                value=""
               >
-                выберите отделение
-              </option>
-              <option
-                class=""
-                value="МоскваОфис1"
-              >
-                МоскваОфис1
-              </option>
-              <option
-                class=""
-                value="МоскваОфис2"
-              >
-                МоскваОфис2
-              </option>
-              <option
-                class=""
-                value="МоскваОфис3"
-              >
-                МоскваОфис3
+                Выберите отделение
               </option>
             </select>
           </div>
@@ -985,29 +963,18 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             <span
               class="block text-m-light mb-2"
             >
-              Размер ячейки
+              Размер
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer"
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              placeholder="12321321312"
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
                 class=""
-                value="маленькая"
+                value=""
               >
-                маленькая
-              </option>
-              <option
-                class=""
-                value="средняя"
-              >
-                средняя
-              </option>
-              <option
-                class=""
-                value="большая"
-              >
-                большая
+                Выберите размер
               </option>
             </select>
           </div>
@@ -1022,26 +989,15 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Параметры ячейки, мм (ВхШхД)
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer"
+              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              placeholder="12321321312"
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
                 class=""
-                value="125x225x375"
+                value=""
               >
-                125x225x375
-              </option>
-              <option
-                class=""
-                value="200x300x400"
-              >
-                200x300x400
-              </option>
-              <option
-                class=""
-                value="300x400x500"
-              >
-                300x400x500
+                Выберите параметр ячейки
               </option>
             </select>
           </div>
@@ -1063,7 +1019,8 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class="flex items-center relative cursor-pointer"
             >
               <input
-                class="appearance-none flex justify-center items-center w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+                checked=""
+                class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
                 name="contractType"
                 type="radio"
                 value="option1"
@@ -1080,8 +1037,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class="flex items-center relative cursor-pointer"
             >
               <input
-                checked=""
-                class="appearance-none flex justify-center items-center w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+                class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
                 name="contractType"
                 type="radio"
                 value="option2"
@@ -1146,7 +1102,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           <span
             class="text-h3"
           >
-            26 ₽
+            0 ₽
           </span>
         </div>
       </div>

@@ -1,14 +1,14 @@
-import type { UniBlockProps } from '../../types';
+import { JSX } from '@redneckz/uni-jsx';
 import { Img } from '../../ui-kit/Img/Img';
+import { Tariff } from './SafeDepositRentalContent';
 
-export type SafeDepositRentalTotalProps = UniBlockProps;
-
-type Days = {
+export interface SafeDepositRentalTotalProps {
   days: number;
-};
+  tariffs?: Tariff[];
+}
 
-export const SafeDepositRentalTotal = ({ days }: Days) => {
-  const price = calculatePrice(days);
+export const SafeDepositRentalTotal = JSX<SafeDepositRentalTotalProps>(({ days, tariffs = [] }) => {
+  const price = calculatePrice(days, tariffs);
 
   return (
     <div className="flex flex-col justify-between">
@@ -25,9 +25,9 @@ export const SafeDepositRentalTotal = ({ days }: Days) => {
       </div>
     </div>
   );
-};
+});
 
-const renderTotal = (label, total, className = '') => {
+const renderTotal = (label: string, total: string | number, className = '') => {
   return (
     <div className={className}>
       <span className="block text-m-light mb-1">{label}</span>
@@ -36,22 +36,30 @@ const renderTotal = (label, total, className = '') => {
   );
 };
 
-const calculatePrice = (days: number) => {
-  let TariffType = 1;
+const calculatePrice = (days: number, tariffs: Tariff[]) => {
+  const tariffType = getTariffType(days);
+
+  const tariffValue = tariffs?.find((_) => _.tariffType === String(tariffType))?.tariffValue || 0;
+
+  return days * tariffValue;
+};
+
+const getTariffType = (days) => {
+  let tariffType = 1;
 
   switch (true) {
     case days > 30 && days <= 90:
-      TariffType = 2;
+      tariffType = 2;
       break;
 
     case days > 90 && days <= 180:
-      TariffType = 3;
+      tariffType = 3;
       break;
 
     case days > 180 && days <= 365:
-      TariffType = 4;
+      tariffType = 4;
       break;
   }
 
-  return days * TariffType;
+  return tariffType;
 };

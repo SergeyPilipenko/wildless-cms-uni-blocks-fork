@@ -4,12 +4,13 @@ export interface SelectOptionProps {
   className?: string;
   value?: string;
   selected?: boolean;
+  disabled?: boolean;
 }
 
 export const SelectOption = JSX<SelectOptionProps>(
-  ({ className = '', value, selected, children }) => {
+  ({ className = '', value, selected, disabled = false, children }) => {
     return (
-      <option className={className} value={`${value}`} selected={selected}>
+      <option className={className} value={`${value}`} selected={selected} disabled={disabled}>
         {children}
       </option>
     );
