@@ -28,7 +28,7 @@ export const PictureText = JSX<PictureTextProps>(
   }) => {
     return (
       <BlockWrapper
-        className={`relative font-sans p-14 ${VersionStyleMap[version]} ${className}`}
+        className={`relative font-sans py-12.5 px-25 ${VersionStyleMap[version]} ${className}`}
         context={context}
         {...rest}
       >
@@ -42,7 +42,7 @@ export const PictureText = JSX<PictureTextProps>(
           align="center"
         />
         <div className={'flex justify-center gap-[122px] mt-[30px]'}>
-          {image?.src && <Img className={directionRight ? 'order-2 ml-6' : 'mr-6'} image={image} />}
+          {image?.src ? <Img className={directionRight ? 'order-2' : ''} image={image} /> : null}
           <div className="w-[558px] m-auto">
             {benefits?.length ? (
               <div className="flex flex-col gap-4">{benefits.map(renderBenefit(version))}</div>

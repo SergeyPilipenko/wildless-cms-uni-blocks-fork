@@ -25,9 +25,10 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   } = props;
 
   const isIconWhite = benefitsVersion === 'white' || version === 'secondary';
+  const listItemAlign = description ? 'items-start' : 'items-center';
 
   return (
-    <div className={`flex items-start gap-5 ${className}`}>
+    <div className={`flex gap-5 ${listItemAlign} ${className}`}>
       {icon ? (
         <div className={renderBenefitIconBgStyle(version, benefitsVersion)}>
           <Img

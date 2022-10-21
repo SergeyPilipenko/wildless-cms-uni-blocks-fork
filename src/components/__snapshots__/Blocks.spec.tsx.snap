@@ -674,7 +674,7 @@ exports[`Blocks OtherProducts should render block "OtherProducts" without conten
 
 exports[`Blocks PictureText should render block "PictureText" without content 1`] = `
 <section
-  class="relative font-sans p-14 bg-white text-primary-text "
+  class="relative font-sans py-12.5 px-25 bg-white text-primary-text "
 >
   <section
     class="font-sans flex flex-col p-[50px] gap-3 bg-white !p-0"

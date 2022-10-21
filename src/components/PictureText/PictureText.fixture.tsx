@@ -55,11 +55,11 @@ export const INSURANCE_TEXT: PictureTextContent = {
   benefits: [
     {
       label: 'Телесное повреждение',
-      description: 'Описание',
       icon: { icon: 'ShieldTickIcon' },
     },
     {
       label: 'Госпитализация застрахованного',
+      description: 'Описание',
       icon: { icon: 'ShieldTickIcon' },
     },
     {
