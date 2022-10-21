@@ -145,6 +145,17 @@ exports[`Blocks ComparisonTable should render block "ComparisonTable" without co
 </section>
 `;
 
+exports[`Blocks ErrorBlock should render block "ErrorBlock" without content 1`] = `
+<section
+  class="flex flex-col justify-center items-center "
+  role="listitem"
+>
+  <div
+    class="flex justify-center mb-7"
+  />
+</section>
+`;
+
 exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without content 1`] = `
 <section
   class="bg-white text-primary-text font-sans p-9 box-border "

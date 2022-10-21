@@ -12,11 +12,11 @@ export const Rate = JSX<RateProps>(({ rate, title = 'Ставка', unit, rateBl
     <div className="text-l-light text-secondary-text">{title}</div>
     <div className="flex justify-start">
       <span
-        className={`block calc-rate-text font-mohave text-title-huge pr-6 -mt-4 ${rateBlockClassName}`}
+        className={`block gradient-color-text font-mohave text-title-huge pr-6 -mt-4 ${rateBlockClassName}`}
       >
         {String(rate).replace('.', ',')}
       </span>
-      {unit ? <span className="calc-rate-text text-[65px] leading-[75px]">{unit}</span> : ''}
+      {unit ? <span className="gradient-color-text text-[65px] leading-[75px]">{unit}</span> : ''}
     </div>
   </div>
 ));

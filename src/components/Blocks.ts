@@ -32,6 +32,7 @@ import { Tabs } from './Tabs/Tabs';
 import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
+import { ErrorBlock } from './ErrorBlock/ErrorBlock';
 
 export const Blocks = {
   Accordion,
@@ -67,5 +68,6 @@ export const Blocks = {
   BonusBenefitsBlock,
   SafeDepositRental,
   Tabs,
+  ErrorBlock,
   OfficeServicesBlock,
 };

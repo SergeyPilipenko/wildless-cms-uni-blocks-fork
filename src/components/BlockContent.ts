@@ -26,6 +26,7 @@ import type { TabsContent } from './Tabs/TabsContent';
 import type { TariffsTableContent } from './TariffsTable/TariffsTableContent';
 import type { TextBlockContent } from './TextBlock/TextBlockContent';
 import type { TileContent } from './Tile/TileContent';
+import type { ErrorBlockContent } from './ErrorBlock/ErrorBlockContent';
 
 /**
  * @hidden
@@ -58,4 +59,5 @@ export type BlockContent =
   | BonusBenefitsBlockContent
   | SafeDepositRentalContent
   | TabsContent
+  | ErrorBlockContent
   | OfficeServicesBlockContent;

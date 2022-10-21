@@ -1,0 +1,13 @@
+{
+  "title": "Страница не найдена",
+  "subtitle": "Возможно неправильно набран адрес или такой странице не существует",
+  "error": {
+    "errorContentType": "Code",
+    "code": 404
+  },
+  "button": {
+    "text": "Вернуться на главную",
+    "version": "primary",
+    "target": "_blank"
+  }
+}

@@ -1081,6 +1081,77 @@ Object {
       "title": "Выберите блок",
       "type": "null",
     },
+    "ErrorBlockContent": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "title": "Кнопка",
+        },
+        "error": Object {
+          "$ref": "#/definitions/ErrorContentDef",
+          "title": "Вид контента",
+        },
+        "subtitle": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Блок Ошибка",
+      "type": "object",
+    },
+    "ErrorCodeDef": Object {
+      "properties": Object {
+        "code": Object {
+          "title": "Код ошибки",
+          "type": "number",
+        },
+        "errorContentType": Object {
+          "const": "Code",
+          "default": "Code",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "errorContentType",
+      ],
+      "title": "Код ошибки",
+      "type": "object",
+    },
+    "ErrorContentDef": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "#/definitions/EmptyOption",
+        },
+        Object {
+          "$ref": "#/definitions/ErrorImageDef",
+        },
+        Object {
+          "$ref": "#/definitions/ErrorCodeDef",
+        },
+      ],
+    },
+    "ErrorImageDef": Object {
+      "properties": Object {
+        "errorContentType": Object {
+          "const": "Image",
+          "default": "Image",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+          "title": "Изображение",
+        },
+      },
+      "required": Array [
+        "errorContentType",
+      ],
+      "title": "Изображение",
+      "type": "object",
+    },
     "ExchangeRateTileContent": Object {
       "properties": Object {
         "button": Object {
