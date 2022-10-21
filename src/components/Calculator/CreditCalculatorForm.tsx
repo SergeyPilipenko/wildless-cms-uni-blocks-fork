@@ -55,7 +55,7 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
             setMoneyValue,
           )}
           {renderMonthsInput('Срок кредита, месяцев', calculatorParams, setMonthsValue)}
-          <div className="pt-7">
+          <div className="mt-7">
             <Checkbox
               text="Получаю зарплату на счёт в Россельхозбанке"
               checked={isSalaryClient}

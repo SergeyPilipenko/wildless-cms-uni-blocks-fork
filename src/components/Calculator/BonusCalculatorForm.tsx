@@ -39,7 +39,7 @@ export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
           {renderWantedSumInput(
             'Сумма покупок в остальных категориях, ₽',
             {
-              className: 'mt-6',
+              className: 'mt-7',
               minSum: minSumOther,
               maxSum: maxSumOther,
               moneyValue: restExpenseValue,

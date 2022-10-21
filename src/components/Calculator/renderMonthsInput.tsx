@@ -19,7 +19,7 @@ export function renderMonthsInput(title: string, params: RenderMonthsInputParams
 
   return (
     <InputRange
-      className="mt-6"
+      className="mt-7"
       title={title}
       items={[`От ${monthText(minMonths)}`, `До ${monthText(maxMonths)}`]}
       min={minMonths}

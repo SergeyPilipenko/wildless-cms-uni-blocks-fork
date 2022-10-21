@@ -75,9 +75,11 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
 
   const btnClassName = isActiveBtn
     ? 'h-[88px] w-[387px] min-w-[387px] p-5 border-none bg-primary-main text-white'
-    : `h-[77px] w-[322px] min-w-[322px] px-5 py-4 ease-in duration-300 bg-white text-primary-text`;
+    : `h-[77px] w-[328px] min-w-[328px] px-5 py-4 ease-in duration-300 bg-white text-primary-text`;
   const btnTitleClassName = isActiveBtn ? 'text-xl mb-1.5' : `text-l mb-[3px]`;
-  const btnDescClassName = isActiveBtn ? 'text-l font-light text-white' : `text-m font-light`;
+  const btnDescClassName = isActiveBtn
+    ? 'text-l-light text-white'
+    : `text-m-light text-secondary-text`;
   const iconClassName = isActiveBtn ? '' : `text-primary-main`;
 
   return (
@@ -86,7 +88,7 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
       key={String(i)}
       onClick={onClick}
       aria-label={tab?.title}
-      className={`box-border font-sans relative border border-main-stroke cursor-pointer text-left border-b-0 flex hover:h-[88px]
+      className={`box-border relative border border-main-stroke cursor-pointer text-left border-b-0 flex hover:h-[88px]
       ${btnClassName}`}
     >
       <Img
@@ -98,7 +100,7 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
       />
       <div className="border-0">
         <div className={`${btnTitleClassName}`}>{tab?.title}</div>
-        <div className={`text-secondary-text ${btnDescClassName}`}>{tab.description}</div>
+        <div className={`${btnDescClassName}`}>{tab.description}</div>
       </div>
     </button>
   );

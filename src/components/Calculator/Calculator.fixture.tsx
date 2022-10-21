@@ -52,6 +52,7 @@ const DEPOSIT_CALCULATOR_BLOCK: DepositCalculatorParamsDef = {
 };
 
 const BONUS_CALCULATOR_BLOCK: BonusCalculatorParamsDef = {
+  title: 'Обменивайте баллы на путешествия',
   calcType: 'BonusCalculatorForm',
   buttons: buttons,
 };

@@ -17,7 +17,7 @@ export function renderInitialFeeInput(title, props: RenderWantedSumInputParams, 
 
   return (
     <InputRange
-      className="mt-6"
+      className="mt-7"
       title={title}
       items={[
         `От ${addSpacesBetweenNumbers(minSum)} рублей`,

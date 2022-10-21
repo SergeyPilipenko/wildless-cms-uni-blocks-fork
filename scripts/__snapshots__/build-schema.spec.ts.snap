@@ -400,6 +400,10 @@ Object {
           "title": "Адрес справочника",
           "type": "string",
         },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
         "travelBonusRate": Object {
           "type": "number",
         },
@@ -618,6 +622,10 @@ Object {
         },
         "nav": Object {
           "$ref": "#/definitions/CalculatorNav",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
         },
       },
       "title": "Вкладка",
@@ -940,6 +948,10 @@ Object {
           "title": "Адрес справочника",
           "type": "string",
         },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
       },
       "required": Array [
         "calcType",
@@ -991,6 +1003,10 @@ Object {
         },
         "sourceBookDir": Object {
           "title": "Адрес справочника",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
           "type": "string",
         },
       },
@@ -2460,6 +2476,10 @@ Object {
         },
         "sourceBookDir": Object {
           "title": "Адрес справочника",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
           "type": "string",
         },
       },

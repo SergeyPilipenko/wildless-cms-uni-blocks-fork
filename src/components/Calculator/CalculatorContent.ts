@@ -1,6 +1,7 @@
 import type { EmptyOption } from '../../model/EmptyOptionType';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { TitleProps } from '../../model/HeadlineType';
 
 export interface CommonCalculatorProps {
   /** @title Кнопки */
@@ -115,7 +116,8 @@ export interface CalculatorParams {
  * @title Кредитный калькулятор
  * @default {"calcType": "CreditCalculatorForm"}
  */
-export type CreditCalculatorParamsDef = CreditCalculatorParams &
+export type CreditCalculatorParamsDef = TitleProps &
+  CreditCalculatorParams &
   CommonCalculatorProps & {
     calcType: 'CreditCalculatorForm';
   };
@@ -124,7 +126,8 @@ export type CreditCalculatorParamsDef = CreditCalculatorParams &
  * @title Ипотечный калькулятор
  * @default {"calcType": "MortgageCalculatorForm"}
  */
-export type MortgageCalculatorParamsDef = MortgageCalculatorParams &
+export type MortgageCalculatorParamsDef = TitleProps &
+  MortgageCalculatorParams &
   CommonCalculatorProps & {
     calcType: 'MortgageCalculatorForm';
   };
@@ -133,7 +136,8 @@ export type MortgageCalculatorParamsDef = MortgageCalculatorParams &
  * @title Калькулятор вкладов
  * @default {"calcType": "DepositCalculatorForm"}
  */
-export type DepositCalculatorParamsDef = DepositCalculatorParams &
+export type DepositCalculatorParamsDef = TitleProps &
+  DepositCalculatorParams &
   CommonCalculatorProps & {
     calcType: 'DepositCalculatorForm';
   };
@@ -142,7 +146,8 @@ export type DepositCalculatorParamsDef = DepositCalculatorParams &
  * @title Калькулятор бонусов
  * @default {"calcType": "BonusCalculatorForm"}
  */
-export type BonusCalculatorParamsDef = BonusCalculatorParams &
+export type BonusCalculatorParamsDef = TitleProps &
+  BonusCalculatorParams &
   CommonCalculatorProps & {
     calcType: 'BonusCalculatorForm';
   };
@@ -171,10 +176,10 @@ export interface CalculatorNav {
 /**
  * @title Вкладка
  */
-export interface CalculatorTab {
+export type CalculatorTab = TitleProps & {
   nav?: CalculatorNav;
   calculatorBlock?: CalculatorBlockDef;
-}
+};
 
 /**
  * @title Калькулятор
