@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BenefitItemProps, BenefitItemCommonProps } from './BenefitItemProps';
-import { Img } from '../Img/Img';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { Img } from '../Img/Img';
+import type { BenefitItemCommonProps, BenefitItemProps } from './BenefitItemProps';
 
 export interface BenefitGeneralProps extends BenefitItemProps, BenefitItemCommonProps {}
 
@@ -29,11 +29,13 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   return (
     <div className={`flex items-start gap-5 ${className}`}>
       {icon ? (
-        <Img
-          className={renderBenefitIconBgStyle(version, benefitsVersion)}
-          image={{ ...icon, iconVersion: isIconWhite ? 'white' : 'normal' }}
-          asSVG
-        />
+        <div className={renderBenefitIconBgStyle(version, benefitsVersion)}>
+          <Img
+            className="w-[24px] h-[24px]"
+            image={{ ...icon, iconVersion: isIconWhite ? 'white' : 'normal' }}
+            asSVG
+          />
+        </div>
       ) : null}
       <div className="gap-0.5">
         {label ? <div className={`text-h6 ${titleStyleMap[version]}`}>{label}</div> : null}
@@ -54,5 +56,5 @@ function renderBenefitIconBgStyle(version, benefitsVersion) {
     bgColorStyle = 'bg-secondary-light text-primary-main';
   }
 
-  return `w-[50px] h-[50px] min-w-[50px] rounded-full p-[10px] box-border ${bgColorStyle}`;
+  return `w-[50px] h-[50px] min-w-[50px] rounded-full p-[10px] box-border flex items-center justify-center ${bgColorStyle}`;
 }
