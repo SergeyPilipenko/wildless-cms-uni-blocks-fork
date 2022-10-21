@@ -666,6 +666,12 @@ exports[`Blocks Navigation should render block "Navigation" without content 1`] 
 </section>
 `;
 
+exports[`Blocks OfficeServicesBlock should render block "OfficeServicesBlock" without content 1`] = `
+<section
+  class="font-sans bg-white p-12 flex flex-col "
+/>
+`;
+
 exports[`Blocks OtherProducts should render block "OtherProducts" without content 1`] = `
 <section
   class="font-sans text-primary-text "

@@ -13,6 +13,7 @@ import type { LinkDocsContent } from './LinkDocs/LinkDocsContent';
 import type { LinkListContent } from './LinkList/LinkListContent';
 import type { MobileAppTileContent } from './MobileAppTile/MobileAppTileContent';
 import type { NavigationContent } from './Navigation/NavigationContent';
+import type { OfficeServicesBlockContent } from './OfficeServicesBlock/OfficeServicesBlockContent';
 import type { PictureTextContent } from './PictureText/PictureTextContent';
 import type { PlaceholderContent } from './Placeholder/PlaceholderContent';
 import type { ProductBlockContent } from './ProductBlock/ProductBlockContent';
@@ -56,4 +57,5 @@ export type BlockContent =
   | LinkListContent
   | BonusBenefitsBlockContent
   | SafeDepositRentalContent
-  | TabsContent;
+  | TabsContent
+  | OfficeServicesBlockContent;

@@ -2523,6 +2523,41 @@ Object {
       "title": "Навигация",
       "type": "object",
     },
+    "OfficeServicesBlockContent": Object {
+      "properties": Object {
+        "officesList": Object {
+          "items": Object {
+            "$ref": "#/definitions/OfficeServicesBlockList",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "OfficeServicesBlockList": Object {
+      "properties": Object {
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "height": 24,
+              "width": 24,
+            },
+          },
+          "title": "Иконка",
+        },
+        "text": Object {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
     "OtherProductsContent": Object {
       "properties": Object {
         "blockItems": Object {

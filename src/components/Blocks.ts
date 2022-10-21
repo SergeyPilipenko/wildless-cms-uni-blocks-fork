@@ -3,8 +3,8 @@ import { BenefitsBlock } from './BenefitsBlock/BenefitsBlock';
 import { Bonus } from './Bonus/Bonus';
 import { BonusBenefitsBlock } from './BonusBenefitsBlock/BonusBenefitsBlock';
 import { Calculator } from './Calculator/Calculator';
-import { Catalog } from './Catalog/Catalog';
 import { CardTransfer } from './CardTransfer/CardTransfer';
+import { Catalog } from './Catalog/Catalog';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
 import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
 import { Footer } from './Footer/Footer';
@@ -17,6 +17,7 @@ import { LinkDocs } from './LinkDocs/LinkDocs';
 import { MiniGallery } from './MiniGallery/MiniGallery';
 import { MobileAppTile } from './MobileAppTile/MobileAppTile';
 import { Navigation } from './Navigation/Navigation';
+import { OfficeServicesBlock } from './OfficeServicesBlock/OfficeServicesBlock';
 import { OtherProducts } from './OtherProducts/OtherProducts';
 import { PictureText } from './PictureText/PictureText';
 import { Placeholder } from './Placeholder/Placeholder';
@@ -66,4 +67,5 @@ export const Blocks = {
   BonusBenefitsBlock,
   SafeDepositRental,
   Tabs,
+  OfficeServicesBlock,
 };
