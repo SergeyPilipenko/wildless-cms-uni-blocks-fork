@@ -56,6 +56,58 @@ exports[`Blocks Calculator should render block "Calculator" without content 1`] 
 </section>
 `;
 
+exports[`Blocks CardTransfer should render block "CardTransfer" without content 1`] = `
+<section
+  class="p-[50px] flex flex-col items-center font-sans bg-white "
+>
+  <h3
+    class="font-sans m-0 text-h2 max-w-[684px] pb-9"
+  >
+    Укажите сумму перевода
+  </h3>
+  <form
+    action="https://www.rshb.ru/p2p/"
+    class="w-[468px]"
+    method="POST"
+  >
+    <div
+      class=""
+    >
+      <label
+        class="block text-m-light mb-2"
+      >
+        Сумма перевода
+      </label>
+      <div
+        class="h-[56px] relative flex items-center"
+      >
+        <input
+          class="text-l pl-4 pr-8 w-full h-full rounded-md border border-solid border-main-stroke"
+          max="300000"
+          min="0"
+          name="amount"
+          placeholder="1500"
+          type="number"
+          value=""
+        />
+        <span
+          class="text-xl-light absolute right-4"
+        >
+          ₽
+        </span>
+      </div>
+    </div>
+    <button
+      class="inline-block text-center font-sans select-none bg-secondary-dark text-secondary-text rounded-md w-full h-[56px] px-9 mt-6"
+      disabled=""
+      type="submit"
+    >
+      Далее
+    </button>
+  </form>
+</section>
+`;
+
 exports[`Blocks Catalog should render block "Catalog" without content 1`] = `
 <section
   class="bg-white relative font-sans p-12 overflow-hidden text-center "

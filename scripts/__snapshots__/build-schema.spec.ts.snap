@@ -645,6 +645,10 @@ Object {
       "title": "Кнопка выбора программы",
       "type": "object",
     },
+    "CardTransferContent": Object {
+      "title": "Перевод с карты на карту",
+      "type": "object",
+    },
     "CatalogCardType": Object {
       "properties": Object {
         "button": Object {

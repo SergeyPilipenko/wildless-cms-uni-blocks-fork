@@ -1,6 +1,7 @@
 import type { BenefitsBlockContent } from './BenefitsBlock/BenefitsBlockContent';
 import type { BonusContent } from './Bonus/BonusContent';
 import type { BonusBenefitsBlockContent } from './BonusBenefitsBlock/BonusBenefitsBlockContent';
+import type { CardTransferContent } from './CardTransfer/CardTransferContent';
 import type { ComparisonTableContent } from './ComparisonTable/ComparisonTableContent';
 import type { ExchangeRateTileContent } from './ExchangeRateTile/ExchangeRateTileContent';
 import type { FooterContent } from './Footer/FooterContent';
@@ -20,7 +21,7 @@ import type { ProductTileContent } from './ProductTile/ProductTileContent';
 import type { PromoTileContent } from './PromoTile/PromoTileContent';
 import type { SafeDepositRentalContent } from './SafeDepositRental/SafeDepositRentalContent';
 import type { StepsBlockContent } from './StepsBlock/StepsBlockContent';
-import { TabsContent } from './Tabs/TabsContent';
+import type { TabsContent } from './Tabs/TabsContent';
 import type { TariffsTableContent } from './TariffsTable/TariffsTableContent';
 import type { TextBlockContent } from './TextBlock/TextBlockContent';
 import type { TileContent } from './Tile/TileContent';
@@ -31,6 +32,7 @@ import type { TileContent } from './Tile/TileContent';
 export type BlockContent =
   | BenefitsBlockContent
   | BonusContent
+  | CardTransferContent
   | ComparisonTableContent
   | ExchangeRateTileContent
   | FooterContent
