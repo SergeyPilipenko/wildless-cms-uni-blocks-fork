@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
-import type { PictureTextContent } from './PictureTextContent';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../types';
+import { BenefitItem } from '../../ui-kit/BenefitItem/BenefitItem';
 import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Img } from '../../ui-kit/Img/Img';
-import { BenefitItem } from '../../ui-kit/BenefitItem/BenefitItem';
-import { Headline } from '../Headline/Headline';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
-import { VersionStyleMap } from '../../model/BlockVersion';
+import { Headline } from '../Headline/Headline';
+import type { PictureTextContent } from './PictureTextContent';
 
 export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 
@@ -28,7 +28,7 @@ export const PictureText = JSX<PictureTextProps>(
   }) => {
     return (
       <BlockWrapper
-        className={`relative font-sans py-12.5 px-25 ${VersionStyleMap[version]} ${className}`}
+        className={`relative font-sans p-14 ${VersionStyleMap[version]} ${className}`}
         context={context}
         {...rest}
       >

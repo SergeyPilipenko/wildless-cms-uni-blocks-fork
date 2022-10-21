@@ -15,6 +15,9 @@ export interface OfficeServicesBlockList {
   text?: string;
 }
 
+/**
+ * @title Офисные услуги
+ */
 export interface OfficeServicesBlockContent {
   /** @title Заголовок */
   title?: string;

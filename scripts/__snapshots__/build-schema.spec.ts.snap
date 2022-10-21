@@ -2608,6 +2608,7 @@ Object {
           "type": "string",
         },
       },
+      "title": "Офисные услуги",
       "type": "object",
     },
     "OfficeServicesBlockList": Object {
