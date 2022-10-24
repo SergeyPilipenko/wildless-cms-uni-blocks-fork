@@ -36,7 +36,7 @@ export const ProductTile = JSX<ProductTileProps>(
       >
         <Headline
           context={context}
-          className={`!p-0 z-10 ${title || description ? 'mb-3.5' : ''}`}
+          className={`!p-0 !bg-transparent z-10 ${title || description ? 'mb-3.5' : ''}`}
           as="h2"
           title={title}
           description={description}
@@ -99,6 +99,8 @@ function renderAdditionalDescription(additionalDescription: string, version = 'p
   };
 
   return (
-    <div className={`text-m-light mt-2.5 ${descStyleMap[version]}`}>{additionalDescription}</div>
+    <div className={`text-m-light mt-2.5 z-10 ${descStyleMap[version]}`}>
+      {additionalDescription}
+    </div>
   );
 }
