@@ -15,7 +15,6 @@ export default defineConfig({
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
     experimentalInteractiveRunEvents: true,
-    defaultCommandTimeout: 10000,
     viewportWidth: 1366,
     viewportHeight: 768,
     video: false,
@@ -47,12 +46,25 @@ export default defineConfig({
         );
       });
 
+      on(
+        'before:browser:launch',
+        (browser: Cypress.Browser, launchOptions: Cypress.BrowserLaunchOptions) => {
+          if (browser.family === 'chromium') {
+            launchOptions.args.push('--force-color-profile=srgb');
+            launchOptions.args.push('--disable-low-res-tiling');
+            launchOptions.args.push('--disable-smooth-scrolling');
+          }
+
+          return launchOptions;
+        },
+      );
+
       getCompareSnapshotsPlugin(on, config);
     },
   },
 });
 
-const createFixturesMap = (err, files) => {
+const createFixturesMap = (_, files) => {
   const blockFixturesMap = new Map<string, Params>();
 
   files.forEach((file) => {
