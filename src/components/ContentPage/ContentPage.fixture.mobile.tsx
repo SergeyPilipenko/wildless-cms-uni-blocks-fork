@@ -13,7 +13,7 @@ export default {
       className="bg-secondary-text"
       context={mobileContext}
       blocksRegistry={Blocks}
-      data={normalizePage(data as ContentPageDef, Blocks)}
+      data={normalizePage(Blocks)(data as ContentPageDef)}
     />
   ),
 };

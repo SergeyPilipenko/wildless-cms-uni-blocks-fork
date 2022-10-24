@@ -32,7 +32,7 @@ export default {
       className="bg-main"
       context={context}
       blocksRegistry={Blocks}
-      data={normalizePage(data as ContentPageDef, Blocks)}
+      data={normalizePage(Blocks)(data as ContentPageDef)}
     />
   ),
   editor: (
@@ -41,7 +41,7 @@ export default {
         className="bg-transparent"
         context={context}
         blocksRegistry={Blocks}
-        data={normalizePage(data as ContentPageDef, Blocks)}
+        data={normalizePage(Blocks)(data as ContentPageDef)}
         blockDecorator={blockDecorator}
       />
     </div>
