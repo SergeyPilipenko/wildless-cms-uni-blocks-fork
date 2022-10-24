@@ -2199,7 +2199,13 @@
     },
     {
       "type": "CardTransfer",
-      "style": ["col-span-12"]
+      "style": ["col-span-12"],
+      "content": {
+        "title": "Укажите сумму перевода",
+        "label": "Сумма перевода",
+        "buttonText": "Далее",
+        "placeholder": "1500"
+      }
     },
     {
       "type": "SafeDepositRental",

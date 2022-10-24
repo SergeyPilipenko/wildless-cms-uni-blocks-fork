@@ -671,6 +671,24 @@ Object {
       "type": "object",
     },
     "CardTransferContent": Object {
+      "properties": Object {
+        "buttonText": Object {
+          "title": "Текст кнопки",
+          "type": "string",
+        },
+        "label": Object {
+          "title": "Название поля",
+          "type": "string",
+        },
+        "placeholder": Object {
+          "title": "Плейсхолдер поля",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
       "title": "Перевод с карты на карту",
       "type": "object",
     },

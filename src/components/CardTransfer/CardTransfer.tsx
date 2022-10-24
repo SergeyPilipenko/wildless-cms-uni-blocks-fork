@@ -10,12 +10,12 @@ import { getRegularButtonClasses } from '../../ui-kit/Button/getRegularButtonCla
 import { getDisabledButtonClasses } from '../../ui-kit/Button/getDisabledButtonClasses';
 
 const AMOUNT_KEY = 'amount';
-const INPUT_LABEL = 'Сумма перевода';
-const BUTTON_TEXT = 'Далее';
-const PLACEHOLDER = '1500';
-const TITLE = 'Укажите сумму перевода';
-
 const FORM_URL = 'https://www.rshb.ru/p2p/';
+
+const DEFAULT_TITLE = 'Укажите сумму перевода';
+const DEFAULT_LABEL = 'Сумма перевода';
+const DEFAULT_PLACEHOLDER = '1500';
+const DEFAULT_BUTTON_TEXT = 'Далее';
 
 const BUTTON_CLASS_PARAMS: GetButtonClassParams = {
   version: 'primary',
@@ -24,36 +24,45 @@ const BUTTON_CLASS_PARAMS: GetButtonClassParams = {
 
 export interface CardTransferProps extends CardTransferContent, UniBlockProps {}
 
-export const CardTransfer = JSX<CardTransferProps>(({ className = '', title = TITLE, ...rest }) => {
-  const [value, setValue] = useState<string>('');
-  const isDisabled = !Number(value);
+export const CardTransfer = JSX<CardTransferProps>(
+  ({
+    className = '',
+    title = DEFAULT_TITLE,
+    label = DEFAULT_LABEL,
+    placeholder = DEFAULT_PLACEHOLDER,
+    buttonText = DEFAULT_BUTTON_TEXT,
+    ...rest
+  }) => {
+    const [value, setValue] = useState<string>('');
+    const isDisabled = !Number(value);
 
-  return (
-    <BlockWrapper
-      className={`p-[50px] flex flex-col items-center font-sans bg-white ${className}`}
-      {...rest}
-    >
-      {title ? <Heading className="max-w-[684px] pb-9" headingType="h2" title={title} /> : null}
-      <form className="w-[468px]" method="POST" action={FORM_URL}>
-        <CurrencyInput
-          name={AMOUNT_KEY}
-          value={value}
-          onChange={setValue}
-          placeholder={PLACEHOLDER}
-          label={INPUT_LABEL}
-        />
-        <button
-          type="submit"
-          className={
-            isDisabled
-              ? getDisabledButtonClasses(BUTTON_CLASS_PARAMS)
-              : getRegularButtonClasses(BUTTON_CLASS_PARAMS)
-          }
-          disabled={isDisabled}
-        >
-          {BUTTON_TEXT}
-        </button>
-      </form>
-    </BlockWrapper>
-  );
-});
+    return (
+      <BlockWrapper
+        className={`p-[50px] flex flex-col items-center font-sans bg-white ${className}`}
+        {...rest}
+      >
+        {title ? <Heading className="max-w-[684px] pb-9" headingType="h2" title={title} /> : null}
+        <form className="w-[468px]" method="POST" action={FORM_URL}>
+          <CurrencyInput
+            name={AMOUNT_KEY}
+            value={value}
+            onChange={setValue}
+            placeholder={placeholder}
+            label={label}
+          />
+          <button
+            type="submit"
+            className={
+              isDisabled
+                ? getDisabledButtonClasses(BUTTON_CLASS_PARAMS)
+                : getRegularButtonClasses(BUTTON_CLASS_PARAMS)
+            }
+            disabled={isDisabled}
+          >
+            {buttonText}
+          </button>
+        </form>
+      </BlockWrapper>
+    );
+  },
+);
