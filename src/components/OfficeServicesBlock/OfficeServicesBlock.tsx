@@ -11,7 +11,7 @@ import type {
 export interface OfficeServicesBlockProps extends OfficeServicesBlockContent, UniBlockProps {}
 
 export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
-  ({ className = '', context, title, officesList, anchor = '' }) => {
+  ({ className = '', context, title, servicesList, anchor = '' }) => {
     return (
       <BlockWrapper
         context={context}
@@ -19,7 +19,7 @@ export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
         className={`font-sans bg-white p-12 flex flex-col ${className}`}
       >
         {title ? <Heading headingType="h5" className="mb-2.5" title={title} /> : null}
-        {officesList?.length ? officesList.map(renderListItems) : null}
+        {servicesList?.length ? servicesList.map(renderListItems) : null}
       </BlockWrapper>
     );
   },

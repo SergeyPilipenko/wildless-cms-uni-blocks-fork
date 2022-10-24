@@ -1,6 +1,6 @@
+import type { EmptyOption } from '../../model/EmptyOptionType';
 import type { Picture } from '../../model/Picture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
-import type { EmptyOption } from '../../model/EmptyOptionType';
 
 /**
  * @title Изображение
@@ -24,7 +24,7 @@ export type ErrorCodeDef = {
 export type ErrorContentDef = EmptyOption | ErrorImageDef | ErrorCodeDef;
 
 /**
- * @title Блок Ошибка
+ * @title Блок ошибки
  */
 export interface ErrorBlockContent {
   /** @title Заголовок */

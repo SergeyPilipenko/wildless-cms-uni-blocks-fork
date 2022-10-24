@@ -1100,7 +1100,7 @@ Object {
           "type": "string",
         },
       },
-      "title": "Блок Ошибка",
+      "title": "Блок ошибки",
       "type": "object",
     },
     "ErrorCodeDef": Object {
@@ -2596,11 +2596,11 @@ Object {
     },
     "OfficeServicesBlockContent": Object {
       "properties": Object {
-        "officesList": Object {
+        "servicesList": Object {
           "items": Object {
             "$ref": "#/definitions/OfficeServicesBlockList",
           },
-          "title": "Список",
+          "title": "Список услуг",
           "type": "array",
         },
         "title": Object {

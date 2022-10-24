@@ -21,6 +21,6 @@ export interface OfficeServicesBlockList {
 export interface OfficeServicesBlockContent {
   /** @title Заголовок */
   title?: string;
-  /** @title Список */
-  officesList?: OfficeServicesBlockList[];
+  /** @title Список услуг */
+  servicesList?: OfficeServicesBlockList[];
 }

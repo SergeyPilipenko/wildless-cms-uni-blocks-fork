@@ -8,7 +8,7 @@ export default {
         className="col-span-4"
         context={context}
         title="Услуги"
-        officesList={[
+        servicesList={[
           {
             text: 'Обслуживание физических лиц',
             icon: { icon: 'CardTickIcon' },
