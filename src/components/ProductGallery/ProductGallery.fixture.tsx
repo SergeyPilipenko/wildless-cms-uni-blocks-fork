@@ -50,7 +50,7 @@ const buttonsSecondary: ButtonWithIconProps[] = [
     href: 'https://rshb.ru',
     text: 'Подробнее',
     target: '_blank',
-    version: 'secondary',
+    version: 'white',
   },
 ];
 

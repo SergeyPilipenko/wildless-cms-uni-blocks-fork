@@ -6,7 +6,9 @@ import { getDisabledButtonClasses } from './getDisabledButtonClasses';
 
 export const Button = JSX<ButtonWithIconProps>((props) => {
   const { text, aboveText, appendLeft, appendRight, children, disabled, rounded, ...rest } = props;
-
+  // its non valid HTML attribute. Must be excluded from "rest"
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { asSVG, iconRight, icon, ...usedProps } = rest;
   const buttonInner = children ?? (
     <ButtonInner
       text={text}
@@ -18,11 +20,11 @@ export const Button = JSX<ButtonWithIconProps>((props) => {
   );
 
   return disabled ? (
-    <DisabledButton rounded={rounded} {...rest}>
+    <DisabledButton rounded={rounded} {...usedProps}>
       {buttonInner}
     </DisabledButton>
   ) : (
-    <RegularButton rounded={rounded} {...rest}>
+    <RegularButton rounded={rounded} {...usedProps}>
       {buttonInner}
     </RegularButton>
   );

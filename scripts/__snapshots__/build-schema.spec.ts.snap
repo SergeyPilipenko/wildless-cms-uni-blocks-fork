@@ -514,11 +514,13 @@ Object {
       "enum": Array [
         "primary",
         "secondary",
+        "white",
         "link",
       ],
       "enumNames": Array [
         "Основная",
         "Второстепенная",
+        "Белая",
         "Ссылка",
       ],
       "title": "Цвет кнопки",
