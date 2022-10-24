@@ -11,8 +11,8 @@ export const BaseTile = JSX<BaseTileProps>(
         {title}
         <div className="flex grow w-full justify-between">
           <div className="flex flex-col justify-between w-full">
-            <div>{children}</div>
-            {buttons ? <div className="mt-auto">{buttons}</div> : null}
+            <div className="h-full">{children}</div>
+            {buttons ? <div className="mt-auto pt-8">{buttons}</div> : null}
           </div>
           {image}
         </div>

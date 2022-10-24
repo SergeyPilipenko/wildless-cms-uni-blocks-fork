@@ -33,22 +33,24 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
           title={tileTitle}
           image={tileImage}
         >
-          {description ? <Description className="mb-2" description={description} /> : null}
-          {items?.length ? (
-            <List
-              className="text-xl-light flex flex-col flex-1 gap-2 max-w-[236px]"
-              items={items}
-              version={version}
-            />
-          ) : null}
-          {socialMedia ? (
-            <SocialMedia
-              className="pt-[42px] pb-0"
-              media={socialMedia}
-              version={version}
-              context={context}
-            />
-          ) : null}
+          <div className="h-full flex flex-col justify-between">
+            {description ? <Description className="mb-2" description={description} /> : null}
+            {items?.length ? (
+              <List
+                className="text-xl-light flex flex-col flex-1 gap-2 max-w-[236px]"
+                items={items}
+                version={version}
+              />
+            ) : null}
+            {socialMedia ? (
+              <SocialMedia
+                className="pt-10 pb-0"
+                media={socialMedia}
+                version={version}
+                context={context}
+              />
+            ) : null}
+          </div>
         </BaseTile>
       </section>
     );

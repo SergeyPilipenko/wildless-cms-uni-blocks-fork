@@ -41,7 +41,7 @@ exports[`Blocks BonusBenefitsBlock should render block "BonusBenefitsBlock" with
 
 exports[`Blocks Calculator should render block "Calculator" without content 1`] = `
 <section
-  class="box-border overflow-hidden relative font-sans w-100 text-primary-text "
+  class="box-border overflow-hidden relative font-sans w-100 text-primary-text bg-white "
 >
   <div
     class="bg-white"
@@ -82,7 +82,7 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
         class="h-[56px] relative flex items-center"
       >
         <input
-          class="text-l pl-4 pr-8 w-full h-full rounded-md border border-solid border-main-stroke"
+          class="text-l pl-4 pr-8 w-full h-full rounded-md border border-solid border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text"
           max="300000"
           min="0"
           name="amount"
@@ -174,7 +174,9 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
       <div
         class="flex flex-col justify-between w-full"
       >
-        <div>
+        <div
+          class="h-full"
+        >
           <div
             class="flex"
           >
@@ -283,7 +285,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
         />
       </svg>
       <span
-        class="text-black font-light ml-2.5"
+        class="text-primary-text font-medium ml-2.5"
       >
         Россельхозбанк
       </span>
@@ -316,7 +318,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
       </div>
       <input
         class="h-12 pl-12 w-full peer text-l text-black border border-solid rounded-md box-border
-              outline-none pr-[6%] border-main-divider focus:border-primary-text h-full"
+              outline-none pr-[6%] border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text h-full"
         id="search-bar-input"
         name="search-bar-input"
         type="text"
@@ -486,7 +488,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
           />
         </svg>
         <span
-          class="text-black font-light ml-2.5"
+          class="text-primary-text font-medium ml-2.5"
         >
           Россельхозбанк
         </span>
@@ -650,7 +652,9 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
       <div
         class="flex flex-col justify-between w-full"
       >
-        <div>
+        <div
+          class="h-full"
+        >
           <div
             class="flex flex-1 items-center"
           >
@@ -765,7 +769,9 @@ exports[`Blocks ProductBlock should render block "ProductBlock" without content 
           <div
             class="flex flex-col justify-between w-full"
           >
-            <div />
+            <div
+              class="h-full"
+            />
           </div>
         </div>
       </div>
@@ -825,7 +831,9 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
       <div
         class="flex flex-col justify-between w-full"
       >
-        <div>
+        <div
+          class="h-full"
+        >
           <div
             class="mt-1.5"
           >
@@ -887,7 +895,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             </span>
             <select
               class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-              placeholder="12321321312"
+              placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
@@ -910,7 +918,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             </span>
             <select
               class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-              placeholder="12321321312"
+              placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
@@ -984,7 +992,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             </span>
             <select
               class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-              placeholder="12321321312"
+              placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
@@ -1007,7 +1015,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             </span>
             <select
               class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-              placeholder="12321321312"
+              placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
               <option
@@ -1203,7 +1211,9 @@ exports[`Blocks Tile should render block "Tile" without content 1`] = `
       <div
         class="flex flex-col justify-between w-full"
       >
-        <div />
+        <div
+          class="h-full"
+        />
       </div>
     </div>
   </div>

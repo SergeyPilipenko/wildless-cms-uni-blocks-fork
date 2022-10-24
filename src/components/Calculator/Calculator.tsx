@@ -42,7 +42,7 @@ export const Calculator = JSX<CalculatorProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`box-border overflow-hidden relative font-sans w-100 text-primary-text ${className}`}
+        className={`box-border overflow-hidden relative font-sans w-100 text-primary-text bg-white ${className}`}
         {...rest}
       >
         <div className="bg-white">

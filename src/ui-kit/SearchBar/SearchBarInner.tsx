@@ -34,7 +34,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(({ className, isMobile = 
       <input
         id="search-bar-input"
         className={`h-12 pl-12 w-full peer text-l text-black border border-solid rounded-md box-border
-              outline-none pr-[6%] border-main-divider focus:border-primary-text ${SearchBarInputClassName}`}
+              outline-none pr-[6%] border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text ${SearchBarInputClassName}`}
         value={term}
         onChange={(e) => setTerm(e.target.value as string)}
         type="text"

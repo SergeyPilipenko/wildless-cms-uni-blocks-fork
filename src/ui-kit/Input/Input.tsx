@@ -10,7 +10,7 @@ export const Input = JSX<InputProps>(
 
     return (
       <input
-        className={className}
+        className={`border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text ${className}`}
         id={id}
         name={name || id}
         type={type}

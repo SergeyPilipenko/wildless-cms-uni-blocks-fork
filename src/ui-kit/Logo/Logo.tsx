@@ -25,7 +25,7 @@ const SVG_COLOR: Record<BgColorVersion, string> = {
   transparent: 'text-white',
 };
 const TEXT_COLOR: Record<BgColorVersion, string> = {
-  'bg-white': 'text-black',
+  'bg-white': 'text-primary-text',
   transparent: 'text-white',
 };
 
@@ -66,5 +66,5 @@ export const Logo = JSX<Partial<LogoProps>>(
 const renderTitle = (children, bgColor, title) => {
   const text = children || title || 'Россельхозбанк';
 
-  return <span className={`${TEXT_COLOR[bgColor]} font-light ml-2.5`}>{text}</span>;
+  return <span className={`${TEXT_COLOR[bgColor]} font-medium ml-2.5`}>{text}</span>;
 };
