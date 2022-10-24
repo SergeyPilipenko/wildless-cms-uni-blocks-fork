@@ -3,7 +3,8 @@ import { BlocksRegistry } from './ContentPage';
 import { filterBlocks } from './filterBlocks';
 
 export const normalizePage =
-  (blocksRegistry: BlocksRegistry) => (contentPage: ContentPageDef | undefined | null) => {
+  (blocksRegistry: BlocksRegistry) =>
+  (contentPage: ContentPageDef | undefined | null): ContentPageDef | undefined => {
     if (!contentPage) {
       return undefined;
     }
