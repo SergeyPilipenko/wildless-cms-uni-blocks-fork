@@ -1,20 +1,21 @@
 import type { BlockDef, ContentPageDef, Slot } from '../../types';
-import { Blocks } from '../Blocks';
+import { BlocksRegistry } from './ContentPage';
 import { isBlockInRegistry } from './isBlockInRegistry';
 import { normalizeBlock } from './normalizeBlock';
 
 export function normalizePage<T extends ContentPageDef | undefined | null>(
   contentPage: T,
+  blocksRegistry: BlocksRegistry,
 ): ContentPageDef | undefined {
   if (!contentPage) {
     return undefined;
   }
 
-  const { blocks, slots } = contentPage;
+  const { blocks = [], slots } = contentPage;
 
   return {
     ...contentPage,
-    blocks: getDesktopBlocks(blocks),
+    blocks: getDesktopBlocks(blocks, blocksRegistry),
     slots:
       slots &&
       Object.keys(slots).reduce(
@@ -22,7 +23,7 @@ export function normalizePage<T extends ContentPageDef | undefined | null>(
           ...res,
           [key]: {
             ...slots[key],
-            blocks: getDesktopBlocks((slots[key] as Slot).blocks),
+            blocks: getDesktopBlocks((slots[key] as Slot).blocks || [], blocksRegistry),
           },
         }),
         {},
@@ -30,6 +31,8 @@ export function normalizePage<T extends ContentPageDef | undefined | null>(
   };
 }
 
-function getDesktopBlocks(blocks?: BlockDef[]) {
-  return blocks?.filter((block) => isBlockInRegistry(block?.type, Blocks)).map(normalizeBlock);
+function getDesktopBlocks(blocks: BlockDef[], blocksRegistry: BlocksRegistry) {
+  return blocks
+    ?.filter((block) => isBlockInRegistry(block?.type, blocksRegistry))
+    .map(normalizeBlock);
 }

@@ -1,20 +1,21 @@
 import type { BlockDef, ContentPageDef, Slot } from '../../types';
-import { Blocks } from '../Blocks';
+import { BlocksRegistry } from './ContentPage';
 import { isBlockInRegistry } from './isBlockInRegistry';
 import { normalizeBlock } from './normalizeBlock';
 
 export function normalizePage(
   contentPage: ContentPageDef | undefined | null,
+  blocksRegistry: BlocksRegistry,
 ): ContentPageDef | undefined {
   if (!contentPage) {
     return undefined;
   }
 
-  const { blocks, slots } = contentPage;
+  const { blocks = [], slots } = contentPage;
 
   return {
     ...contentPage,
-    blocks: getMobileBlocks(blocks),
+    blocks: getMobileBlocks(blocks, blocksRegistry),
     slots:
       slots &&
       Object.keys(slots).reduce(
@@ -22,7 +23,7 @@ export function normalizePage(
           ...res,
           [key]: {
             ...slots[key],
-            blocks: getMobileBlocks((slots[key] as Slot).blocks),
+            blocks: getMobileBlocks((slots[key] as Slot).blocks || [], blocksRegistry),
           },
         }),
         {},
@@ -30,11 +31,12 @@ export function normalizePage(
   };
 }
 
-function getMobileBlocks(blocks?: BlockDef[]) {
+function getMobileBlocks(blocks: BlockDef[], blocksRegistry: BlocksRegistry) {
   return blocks
     ?.filter(
       (block) =>
-        isBlockInRegistry(block?.type || block?.mobile?.type, Blocks) && !block.mobile?.hidden,
+        isBlockInRegistry(block?.type || block?.mobile?.type, blocksRegistry) &&
+        !block.mobile?.hidden,
     )
     .map(normalizeBlock);
 }
