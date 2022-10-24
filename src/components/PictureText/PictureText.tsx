@@ -28,7 +28,7 @@ export const PictureText = JSX<PictureTextProps>(
   }) => {
     return (
       <BlockWrapper
-        className={`relative font-sans p-14 ${VersionStyleMap[version]} ${className}`}
+        className={`relative font-sans py-12 px-28 ${VersionStyleMap[version]} ${className}`}
         context={context}
         {...rest}
       >
