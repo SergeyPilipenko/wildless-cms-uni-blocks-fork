@@ -20,19 +20,24 @@ export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '',
   ) : null;
 });
 
-function renderButton({ icon, iconRight, ...button }: ButtonWithIconProps, i: number) {
+function renderButton(
+  { icon, iconRight, version = 'primary', ...button }: ButtonWithIconProps,
+  i: number,
+) {
   if (!button?.text) {
     return null;
   }
+  const imgStyle = version === 'primary' ? 'group-hover:text-black' : 'group-hover:text-white';
 
   return icon ? (
     <Button
       key={String(i)}
-      appendLeft={<Img image={icon} width="24" height="24" asSVG />}
-      appendRight={<Img image={iconRight} width="24" height="24" asSVG />}
+      appendLeft={<Img imageClassName={imgStyle} image={icon} width="24" height="24" asSVG />}
+      appendRight={<Img imageClassName={imgStyle} image={iconRight} width="24" height="24" asSVG />}
+      version={version}
       {...button}
     />
   ) : (
-    <Button key={String(i)} {...button} />
+    <Button key={String(i)} version={version} {...button} />
   );
 }

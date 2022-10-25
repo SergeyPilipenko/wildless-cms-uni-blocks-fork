@@ -16,7 +16,7 @@ export const Select = JSX<SelectProps>(
   ({ className = '', id, name, children, value, onChange }) => {
     return (
       <select
-        className={`appearance-none ${className}`}
+        className={`appearance-none pl-0.5 ${className}`}
         style={selectStyle}
         id={id}
         name={name || id}

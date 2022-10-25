@@ -353,7 +353,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           target="_blank"
         >
           <div
-            class="flex items-center justify-center gap-2 py-4 px-9 "
+            class="group flex items-center justify-center gap-2 py-4 px-9  "
           >
             <div>
               <div
@@ -894,7 +894,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Город
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
               placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
@@ -917,7 +917,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Отделение
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
               placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
@@ -991,7 +991,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Размер
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
               placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
@@ -1014,7 +1014,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               Параметры ячейки, мм (ВхШхД)
             </span>
             <select
-              class="appearance-none h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
+              class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
               placeholder=""
               style="background: url(/icons/ArrowDownIcon.svg) no-repeat 50%;"
             >
@@ -1080,7 +1080,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           role="button"
         >
           <div
-            class="flex items-center justify-center gap-2 py-4 px-9 "
+            class="group flex items-center justify-center gap-2 py-4 px-9  "
           >
             <div>
               <div

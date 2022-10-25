@@ -24,7 +24,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
 });
 
 const getButtonStyle = (props: ButtonInnerProps) => {
-  const { version, aboveText, rounded } = props;
+  const { className = '', version, aboveText, rounded } = props;
 
   if (version === 'link') {
     return '';
@@ -33,9 +33,10 @@ const getButtonStyle = (props: ButtonInnerProps) => {
   const withTextStyle = `gap-2 ${aboveText ? 'py-2.5 px-7' : 'py-4 px-9'}`;
 
   return [
-    'flex items-center justify-center',
+    'group flex items-center justify-center',
     isWithText(props) ? withTextStyle : 'h-12 w-12',
     rounded ? 'rounded-full' : '',
+    className,
   ].join(' ');
 };
 
