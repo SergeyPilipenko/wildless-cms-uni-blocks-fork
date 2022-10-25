@@ -55,6 +55,7 @@
     "./*.cjs": "./*.cjs"
   },
   "files": [
+    "bin",
     "lib",
     "mobile/lib",
     "dist",
@@ -93,6 +94,7 @@
     "lint": "eslint ./src",
     "pretest": "npm run prepare && npm run lint",
     "test": "jest --coverage",
+    "test:bin": "jest --config ./jest.config.bin.js",
     "cosmos": "cosmos",
     "cosmos:mobile": "cosmos --config cosmos.config.mobile.json",
     "precosmos:export": "npm run build:icons",
@@ -121,6 +123,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
     "@size-limit/file": "^7.0.8",
@@ -132,6 +135,7 @@
     "@typescript-eslint/experimental-utils": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "autoprefixer": "^10.4.7",
+    "babel-jest": "^28.1.3",
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.11",

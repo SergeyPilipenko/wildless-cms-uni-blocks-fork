@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import glob from 'glob';
 import { promisify } from 'util';
 import { migrateContentUnit } from './migrateContentUnit.js';
