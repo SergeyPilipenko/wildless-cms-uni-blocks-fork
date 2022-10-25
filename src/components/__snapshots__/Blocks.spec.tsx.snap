@@ -1044,7 +1044,6 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class="flex items-center relative cursor-pointer"
             >
               <input
-                checked=""
                 class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
                 name="contractType"
                 type="radio"
@@ -1062,6 +1061,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class="flex items-center relative cursor-pointer"
             >
               <input
+                checked=""
                 class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
                 name="contractType"
                 type="radio"

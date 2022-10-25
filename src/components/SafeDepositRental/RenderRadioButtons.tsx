@@ -3,7 +3,7 @@ import { useState } from '@redneckz/uni-jsx/lib/hooks/core';
 import { Radio } from '../../ui-kit/Radio/Radio';
 
 export const RenderRadioButtons = JSX(() => {
-  const [selectedOption, setSelectedOption] = useState('option1');
+  const [selectedOption, setSelectedOption] = useState('option2');
 
   const onChange = (_: React.ChangeEvent<HTMLInputElement>) => setSelectedOption(_.target.value);
 
