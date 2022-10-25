@@ -1,7 +1,9 @@
 import type { LinkProps } from '../../model/LinkProps';
 
+/**
+ * @title Группа
+ */
 export interface GroupTab {
-  /** @default group */
   type: 'group';
   /** @title Тег */
   ref?: string;
@@ -9,13 +11,16 @@ export interface GroupTab {
   title?: string;
 }
 
+/**
+ * @title Ссылка
+ */
 export type LinkTab = LinkProps & {
-  /** @default link */
   type: 'link';
 };
 
 /**
- *  @title Таб
+ * @title Таб
+ * @default {"type": "group"}
  */
 export type Tab = GroupTab | LinkTab;
 

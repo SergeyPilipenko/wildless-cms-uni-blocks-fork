@@ -1448,13 +1448,13 @@ Object {
         },
         "type": Object {
           "const": "group",
-          "default": "group",
           "type": "string",
         },
       },
       "required": Array [
         "type",
       ],
+      "title": "Группа",
       "type": "object",
     },
     "HeaderContent": Object {
@@ -2314,13 +2314,13 @@ Object {
         },
         "type": Object {
           "const": "link",
-          "default": "link",
           "type": "string",
         },
       },
       "required": Array [
         "type",
       ],
+      "title": "Ссылка",
       "type": "object",
     },
     "ListBenefitDef": Object {
@@ -3489,6 +3489,9 @@ Object {
           "$ref": "#/definitions/LinkTab",
         },
       ],
+      "default": Object {
+        "type": "group",
+      },
       "title": "Таб",
     },
     "TableColumnData": Object {
