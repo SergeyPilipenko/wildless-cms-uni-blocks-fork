@@ -11,7 +11,7 @@ export interface SearchBarInnerProps {
 export const SearchBarInner = JSX<SearchBarInnerProps>(({ className, isMobile = false }) => {
   const { term, setTerm } = useSearch();
 
-  const LoupeIconClassName = isMobile ? 'w-[20px] h-[20px]' : 'w-[24px] h-[24px]';
+  const LoupeIconClassName = isMobile ? 'w-5 h-5' : 'w-6 h-6';
   const SearchBarLabelClassName = isMobile ? 'text-s' : 'text-l-light';
   const SearchBarInputClassName = isMobile ? ' placeholder-transparent' : 'h-full';
   const inputPlaceholder = isMobile ? 'some search' : undefined;

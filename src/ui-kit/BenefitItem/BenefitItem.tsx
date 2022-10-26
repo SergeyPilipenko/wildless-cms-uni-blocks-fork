@@ -32,7 +32,7 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
       {icon ? (
         <div className={renderBenefitIconBgStyle(version, benefitsVersion)}>
           <Img
-            className="w-[24px] h-[24px]"
+            className="w-6 h-6"
             image={{ ...icon, iconVersion: isIconWhite ? 'white' : 'normal' }}
             asSVG
           />
@@ -57,5 +57,5 @@ function renderBenefitIconBgStyle(version, benefitsVersion) {
     bgColorStyle = 'bg-secondary-light text-primary-main';
   }
 
-  return `w-[50px] h-[50px] min-w-[50px] rounded-full p-[10px] box-border flex items-center justify-center ${bgColorStyle}`;
+  return `w-[50px] h-[50px] min-w-[50px] rounded-full p-2.5 box-border flex items-center justify-center ${bgColorStyle}`;
 }

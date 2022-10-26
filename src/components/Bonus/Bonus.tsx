@@ -42,7 +42,7 @@ export const Bonus = JSX<BonusProps>((props) => {
                           <span className="font-mohave -tracking-[5px] text-title-extra bg-clip-text text-transparent bg-green-to-yellow -mb-7">
                             {_.bonusCount}
                           </span>
-                          <span className="text-[44px] bg-clip-text text-transparent bg-green-to-yellow">
+                          <span className="text-h2 bg-clip-text text-transparent bg-green-to-yellow">
                             {_.bonusName}
                           </span>
                         </div>

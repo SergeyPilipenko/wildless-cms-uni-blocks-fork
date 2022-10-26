@@ -10,7 +10,7 @@ export interface LikeButtonProps {
 export const LikeButton = JSX<LikeButtonProps>(({ className, onClick, ariaLabel }) => (
   <button
     type="button"
-    className={`border-0 w-[36px] bg-inherit cursor-pointer ${className || ''}`}
+    className={`border-0 w-9 bg-inherit cursor-pointer ${className || ''}`}
     onClick={onClick}
     aria-label={ariaLabel}
   >

@@ -18,7 +18,7 @@ export const Navigation = JSX<NavigationProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`font-sans text-primary-text rounded-[40px] flex items-center justify-between ${
+        className={`font-sans text-primary-text flex items-center justify-between ${
           className || ''
         }`}
         {...rest}

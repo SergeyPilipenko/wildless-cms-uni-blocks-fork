@@ -92,7 +92,7 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
       ${btnClassName}`}
     >
       <Img
-        className={`h-[24px] w-[24px] min-w-[24px] min-h-[24px] mr-4 ${iconClassName}`}
+        className={`h-6 w-6 min-w-6 min-h-6 mr-4 ${iconClassName}`}
         image={{ ...tab?.icon, iconVersion: isActiveBtn ? 'white' : 'normal' }}
         width="24"
         height="24"

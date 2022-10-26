@@ -297,7 +297,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
         class="absolute rounded h-full flex items-center justify-center pl-4 max-w-[170px] gap-3.5 pointer-events-none"
       >
         <div
-          class="w-[24px] h-[24px]"
+          class="w-6 h-6"
         >
           <img
             alt="Иконка Лупа"
@@ -673,7 +673,7 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
 
 exports[`Blocks Navigation should render block "Navigation" without content 1`] = `
 <section
-  class="font-sans text-primary-text rounded-[40px] flex items-center justify-between "
+  class="font-sans text-primary-text flex items-center justify-between "
 >
   <h2
     class="text-xl font-medium m-0"
