@@ -683,7 +683,7 @@ exports[`Blocks Navigation should render block "Navigation" without content 1`] 
 
 exports[`Blocks OfficeServicesBlock should render block "OfficeServicesBlock" without content 1`] = `
 <section
-  class="font-sans bg-white p-12 flex flex-col "
+  class="font-sans bg-white p-8 flex flex-col "
 />
 `;
 

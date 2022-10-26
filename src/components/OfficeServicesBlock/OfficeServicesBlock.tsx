@@ -11,14 +11,15 @@ import type {
 export interface OfficeServicesBlockProps extends OfficeServicesBlockContent, UniBlockProps {}
 
 export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
-  ({ className = '', context, title, servicesList, anchor = '' }) => {
+  ({ className = '', context, title, servicesList, anchor = '', ...rest }) => {
     return (
       <BlockWrapper
         context={context}
         id={anchor}
-        className={`font-sans bg-white p-12 flex flex-col ${className}`}
+        className={`font-sans bg-white p-8 flex flex-col ${className}`}
+        {...rest}
       >
-        {title ? <Heading headingType="h5" className="mb-2.5" title={title} /> : null}
+        {title ? <Heading headingType="h5" className="mb-5" title={title} /> : null}
         {servicesList?.length ? servicesList.map(renderListItems) : null}
       </BlockWrapper>
     );
@@ -26,16 +27,16 @@ export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
 );
 
 const renderListItems = (itemList: OfficeServicesBlockList, i) => (
-  <li key={`list_item_${String(i)}`} className="flex mb-2.5 list-none">
+  <li key={`list_item_${String(i)}`} className="flex mb-5 last:mb-0 list-none">
     {itemList.icon ? (
       <Img
-        className="mr-[14px] max-w-6 max-h-6"
+        className="mr-3 max-w-6 max-h-6"
         width="24px"
         height="24px"
         asSVG
         image={itemList.icon}
       />
     ) : null}
-    {itemList.text ? <span className="text-l-light">{itemList.text}</span> : null}
+    {itemList.label ? <span className="text-l-light">{itemList.label}</span> : null}
   </li>
 );

@@ -1,33 +1,47 @@
 {
-  "title": "Услуги",
-  "officesList": [
+  "title": "Заголовок",
+  "servicesList": [
     {
-      "text": "Обслуживание физических лиц",
-      "icon": { "icon": "CardTickIcon" }
+      "label": "Пункт 1",
+      "icon": { 
+        "icon": "CardTickIcon"
+      }
     },
     {
-      "text": "Обслуживание юридических лиц",
-      "icon": { "icon": "EmptyWalletChangeIcon" }
+      "label": "Пункт 2",
+      "icon": { 
+        "icon": "EmptyWalletChangeIcon" 
+      }
     },
     {
-      "text": "Продажа монет из драгоценных металлов",
-      "icon": { "icon": "UserTickIcon" }
+      "label": "Пункт 3",
+      "icon": { 
+        "icon": "UserTickIcon" 
+      }
     },
     {
-      "text": "Аренда индивидуальных сейфовых ячеек",
-      "icon": { "icon": "UserTickIcon" }
+      "label": "Пункт 4",
+      "icon": { 
+        "icon": "UserTickIcon" 
+      }
     },
     {
-      "text": "Операции с обезличенными металлическими счетами",
-      "icon": { "icon": "ShieldTickIcon" }
+      "label": "Пункт 5",
+      "icon": { 
+        "icon": "ShieldTickIcon" 
+      }
     },
     {
-      "text": "Операции со слитками драгоценных металлов",
-      "icon": { "icon": "ShieldTickIcon" }
+      "label": "Пункт 6",
+      "icon": { 
+        "icon": "ShieldTickIcon" 
+      }
     },
     {
-      "text": "Передача фото и голоса в Единую биометрическую систему",
-      "icon": { "icon": "ShieldTickIcon" }
+      "label": "Пункт 7",
+      "icon": { 
+        "icon": "ShieldTickIcon" 
+      }
     }
   ]
 }

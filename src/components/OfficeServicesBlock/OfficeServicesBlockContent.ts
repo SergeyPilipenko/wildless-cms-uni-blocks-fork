@@ -12,7 +12,8 @@ export interface OfficeServicesBlockList {
    * }
    */
   icon?: Picture;
-  text?: string;
+  /** @title Текст */
+  label?: string;
 }
 
 /**
