@@ -49,11 +49,18 @@ TODO
 
 - Базовые скриншоты блоков, с которыми будет производится сравнение, находятся в папке `cypress/snapshots/base`
 - При выполнении тестов будут создаваться скриншоты блоков в папках `cypress/snapshots/actual`, `cypress/snapshots/diff` (в том числе по успешно пройденным)
-- Тесты по визуальному регрессу запускаются в pipeline при событии push, workflow называется [e2e-visual-regression] (https://github.com/redneckz/wildless-cms-uni-blocks/actions/workflows/e2e-visual-regression.yml)
+- Тесты по визуальному регрессу запускаются в pipeline при событии push, workflow называется [e2e-visual-regression] 
 - Если тест не отработает успешно:
   1. В логах workflow будет название скриншота, на котором найдено расхождение
-  2. В Summary workflow будет архив со скриншотами
+  2. В Summary workflow будет архив со скриншотами, в том числе в директории diff можно увидеть отличия между компонентами (https://github.com/redneckz/wildless-cms-uni-blocks/blob/main/cosmos-static/snapshotDiff.png)
+  
+- Обновить snapshots можно в github 
+  1. Во вкладке actions необходимо выбрать вкладку e2e-update-snapshots (https://github.com/redneckz/wildless-cms-uni-blocks/blob/main/cosmos-static/readme-snapshots-3.png)
+  2. Нажать кнопку `Run workflow` и выбрать ветку, в которой нужно проапдейтить snapshots (https://github.com/redneckz/wildless-cms-uni-blocks/blob/main/cosmos-static/readme-snapshots.png)
+  3. Нажать кнопку `Run workflow`, после чего запустится обновление snapshots (https://github.com/redneckz/wildless-cms-uni-blocks/blob/main/cosmos-static/readme-snapshots-2.png)
+  4. После успешного обновления snapshots в pull request автоматически запустится проверка e2e-visual-regression / visual-regression (push).
+
 - После скачивания архива в папке `cypress/snapshots/actual` можно посмотреть скриншот с ошибкой теста, в папке `cypress/snapshots/diff` скриншот, на котором выделена разница в изображении
-- Если изменения корректны, то необходимо обновить базовые скриншоты - запустить в ручном режиме workflow [e2e-update-snapshots](https://github.com/redneckz/wildless-cms-uni-blocks/actions/workflows/e2e-update-snapshots.yaml):
+- Если изменения корректны, то необходимо обновить базовые скриншоты - запустить в ручном режиме workflow [e2e-update-snapshots]:
   1. Перед запуском необходимо выбрать свою фича-ветку
   2. Обновленные базовые скриншоты закоммитятся в фича-ветку
