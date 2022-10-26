@@ -1109,7 +1109,6 @@ Object {
         },
         "error": Object {
           "$ref": "#/definitions/ErrorContentDef",
-          "title": "Вид контента",
         },
         "subtitle": Object {
           "title": "Описание",
@@ -1126,8 +1125,8 @@ Object {
     "ErrorCodeDef": Object {
       "properties": Object {
         "code": Object {
-          "title": "Код ошибки",
-          "type": "number",
+          "$ref": "#/definitions/ErrorType",
+          "default": 404,
         },
         "errorContentType": Object {
           "const": "Code",
@@ -1144,15 +1143,13 @@ Object {
     "ErrorContentDef": Object {
       "anyOf": Array [
         Object {
-          "$ref": "#/definitions/EmptyOption",
+          "$ref": "#/definitions/ErrorCodeDef",
         },
         Object {
           "$ref": "#/definitions/ErrorImageDef",
         },
-        Object {
-          "$ref": "#/definitions/ErrorCodeDef",
-        },
       ],
+      "title": "Вид контента",
     },
     "ErrorImageDef": Object {
       "properties": Object {
@@ -1163,7 +1160,6 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
-          "title": "Изображение",
         },
       },
       "required": Array [
@@ -1171,6 +1167,24 @@ Object {
       ],
       "title": "Изображение",
       "type": "object",
+    },
+    "ErrorType": Object {
+      "enum": Array [
+        "",
+        "400",
+        "401",
+        "402",
+        "403",
+        "404",
+        "500",
+        "501",
+        "502",
+        "503",
+        "504",
+        "505",
+      ],
+      "title": "Код",
+      "type": "string",
     },
     "ExchangeRateTileContent": Object {
       "properties": Object {

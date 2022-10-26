@@ -12,6 +12,7 @@ export default [
   'align',
   'text',
   'description',
+  'error',
   'colors',
   'price',
   'bonusItems',
