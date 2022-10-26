@@ -1,4 +1,5 @@
 import { defineConfig } from 'cypress';
+import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin';
 import getCompareSnapshotsPlugin from 'cypress-visual-regression/dist/plugin';
 import fs from 'fs';
 import glob from 'glob';
@@ -10,6 +11,16 @@ type Params = {
 };
 
 export default defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportDir: 'cypress/report',
+    reportFilename: 'report',
+    reportPageTitle: 'Report',
+    charts: true,
+    embeddedScreenshots: true,
+    inlineAssets: true,
+  },
+
   e2e: {
     baseUrl: 'http://localhost:8080/_renderer.html?',
     chromeWebSecurity: false,
@@ -20,6 +31,7 @@ export default defineConfig({
     video: false,
     screenshotsFolder: './cypress/snapshots/actual',
     trashAssetsBeforeRuns: true,
+    screenshotOnRunFailure: false,
 
     setupNodeEvents(on, config) {
       on('before:spec', (spec) => {
@@ -60,6 +72,7 @@ export default defineConfig({
       );
 
       getCompareSnapshotsPlugin(on, config);
+      cypressMochawesomeReporter(on);
     },
   },
 });

@@ -139,6 +139,7 @@
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.11",
+    "cypress-mochawesome-reporter": "^3.2.3",
     "eslint": "^8.21.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-local-eslint-rules": "./eslint-rules",

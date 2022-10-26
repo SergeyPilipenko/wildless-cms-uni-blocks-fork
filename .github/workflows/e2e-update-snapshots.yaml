@@ -30,7 +30,6 @@ jobs:
           build: npm run cosmos:export
           start: npx -y http-server ./docs/ -d false -g
           wait-on: 'http://localhost:8080/'
-          browser: chrome
           command: npm run e2e:base
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
@@ -40,7 +39,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Add changes" -a
+          git commit -m "Update base screenshots" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
@@ -53,5 +52,7 @@ jobs:
         if: failure()
         with:
           name: cypress-snapshots
-          path: cypress/snapshots
+          path: |
+            cypress/snapshots/diff
+            cypress/report
           retention-days: 1

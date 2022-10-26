@@ -19,9 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
-      - run: git branch
 
       - uses: actions/setup-node@v3
         with:
@@ -53,9 +50,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
-      - run: git branch
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -77,9 +71,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
-      - run: git branch
       - uses: actions/download-artifact@v3
         with:
           name: docs
@@ -96,9 +87,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
-      - run: git branch
       - uses: actions/download-artifact@v3
         with:
           name: docs
