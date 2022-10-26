@@ -13,15 +13,7 @@ interface WrapperSelectProps {
 }
 
 export const WrapperSelect = JSX<WrapperSelectProps>(
-  ({
-    data,
-    fieldLabel,
-    fieldValue,
-    selected,
-    placeholder = 'Выберите значение',
-    setSelected,
-    label,
-  }) => {
+  ({ data, fieldLabel, fieldValue, selected, placeholder, setSelected, label }) => {
     return (
       <div>
         <span className="block text-m-light mb-2">{label}</span>
@@ -32,7 +24,7 @@ export const WrapperSelect = JSX<WrapperSelectProps>(
           value={selected}
           onChange={(_) => setSelected(_)}
         >
-          <SelectOption value="">{placeholder}</SelectOption>
+          {placeholder ? <SelectOption value="">{placeholder}</SelectOption> : null}
           {data.map((_, i) => (
             <SelectOption key={String(i)} value={_?.[fieldValue || fieldLabel]}>
               {_?.[fieldLabel]}

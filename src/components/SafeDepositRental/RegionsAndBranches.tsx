@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Branch } from './SafeDepositRentalContent';
-import { Region } from './useGetRegions';
+import type { Branch } from '../../hooks/useFetchSafeBoxes';
+import type { Region } from './useGetRegions';
 import { WrapperSelect } from './WrapperSelect';
 
 interface RegionsAndBranchesProps {

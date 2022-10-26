@@ -6,6 +6,7 @@ export interface ProjectSettings {
   ASSIST_PROJECT_ID?: string;
   SITEMAP?: string;
   CDN?: string; // Should ends with "/"
+  YANDEX_MAP_API_KEY?: string;
 }
 
 export const projectSettings = new (class implements ProjectSettings {
@@ -38,5 +39,8 @@ export const projectSettings = new (class implements ProjectSettings {
   }
   get CDN() {
     return this._.CDN;
+  }
+  get YANDEX_MAP_API_KEY() {
+    return this._.YANDEX_MAP_API_KEY;
   }
 })();

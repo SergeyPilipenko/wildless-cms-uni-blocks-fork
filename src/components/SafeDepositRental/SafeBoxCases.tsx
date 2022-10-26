@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { SafeBoxCase, SafeBoxCaseVolume } from './SafeDepositRentalContent';
+import type { SafeBoxCase, SafeBoxCaseVolume } from '../../hooks/useFetchSafeBoxes';
 import { WrapperSelect } from './WrapperSelect';
 
 interface SafeBoxCasesProps {

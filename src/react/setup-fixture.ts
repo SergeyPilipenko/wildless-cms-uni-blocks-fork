@@ -1,9 +1,13 @@
 import '@redneckz/uni-jsx/lib/setup.react';
 import { useState } from 'react';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
+import { projectSettings } from '../ProjectSettings';
+import wlc from '../wlc.json';
 import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 const TEST_ORIGIN = 'http://localhost:5001';
+
+projectSettings.setup(wlc);
 
 const Router = () => {
   const [href, setHref] = useState<string>(globalThis.location.href);

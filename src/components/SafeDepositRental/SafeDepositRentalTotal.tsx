@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { Tariff } from '../../hooks/useFetchSafeBoxes';
 import { Img } from '../../ui-kit/Img/Img';
-import { Tariff } from './SafeDepositRentalContent';
 
 export interface SafeDepositRentalTotalProps {
   days: number;

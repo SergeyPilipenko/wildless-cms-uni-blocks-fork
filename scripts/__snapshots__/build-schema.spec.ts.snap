@@ -454,23 +454,6 @@ Object {
       "title": "Блок Бонусы",
       "type": "object",
     },
-    "Branch": Object {
-      "properties": Object {
-        "address": Object {
-          "type": "string",
-        },
-        "branchCode": Object {
-          "type": "string",
-        },
-        "safeBoxCaseVolumes": Object {
-          "items": Object {
-            "$ref": "#/definitions/SafeBoxCaseVolume",
-          },
-          "type": "array",
-        },
-      },
-      "type": "object",
-    },
     "ButtonContent": Object {
       "properties": Object {
         "buttons": Object {
@@ -1726,6 +1709,8 @@ Object {
         "JCBIcon",
         "LogoIcon",
         "LoupeIcon",
+        "MapMarkerClusterIcon",
+        "MapMarkerSingleIcon",
         "MasterCardIcon",
         "MinusIcon",
         "MirIcon",
@@ -1812,6 +1797,8 @@ Object {
         "JCB",
         "Logo",
         "Лупа",
+        "MapMarkerClusterIcon",
+        "MapMarkerSingleIcon",
         "MasterCard",
         "Минус",
         "МИР",
@@ -3326,34 +3313,6 @@ Object {
       "title": "Параметр",
       "type": "object",
     },
-    "SafeBoxCase": Object {
-      "properties": Object {
-        "safeBoxCasesSize": Object {
-          "type": "string",
-        },
-        "tariffs": Object {
-          "items": Object {
-            "$ref": "#/definitions/Tariff",
-          },
-          "type": "array",
-        },
-      },
-      "type": "object",
-    },
-    "SafeBoxCaseVolume": Object {
-      "properties": Object {
-        "safeBoxCases": Object {
-          "items": Object {
-            "$ref": "#/definitions/SafeBoxCase",
-          },
-          "type": "array",
-        },
-        "volume": Object {
-          "type": "string",
-        },
-      },
-      "type": "object",
-    },
     "SafeDepositRentalContent": Object {
       "properties": Object {
         "title": Object {
@@ -3573,17 +3532,6 @@ Object {
       ],
       "title": "Таргет (target)",
       "type": "string",
-    },
-    "Tariff": Object {
-      "properties": Object {
-        "tariffType": Object {
-          "type": "string",
-        },
-        "tariffValue": Object {
-          "type": "number",
-        },
-      },
-      "type": "object",
     },
     "TariffsTableColumn": Object {
       "properties": Object {

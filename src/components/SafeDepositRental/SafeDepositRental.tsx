@@ -1,27 +1,51 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useScript } from '../../hooks/useScript';
+import { projectSettings } from '../../ProjectSettings';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { SafeDepositRentalContent } from './SafeDepositRentalContent';
 import { SafeDepositRentalForm } from './SafeDepositRentalForm';
 import { useGetRegions } from './useGetRegions';
+import { YandexMap } from './YandexMap';
 
 export interface SafeDepositRentalProps extends SafeDepositRentalContent, UniBlockProps {}
 
 export const SafeDepositRental = JSX<SafeDepositRentalProps>(
-  ({ title, context, className = '', ...rest }) => {
+  ({ title, footnote, context, className = '', ...rest }) => {
+    const [points, setPoints] = useState<number[][]>([]);
+    const [showMap, setShowMap] = useState<boolean>(false);
+
     const regions = useGetRegions();
 
+    const statusScript = useScript(
+      `https://api-maps.yandex.ru/2.1/?apikey=${projectSettings.YANDEX_MAP_API_KEY}&lang=ru_RU`,
+      {
+        removeOnUnmount: true,
+      },
+    );
+
+    const toggleShowMap = () => {
+      setShowMap(!showMap);
+    };
+
     return (
-      <BlockWrapper context={context} className={`bg-white px-8 py-12 ${className}`} {...rest}>
-        {title ? (
-          <Heading title={title} headingType="h3" as="h2" className="mb-2.5 text-center" />
+      <BlockWrapper context={context} className={className} {...rest}>
+        <div className="bg-white px-8 py-12">
+          {title ? (
+            <Heading title={title} headingType="h3" as="h2" className="mb-2.5 text-center" />
+          ) : null}
+          <SafeDepositRentalForm
+            regions={regions}
+            setPoints={setPoints}
+            toggleShowMap={toggleShowMap}
+          />
+          {footnote ? <p className="text-s-light text-secondary-text">{footnote}</p> : null}
+        </div>
+        {statusScript === 'ready' && points.length && showMap ? (
+          <YandexMap points={points} />
         ) : null}
-        <SafeDepositRentalForm regions={regions} />
-        <p className="text-s-light text-secondary-text">
-          Аренда СЯ, в случае проведения процедуры купли-продажи, с использованием наличных денег
-          или процедуры ипотечной сделки
-        </p>
       </BlockWrapper>
     );
   },

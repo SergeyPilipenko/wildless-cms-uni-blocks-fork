@@ -27,8 +27,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -37,8 +37,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -78,25 +78,25 @@
               {
                 "id": 6987065,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987066,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987067,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987068,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -115,19 +115,19 @@
               {
                 "id": 312321,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987067,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987068,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -145,25 +145,25 @@
               {
                 "id": 6987061,
                 "tariffType": "1",
-                "tariffValue": 101.0,
+                "tariffValue": 101,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987062,
                 "tariffType": "2",
-                "tariffValue": 62.0,
+                "tariffValue": 62,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987063,
                 "tariffType": "3",
-                "tariffValue": 50.0,
+                "tariffValue": 50,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987064,
                 "tariffType": "4",
-                "tariffValue": 45.0,
+                "tariffValue": 45,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -204,8 +204,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -214,8 +214,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -255,25 +255,25 @@
               {
                 "id": 6987049,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987050,
                 "tariffType": "2",
-                "tariffValue": 27.0,
+                "tariffValue": 27,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987051,
                 "tariffType": "3",
-                "tariffValue": 23.0,
+                "tariffValue": 23,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987052,
                 "tariffType": "4",
-                "tariffValue": 21.0,
+                "tariffValue": 21,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -328,8 +328,8 @@
           }
         },
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 2,
             "code": "978",
@@ -358,8 +358,8 @@
           }
         },
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 1,
             "code": "840",
@@ -403,25 +403,25 @@
               {
                 "id": 6987081,
                 "tariffType": "1",
-                "tariffValue": 101.0,
+                "tariffValue": 101,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987082,
                 "tariffType": "2",
-                "tariffValue": 62.0,
+                "tariffValue": 62,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987083,
                 "tariffType": "3",
-                "tariffValue": 50.0,
+                "tariffValue": 50,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987084,
                 "tariffType": "4",
-                "tariffValue": 45.0,
+                "tariffValue": 45,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -462,8 +462,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 2,
             "code": "978",
@@ -472,8 +472,8 @@
           }
         },
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 1,
             "code": "840",
@@ -517,25 +517,25 @@
               {
                 "id": 6987109,
                 "tariffType": "1",
-                "tariffValue": 101.0,
+                "tariffValue": 101,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987110,
                 "tariffType": "2",
-                "tariffValue": 62.0,
+                "tariffValue": 62,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987111,
                 "tariffType": "3",
-                "tariffValue": 50.0,
+                "tariffValue": 50,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987112,
                 "tariffType": "4",
-                "tariffValue": 45.0,
+                "tariffValue": 45,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -576,8 +576,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -586,8 +586,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -627,25 +627,25 @@
               {
                 "id": 6987069,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987070,
                 "tariffType": "2",
-                "tariffValue": 27.0,
+                "tariffValue": 27,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987071,
                 "tariffType": "3",
-                "tariffValue": 23.0,
+                "tariffValue": 23,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987072,
                 "tariffType": "4",
-                "tariffValue": 21.0,
+                "tariffValue": 21,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -690,8 +690,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 2,
             "code": "978",
@@ -700,8 +700,8 @@
           }
         },
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 1,
             "code": "840",
@@ -741,25 +741,25 @@
               {
                 "id": 6987077,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987078,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987079,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987080,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -804,8 +804,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -814,8 +814,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -855,25 +855,25 @@
               {
                 "id": 6987085,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987086,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987087,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987088,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -886,25 +886,25 @@
               {
                 "id": 6987093,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987094,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987095,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987096,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -926,25 +926,25 @@
               {
                 "id": 6987089,
                 "tariffType": "1",
-                "tariffValue": 118.0,
+                "tariffValue": 118,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987090,
                 "tariffType": "2",
-                "tariffValue": 77.0,
+                "tariffValue": 77,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987091,
                 "tariffType": "3",
-                "tariffValue": 63.0,
+                "tariffValue": 63,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987092,
                 "tariffType": "4",
-                "tariffValue": 63.0,
+                "tariffValue": 63,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -981,8 +981,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -991,8 +991,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -1032,25 +1032,25 @@
               {
                 "id": 6987057,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987058,
                 "tariffType": "2",
-                "tariffValue": 27.0,
+                "tariffValue": 27,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987059,
                 "tariffType": "3",
-                "tariffValue": 23.0,
+                "tariffValue": 23,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987060,
                 "tariffType": "4",
-                "tariffValue": 21.0,
+                "tariffValue": 21,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -1095,8 +1095,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 2,
             "code": "978",
@@ -1105,8 +1105,8 @@
           }
         },
         {
-          "buyExchangeRate": 0.0,
-          "saleExchangeRate": 0.0,
+          "buyExchangeRate": 0,
+          "saleExchangeRate": 0,
           "currency": {
             "id": 1,
             "code": "840",
@@ -1146,25 +1146,25 @@
               {
                 "id": 6987097,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987098,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987099,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987100,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -1209,8 +1209,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -1219,8 +1219,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -1260,25 +1260,25 @@
               {
                 "id": 6987053,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987054,
                 "tariffType": "2",
-                "tariffValue": 27.0,
+                "tariffValue": 27,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987055,
                 "tariffType": "3",
-                "tariffValue": 23.0,
+                "tariffValue": 23,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987056,
                 "tariffType": "4",
-                "tariffValue": 21.0,
+                "tariffValue": 21,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -1323,8 +1323,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -1333,8 +1333,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -1374,25 +1374,25 @@
               {
                 "id": 6987073,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987074,
                 "tariffType": "2",
-                "tariffValue": 27.0,
+                "tariffValue": 27,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987075,
                 "tariffType": "3",
-                "tariffValue": 23.0,
+                "tariffValue": 23,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987076,
                 "tariffType": "4",
-                "tariffValue": 21.0,
+                "tariffValue": 21,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -1437,8 +1437,8 @@
     "exchangeRate": {
       "currencies": [
         {
-          "buyExchangeRate": 73.0,
-          "saleExchangeRate": 79.0,
+          "buyExchangeRate": 73,
+          "saleExchangeRate": 79,
           "currency": {
             "id": 2,
             "code": "978",
@@ -1447,8 +1447,8 @@
           }
         },
         {
-          "buyExchangeRate": 63.0,
-          "saleExchangeRate": 70.0,
+          "buyExchangeRate": 63,
+          "saleExchangeRate": 70,
           "currency": {
             "id": 1,
             "code": "840",
@@ -1488,25 +1488,25 @@
               {
                 "id": 6987105,
                 "tariffType": "1",
-                "tariffValue": 54.0,
+                "tariffValue": 54,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987106,
                 "tariffType": "2",
-                "tariffValue": 48.0,
+                "tariffValue": 48,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987107,
                 "tariffType": "3",
-                "tariffValue": 41.0,
+                "tariffValue": 41,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987108,
                 "tariffType": "4",
-                "tariffValue": 29.0,
+                "tariffValue": 29,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]
@@ -1528,25 +1528,25 @@
               {
                 "id": 6987101,
                 "tariffType": "1",
-                "tariffValue": 118.0,
+                "tariffValue": 118,
                 "tariffTypeDescription": "Меньше 30 дней"
               },
               {
                 "id": 6987102,
                 "tariffType": "2",
-                "tariffValue": 77.0,
+                "tariffValue": 77,
                 "tariffTypeDescription": "От 31 до 90 дней"
               },
               {
                 "id": 6987103,
                 "tariffType": "3",
-                "tariffValue": 63.0,
+                "tariffValue": 63,
                 "tariffTypeDescription": "От 91 до 180 дней"
               },
               {
                 "id": 6987104,
                 "tariffType": "4",
-                "tariffValue": 63.0,
+                "tariffValue": 63,
                 "tariffTypeDescription": "От 181 до 365 дней"
               }
             ]

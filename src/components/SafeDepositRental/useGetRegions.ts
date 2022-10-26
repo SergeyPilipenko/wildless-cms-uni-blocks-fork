@@ -1,7 +1,7 @@
 import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
 import { fetchJSONUnsafe } from '../../utils/fetchJSON';
 
-const REGIONS_URL = '/api/v1/admin/regions';
+const REGIONS_URL = '/api/v1/regions';
 
 export interface Region {
   id?: number;
