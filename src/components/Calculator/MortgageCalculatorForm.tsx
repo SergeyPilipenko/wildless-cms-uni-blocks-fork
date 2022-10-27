@@ -4,7 +4,6 @@ import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../types';
 import { Checkbox } from '../../ui-kit/Checkbox/Checkbox';
 import { CommonCalculatorProps, MortgageCalculatorParams } from './CalculatorContent';
-import { CalculatorValueBlock } from './CalculatorValueBlock';
 import { DEFAULT_MAX_MONTHS, DEFAULT_MIN_MONTHS } from './constants';
 import { getCreditRate } from './getCreditRate';
 import { Rate } from './Rate';

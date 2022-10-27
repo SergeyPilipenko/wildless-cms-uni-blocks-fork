@@ -1,6 +1,6 @@
 import { Input } from '../../ui-kit/Input/Input';
-import { Select } from '../../ui-kit/Select/Select';
-import { SelectOption } from '../../ui-kit/Select/SelectOption';
+import { SelectCustom } from '../../ui-kit/SelectCustom/SelectCustom';
+import type { OptionProps } from '../../ui-kit/SelectCustom/SelectCustom';
 import type { Currency } from './CurrencyProps';
 import type { ExchangeCurrencyItem } from './ExchangeCurrencyCalculator';
 
@@ -15,28 +15,25 @@ interface InputProps {
 
 export function renderInput(props: InputProps) {
   const { placeholder, rates, selected, value, setValue, setSelected } = props;
+  const ratesOptions: OptionProps[] = rates.map((_) => ({ key: _.code ?? '', text: _.code ?? '' }));
+  const selectedValue: OptionProps = { key: selected, text: selected };
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex">
       <Input
-        className="shrink-0 h-13 border pl-4 pt-4 pb-4 rounded-md text-l w-full appearance-none -mr-12"
+        className="shrink-0 h-14 border pl-4 pt-4 pb-4 rounded-md text-l w-full appearance-none mr-[-90px]"
         placeholder={placeholder}
         type="text"
         value={value}
         onChange={setValue}
       />
-      {rates.length ? (
-        <Select
-          className="shrink-0 w-20 h-9 -translate-x-8 bg-transparent"
-          value={selected}
-          onChange={(_) => setSelected(_ as Currency)}
-        >
-          {rates.map((_, i) => (
-            <SelectOption key={String(i)} value={_.code}>
-              {_.code}
-            </SelectOption>
-          ))}
-        </Select>
+      {ratesOptions.length ? (
+        <SelectCustom
+          isBorder={false}
+          onChange={(_) => setSelected(_.key as Currency)}
+          options={ratesOptions}
+          value={selectedValue}
+        />
       ) : null}
     </div>
   );
