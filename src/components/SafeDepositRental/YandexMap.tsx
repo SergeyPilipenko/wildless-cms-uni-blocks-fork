@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useEffect } from '@redneckz/uni-jsx/lib/hooks';
+import { useEffect, useRef } from '@redneckz/uni-jsx/lib/hooks';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { renderClusterer } from './renderClusterer';
 
@@ -9,21 +9,22 @@ interface YandexMapProps {
   points: number[][];
 }
 
-let Map = null;
-
 export const YandexMap = JSX<YandexMapProps>(({ points }) => {
+  const map = useRef(null);
+
   useEffect(() => {
     ymaps.ready(() => {
-      Map = new ymaps.Map('map', {
+      map.current = new ymaps.Map('map', {
         center: points[0],
         zoom: 10,
       });
-      renderClusterer(Map, points);
+
+      renderClusterer(map.current, points);
     });
   }, []);
 
-  if (Map && points) {
-    renderClusterer(Map, points);
+  if (map.current && points) {
+    renderClusterer(map.current, points);
   }
 
   return (
