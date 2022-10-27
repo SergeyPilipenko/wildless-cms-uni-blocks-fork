@@ -941,7 +941,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             >
               <input
                 class="m-0 mt-2 font-sans text-h3 w-full h-14 border border-solid border-main-stroke rounded-md
-                        outline-none p-0 pl-4 box-border text-primary-text hover:border-primary-hover focus:border-primary-focus disabled:border-main-stroke disabled:bg-main-divider"
+            outline-none p-0 pl-4 box-border text-primary-text hover:border-primary-hover focus:border-primary-focus disabled:border-main-stroke disabled:bg-main-divider"
                 value="26"
               />
               <div
