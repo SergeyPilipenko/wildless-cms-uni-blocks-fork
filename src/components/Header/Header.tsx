@@ -53,7 +53,9 @@ export const Header = JSX<HeaderProps>(
       <BlockWrapper
         tag="header"
         context={context}
-        className={`pt-6 pb-5 px-20 ${bgColor} ${className}`}
+        className={`pt-6 px-20 ${bgColor} ${className} ${
+          showSubMenu && activeTopItem?.items?.length ? 'pb-4' : 'pb-5'
+        }`}
         {...rest}
       >
         <div className="container">
