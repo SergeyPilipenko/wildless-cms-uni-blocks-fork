@@ -325,7 +325,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
         value=""
       />
       <a
-        class="text-center font-sans select-none border border-transparent inline-block cursor-pointer no-underline focus:border-primary-focus focus:border text-white bg-primary-main hover:bg-primary-hover active:bg-primary-active rounded-md invisible peer-focus:visible absolute top-1 right-1"
+        class="text-center font-sans select-none border border-transparent inline-block cursor-pointer no-underline focus:border-primary-focus focus:border text-white bg-primary-main hover:bg-primary-hover active:bg-primary-active rounded-md invisible peer-focus:visible absolute top-[3px] right-1"
         role="button"
       >
         <div

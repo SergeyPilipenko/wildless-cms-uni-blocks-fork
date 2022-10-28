@@ -28,12 +28,29 @@ function renderButton(
     return null;
   }
   const imgStyle = version === 'primary' ? 'group-hover:text-black' : 'group-hover:text-white';
+  const iconVersion = version === 'secondary' ? 'normal' : 'white';
 
   return icon ? (
     <Button
       key={String(i)}
-      appendLeft={<Img imageClassName={imgStyle} image={icon} width="24" height="24" asSVG />}
-      appendRight={<Img imageClassName={imgStyle} image={iconRight} width="24" height="24" asSVG />}
+      appendLeft={
+        <Img
+          imageClassName={imgStyle}
+          image={{ ...icon, iconVersion: iconVersion }}
+          width="24"
+          height="24"
+          asSVG
+        />
+      }
+      appendRight={
+        <Img
+          imageClassName={imgStyle}
+          image={{ ...iconRight, iconVersion: iconVersion }}
+          width="24"
+          height="24"
+          asSVG
+        />
+      }
       version={version}
       {...button}
     />

@@ -55,7 +55,7 @@ export const SearchBarInner = JSX<SearchBarInnerProps>(({ className, isMobile = 
         <Button
           version="primary"
           text="Найти"
-          className="invisible peer-focus:visible absolute top-1 right-1"
+          className="invisible peer-focus:visible absolute top-[3px] right-1"
           onClick={(ev) => {
             ev?.preventDefault();
             console.log('click');
