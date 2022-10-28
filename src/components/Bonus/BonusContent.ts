@@ -1,7 +1,9 @@
 import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
-/** @title Плитка */
-interface BonusItems {
+/**
+ * @title Плитка
+ */
+export interface BonusItem {
   /** @title Бонусы */
   title?: string;
   /** @title Описание плитки */
@@ -17,5 +19,5 @@ interface BonusItems {
  */
 export type BonusContent = HeadlineCommonProps & {
   /** @title Список плиток */
-  bonusItems?: BonusItems[];
+  bonusItems?: BonusItem[];
 };

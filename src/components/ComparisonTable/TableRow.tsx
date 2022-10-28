@@ -1,10 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Row } from './ComparisonTableContent';
+import type { CellData, RowHeader } from './ComparisonTableContent';
 import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
 import { TableCarouselContainer } from './TableCarouselContainer';
 import { TableCell } from './TableCell';
 import { TableRowContainer } from './TableRowContainer';
 
+export interface Row {
+  header: RowHeader;
+  data: CellData[][];
+}
 export interface TableRowProps {
   className?: string;
   row: Row;

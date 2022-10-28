@@ -4,9 +4,9 @@
 export type CardTransferContent = {
   /** @title Заголовок */
   title?: string;
-  /** @title Название поля */
+  /** @title Название */
   label?: string;
-  /** @title Плейсхолдер поля */
+  /** @title Плейсхолдер */
   placeholder?: string;
   /** @title Текст кнопки */
   buttonText?: string;

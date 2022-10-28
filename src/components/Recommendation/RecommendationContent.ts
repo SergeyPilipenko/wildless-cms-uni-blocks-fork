@@ -1,15 +1,33 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { HeadlineCommonProps, TitleProps } from '../../model/HeadlineType';
 import type { LinkCommonProps } from '../../model/LinkProps';
-import type { ImageContent } from '../../ui-kit/Img/ImgProps';
+import type { Picture } from '../../model/Picture';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 
-export interface RecommendationCardTypes extends HeadlineCommonProps, ListContent, ImageContent {
+/**
+ * @title Карточка
+ */
+export interface RecommendationCardTypes extends HeadlineCommonProps, ListContent {
   /**
    * @title Соц сети
    * @minItems 3
    */
   socialMedia?: LinkCommonProps[];
+  /**
+   * @default {
+   *   "format": "webp",
+   *   "size": {
+   *       "width": 290
+   *   },
+   *   "sources": [{
+   *       "media": 1279,
+   *       "width": 174,
+   *       "format": "webp",
+   *       "alignment": "southeast"
+   *   }]
+   * }
+   */
+  image?: Picture;
 }
 
 /**

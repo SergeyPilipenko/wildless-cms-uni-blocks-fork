@@ -31,7 +31,7 @@ exports[`Blocks Bonus should render block "Bonus" without content 1`] = `
 
 exports[`Blocks BonusBenefitsBlock should render block "BonusBenefitsBlock" without content 1`] = `
 <section
-  class="font-sans text-primary-text bg-white p-50 flex flex-col text-center "
+  class="font-sans text-primary-text bg-white p-[50px] flex flex-col text-center "
 >
   <section
     class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
@@ -668,16 +668,6 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
       </div>
     </div>
   </div>
-</section>
-`;
-
-exports[`Blocks Navigation should render block "Navigation" without content 1`] = `
-<section
-  class="font-sans text-primary-text flex items-center justify-between "
->
-  <h2
-    class="text-xl font-medium m-0"
-  />
 </section>
 `;
 

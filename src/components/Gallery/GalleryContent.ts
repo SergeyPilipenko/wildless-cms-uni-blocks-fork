@@ -22,13 +22,17 @@ export interface GalleryCardProps {
   /** @title Описание */
   description?: string;
   /**
-   * @default
-   * {
-   *  format: "webp",
-   *  size: {
-   *    width: 140,
-   *    height: 140
-   *   }
+   * @default {
+   *   "format": "webp",
+   *   "size": {
+   *       "width": 140
+   *   },
+   *   "sources": [{
+   *       "media": 1279,
+   *       "width": 84,
+   *       "format": "webp",
+   *       "alignment": "center"
+   *   }]
    * }
    */
   image?: Picture;

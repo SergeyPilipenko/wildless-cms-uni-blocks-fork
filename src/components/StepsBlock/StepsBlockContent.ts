@@ -11,17 +11,6 @@ export interface Step {
   label?: string;
   /** @title Описание */
   description?: string;
-  /**
-   *  @title Иконка
-   *  @default
-   * {
-   *   "size": {
-   *     "width": 48,
-   *     "height": 48
-   *   },
-   *   "format": "webp"
-   * }
-   */
   icon?: Picture;
   /** @title Кнопка */
   button?: ButtonWithIconProps;

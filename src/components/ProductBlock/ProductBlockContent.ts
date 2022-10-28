@@ -1,24 +1,27 @@
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { HeadlineProps } from '../../model/HeadlineType';
 import type { IconVersion } from '../../model/IconVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { ButtonContent, BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
-import type { ListContent } from '../../ui-kit/List/ListContent';
-import type { HeadlineProps } from '../../model/HeadlineType';
-import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
 import type { Picture } from '../../model/Picture';
+import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
+import type { BackwardButtonProps, ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import type { ListContent } from '../../ui-kit/List/ListContent';
 
 export type ProductBlockInnerContent = HeadlineProps &
   ListContent &
   ButtonContent & {
     /**
-     *  @title Иконка
-     *  @default
-     * {
+     * @default {
+     *   "format": "webp",
      *   "size": {
-     *     "width": 608,
-     *     "height": 299
+     *       "width": 600
      *   },
-     *   "format": "webp"
+     *   "sources": [{
+     *       "media": 1279,
+     *	     "width": 360,
+     *       "format": "webp",
+     *       "alignment": "northeast"
+     *   }]
      * }
      */
     image?: Picture;

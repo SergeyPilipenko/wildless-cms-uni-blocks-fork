@@ -1,8 +1,8 @@
 import type { Picture } from '../../model/Picture';
+import type { ProductColorVersion } from '../../model/ProductColorVersion';
 import { context } from '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Catalog, CatalogProps } from './Catalog';
-import type { CatalogProductColor } from './CatalogContent';
 
 const payRing: Picture = {
   src: 'pay-ring.png',
@@ -14,7 +14,7 @@ const payRing: Picture = {
   title: 'pay-ring',
 };
 
-const colors: CatalogProductColor[] = ['black', 'white'];
+const colors: ProductColorVersion[] = ['black', 'white'];
 
 const buttonPrimary: ButtonWithIconProps = {
   href: '/credit-cards',

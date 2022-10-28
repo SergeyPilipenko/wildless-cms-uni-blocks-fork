@@ -2,6 +2,7 @@ import type { AlignType } from '../../model/AlignType';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
+
 /**
  * @title Элемент списка
  */
@@ -11,9 +12,7 @@ export interface AccordionItemCommonProps {
    * @default Список
    */
   label?: string;
-  /**
-   * @title Отображать в раскрытом виде
-   */
+  /** @title Отображать в раскрытом виде */
   isExpanded?: boolean;
   /** @title Блоки */
   blocks?: BlockDef[];

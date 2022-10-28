@@ -18,7 +18,7 @@ export type CardItem = {
 /**
  * @title Вкладка
  */
-export interface InsuranceAmountBlockTabs {
+export interface InsuranceAmountBlockTab {
   /** @title Заголовок вкладки */
   title?: string;
   /** @title Содержимое вкладки */
@@ -32,7 +32,7 @@ export interface InsuranceAmountBlockContent {
   /** @title Заголовок */
   title?: string;
   /** @title Список вкладок */
-  insuranceTabs?: InsuranceAmountBlockTabs[];
+  insuranceTabs?: InsuranceAmountBlockTab[];
   /** @title Кнопка */
   button?: ButtonProps;
 }

@@ -1,15 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import type { BlockVersion } from '../../model/BlockVersion';
+import type { Picture } from '../../model/Picture';
 import type { UniBlockProps } from '../../types';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { BenefitsBlockContent, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
-import {
-  BenefitBlockItemProps,
-  BenefitsBlockVersion,
-  DescriptionDef,
-} from './BenefitsBlockContent';
-import { Picture } from '../../model/Picture';
+import { BenefitBlockItemProps, DescriptionDef } from './BenefitsBlockContent';
 
 export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
 
@@ -56,7 +53,7 @@ export const BenefitsBlock = JSX<BenefitsBlockProps>(
 
 const renderBenefits = (
   benefitList: BenefitBlockItemProps[],
-  benefitsBlockVersion: BenefitsBlockVersion,
+  benefitsBlockVersion: BlockVersion,
 ) => {
   return (
     <div className="flex flex-wrap w-full justify-center gap-x-20 mt-8">
@@ -65,7 +62,7 @@ const renderBenefits = (
   );
 };
 
-const setIconVersion = (benefitIcon: Picture, benefitsBlockVersion: BenefitsBlockVersion) => {
+const setIconVersion = (benefitIcon: Picture, benefitsBlockVersion: BlockVersion) => {
   if (!benefitIcon.icon) {
     return benefitIcon;
   }
@@ -75,7 +72,7 @@ const setIconVersion = (benefitIcon: Picture, benefitsBlockVersion: BenefitsBloc
 };
 
 const renderStep =
-  (benefitsBlockVersion: BenefitsBlockVersion) => (benefit: BenefitBlockItemProps, i: number) => {
+  (benefitsBlockVersion: BlockVersion) => (benefit: BenefitBlockItemProps, i: number) => {
     const description = (benefit?.description || undefined) as DescriptionDef;
 
     return (
@@ -100,10 +97,7 @@ const renderStep =
     );
   };
 
-const renderDescription = (
-  description: DescriptionDef,
-  benefitsBlockVersion: BenefitsBlockVersion,
-) => {
+const renderDescription = (description: DescriptionDef, benefitsBlockVersion: BlockVersion) => {
   const benefitType = description ? description?.benefitType : null;
   if (!benefitType) {
     return null;

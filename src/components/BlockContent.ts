@@ -3,6 +3,7 @@ import type { BonusContent } from './Bonus/BonusContent';
 import type { BonusBenefitsBlockContent } from './BonusBenefitsBlock/BonusBenefitsBlockContent';
 import type { CardTransferContent } from './CardTransfer/CardTransferContent';
 import type { ComparisonTableContent } from './ComparisonTable/ComparisonTableContent';
+import type { ErrorBlockContent } from './ErrorBlock/ErrorBlockContent';
 import type { ExchangeRateTileContent } from './ExchangeRateTile/ExchangeRateTileContent';
 import type { FooterContent } from './Footer/FooterContent';
 import type { GalleryContent } from './Gallery/GalleryContent';
@@ -12,7 +13,6 @@ import type { InsuranceAmountBlockContent } from './InsuranceAmountBlock/Insuran
 import type { LinkDocsContent } from './LinkDocs/LinkDocsContent';
 import type { LinkListContent } from './LinkList/LinkListContent';
 import type { MobileAppTileContent } from './MobileAppTile/MobileAppTileContent';
-import type { NavigationContent } from './Navigation/NavigationContent';
 import type { OfficeServicesBlockContent } from './OfficeServicesBlock/OfficeServicesBlockContent';
 import type { PictureTextContent } from './PictureText/PictureTextContent';
 import type { PlaceholderContent } from './Placeholder/PlaceholderContent';
@@ -26,7 +26,6 @@ import type { TabsContent } from './Tabs/TabsContent';
 import type { TariffsTableContent } from './TariffsTable/TariffsTableContent';
 import type { TextBlockContent } from './TextBlock/TextBlockContent';
 import type { TileContent } from './Tile/TileContent';
-import type { ErrorBlockContent } from './ErrorBlock/ErrorBlockContent';
 
 /**
  * @hidden
@@ -54,7 +53,6 @@ export type BlockContent =
   | TariffsTableContent
   | TextBlockContent
   | TileContent
-  | NavigationContent
   | LinkListContent
   | BonusBenefitsBlockContent
   | SafeDepositRentalContent

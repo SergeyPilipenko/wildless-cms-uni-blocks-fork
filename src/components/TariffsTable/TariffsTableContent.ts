@@ -4,7 +4,6 @@ import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 import type { HeadingProps } from '../../ui-kit/Heading/HeadingProps';
-import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
 import type { ListProps } from '../../ui-kit/List/ListProps';
 
@@ -18,17 +17,7 @@ export interface TariffsTableCellIndexProps {
 }
 
 /**
- * @title Параметр
- */
-export type TariffsTableRowHeader = HeadingProps & {
-  /**
-   * @default { "format": "webp", "size": { "width": 24, "height": 24 } }
-   */
-  icon?: Picture;
-};
-
-/**
- * @title Ряд
+ * @hidden
  */
 export type Data = {
   header: TariffsTableRowHeader;
@@ -36,23 +25,28 @@ export type Data = {
 };
 
 /**
- * @title Изображение
- * @default { "image": { "format": "webp", "size": { "width": 24, "height": 24 } } }
+ * @title Параметр
  */
-export type ImageCellDef = ImageContent & {
-  /**
-   * @default Img
-   */
+export type TariffsTableRowHeader = HeadingProps & {
+  /** @default { "format": "webp", "size": { "width": 24, "height": 24 } } */
+  icon?: Picture;
+};
+
+/**
+ * @title Изображение
+ */
+export type ImageCellDef = {
+  /** @default Img */
   tableCellType: 'Img';
+  /** @default { "format": "webp", "size": { "width": 24, "height": 24 } } */
+  image?: Picture;
 };
 
 /**
  * @title Кнопки
  */
 export type ButtonsCellDef = ButtonContent & {
-  /**
-   * @default Buttons
-   */
+  /** @default Buttons */
   tableCellType: 'Buttons';
 };
 
@@ -70,9 +64,7 @@ export interface LabelDescriptionCell {
  * @title Заголовок и описание
  */
 export type LabelDescriptionCellDef = LabelDescriptionCell & {
-  /**
-   * @default LabelDescription
-   */
+  /** @default LabelDescription */
   tableCellType: 'LabelDescription';
 };
 
@@ -80,9 +72,7 @@ export type LabelDescriptionCellDef = LabelDescriptionCell & {
  * @title Список
  */
 export type ListBlockDef = ListProps & {
-  /**
-   * @default List
-   */
+  /** @default List */
   tableCellType: 'List';
 };
 
@@ -90,9 +80,7 @@ export type ListBlockDef = ListProps & {
  * @title Таблица
  */
 export type InnerTableBlockDef = TariffsTableInnerContent & {
-  /**
-   * @default Table
-   */
+  /** @default Table */
   tableCellType: 'Table';
 };
 

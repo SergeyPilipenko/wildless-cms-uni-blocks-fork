@@ -1,7 +1,12 @@
-import type { GalleryContent } from '../Gallery/GalleryContent';
+import type { GalleryCardProps, GalleryContent } from '../Gallery/GalleryContent';
 
 /**
  * @title Мини-галерея
- * @minItems 4
  */
-export type MiniGalleryContent = GalleryContent;
+export interface MiniGalleryContent extends GalleryContent {
+  /**
+   * @title Карточки
+   * @minItems 4
+   */
+  cards?: GalleryCardProps[];
+}

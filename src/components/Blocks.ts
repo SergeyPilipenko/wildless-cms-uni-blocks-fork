@@ -6,6 +6,7 @@ import { Calculator } from './Calculator/Calculator';
 import { CardTransfer } from './CardTransfer/CardTransfer';
 import { Catalog } from './Catalog/Catalog';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
+import { ErrorBlock } from './ErrorBlock/ErrorBlock';
 import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
 import { Footer } from './Footer/Footer';
 import { Gallery } from './Gallery/Gallery';
@@ -16,7 +17,6 @@ import { InsuranceAmountBlock } from './InsuranceAmountBlock/InsuranceAmountBloc
 import { LinkDocs } from './LinkDocs/LinkDocs';
 import { MiniGallery } from './MiniGallery/MiniGallery';
 import { MobileAppTile } from './MobileAppTile/MobileAppTile';
-import { Navigation } from './Navigation/Navigation';
 import { OfficeServicesBlock } from './OfficeServicesBlock/OfficeServicesBlock';
 import { OtherProducts } from './OtherProducts/OtherProducts';
 import { PictureText } from './PictureText/PictureText';
@@ -32,7 +32,6 @@ import { Tabs } from './Tabs/Tabs';
 import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
-import { ErrorBlock } from './ErrorBlock/ErrorBlock';
 
 export const Blocks = {
   Accordion,
@@ -63,7 +62,6 @@ export const Blocks = {
   TariffsTable,
   TextBlock,
   Tile,
-  Navigation,
   Placeholder,
   BonusBenefitsBlock,
   SafeDepositRental,

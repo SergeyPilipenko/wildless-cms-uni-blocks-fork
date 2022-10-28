@@ -1,31 +1,32 @@
-import type { Picture } from '../../model/Picture';
-import type { TitleProps } from '../../model/HeadlineType';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { EmptyOption } from '../../model/EmptyOptionType';
+import type { TitleProps } from '../../model/HeadlineType';
+import type { Picture } from '../../model/Picture';
 
 /**
  * @title Пункты описания
- * @default {"benefitType": "text"}
  */
 export type TextBenefitDef = {
-  /**
-   * @title Описание
-   */
+  /** @title Описание */
   name?: string;
+  /** @default text */
   benefitType?: 'text';
 };
 
 /**
  * @title Список
- * @default {"benefitType": "list"}
  */
 export type ListBenefitDef = {
   /** @title Буллиты */
   bullets?: boolean;
   /**
    * @title Пункты
-   * @example ["Пункт 1"]
+   * @default [
+   *  "Пункт 1"
+   * ]
    */
   items?: string[];
+  /** @default list */
   benefitType?: 'list';
 };
 
@@ -46,12 +47,6 @@ export interface BenefitBlockItemProps {
 }
 
 /**
- * @title Цвет блока
- * @enumNames ["Основная", "Второстепенная"]
- */
-export type BenefitsBlockVersion = 'primary' | 'secondary';
-
-/**
  * @title Блок преимущества
  */
 export type BenefitsBlockContent = TitleProps & {
@@ -61,5 +56,5 @@ export type BenefitsBlockContent = TitleProps & {
    */
   benefitList?: BenefitBlockItemProps[];
   /** @default primary */
-  benefitsBlockVersion?: BenefitsBlockVersion;
+  benefitsBlockVersion?: BlockVersion;
 };

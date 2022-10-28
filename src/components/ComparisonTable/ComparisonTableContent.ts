@@ -3,14 +3,6 @@ import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 
 /**
- * @hidden
- */
-export type Row = {
-  header: RowHeader;
-  data: CellData[][];
-};
-
-/**
  * @title Ячейка
  */
 export interface CellData {
@@ -28,13 +20,9 @@ export interface ColumnHeader {
   title?: string;
   /** @title Подзаголовок */
   subtitle?: string;
-  /**
-   * @default { "format": "webp", "size": { "width": 24 } }
-   */
+  /** @default { "format": "webp", "size": { "width": 24 } } */
   icon?: Picture;
-  /**
-   * @default { "format": "webp", "size": { "width": 100 } }
-   */
+  /** @default { "format": "webp", "size": { "width": 100 } } */
   image?: Picture;
   link?: LinkProps;
 }
@@ -54,24 +42,6 @@ export interface Column {
 export interface RowHeader {
   /** @title Заголовок */
   title?: string;
-}
-
-/**
- * @title Ячейка
- */
-export interface TableColumnData {
-  rowHeader?: string;
-  cell: CellData[];
-}
-
-/**
- * @title Параметр
- */
-export interface TableColumnHeader {
-  /** @title Заголовок */
-  title?: string;
-
-  icon?: Picture;
 }
 
 /**

@@ -1,7 +1,7 @@
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 import type { Picture } from '../../model/Picture';
+import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 
 /**
  * @title Пункт подменю
@@ -20,34 +20,28 @@ export interface DispositionItem extends LinkProps {
 }
 
 /**
+ * @title Логотип
+ */
+export interface Logo {
+  /** @title Иконка логотипа */
+  image?: Picture;
+  /** @title Текст логотипа */
+  title?: string;
+}
+
+/**
  * @title Шапка (для мобильных горизонтальная прокрутка shift+mouseScroll)
  * @required ["defaultLocation", "topItems"]
  */
 export interface HeaderContent extends SitemapProps {
-  /** @title Логотип */
-  logo?: {
-    /** @title Иконка логотипа */
-    image?: Picture;
-    /**
-     * @title Текст логотипа
-     */
-    title?: string;
-  };
+  logo?: Logo;
   /**
    * @title Город по-умолчанию
    * @default Москва
    */
   defaultLocation?: string;
-  /**
-   * @title Показывать подменю
-   * @hidden
-   * @default true
-   */
+  /** @hidden */
   showSubMenu?: boolean;
-  /**
-   * @title Фон элемента
-   * @hidden
-   * @default white
-   */
+  /** @hidden */
   bgColor?: BgColorVersion;
 }

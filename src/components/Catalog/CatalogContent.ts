@@ -1,17 +1,13 @@
 import type { HeadlineCommonProps } from '../../model/HeadlineType';
+import type { ProductColorVersion } from '../../model/ProductColorVersion';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
-
-/**
- * @enumNames ["Черный", "Белый"]
- */
-export type CatalogProductColor = 'black' | 'white';
 
 export interface CatalogCardType extends HeadlineCommonProps, ImageContent {
   /** @title Цена в рублях */
   price?: number;
   /** @title Доступные цвета */
-  colors?: CatalogProductColor[];
+  colors?: ProductColorVersion[];
   /**
    * @title Кнопка
    * @default {

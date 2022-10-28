@@ -6,9 +6,9 @@ import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
-import type { CardItem, InsuranceAmountBlockTabs } from './InsuranceAmountBlockContent';
+import type { CardItem, InsuranceAmountBlockTab } from './InsuranceAmountBlockContent';
 
-export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTabs, UniBlockProps {
+export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTab, UniBlockProps {
   button?: ButtonProps;
 }
 

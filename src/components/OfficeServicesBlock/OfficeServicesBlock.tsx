@@ -30,9 +30,9 @@ const renderListItems = (itemList: OfficeServicesBlockList, i) => (
   <li key={`list_item_${String(i)}`} className="flex mb-5 last:mb-0 list-none">
     {itemList.icon ? (
       <Img
-        className="mr-3 max-w-6 max-h-6"
-        width="24px"
-        height="24px"
+        className="mr-3 min-w-6 min-h-6 w-6 h-6"
+        width="24"
+        height="24"
         asSVG
         image={itemList.icon}
       />

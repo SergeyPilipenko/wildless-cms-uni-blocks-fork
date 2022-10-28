@@ -7,6 +7,20 @@ import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 export type ErrorImageDef = {
   /** @default Image */
   errorContentType: 'Image';
+  /**
+   * @default {
+   *   "format": "webp",
+   *   "size": {
+   *       "width": 460
+   *   },
+   *   "sources": [{
+   *       "media": 1279,
+   *       "width": 276,
+   *       "format": "webp",
+   *       "alignment": "center"
+   *   }]
+   * }
+   */
   image?: Picture;
 };
 
