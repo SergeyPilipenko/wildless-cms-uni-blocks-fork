@@ -16,7 +16,7 @@ interface RadioButtonGroupProps extends UniBlockProps {
 export const RadioButtonGroup = JSX<RadioButtonGroupProps>(
   ({ items, checkedItem, onChangeCheckedItem }) => {
     return (
-      <div>
+      <div className="flex flex-col gap-3">
         {items?.map(({ id, text }) => (
           <Checkbox
             key={id}

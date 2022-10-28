@@ -24,9 +24,13 @@ const buttons: ButtonWithIconProps[] = [
   },
 ];
 
+const footnote =
+  'Расчёт является предварительным. Точные условия будут предоставлены в отделении Банка. ';
+
 const CREDIT_CALCULATOR_BLOCK: CreditCalculatorParamsDef = {
   calcType: 'CreditCalculatorForm',
   buttons: buttons,
+  footnote,
 };
 
 const MORTGAGE_CALCULATOR_BLOCK: MortgageCalculatorParamsDef = {
@@ -39,6 +43,7 @@ const MORTGAGE_CALCULATOR_BLOCK: MortgageCalculatorParamsDef = {
   rateWithInsurance: 4,
   rateWithoutInsurance: 5.5,
   buttons: buttons,
+  footnote,
 };
 
 const DEPOSIT_CALCULATOR_BLOCK: DepositCalculatorParamsDef = {
@@ -49,6 +54,7 @@ const DEPOSIT_CALCULATOR_BLOCK: DepositCalculatorParamsDef = {
   maxMonths: 120,
   rate: 5.9,
   buttons: buttons,
+  footnote,
 };
 
 const BONUS_CALCULATOR_BLOCK: BonusCalculatorParamsDef = {

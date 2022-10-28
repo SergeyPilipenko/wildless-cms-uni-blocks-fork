@@ -12,6 +12,7 @@ import { renderInitialFeeInput } from './renderInitialFeeInput';
 import { renderMonthsInput } from './renderMonthsInput';
 import { renderProposalMortgage } from './renderProposalMortgage';
 import { renderRealEstateValue } from './renderRealEstateValue';
+import { renderFootnote } from './renderFootnote';
 
 export interface MortgageCalculatorProp
   extends MortgageCalculatorParams,
@@ -19,7 +20,7 @@ export interface MortgageCalculatorProp
     UniBlockProps {}
 
 export const MortgageCalculatorForm = JSX<MortgageCalculatorProp>(
-  ({ context, className = '', buttons }) => {
+  ({ context, className = '', buttons, footnote }) => {
     const [moneyValue, setMoneyValue] = useState(1000000);
     const [monthsValue, setMonthsValue] = useState(12);
     const [isInsurance, toggleIsInsurance] = useState(false);
@@ -64,9 +65,10 @@ export const MortgageCalculatorForm = JSX<MortgageCalculatorProp>(
           </div>
         </div>
         <Rate rate={rate} rateBlockClassName="tracking-[-25px]" unit="%" />
-        <div>
-          <div className="w-[351px]">{renderProposalMortgage(proposalMortgageValue)}</div>
+        <div className="w-full max-w-[350px]">
+          <div>{renderProposalMortgage(proposalMortgageValue)}</div>
           {renderButtonSection(context, buttons)}
+          {renderFootnote(footnote)}
         </div>
       </section>
     );

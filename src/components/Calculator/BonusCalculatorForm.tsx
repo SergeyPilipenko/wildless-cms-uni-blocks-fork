@@ -8,11 +8,12 @@ import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
 import { renderWantedSumInput } from './renderWantedSumInput';
 import { useBonusCalculatorParams } from './useBonusCalculatorParams';
+import { renderFootnote } from './renderFootnote';
 
 export interface BonusCalculatorProps extends CommonCalculatorProps, UniBlockProps {}
 
 export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
-  ({ context, className = '', sourceBookDir = '', buttons }) => {
+  ({ context, className = '', sourceBookDir = '', buttons, footnote }) => {
     const [travelExpenseValue, setTravelExpenseValue] = useState(DEFAULT_TRAVEL_MIN_SUM);
     const [restExpenseValue, setRestExpenseValue] = useState(DEFAULT_REST_MIN_SUM);
     const userInputParams = {
@@ -54,9 +55,10 @@ export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
             <Rate title="Баллов за месяц" rate={monthBonus} rateBlockClassName="tracking-[-14px]" />
           ) : null}
         </div>
-        <div className="w-[240px]">
+        <div className="w-full max-w-[350px]">
           {yearBonus >= 0 ? <CalculatorValueBlock title="Баллов за год" value={yearBonus} /> : null}
           {renderButtonSection(context, buttons)}
+          {renderFootnote(footnote)}
         </div>
       </section>
     );

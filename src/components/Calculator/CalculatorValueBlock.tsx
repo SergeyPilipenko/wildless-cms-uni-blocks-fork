@@ -12,7 +12,7 @@ export interface CalculatorValueBlockProps {
 export const CalculatorValueBlock = JSX<CalculatorValueBlockProps>(
   ({ title, value, postfix = '', prefix, className = '' }) => {
     return (
-      <div className={`mb-5 ${className}`}>
+      <div className={`mb-7 ${className}`}>
         {title ? <div className="text-l-light text-secondary-text">{title}</div> : null}
         {value ? (
           <div className="text-h3">

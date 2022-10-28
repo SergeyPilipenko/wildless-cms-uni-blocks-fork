@@ -11,6 +11,7 @@ import { renderMonthsInput } from './renderMonthsInput';
 import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
 import { renderWantedSumInput } from './renderWantedSumInput';
 import { useCreditCalculatorParams } from './useCreditCalculatorParams';
+import { renderFootnote } from './renderFootnote';
 
 export const ANNUITY = 'annuity';
 export const DIFFERENTIAL = 'differential';
@@ -29,7 +30,7 @@ const paymentTypeItems = [
 export interface CreditCalculatorProp extends CommonCalculatorProps, UniBlockProps {}
 
 export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
-  ({ context, className = '', sourceBookDir, buttons }) => {
+  ({ context, className = '', sourceBookDir, buttons, footnote }) => {
     const [isAnnuity, toggleIsAnnuity] = useState(false);
     const [isInsurance, toggleIsInsurance] = useState(true);
     const [isSalaryClient, toggleIsSalaryClient] = useState(false);
@@ -81,7 +82,7 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
           rateBlockClassName="tracking-[-25px]"
           unit="%"
         />
-        <div className="w-[351px]">
+        <div className="w-full max-w-[350px]">
           <CalculatorValueBlock
             title={isAnnuity ? 'Ежемесячный платеж' : 'Платёж в первый месяц'}
             value={calculatorParams.monthlyPayment}
@@ -93,6 +94,7 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
             onChange: (text: string) => toggleIsAnnuity(text === ANNUITY),
           })}
           {renderButtonSection(context, buttons)}
+          {renderFootnote(footnote)}
         </div>
       </section>
     );

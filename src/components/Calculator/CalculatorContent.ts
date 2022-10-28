@@ -2,13 +2,14 @@ import type { EmptyOption } from '../../model/EmptyOptionType';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { TitleProps } from '../../model/HeadlineType';
+import type { Footnote } from '../../model/Footnote';
 
-export interface CommonCalculatorProps {
+export type CommonCalculatorProps = Footnote & {
   /** @title Кнопки */
   buttons?: ButtonWithIconProps[];
   /** @title Адрес справочника */
   sourceBookDir?: string;
-}
+};
 
 /**
  * TODO: данные из справочника
