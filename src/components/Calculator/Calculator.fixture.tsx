@@ -6,7 +6,6 @@ import type {
   BonusCalculatorParamsDef,
   CreditCalculatorParamsDef,
   DepositCalculatorParamsDef,
-  MortgageCalculatorParamsDef,
 } from './CalculatorContent';
 
 const buttons: ButtonWithIconProps[] = [
@@ -29,19 +28,6 @@ const footnote =
 
 const CREDIT_CALCULATOR_BLOCK: CreditCalculatorParamsDef = {
   calcType: 'CreditCalculatorForm',
-  buttons: buttons,
-  footnote,
-};
-
-const MORTGAGE_CALCULATOR_BLOCK: MortgageCalculatorParamsDef = {
-  calcType: 'MortgageCalculatorForm',
-  isAnnuity: true,
-  minSum: 15000,
-  maxSum: 7500000,
-  minMonths: 2,
-  maxMonths: 120,
-  rateWithInsurance: 4,
-  rateWithoutInsurance: 5.5,
   buttons: buttons,
   footnote,
 };
@@ -77,14 +63,6 @@ export default {
               icon: { icon: 'CalendarIcon' },
             },
             calculatorBlock: CREDIT_CALCULATOR_BLOCK,
-          },
-          {
-            nav: {
-              title: 'Ипотека с господдержкой',
-              description: 'Ставка от 6%, срок до 30 лет',
-              icon: { icon: 'StateMortgageIcon' },
-            },
-            calculatorBlock: MORTGAGE_CALCULATOR_BLOCK,
           },
           {
             nav: {

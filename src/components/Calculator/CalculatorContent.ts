@@ -40,28 +40,6 @@ export interface CreditCalculatorParams {
 /**
  * TODO: данные из справочника
  **/
-export interface MortgageCalculatorParams {
-  /** @hidden */
-  isAnnuity?: boolean;
-  /** @hidden */
-  minInitialContribution?: number;
-  /** @hidden */
-  minSum?: number;
-  /** @hidden */
-  maxSum?: number;
-  /** @hidden */
-  minMonths?: number;
-  /** @hidden */
-  maxMonths?: number;
-  /** @hidden */
-  rateWithInsurance?: number;
-  /** @hidden */
-  rateWithoutInsurance?: number;
-}
-
-/**
- * TODO: данные из справочника
- **/
 export interface DepositCalculatorParams {
   /** @hidden */
   minSum?: number;
@@ -124,16 +102,6 @@ export type CreditCalculatorParamsDef = TitleProps &
   };
 
 /**
- * @title Ипотечный калькулятор
- * @default {"calcType": "MortgageCalculatorForm"}
- */
-export type MortgageCalculatorParamsDef = TitleProps &
-  MortgageCalculatorParams &
-  CommonCalculatorProps & {
-    calcType: 'MortgageCalculatorForm';
-  };
-
-/**
  * @title Калькулятор вкладов
  * @default {"calcType": "DepositCalculatorForm"}
  */
@@ -159,7 +127,6 @@ export type BonusCalculatorParamsDef = TitleProps &
 export type CalculatorBlockDef =
   | EmptyOption
   | CreditCalculatorParamsDef
-  | MortgageCalculatorParamsDef
   | DepositCalculatorParamsDef
   | BonusCalculatorParamsDef;
 
