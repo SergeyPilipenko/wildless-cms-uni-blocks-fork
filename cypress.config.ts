@@ -31,7 +31,7 @@ export default defineConfig({
     video: false,
     screenshotsFolder: './cypress/snapshots/actual',
     trashAssetsBeforeRuns: true,
-    screenshotOnRunFailure: false,
+    screenshotOnRunFailure: true,
 
     setupNodeEvents(on, config) {
       on('before:spec', (spec) => {
@@ -56,6 +56,24 @@ export default defineConfig({
             );
           },
         );
+      });
+
+      on('after:spec', (spec) => {
+        const specName = spec.name.slice(spec.name.lastIndexOf('/') + 1);
+        const pathActual = `./cypress/snapshots/actual/${specName}`;
+        const pathDiff = `./cypress/snapshots/diff/${specName}`;
+
+        if (fs.existsSync(pathActual) && fs.existsSync(pathDiff)) {
+          const filesDiff = fs.readdirSync(pathDiff);
+
+          filesDiff.forEach((file) => {
+            const oldPath = pathDiff + `/${file}`;
+            const newFileName = file.replace('diff', 'actual');
+            const newPath = pathActual + `/${newFileName}`;
+
+            fs.renameSync(oldPath, newPath);
+          });
+        }
       });
 
       on(

@@ -52,7 +52,5 @@ jobs:
         if: failure()
         with:
           name: cypress-snapshots
-          path: |
-            cypress/snapshots/diff
-            cypress/report
+          path: cypress/report
           retention-days: 1
