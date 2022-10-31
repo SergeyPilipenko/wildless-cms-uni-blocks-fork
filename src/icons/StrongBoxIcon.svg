@@ -1,0 +1,5 @@
+<svg title="Ящик с замочной скважиной" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 15C2 20 4 22 9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V10.91H9.64999" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14.3511 10.9091C14.2511 11.6191 13.8311 12.2191 13.2511 12.5791V14.5591C13.2511 15.2491 12.6911 15.8091 12.0011 15.8091C11.3111 15.8091 10.7511 15.2491 10.7511 14.5591V12.5791C10.1711 12.2191 9.75109 11.6191 9.65109 10.9091C9.63109 10.7991 9.62109 10.6791 9.62109 10.5591C9.62109 9.03914 11.0611 7.85914 12.6411 8.27914C13.4411 8.48914 14.0911 9.13915 14.3011 9.93915C14.3911 10.2691 14.4011 10.5991 14.3511 10.9091Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+  <path d="M18.0016 10.9102H14.3516" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
