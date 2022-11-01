@@ -98,7 +98,7 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
       </div>
     </div>
     <button
-      class="inline-block text-center font-sans select-none bg-secondary-dark text-secondary-text rounded-md w-full h-[56px] px-9 mt-6"
+      class="inline-block text-center font-sans select-none bg-main-divider text-main-disabled rounded-md w-full h-[56px] px-9 mt-6"
       disabled=""
       type="submit"
     >

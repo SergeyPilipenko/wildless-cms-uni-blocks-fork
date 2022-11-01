@@ -200,6 +200,7 @@ module.exports = {
             end: 'rgba(var(--color-gradient-to), <alpha-value>)',
           },
           stroke: 'rgba(201, 202, 204, <alpha-value>)',
+          disabled: 'rgba(187, 187, 187, <alpha-value>)',
         },
         primary: {
           main: 'rgba(var(--color-primary-main), <alpha-value>)',

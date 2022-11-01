@@ -8,10 +8,12 @@ export const buttonStyleMap: Record<ButtonVersion, string> = {
   link: '',
 };
 
+const DisabledStyle = 'bg-main-divider text-main-disabled';
+
 export const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
-  primary: 'bg-secondary-dark text-secondary-text',
-  secondary: 'bg-secondary-light text-secondary-text',
-  white: 'bg-white text-primary-text',
+  primary: DisabledStyle,
+  secondary: DisabledStyle,
+  white: DisabledStyle,
   link: '',
 };
 

@@ -82,6 +82,7 @@ export default {
       <ProductBlock
         className="col-span-12"
         context={context}
+        backwardButton={backwardButton}
         headlineVersion="L"
         title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
@@ -89,27 +90,6 @@ export default {
         benefitsVersion="normal"
         buttons={buttons}
         image={image}
-      />
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        title="Потребительский кредит наличными"
-        headlineVersion="L"
-        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
-        benefits={benefits}
-        benefitsVersion="white"
-        image={image}
-      />
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        title="Потребительский кредит наличными"
-        headlineVersion="L"
-        description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
-        benefits={benefits}
-        benefitsVersion="white"
-        image={image}
-        version="secondary"
       />
     </div>
   ),
