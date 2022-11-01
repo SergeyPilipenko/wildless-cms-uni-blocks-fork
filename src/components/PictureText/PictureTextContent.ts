@@ -1,6 +1,7 @@
 import type { HeadlineCommonProps } from '../../model/HeadlineType';
 import type { Picture } from '../../model/Picture';
 import type { BenefitsProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
+import type { BlockVersion } from '../../model/BlockVersion';
 
 /**
  * @title Картинка с текстом
@@ -30,4 +31,5 @@ export interface PictureTextContent extends BenefitsProps, HeadlineCommonProps {
   monthLimit?: number;
   /** @title Страховая сумма */
   sum?: number;
+  version?: BlockVersion;
 }
