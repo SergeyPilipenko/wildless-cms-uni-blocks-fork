@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { UniBlockProps } from '../../types';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { TableCarouselContainer } from '../ComparisonTable/TableCarouselContainer';
 import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
@@ -33,7 +34,9 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
                 asSVG
               />
             ) : null}
-            {header?.title}
+            {header?.title ? (
+              <Heading headingType={header?.headingType || 'h6'} as="h6" title={header?.title} />
+            ) : null}
           </div>
         </div>
         {data?.length ? (
