@@ -1,16 +1,15 @@
 import type { LinkProps } from '../../model/LinkProps';
+import type { TitleProps } from '../../model/HeadlineType';
 
 /**
  * @title Группа
  */
-export interface GroupTab {
+export type GroupTab = TitleProps & {
   /** @default group */
   type: 'group';
   /** @title Тег */
   ref?: string;
-  /** @title Название */
-  title?: string;
-}
+};
 
 /**
  * @title Ссылка

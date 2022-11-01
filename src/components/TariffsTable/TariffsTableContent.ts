@@ -1,5 +1,5 @@
 import type { EmptyOption } from '../../model/EmptyOptionType';
-import type { DescriptionProps } from '../../model/HeadlineType';
+import type { DescriptionProps, LabelProps } from '../../model/HeadlineType';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
@@ -53,12 +53,7 @@ export type ButtonsCellDef = ButtonContent & {
 /**
  * @title Заголовок и описание
  */
-export interface LabelDescriptionCell {
-  /** @title Заголовок */
-  label?: string;
-  /** @title Описание */
-  description?: string;
-}
+export type LabelDescriptionCell = LabelProps & DescriptionProps & {};
 
 /**
  * @title Заголовок и описание

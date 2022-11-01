@@ -1,14 +1,12 @@
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { Picture } from '../../model/Picture';
+import type { IconProps, Picture } from '../../model/Picture';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 
 /**
  * @title Пункт подменю
  */
-export interface SubMenuItem extends LinkProps {
-  icon?: Picture;
-}
+export type SubMenuItem = LinkProps & IconProps & {};
 
 /**
  * @title Ссылка дополнительного меню

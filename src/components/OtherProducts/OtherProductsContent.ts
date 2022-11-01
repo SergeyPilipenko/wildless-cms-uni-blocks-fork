@@ -1,5 +1,6 @@
 import type { ColorPalette } from '../../types';
 import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
+import type { TitleProps } from '../../model/HeadlineType';
 
 /**
  * @title Элемент списка
@@ -19,10 +20,8 @@ export interface BlockItemCommonProps {
 /**
  * @title Другие продукты
  */
-export interface OtherProductsContent {
-  /** @title Заголовок */
-  title?: string;
+export type OtherProductsContent = TitleProps & {
   /** @title Список */
   blockItems?: BlockItemCommonProps[];
   colorPalette?: ColorPalette;
-}
+};

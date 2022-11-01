@@ -1,6 +1,6 @@
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { Picture } from '../../model/Picture';
+import type { IconProps, Picture } from '../../model/Picture';
 import type { VNode } from '../../model/VNode';
 
 /**
@@ -51,15 +51,14 @@ export interface ButtonContent {
   buttons?: ButtonWithIconProps[];
 }
 
-export interface BackwardButtonProps extends ButtonProps {
-  /** @title Иконка */
-  icon?: Picture;
-  /** @title Верхний текст */
-  aboveText?: string;
-  /** @hidden */
-  appendLeft?: VNode;
-  /** @title Закругленные углы */
-  rounded?: boolean;
-  /** @hidden */
-  asSVG?: boolean;
-}
+export type BackwardButtonProps = ButtonProps &
+  IconProps & {
+    /** @title Верхний текст */
+    aboveText?: string;
+    /** @hidden */
+    appendLeft?: VNode;
+    /** @title Закругленные углы */
+    rounded?: boolean;
+    /** @hidden */
+    asSVG?: boolean;
+  };

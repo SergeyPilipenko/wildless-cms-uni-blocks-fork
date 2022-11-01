@@ -7,10 +7,6 @@ import type { ListProps } from '../../ui-kit/List/ListProps';
 import type { LabelDescriptionCell } from './TariffsTableContent';
 import { getButtonAriaLabel } from './utils/getButtonAriaLabel';
 
-export interface LabelProps {
-  label?: string;
-}
-
 export type EmbeddableCellDataType =
   | ButtonContent
   | LabelDescriptionCell

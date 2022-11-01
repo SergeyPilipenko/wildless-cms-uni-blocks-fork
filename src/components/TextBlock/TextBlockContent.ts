@@ -1,4 +1,5 @@
 import type { Picture } from '../../model/Picture';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @title Цвет блока
@@ -15,11 +16,7 @@ export type TextBlockIconVersion = 'none' | 'small' | 'big';
 /**
  * @title Текстовый блок
  */
-export interface TextBlockContent {
-  /** @title Заголовок */
-  title?: string;
-  /** @title Описание */
-  description?: string;
+export type TextBlockContent = HeadlineCommonProps & {
   iconVersion?: TextBlockIconVersion;
   image?: Picture;
   blockVersion?: TextBlockVersion;
@@ -27,4 +24,4 @@ export interface TextBlockContent {
   isDotted?: boolean;
   /** @title Список (моб.) */ // TODO: mobile prop
   items?: string[];
-}
+};

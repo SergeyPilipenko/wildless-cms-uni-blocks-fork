@@ -2,6 +2,7 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 
 /**
  * @title Элемент списка
@@ -16,11 +17,7 @@ export interface GalleryItemProps {
 /**
  * @title Карточка
  */
-export interface GalleryCardProps {
-  /** @title Заголовок */
-  title?: string;
-  /** @title Описание */
-  description?: string;
+export type GalleryCardProps = HeadlineCommonProps & {
   /**
    * @default {
    *   "format": "webp",
@@ -46,16 +43,12 @@ export interface GalleryCardProps {
   /** @title Список */
   items?: GalleryItemProps[];
   version?: BlockVersion;
-}
+};
 
 /**
  * @title Галерея
  */
-export interface GalleryContent {
-  /** @title Заголовок */
-  title?: string;
-  /** @title Описание */
-  description?: string;
+export type GalleryContent = HeadlineCommonProps & {
   /**
    * @title Карточки
    * @minItems 3
@@ -63,4 +56,4 @@ export interface GalleryContent {
   cards?: GalleryCardProps[];
   /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
   orientation?: ListOrientation; //TODO: for mobile
-}
+};

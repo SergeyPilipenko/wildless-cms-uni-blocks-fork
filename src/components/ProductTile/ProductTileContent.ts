@@ -1,14 +1,9 @@
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { HeadlineProps } from '../../model/HeadlineType';
+import type { DescriptionProps, HeadlineProps, LabelProps } from '../../model/HeadlineType';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 
-export interface TextBenefit {
-  /** @title Название */
-  label?: string;
-  /** @title Описание */
-  description?: string;
-}
+export type TextBenefit = DescriptionProps & LabelProps & {};
 
 /**
  * @title Продуктовая плитка

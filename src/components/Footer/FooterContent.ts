@@ -1,6 +1,7 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
-import type { Picture } from '../../model/Picture';
+import type { IconProps, Picture } from '../../model/Picture';
+import type { DescriptionProps } from '../../model/HeadlineType';
 
 /**
  * @title Тип контакта
@@ -14,13 +15,11 @@ export type ContactType = 'tel' | 'email';
 /**
  * @title Контакт
  */
-export interface ContactInfo {
+export type ContactInfo = DescriptionProps & {
   /** @title Текст */
   text?: string;
   type?: ContactType;
-  /** @title Описание */
-  description?: string;
-}
+};
 
 /**
  * @required ["href"]
@@ -30,10 +29,7 @@ export type SocialMedia = Omit<LinkProps, 'text'>;
 /**
  * @title Пункт подменю
  */
-export interface SubMenuItem extends LinkProps {
-  /** @title Иконка подменю */
-  icon?: Picture;
-}
+export type SubMenuItem = LinkProps & IconProps & {};
 
 /**
  * @title Подвал

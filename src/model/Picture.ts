@@ -67,3 +67,8 @@ export interface Picture extends Img, ImgSource {
   sources?: ImgSource[];
   className?: string;
 }
+
+export type IconProps = {
+  /** @title Иконка */
+  icon?: Picture;
+};

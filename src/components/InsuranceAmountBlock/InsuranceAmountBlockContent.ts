@@ -1,12 +1,11 @@
-import type { Picture } from '../../model/Picture';
+import type { IconProps, Picture } from '../../model/Picture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import type { TitleProps } from '../../model/HeadlineType';
 
 /**
  * @title Кнопка выбора программы
  */
-export type CardItem = {
-  /** @title Иконка */
-  icon?: Picture;
+export type CardItem = IconProps & {
   /** @title Страховой взнос */
   fee?: number;
   /** @title Страховая сумма */
@@ -18,21 +17,17 @@ export type CardItem = {
 /**
  * @title Вкладка
  */
-export interface InsuranceAmountBlockTab {
-  /** @title Заголовок вкладки */
-  title?: string;
+export type InsuranceAmountBlockTab = TitleProps & {
   /** @title Содержимое вкладки */
   cards?: CardItem[];
-}
+};
 
 /**
  * @title Страховые суммы
  */
-export interface InsuranceAmountBlockContent {
-  /** @title Заголовок */
-  title?: string;
+export type InsuranceAmountBlockContent = TitleProps & {
   /** @title Список вкладок */
   insuranceTabs?: InsuranceAmountBlockTab[];
   /** @title Кнопка */
   button?: ButtonProps;
-}
+};

@@ -1,7 +1,7 @@
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { EmptyOption } from '../../model/EmptyOptionType';
-import type { TitleProps } from '../../model/HeadlineType';
-import type { Picture } from '../../model/Picture';
+import type { LabelProps, TitleProps } from '../../model/HeadlineType';
+import type { IconProps } from '../../model/Picture';
 
 /**
  * @title Пункты описания
@@ -38,13 +38,11 @@ export type DescriptionDef = EmptyOption | TextBenefitDef | ListBenefitDef;
 /**
  * @title Преимущество
  */
-export interface BenefitBlockItemProps {
-  /** @title Название */
-  label?: string;
-  /** @title Описание */
-  description?: DescriptionDef;
-  icon?: Picture;
-}
+export type BenefitBlockItemProps = LabelProps &
+  IconProps & {
+    /** @title Описание */
+    description?: DescriptionDef;
+  };
 
 /**
  * @title Блок преимущества

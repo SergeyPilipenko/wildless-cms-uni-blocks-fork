@@ -1,5 +1,6 @@
 import type { Picture } from '../../model/Picture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import type { TitleProps } from '../../model/HeadlineType';
 
 /**
  * @title Изображение
@@ -55,12 +56,10 @@ export type ErrorType =
 /**
  * @title Блок ошибки
  */
-export interface ErrorBlockContent {
-  /** @title Заголовок */
-  title?: string;
+export type ErrorBlockContent = TitleProps & {
   /** @title Описание */
   subtitle?: string;
   error?: ErrorContentDef;
   /** @title Кнопка */
   button?: ButtonProps;
-}
+};

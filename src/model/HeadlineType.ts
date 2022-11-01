@@ -14,6 +14,11 @@ export type DescriptionProps = {
   description?: string;
 };
 
+export type LabelProps = {
+  /** @title Название */
+  label?: string;
+};
+
 export type HeadlineCommonProps = TitleProps & DescriptionProps;
 
 export type HeadlineProps = HeadlineCommonProps & {
