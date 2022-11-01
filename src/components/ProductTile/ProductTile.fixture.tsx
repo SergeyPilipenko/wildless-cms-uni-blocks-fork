@@ -141,6 +141,18 @@ export default {
       />
     </div>
   ),
+  'long-title-benefits-without-image': (
+    <div className="container grid grid-cols-12">
+      <ProductTile
+        context={context}
+        className="col-span-6"
+        title="Кредит пенсионный"
+        description={'Для людей в возрасте до 75 лет'}
+        benefits={multilineBenefits}
+        buttons={buttons2}
+      />
+    </div>
+  ),
   'credit-card': (
     <div className="container grid grid-cols-12">
       <ProductTile

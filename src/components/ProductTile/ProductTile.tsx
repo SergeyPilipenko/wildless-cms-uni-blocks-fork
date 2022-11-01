@@ -5,7 +5,7 @@ import type { ProductTileContent, TextBenefit } from './ProductTileContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
-import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
+import type { Picture } from '../../model/Picture';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import { Headline } from '../Headline/Headline';
 import { VersionStyleMap } from '../../model/BlockVersion';
@@ -29,9 +29,8 @@ export const ProductTile = JSX<ProductTileProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`overflow-hidden font-sans p-9 box-border relative justify-between grid ${className} ${
-          VersionStyleMap[version]
-        } ${getTileRightPadding(className)} ${getTileMinHeight(className)}`}
+        className={`overflow-hidden font-sans p-9 box-border relative justify-between grid min-h-[364px]
+          ${className} ${VersionStyleMap[version]} ${getTileRightPadding(className)}`}
         {...rest}
       >
         <Headline
@@ -44,8 +43,10 @@ export const ProductTile = JSX<ProductTileProps>(
           bgColorHeadline={version}
           align="left"
         />
-        {renderBenefits(benefits, version)}
-        {additionalDescription ? renderAdditionalDescription(additionalDescription, version) : null}
+        {renderBenefits(benefits, version, image)}
+        {additionalDescription
+          ? renderAdditionalDescription(additionalDescription, image, version)
+          : null}
         {buttons?.length ? (
           <ButtonSection
             context={context}
@@ -59,13 +60,14 @@ export const ProductTile = JSX<ProductTileProps>(
   },
 );
 
-// picture width = 242px. Text can overlay picture 20px deep. Outer paddings_x = 36px. 242-36-20 = 186px
-const BENEFITS_WIDTH = 'max-w-[calc(100%-186px)]';
+function renderBenefits(benefits: TextBenefit[], version: BlockVersion, image?: Picture) {
+  // picture width = 242px. Text can overlay picture 20px deep. Outer paddings_x = 36px. 242-36-20 = 186px
+  const BENEFITS_WIDTH = image?.src ? 'max-w-[calc(100%-186px)]' : '100%';
 
-function renderBenefits(benefits: TextBenefit[], version: BlockVersion) {
   return (
     <div
-      className={`z-10 grid grid-cols-[max-content_1fr] auto-rows-auto gap-x-6 gap-y-2.5 items-baseline ${BENEFITS_WIDTH}`}
+      className={`z-10 grid grid-cols-[max-content_1fr] auto-rows-auto gap-x-6 gap-y-2.5 items-baseline 
+        ${BENEFITS_WIDTH}`}
     >
       {benefits.length ? benefits.map(renderBenefit(version)) : null}
     </div>
@@ -92,14 +94,21 @@ function renderBenefit(version: BlockVersion = 'primary') {
   };
 }
 
-function renderAdditionalDescription(additionalDescription: string, version = 'primary') {
+function renderAdditionalDescription(
+  additionalDescription: string,
+  image?: Picture,
+  version: BlockVersion = 'primary',
+) {
   const descStyleMap: Record<BlockVersion, string> = {
     primary: 'text-secondary-text',
     secondary: 'text-white',
   };
 
+  // picture width = 242px. Text can overlay picture 20px deep. Outer paddings_x = 36px. 242-36-20 = 186px
+  const DESCRIPTION_WIDTH = image?.src ? 'max-w-[calc(100%-186px)]' : '100%';
+
   return (
-    <div className={`text-m-light mt-2.5 z-10 ${descStyleMap[version]}`}>
+    <div className={`text-m-light mt-2.5 z-10 ${DESCRIPTION_WIDTH} ${descStyleMap[version]}`}>
       {additionalDescription}
     </div>
   );
