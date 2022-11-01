@@ -5,6 +5,7 @@ import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import type { UniBlockProps } from '../../types';
+import type { Fallback } from '../../types/Fallback';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
@@ -28,10 +29,12 @@ export const Header = JSX<HeaderProps>(
     context,
     topItems,
     logo,
+    page,
     ...rest
   }) => {
     const router = context.useRouter();
-    const sitemap = useSitemap();
+    const fallback: Fallback | undefined = page?.fallback;
+    const sitemap = useSitemap(fallback);
     const { handlerDecorator } = context;
 
     const mergedItems = mergeTopItems(sitemap.topItems, topItems);

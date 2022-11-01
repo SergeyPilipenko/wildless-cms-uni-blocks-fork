@@ -9,6 +9,7 @@ import { SocialMedia } from './SocialMedia';
 import { TextInformation } from './TextInformation';
 
 import { useSitemap } from '../../services/sitemap/useSitemap';
+import type { Fallback } from '../../types/Fallback';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
@@ -25,8 +26,10 @@ export const Footer = JSX<FooterProps>(
     socialMedia,
     context,
     horizontalNavigationTitle,
+    page,
   }) => {
-    const sitemap = useSitemap();
+    const fallback: Fallback | undefined = page?.fallback;
+    const sitemap = useSitemap(fallback);
     const dispositions = sitemap?.dispositions;
 
     return (

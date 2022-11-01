@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../types';
+import type { Fallback } from '../../types/Fallback';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
@@ -24,8 +25,11 @@ export const Footer = JSX<FooterProps>(
     mobileApps,
     topItems,
     context,
+    page,
     ...rest
   }) => {
+    const fallback: Fallback | undefined = page?.fallback;
+
     return (
       <BlockWrapper
         tag="footer"
@@ -47,7 +51,7 @@ export const Footer = JSX<FooterProps>(
               Мобильное приложение
             </SocialMedia>
           </div>
-          <Sitemap className="pt-[3px]" context={context} items={topItems} />
+          <Sitemap className="pt-[3px]" context={context} items={topItems} fallback={fallback} />
         </div>
         <HorizontalNavigation className="mt-[98px]" links={relatedEnterprises} context={context} />
         <TextInformation links={documents} context={context} />

@@ -5,13 +5,15 @@ import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import type { TopMenuItem } from '../../services/sitemap/SitemapProps';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import type { UniBlockProps } from '../../types';
+import type { Fallback } from '../../types/Fallback';
 
 export interface SitemapProps extends UniBlockProps {
   items?: TopMenuItem[];
+  fallback?: Fallback;
 }
 
-export const Sitemap = JSX<SitemapProps>(({ className = '', items, context }) => {
-  const sitemap = useSitemap();
+export const Sitemap = JSX<SitemapProps>(({ className = '', items, fallback, context }) => {
+  const sitemap = useSitemap(fallback);
   const mergedItems = mergeTopItems(sitemap.topItems, items);
   const linkParams = {
     router: context.useRouter(),

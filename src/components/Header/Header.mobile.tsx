@@ -6,6 +6,7 @@ import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import type { UniBlockProps } from '../../types';
+import type { Fallback } from '../../types/Fallback';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
 import type { TopItemProps } from '../../ui-kit/TopItem/TopItem';
 import { getAccordionItems } from '../../utils/getAccordionItems';
@@ -17,9 +18,10 @@ import { HeaderTop } from './HeaderTop';
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
-  ({ className = '', defaultLocation, bgColor = 'bg-white', context, topItems }) => {
+  ({ className = '', defaultLocation, bgColor = 'bg-white', context, topItems, page }) => {
     const router = context.useRouter();
-    const sitemap = useSitemap();
+    const fallback: Fallback | undefined = page?.fallback;
+    const sitemap = useSitemap(fallback);
     const dispositions = sitemap?.dispositions;
     const { handlerDecorator } = context;
 

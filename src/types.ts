@@ -50,6 +50,7 @@ export interface ContentPageDef extends ContentPageMeta {
   style?: string[];
   blocks?: BlockDef[];
   slots?: SlotsMap;
+  fallback?: Record<string, unknown>;
   likeControl?: boolean;
   colorPalette?: ColorPalette;
 }

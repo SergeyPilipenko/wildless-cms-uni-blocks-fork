@@ -8,4 +8,7 @@ module.exports = {
   coverageReporters: ['json', 'lcov'],
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src/'],
+  moduleNameMapper: {
+    '.*fallback.*$': '<rootDir>/__mocks__/fallbackModuleMock.ts',
+  },
 };
