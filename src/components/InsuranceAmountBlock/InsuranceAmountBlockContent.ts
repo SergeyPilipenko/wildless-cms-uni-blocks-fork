@@ -1,4 +1,4 @@
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import type { TitleProps } from '../../model/HeadlineType';
 

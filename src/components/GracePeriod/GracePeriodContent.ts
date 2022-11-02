@@ -1,4 +1,4 @@
-import type { HeadlineCommonProps, TitleProps } from '../../model/HeadlineType';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
 import type { Picture } from '../../model/Picture';
 
 export interface Month {

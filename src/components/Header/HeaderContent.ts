@@ -6,7 +6,7 @@ import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 /**
  * @title Пункт подменю
  */
-export type SubMenuItem = LinkProps & IconProps & {};
+export type SubMenuItem = LinkProps & IconProps;
 
 /**
  * @title Ссылка дополнительного меню

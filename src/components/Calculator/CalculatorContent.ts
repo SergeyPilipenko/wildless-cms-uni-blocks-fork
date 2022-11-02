@@ -1,5 +1,5 @@
 import type { EmptyOption } from '../../model/EmptyOptionType';
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { HeadlineCommonProps, TitleProps } from '../../model/HeadlineType';
 import type { Footnote } from '../../model/Footnote';
@@ -133,7 +133,7 @@ export type CalculatorBlockDef =
 /**
  * @title Кнопка навигации
  */
-export type CalculatorNav = HeadlineCommonProps & IconProps & {};
+export type CalculatorNav = HeadlineCommonProps & IconProps;
 
 /**
  * @title Вкладка

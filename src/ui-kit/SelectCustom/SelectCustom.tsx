@@ -38,12 +38,17 @@ export const SelectCustom = JSX<SelectCustomProps>(
         {label ? <span className="mb-2">{label}</span> : null}
         <div className={`relative w-fit`}>
           <div
-            className={`text-m-light flex justify-between min-h-[56px] mb-0.5 p-4 pr-8 text-primary-text cursor-pointer
+            className={`text-m-light flex justify-between items-center min-h-[56px] mb-0.5 p-4 pr-8 text-primary-text cursor-pointer
             ${getBorderStyle(isBorder)}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {selectedItem.text}
-            <Icon name="ArrowUpIcon" className={`absolute right-3 ${isOpen ? '' : 'rotate-180'}`} />
+            <Icon
+              name="ArrowUpIcon"
+              width="16"
+              height="16"
+              className={`absolute right-3 ${isOpen ? '' : 'rotate-180'}`}
+            />
           </div>
           {options.length > 0 ? (
             <div className={`h-0 ${isOpen ? '' : 'overflow-hidden'}`}>
@@ -71,6 +76,8 @@ const renderOption =
         <span>{option.text}</span>
         <Icon
           name="DoneSimpleIcon"
+          width="16"
+          height="16"
           className={['absolute right-4 pt-0.5', isSelected(option) && isOpen ? '' : 'hidden'].join(
             ' ',
           )}

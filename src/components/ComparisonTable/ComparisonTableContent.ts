@@ -6,7 +6,7 @@ import type { DescriptionProps, LabelProps, TitleProps } from '../../model/Headl
 /**
  * @title Ячейка
  */
-export type CellData = LabelProps & DescriptionProps & {};
+export type CellData = LabelProps & DescriptionProps;
 
 /**
  * @title Шапка колонки

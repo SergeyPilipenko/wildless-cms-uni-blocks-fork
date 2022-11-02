@@ -3,7 +3,7 @@ import type { DescriptionProps, HeadlineProps, LabelProps } from '../../model/He
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 
-export type TextBenefit = DescriptionProps & LabelProps & {};
+export type TextBenefit = DescriptionProps & LabelProps;
 
 /**
  * @title Продуктовая плитка

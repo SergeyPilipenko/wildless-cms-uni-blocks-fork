@@ -1,10 +1,10 @@
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { LabelProps, TitleProps } from '../../model/HeadlineType';
 
 /**
  * @title Бонус и преимущество
  */
-export type BonusBenefit = LabelProps & IconProps & {};
+export type BonusBenefit = LabelProps & IconProps;
 
 /**
  * @title Блок бонусов и преимуществ

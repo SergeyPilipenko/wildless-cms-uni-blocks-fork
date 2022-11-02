@@ -1,4 +1,4 @@
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { IconVersion } from '../../model/IconVersion';
 import type { DescriptionProps, LabelProps } from '../../model/HeadlineType';
@@ -11,7 +11,7 @@ export interface BenefitItemCommonProps {
   className?: string;
 }
 
-export type BenefitItemProps = DescriptionProps & LabelProps & IconProps & {};
+export type BenefitItemProps = DescriptionProps & LabelProps & IconProps;
 
 /**
  * @title Преимущество

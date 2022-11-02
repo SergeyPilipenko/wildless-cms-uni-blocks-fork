@@ -1131,10 +1131,10 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             width="290"
           >
             <title>
-              Иконка PackA4Icon
+              Иконка Пачка бумаги А4
             </title>
             <desc>
-              Иконка PackA4Icon
+              Иконка Пачка бумаги А4
             </desc>
             <use
               class="text-primary-main "

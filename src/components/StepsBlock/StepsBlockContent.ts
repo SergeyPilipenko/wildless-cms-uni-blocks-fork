@@ -1,5 +1,5 @@
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { SizeVersion } from '../../model/SizeVersion';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import type { DescriptionProps, HeadlineCommonProps, LabelProps } from '../../model/HeadlineType';

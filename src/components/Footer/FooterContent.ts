@@ -1,6 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { SitemapProps } from '../../services/sitemap/SitemapProps';
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { DescriptionProps } from '../../model/HeadlineType';
 
 /**
@@ -29,7 +29,7 @@ export type SocialMedia = Omit<LinkProps, 'text'>;
 /**
  * @title Пункт подменю
  */
-export type SubMenuItem = LinkProps & IconProps & {};
+export type SubMenuItem = LinkProps & IconProps;
 
 /**
  * @title Подвал

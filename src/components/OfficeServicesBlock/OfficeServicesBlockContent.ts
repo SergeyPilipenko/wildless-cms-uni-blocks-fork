@@ -1,7 +1,7 @@
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { LabelProps, TitleProps } from '../../model/HeadlineType';
 
-export type OfficeServicesBlockList = LabelProps & IconProps & {};
+export type OfficeServicesBlockList = LabelProps & IconProps;
 
 /**
  * @title Офисные услуги

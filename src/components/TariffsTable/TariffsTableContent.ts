@@ -53,7 +53,7 @@ export type ButtonsCellDef = ButtonContent & {
 /**
  * @title Заголовок и описание
  */
-export type LabelDescriptionCell = LabelProps & DescriptionProps & {};
+export type LabelDescriptionCell = LabelProps & DescriptionProps;
 
 /**
  * @title Заголовок и описание

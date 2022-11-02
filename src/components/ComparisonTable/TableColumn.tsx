@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { UniBlockProps } from '../../types';
 import type { TitleProps } from '../../model/HeadlineType';
 import { Button } from '../../ui-kit/Button/Button';
@@ -14,7 +14,7 @@ export interface TableColumnData {
   cell: CellData[];
 }
 
-export type TableColumnHeader = TitleProps & IconProps & {};
+export type TableColumnHeader = TitleProps & IconProps;
 
 export interface TableColumnProps extends UniBlockProps {
   header: TableColumnHeader;
