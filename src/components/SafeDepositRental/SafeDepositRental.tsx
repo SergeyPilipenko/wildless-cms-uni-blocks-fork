@@ -1,7 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import { useScript } from '../../hooks/useScript';
-import { projectSettings } from '../../ProjectSettings';
 import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -18,13 +16,6 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
     const [showMap, setShowMap] = useState<boolean>(false);
 
     const regions = useGetRegions();
-
-    const statusScript = useScript(
-      `https://api-maps.yandex.ru/2.1/?apikey=${projectSettings.YANDEX_MAP_API_KEY}&lang=ru_RU`,
-      {
-        removeOnUnmount: true,
-      },
-    );
 
     const toggleShowMap = () => {
       setShowMap(!showMap);
@@ -43,9 +34,7 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
           />
           {footnote ? <p className="text-s-light text-secondary-text">{footnote}</p> : null}
         </div>
-        {statusScript === 'ready' && points.length && showMap ? (
-          <YandexMap points={points} />
-        ) : null}
+        {points.length && showMap ? <YandexMap points={points} /> : null}
       </BlockWrapper>
     );
   },

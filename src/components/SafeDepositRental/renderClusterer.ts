@@ -1,15 +1,16 @@
-declare let ymaps: any;
+// TODO: Fix
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import ymaps from 'yandex-maps';
 
-export function renderClusterer(Map, points) {
-  Map.geoObjects.removeAll();
+export function renderClusterer(yandexMaps: typeof ymaps, map: ymaps.Map, points: number[][]) {
+  map.geoObjects.removeAll();
 
-  const pointsList = points;
-
-  const clusterIconContentLayout = ymaps.templateLayoutFactory.createClass(
+  const clusterIconContentLayout = yandexMaps.templateLayoutFactory.createClass(
     '<div style="margin-top: -3px;">{{properties.geoObjects.length}}</div>',
   );
 
-  const clusterer = new ymaps.Clusterer({
+  const clusterer = new yandexMaps.Clusterer({
     clusterIcons: [
       {
         href: 'icons/MapMarkerClusterIcon.svg',
@@ -20,26 +21,31 @@ export function renderClusterer(Map, points) {
     clusterIconContentLayout,
     clusterHideIconOnBalloonOpen: false,
     geoObjectHideIconOnBalloonOpen: false,
-  });
+  } as ymaps.IClustererOptions);
 
-  const geoObjects: any = [];
-
-  for (let i = 0, len = pointsList.length; i < len; i++) {
-    geoObjects[i] = new ymaps.Placemark(pointsList[i], null, {
-      iconLayout: 'default#image',
-      iconImageHref: 'icons/MapMarkerSingleIcon.svg',
-      iconImageSize: [78, 84],
-      iconImageOffset: [-35, -50],
-    });
-  }
+  const geoObjects = points.map(
+    (point) =>
+      new yandexMaps.Placemark(
+        point,
+        {},
+        {
+          iconLayout: 'default#image',
+          iconImageHref: 'icons/MapMarkerSingleIcon.svg',
+          iconImageSize: [78, 84],
+          iconImageOffset: [-35, -50],
+        },
+      ),
+  );
 
   clusterer.add(geoObjects);
 
-  Map.geoObjects.add(clusterer);
+  map.geoObjects.add(clusterer as any);
 
-  Map.setBounds(ymaps.util.bounds.fromPoints(pointsList)).then(() => {
-    if (Map.getZoom() > 10) {
-      Map.setZoom(10);
+  // TODO: Fix
+  // @ts-ignore
+  map.setBounds(yandexMaps.util.bounds.fromPoints(points)).then(() => {
+    if (map.getZoom() > 10) {
+      map.setZoom(10);
     }
   });
 }

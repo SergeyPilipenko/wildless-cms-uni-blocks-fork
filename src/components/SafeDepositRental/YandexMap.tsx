@@ -1,30 +1,37 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useRef } from '@redneckz/uni-jsx/lib/hooks';
+import ymaps from 'yandex-maps';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { renderClusterer } from './renderClusterer';
-
-declare let ymaps: any;
+import { useYandexMaps } from './useYandexMaps';
 
 interface YandexMapProps {
   points: number[][];
 }
 
 export const YandexMap = JSX<YandexMapProps>(({ points }) => {
-  const map = useRef(null);
+  const map = useRef<ymaps.Map | null>(null);
+
+  const yandexMaps = useYandexMaps();
 
   useEffect(() => {
-    ymaps.ready(() => {
-      map.current = new ymaps.Map('map', {
+    yandexMaps?.ready(() => {
+      map.current = new yandexMaps.Map('map', {
         center: points[0],
         zoom: 10,
       });
-
-      renderClusterer(map.current, points);
+      renderClusterer(yandexMaps, map.current, points);
     });
-  }, []);
+  }, [yandexMaps]);
 
-  if (map.current && points) {
-    renderClusterer(map.current, points);
+  useEffect(() => {
+    if (map.current && points && yandexMaps) {
+      renderClusterer(yandexMaps, map.current, points);
+    }
+  }, [map, points, yandexMaps]);
+
+  if (!yandexMaps) {
+    return null;
   }
 
   return (
