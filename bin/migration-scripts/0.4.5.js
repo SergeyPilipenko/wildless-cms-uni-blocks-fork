@@ -13,7 +13,7 @@ export const migrate = (unitPath, content) => {
     adjustTariffsTableBlock(block);
   }
 
-  return content;
+  return { ...content };
 };
 
 function adjustNavigatorTabsBlock(block) {
