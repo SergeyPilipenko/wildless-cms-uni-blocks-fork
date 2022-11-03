@@ -65,7 +65,8 @@
     "fonts",
     "mobile/src",
     "src",
-    "cosmos-static/icons"
+    "cosmos-static/icons",
+    "tailwind.config.cjs"
   ],
   "repository": {
     "url": "https://github.com/redneckz/wildless-cms-uni-blocks.git"
