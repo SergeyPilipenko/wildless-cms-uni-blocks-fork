@@ -18,3 +18,4 @@ cypress/snapshots/diff/
 cypress/fixtures/blockFixturesMap.json
 cypress/report
 /.idea/codeStyles/Project.xml
+/.idea/codeStyles/codeStyleConfig.xml

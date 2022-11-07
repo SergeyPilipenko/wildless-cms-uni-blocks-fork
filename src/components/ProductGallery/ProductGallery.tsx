@@ -85,7 +85,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
 
   const btnClassName = isActiveBtn
     ? 'bg-white shadow-dark-blue/42 w-[354px] min-w-[354px] border-none'
-    : `min-w-[277px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10
+    : `min-w-[277px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10 backdrop-blur
       ${VersionStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
     ? 'text-primary-text text-h6'

@@ -28,7 +28,7 @@ export const CatalogCard = JSX<CatalogCardProps>(
   ({ className = '', title, description, image, price, button, colors }) => {
     return (
       <section
-        className={`border border-solid box-border p-[30px] min-w-[402px] flex flex-col justify-left ${className}`}
+        className={`border border-solid box-border border-main-stroke p-[30px] min-w-[402px] flex flex-col justify-left ${className}`}
         role="listitem"
       >
         {image?.src ? <Img className="mb-5 flex justify-center" image={image} /> : null}
