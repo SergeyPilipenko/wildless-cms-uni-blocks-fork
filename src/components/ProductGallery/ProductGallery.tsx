@@ -29,7 +29,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`box-border pt-[50px] overflow-hidden relative font-sans w-100 ${className}
+        className={`box-border pt-[50px] overflow-hidden relative font-sans w-100 mb-6 ${className}
         ${VersionStyleMap[version]}`}
         {...rest}
       >
@@ -84,15 +84,15 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
   const isActiveBtn = i === activeSlideIndex;
 
   const btnClassName = isActiveBtn
-    ? 'bg-white shadow-dark-blue/42 w-[354px] min-w-[354px] border-none'
-    : `min-w-[277px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10 backdrop-blur
+    ? 'bg-white shadow-dark-blue/42 min-w-[354px] border-none p-6'
+    : `min-w-[290px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10 px-6 py-5 backdrop-blur
       ${VersionStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
-    ? 'text-primary-text text-h6'
-    : `text-l ${productBlockStyleMap[version].title}`;
+    ? 'text-primary-text !text-h6 p-2'
+    : `text-l pb-1 ${productBlockStyleMap[version].title}`;
   const btnDescClassName = isActiveBtn
-    ? 'text-secondary-text text-m-title-xs mt-2.5'
-    : `text-m mt-1.5 ${productBlockStyleMap[version].text}`;
+    ? 'text-secondary-text text-l-light mt-2.5'
+    : `text-m-light ${productBlockStyleMap[version].text}`;
 
   const additionalBorder = version === 'secondary' ? 'border-white/50' : 'border-black/50';
 
@@ -102,13 +102,13 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
       key={String(i)}
       onClick={onClick}
       aria-label={slide?.title}
-      className={`box-border font-sans relative overflow-hidden border border-white/50 cursor-pointer text-left mx-1 grow basis-0 pt-5 pb-[23px]
+      className={`box-border relative overflow-hidden border border-white/50 cursor-pointer text-left mx-1 grow basis-0
         ${btnClassName} ${additionalBorder}
       `}
     >
       <div className="border-0 px-6">
-        <div className={`font-medium ${btnTitleClassName}`}>{slide?.title}</div>
-        <div className={`text-secondary-text ${btnDescClassName}`}>{slide.description}</div>
+        <div className={`last:pb-0 ${btnTitleClassName}`}>{slide?.title}</div>
+        <div className={`text-secondary-text  ${btnDescClassName}`}>{slide.description}</div>
       </div>
     </button>
   );

@@ -3,7 +3,6 @@ import type { BlockVersion } from '../../model/BlockVersion';
 
 /** @title Кнопка под слайдом */
 interface ProductGalleryNav {
-  /** @title Заголовок */
   title: string;
   /** @title Описание */
   description: string;

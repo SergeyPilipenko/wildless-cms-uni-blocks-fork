@@ -772,7 +772,7 @@ exports[`Blocks ProductBlock should render block "ProductBlock" without content 
 
 exports[`Blocks ProductGallery should render block "ProductGallery" without content 1`] = `
 <section
-  class="box-border pt-[50px] overflow-hidden relative font-sans w-100 
+  class="box-border pt-[50px] overflow-hidden relative font-sans w-100 mb-6 
         bg-white text-primary-text"
 >
   <div
