@@ -223,7 +223,7 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
                     Иконка Gps
                   </desc>
                   <use
-                    class="text-primary-main "
+                    class="text-primary-main  "
                     href="icons/GpsIcon.svg#icon"
                     xlink:href="icons/GpsIcon.svg#icon"
                   />
@@ -279,7 +279,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           Иконка Logo
         </desc>
         <use
-          class="text-primary-main "
+          class="text-primary-main  "
           href="icons/LogoIcon.svg#icon"
           xlink:href="icons/LogoIcon.svg#icon"
         />
@@ -482,7 +482,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
             Иконка Logo
           </desc>
           <use
-            class="text-primary-main "
+            class="text-primary-main  "
             href="icons/LogoIcon.svg#icon"
             xlink:href="icons/LogoIcon.svg#icon"
           />
@@ -537,7 +537,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
               Иконка Лупа
             </desc>
             <use
-              class="text-black group-hover:text-primary-hover group-hover:invert-0 pointer-events-none"
+              class="text-black group-hover:text-primary-hover group-hover:invert-0 pointer-events-none "
               href="icons/LoupeIcon.svg#icon"
               xlink:href="icons/LoupeIcon.svg#icon"
             />
@@ -560,7 +560,7 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
               Иконка Сетка (белая)
             </desc>
             <use
-              class="text-black group-hover:text-primary-hover group-hover:invert-0"
+              class="text-black group-hover:text-primary-hover group-hover:invert-0 "
               href="icons/GridIcon.svg#icon"
               xlink:href="icons/GridIcon.svg#icon"
             />
@@ -1120,24 +1120,15 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
         <div
           class="bg-primary-main px-10 pt-10 pb-4 text-center"
         >
-          <svg
+          <img
+            alt="Иконка Пачка бумаги А4"
             aria-hidden="true"
             class=""
             height="257"
+            src="icons/PackA4Icon.svg"
+            title="Иконка Пачка бумаги А4"
             width="290"
-          >
-            <title>
-              Иконка Пачка бумаги А4
-            </title>
-            <desc>
-              Иконка Пачка бумаги А4
-            </desc>
-            <use
-              class="text-primary-main "
-              href="icons/PackA4Icon.svg#icon"
-              xlink:href="icons/PackA4Icon.svg#icon"
-            />
-          </svg>
+          />
           <span
             class="text-s-light text-white opacity-80 mt-2 inline-block"
           >

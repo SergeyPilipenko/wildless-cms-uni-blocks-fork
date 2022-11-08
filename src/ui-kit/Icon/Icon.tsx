@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { IconTitleMap } from '../../icons/IconName';
+import { IconTitleMap, IconInverseMap } from '../../icons/IconName';
 import type { IconVersion } from '../../model/IconVersion';
 import { projectSettings } from '../../ProjectSettings';
 import type { IconProps } from './IconProps';
@@ -7,7 +7,7 @@ import type { IconProps } from './IconProps';
 const svgUseStyleMap: Record<IconVersion, string> = {
   normal: 'text-primary-main',
   black: 'text-black',
-  white: 'text-black invert',
+  white: 'text-black',
 };
 
 export const Icon = JSX<IconProps>(
@@ -23,13 +23,17 @@ export const Icon = JSX<IconProps>(
   }) => {
     const href = `${projectSettings.CDN || ''}icons/${name}.svg`;
 
-    if (asSVG) {
+    if (asSVG && IconInverseMap[name]) {
       return (
         <svg className={className} {...imgProps} aria-hidden="true">
           {title ? <title>{title}</title> : null}
           {alt ? <desc>{alt}</desc> : null}
           <use
-            className={`${svgUseStyleMap[iconVersion]} ${imageClassName}`}
+            className={[
+              svgUseStyleMap[iconVersion],
+              imageClassName,
+              getInvertStyle(name, iconVersion),
+            ].join(' ')}
             href={`${href}#icon`}
             xlinkHref={`${href}#icon`}
           />
@@ -49,3 +53,6 @@ export const Icon = JSX<IconProps>(
     );
   },
 );
+
+const getInvertStyle = (name: string, iconVersion: IconVersion) =>
+  iconVersion === 'white' && IconInverseMap[name] ? 'invert' : '';

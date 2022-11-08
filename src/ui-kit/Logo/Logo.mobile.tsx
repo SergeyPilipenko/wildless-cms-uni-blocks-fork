@@ -7,7 +7,7 @@ export interface LogoProps {
   href: string;
   targetBlank: boolean;
   bgColor?: string;
-  hideTitle?: boolean;
+  showTitle?: boolean;
 }
 
 const SVG_COLOR: Record<BgColorVersion, string> = {
@@ -20,7 +20,7 @@ const TEXT_COLOR: Record<BgColorVersion, string> = {
 };
 
 export const Logo = JSX<Partial<LogoProps>>(
-  ({ className = '', href, children, targetBlank, bgColor = 'bg-white', hideTitle }) => {
+  ({ className = '', href, children, targetBlank, bgColor = 'bg-white', showTitle = true }) => {
     return (
       <a
         className={`inline-flex items-center font-sans no-underline ${className}`}
@@ -28,12 +28,16 @@ export const Logo = JSX<Partial<LogoProps>>(
         target={targetBlank ? '_blank' : '_self'}
         aria-label="Россельхозбанк"
       >
-        <Img image={{ icon: 'LogoIcon' }} className={`${SVG_COLOR[bgColor]} w-10 h-[38px]`} asSVG />
-        {hideTitle ? null : (
+        <Img
+          image={{ icon: 'LogoIcon', iconVersion: SVG_COLOR[bgColor] }}
+          className={`${SVG_COLOR[bgColor]} w-10 h-[38px]`}
+          asSVG
+        />
+        {showTitle ? (
           <span className={`${TEXT_COLOR[bgColor]} text-s font-medium ml-2.5`}>
             {children || 'Россельхозбанк'}
           </span>
-        )}
+        ) : null}
       </a>
     );
   },

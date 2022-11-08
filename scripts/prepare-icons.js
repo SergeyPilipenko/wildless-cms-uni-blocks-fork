@@ -34,6 +34,7 @@ const SVGO_CONFIG = {
     generateIconNameType(
       icons.map((_) => basename(_, SVG_EXT)),
       processedIcons.map(([title]) => title),
+      processedIcons.map(([, , inverse]) => inverse),
     ),
   );
 })();
@@ -45,13 +46,18 @@ async function optimizeIcon(iconPath) {
   await mkdir(outDir, { recursive: true });
   await writeFile(join(outDir, basename(iconPath)), result);
 
-  return [iconTitle(icon), result];
+  return [getIconTitle(icon), result, getIconInverse(icon) ?? false];
 }
 
-function generateIconNameType(iconNames, iconTitles) {
+function generateIconNameType(iconNames, iconTitles, inverse) {
   return `
 // Generated. Do not touch
 /* eslint-disable max-len, max-lines */
+
+export const IconInverseMap = {
+  ${iconTitles.map((title, i) => [iconNames[i], inverse[i] || false].join(': ')).join(', ')}
+}
+
 export enum IconMap {
   ${iconNames.map((_) => [_, wrap(_)].join(' = ')).join(', ')}
 }
@@ -81,8 +87,12 @@ function injectIconId(svg) {
   return svg?.replace('<svg', '<svg id="icon"');
 }
 
-function iconTitle(svg) {
+function getIconTitle(svg) {
   return (svg?.match(/title\s*=\s*"([^"]+)"/) || [])[1];
+}
+
+function getIconInverse(svg) {
+  return (svg?.match(/isInverse\s*=\s*"([^"]+)"/) || [])[1];
 }
 
 function wrap(_) {

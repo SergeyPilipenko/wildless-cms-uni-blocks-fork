@@ -8,7 +8,7 @@ export interface LogoProps {
   href: string;
   targetBlank: boolean;
   bgColor?: string;
-  hideTitle?: boolean;
+  showTitle?: boolean;
   logo?: {
     image?: Picture;
     title?: string;
@@ -37,7 +37,7 @@ export const Logo = JSX<Partial<LogoProps>>(
     children = logo?.title,
     targetBlank,
     bgColor = 'bg-white',
-    hideTitle,
+    showTitle = true,
   }) => {
     return (
       <a
@@ -57,7 +57,7 @@ export const Logo = JSX<Partial<LogoProps>>(
             asSVG
           />
         )}
-        {hideTitle ? null : renderTitle(children, bgColor, logo?.title)}
+        {showTitle ? renderTitle(children, bgColor, logo?.title) : null}
       </a>
     );
   },

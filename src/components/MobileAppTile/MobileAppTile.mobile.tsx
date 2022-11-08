@@ -15,7 +15,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
         {href ? (
           <div className="flex">
             <div className="flex justify-center align-middle rounded-md bg-primary-main w-[50px] h-[50px]">
-              <Logo className="w-[33px]" bgColor="transparent" hideTitle />
+              <Logo className="w-[33px]" bgColor="transparent" showTitle />
             </div>
             <a href={href} target="_blank" className="flex flex-col justify-center pl-3">
               <div className="text-s font-medium mb-[3px]">{title}</div>

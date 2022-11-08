@@ -1,4 +1,4 @@
-<svg title="Стрелка вверх" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg title="Стрелка вверх" isInverse="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.3416 9.29163L11.1582 7.10829C10.5166 6.46662 9.46657 6.46662 8.8249 7.10829L3.3999 12.5416" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16.6001 12.5416L15.7334 11.675" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

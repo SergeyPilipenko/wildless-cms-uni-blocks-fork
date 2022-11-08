@@ -1,8 +1,8 @@
-<svg title="Скачать документ" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.59766 11.959V14.1673L9.26432 12.5007" stroke="#42AB44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.59766 9.16602V9.99935" stroke="#42AB44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.59635 14.1667L5.92969 12.5" stroke="#42AB44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1.76562 7.49935C1.76562 3.33268 3.43229 1.66602 7.59896 1.66602H11.7656" stroke="#42AB44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.4323 8.33398V12.5007C18.4323 16.6673 16.7656 18.334 12.599 18.334H7.59896C3.43229 18.334 1.76562 16.6673 1.76562 12.5007V10.8173" stroke="#42AB44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M15.099 8.33268C12.599 8.33268 11.7656 7.49935 11.7656 4.99935V1.66602L18.4323 8.33268" stroke="#42AB44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg title="Скачать документ" isInverse="true" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.59766 11.959V14.1673L9.26432 12.5007" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.59766 9.16602V9.99935" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.59635 14.1667L5.92969 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.76562 7.49935C1.76562 3.33268 3.43229 1.66602 7.59896 1.66602H11.7656" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.4323 8.33398V12.5007C18.4323 16.6673 16.7656 18.334 12.599 18.334H7.59896C3.43229 18.334 1.76562 16.6673 1.76562 12.5007V10.8173" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.099 8.33268C12.599 8.33268 11.7656 7.49935 11.7656 4.99935V1.66602L18.4323 8.33268" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

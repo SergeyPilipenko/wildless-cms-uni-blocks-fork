@@ -7,6 +7,7 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
+import { IconVersion } from '../../model/IconVersion';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -18,6 +19,11 @@ const STEPS_SIZE_MAP: Record<SizeVersion, string> = {
 const STEPS_TILE_DESCRIPTION_HEIGHT_MAP: Record<SizeVersion, string> = {
   normal: 'min-h-[70px]',
   small: 'min-h-[50px]',
+};
+
+const STEPS_SVG_VERSION_MAP: Record<BlockVersion, IconVersion> = {
+  primary: 'normal',
+  secondary: 'white',
 };
 
 export const StepsBlock = JSX<StepsBlockProps>(
@@ -105,7 +111,12 @@ const renderIconArea = (size: SizeVersion, version: BlockVersion) => (step: Step
     >
       <span className={`font-medium flex self-center ${styleMap.title} ${iconTextSize}`}>
         {checkIsIconRenderable(step?.icon) ? (
-          <Img image={step.icon} width={iconSize} height={iconSize} asSVG />
+          <Img
+            image={{ ...step.icon, iconVersion: STEPS_SVG_VERSION_MAP[version] }}
+            width={iconSize}
+            height={iconSize}
+            asSVG
+          />
         ) : (
           <span>{i + 1}</span>
         )}
