@@ -212,7 +212,7 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
               >
                 <svg
                   aria-hidden="true"
-                  class=""
+                  class="width: 24px  text-primary-main  "
                   height="24"
                   width="24"
                 >
@@ -223,7 +223,6 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
                     Иконка Gps
                   </desc>
                   <use
-                    class="text-primary-main  "
                     href="icons/GpsIcon.svg#icon"
                     xlink:href="icons/GpsIcon.svg#icon"
                   />
@@ -266,24 +265,27 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
       href="/"
       target="_self"
     >
-      <svg
-        aria-hidden="true"
+      <div
         class="text-primary-main w-10"
-        height="45"
-        width="40"
       >
-        <title>
-          Иконка Logo
-        </title>
-        <desc>
-          Иконка Logo
-        </desc>
-        <use
-          class="text-primary-main  "
-          href="icons/LogoIcon.svg#icon"
-          xlink:href="icons/LogoIcon.svg#icon"
-        />
-      </svg>
+        <svg
+          aria-hidden="true"
+          class="width: 40px  text-primary-main  "
+          height="45"
+          width="40"
+        >
+          <title>
+            Иконка Logo
+          </title>
+          <desc>
+            Иконка Logo
+          </desc>
+          <use
+            href="icons/LogoIcon.svg#icon"
+            xlink:href="icons/LogoIcon.svg#icon"
+          />
+        </svg>
+      </div>
       <span
         class="text-primary-text font-medium ml-2.5"
       >
@@ -469,24 +471,27 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
         href="/"
         target="_self"
       >
-        <svg
-          aria-hidden="true"
+        <div
           class="text-primary-main w-10"
-          height="45"
-          width="40"
         >
-          <title>
-            Иконка Logo
-          </title>
-          <desc>
-            Иконка Logo
-          </desc>
-          <use
-            class="text-primary-main  "
-            href="icons/LogoIcon.svg#icon"
-            xlink:href="icons/LogoIcon.svg#icon"
-          />
-        </svg>
+          <svg
+            aria-hidden="true"
+            class="width: 40px  text-primary-main  "
+            height="45"
+            width="40"
+          >
+            <title>
+              Иконка Logo
+            </title>
+            <desc>
+              Иконка Logo
+            </desc>
+            <use
+              href="icons/LogoIcon.svg#icon"
+              xlink:href="icons/LogoIcon.svg#icon"
+            />
+          </svg>
+        </div>
         <span
           class="text-primary-text font-medium ml-2.5"
         >
@@ -526,22 +531,25 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
           disabled=""
           type="button"
         >
-          <svg
-            aria-hidden="true"
+          <div
             class="h-full pointer-events-none"
           >
-            <title>
-              Иконка Лупа
-            </title>
-            <desc>
-              Иконка Лупа
-            </desc>
-            <use
-              class="text-black group-hover:text-primary-hover group-hover:invert-0 pointer-events-none "
-              href="icons/LoupeIcon.svg#icon"
-              xlink:href="icons/LoupeIcon.svg#icon"
-            />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="w-full h-full text-black group-hover:text-primary-hover group-hover:invert-0 pointer-events-none "
+            >
+              <title>
+                Иконка Лупа
+              </title>
+              <desc>
+                Иконка Лупа
+              </desc>
+              <use
+                href="icons/LoupeIcon.svg#icon"
+                xlink:href="icons/LoupeIcon.svg#icon"
+              />
+            </svg>
+          </div>
         </button>
         <button
           aria-label="Дополнительные ссылки"
@@ -549,22 +557,25 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
           disabled=""
           type="button"
         >
-          <svg
-            aria-hidden="true"
+          <div
             class="h-full bg-main-divider/20 rounded-full pointer-events-none"
           >
-            <title>
-              Иконка Сетка (белая)
-            </title>
-            <desc>
-              Иконка Сетка (белая)
-            </desc>
-            <use
-              class="text-black group-hover:text-primary-hover group-hover:invert-0 "
-              href="icons/GridIcon.svg#icon"
-              xlink:href="icons/GridIcon.svg#icon"
-            />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="w-full h-full text-black group-hover:text-primary-hover group-hover:invert-0 "
+            >
+              <title>
+                Иконка Сетка (белая)
+              </title>
+              <desc>
+                Иконка Сетка (белая)
+              </desc>
+              <use
+                href="icons/GridIcon.svg#icon"
+                xlink:href="icons/GridIcon.svg#icon"
+              />
+            </svg>
+          </div>
         </button>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { IconTitleMap, IconInverseMap } from '../../icons/IconName';
+import { IconInverseMap, IconTitleMap } from '../../icons/IconName';
 import type { IconVersion } from '../../model/IconVersion';
 import { projectSettings } from '../../ProjectSettings';
 import type { IconProps } from './IconProps';
@@ -25,19 +25,22 @@ export const Icon = JSX<IconProps>(
 
     if (asSVG && IconInverseMap[name]) {
       return (
-        <svg className={className} {...imgProps} aria-hidden="true">
-          {title ? <title>{title}</title> : null}
-          {alt ? <desc>{alt}</desc> : null}
-          <use
+        <Background className={className}>
+          <svg
             className={[
+              getSvgSize(className, imgProps.width),
               svgUseStyleMap[iconVersion],
               imageClassName,
               getInvertStyle(name, iconVersion),
             ].join(' ')}
-            href={`${href}#icon`}
-            xlinkHref={`${href}#icon`}
-          />
-        </svg>
+            {...imgProps}
+            aria-hidden="true"
+          >
+            {title ? <title>{title}</title> : null}
+            {alt ? <desc>{alt}</desc> : null}
+            <use href={`${href}#icon`} xlinkHref={`${href}#icon`} />
+          </svg>
+        </Background>
       );
     }
 
@@ -56,3 +59,10 @@ export const Icon = JSX<IconProps>(
 
 const getInvertStyle = (name: string, iconVersion: IconVersion) =>
   iconVersion === 'white' && IconInverseMap[name] ? 'invert' : '';
+
+const getSvgSize = (className?: string, width?: string) =>
+  width ? `width: ${width}px ` : 'w-full h-full';
+
+const Background = JSX<{ className?: string }>(({ className, children }) =>
+  className ? <div className={className}>{children}</div> : children,
+);
