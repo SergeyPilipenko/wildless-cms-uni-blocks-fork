@@ -50,7 +50,7 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
 
   const classes =
     version === 'secondary'
-      ? 'bg-secondary-light hover:bg-secondary-hover'
+      ? 'bg-white hover:bg-secondary-hover'
       : 'border-solid border-[1px] border-main-divider hover:border-transparent hover:bg-primary-main';
 
   const isPrimary = version === 'primary';
