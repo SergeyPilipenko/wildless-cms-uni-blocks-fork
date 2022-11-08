@@ -30,12 +30,15 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`bg-white text-primary-text font-sans p-9 box-border ${className}`}
+        className={`bg-white text-primary-text font-sans p-9 box-border min-h-[320px] 
+          ${className}`}
         {...rest}
       >
         <BaseTile
           context={context}
-          title={<Heading headingType="h4" title={title} className="whitespace-pre-wrap text-h4" />}
+          title={
+            <Heading headingType="h4" title={title} className="whitespace-pre-wrap text-h4 mb-5" />
+          }
         >
           <div className="flex">
             <div className="mr-14 pt-4">

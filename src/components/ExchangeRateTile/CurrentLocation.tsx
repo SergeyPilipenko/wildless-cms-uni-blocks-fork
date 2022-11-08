@@ -14,7 +14,7 @@ export const CurrentLocation = JSX<CurrentLocationProps>(
       <div className="ml-3">
         {address ? <p className="text-primary-main  m-0 mb-1 text-l">{address}</p> : null}
         {distance ? (
-          <p className="text-secondary-text m-0 text-m">
+          <p className="text-secondary-text m-0 text-m-light">
             Курс указан для ближайшего офиса - {distance}
           </p>
         ) : null}

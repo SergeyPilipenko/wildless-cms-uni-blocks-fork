@@ -158,13 +158,14 @@ exports[`Blocks ErrorBlock should render block "ErrorBlock" without content 1`] 
 
 exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without content 1`] = `
 <section
-  class="bg-white text-primary-text font-sans p-9 box-border "
+  class="bg-white text-primary-text font-sans p-9 box-border min-h-[320px] 
+          "
 >
   <div
     class="font-sans flex flex-col grow h-full items-start "
   >
     <h3
-      class="font-sans m-0 text-h4 whitespace-pre-wrap text-h4"
+      class="font-sans m-0 text-h4 whitespace-pre-wrap text-h4 mb-5"
     >
       Курсы обмена валют
     </h3>
@@ -236,7 +237,7 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
                     Москва, ул.Ленина д.28
                   </p>
                   <p
-                    class="text-secondary-text m-0 text-m"
+                    class="text-secondary-text m-0 text-m-light"
                   >
                     Курс указан для ближайшего офиса - 
                     6км
