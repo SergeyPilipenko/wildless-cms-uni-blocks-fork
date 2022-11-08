@@ -4,6 +4,7 @@ import type { IconVersion } from '../../model/IconVersion';
 import type { DescriptionProps, LabelProps } from '../../model/HeadlineType';
 
 export interface BenefitItemCommonProps {
+  /** @hidden */
   benefitsVersion?: IconVersion;
   /** @hidden */
   version?: BlockVersion;

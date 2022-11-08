@@ -14,12 +14,14 @@
     {
       "label": "Преимущество №1",
       "icon": {
+        "format": "webp",
         "icon": "ShieldTickIcon"
       }
     },
     {
       "label": "Преимущество №2",
       "icon": {
+        "format": "webp",
         "icon": "ShieldTickIcon"
       }
     }
