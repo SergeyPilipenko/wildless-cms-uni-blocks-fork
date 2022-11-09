@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { EventBus } from '../../EventBus/EventBus';
-import { UniBlockProps } from '../../types';
+import { UniBlockProps } from '../../model/ContentPageDef';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import type { TariffsTableInnerEvent } from './InnerTableProps';

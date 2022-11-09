@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { GalleryVersion } from '../../model/GalleryVersion';
-import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { galleryLengthForScrollMap } from './constants';

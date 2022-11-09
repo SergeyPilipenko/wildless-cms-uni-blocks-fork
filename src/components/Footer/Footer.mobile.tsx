@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { Accordion } from '../Accordion/Accordion';
 import { MobileAppTile } from '../MobileAppTile/MobileAppTile';
 import { Contacts } from './Contacts';
@@ -9,7 +9,7 @@ import { SocialMedia } from './SocialMedia';
 import { TextInformation } from './TextInformation';
 
 import { useSitemap } from '../../services/sitemap/useSitemap';
-import type { Fallback } from '../../types/Fallback';
+import type { Fallback } from '../../model/Fallback';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';

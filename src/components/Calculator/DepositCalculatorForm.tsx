@@ -2,7 +2,7 @@
 
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { CommonCalculatorProps, DepositCalculatorParams } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import {
@@ -15,10 +15,10 @@ import {
 } from './constants';
 import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
-import { renderMonthsInput } from './renderMonthsInput';
-import { renderWantedSumInput } from './renderWantedSumInput';
-import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
 import { renderFootnote } from './renderFootnote';
+import { renderMonthsInput } from './renderMonthsInput';
+import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
+import { renderWantedSumInput } from './renderWantedSumInput';
 
 export interface DepositCalculatorProp
   extends DepositCalculatorParams,

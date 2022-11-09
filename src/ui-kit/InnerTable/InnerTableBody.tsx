@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import { type UniBlockProps } from '../../types';
+import { type UniBlockProps } from '../../model/ContentPageDef';
 import { Img } from '../Img/Img';
 import { InnerTableBodyItem } from './InnerTableBodyItem';
 import type { DataItem } from './InnerTableProps';

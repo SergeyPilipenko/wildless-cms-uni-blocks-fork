@@ -1,6 +1,5 @@
-import type { BlockContent } from './components/BlockContent';
-import type { ContentPageContext } from './components/ContentPage/ContentPageContext';
-import type { BlockVersion } from './model/BlockVersion';
+import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
+import type { BlockVersion } from './BlockVersion';
 
 /**
  * @title Цветовая палитра
@@ -8,10 +7,9 @@ import type { BlockVersion } from './model/BlockVersion';
  */
 export type ColorPalette = '' | 'pc' | 'bc' | 'eo';
 
-export interface BaseBlockDef {
+export interface BaseBlockDef extends Slot {
   type?: string;
-  style?: string[];
-  content?: BlockContent;
+  content?: Record<string, any>;
   version?: BlockVersion;
   hidden?: boolean;
   anchor?: string;
@@ -45,10 +43,8 @@ export interface ContentPageMeta {
   jsonLd?: string;
 }
 
-export interface ContentPageDef extends ContentPageMeta {
+export interface ContentPageDef extends ContentPageMeta, Slot {
   _customPageType?: string;
-  style?: string[];
-  blocks?: BlockDef[];
   slots?: SlotsMap;
   fallback?: Record<string, unknown>;
   likeControl?: boolean;
@@ -61,18 +57,4 @@ export interface UniBlockProps {
   page?: ContentPageDef;
   labels?: string[];
   anchor?: string;
-}
-
-export interface DaDataResult {
-  suggestions?: DaDataSuggestion<DaDataAddress>[];
-}
-
-export interface DaDataSuggestion<T> {
-  value?: string;
-  unrestricted_value?: string;
-  data?: T;
-}
-
-export interface DaDataAddress {
-  city?: string | null;
 }

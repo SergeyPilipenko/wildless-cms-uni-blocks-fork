@@ -1,5 +1,5 @@
-import type { Fallback, FallbackMap } from '../../types/Fallback';
-import type { BlocksRegistry } from './ContentPage';
+import type { BlocksRegistry } from '../../model/BlocksRegistry';
+import type { Fallback, FallbackMap } from '../../model/Fallback';
 
 interface FallbackData {
   key: string;

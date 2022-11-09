@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
-import type { ProductGalleryContent } from './ProductGalleryContent';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import { ProductGalleryBlock } from './ProductGalleryBlock';
+import type { ProductGalleryContent } from './ProductGalleryContent';
 
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
 

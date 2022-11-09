@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ProductBlockInner } from './ProductBlockInner';
-import type { UniBlockProps } from '../../types';
-import type { ProductBlockContent } from './ProductBlockContent';
 import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { ProductBlockContent } from './ProductBlockContent';
+import { ProductBlockInner } from './ProductBlockInner';
 
 export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
 

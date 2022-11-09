@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { ColorPalette, UniBlockProps } from '../../model/ContentPageDef';
 import type { VNode } from '../../model/VNode';
-import type { ColorPalette, UniBlockProps } from '../../types';
 import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import type { BlockItemCommonProps } from './OtherProductsContent';

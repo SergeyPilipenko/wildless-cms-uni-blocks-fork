@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import { HorizontalNavigationLink } from './HorizontalNavigationLink';
-import type { UniBlockProps } from '../../types';
-import type { FooterLink } from './FooterLink';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { TitleProps } from '../../model/HeadlineType';
+import type { FooterLink } from './FooterLink';
+import { HorizontalNavigationLink } from './HorizontalNavigationLink';
 
 export interface HorizontalNavigationProps extends FooterLink, UniBlockProps, TitleProps {}
 

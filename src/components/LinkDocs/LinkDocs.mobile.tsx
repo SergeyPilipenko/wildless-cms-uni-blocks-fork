@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
+import { Headline } from '../Headline/Headline';
 import type { LinkDocsContent } from './LinkDocsContent';
 import { LinkDocsHorizontalList } from './LinkDocsHorizontalList';
 import { LinkDocsVerticalList } from './LinkDocsVerticalList';
-import { Headline } from '../Headline/Headline';
 
 export interface LinkDocsProps extends LinkDocsContent, UniBlockProps {}
 

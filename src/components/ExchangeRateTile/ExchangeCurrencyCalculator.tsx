@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { Button } from '../../ui-kit/Button/Button';
 import { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { calculateResult, formatValue } from './calculateResult';

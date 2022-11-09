@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { LinkProps } from '../../model/LinkProps';
-import type { UniBlockProps } from '../../types';
 import { MediaButton } from './MediaButton';
 
 export interface SocialMediaProps extends UniBlockProps {

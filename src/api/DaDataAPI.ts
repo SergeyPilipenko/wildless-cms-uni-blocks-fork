@@ -1,6 +1,18 @@
 import { getGeolocation } from '../utils/getGeolocation';
 
-import type { DaDataResult } from '../types';
+interface DaDataSuggestion<T> {
+  value?: string;
+  unrestricted_value?: string;
+  data?: T;
+}
+
+interface DaDataAddress {
+  city?: string | null;
+}
+
+export interface DaDataResult {
+  suggestions?: DaDataSuggestion<DaDataAddress>[];
+}
 
 export function DaDataAPI(baseURL = '') {
   async function getFetcherAddress() {

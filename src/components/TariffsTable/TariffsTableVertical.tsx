@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { TariffsTableTileCell, TariffsTableTileCellProps } from './TariffsTableTileCell';
 
 export interface TariffsTableVerticalProps extends UniBlockProps {

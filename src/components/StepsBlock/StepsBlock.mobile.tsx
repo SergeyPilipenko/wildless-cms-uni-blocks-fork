@@ -1,11 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { SizeVersion } from '../../model/SizeVersion';
-import type { UniBlockProps } from '../../types';
-import type { Step, StepsBlockContent } from './StepsBlockContent';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
+import type { Step, StepsBlockContent } from './StepsBlockContent';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
 import { IconVersion } from '../../model/IconVersion';
 

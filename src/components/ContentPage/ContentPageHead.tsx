@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { ContentPageMeta } from '../../model/ContentPageDef';
 import { VNode as _VNode } from '../../model/VNode';
-import type { ContentPageMeta } from '../../types';
 export interface ContentPageHeadProps {
   HeadComponent: <Props, Context, VNode = _VNode>(props: Props, context?: Context) => VNode;
   data: ContentPageMeta;

@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { EventBus } from '../../EventBus/EventBus';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { VNode } from '../../model/VNode';
-import type { UniBlockProps } from '../../types';
 import { InnerTable } from '../../ui-kit/InnerTable/InnerTable';
 import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
 

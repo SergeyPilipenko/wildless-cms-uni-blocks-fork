@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useExchangeRates } from '../../hooks/useExchangeRates';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTile } from '../BaseTile/BaseTile';

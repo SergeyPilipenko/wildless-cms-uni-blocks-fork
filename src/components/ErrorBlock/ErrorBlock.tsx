@@ -1,10 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
-import type { ErrorBlockContent } from './ErrorBlockContent';
 import { useLink } from '../../hooks/useLink';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { Button } from '../../ui-kit/Button/Button';
-import { Img } from '../../ui-kit/Img/Img';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { Img } from '../../ui-kit/Img/Img';
+import type { ErrorBlockContent } from './ErrorBlockContent';
 
 export interface ErrorBlockProps extends ErrorBlockContent, UniBlockProps {}
 

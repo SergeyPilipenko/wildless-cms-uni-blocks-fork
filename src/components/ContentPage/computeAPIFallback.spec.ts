@@ -1,4 +1,4 @@
-import { Fallback, FallbackMap } from '../../types/Fallback';
+import type { Fallback, FallbackMap } from '../../model/Fallback';
 import { Blocks } from '../Blocks';
 import { computeAPIFallback, getPageFallbackMap, loadBlockFallback } from './computeAPIFallback';
 

@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import { EventBus } from '../EventBus/EventBus';
-import type { UniBlockProps } from '../types';
+import type { UniBlockProps } from '../model/ContentPageDef';
 import { changeHashOnObserve } from '../utils/changeHashOnObserve';
 
 interface BlockWrapperProps extends UniBlockProps, Record<string, any> {

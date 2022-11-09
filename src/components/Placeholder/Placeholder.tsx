@@ -1,11 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { PlaceholderContent } from './PlaceholderContent';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import { Headline } from '../Headline/Headline';
-import type { UniBlockProps } from '../../types';
 import { getTileHeadingType } from '../BaseTile/getTileHeadingType';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
+import { Headline } from '../Headline/Headline';
+import type { PlaceholderContent } from './PlaceholderContent';
 
 export interface PlaceholderProps extends PlaceholderContent, UniBlockProps {
   className?: string;

@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../types';
-import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
-import type { ProductGalleryContent } from './ProductGalleryContent';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
+import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
+import type { ProductGalleryContent } from './ProductGalleryContent';
 
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
 

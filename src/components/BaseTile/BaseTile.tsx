@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { BaseTileCommonProps } from './BaseTileProps';
 
 export interface BaseTileProps extends BaseTileCommonProps, UniBlockProps {}

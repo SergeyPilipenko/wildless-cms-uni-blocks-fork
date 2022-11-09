@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import type { UniBlockProps } from '../../types';
-import type { BonusContent } from './BonusContent';
 import { Headline } from '../Headline/Headline';
+import type { BonusContent } from './BonusContent';
 
 export interface BonusProps extends BonusContent, UniBlockProps {}
 

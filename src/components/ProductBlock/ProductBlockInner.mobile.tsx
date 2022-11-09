@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
+import type { BlockVersion } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
-import { Headline } from '../Headline/Headline';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
+import { Headline } from '../Headline/Headline';
 import type { ProductBlockInnerContent } from './ProductBlockContent';
-import type { BlockVersion } from '../../model/BlockVersion';
 import { renderBenefit } from './renderBenefit';
 
 export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;

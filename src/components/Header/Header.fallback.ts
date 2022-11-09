@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import { projectSettings } from '../../ProjectSettings';
-import type { FallbackMap } from '../../types/Fallback';
+import type { FallbackMap } from '../../model/Fallback';
 
 export const fallback = (): FallbackMap => ({
   [`/wcms-resources/${projectSettings.SITEMAP || 'sitemap'}.json`]: async () => {

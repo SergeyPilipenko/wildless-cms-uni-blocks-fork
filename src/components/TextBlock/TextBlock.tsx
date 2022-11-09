@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { Picture } from '../../model/Picture';
-import type { UniBlockProps } from '../../types';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Img } from '../../ui-kit/Img/Img';
 import type { TextBlockContent, TextBlockVersion } from './TextBlockContent';

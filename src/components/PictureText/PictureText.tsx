@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BenefitItem } from '../../ui-kit/BenefitItem/BenefitItem';
 import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';

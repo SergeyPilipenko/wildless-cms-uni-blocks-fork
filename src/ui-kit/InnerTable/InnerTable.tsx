@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTariffsInnerTableData } from '../../hooks/useTariffsInnerTableData';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { InnerTableBody } from './InnerTableBody';
 import { TableInnerButton } from './InnerTableButton';
 import { InnerTableHeader } from './InnerTableHeader';

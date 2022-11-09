@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
-import type { MobileAppTileContent } from './MobileAppTileContent';
+import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -8,7 +8,7 @@ import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
-import { VersionStyleMap } from '../../model/BlockVersion';
+import type { MobileAppTileContent } from './MobileAppTileContent';
 
 export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps {}
 

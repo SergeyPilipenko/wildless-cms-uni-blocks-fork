@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { MobileAppTileContent } from './MobileAppTileContent';
-import type { UniBlockProps } from '../../types';
 
 import { Logo } from '../../ui-kit/Logo/Logo';
 

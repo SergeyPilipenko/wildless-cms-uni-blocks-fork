@@ -1,5 +1,5 @@
-import { BlockDef } from '../../types';
-import { BlocksRegistry } from './ContentPage';
+import type { BlocksRegistry } from '../../model/BlocksRegistry';
+import type { BlockDef } from '../../model/ContentPageDef';
 import { isBlockInRegistry } from './isBlockInRegistry';
 import { normalizeBlock } from './normalizeBlock';
 

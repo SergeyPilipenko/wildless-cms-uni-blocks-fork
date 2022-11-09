@@ -1,5 +1,5 @@
 import { useLink } from '../../hooks/useLink';
-import type { ContentPageDef } from '../../types';
+import type { ContentPageDef } from '../../model/ContentPageDef';
 import { assertUnreachable } from '../../utils/assertUnreachable';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { renderGroupTab } from './renderGroupTab';

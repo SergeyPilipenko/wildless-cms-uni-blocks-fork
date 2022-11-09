@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import type { UniBlockProps } from '../../types';
 import type { LinkListContent } from './LinkListContent';
 
 export interface LinkListProps extends LinkListContent, UniBlockProps {}

@@ -1,7 +1,7 @@
-import type { JSXBlock } from '../ContentPage/ContentPage';
+import type { JSXBlock } from '../../model/BlocksRegistry';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import type { CalculatorBlockDef } from './CalculatorContent';
 import { EmbeddableCalcBlocks, EmbeddableCalcProps } from './EmbeddableCalcBlocks';
-import { Heading } from '../../ui-kit/Heading/Heading';
 
 export const renderCalculatorBlock =
   ({ context, className }: any) =>

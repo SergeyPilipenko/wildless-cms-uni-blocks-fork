@@ -1,6 +1,6 @@
-import type { JSXBlock } from '../../components/ContentPage/ContentPage';
 import type { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
-import type { UniBlockProps } from '../../types';
+import type { JSXBlock } from '../../model/BlocksRegistry';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { style2className } from '../../utils/style2className';
 import type { BlockDef } from './BlocksListProps';
 import { EmbeddableBlocks } from './EmbeddableBlocks';

@@ -1,8 +1,9 @@
 import { context } from '../../react/setup-fixture';
 
-import type { ContentPageDef } from '../../types';
+import type { BlockDecorator } from '../../model/BlockDecorator';
+import type { ContentPageDef } from '../../model/ContentPageDef';
 import { Blocks } from '../Blocks';
-import { BlockDecorator, ContentPage } from './ContentPage';
+import { ContentPage } from './ContentPage';
 import { normalizePage } from './normalizePage';
 
 import data from './ContentPage.page.json';

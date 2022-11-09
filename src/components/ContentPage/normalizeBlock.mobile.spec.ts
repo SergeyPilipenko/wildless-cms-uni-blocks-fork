@@ -1,4 +1,4 @@
-import { BlockDef } from '../../types';
+import type { BlockDef } from '../../model/ContentPageDef';
 import { normalizeBlock } from './normalizeBlock.mobile';
 
 describe('normalizeBlock', () => {

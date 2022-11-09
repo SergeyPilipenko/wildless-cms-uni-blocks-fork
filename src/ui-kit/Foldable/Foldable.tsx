@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
+import { ColorPalette } from '../../model/ContentPageDef';
 import type { VNode } from '../../model/VNode';
-import { ColorPalette } from '../../types';
 import { clamp } from '../../utils/clamp';
 import { Icon } from '../Icon/Icon';
 import { foldableBlockClassNames, useActiveHandler } from './useActiveHandler';

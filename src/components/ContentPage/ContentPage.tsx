@@ -1,121 +1,73 @@
-import type { UNIComponent } from '@redneckz/uni-jsx';
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockDef, ContentPageDef, UniBlockProps } from '../../types';
+import type { BlockAncestors, BlockDecorator } from '../../model/BlockDecorator';
+import type { BlocksRegistry } from '../../model/BlocksRegistry';
+import type { BlockDef, ContentPageDef, UniBlockProps } from '../../model/ContentPageDef';
 import { style2className } from '../../utils/style2className';
-import type { BlockContent } from '../BlockContent';
 import { LikeControl } from '../LikeControl/LikeControl';
-import { Placeholder } from '../Placeholder/Placeholder';
-import { ContentPageContext } from './ContentPageContext';
+import type { ContentPageContext } from './ContentPageContext';
+import { renderBlock } from './renderBlock';
 
-interface BlockDecoratorProps<VNode> {
-  blockClassName: string;
-  block: BlockDef;
-  render: (props: { blockClassName: string; block: BlockDef }) => VNode;
-}
-
-export type BlockDecorator<VNode = any> = (
-  props: BlockDecoratorProps<VNode>,
-  index?: number | string,
-) => any;
-
-export type JSXBlock<BlockProps = BlockContent> = UNIComponent<BlockProps & UniBlockProps>;
-
-export type BlocksRegistry = Record<string, JSXBlock>;
-
-export interface ContentPageProps extends UniBlockProps {
+interface ContentPageProps extends UniBlockProps {
   blocksRegistry: BlocksRegistry;
   data?: ContentPageDef;
   blockDecorator?: BlockDecorator;
 }
 
-export interface RenderBlockFunc {
-  block: BlockDef;
-  page: ContentPageDef;
-  blockDecorator: BlockDecorator;
-  blocksRegistry: BlocksRegistry;
-  context: ContentPageContext;
-}
-
 const defaultBlockDecorator: BlockDecorator = ({ blockClassName, block, render }) =>
   render({ blockClassName, block });
 
-export const ContentPage = JSX<ContentPageProps>(
-  ({
-    className = '',
-    context,
-    blocksRegistry,
-    data = {},
-    blockDecorator = defaultBlockDecorator,
-  }) => {
-    const { style: pageStyle, blocks, slots = {}, likeControl, colorPalette = 'pc' } = data;
-    const { header } = slots;
+export const ContentPage = JSX<ContentPageProps>((props) => {
+  const { className = '', context, data = {} } = props;
 
-    return (
-      <section
-        className={`relative ${style2className(pageStyle)} ${className}`}
-        data-theme={colorPalette}
-      >
-        {header?.blocks?.length ? (
-          <div className={`${style2className(header?.style)}`}>
-            {header.blocks.map((block, i) =>
-              renderBlock({ block, page: data, blockDecorator, blocksRegistry, context }, i),
-            )}
-          </div>
-        ) : null}
+  const { style: pageStyle, blocks, slots, likeControl, colorPalette = 'pc' } = data;
 
-        {blocks?.length ? (
-          <div className="container grid grid-cols-12 gap-1">
-            {blocks.map((block, i) =>
-              renderBlock({ block, blockDecorator, blocksRegistry, context, page: data }, i),
-            )}
-          </div>
-        ) : null}
+  const blocksListRenderer = renderBlocksList(props);
 
-        {likeControl ? (
-          <div className="flex items-end absolute bottom-0 right-0 h-full pointer-events-none">
-            <LikeControl
-              key="LikeControl"
-              className="rounded-tl-lg sticky bottom-0 pointer-events-auto"
-              context={context}
-            />
-          </div>
-        ) : null}
-      </section>
+  return (
+    <section
+      className={`relative ${style2className(pageStyle)} ${className}`}
+      data-theme={colorPalette}
+    >
+      {slots?.header?.blocks?.length ? (
+        <div className={`${style2className(slots.header.style)}`}>
+          {blocksListRenderer(slots.header.blocks, ['header'])}
+        </div>
+      ) : null}
+
+      {blocks?.length ? (
+        <div className="container grid grid-cols-12 gap-1">{blocksListRenderer(blocks)}</div>
+      ) : null}
+
+      {likeControl ? renderLikeControl(context) : null}
+    </section>
+  );
+});
+
+function renderBlocksList({ blocksRegistry, data, blockDecorator, context }: ContentPageProps) {
+  return (blocks: BlockDef[], ancestors?: BlockAncestors) =>
+    blocks.map((block, i) =>
+      renderBlock(
+        block,
+        {
+          key: `${block.type || '#'}-${i}`,
+          blocksRegistry,
+          page: data || {},
+          blockDecorator: blockDecorator || defaultBlockDecorator,
+          context,
+        },
+        ancestors,
+      ),
     );
-  },
-);
+}
 
-function renderBlock(
-  { block, blockDecorator, blocksRegistry, context, page }: RenderBlockFunc,
-  i: number,
-) {
-  const { type } = block;
-  if (!(type && type in blocksRegistry)) {
-    console.warn(`No block with "${type}" is registered`);
-  }
-  const BlockComponent = blocksRegistry[type || 'Placeholder'] || Placeholder;
-
-  return blockDecorator(
-    {
-      blockClassName: `scroll-mt-12 ${style2className(block.style)}`,
-      block,
-      render: (props) => {
-        const { version, content, anchor, labels } = props.block;
-
-        return (
-          <BlockComponent
-            key={`${type}-${i}`}
-            className={props.blockClassName}
-            version={version}
-            context={context}
-            page={page}
-            anchor={anchor}
-            labels={labels}
-            {...content}
-          />
-        );
-      },
-    },
-    `block-${i}`,
+function renderLikeControl(context: ContentPageContext) {
+  return (
+    <div className="flex items-end absolute bottom-0 right-0 h-full pointer-events-none">
+      <LikeControl
+        key="LikeControl"
+        className="rounded-tl-lg sticky bottom-0 pointer-events-auto"
+        context={context}
+      />
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import { UniBlockProps } from '../../types';
+import { UniBlockProps } from '../../model/ContentPageDef';
 import { Img } from '../Img/Img';
 import { Button } from './Button';
 import type { ButtonContent, ButtonWithIconProps } from './ButtonProps';

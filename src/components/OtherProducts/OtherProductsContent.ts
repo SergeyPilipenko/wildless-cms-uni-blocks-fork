@@ -1,6 +1,6 @@
-import type { ColorPalette } from '../../types';
-import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
+import type { ColorPalette } from '../../model/ContentPageDef';
 import type { TitleProps } from '../../model/HeadlineType';
+import type { BlockDef } from '../../ui-kit/BlocksList/BlocksListProps';
 
 /**
  * @title Элемент списка

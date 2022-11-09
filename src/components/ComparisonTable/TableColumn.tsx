@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
-import type { IconProps } from '../../model/Picture';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { TitleProps } from '../../model/HeadlineType';
+import type { IconProps } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
 import { CellData } from './ComparisonTableContent';
 import { GRADIENT } from './constants';

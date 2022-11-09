@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLikeService } from '../../hooks/useLikeService';
 import { defaultHandlerDecorator } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { LikeButton } from '../../ui-kit/Button/LikeButton';
 

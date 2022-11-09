@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import { DEFAULT_REST_MIN_SUM, DEFAULT_TRAVEL_MIN_SUM } from './constants';
 import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
+import { renderFootnote } from './renderFootnote';
 import { renderWantedSumInput } from './renderWantedSumInput';
 import { useBonusCalculatorParams } from './useBonusCalculatorParams';
-import { renderFootnote } from './renderFootnote';
 
 export interface BonusCalculatorProps extends CommonCalculatorProps, UniBlockProps {}
 

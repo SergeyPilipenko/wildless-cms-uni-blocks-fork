@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { ProductTileContent, TextBenefit } from './ProductTileContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
@@ -66,7 +66,7 @@ function renderBenefits(benefits: TextBenefit[], version: BlockVersion, image?: 
 
   return (
     <div
-      className={`z-10 grid grid-cols-[max-content_1fr] auto-rows-auto gap-x-6 gap-y-2.5 items-baseline 
+      className={`z-10 grid grid-cols-[max-content_1fr] auto-rows-auto gap-x-6 gap-y-2.5 items-baseline
         ${BENEFITS_WIDTH}`}
     >
       {benefits.length ? benefits.map(renderBenefit(version)) : null}

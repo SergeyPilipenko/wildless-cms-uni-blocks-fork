@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { AccordionContent } from './AccordionContent';
 import { AccordionItem } from './AccordionItem';

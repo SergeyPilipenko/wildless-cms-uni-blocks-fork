@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../types';
-import type { ProductBlockContent } from './ProductBlockContent';
+import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Breadcrumb } from '../../ui-kit/Breadcrumb';
 import { joinList } from '../../utils/joinList';
+import type { ProductBlockContent } from './ProductBlockContent';
 import { ProductBlockInner } from './ProductBlockInner';
 import { renderBackwardButton } from './renderBackwardButton';
-import { VersionStyleMap } from '../../model/BlockVersion';
 
 export interface ProductBlockProps extends ProductBlockContent, UniBlockProps {}
 

@@ -1,17 +1,17 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../types';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import { Checkbox } from '../../ui-kit/Checkbox/Checkbox';
 import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import { DEFAULT_MONTHS, DEFAULT_SUM } from './constants';
 import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
+import { renderFootnote } from './renderFootnote';
 import { renderMonthsInput } from './renderMonthsInput';
 import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
 import { renderWantedSumInput } from './renderWantedSumInput';
 import { useCreditCalculatorParams } from './useCreditCalculatorParams';
-import { renderFootnote } from './renderFootnote';
 
 export const ANNUITY = 'annuity';
 export const DIFFERENTIAL = 'differential';

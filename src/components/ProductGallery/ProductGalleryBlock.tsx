@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
-import type { HeadlineProps } from '../../model/HeadlineType';
-import type { UniBlockProps } from '../../types';
-import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { HeadlineProps } from '../../model/HeadlineType';
+import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
+import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 
 export interface ProductGalleryBlockProps extends UniBlockProps {
   headlineVersion?: HeadlineProps;

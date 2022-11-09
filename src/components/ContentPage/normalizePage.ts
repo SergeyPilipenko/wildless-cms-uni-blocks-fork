@@ -1,5 +1,5 @@
-import type { ContentPageDef, Slot } from '../../types';
-import { BlocksRegistry } from './ContentPage';
+import type { BlocksRegistry } from '../../model/BlocksRegistry';
+import type { ContentPageDef, Slot } from '../../model/ContentPageDef';
 import { filterBlocks } from './filterBlocks';
 
 export const normalizePage =
