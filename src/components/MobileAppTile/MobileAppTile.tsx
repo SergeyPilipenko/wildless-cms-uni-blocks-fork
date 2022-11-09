@@ -61,7 +61,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
           <div className="flex flex-1 items-center">
             {qr?.src ? (
               <div className={`flex justify-center mr-5 bg-white rounded-md ${containerStyle}`}>
-                <Img className="w-fit" image={qr} />
+                <Img className="w-fit" image={qr} alt="QR-код" />
               </div>
             ) : null}
             {renderList(version, items)}

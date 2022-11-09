@@ -87,7 +87,6 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
           min="0"
           name="amount"
           placeholder="1500"
-          type="number"
           value=""
         />
         <span
