@@ -1,3 +1,4 @@
+import { EventBus } from '../../EventBus/EventBus';
 import { useLink } from '../../hooks/useLink';
 import type { ContentPageDef } from '../../model/ContentPageDef';
 import { assertUnreachable } from '../../utils/assertUnreachable';
@@ -31,11 +32,21 @@ export const renderTab =
     switch (type) {
       case 'group':
         return renderGroupTab({ onClick, currentTab, showCounter, page, context })(tab, i);
-      case 'link':
+      case 'link': {
+        const link = useLink({ router, handlerDecorator }, tab);
+        const linkClick = link.onClick;
+
         return renderLinkTab({
-          ...useLink({ router, handlerDecorator }, tab),
+          ...link,
+          onClick: (ev?: { preventDefault: () => void }) => {
+            linkClick(ev);
+            onClick(tab);
+            EventBus.inst.fire('anchorClick', { isScrolling: true, label: tab.href });
+          },
+          currentTab,
           i,
         });
+      }
       default:
         assertUnreachable(type);
     }

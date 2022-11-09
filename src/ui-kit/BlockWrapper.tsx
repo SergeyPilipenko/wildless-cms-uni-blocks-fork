@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useEffect, useMemo, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
+import { AnchorClickScrollingEvent } from '../components/Tabs/Tabs';
 import { EventBus } from '../EventBus/EventBus';
 import type { UniBlockProps } from '../model/ContentPageDef';
 import { changeHashOnObserve } from '../utils/changeHashOnObserve';
@@ -12,25 +13,43 @@ interface BlockWrapperProps extends UniBlockProps, Record<string, any> {
   tag?: keyof HTMLElementTagNameMap;
 }
 
+const THRESHOLD_ACCURACY = 100; // Decimals number (100 is for two decimals number, 0.**)
+const THRESHOLD_ARRAY_LENGTH = 18;
+const THRESHOLD_ARRAY_START_VALUE =
+  (THRESHOLD_ACCURACY - THRESHOLD_ARRAY_LENGTH) / THRESHOLD_ACCURACY;
+
 export const BlockWrapper = JSX<BlockWrapperProps>(
   ({ anchor, className, context, children, tag = 'section', labels }) => {
     const Tag: any = tag;
 
     const { IntersectionObserverTag } = context;
-    const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
 
-    useEffect(
-      () =>
-        EventBus.inst.subscribe('tab', (event) => {
-          if (event.type === 'group') {
-            setShouldRenderBlock(!labels?.length || !event.label || labels.includes(event.label));
-          } else {
-            setShouldRenderBlock(true);
-            scrollToBlock(event.label);
-          }
-        }),
-      [labels],
+    const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
+    const anchorClickRef = useRef<AnchorClickScrollingEvent>({});
+
+    const observerCallback = useMemo(
+      () => changeHashOnObserve({ anchor, anchorClickRef }),
+      [anchor, anchorClickRef],
     );
+
+    useEffect(() => {
+      const anchorClickCleanup = EventBus.inst.subscribe('anchorClick', (e) => {
+        anchorClickRef.current = e;
+      });
+      const tabCleanup = EventBus.inst.subscribe('tab', (event) => {
+        if (event.type === 'group') {
+          setShouldRenderBlock(!labels?.length || !event.label || labels.includes(event.label));
+        } else {
+          changeHash(event.label);
+          setShouldRenderBlock(true);
+        }
+      });
+
+      return () => {
+        anchorClickCleanup();
+        tabCleanup();
+      };
+    }, [anchorClickRef]);
 
     if (!shouldRenderBlock) {
       return null;
@@ -40,8 +59,10 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
       <IntersectionObserverTag
         tag={tag}
         className={className}
-        observerCallback={changeHashOnObserve}
-        observerOptions={{ threshold: 1 }} // Lower threshold when hash change needed
+        observerCallback={observerCallback}
+        observerOptions={{
+          threshold: new Array(THRESHOLD_ARRAY_LENGTH).fill(0).map(getIntersectionThreshold),
+        }}
         anchor={anchor}
       >
         {children}
@@ -52,8 +73,14 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
   },
 );
 
-function scrollToBlock(label?: string) {
-  setTimeout(() =>
-    globalThis.document.getElementById(`#${label}`)?.scrollIntoView({ behavior: 'smooth' }),
-  );
+function getIntersectionThreshold(_: number, i: number): number {
+  const value = (i + 1) / THRESHOLD_ACCURACY + THRESHOLD_ARRAY_START_VALUE;
+
+  return Math.round(value * THRESHOLD_ACCURACY) / THRESHOLD_ACCURACY;
+}
+
+function changeHash(label?: string) {
+  if (label) {
+    globalThis.document.location.hash = label;
+  }
 }

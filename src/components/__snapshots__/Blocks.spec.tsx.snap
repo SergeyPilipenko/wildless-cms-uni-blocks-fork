@@ -1162,7 +1162,7 @@ exports[`Blocks StepsBlock should render block "StepsBlock" without content 1`] 
 
 exports[`Blocks Tabs should render block "Tabs" without content 1`] = `
 <section
-  class="mb-2 box-border flex gap-x-1 undefined"
+  class="box-border flex gap-x-1 "
 />
 `;
 

@@ -33,6 +33,8 @@ export type Tab = GroupTab | LinkTab;
 export interface TabsContent {
   /** @title Табы */
   tabs?: Tab[];
+  /** @title Закрепить сверху */
+  isSticky?: boolean;
   /** @title Показывать счетчик блоков во вкладках */
   showCounter?: boolean;
 }

@@ -12,12 +12,19 @@ export const IntersectionObserverTag: IntersectionObserverComponent = (props) =>
   } = props;
 
   const intersectionObserver = useRef<IntersectionObserver>();
+
   const ref = useCallback(
     (tag: HTMLElement | null | undefined) => {
-      if (tag && !intersectionObserver.current) {
-        intersectionObserver.current = new IntersectionObserver(observerCallback, observerOptions);
-        intersectionObserver.current.observe(tag);
+      if (!tag) {
+        return;
       }
+
+      if (intersectionObserver.current) {
+        intersectionObserver.current.disconnect();
+      }
+
+      intersectionObserver.current = new IntersectionObserver(observerCallback, observerOptions);
+      intersectionObserver.current.observe(tag);
     },
     [observerCallback, observerOptions],
   );

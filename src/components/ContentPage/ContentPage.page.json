@@ -58,6 +58,18 @@
       }
     },
     {
+      "type": "Tabs",
+      "style": ["col-span-12"],
+      "content": {
+        "isSticky": true,
+        "tabs": [
+          { "type": "link", "href": "#placeholder", "text": "В разработке" },
+          { "type": "link", "href": "#products", "text": "Продукты" },
+          { "type": "link", "href": "#gallery", "text": "Галерея" }
+        ]
+      }
+    },
+    {
       "type": "ProductGallery",
       "style": ["col-span-12"],
       "content": {
@@ -477,6 +489,7 @@
     {
       "type": "Placeholder",
       "style": ["col-span-12"],
+      "anchor": "placeholder",
       "content": {
         "title": "Какой то новый блок"
       }
@@ -557,6 +570,7 @@
     {
       "type": "ProductTile",
       "style": ["col-span-6"],
+      "anchor": "products",
       "content": {
         "title": "Акция! “Кредит На все, что хочется!”",
         "description": "Потребительский кредит на любые цели, без залога и поручительства",
@@ -882,6 +896,7 @@
     {
       "type": "MiniGallery",
       "style": ["col-span-12"],
+      "anchor": "gallery",
       "content": {
         "title": "Вы можете оплатить бонусными баллами",
         "description": "Удобный каталог с большим ассортиментом товаров и сервисов",
@@ -1421,7 +1436,6 @@
     {
       "type": "LinkDocs",
       "style": ["col-span-12"],
-      "anchor": "documents",
       "content": {
         "title": "Дополнительные документы",
         "description": "Ответы на часто задаваемые вопросы",
