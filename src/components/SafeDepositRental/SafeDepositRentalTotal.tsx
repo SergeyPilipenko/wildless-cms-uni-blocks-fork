@@ -30,8 +30,8 @@ export const SafeDepositRentalTotal = JSX<SafeDepositRentalTotalProps>(({ days, 
 const renderTotal = (label: string, total: string | number, className = '') => {
   return (
     <div className={className}>
-      <span className="block text-m-light mb-1">{label}</span>
-      <span className="text-h3">{total}</span>
+      <div className="text-m-light text-secondary-text mb-1">{label}</div>
+      <span className="text-h3 text-primary-text">{total}</span>
     </div>
   );
 };

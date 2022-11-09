@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Select } from '../../ui-kit/Select/Select';
-import { SelectOption } from '../../ui-kit/Select/SelectOption';
+import { OptionProps, Select } from '../../ui-kit/Select/Select';
+import { Currency } from '../ExchangeRateTile/CurrencyProps';
 
 interface WrapperSelectProps {
   data: Record<string, any>[];
@@ -13,25 +13,20 @@ interface WrapperSelectProps {
 }
 
 export const WrapperSelect = JSX<WrapperSelectProps>(
-  ({ data, fieldLabel, fieldValue, selected, placeholder, setSelected, label }) => {
+  ({ data, fieldLabel, fieldValue, selected, placeholder = '', setSelected, label }) => {
+    const dataFormat: OptionProps[] = data
+      .filter(Boolean)
+      .map((_) => ({ key: _?.[fieldValue || fieldLabel], text: _?.[fieldLabel] }));
+    const selectedObj = dataFormat.find((_) => _.key === selected);
+
     return (
-      <div>
-        <span className="block text-m-light mb-2">{label}</span>
-        <Select
-          className={`h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer ${
-            !selected ? 'text-secondary-text' : ''
-          }`}
-          value={selected}
-          onChange={(_) => setSelected(_)}
-        >
-          {placeholder ? <SelectOption value="">{placeholder}</SelectOption> : null}
-          {data.map((_, i) => (
-            <SelectOption key={String(i)} value={_?.[fieldValue || fieldLabel]}>
-              {_?.[fieldLabel]}
-            </SelectOption>
-          ))}
-        </Select>
-      </div>
+      <Select
+        options={dataFormat}
+        label={label}
+        placeholder={placeholder || selected}
+        onChange={(_) => setSelected(_.key as Currency)}
+        value={selectedObj}
+      />
     );
   },
 );

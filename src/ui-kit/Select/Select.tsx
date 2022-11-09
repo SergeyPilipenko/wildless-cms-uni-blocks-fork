@@ -1,31 +1,97 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { Icon } from '../Icon/Icon';
+import { useState, useEffect } from '@redneckz/uni-jsx/lib/hooks';
+
+export interface OptionProps {
+  key: string;
+  text: string;
+}
 
 export interface SelectProps {
   className?: string;
-  id?: string;
-  name?: string;
-  value: string;
-  onChange: (value: string) => void;
+  label?: string;
+  value?: OptionProps;
+  onChange: (value: OptionProps) => void;
+  options: OptionProps[];
+  isBorder?: boolean;
+  placeholder?: string;
 }
 
-const selectStyle = {
-  background: `url('/icons/ArrowDownIcon.svg') right 16px top 50% / 21px no-repeat`,
-};
-
 export const Select = JSX<SelectProps>(
-  ({ className = '', id, name, children, value, onChange }) => {
+  ({ className = '', isBorder = true, label, options = [], value, onChange, placeholder = '' }) => {
+    const [selectedItem, setSelectedItem] = useState(options[0] || { key: '', text: '' });
+    const [isOpen, setIsOpen] = useState(false);
+
+    const choiceOption = (option: OptionProps) => {
+      setSelectedItem(option);
+      setIsOpen(false);
+      onChange(option);
+    };
+
+    const isSelected = (option) => Boolean(option.key === selectedItem.key);
+
+    useEffect(() => {
+      setSelectedItem(value || { key: '', text: '' });
+    }, [value]);
+
     return (
-      <select
-        className={`appearance-none pl-0.5 ${className}`}
-        style={selectStyle}
-        id={id}
-        name={name || id}
-        value={value}
-        onChange={(e) => onChange(e.target.value as string)}
-        placeholder=""
-      >
-        {children}
-      </select>
+      <div className={`${className}`}>
+        {label ? <span className="mb-2 flex">{label}</span> : null}
+        <div className={`relative ${isOpen ? 'z-20' : 'z-10'}`}>
+          <div
+            className={`text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+            ${getBorderStyle(isBorder)}`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <p className="p-4 pr-8 h-[56px] overflow-hidden text-ellipsis whitespace-nowrap">
+              {selectedItem?.text || placeholder}
+            </p>
+            <Icon
+              name="ArrowUpIcon"
+              width="16"
+              height="16"
+              className={`absolute right-3 ${isOpen ? '' : 'rotate-180'}`}
+            />
+          </div>
+          {options?.length ? (
+            <div className={`h-0 ${renderOptionsStyle(isOpen)}`}>
+              <div
+                className={`bg-white text-l max-h-[256px] overflow-y-auto overflow-x-hidden rounded-md shadow-[0_4px_25px_rgba(0,0,0,0.07)]`}
+              >
+                {options.map(renderOption(choiceOption, isOpen, isSelected))}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </div>
     );
   },
 );
+
+const renderOptionsStyle = (isOpen) => (isOpen ? '' : 'overflow-hidden');
+
+const renderOption =
+  (choiceOption, isOpen: boolean, isSelected) => (option: OptionProps, i: number) => {
+    return (
+      <div
+        key={String(i)}
+        onClick={() => {
+          choiceOption(option);
+        }}
+        className="flex px-4 py-3 cursor-pointer hover:bg-main-divider pr-11 relative"
+      >
+        <span className="min-h-6">{option.text}</span>
+        <Icon
+          name="DoneSimpleIcon"
+          width="16"
+          height="16"
+          className={['absolute right-4 pt-0.5', isSelected(option) && isOpen ? '' : 'hidden'].join(
+            ' ',
+          )}
+        />
+      </div>
+    );
+  };
+
+const getBorderStyle = (isBorder) =>
+  isBorder ? 'border border-main-stroke rounded-md hover:border-primary-hover' : '';

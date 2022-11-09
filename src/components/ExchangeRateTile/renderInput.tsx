@@ -1,6 +1,6 @@
 import { Input } from '../../ui-kit/Input/Input';
-import { SelectCustom } from '../../ui-kit/SelectCustom/SelectCustom';
-import type { OptionProps } from '../../ui-kit/SelectCustom/SelectCustom';
+import { Select } from '../../ui-kit/Select/Select';
+import type { OptionProps } from '../../ui-kit/Select/Select';
 import type { Currency } from './CurrencyProps';
 import type { ExchangeCurrencyItem } from './ExchangeCurrencyCalculator';
 
@@ -28,7 +28,7 @@ export function renderInput(props: InputProps) {
         onChange={setValue}
       />
       {ratesOptions.length ? (
-        <SelectCustom
+        <Select
           isBorder={false}
           onChange={(_) => setSelected(_.key as Currency)}
           options={ratesOptions}

@@ -40,7 +40,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
       >
         <BaseTile
           context={context}
-          className="z-[1]"
+          className="z-10"
           title={
             title ? (
               <Heading

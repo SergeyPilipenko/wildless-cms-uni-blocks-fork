@@ -22,18 +22,18 @@ export const RegionsAndBranches = JSX<RegionsAndBranchesProps>(
     onSelectedBranch,
   }) => {
     return (
-      <div className="flex justify-between mb-6">
-        <div className="w-full mr-4">
+      <div className="flex justify-between gap-4 mb-6">
+        <div className="max-w-[396px] w-1/2">
           <WrapperSelect
             data={regions}
             fieldValue="code"
             fieldLabel="name"
             selected={selectedRegion}
             setSelected={onSelectedRegion}
-            label="Город"
+            label="Регион"
           />
         </div>
-        <div className="w-full">
+        <div className="max-w-[396px] w-1/2">
           <WrapperSelect
             data={branches}
             fieldValue="branchCode"

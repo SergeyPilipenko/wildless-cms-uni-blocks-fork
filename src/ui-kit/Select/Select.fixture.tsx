@@ -1,4 +1,4 @@
-import { SelectCustom } from './SelectCustom';
+import { Select } from './Select';
 
 const rates = [
   { text: 'USD', key: '1' },
@@ -9,7 +9,7 @@ const rates = [
 export default {
   default: (
     <div className="w-[1280px] ml-10 flex flex-col">
-      <SelectCustom options={rates} label="Заголовок" onChange={(_) => console.log(_)} />
+      <Select options={rates} label="Заголовок" onChange={(_) => console.log(_)} />
     </div>
   ),
 };

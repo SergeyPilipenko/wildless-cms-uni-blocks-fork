@@ -23,7 +23,7 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
 
     return (
       <BlockWrapper context={context} className={className} {...rest}>
-        <div className="bg-white px-8 py-12">
+        <div className="font-sans bg-white px-8 py-12">
           {title ? (
             <Heading title={title} headingType="h3" as="h2" className="mb-2.5 text-center" />
           ) : null}

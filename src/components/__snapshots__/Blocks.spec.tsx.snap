@@ -649,7 +649,7 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
         "
 >
   <div
-    class="font-sans flex flex-col grow h-full items-start z-[1]"
+    class="font-sans flex flex-col grow h-full items-start z-10"
   >
     <h3
       class="font-sans m-0 text-h4 whitespace-pre-wrap max-w-[509px] mb-6
@@ -879,7 +879,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
   class=""
 >
   <div
-    class="bg-white px-8 py-12"
+    class="font-sans bg-white px-8 py-12"
   >
     <div
       class="flex justify-between align-top mb-6"
@@ -888,43 +888,76 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
         class="flex-1 mr-9"
       >
         <div
-          class="flex justify-between mb-6"
+          class="flex justify-between gap-4 mb-6"
         >
           <div
-            class="w-full mr-4"
+            class="max-w-[396px] w-1/2"
           >
-            <div>
+            <div
+              class=""
+            >
               <span
-                class="block text-m-light mb-2"
+                class="mb-2 flex"
               >
-                Город
+                Регион
               </span>
-              <select
-                class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-                placeholder=""
-              />
+              <div
+                class="relative z-10"
+              >
+                <div
+                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+            border border-main-stroke rounded-md hover:border-primary-hover"
+                >
+                  <p
+                    class="p-4 pr-8 h-[56px] overflow-hidden text-ellipsis whitespace-nowrap"
+                  />
+                  <img
+                    alt="Иконка Стрелка вверх"
+                    aria-hidden="true"
+                    class="absolute right-3 rotate-180"
+                    height="16"
+                    src="icons/ArrowUpIcon.svg"
+                    title="Иконка Стрелка вверх"
+                    width="16"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div
-            class="w-full"
+            class="max-w-[396px] w-1/2"
           >
-            <div>
+            <div
+              class=""
+            >
               <span
-                class="block text-m-light mb-2"
+                class="mb-2 flex"
               >
                 Отделение
               </span>
-              <select
-                class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-                placeholder=""
+              <div
+                class="relative z-10"
               >
-                <option
-                  class=""
-                  value=""
+                <div
+                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+            border border-main-stroke rounded-md hover:border-primary-hover"
                 >
-                  Выберите отделение
-                </option>
-              </select>
+                  <p
+                    class="p-4 pr-8 h-[56px] overflow-hidden text-ellipsis whitespace-nowrap"
+                  >
+                    Выберите отделение
+                  </p>
+                  <img
+                    alt="Иконка Стрелка вверх"
+                    aria-hidden="true"
+                    class="absolute right-3 rotate-180"
+                    height="16"
+                    src="icons/ArrowUpIcon.svg"
+                    title="Иконка Стрелка вверх"
+                    width="16"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -981,45 +1014,73 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           <div
             class="mr-4 w-full"
           >
-            <div>
+            <div
+              class=""
+            >
               <span
-                class="block text-m-light mb-2"
+                class="mb-2 flex"
               >
                 Размер
               </span>
-              <select
-                class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-                placeholder=""
+              <div
+                class="relative z-10"
               >
-                <option
-                  class=""
-                  value=""
+                <div
+                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+            border border-main-stroke rounded-md hover:border-primary-hover"
                 >
-                  Выберите размер
-                </option>
-              </select>
+                  <p
+                    class="p-4 pr-8 h-[56px] overflow-hidden text-ellipsis whitespace-nowrap"
+                  >
+                    Выберите размер
+                  </p>
+                  <img
+                    alt="Иконка Стрелка вверх"
+                    aria-hidden="true"
+                    class="absolute right-3 rotate-180"
+                    height="16"
+                    src="icons/ArrowUpIcon.svg"
+                    title="Иконка Стрелка вверх"
+                    width="16"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div
             class="w-full"
           >
-            <div>
+            <div
+              class=""
+            >
               <span
-                class="block text-m-light mb-2"
+                class="mb-2 flex"
               >
                 Параметры ячейки, мм (ВхШхД)
               </span>
-              <select
-                class="appearance-none pl-0.5 h-14 border border-gray p-4 rounded-md text-s w-full cursor-pointer text-secondary-text"
-                placeholder=""
+              <div
+                class="relative z-10"
               >
-                <option
-                  class=""
-                  value=""
+                <div
+                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+            border border-main-stroke rounded-md hover:border-primary-hover"
                 >
-                  Выберите параметр ячейки
-                </option>
-              </select>
+                  <p
+                    class="p-4 pr-8 h-[56px] overflow-hidden text-ellipsis whitespace-nowrap"
+                  >
+                    Выберите параметр ячейки
+                  </p>
+                  <img
+                    alt="Иконка Стрелка вверх"
+                    aria-hidden="true"
+                    class="absolute right-3 rotate-180"
+                    height="16"
+                    src="icons/ArrowUpIcon.svg"
+                    title="Иконка Стрелка вверх"
+                    width="16"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1102,13 +1163,13 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           <div
             class="mr-11"
           >
-            <span
-              class="block text-m-light mb-1"
+            <div
+              class="text-m-light text-secondary-text mb-1"
             >
               Аренда за
-            </span>
+            </div>
             <span
-              class="text-h3"
+              class="text-h3 text-primary-text"
             >
               26
             </span>
@@ -1116,13 +1177,13 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           <div
             class=""
           >
-            <span
-              class="block text-m-light mb-1"
+            <div
+              class="text-m-light text-secondary-text mb-1"
             >
               Цена
-            </span>
+            </div>
             <span
-              class="text-h3"
+              class="text-h3 text-primary-text"
             >
               0 ₽
             </span>
