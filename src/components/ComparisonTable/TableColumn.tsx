@@ -48,23 +48,29 @@ export const TableColumn = JSX<TableColumnProps>(
             ))
           : null}
 
-        {showRow && renderButton({ header, buttonVersion })}
+        {showRow ? renderButton({ header, buttonVersion }) : null}
         {renderToggleButton({ onToggleColumn, isFillGradient, showRow })}
       </div>
     );
   },
 );
 
-const renderButton = ({ header, buttonVersion }) => (
-  <Button
-    href={header.link.href}
-    target={header.link.target}
-    version={buttonVersion}
-    className="text-s font-medium mt-4 py-[11px]"
-  >
-    {header.link.text}
-  </Button>
-);
+const renderButton = ({ header, buttonVersion }) => {
+  if (!header.link) {
+    return null;
+  }
+
+  return (
+    <Button
+      href={header.link.href}
+      target={header.link.target}
+      version={buttonVersion}
+      className="text-s font-medium mt-4 py-[11px]"
+    >
+      {header.link.text}
+    </Button>
+  );
+};
 
 const renderToggleButton = ({ onToggleColumn, isFillGradient, showRow }) => (
   <div className="mt-5" role="cell">
