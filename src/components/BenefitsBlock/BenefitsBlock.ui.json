@@ -1,0 +1,16 @@
+{
+  "content": {
+    "benefitList": {
+      "items": {
+        "description": {
+          "benefitType": {
+            "ui:widget": "hidden"
+          }
+        },
+        "icon": {
+          "ui:field": "icon"
+        }
+      }
+    }
+  }
+}

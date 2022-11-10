@@ -1,0 +1,12 @@
+{
+  "content": {
+    "backwardButton": {
+      "icon": {
+        "ui:field": "icon"
+      },
+      "iconRight": {
+        "ui:field": "icon"
+      }
+    }
+  }
+}

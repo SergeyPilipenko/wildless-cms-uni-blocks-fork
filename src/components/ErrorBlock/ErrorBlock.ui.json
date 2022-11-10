@@ -1,0 +1,12 @@
+{
+  "content": {
+    "error": {
+      "errorContentType": {
+        "ui:widget": "hidden"
+      },
+      "image": {
+        "ui:field": "picture"
+      }
+    }
+  }
+}

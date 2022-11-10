@@ -1,0 +1,33 @@
+{
+  "content": {
+    "tariffsColumns": {
+      "items": {
+        "data": {
+          "items": {
+            "items": {
+              "tableCellType": {
+                "ui:widget": "hidden"
+              },
+              "image": {
+                "ui:field": "picture"
+              },
+              "buttons": {
+                "items": {
+                  "icon": {
+                    "ui:field": "icon"
+                  },
+                  "iconRight": {
+                    "ui:field": "icon"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hiddenRowsNum": {
+      "ui:field": "number"
+    }
+  }
+}

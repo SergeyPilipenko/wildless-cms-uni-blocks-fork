@@ -1,0 +1,11 @@
+{
+  "content": {
+    "steps": {
+      "items": {
+        "icon": {
+          "ui:field": "icon"
+        }
+      }
+    }
+  }
+}

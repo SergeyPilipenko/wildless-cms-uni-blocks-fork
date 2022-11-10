@@ -1,0 +1,31 @@
+{
+  "content": {
+    "calculatorTabs": {
+      "items": {
+        "nav": {
+          "icon": {
+            "ui:field": "icon"
+          }
+        },
+        "calculatorBlock": {
+          "sourceBookDir": {
+            "ui:widget": "sourceBook"
+          },
+          "calcType": {
+            "ui:widget": "hidden"
+          },
+          "buttons": {
+            "items": {
+              "icon": {
+                "ui:field": "icon"
+              },
+              "iconRight": {
+                "ui:field": "icon"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

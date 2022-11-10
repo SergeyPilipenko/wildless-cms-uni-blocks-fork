@@ -1,0 +1,30 @@
+{
+  "content": {
+    "slides": {
+      "items": {
+        "productBlock": {
+          "image": {
+            "ui:field": "picture"
+          },
+          "benefits": {
+            "items": {
+              "icon": {
+                "ui:field": "icon"
+              }
+            }
+          },
+          "buttons": {
+            "items": {
+              "icon": {
+                "ui:field": "icon"
+              },
+              "iconRight": {
+                "ui:field": "icon"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

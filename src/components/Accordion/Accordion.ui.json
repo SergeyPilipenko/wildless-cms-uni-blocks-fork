@@ -1,0 +1,79 @@
+{
+  "content": {
+    "accordionItems": {
+      "items": {
+        "blocks": {
+          "items": {
+            "blockListType": {
+              "ui:widget": "hidden"
+            },
+            "image": {
+              "ui:field": "picture"
+            },
+            "benefitList": {
+              "items": {
+                "description": {
+                  "benefitType": {
+                    "ui:widget": "hidden"
+                  }
+                },
+                "icon": {
+                  "ui:field": "icon"
+                }
+              }
+            },
+            "style": {
+              "ui:field": "style"
+            },
+            "benefits": {
+              "items": {
+                "icon": {
+                  "ui:field": "icon"
+                }
+              }
+            },
+            "buttons": {
+              "items": {
+                "icon": {
+                  "ui:field": "icon"
+                },
+                "iconRight": {
+                  "ui:field": "icon"
+                }
+              }
+            },
+            "icon": {
+              "ui:field": "icon"
+            },
+            "backwardButton": {
+              "icon": {
+                "ui:field": "icon"
+              },
+              "iconRight": {
+                "ui:field": "icon"
+              }
+            },
+            "cards": {
+              "items": {
+                "image": {
+                  "ui:field": "picture"
+                },
+                "button": {
+                  "icon": {
+                    "ui:field": "icon"
+                  },
+                  "iconRight": {
+                    "ui:field": "icon"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "labelIcon": {
+          "ui:field": "icon"
+        }
+      }
+    }
+  }
+}

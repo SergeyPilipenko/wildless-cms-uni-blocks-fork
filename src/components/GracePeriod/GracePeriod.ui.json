@@ -1,0 +1,15 @@
+{
+  "content": {
+    "calendar": {
+      "items": {
+        "month": {
+          "items": {
+            "image": {
+              "ui:field": "picture"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "content": {
+    "insuranceTabs": {
+      "items": {
+        "cards": {
+          "items": {
+            "icon": {
+              "ui:field": "icon"
+            }
+          }
+        }
+      }
+    }
+  }
+}

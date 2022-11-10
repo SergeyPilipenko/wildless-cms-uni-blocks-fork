@@ -1,0 +1,11 @@
+{
+  "content": {
+    "servicesList": {
+      "items": {
+        "icon": {
+          "ui:field": "icon"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "content": {
+    "burgerSubMenu": {
+      "items": {
+        "icon": {
+          "ui:field": "icon"
+        }
+      }
+    }
+  }
+}
