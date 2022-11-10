@@ -2575,7 +2575,7 @@ Object {
 }",
           "title": "Изображение календарного месяца",
         },
-        "text": Object {
+        "name": Object {
           "title": "Название месяца",
           "type": "string",
         },

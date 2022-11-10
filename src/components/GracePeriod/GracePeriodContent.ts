@@ -3,7 +3,7 @@ import type { Picture } from '../../model/Picture';
 
 export interface Month {
   /** @title Название месяца */
-  text?: string;
+  name?: string;
   /**
    * @title Изображение календарного месяца
    * @default {
