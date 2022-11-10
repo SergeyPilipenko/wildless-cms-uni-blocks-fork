@@ -1,12 +1,16 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { InputProps } from './InputProps';
+import { useCallback } from '@redneckz/uni-jsx/lib/hooks';
 
 export const Input = JSX<InputProps>(
   ({ className = '', id, name, type = 'text', placeholder, pattern, value, onChange }) => {
-    const handleChange = (e) => {
-      const validInputValue = e.target.validity.valid ? (e.target.value as string) : value;
-      onChange(validInputValue);
-    };
+    const handleChange = useCallback(
+      (e) => {
+        const validInputValue = e.target.validity.valid ? (e.target.value as string) : value;
+        onChange(validInputValue);
+      },
+      [onChange],
+    );
 
     return (
       <input

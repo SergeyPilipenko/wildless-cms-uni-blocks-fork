@@ -1,13 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import { Button } from '../../ui-kit/Button/Button';
-import { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import { renderInput } from './renderInput';
 import { calculateResult, formatValue } from './calculateResult';
 import { callbackCurrencySelect } from './callbackCurrencySelect';
 import { Currency } from './CurrencyProps';
-import { renderInput } from './renderInput';
+import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+
 export interface ExchangeCurrencyItem {
   code?: Currency;
   buy?: number;

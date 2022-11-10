@@ -82,7 +82,8 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
         class="h-[56px] relative flex items-center"
       >
         <input
-          class="text-l pl-4 pr-8 w-full h-full rounded-md border border-solid border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text"
+          class="text-l pl-4 pr-8 w-full h-full border rounded-md border-main-stroke hover:border-primary-hover
+            active:border-primary-text focus:border-primary-text outline-none"
           max="300000"
           min="0"
           name="amount"
@@ -96,13 +97,6 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
         </span>
       </div>
     </div>
-    <button
-      class="inline-block text-center font-sans select-none bg-main-divider text-main-disabled rounded-md w-full h-[56px] px-9 mt-6"
-      disabled=""
-      type="submit"
-    >
-      Далее
-    </button>
   </form>
 </section>
 `;

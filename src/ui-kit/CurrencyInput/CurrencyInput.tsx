@@ -1,7 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { CurrencyInputProps } from './CurrencyInputProps';
 import { clamp } from '../../utils/clamp';
 import { adjustValue } from './adjustValue ';
+import { useCallback } from '@redneckz/uni-jsx/lib/hooks';
+import type { CurrencyInputProps } from './CurrencyInputProps';
 
 export const CurrencyInput = JSX<CurrencyInputProps>(
   ({
@@ -13,23 +14,25 @@ export const CurrencyInput = JSX<CurrencyInputProps>(
     maxValue = 300000,
     ...inputProps
   }) => {
-    const handleChange = (e: { target: { value: string } | null }) => {
-      if (!onChange) {
-        return;
-      }
-      const adjustedVal = adjustValue(e.target?.value || '');
-      const clampVal = getClampValue(adjustedVal, clamp(Number(adjustedVal), minValue, maxValue));
-      onChange(String(clampVal));
-    };
+    const handleChange = useCallback(
+      (e: { target: { value: string } | null }) => {
+        if (!onChange) {
+          return;
+        }
+        const adjustedVal = adjustValue(e.target?.value || '');
+        const clampVal = getClampValue(adjustedVal, clamp(Number(adjustedVal), minValue, maxValue));
+        onChange(String(clampVal));
+      },
+      [onChange],
+    );
 
     return (
       <div className={className}>
         {label ? <label className="block text-m-light mb-2">{label}</label> : null}
         <div className="h-[56px] relative flex items-center">
           <input
-            className={
-              'text-l pl-4 pr-8 w-full h-full rounded-md border border-solid border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text'
-            }
+            className={`text-l pl-4 pr-8 w-full h-full border rounded-md border-main-stroke hover:border-primary-hover
+            active:border-primary-text focus:border-primary-text outline-none`}
             onChange={handleChange}
             value={value}
             min={minValue}

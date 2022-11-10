@@ -664,9 +664,8 @@ Object {
     },
     "CardTransferContent": Object {
       "properties": Object {
-        "buttonText": Object {
-          "title": "Текст кнопки",
-          "type": "string",
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
         },
         "label": Object {
           "title": "Название",
