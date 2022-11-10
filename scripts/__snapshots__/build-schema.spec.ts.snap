@@ -421,7 +421,7 @@ Object {
       "title": "Блок Бонусы",
       "type": "object",
     },
-    "BonusItem": Object {
+    "BonusCountDef": Object {
       "properties": Object {
         "bonusCount": Object {
           "title": "Количество баллов",
@@ -430,6 +430,42 @@ Object {
         "bonusName": Object {
           "title": "Наименование",
           "type": "string",
+        },
+        "bonusType": Object {
+          "const": "count",
+          "default": "count",
+          "type": "string",
+        },
+      },
+      "title": "Баллы",
+      "type": "object",
+    },
+    "BonusImageDef": Object {
+      "properties": Object {
+        "bonusType": Object {
+          "const": "image",
+          "default": "image",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+      },
+      "title": "Изображение",
+      "type": "object",
+    },
+    "BonusItem": Object {
+      "properties": Object {
+        "bonusItemContent": Object {
+          "$ref": "#/definitions/BonusItemContentDef",
+        },
+        "buttons": Object {
+          "items": Object {
+            "$ref": "#/definitions/ButtonWithIconProps",
+          },
+          "maxItems": 1,
+          "title": "Кнопка",
+          "type": "array",
         },
         "description": Object {
           "title": "Описание",
@@ -442,6 +478,20 @@ Object {
       },
       "title": "Плитка",
       "type": "object",
+    },
+    "BonusItemContentDef": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "#/definitions/EmptyOption",
+        },
+        Object {
+          "$ref": "#/definitions/BonusImageDef",
+        },
+        Object {
+          "$ref": "#/definitions/BonusCountDef",
+        },
+      ],
+      "title": "Вид контента",
     },
     "ButtonContent": Object {
       "properties": Object {

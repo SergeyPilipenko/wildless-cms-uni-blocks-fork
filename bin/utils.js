@@ -6,7 +6,6 @@ export function renameProp(obj, oldKey, newKey) {
 
   return obj;
 }
-module.exports = renameProp;
 
 export function deleteEmptyProps(obj) {
   const isObj = (_) => _ && typeof _ === 'object';
@@ -21,4 +20,3 @@ export function deleteEmptyProps(obj) {
 
   return obj;
 }
-module.exports = deleteEmptyProps;

@@ -66,7 +66,8 @@
     "mobile/src",
     "src",
     "cosmos-static/icons",
-    "tailwind.config.cjs"
+    "tailwind.config.cjs",
+    "!**/*.spec.*"
   ],
   "repository": {
     "url": "https://github.com/redneckz/wildless-cms-uni-blocks.git"

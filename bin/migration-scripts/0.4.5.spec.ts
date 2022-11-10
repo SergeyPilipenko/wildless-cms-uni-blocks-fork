@@ -1,4 +1,4 @@
-import { migrate } from './0.4.5.js';
+import migrate from './0.4.5.js';
 
 const content = {
   blocks: [

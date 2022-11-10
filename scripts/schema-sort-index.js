@@ -19,6 +19,7 @@ export default [
   'colors',
   'price',
   'bonusItems',
+  'bonusItemContent',
   'servicesList',
   'image',
   'backwardButton',

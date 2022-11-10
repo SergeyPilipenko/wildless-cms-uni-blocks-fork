@@ -2,7 +2,7 @@ import { deleteEmptyProps, renameProp } from '../utils.js';
 
 export const description = 'v0.4.5';
 
-export const migrate = (unitPath, content) => {
+export default (unitPath, content) => {
   if (!content?.blocks) {
     return content;
   }
