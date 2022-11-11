@@ -5,6 +5,7 @@ import type { CardTransferContent } from './CardTransferContent';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { CurrencyInput } from '../../ui-kit/CurrencyInput/CurrencyInput';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { getDisabledButtonClasses } from '../../ui-kit/Button/getDisabledButtonClasses';
 import { getRegularButtonClasses } from '../../ui-kit/Button/getRegularButtonClasses';
 import { useLink } from '../../hooks/useLink';
 
@@ -30,6 +31,9 @@ export const CardTransfer = JSX<CardTransferProps>(
     const { handlerDecorator } = context;
     const [value, setValue] = useState<string>('');
     const isDisabled = !Number(value);
+    const buttonStyle = isDisabled
+      ? getDisabledButtonClasses({ version: button?.version })
+      : getRegularButtonClasses({ className: 'text-white', version: button?.version });
 
     return (
       <BlockWrapper
@@ -49,10 +53,7 @@ export const CardTransfer = JSX<CardTransferProps>(
           {button?.text ? (
             <button
               type="submit"
-              className={`w-full p-4 mt-6 ${getRegularButtonClasses({
-                className,
-                version: button?.version,
-              })}`}
+              className={`w-full p-4 mt-6 ${buttonStyle} `}
               disabled={isDisabled}
               {...useLink({ router, handlerDecorator }, button)}
             >

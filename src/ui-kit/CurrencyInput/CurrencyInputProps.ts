@@ -1,10 +1,6 @@
-export type CurrencyInputProps = {
-  className?: string;
-  label?: string;
-  onChange?: (value: string) => void;
-  name?: string;
-  value?: string;
-  placeholder?: string;
+import type { InputProps } from '../Input/InputProps';
+
+export type CurrencyInputProps = InputProps & {
   minValue?: number;
   maxValue?: number;
 };

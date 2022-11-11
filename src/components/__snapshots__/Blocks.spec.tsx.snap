@@ -71,31 +71,26 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
     method="POST"
   >
     <div
-      class=""
+      class="relative "
     >
       <label
         class="block text-m-light mb-2"
       >
         Сумма перевода
       </label>
-      <div
-        class="h-[56px] relative flex items-center"
+      <input
+        class="w-full border rounded-md border-main-stroke hover:border-primary-hover active:border-primary-text
+          focus:border-primary-text text-primary-text outline-none p-4 pr-8 w-full"
+        name="amount"
+        placeholder="1500"
+        type="text"
+        value=""
+      />
+      <span
+        class="text-xl-light absolute right-4 bottom-4"
       >
-        <input
-          class="text-l pl-4 pr-8 w-full h-full border rounded-md border-main-stroke hover:border-primary-hover
-            active:border-primary-text focus:border-primary-text outline-none"
-          max="300000"
-          min="0"
-          name="amount"
-          placeholder="1500"
-          value=""
-        />
-        <span
-          class="text-xl-light absolute right-4"
-        >
-          ₽
-        </span>
-      </div>
+        ₽
+      </span>
     </div>
   </form>
 </section>
