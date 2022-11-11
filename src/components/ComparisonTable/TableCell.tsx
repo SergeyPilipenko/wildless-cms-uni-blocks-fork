@@ -7,7 +7,7 @@ export interface TableCellProps {
   isLastRow?: boolean;
   isFirstRow?: boolean;
   rowHeader?: string;
-  isFillGradient: boolean;
+  isFillGradient?: boolean;
 }
 
 export const TableCell = JSX<TableCellProps>(({ cell, isFirstRow, isLastRow, isFillGradient }) => {
@@ -33,7 +33,7 @@ const labelStyle = (isFillGradient = false): string =>
 const descriptionStyle = (isFillGradient = false): string =>
   `text-s opacity-80 ${isFillGradient ? 'text-white' : 'text-secondary-text'}`;
 
-const renderCellInner = ({ label, description }: CellData, i: number, isFillGradient: boolean) => (
+const renderCellInner = ({ label, description }: CellData, i: number, isFillGradient?: boolean) => (
   <div key={String(i)} className="first:pt-7 pt-6 last:pb-7">
     {label ? <h4 className={labelStyle(isFillGradient)}>{label}</h4> : null}
     {description ? <div className={descriptionStyle(isFillGradient)}>{description}</div> : null}

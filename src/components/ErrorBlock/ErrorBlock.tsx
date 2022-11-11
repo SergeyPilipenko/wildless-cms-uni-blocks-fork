@@ -33,9 +33,7 @@ export const ErrorBlock = JSX<ErrorBlockProps>(
         <div className="flex justify-center py-20">{renderErrorContent(error)}</div>
         {title ? <Heading headingType="h1" className="text-left mb-4" title={title} /> : null}
         {subtitle ? (
-          <div className="font-sans text-xl-light text-left mb-7 max-w-[613px] text-center">
-            {subtitle}
-          </div>
+          <div className="font-sans text-xl-light mb-7 max-w-[613px] text-center">{subtitle}</div>
         ) : null}
         {button?.text ? (
           <Button

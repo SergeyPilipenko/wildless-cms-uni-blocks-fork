@@ -65,7 +65,7 @@ const renderShowMoreToggleButton = ({
           onClick={onClick}
           className="mt-5 flex-1 border-main-stroke border-solid border text-primary-text bg-white hover:border-primary-main hover:text-primary-main"
         >
-          <div className="font-sans text-xs-light font-medium py-[11px]">
+          <div className="font-sans text-xs-light font-medium py-3">
             {!isShowAllRow ? 'Показать все параметры' : 'Скрыть'}
           </div>
         </button>

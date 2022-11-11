@@ -1,10 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { UniBlockProps } from '../../model/ContentPageDef';
-import type { TitleProps } from '../../model/HeadlineType';
-import type { IconProps } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
-import { CellData } from './ComparisonTableContent';
+import type { CellData, ColumnHeader } from './ComparisonTableContent';
 import { GRADIENT } from './constants';
 import { HeaderCell } from './HeaderCell';
 import { TableCell } from './TableCell';
@@ -14,13 +12,11 @@ export interface TableColumnData {
   cell: CellData[];
 }
 
-export type TableColumnHeader = TitleProps & IconProps;
-
 export interface TableColumnProps extends UniBlockProps {
-  header: TableColumnHeader;
-  columnData: TableColumnData[];
-  visibleRowLength: number;
-  isFillGradient: boolean;
+  header?: ColumnHeader;
+  columnData?: TableColumnData[];
+  visibleRowLength?: number;
+  isFillGradient?: boolean;
   showRow: boolean;
   onToggleColumn: () => void;
 }
@@ -48,31 +44,33 @@ export const TableColumn = JSX<TableColumnProps>(
             ))
           : null}
 
-        {showRow ? renderButton({ header, buttonVersion }) : null}
+        {showRow && header?.link ? (
+          <Button
+            href={header.link.href}
+            target={header.link.target}
+            version={buttonVersion}
+            className="text-s font-medium mt-4 py-[11px]"
+          >
+            {header.link.text}
+          </Button>
+        ) : null}
         {renderToggleButton({ onToggleColumn, isFillGradient, showRow })}
       </div>
     );
   },
 );
 
-const renderButton = ({ header, buttonVersion }) => {
-  if (!header.link) {
-    return null;
-  }
+interface RenderToggleButtonProps {
+  onToggleColumn: () => void;
+  isFillGradient?: boolean;
+  showRow: boolean;
+}
 
-  return (
-    <Button
-      href={header.link.href}
-      target={header.link.target}
-      version={buttonVersion}
-      className="text-s font-medium mt-4 py-[11px]"
-    >
-      {header.link.text}
-    </Button>
-  );
-};
-
-const renderToggleButton = ({ onToggleColumn, isFillGradient, showRow }) => (
+const renderToggleButton = ({
+  onToggleColumn,
+  isFillGradient,
+  showRow,
+}: RenderToggleButtonProps) => (
   <div className="mt-5" role="cell">
     <a
       role="link"

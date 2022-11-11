@@ -44,8 +44,8 @@ export const Catalog = JSX<CatalogProps>(
           activeCardIndex,
           setActiveCardIndex,
         })}
-        <div className={`${BLUR_BLOCK_CLASSES} left-0 ${'bg-opacity-from-white'}`} />
-        <div className={`${BLUR_BLOCK_CLASSES} right-0 ${'bg-opacity-to-white'}`} />
+        <div className={`${BLUR_BLOCK_CLASSES} left-0 bg-opacity-from-white`} />
+        <div className={`${BLUR_BLOCK_CLASSES} right-0 bg-opacity-to-white`} />
       </BlockWrapper>
     );
   },
