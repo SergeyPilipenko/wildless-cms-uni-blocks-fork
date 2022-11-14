@@ -67,7 +67,7 @@ export const Tile = JSX<TileProps>((props) => {
         image={image?.src ? <Img className="mt-auto ml-7" image={image} /> : null}
       >
         {description ? (
-          <Description className="max-w-[600px] text-xl-light mt-2" description={description} />
+          <Description className="max-w-[600px] text-xl-light mt-2.5" description={description} />
         ) : null}
         {children}
         {renderList(items, { version, isDotted, listItemSize })}
@@ -83,7 +83,7 @@ function renderList(items, { version, isDotted, listItemSize }: ListProps) {
     <List
       items={items}
       isDotted={isDotted}
-      className="mt-3"
+      className="mt-2.5"
       listItemSize={listItemSize}
       itemClassName="mb-1.5"
       version={listVersion}
