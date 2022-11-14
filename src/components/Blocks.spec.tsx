@@ -23,7 +23,6 @@ const context: ContentPageContext = {
     replace: emptyFn,
   }),
   handlerDecorator: (): any => emptyFn,
-  IntersectionObserverTag: ({ children }) => children,
 };
 
 jest.mock('@redneckz/uni-jsx/lib/hooks/useAsyncData', () => ({

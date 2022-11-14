@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { VersionStyleMap } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/ContentPageDef';
-import type { ProductTileContent, TextBenefit } from './ProductTileContent';
+import type { Picture } from '../../model/Picture';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
-import type { Picture } from '../../model/Picture';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import { Headline } from '../Headline/Headline';
-import { VersionStyleMap } from '../../model/BlockVersion';
+import type { ProductTileContent, TextBenefit } from './ProductTileContent';
 
 export interface ProductTileProps extends ProductTileContent, UniBlockProps {}
 

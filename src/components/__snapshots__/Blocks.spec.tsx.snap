@@ -206,10 +206,10 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
                   width="24"
                 >
                   <title>
-                    Иконка Gps
+                    Иконка GpsIcon
                   </title>
                   <desc>
-                    Иконка Gps
+                    Иконка GpsIcon
                   </desc>
                   <use
                     href="icons/GpsIcon.svg#icon"
@@ -264,10 +264,10 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           width="40"
         >
           <title>
-            Иконка Logo
+            Иконка LogoIcon
           </title>
           <desc>
-            Иконка Logo
+            Иконка LogoIcon
           </desc>
           <use
             href="icons/LogoIcon.svg#icon"
@@ -291,12 +291,12 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           class="w-6 h-6"
         >
           <img
-            alt="Иконка Лупа"
+            alt="Иконка LoupeIcon"
             aria-hidden="true"
             class=""
             height="24"
             src="icons/LoupeIcon.svg"
-            title="Иконка Лупа"
+            title="Иконка LoupeIcon"
             width="24"
           />
         </div>
@@ -470,10 +470,10 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
             width="40"
           >
             <title>
-              Иконка Logo
+              Иконка LogoIcon
             </title>
             <desc>
-              Иконка Logo
+              Иконка LogoIcon
             </desc>
             <use
               href="icons/LogoIcon.svg#icon"
@@ -528,10 +528,10 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
               class="w-full h-full text-black group-hover:text-primary-hover group-hover:invert-0 pointer-events-none "
             >
               <title>
-                Иконка Лупа
+                Иконка LoupeIcon
               </title>
               <desc>
-                Иконка Лупа
+                Иконка LoupeIcon
               </desc>
               <use
                 href="icons/LoupeIcon.svg#icon"
@@ -554,10 +554,10 @@ exports[`Blocks Header should render block "Header" without content 1`] = `
               class="w-full h-full text-black group-hover:text-primary-hover group-hover:invert-0 "
             >
               <title>
-                Иконка Сетка (белая)
+                Иконка GridIcon
               </title>
               <desc>
-                Иконка Сетка (белая)
+                Иконка GridIcon
               </desc>
               <use
                 href="icons/GridIcon.svg#icon"
@@ -901,12 +901,12 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                     class="p-4 pr-8 h-[56px] overflow-hidden text-ellipsis whitespace-nowrap"
                   />
                   <img
-                    alt="Иконка Стрелка вверх"
+                    alt="Иконка ArrowUpIcon"
                     aria-hidden="true"
                     class="absolute right-3 rotate-180"
                     height="16"
                     src="icons/ArrowUpIcon.svg"
-                    title="Иконка Стрелка вверх"
+                    title="Иконка ArrowUpIcon"
                     width="16"
                   />
                 </div>
@@ -937,12 +937,12 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                     Выберите отделение
                   </p>
                   <img
-                    alt="Иконка Стрелка вверх"
+                    alt="Иконка ArrowUpIcon"
                     aria-hidden="true"
                     class="absolute right-3 rotate-180"
                     height="16"
                     src="icons/ArrowUpIcon.svg"
-                    title="Иконка Стрелка вверх"
+                    title="Иконка ArrowUpIcon"
                     width="16"
                   />
                 </div>
@@ -1024,12 +1024,12 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                     Выберите размер
                   </p>
                   <img
-                    alt="Иконка Стрелка вверх"
+                    alt="Иконка ArrowUpIcon"
                     aria-hidden="true"
                     class="absolute right-3 rotate-180"
                     height="16"
                     src="icons/ArrowUpIcon.svg"
-                    title="Иконка Стрелка вверх"
+                    title="Иконка ArrowUpIcon"
                     width="16"
                   />
                 </div>
@@ -1060,12 +1060,12 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                     Выберите параметр ячейки
                   </p>
                   <img
-                    alt="Иконка Стрелка вверх"
+                    alt="Иконка ArrowUpIcon"
                     aria-hidden="true"
                     class="absolute right-3 rotate-180"
                     height="16"
                     src="icons/ArrowUpIcon.svg"
-                    title="Иконка Стрелка вверх"
+                    title="Иконка ArrowUpIcon"
                     width="16"
                   />
                 </div>
@@ -1182,12 +1182,12 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
           class="bg-primary-main px-10 pt-10 pb-4 text-center"
         >
           <img
-            alt="Иконка Пачка бумаги А4"
+            alt="Иконка PackA4Icon"
             aria-hidden="true"
             class=""
             height="257"
             src="icons/PackA4Icon.svg"
-            title="Иконка Пачка бумаги А4"
+            title="Иконка PackA4Icon"
             width="290"
           />
           <span

@@ -54,9 +54,13 @@ function generateIconNameType(iconNames, iconTitles, inverse) {
 // Generated. Do not touch
 /* eslint-disable max-len, max-lines */
 
-export const IconInverseMap = {
-  ${iconTitles.map((title, i) => [iconNames[i], inverse[i] || false].join(': ')).join(', ')}
-}
+export const IconsWithoutInversion = new Set([
+  ${iconNames
+    .map((_, i) => [_, inverse[i]])
+    .filter(([, inv]) => !inv)
+    .map(([_]) => wrap(_))
+    .join(', ')}
+]);
 
 export enum IconMap {
   ${iconNames.map((_) => [_, wrap(_)].join(' = ')).join(', ')}

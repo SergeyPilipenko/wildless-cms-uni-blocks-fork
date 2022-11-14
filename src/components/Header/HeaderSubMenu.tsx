@@ -5,6 +5,7 @@ import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
+import { IntersectionObserverTag } from '../../ui-kit/IntersectionObserverTag';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { DropdownMenu } from './DropdownMenu';
 
@@ -17,7 +18,7 @@ export interface HeaderSubMenuProps {
 export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], bgColor }) => {
   const [menuVisible, setMenuVisible] = useState(false);
   const router = context.useRouter();
-  const { handlerDecorator, IntersectionObserverTag } = context;
+  const { handlerDecorator } = context;
 
   const [visibleItemsCount, setVisibleItemsCount] = useState(subItems.length);
   const dropDownMenuItems = subItems.slice(visibleItemsCount);

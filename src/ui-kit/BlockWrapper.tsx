@@ -1,14 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useMemo, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
-import { AnchorClickScrollingEvent } from '../components/Tabs/Tabs';
+import type { AnchorClickScrollingEvent } from '../components/Tabs/Tabs';
 import { EventBus } from '../EventBus/EventBus';
 import type { UniBlockProps } from '../model/ContentPageDef';
 import { changeHashOnObserve } from '../utils/changeHashOnObserve';
+import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 interface BlockWrapperProps extends UniBlockProps, Record<string, any> {
-  context: ContentPageContext;
-  className?: string;
   anchor?: string;
   tag?: keyof HTMLElementTagNameMap;
 }
@@ -19,17 +17,15 @@ const THRESHOLD_ARRAY_START_VALUE =
   (THRESHOLD_ACCURACY - THRESHOLD_ARRAY_LENGTH) / THRESHOLD_ACCURACY;
 
 export const BlockWrapper = JSX<BlockWrapperProps>(
-  ({ anchor, className, context, children, tag = 'section', labels }) => {
+  ({ anchor, className, children, tag = 'section', labels }) => {
     const Tag: any = tag;
-
-    const { IntersectionObserverTag } = context;
 
     const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
     const anchorClickRef = useRef<AnchorClickScrollingEvent>({});
 
     const observerCallback = useMemo(
       () => changeHashOnObserve({ anchor, anchorClickRef }),
-      [anchor, anchorClickRef],
+      [anchor],
     );
 
     useEffect(() => {
@@ -49,7 +45,7 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
         anchorClickCleanup();
         tabCleanup();
       };
-    }, [anchorClickRef]);
+    }, []);
 
     if (!shouldRenderBlock) {
       return null;

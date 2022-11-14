@@ -3,7 +3,6 @@ import { useState } from 'react';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import { projectSettings } from '../ProjectSettings';
 import wlc from '../wlc.json';
-import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 const TEST_ORIGIN = 'http://localhost:5001';
 
@@ -35,7 +34,6 @@ export const context: ContentPageContext = {
       ev.preventDefault();
       console.log(ev.target, ev, targetContent);
     },
-  IntersectionObserverTag,
 };
 
 export const mobileContext: ContentPageContext = {
