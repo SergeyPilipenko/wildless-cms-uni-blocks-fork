@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
-import type { BlockVersion } from '../../model/BlockVersion';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 
 export const GalleryCardInner = JSX<GalleryCardProps>(
@@ -21,7 +21,7 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
           {description ? <div className={`text-m${title ? 'mt-2' : ''}`}>{description}</div> : null}
           {items?.length ? renderItems(items, isDotted, version) : null}
         </div>
-        {button?.text ? renderButton(button) : null}
+        {button ? renderButton(button) : null}
       </div>
     );
   },
