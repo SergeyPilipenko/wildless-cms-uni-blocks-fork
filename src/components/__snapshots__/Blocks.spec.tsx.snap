@@ -1089,8 +1089,9 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                 class="flex items-center relative cursor-pointer"
               >
                 <input
-                  class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main
-        rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+                  class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border border-gray hover:border-checkbox-hover
+        checked:border-2 checked:!border-primary-main focus:checked:border-primary-main focus:border-primary-text active:border-primary-text
+        after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main outline-none rounded-full cursor-pointer"
                   name="contractType"
                   type="radio"
                   value="option1"
@@ -1108,8 +1109,9 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               >
                 <input
                   checked=""
-                  class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main
-        rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+                  class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border border-gray hover:border-checkbox-hover
+        checked:border-2 checked:!border-primary-main focus:checked:border-primary-main focus:border-primary-text active:border-primary-text
+        after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main outline-none rounded-full cursor-pointer"
                   name="contractType"
                   type="radio"
                   value="option2"

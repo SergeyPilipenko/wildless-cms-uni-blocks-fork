@@ -5,8 +5,9 @@ export const Radio = JSX<RadioProps>(({ name, text, value, checked, onChange, cl
   <div className={className}>
     <label className="flex items-center relative cursor-pointer">
       <input
-        className="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border-2 border-primary-main
-        rounded-full cursor-pointer after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main"
+        className="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border border-gray hover:border-checkbox-hover
+        checked:border-2 checked:!border-primary-main focus:checked:border-primary-main focus:border-primary-text active:border-primary-text
+        after:block after:w-2.5 after:h-2.5 after:rounded-full checked:after:bg-primary-main outline-none rounded-full cursor-pointer"
         type="radio"
         value={value}
         name={name}
