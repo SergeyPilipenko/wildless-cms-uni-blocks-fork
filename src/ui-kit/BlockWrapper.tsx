@@ -30,11 +30,15 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
 
     useEffect(() => {
       const anchorClickCleanup = EventBus.inst.subscribe('anchorClick', (e) => {
+        setShouldRenderBlock(true);
         anchorClickRef.current = e;
       });
       const tabCleanup = EventBus.inst.subscribe('tab', (event) => {
         if (event.type === 'group') {
-          setShouldRenderBlock(!labels?.length || !event.label || labels.includes(event.label));
+          const blockHasSettgins = labels?.length || anchor;
+          setShouldRenderBlock(
+            event.label ? !blockHasSettgins || Boolean(labels?.includes(event.label)) : true,
+          );
         } else {
           changeHash(event.label);
           setShouldRenderBlock(true);

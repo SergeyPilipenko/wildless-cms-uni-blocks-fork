@@ -10,7 +10,7 @@ import {
 import type { GroupTab } from './TabsContent';
 
 const BADGE_CLASSES =
-  'min-w-[22px] w-[22px] h-[22px] rounded-full text-xs ml-2 flex justify-center items-center';
+  'min-w-[22px] h-[22px] rounded-full text-xs ml-2 flex justify-center items-center';
 const ACTIVE_BADGE_CLASSES = 'bg-white/30 text-white';
 const INACTIVE_BADGE_CLASSES = 'bg-main-divider text-secondary-text group-hover:text-primary-main';
 
@@ -19,9 +19,10 @@ export const renderGroupTab =
   (tab: GroupTab, i: number) => {
     const active = currentTab === tab;
 
-    const count = tab.ref
-      ? page?.blocks?.filter((block) => block?.labels?.includes(tab.ref as string)).length
-      : page?.blocks?.length;
+    const count =
+      tab.ref && page?.blocks
+        ? page.blocks.filter((block) => block?.labels?.includes(tab.ref as string)).length
+        : 0;
 
     return (
       <div
