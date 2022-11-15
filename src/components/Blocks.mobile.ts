@@ -1,6 +1,5 @@
 import { Accordion } from './Accordion/Accordion';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
-import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
 import { Footer } from './Footer/Footer';
 import { Gallery } from './Gallery/Gallery';
 import { Header } from './Header/Header';
@@ -18,7 +17,6 @@ import { TextBlock } from './TextBlock/TextBlock';
 export const Blocks = {
   Accordion,
   ComparisonTable,
-  ExchangeRateTile,
   Footer,
   Gallery,
   Header,
