@@ -138,7 +138,7 @@ export type CalculatorNav = HeadlineCommonProps & IconProps;
 /**
  * @title Вкладка
  */
-export type CalculatorTab = TitleProps & {
+export type CalculatorTab = {
   nav?: CalculatorNav;
   calculatorBlock?: CalculatorBlockDef;
 };

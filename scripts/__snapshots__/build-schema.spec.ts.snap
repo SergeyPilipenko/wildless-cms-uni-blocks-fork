@@ -662,10 +662,6 @@ Object {
         "nav": Object {
           "$ref": "#/definitions/CalculatorNav",
         },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
       },
       "title": "Вкладка",
       "type": "object",
