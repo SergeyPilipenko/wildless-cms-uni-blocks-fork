@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Tariff } from '../../hooks/useFetchSafeBoxes';
+import type { Tariff } from '../../hooks/useSafeBoxes';
 import { Img } from '../../ui-kit/Img/Img';
 
 export interface SafeDepositRentalTotalProps {

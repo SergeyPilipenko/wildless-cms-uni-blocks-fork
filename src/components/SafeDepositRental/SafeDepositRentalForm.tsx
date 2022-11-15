@@ -1,84 +1,56 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks/core';
-import { SafeBoxCase, SafeBoxCaseVolume, useFetchSafeBoxes } from '../../hooks/useFetchSafeBoxes';
+import { useEffect } from '@redneckz/uni-jsx/lib/hooks/core';
+import { Branch, SafeBoxCase, SafeBoxCaseVolume } from '../../hooks/useSafeBoxes';
 import { SafeDepositRentalFields } from './SafeDepositRentalFields';
 import { SafeDepositRentalTotal } from './SafeDepositRentalTotal';
-import type { HandleChangeState, SafeDepositRentalState } from './SafeDepositRentalTypes';
+import type { SafeDepositRentalState } from './SafeDepositRentalTypes';
 import type { Region } from './useGetRegions';
-import { getBranch, getCoordinates } from './utils';
-
-const DEFAULT_DAYS = 26;
+import { getBranch } from './utils';
 
 export interface SafeDepositRentalFormProps {
-  regions?: Region[];
-  setPoints: (points: number[][]) => void;
-  toggleShowMap: () => void;
+  regions: Region[];
+  branches: Branch[];
+  data: SafeDepositRentalState;
+  onShowMapToggle: () => void;
+  onChange: (data: Partial<SafeDepositRentalState>) => void;
 }
 
 export const SafeDepositRentalForm = JSX<SafeDepositRentalFormProps>((props) => {
-  const [safeDepositState, setStateDepositState] = useState<SafeDepositRentalState>({
-    selectedRegion: '',
-    selectedBranch: '',
-    selectedCaseVolume: '',
-    selectedBoxSize: '',
-    days: DEFAULT_DAYS,
-    branches: [],
-  });
-
-  const resultBranches = useFetchSafeBoxes(safeDepositState.selectedRegion);
-
-  const handleChangeSafeDepositState: HandleChangeState = (state) =>
-    setStateDepositState((oldState) => ({ ...oldState, ...state }));
-
-  useEffect(
-    () =>
-      handleChangeSafeDepositState({
-        selectedRegion: getInitialValueSelectedRegion(props.regions),
-      }),
-    [props.regions],
-  );
+  const { regions, data, branches, onChange, onShowMapToggle } = props;
 
   useEffect(() => {
-    if (Array.isArray(resultBranches) && resultBranches.length) {
-      handleChangeSafeDepositState({ branches: resultBranches });
-      props.setPoints(getCoordinates(resultBranches));
-    }
-  }, [resultBranches]);
-
-  useEffect(() => {
-    handleChangeSafeDepositState({
+    onChange({
       selectedBranch: '',
       selectedCaseVolume: '',
       selectedBoxSize: '',
     });
-  }, [safeDepositState.selectedRegion]);
+  }, [data.selectedRegion, onChange]);
 
-  const branch = getBranch(safeDepositState.branches, safeDepositState.selectedBranch);
+  const branch = getBranch(branches, data.selectedBranch);
   const caseVolumes = getCaseVolumes(branch?.safeBoxCaseVolumes);
 
   const safeBoxCases = getCaseVolume(
     branch?.safeBoxCaseVolumes,
-    safeDepositState.selectedCaseVolume,
+    data.selectedCaseVolume,
   )?.safeBoxCases;
 
-  const tariffs = getTariffs(safeBoxCases, safeDepositState.selectedBoxSize);
+  const tariffs = getTariffs(safeBoxCases, data.selectedBoxSize);
 
   return (
     <div className="flex justify-between align-top mb-6">
       <SafeDepositRentalFields
-        {...safeDepositState}
-        {...props}
+        {...data}
+        regions={regions}
+        onShowMapToggle={onShowMapToggle}
+        branches={branches}
         caseVolumes={caseVolumes}
         safeBoxCases={safeBoxCases}
-        onChange={handleChangeSafeDepositState}
+        onChange={onChange}
       />
-      <SafeDepositRentalTotal days={safeDepositState.days} tariffs={tariffs} />
+      <SafeDepositRentalTotal days={data.days} tariffs={tariffs} />
     </div>
   );
 });
-
-const getInitialValueSelectedRegion = (regions?: Region[]) =>
-  regions?.length && regions[0]?.code ? regions[0].code : '';
 
 const getCaseVolumes = (safeBoxCaseVolumes?: SafeBoxCaseVolume[]) =>
   safeBoxCaseVolumes?.length ? safeBoxCaseVolumes?.filter((_) => _?.safeBoxCases?.length) : [];

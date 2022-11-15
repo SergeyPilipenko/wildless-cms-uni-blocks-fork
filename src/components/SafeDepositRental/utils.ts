@@ -1,4 +1,4 @@
-import type { Branch } from '../../hooks/useFetchSafeBoxes';
+import type { Branch } from '../../hooks/useSafeBoxes';
 
 export const getCoordinates = (data?: Branch | Branch[]): number[][] => {
   if (Array.isArray(data)) {

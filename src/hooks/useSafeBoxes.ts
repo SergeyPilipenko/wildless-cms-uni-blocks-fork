@@ -25,20 +25,19 @@ export interface Branch {
 }
 
 const SAFEBOXES_URL = '/api/v1/safeboxes';
+const EMPTY_VALUE = [];
 
-export function useFetchSafeBoxes(regionCode?: string) {
-  const { data } = useAsyncData<{ data?: Branch[] }, any, string | null>(
+export function useSafeBoxes(regionCode?: string): Branch[] {
+  const { data } = useAsyncData<Branch[], any, string | null>(
     regionCode ? `${SAFEBOXES_URL}?regionCode=${regionCode}` : null,
     fetchSafeBoxes,
   );
 
-  return data || [];
+  return data || EMPTY_VALUE;
 }
 
-const fetchSafeBoxes = (url?: string) => {
-  if (!url) {
-    return {};
-  }
+const fetchSafeBoxes = async (url: string): Promise<Branch[]> => {
+  const result = await fetchJSON<Branch[]>(url, { method: 'GET' });
 
-  return fetchJSON(url, { method: 'GET' });
+  return result || EMPTY_VALUE;
 };

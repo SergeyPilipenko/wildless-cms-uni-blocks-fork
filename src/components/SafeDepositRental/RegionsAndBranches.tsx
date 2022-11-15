@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Branch } from '../../hooks/useFetchSafeBoxes';
+import type { Branch } from '../../hooks/useSafeBoxes';
 import type { Region } from './useGetRegions';
 import { WrapperSelect } from './WrapperSelect';
 
