@@ -11,6 +11,11 @@ export interface RecommendationCardTypes extends HeadlineCommonProps, ListConten
   /**
    * @title Соц сети
    * @minItems 3
+   * @default [
+   * { "href": "https://t.me" },
+   * { "href": "https://vk.com" },
+   * { "href": "https://ok.ru" },
+   * ]
    */
   socialMedia?: LinkCommonProps[];
   /**
