@@ -1,94 +1,89 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { ContentPageContext } from '../../components/ContentPage/ContentPageContext';
-import { ColorPalette } from '../../model/ContentPageDef';
+import { useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { VNode } from '../../model/VNode';
 import { clamp } from '../../utils/clamp';
-import { Icon } from '../Icon/Icon';
-import { foldableBlockClassNames, useActiveHandler } from './useActiveHandler';
+import type { IconName } from '../Icon/IconProps';
+import { DefaultButton } from './DefaultButton';
 
-export type FoldableBlocks = VNode[];
-export type Render = (_: VNode, isActive: boolean) => VNode;
-
-export interface FoldableProps {
-  context: ContentPageContext;
-  foldButtonLabel?: string;
-  hiddenBlocksNum?: number;
-  blocks?: FoldableBlocks;
-  foldButtonClasses?: string;
-  foldButtonDataTheme?: ColorPalette;
-  isUnfolded?: boolean;
-  render?: Render;
-  containerClasses?: string;
+interface RenderFoldButtonProps {
+  isUnfolded: boolean;
+  onToggle: () => void;
 }
-
-export interface RenderBlocksParams {
-  blocksToHide: number;
-  isActive: boolean;
-  containerClasses?: string;
+export interface FoldableProps {
+  blocks?: VNode[];
+  hiddenBlocksNum?: number;
+  unfoldedByDefault?: boolean;
+  isFoldButtonOnTop?: boolean;
+  containerClassName?: string;
+  blockWrapper?: (children: VNode) => VNode;
+  renderFoldButton?: (props: RenderFoldButtonProps) => VNode;
 }
 
 export const Foldable = JSX<FoldableProps>(
   ({
     blocks = [],
     hiddenBlocksNum = 0,
-    foldButtonClasses,
-    foldButtonLabel,
-    foldButtonDataTheme,
-    isUnfolded,
-    containerClasses,
-    render = (_) => _,
+    isFoldButtonOnTop = false,
+    unfoldedByDefault = false,
+    containerClassName = '',
+    blockWrapper = (_) => _,
+    renderFoldButton = renderDefaultFoldButton,
   }) => {
-    const blocksToHide = clamp(hiddenBlocksNum, 0, blocks.length);
-    const { icon, handleToggle, isActive } = useActiveHandler({
-      initialState: isUnfolded,
-    });
+    const [isUnfolded, setIsUnfolded] = useState(unfoldedByDefault);
+    const blocksToHide = clamp(hiddenBlocksNum, 0, blocks?.length);
+    const visibleBlocks = blocks.slice(0, blocks.length - blocksToHide);
+    const hiddenBlocks = blocksToHide > 0 ? blocks.slice(-blocksToHide) : [];
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
-    const buttonClassName =
-      foldButtonClasses ||
-      'border-none bg-primary-main hover:bg-primary-hover focus:bg-primary-main active:bg-primary-active focus:border-primary-text ' +
-        'px-0 py-5 mb-[1px] w-full font-sans text-white text-h4 flex justify-center cursor-pointer outline-none';
-    const getFoldButtonLabel = isActive ? 'Скрыть' : foldButtonLabel;
+    const onToggle = () => {
+      setIsUnfolded(!isUnfolded);
+      if (containerRef.current) {
+        containerRef.current.style.maxHeight = isUnfolded
+          ? ''
+          : `${containerRef.current.scrollHeight}px`;
+      }
+    };
 
-    return blocks ? (
+    const buttonNode = hiddenBlocksNum ? renderFoldButton({ isUnfolded, onToggle }) : null;
+    const blocksNode = blockWrapper(
       <div>
-        {renderBlocks(blocks, render, { blocksToHide, isActive, containerClasses })}
-        {hiddenBlocksNum ? (
-          <button
-            className={buttonClassName}
-            data-theme={foldButtonDataTheme}
-            onClick={handleToggle}
-          >
-            <span className="pr-3">{getFoldButtonLabel}</span>
-            {icon ? (
-              <Icon
-                className="my-auto"
-                name={icon}
-                iconVersion="white"
-                width="20"
-                height="20"
-                asSVG
-              />
-            ) : null}
-          </button>
-        ) : null}
+        {visibleBlocks}
+        <div
+          ref={containerRef}
+          className={`transition-max-h duration-300 overflow-hidden max-h-0 ${containerClassName}`}
+        >
+          {hiddenBlocks}
+        </div>
+      </div>,
+    );
+
+    return (
+      <div>
+        {isFoldButtonOnTop ? (
+          <div>
+            {buttonNode}
+            {blocksNode}
+          </div>
+        ) : (
+          <div>
+            {blocksNode}
+            {buttonNode}
+          </div>
+        )}
       </div>
-    ) : null;
+    );
   },
 );
 
-const renderBlocks = (
-  blocks: FoldableBlocks,
-  render: Render,
-  { blocksToHide, isActive, containerClasses = '' }: RenderBlocksParams,
-) => {
-  const visibleBlocks = blocks.slice(0, blocks.length - blocksToHide);
-  const hiddenBlocks = blocksToHide > 0 ? blocks.slice(-blocksToHide) : [];
+const renderDefaultFoldButton = (props: RenderFoldButtonProps) => {
+  const labels = ['Развернуть', 'Скрыть'];
+  const icons: IconName[] = ['ArrowDownIcon', 'ArrowUpIcon'];
 
-  return render(
-    <div>
-      {visibleBlocks}
-      <div className={`${foldableBlockClassNames} ${containerClasses}`}>{hiddenBlocks}</div>
-    </div>,
-    isActive,
+  return (
+    <DefaultButton
+      icon={icons[Number(props.isUnfolded)]}
+      label={labels[Number(props.isUnfolded)]}
+      onClick={props.onToggle}
+    />
   );
 };

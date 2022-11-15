@@ -12,7 +12,7 @@ export type EmbeddableBlocksProps = {
 };
 
 export const renderBlocksList = ({ blocks, context, className = '' }: EmbeddableBlocksProps) =>
-  blocks?.length ? blocks.map(renderBlock({ context, className })) : null;
+  blocks?.length ? blocks.map(renderBlock({ context, className })) : [];
 
 const renderBlock =
   ({ context, className }: UniBlockProps) =>

@@ -73,13 +73,11 @@ export const TariffsTable = JSX<TariffsTableProps>(
           <Foldable
             blocks={foldableBlocks}
             hiddenBlocksNum={hiddenRowsNum}
-            context={context}
-            render={(children) => (
+            blockWrapper={(children) => (
               <Wrapper tableArrowScrollControlProps={tableArrowScrollControlProps}>
                 {children}
               </Wrapper>
             )}
-            foldButtonLabel="Развернуть"
           />
         ) : null}
       </BlockWrapper>
