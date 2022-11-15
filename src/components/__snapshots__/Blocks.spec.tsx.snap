@@ -79,8 +79,7 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
         Сумма перевода
       </label>
       <input
-        class="w-full border rounded-md border-main-stroke hover:border-primary-hover active:border-primary-text
-          focus:border-primary-text text-primary-text outline-none p-4 pr-8 w-full"
+        class="w-full border rounded-md text-primary-text outline-none p-4 pr-8 border-main-stroke hover:border-primary-hover active:border-primary-text focus:border-primary-text w-full"
         name="amount"
         placeholder="1500"
         type="text"

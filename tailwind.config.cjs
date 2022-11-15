@@ -218,6 +218,7 @@ module.exports = {
           text: 'rgba(125, 126, 127, <alpha-value>)',
         },
         gray: 'rgba(201, 202, 204, <alpha-value>)',
+        error: 'rgba(242, 48, 48, <alpha-value>)',
       },
       minHeight: (theme) => ({
         ...theme('spacing'),

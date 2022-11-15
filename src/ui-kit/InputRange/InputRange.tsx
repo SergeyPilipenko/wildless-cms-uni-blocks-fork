@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
 import { clamp } from '../../utils/clamp';
+import { getSanitizedValue } from '../../utils/getSanitizedValue';
 import type { InputRangeProps } from './InputRangeProps';
 
 const DISABLED_INPUT_CLASSES = 'disabled:border-main-stroke disabled:bg-main-divider';
@@ -17,14 +18,12 @@ export const InputRange = JSX<InputRangeProps>(
     disabled = false,
     onChange,
   }) => {
-    const getSanitizedValue = (_: string) => Number(_.replace(/\D/g, ''));
-
     const handleChange = (e) => {
       if (!onChange) {
         return;
       }
 
-      onChange(clamp(getSanitizedValue(e.target.value as string), min, max));
+      onChange(clamp(Number(getSanitizedValue(e.target.value as string)), min, max));
     };
 
     const inputStyle = {

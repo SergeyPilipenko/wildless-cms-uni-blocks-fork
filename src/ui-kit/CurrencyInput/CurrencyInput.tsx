@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { clamp } from '../../utils/clamp';
-import { adjustValue } from './adjustValue ';
+import { adjustValue, localNumberFormat } from './adjustValue ';
 import { useCallback } from '@redneckz/uni-jsx/lib/hooks';
 import { Input } from '../Input/Input';
 import type { CurrencyInputProps } from './CurrencyInputProps';
@@ -19,13 +19,29 @@ export const CurrencyInput = JSX<CurrencyInputProps>(
       [onChange],
     );
 
+    const handleBlur = useCallback(
+      (inputValue: string) => {
+        if (!onChange) {
+          return;
+        }
+        onChange(localNumberFormat(inputValue));
+      },
+      [onChange],
+    );
+
     return (
-      <Input className={className} inputClassName="w-full" onChange={handleChange} {...inputProps}>
+      <Input
+        className={className}
+        inputClassName="w-full"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        {...inputProps}
+      >
         <span className="text-xl-light absolute right-4 bottom-4">₽</span>
       </Input>
     );
   },
 );
 
-const getClampValue = (val: string, clampVal) =>
+const getClampValue = (val: string, clampVal: number): string =>
   Number(val) === clampVal ? val : String(clampVal);

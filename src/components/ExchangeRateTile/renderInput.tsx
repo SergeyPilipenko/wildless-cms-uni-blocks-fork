@@ -21,7 +21,7 @@ export function renderInput(props: InputProps) {
   return (
     <div className="relative flex">
       <Input
-        className="shrink-0 h-14 pl-4 pt-4 pb-4 text-l w-full appearance-none mr-[-90px]"
+        className="shrink-0 text-l w-full appearance-none mr-[-90px]"
         placeholder={placeholder}
         type="text"
         value={value}

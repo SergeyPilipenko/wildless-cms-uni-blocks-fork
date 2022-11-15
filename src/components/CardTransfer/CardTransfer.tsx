@@ -8,6 +8,7 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { getDisabledButtonClasses } from '../../ui-kit/Button/getDisabledButtonClasses';
 import { getRegularButtonClasses } from '../../ui-kit/Button/getRegularButtonClasses';
 import { useLink } from '../../hooks/useLink';
+import { getSanitizedValue } from '../../utils/getSanitizedValue';
 
 const AMOUNT_KEY = 'amount';
 const FORM_URL = 'https://www.rshb.ru/p2p/';
@@ -30,7 +31,7 @@ export const CardTransfer = JSX<CardTransferProps>(
     const router = context.useRouter();
     const { handlerDecorator } = context;
     const [value, setValue] = useState<string>('');
-    const isDisabled = !Number(value);
+    const isDisabled = !Number(getSanitizedValue(value));
     const buttonStyle = isDisabled
       ? getDisabledButtonClasses({ version: button?.version })
       : getRegularButtonClasses({ className: 'text-white', version: button?.version });
@@ -47,6 +48,7 @@ export const CardTransfer = JSX<CardTransferProps>(
             name={AMOUNT_KEY}
             value={value}
             onChange={setValue}
+            valid={value === '' || !isDisabled}
             placeholder={placeholder}
             label={label}
           />

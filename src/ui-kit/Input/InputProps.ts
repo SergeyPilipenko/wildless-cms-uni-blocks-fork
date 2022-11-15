@@ -12,4 +12,6 @@ export type InputProps = LabelProps & {
   pattern?: string;
   value?: string;
   onChange: (value: string) => void;
+  onBlur?: (value: string) => void;
+  valid?: boolean;
 };

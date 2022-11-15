@@ -1,6 +1,17 @@
-export const adjustValue = (val: string) => onlyOneDot(setZeroStart(replaceCommaToDot(val)));
+import { getSanitizedValue } from '../../utils/getSanitizedValue';
 
-const onlyOneDot = (val: string): string => {
+export const adjustValue = (val: string) =>
+  onlyOneDot(setZeroStart(replaceCommaToDot(getSanitizedValue(val))));
+
+export const localNumberFormat = (val: string): string =>
+  new Intl.NumberFormat('ru-RU', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  })
+    .format(Number(getSanitizedValue(val)))
+    .replace(',', '.');
+
+export const onlyOneDot = (val: string): string => {
   const matches = val.match(/\./g) || [];
 
   return matches.length > 1 ? val.slice(0, val.lastIndexOf('.')) : val;
