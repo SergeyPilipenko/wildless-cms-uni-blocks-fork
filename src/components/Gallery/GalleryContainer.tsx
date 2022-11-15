@@ -19,7 +19,15 @@ export interface GalleryCardData {
 }
 
 export const GalleryContainer = JSX<GalleryContainerProps>(
-  ({ context, title, description, cards = [], version = 'normal', activeCardIndex }) => {
+  ({
+    context,
+    title,
+    headlineVersion = 'L',
+    description,
+    cards = [],
+    version = 'normal',
+    activeCardIndex,
+  }) => {
     return (
       <div>
         <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent" />
@@ -28,7 +36,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
           className="!p-0"
           title={title}
           description={description}
-          headlineVersion="L"
+          headlineVersion={headlineVersion}
           align="center"
         />
         <div

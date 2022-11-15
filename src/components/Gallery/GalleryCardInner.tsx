@@ -1,24 +1,40 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { AlignType } from '../../model/AlignType';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { Picture } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
+import { HEADLINE_SMALL_VERSION } from '../Headline/constants';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 
-export const GalleryCardInner = JSX<GalleryCardProps>(
-  ({ title, description, image, items, button, version, isDotted = true }) => {
-    const titleStyleClasses = getTitleStyle(version);
+const ALIGN_TITLE: Record<AlignType, string> = {
+  left: 'text-left',
+  center: 'text-center',
+  right: 'text-right',
+};
 
+export const GalleryCardInner = JSX<GalleryCardProps>(
+  ({
+    title,
+    headlineSmallVersion = 'XL_L',
+    description,
+    additionalDescription,
+    image,
+    items,
+    button,
+    version,
+    isDotted = true,
+    align = 'center',
+  }) => {
     return (
-      <div className="h-full flex flex-col justify-between text-center">
-        <div>
-          {image?.src ? (
-            <div className="flex justify-center">
-              <Img className="mb-6" image={image} />
-            </div>
-          ) : null}
-          {title ? renderCardTitle(title, titleStyleClasses) : null}
-          {description ? <div className={`text-m${title ? 'mt-2' : ''}`}>{description}</div> : null}
+      <div className={`h-full flex flex-col justify-between ${ALIGN_TITLE[align]}`}>
+        <div className="flex flex-col h-full">
+          {renderImage(image)}
+          {renderCardTitle(headlineSmallVersion, title)}
+          {renderDescription(description, title)}
+          {renderAdditionalDescription(additionalDescription)}
           {items?.length ? renderItems(items, isDotted, version) : null}
         </div>
         {button ? renderButton(button) : null}
@@ -27,38 +43,42 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
   },
 );
 
-function renderButton(button) {
-  return (
-    <Button
-      className="mt-6 w-full"
-      appendLeft={button.icon && <Img image={button.icon} width="24px" height="24px" asSVG />}
-      {...button}
-    />
-  );
-}
+const renderImage = (image?: Picture) =>
+  image?.src ? (
+    <div className="flex justify-center">
+      <Img className="mb-6" image={image} />
+    </div>
+  ) : null;
 
-function renderCardTitle(title: string, className: string) {
-  return <div className={`text-xl-light m-0 ${className}`}>{title}</div>;
-}
+const renderCardTitle = (headlineSmallVersion: string, title?: string) =>
+  title ? <div className={HEADLINE_SMALL_VERSION[headlineSmallVersion]}>{title}</div> : null;
 
-function renderItems(
+const renderDescription = (description?: string, title?: string) =>
+  description ? <div className={`text-base ${title ? 'mt-2' : ''}`}>{description}</div> : null;
+
+const renderAdditionalDescription = (additionalDescription?: string) =>
+  additionalDescription ? (
+    <div className="text-m-light text-secondary-text mt-auto">{additionalDescription}</div>
+  ) : null;
+
+const renderButton = (button: ButtonWithIconProps) => (
+  <Button
+    className="mt-6 w-full"
+    appendLeft={button.icon && <Img image={button.icon} width="24px" height="24px" asSVG />}
+    {...button}
+  />
+);
+
+const renderItems = (
   items: GalleryItemProps[],
   isDotted: boolean,
   version: BlockVersion = 'primary',
-) {
-  return (
-    <List
-      className={`max-w-[308px] mt-2 text-s ${version === 'primary' ? '!text-secondary-text' : ''}`}
-      itemClassName="mt-1 text-left first:mt-0"
-      items={items.filter((item) => item?.text).map((item) => item.text as string)}
-      isDotted={isDotted}
-      version={version}
-    />
-  );
-}
-
-function getTitleStyle(version) {
-  return `text-xl-light m-0
-        ${version !== 'secondary' ? 'text-primary-text' : ''}
-      `;
-}
+) => (
+  <List
+    className={`max-w-[308px] mt-2 text-s ${version === 'primary' ? '!text-secondary-text' : ''}`}
+    itemClassName="mt-1 text-left first:mt-0"
+    items={items.filter((item) => item?.text).map((item) => item.text as string)}
+    isDotted={isDotted}
+    version={version}
+  />
+);

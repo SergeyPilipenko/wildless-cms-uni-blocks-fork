@@ -1,6 +1,6 @@
 import type { AlignType } from '../../model/AlignType';
 import type { BlockVersionWithTransparent } from '../../model/BlockVersion';
-import type { HeadlineVersion } from '../../model/HeadlineType';
+import type { HeadlineSmallVersion, HeadlineVersion } from '../../model/HeadlineType';
 import type { HeadingTagType, HeadingType } from '../../ui-kit/Heading/HeadingProps';
 
 export const ALIGN_TEXT: Record<AlignType, string> = {
@@ -71,4 +71,14 @@ export const HEADLINE_VERSION: Record<HeadlineVersion, VersionStyleType> = {
     headingType: 'h4',
     as: 'h4',
   },
+};
+
+export const HEADLINE_SMALL_VERSION: Record<HeadlineSmallVersion, string> = {
+  XL_L: 'text-xl-light',
+  XL_R: 'text-xl',
+  L_L: 'text-l-light',
+  L_R: 'text-l',
+  M: 'text-m-light',
+  S: 'text-s-light',
+  XS: 'text-xs-light',
 };

@@ -1324,6 +1324,9 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "headlineVersion": Object {
+          "$ref": "#/definitions/HeadlineVersion",
+        },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
           "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
@@ -1350,7 +1353,18 @@ Object {
       "type": "object",
     },
     "GalleryCardProps": Object {
+      "default": Object {
+        "headlineSmallVersion": "XL_L",
+      },
       "properties": Object {
+        "additionalDescription": Object {
+          "type": "string",
+        },
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+          "default": "center",
+          "title": "Выравнивание",
+        },
         "button": Object {
           "$ref": "#/definitions/ButtonWithIconProps",
           "title": "Кнопка",
@@ -1358,6 +1372,9 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "headlineSmallVersion": Object {
+          "$ref": "#/definitions/HeadlineSmallVersion",
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
@@ -1412,6 +1429,9 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "headlineVersion": Object {
+          "$ref": "#/definitions/HeadlineVersion",
         },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
@@ -1658,6 +1678,44 @@ Object {
         },
       },
       "type": "object",
+    },
+    "HeadlineSmallProps": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "headlineSmallVersion": Object {
+          "$ref": "#/definitions/HeadlineSmallVersion",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "HeadlineSmallVersion": Object {
+      "enum": Array [
+        "XL_L",
+        "XL_R",
+        "L_L",
+        "L_R",
+        "M",
+        "S",
+        "XS",
+      ],
+      "enumNames": Array [
+        "Самый большой тонкий",
+        "Самый большой",
+        "Очень большой тонкий",
+        "Очень большой",
+        "Большой",
+        "Средний",
+        "Маленький",
+      ],
+      "title": "Размер заголовка",
+      "type": "string",
     },
     "HeadlineVersion": Object {
       "enum": Array [
@@ -2496,6 +2554,9 @@ Object {
           "title": "Описание",
           "type": "string",
         },
+        "headlineVersion": Object {
+          "$ref": "#/definitions/HeadlineVersion",
+        },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
           "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
@@ -2522,6 +2583,9 @@ Object {
       "type": "object",
     },
     "MiniGalleryContent": Object {
+      "default": Object {
+        "headlineVersion": "L",
+      },
       "properties": Object {
         "cards": Object {
           "items": Object {
@@ -2534,6 +2598,9 @@ Object {
         "description": Object {
           "title": "Описание",
           "type": "string",
+        },
+        "headlineVersion": Object {
+          "$ref": "#/definitions/HeadlineVersion",
         },
         "orientation": Object {
           "$ref": "#/definitions/ListOrientation",
