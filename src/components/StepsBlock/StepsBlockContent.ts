@@ -1,8 +1,8 @@
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { DescriptionProps, HeadlineCommonProps, LabelProps } from '../../model/HeadlineType';
 import type { IconProps } from '../../model/Picture';
 import type { SizeVersion } from '../../model/SizeVersion';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { DescriptionProps, HeadlineCommonProps, LabelProps } from '../../model/HeadlineType';
 
 /**
  * @title Шаг
@@ -12,6 +12,13 @@ export type Step = DescriptionProps &
   IconProps & {
     /** @title Кнопка */
     button?: ButtonWithIconProps;
+    /**
+     * @title Буллиты
+     * @default true
+     */
+    isDotted?: boolean;
+    /** @title Список */
+    items?: string[];
   };
 
 /**
@@ -26,7 +33,7 @@ export type StepsBlockContent = HeadlineCommonProps & {
   /**
    * @title Шаги
    * @minItems 2
-   * @maxItems 4
+   * @maxItems 5
    */
   steps?: Step[];
   /** @title Кнопка */

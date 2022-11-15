@@ -3565,6 +3565,18 @@ Object {
           "$ref": "#/definitions/Picture",
           "title": "Иконка",
         },
+        "isDotted": Object {
+          "default": true,
+          "title": "Буллиты",
+          "type": "boolean",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
         "label": Object {
           "title": "Название",
           "type": "string",
@@ -3597,7 +3609,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/Step",
           },
-          "maxItems": 4,
+          "maxItems": 5,
           "minItems": 2,
           "title": "Шаги",
           "type": "array",

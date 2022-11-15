@@ -2,21 +2,23 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/ContentPageDef';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { joinList } from '../../utils/joinList';
 import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
+import { renderItems } from './renderItems';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
 
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
 const getLineOpacity = (showLines: boolean) => (showLines ? '' : 'opacity-0');
+
+const getPaddingX = (steps: number) => (steps < 5 ? 'px-[88px]' : 'px-[55px]');
 
 export const StepsBlock = JSX<StepsBlockProps>(
   ({
@@ -36,6 +38,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
     const shortGaps = steps.length > 3;
     const lineOpacity = getLineOpacity(showLines);
     const titleMargin = title ? 'mt-9' : '';
+    const paddingX = getPaddingX(steps.length);
 
     return (
       <BlockWrapper
@@ -55,7 +58,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
         ) : null}
         {steps?.length ? (
           <div className={`box-border ${titleMargin}`}>
-            <div className="flex items-center px-[88px]">
+            <div className={`flex items-center ${paddingX}`}>
               {joinList(<div className={`h-0.5 w-full bg-secondary-light ${lineOpacity}`} />)(
                 steps.map(renderStepIcon(styleMap)),
               )}
@@ -118,14 +121,15 @@ const renderStepTitle =
     router: Router;
     handlerDecorator?: HandlerDecorator;
   }) =>
-  (step: Step, i: number) => {
+  (step: Step, i: number, { length }: { length: number }) => {
     const additionalMarginClass = step?.label ? 'mt-2' : 'mt-4';
+    const widthContainer = length < 5 ? 'w-[276px]' : 'w-[210px]';
 
     return (
       <div
         key={String(i)}
-        className="flex flex-col items-center justify-between text-center relative w-[276px]
-        whitespace-pre-line overflow-hidden"
+        className={`flex flex-col items-center text-center relative
+        whitespace-pre-line overflow-hidden ${widthContainer}`}
       >
         {step?.label ? <div className="text-xl m-0 mt-4">{step.label}</div> : null}
         {step?.description ? (
@@ -133,6 +137,7 @@ const renderStepTitle =
             {step.description}
           </div>
         ) : null}
+        {renderItems(step?.items, styleMap, step?.isDotted)}
         {step.button?.text && !isMainButton ? (
           <Button
             className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
