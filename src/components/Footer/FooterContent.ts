@@ -1,7 +1,7 @@
-import type { LinkProps } from '../../model/LinkProps';
-import type { SitemapProps } from '../../services/sitemap/SitemapProps';
-import type { IconProps } from '../../model/Picture';
 import type { DescriptionProps } from '../../model/HeadlineType';
+import type { LinkCommonProps, LinkProps } from '../../model/LinkProps';
+import type { IconProps } from '../../model/Picture';
+import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 
 /**
  * @title Тип контакта
@@ -22,11 +22,6 @@ export type ContactInfo = DescriptionProps & {
 };
 
 /**
- * @required ["href"]
- */
-export type SocialMedia = Omit<LinkProps, 'text'>;
-
-/**
  * @title Пункт подменю
  */
 export type SubMenuItem = LinkProps & IconProps;
@@ -43,9 +38,9 @@ export interface FooterContent extends SitemapProps {
   /** @title Контакты */
   contacts?: ContactInfo[];
   /** @title Социальные сети */
-  socialMedia?: SocialMedia[];
+  socialMedia?: LinkCommonProps[];
   /** @title Мобильные приложения */
-  mobileApps?: SocialMedia[];
+  mobileApps?: LinkCommonProps[];
   /** @title Заголовок для меню */
   horizontalNavigationTitle?: string; // TODO: для мобильной версии
   /** @title Подменю */

@@ -1256,7 +1256,7 @@ Object {
         },
         "mobileApps": Object {
           "items": Object {
-            "$ref": "#/definitions/SocialMedia",
+            "$ref": "#/definitions/LinkCommonProps",
           },
           "title": "Мобильные приложения",
           "type": "array",
@@ -1270,7 +1270,7 @@ Object {
         },
         "socialMedia": Object {
           "items": Object {
-            "$ref": "#/definitions/SocialMedia",
+            "$ref": "#/definitions/LinkCommonProps",
           },
           "title": "Социальные сети",
           "type": "array",
@@ -3540,16 +3540,6 @@ Object {
       ],
       "title": "Размер",
       "type": "string",
-    },
-    "SocialMedia": Object {
-      "properties": Object {
-        "href": Object {},
-        "target": Object {},
-      },
-      "required": Array [
-        "href",
-      ],
-      "type": "object",
     },
     "Step": Object {
       "properties": Object {
