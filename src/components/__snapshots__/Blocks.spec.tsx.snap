@@ -893,7 +893,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                 class="relative z-10"
               >
                 <div
-                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+                  class="text-l flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
             border border-main-stroke rounded-md hover:border-primary-hover"
                 >
                   <p
@@ -927,7 +927,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                 class="relative z-10"
               >
                 <div
-                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+                  class="text-l flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
             border border-main-stroke rounded-md hover:border-primary-hover"
                 >
                   <p
@@ -1014,7 +1014,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                 class="relative z-10"
               >
                 <div
-                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+                  class="text-l flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
             border border-main-stroke rounded-md hover:border-primary-hover"
                 >
                   <p
@@ -1050,7 +1050,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                 class="relative z-10"
               >
                 <div
-                  class="text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+                  class="text-l flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
             border border-main-stroke rounded-md hover:border-primary-hover"
                 >
                   <p

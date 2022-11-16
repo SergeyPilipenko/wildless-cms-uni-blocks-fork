@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { Icon } from '../Icon/Icon';
-import { useState, useEffect } from '@redneckz/uni-jsx/lib/hooks';
+import { useState, useEffect, useRef } from '@redneckz/uni-jsx/lib/hooks';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 export interface OptionProps {
   key: string;
@@ -22,6 +23,10 @@ export const Select = JSX<SelectProps>(
     const [selectedItem, setSelectedItem] = useState(options[0] || { key: '', text: '' });
     const [isOpen, setIsOpen] = useState(false);
 
+    const wrapperRef = useRef<HTMLInputElement | null>(null);
+
+    useOutsideClick(wrapperRef, setIsOpen);
+
     const choiceOption = (option: OptionProps) => {
       setSelectedItem(option);
       setIsOpen(false);
@@ -35,11 +40,11 @@ export const Select = JSX<SelectProps>(
     }, [value]);
 
     return (
-      <div className={`${className}`}>
+      <div className={`${className}`} ref={wrapperRef}>
         {label ? <span className="mb-2 flex">{label}</span> : null}
         <div className={`relative ${isOpen ? 'z-20' : 'z-10'}`}>
           <div
-            className={`text-m-light flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
+            className={`text-l flex justify-between items-center mb-0.5 text-primary-text cursor-pointer
             ${getBorderStyle(isBorder)}`}
             onClick={() => setIsOpen(!isOpen)}
           >
