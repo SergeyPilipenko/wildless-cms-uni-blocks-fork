@@ -28,6 +28,7 @@ export const Contacts = JSX<ContactsProps>(({ className = '', items, hasButton, 
               target: '_blank',
             },
           )}
+          ariaLabel="Обратная связь"
         />
       ) : null}
     </div>

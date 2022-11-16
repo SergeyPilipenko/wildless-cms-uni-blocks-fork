@@ -10,7 +10,6 @@ import { TariffsTableInnerEvent } from '../../ui-kit/InnerTable/InnerTableProps'
 import { List } from '../../ui-kit/List/List';
 import type { ListProps } from '../../ui-kit/List/ListProps';
 import type { LabelDescriptionCell, TariffsTableCellIndexProps } from './TariffsTableContent';
-import { getButtonAriaLabel } from './utils/getButtonAriaLabel';
 
 export type EmbeddableCellDataType =
   | LabelDescriptionCell
@@ -22,15 +21,11 @@ export type EmbeddableCellDataType =
 const renderButtonsCellData = ({ buttons }: ButtonContent) =>
   buttons && buttons?.length ? (
     <div>
-      {buttons.map(({ icon, rounded, ...buttonProps }, idx) => (
+      {buttons.map(({ rounded, ...buttonProps }, idx) => (
         <Button
           className={`${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`}
           key={String(idx)}
-          ariaLabel={getButtonAriaLabel(icon)}
           rounded={rounded}
-          appendLeft={
-            icon?.src || icon?.icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null
-          }
           {...buttonProps}
         />
       ))}

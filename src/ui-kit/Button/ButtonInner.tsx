@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
+import { iconStyleMap } from './buttonClassNameConstants';
 import type { ButtonWithIconProps } from './ButtonProps';
 
 interface ButtonInnerProps extends ButtonWithIconProps {
@@ -7,18 +8,18 @@ interface ButtonInnerProps extends ButtonWithIconProps {
 }
 
 export const ButtonInner = JSX<ButtonInnerProps>((props) => {
-  const { text, aboveText, appendLeft, appendRight } = props;
+  const { text, aboveText, appendLeft, appendRight, version = 'primary' } = props;
 
   return (
     <div className={getButtonStyle(props)}>
-      {appendLeft ? appendLeft : null}
+      {appendLeft ? <div className={iconStyleMap[version]}>{appendLeft}</div> : null}
       {isWithText(props) ? (
         <div>
           <div className="text-xs-light text-left">{aboveText}</div>
           <div className={`text-left ${aboveText ? 'text-s -mt-0.5' : 'text-l'}`}>{text}</div>
         </div>
       ) : null}
-      {appendRight ? appendRight : null}
+      {appendRight ? <div className={iconStyleMap[version]}>{appendRight}</div> : null}
     </div>
   );
 });

@@ -1,9 +1,9 @@
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import { Img } from '../../ui-kit/Img/Img';
 import { Gallery } from './Gallery';
 import type { GalleryProps } from './GalleryProps';
-
 const isDotted = true;
 
 const image: Picture = {
@@ -28,7 +28,7 @@ const buttonPrimaryIcon: ButtonWithIconProps = {
   text: 'Подробнее',
   target: '_blank',
   version: 'secondary',
-  icon: { icon: 'BankIcon' },
+  appendLeft: <Img image={{ icon: 'BankIcon' }} width="24" height="24" asSVG />,
 };
 
 const defaultItems = [

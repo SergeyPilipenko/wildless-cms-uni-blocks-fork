@@ -91,13 +91,10 @@ export default {
           text: 'Отправить заявку',
           href: 'https://www.rshb.ru/',
           target: '_blank',
-          icon: { icon: 'ComfortableCompIcon' },
-          iconRight: { icon: 'ComfortableCompIcon' },
         }}
       />
     </div>
   ),
-
   '4 steps': (
     <div className="container grid grid-cols-12">
       <StepsBlock

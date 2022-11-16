@@ -1,11 +1,17 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { HandlerDecorator, Router } from '../../components/ContentPage/ContentPageContext';
 import { useLink } from '../../hooks/useLink';
 import { UniBlockProps } from '../../model/ContentPageDef';
-import { Img } from '../Img/Img';
 import { Button } from './Button';
 import type { ButtonContent, ButtonWithIconProps } from './ButtonProps';
 
 export interface ButtonSectionProps extends ButtonContent, UniBlockProps {}
+
+interface ButtonSectionItemProps {
+  button: ButtonWithIconProps;
+  router: Router;
+  handlerDecorator?: HandlerDecorator;
+}
 
 export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '', buttons }) => {
   const { handlerDecorator } = context;
@@ -13,48 +19,20 @@ export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '',
 
   return buttons && buttons?.length ? (
     <div className={className}>
-      {buttons.map((button, index) =>
-        renderButton(useLink({ router, handlerDecorator }, button), index),
-      )}
+      {buttons.map((button, index) => (
+        <ButtonSectionItem
+          button={button}
+          handlerDecorator={handlerDecorator}
+          key={String(index)}
+          router={router}
+        />
+      ))}
     </div>
   ) : null;
 });
 
-function renderButton(
-  { icon, iconRight, version = 'primary', ...button }: ButtonWithIconProps,
-  i: number,
-) {
-  if (!button?.text) {
-    return null;
-  }
-  const imgStyle = version === 'primary' ? 'group-hover:text-black' : 'group-hover:text-white';
-  const iconVersion = version === 'secondary' ? 'normal' : 'white';
+const ButtonSectionItem = JSX<ButtonSectionItemProps>(({ router, handlerDecorator, button }) => {
+  const buttonProps = useLink({ router, handlerDecorator }, button);
 
-  return icon ? (
-    <Button
-      key={String(i)}
-      appendLeft={
-        <Img
-          imageClassName={imgStyle}
-          image={{ ...icon, iconVersion: iconVersion }}
-          width="24"
-          height="24"
-          asSVG
-        />
-      }
-      appendRight={
-        <Img
-          imageClassName={imgStyle}
-          image={{ ...iconRight, iconVersion: iconVersion }}
-          width="24"
-          height="24"
-          asSVG
-        />
-      }
-      version={version}
-      {...button}
-    />
-  ) : (
-    <Button key={String(i)} version={version} {...button} />
-  );
-}
+  return <Button {...button} {...buttonProps} />;
+});

@@ -558,14 +558,6 @@ Object {
           "title": "URL (href)",
           "type": "string",
         },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-          "title": "Иконка слева",
-        },
-        "iconRight": Object {
-          "$ref": "#/definitions/Picture",
-          "title": "Иконка справа",
-        },
         "rounded": Object {
           "title": "Закругленные углы",
           "type": "boolean",

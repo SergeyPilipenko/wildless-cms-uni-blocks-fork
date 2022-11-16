@@ -5,7 +5,6 @@ import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import { List } from '../../ui-kit/List/List';
 import type { ListProps } from '../../ui-kit/List/ListProps';
 import type { LabelDescriptionCell } from './TariffsTableContent';
-import { getButtonAriaLabel } from './utils/getButtonAriaLabel';
 
 export type EmbeddableCellDataType =
   | ButtonContent
@@ -16,17 +15,14 @@ export type EmbeddableCellDataType =
 const renderButtonsCellData = ({ buttons }: ButtonContent) =>
   buttons && buttons?.length ? (
     <div>
-      {buttons.map(({ icon, rounded, ...buttonProps }, idx) => (
+      {buttons.map(({ rounded, appendLeft, ariaLabel, ...buttonProps }, idx) => (
         <Button
-          className={`mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${icon ? 'w-12 h-12' : ''}`}
+          className={`mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${appendLeft ? 'w-12 h-12' : ''}`}
           key={String(idx)}
-          ariaLabel={getButtonAriaLabel(icon)}
+          appendLeft={appendLeft}
           rounded={rounded}
-          appendLeft={
-            icon?.src || icon?.icon ? <Img image={icon} width="24px" height="24px" asSVG /> : null
-          }
+          ariaLabel={ariaLabel}
           {...buttonProps}
-          aria-label={icon}
         />
       ))}
     </div>

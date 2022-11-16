@@ -41,7 +41,7 @@ export const Button = JSX<ButtonWithIconProps>(
   }) => {
     // It isn't a valid HTML attribute. Must be excluded from "rest"
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { asSVG, iconRight, appendRight, icon, ...buttonInnerRest } = rest;
+    const { appendRight, ...buttonInnerRest } = rest;
     const buttonInner = children ?? (
       <ButtonInner
         text={text}

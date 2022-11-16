@@ -62,11 +62,7 @@ const renderAdditionalDescription = (additionalDescription?: string) =>
   ) : null;
 
 const renderButton = (button: ButtonWithIconProps) => (
-  <Button
-    className="mt-6 w-full"
-    appendLeft={button.icon && <Img image={button.icon} width="24px" height="24px" asSVG />}
-    {...button}
-  />
+  <Button className="mt-6 w-full" {...button} />
 );
 
 const renderItems = (

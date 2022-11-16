@@ -1,7 +1,9 @@
+import type { IconVersion } from '../../model/IconVersion';
 import type { Picture } from '../../model/Picture';
 import type { ProductColorVersion } from '../../model/ProductColorVersion';
 import { context } from '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import { Img } from '../../ui-kit/Img/Img';
 import { Catalog, CatalogProps } from './Catalog';
 
 const payRing: Picture = {
@@ -21,9 +23,14 @@ const buttonPrimary: ButtonWithIconProps = {
   text: 'Подробнее',
   target: '_blank',
   version: 'primary',
-  icon: {
-    icon: 'AppleIcon',
-  },
+  appendLeft: (
+    <Img
+      image={{ icon: 'AppleIcon', iconVersion: 'primary' as IconVersion }}
+      width="24"
+      height="24"
+      asSVG
+    />
+  ),
 };
 
 const catalogCard = {

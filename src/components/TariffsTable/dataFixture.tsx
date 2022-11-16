@@ -1,4 +1,5 @@
 import type { Picture } from '../../model/Picture';
+import { Img } from '../../ui-kit/Img/Img';
 import type {
   InnerTableBlockDef,
   LabelDescriptionCellDef,
@@ -93,14 +94,14 @@ export const columns: TariffsTableColumn[] = [
           tableCellType: 'Buttons',
           buttons: [
             {
-              icon: { icon: 'AppleIcon' },
+              appendLeft: <Img image={{ icon: 'AppleIcon' }} width="24" height="24" asSVG />,
               rounded: true,
               version: 'secondary',
               href: '/',
               target: '_blank',
             },
             {
-              icon: { icon: 'PlayMarketIcon' },
+              appendLeft: <Img image={{ icon: 'PlayMarketIcon' }} width="24" height="24" asSVG />,
               rounded: true,
               version: 'secondary',
               href: '/',

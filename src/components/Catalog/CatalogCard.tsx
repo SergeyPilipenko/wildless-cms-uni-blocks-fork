@@ -1,10 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/ContentPageDef';
-import type { Picture } from '../../model/Picture';
 import type { ProductColorVersion } from '../../model/ProductColorVersion';
 import { Button } from '../../ui-kit/Button/Button';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { CatalogCardType } from './CatalogContent';
@@ -12,12 +10,6 @@ import type { CatalogCardType } from './CatalogContent';
 export interface CatalogCardProps extends CatalogCardType, UniBlockProps {
   version?: BlockVersion;
 }
-
-const iconVersionMap = {
-  default: 'normal',
-  primary: 'white',
-  secondary: 'black',
-};
 
 const cardStyleMap: Record<ProductColorVersion, string> = {
   black: 'bg-black',
@@ -43,7 +35,7 @@ export const CatalogCard = JSX<CatalogCardProps>(
           </div>
         ) : null}
         {price ? <div className="text-h3 text-left">{price}&nbsp;₽</div> : null}
-        {button ? renderButton(button) : null}
+        {button ? <Button className="mt-5 w-full" {...button} /> : null}
       </section>
     );
   },
@@ -55,29 +47,3 @@ const renderColorOption = (color: ProductColorVersion, i: number) => (
     className={`w-6 h-6 ml-3 border border-solid border-main-divider rounded-full ${cardStyleMap[color]}`}
   />
 );
-
-const renderButton = (button: ButtonWithIconProps) => {
-  const { icon, iconRight, ...other } = button;
-
-  if (!button?.text) {
-    return null;
-  }
-
-  const iconVersion = iconVersionMap[button?.version || 'default'];
-  const leftIcon = renderButtonIcon({ ...icon, iconVersion });
-  const rightIcon = renderButtonIcon({ ...iconRight, iconVersion });
-
-  return (
-    <Button className="mt-5 w-full" appendLeft={leftIcon} appendRight={rightIcon} {...other} />
-  );
-};
-
-const renderButtonIcon = (buttonIcon?: Picture) => {
-  if (!buttonIcon || (!buttonIcon?.icon && !buttonIcon?.src)) {
-    return null;
-  }
-
-  const iconWidth = buttonIcon?.size?.width ? `${buttonIcon.size.width}` : '24';
-
-  return <Img image={buttonIcon} width={iconWidth} height="24" asSVG />;
-};

@@ -19,3 +19,10 @@ export const buttonDisabledStyleMap: Record<ButtonVersion, string> = {
 };
 
 export const buttonStyle = 'text-center font-sans select-none';
+
+export const iconStyleMap: Record<ButtonVersion, string> = {
+  primary: 'group-hover:brightness-0 group-hover:invert',
+  secondary: 'group-hover:brightness-0 group-hover:invert',
+  white: 'group-hover:brightness-0 group-hover:invert',
+  link: '',
+};

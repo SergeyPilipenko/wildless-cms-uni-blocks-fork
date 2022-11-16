@@ -1,6 +1,6 @@
 import type { ButtonVersion } from '../../model/ButtonVersion';
 import type { LinkProps } from '../../model/LinkProps';
-import type { IconProps, Picture } from '../../model/Picture';
+import type { IconProps } from '../../model/Picture';
 import type { VNode } from '../../model/VNode';
 
 /**
@@ -29,18 +29,12 @@ export interface ButtonProps extends ButtonAdditionalProps, LinkProps {
 }
 
 export interface ButtonWithIconProps extends ButtonProps {
-  /** @title Иконка слева */
-  icon?: Picture;
-  /** @title Иконка справа */
-  iconRight?: Picture;
   /** @title Верхний текст */
   aboveText?: string;
   /** @hidden */
   appendLeft?: VNode;
   /** @hidden */
   appendRight?: VNode;
-  /** @hidden */
-  asSVG?: boolean;
 }
 
 export interface ButtonContent {

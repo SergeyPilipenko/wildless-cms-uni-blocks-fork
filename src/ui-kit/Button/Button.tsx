@@ -1,37 +1,65 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { ButtonInner } from './ButtonInner';
 import type { ButtonWithIconProps } from './ButtonProps';
-import { getRegularButtonClasses } from './getRegularButtonClasses';
 import { getDisabledButtonClasses } from './getDisabledButtonClasses';
+import { getRegularButtonClasses } from './getRegularButtonClasses';
 
-export const Button = JSX<ButtonWithIconProps>((props) => {
-  const { text, aboveText, appendLeft, appendRight, children, disabled, rounded, ...rest } = props;
-  // its non valid HTML attribute. Must be excluded from "rest"
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { asSVG, iconRight, icon, ...usedProps } = rest;
-  const buttonInner = children ?? (
-    <ButtonInner
-      text={text}
-      aboveText={aboveText}
-      appendLeft={appendLeft}
-      appendRight={appendRight}
-      rounded={rounded}
-    />
-  );
+export const Button = JSX<ButtonWithIconProps>(
+  ({
+    aboveText,
+    appendLeft,
+    appendRight,
+    ariaLabel,
+    children,
+    className,
+    disabled,
+    href,
+    onClick,
+    rel,
+    rounded,
+    target,
+    text,
+    version,
+  }) => {
+    const buttonInner = children ?? (
+      <ButtonInner
+        aboveText={aboveText}
+        appendLeft={appendLeft}
+        appendRight={appendRight}
+        rounded={rounded}
+        text={text}
+        version={version}
+      />
+    );
 
-  return disabled ? (
-    <DisabledButton rounded={rounded} {...usedProps}>
-      {buttonInner}
-    </DisabledButton>
-  ) : (
-    <RegularButton rounded={rounded} {...usedProps}>
-      {buttonInner}
-    </RegularButton>
-  );
-});
+    return disabled ? (
+      <DisabledButton
+        ariaLabel={ariaLabel}
+        className={className}
+        rounded={rounded}
+        version={version}
+      >
+        {buttonInner}
+      </DisabledButton>
+    ) : (
+      <RegularButton
+        ariaLabel={ariaLabel}
+        className={className}
+        href={href}
+        onClick={onClick}
+        rel={rel}
+        rounded={rounded}
+        target={target}
+        version={version}
+      >
+        {buttonInner}
+      </RegularButton>
+    );
+  },
+);
 
 const RegularButton = JSX<ButtonWithIconProps>(
-  ({ className = '', ariaLabel, version, rounded, href, target, children, onClick, ...rest }) => {
+  ({ className = '', ariaLabel, version, rounded, href, target, children, onClick, rel }) => {
     return (
       <a
         className={getRegularButtonClasses({ className, version, rounded })}
@@ -40,7 +68,7 @@ const RegularButton = JSX<ButtonWithIconProps>(
         onClick={onClick}
         aria-label={ariaLabel}
         role={href ? 'link' : 'button'}
-        {...rest}
+        rel={rel}
       >
         {children}
       </a>
