@@ -30,7 +30,7 @@ const renderCellInner =
     return (
       <div
         key={String(i)}
-        className={cell?.tableCellType === 'Table' ? 'mx-0.5' : `first:pt-5 last:pb-5 pl-10`}
+        className={cell?.tableCellType === 'Table' ? 'ml-10' : `first:pt-5 last:pb-5 pl-10`}
       >
         {i > 0 ? <div className="h-5" /> : null}
         {renderCell(cell, context, { rowIdx, cellIdx, fieldIdx: i })}

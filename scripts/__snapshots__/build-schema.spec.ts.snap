@@ -2445,6 +2445,10 @@ Object {
     },
     "ListBlockDef": Object {
       "properties": Object {
+        "hasIndent": Object {
+          "title": "Отступ",
+          "type": "boolean",
+        },
         "isDotted": Object {
           "title": "Буллиты",
           "type": "boolean",
@@ -2477,10 +2481,12 @@ Object {
     },
     "ListItemSize": Object {
       "enum": Array [
+        "S",
         "M",
         "L",
       ],
       "enumNames": Array [
+        "Маленький",
         "Средний",
         "Большой",
       ],

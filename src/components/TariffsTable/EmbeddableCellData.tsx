@@ -33,12 +33,12 @@ const renderButtonsCellData = ({ buttons }: ButtonContent) =>
   ) : null;
 
 const renderLabelDescriptionCellData = ({ label, description }: LabelDescriptionCell) => {
-  const labelClassName = `text-h6 font-medium m-0 ${description ? 'mb-1' : ''}`;
+  const labelClassName = `text-h6 m-0 ${description ? 'mb-1' : ''}`;
 
   return (
     <div>
       {label ? <div className={labelClassName}>{label}</div> : null}
-      {description ? <div className="text-s text-secondary-text">{description}</div> : null}
+      {description ? <div className="text-secondary-text text-l-light">{description}</div> : null}
     </div>
   );
 };
@@ -47,8 +47,8 @@ const renderImgCellData = ({ image }: ImageContent) => (image?.src ? <Img image=
 
 const renderListCellData = ({ isDotted, ...rest }: ListProps) => (
   <List
-    className="flex flex-col justify-between items-start text-sm"
-    version="gray"
+    className="flex flex-col justify-between items-start text-h6"
+    version="primary"
     isDotted={isDotted ?? true}
     {...rest}
   />

@@ -46,15 +46,24 @@ const renderRow = (activeColumnIndex: number) => (rowData: RowsData[], rowIdx: n
     0,
   );
 
+  const columnsClassName = [
+    'flex duration-1000 text-center',
+    rowIdx !== 0 ? 'font-normal' : 'font-light',
+  ].join(' ');
+
   return (
     <div
       key={String(rowIdx)}
       className="flex border-main-divider border border-t-0 border-x-0 border-solid"
     >
-      <div className="text-xl-light min-w-[214px] w-[214px] pt-6 pb-5">{headerColumn.data}</div>
+      {headerColumn?.data ? (
+        <div className={`text-xl-light w-[214px] pb-5 ${rowIdx === 0 ? 'pt-8' : 'pt-6'}`}>
+          {headerColumn.data}
+        </div>
+      ) : null}
       <div className="flex flex-grow overflow-hidden">
         <div
-          className="flex duration-1000 text-center"
+          className={columnsClassName}
           style={{
             transform: `translateX(-${transform}px)`,
           }}
@@ -75,10 +84,10 @@ const renderRow = (activeColumnIndex: number) => (rowData: RowsData[], rowIdx: n
 };
 
 const renderCols = (cols: string[], rowIndex: number) =>
-  cols ? (
-    <div className={`flex text-xl-light ${rowIndex === 0 ? 'text-secondary-text' : ''}`}>
+  cols?.length > 0 ? (
+    <div className={`flex ${rowIndex} ${rowIndex === 0 ? 'text-secondary-text' : ''} last:mr-3`}>
       {cols.map((data, i) => (
-        <div key={String(i)} className="w-[76px] mx-8">
+        <div key={String(i)} className={`w-[76px] text-h6 mr-5 first:ml-8`}>
           {data}
         </div>
       ))}

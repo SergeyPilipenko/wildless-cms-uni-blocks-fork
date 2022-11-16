@@ -38,7 +38,7 @@ export const InnerTableBody = JSX<InnerTableBodyProps>(({ context, activeTabInde
             </div>
             <div
               className={`w-full pl-2 overflow-hidden transition-height duration-500 ease-in-out ${
-                hiddenTables[key] ? 'h-0' : 'h-[243px]'
+                hiddenTables[key] ? 'h-0' : ''
               }`}
             >
               <div className="relative">

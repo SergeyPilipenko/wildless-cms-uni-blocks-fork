@@ -6,6 +6,7 @@ import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
+import type { ListItemVersion } from '../../ui-kit/List/ListProps';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import type { MobileAppTileContent } from './MobileAppTileContent';
@@ -77,13 +78,9 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
   },
 );
 
-const renderList = (version: string, items?: string[]) => {
+const renderList = (version: ListItemVersion, items?: string[]) => {
   return items?.length ? (
-    <List
-      items={items}
-      itemClassName="text-l-light mb-2 last:mb-0"
-      version={version === 'primary' ? 'tile' : 'tile-white'}
-    />
+    <List items={items} itemClassName="text-l-light mb-2 last:mb-0" version={version} />
   ) : (
     <span className="text-m-light text-secondary-text">
       Наведите камеру телефона на QR-код и скачайте приложение

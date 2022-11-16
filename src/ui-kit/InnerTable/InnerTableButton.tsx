@@ -19,7 +19,7 @@ export const TableInnerButton = JSX<TableInnerButtonProps>(
       <Button
         version="primary"
         onClick={handleClick}
-        className="w-full flex items-center justify-center rounded-none py-5 "
+        className="w-full flex items-center justify-center rounded-none py-5"
       >
         <div className="text-h4">{isOpen ? 'Скрыть' : 'Показать ставки по вкладу'}</div>
         <Icon

@@ -63,8 +63,8 @@ export const TariffsTable = JSX<TariffsTableProps>(
       >
         {title ? (
           <Heading
-            headingType="h2"
-            className={`text-center ${description ? 'mb-2.5' : 'mb-9'}`}
+            headingType="h3"
+            className={`text-center ${description ? 'mb-2.5' : 'mb-8'}`}
             title={title}
           />
         ) : null}

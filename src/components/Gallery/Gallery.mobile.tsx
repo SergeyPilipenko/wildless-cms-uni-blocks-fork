@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { VersionStyleMap } from '../../model/BlockVersion';
 import type { ListOrientation } from '../../model/ListOrientation';
-import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
-import type { GalleryProps } from './GalleryProps';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
-import { getListStyle } from '../../ui-kit/List/ListItem';
+import { ListItemVersion } from '../../ui-kit/List/ListProps';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
-import { VersionStyleMap } from '../../model/BlockVersion';
+import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
+import type { GalleryProps } from './GalleryProps';
 
 export const Gallery = JSX<GalleryProps>(
   ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {
@@ -84,12 +84,22 @@ function renderDescription(card: GalleryCardProps) {
   );
 }
 
+const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
+  primary: 'bg-primary-text',
+  secondary: 'bg-white',
+  gray: 'bg-secondary-text',
+};
+
 function renderItems(items: GalleryItemProps[], isDotted, version: BlockVersion = 'primary') {
   return (
     <section className="mt-3">
       {items.map((item, i) => (
         <div key={String(i)}>
-          {isDotted ? <div className={getListStyle(version)} /> : null}
+          {isDotted ? (
+            <div
+              className={`rounded-full inline-block mr-3 mt-2 w-2 h-2 min-w-2 min-h-2 ${LIST_DOT_STYLE_MAP[version]}`}
+            />
+          ) : null}
           <span className="text-m font-medium">{item.title}</span>
           <span className={`text-s pl-2 ${version === 'primary' ? 'text-secondary-text' : ''}`}>
             {item.text}

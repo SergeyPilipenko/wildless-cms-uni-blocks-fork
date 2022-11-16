@@ -13,7 +13,7 @@ export const InnerTableHeader = JSX<InnerTableHeaderProps>(
   ({ currencies, linkToPDF, activeTabIndex, setActiveTabIndex }) => (
     <div className="flex justify-between w-full pt-2.5 pb-3">
       {currencies && currencies.length > 1 ? (
-        <div className="flex bg-secondary-light p-1 rounded-md">
+        <div className="flex bg-secondary-light p-1.5 rounded-md">
           {currencies.map((currency, idx) => (
             <div
               key={currency}
@@ -31,9 +31,10 @@ export const InnerTableHeader = JSX<InnerTableHeaderProps>(
         <Button
           href={linkToPDF}
           version="secondary"
-          className="flex justify-center items-center text-l-light text-primary-main px-8"
+          className="flex justify-center items-center text-l-light text-primary-main px-8 max-h-14"
+          target="_blank"
         >
-          <Img image="DocDownloadIcon" className="mr-[10px]" width="24" height="24" asSVG />
+          <Img image="DocDownloadIcon" className="mr-2.5" width="20" height="20" asSVG />
           <span>Скачать в PDF</span>
         </Button>
       ) : null}

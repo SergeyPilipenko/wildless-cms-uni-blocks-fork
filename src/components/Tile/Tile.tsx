@@ -77,8 +77,6 @@ export const Tile = JSX<TileProps>((props) => {
 });
 
 function renderList(items, { version, isDotted, listItemSize }: ListProps) {
-  const listVersion = version === 'primary' ? 'tile' : 'tile-white';
-
   return items?.length ? (
     <List
       items={items}
@@ -86,7 +84,7 @@ function renderList(items, { version, isDotted, listItemSize }: ListProps) {
       className="mt-2.5"
       listItemSize={listItemSize}
       itemClassName="mb-1.5"
-      version={listVersion}
+      version={version}
     />
   ) : null;
 }

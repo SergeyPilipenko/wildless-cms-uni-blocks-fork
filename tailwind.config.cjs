@@ -53,7 +53,6 @@ module.exports = {
 
         'title-extra': ['15.625rem', '14.687rem'], // 250px 235px
         'title-huge': ['12.5rem', '15.625rem'], // 200px 250px
-        'title-error': ['76.75rem', '107rem'], // 307px 428px
         h0: [
           '3.5rem',
           {
