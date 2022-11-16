@@ -84,14 +84,14 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
   const isActiveBtn = i === activeSlideIndex;
 
   const btnClassName = isActiveBtn
-    ? 'bg-white shadow-dark-blue/42 min-w-[354px] border-none p-6'
+    ? 'bg-white shadow-dark-blue/42 min-w-[350px] border-none p-6'
     : `min-w-[290px] hover:py-[26px] hover:py-[26px] ease-in duration-300 bg-white/10 px-6 py-5 backdrop-blur
       ${VersionStyleMap[version]}`;
   const btnTitleClassName = isActiveBtn
     ? 'text-primary-text !text-h6 p-2'
     : `text-l pb-1 ${productBlockStyleMap[version].title}`;
   const btnDescClassName = isActiveBtn
-    ? 'text-secondary-text text-l-light mt-2.5'
+    ? 'text-secondary-text text-l-light'
     : `text-m-light ${productBlockStyleMap[version].text}`;
 
   const additionalBorder = version === 'secondary' ? 'border-white/50' : 'border-black/50';
