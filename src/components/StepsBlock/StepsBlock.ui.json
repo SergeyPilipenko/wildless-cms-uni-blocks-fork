@@ -4,6 +4,14 @@
       "items": {
         "icon": {
           "ui:field": "icon"
+        },
+        "button": {
+          "icon": {
+            "ui:field": "icon"
+          },
+          "iconRight": {
+            "ui:field": "icon"
+          }
         }
       }
     }
