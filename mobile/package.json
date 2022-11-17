@@ -13,7 +13,7 @@
   },
   "size-limit": [
     {
-      "limit": "22 kB",
+      "limit": "18 kB",
       "path": "bundle/bundle.umd.min.js"
     }
   ]

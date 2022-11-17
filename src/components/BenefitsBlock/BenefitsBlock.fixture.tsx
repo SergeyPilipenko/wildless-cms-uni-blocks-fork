@@ -165,7 +165,7 @@ export default {
         benefitList={[
           {
             label: 'Без комиссии',
-            icon: { icon: 'ClockIcon' },
+            icon: { icon: 'ClockIcon', iconVersion: 'normal' },
             description: {
               bullets: true,
               items: itemsList,
@@ -179,7 +179,7 @@ export default {
               items: itemsList,
               benefitType: 'list',
             },
-            icon: { icon: 'SignDocsIcon' },
+            icon: { icon: 'SignDocsIcon', iconVersion: 'normal' },
           },
           {
             label: 'Без залога и поручительства',
@@ -233,7 +233,7 @@ export default {
               name: 'Единовременное перечисление ',
               benefitType: 'text',
             },
-            icon: { icon: 'CalendarTickIcon' },
+            icon: { icon: 'CalendarTickIcon', iconVersion: 'normal' },
           },
           {
             label: 'Деньги за 3 дня',
@@ -241,7 +241,7 @@ export default {
               name: 'Рассмотрение  ',
               benefitType: 'text',
             },
-            icon: { icon: 'GlobalIcon' },
+            icon: { icon: 'GlobalIcon', iconVersion: 'black' },
           },
         ]}
         benefitsBlockVersion="secondary"

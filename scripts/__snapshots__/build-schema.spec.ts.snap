@@ -2043,6 +2043,7 @@ Object {
         },
         "iconVersion": Object {
           "$ref": "#/definitions/IconVersion",
+          "title": "Версия иконки",
         },
         "media": Object {
           "$ref": "#/definitions/MediaQuery",
@@ -2764,6 +2765,7 @@ Object {
         },
         "iconVersion": Object {
           "$ref": "#/definitions/IconVersion",
+          "title": "Версия иконки",
         },
         "media": Object {
           "$ref": "#/definitions/MediaQuery",

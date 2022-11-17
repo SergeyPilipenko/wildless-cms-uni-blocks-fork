@@ -63,7 +63,7 @@ const renderBenefits = (
 };
 
 const setIconVersion = (benefitIcon: Picture, benefitsBlockVersion: BlockVersion) => {
-  if (!benefitIcon.icon) {
+  if (!benefitIcon.icon || benefitIcon?.iconVersion) {
     return benefitIcon;
   }
   benefitIcon.iconVersion = benefitsBlockVersion === 'secondary' ? 'white' : 'normal';

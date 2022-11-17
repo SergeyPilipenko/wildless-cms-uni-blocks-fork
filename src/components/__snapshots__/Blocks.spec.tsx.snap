@@ -1182,15 +1182,23 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
         <div
           class="bg-primary-main px-10 pt-10 pb-4 text-center"
         >
-          <img
-            alt="Иконка PackA4Icon"
+          <svg
             aria-hidden="true"
-            class=""
+            class="width: 290px  text-primary-main  "
             height="257"
-            src="icons/PackA4Icon.svg"
-            title="Иконка PackA4Icon"
             width="290"
-          />
+          >
+            <title>
+              Иконка PackA4Icon
+            </title>
+            <desc>
+              Иконка PackA4Icon
+            </desc>
+            <use
+              href="icons/PackA4Icon.svg#icon"
+              xlink:href="icons/PackA4Icon.svg#icon"
+            />
+          </svg>
           <span
             class="text-s-light text-white opacity-80 mt-2 inline-block"
           >

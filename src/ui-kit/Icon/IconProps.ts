@@ -20,6 +20,5 @@ export type IconProps = IconCompatibilityFields & {
   className?: string;
   imageClassName?: string;
   name?: IconName;
-  /** @hidden */
   iconVersion?: IconVersion;
 };

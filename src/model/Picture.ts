@@ -49,6 +49,7 @@ export interface ImgSource {
   alignment?: ImgAlignment;
   /** @title Иконка */
   icon?: IconName;
+  /** @title Версия иконки */
   iconVersion?: IconVersion;
   /** @title Картинка */
   src?: string;

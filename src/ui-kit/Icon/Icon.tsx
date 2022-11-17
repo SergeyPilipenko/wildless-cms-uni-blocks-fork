@@ -1,5 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { IconsWithoutInversion } from '../../icons/IconName';
 import type { IconVersion } from '../../model/IconVersion';
 import { projectSettings } from '../../ProjectSettings';
 import type { IconProps } from './IconProps';
@@ -23,7 +22,7 @@ export const Icon = JSX<IconProps>(
   }) => {
     const href = `${projectSettings.CDN || ''}icons/${name}.svg`;
 
-    if (asSVG && !IconsWithoutInversion.has(name)) {
+    if (asSVG) {
       return (
         <Background className={className}>
           <svg
@@ -31,7 +30,7 @@ export const Icon = JSX<IconProps>(
               getSvgSize(className, imgProps.width),
               svgUseStyleMap[iconVersion],
               imageClassName,
-              getInvertStyle(name, iconVersion),
+              getInvertStyle(iconVersion),
             ].join(' ')}
             {...imgProps}
             aria-hidden="true"
@@ -57,8 +56,8 @@ export const Icon = JSX<IconProps>(
   },
 );
 
-const getInvertStyle = (name: string, iconVersion: IconVersion) =>
-  iconVersion === 'white' && !IconsWithoutInversion.has(name) ? 'invert' : '';
+const getInvertStyle = (iconVersion: IconVersion): string =>
+  iconVersion === 'white' ? 'invert' : '';
 
 const getSvgSize = (className?: string, width?: string) =>
   width ? `width: ${width}px ` : 'w-full h-full';

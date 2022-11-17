@@ -26,16 +26,13 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
 
   const isIconWhite = benefitsVersion === 'white' || version === 'secondary';
   const listItemAlign = description ? 'items-start' : 'items-center';
+  const iconVersion = getIconVersion(icon, isIconWhite);
 
   return (
     <div className={`flex gap-5 ${listItemAlign} ${className}`}>
       {icon ? (
         <div className={renderBenefitIconBgStyle(version, benefitsVersion)}>
-          <Img
-            className="w-6 h-6"
-            image={{ ...icon, iconVersion: isIconWhite ? 'white' : 'normal' }}
-            asSVG
-          />
+          <Img className="w-6 h-6" image={{ ...icon, iconVersion }} asSVG />
         </div>
       ) : null}
       <div className="gap-0.5">
@@ -59,3 +56,6 @@ function renderBenefitIconBgStyle(version, benefitsVersion) {
 
   return `w-[50px] h-[50px] min-w-[50px] rounded-full p-2.5 box-border flex items-center justify-center ${bgColorStyle}`;
 }
+
+const getIconVersion = (icon, isIconWhite) =>
+  icon?.iconVersion || isIconWhite ? 'white' : 'normal';
