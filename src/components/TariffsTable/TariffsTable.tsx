@@ -2,9 +2,10 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 import type { UniBlockProps } from '../../model/ContentPageDef';
-import type { VNode } from '../../model/VNode';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { renderDefaultFoldButton } from '../../ui-kit/Foldable/DefaultFoldButton';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
+import { FoldableSection } from '../../ui-kit/Foldable/FoldableSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { TableArrowScrollControl } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControl';
 import type { TableArrowScrollControlProps } from '../../ui-kit/TableArrowScrollControl/TableArrowScrollControlProps';
@@ -42,7 +43,7 @@ export const TariffsTable = JSX<TariffsTableProps>(
       setActiveCardIndex,
     });
 
-    const foldableBlocks = rowData?.map((row, i, { length }) => (
+    const rows = (rowData || []).map((row, i, { length }) => (
       <TariffsTableRow
         context={context}
         key={String(i)}
@@ -52,6 +53,8 @@ export const TariffsTable = JSX<TariffsTableProps>(
         rowIdx={i}
       />
     ));
+    const [visibleRows, hiddenRows] =
+      hiddenRowsNum > 0 ? [rows.slice(0, -hiddenRowsNum), rows.slice(-hiddenRowsNum)] : [rows, []];
 
     return (
       <BlockWrapper
@@ -61,37 +64,43 @@ export const TariffsTable = JSX<TariffsTableProps>(
         context={context}
         {...rest}
       >
-        {title ? (
-          <Heading
-            headingType="h3"
-            className={`text-center ${description ? 'mb-2.5' : 'mb-8'}`}
-            title={title}
-          />
-        ) : null}
-        {description ? <div className="mb-9 text-center text-l">{description}</div> : null}
-        {rowData?.length ? (
+        {renderTitle({ title, description })}
+        {renderDescription(description)}
+        {hiddenRowsNum > 0 ? (
           <Foldable
-            blocks={foldableBlocks}
-            hiddenBlocksNum={hiddenRowsNum}
-            blockWrapper={(children) => (
+            renderFoldableSection={({ isUnfolded }) => (
               <Wrapper tableArrowScrollControlProps={tableArrowScrollControlProps}>
-                {children}
+                {visibleRows}
+                <FoldableSection isUnfolded={isUnfolded}>{hiddenRows}</FoldableSection>
               </Wrapper>
             )}
+            renderFoldButton={renderDefaultFoldButton}
           />
-        ) : null}
+        ) : (
+          <Wrapper tableArrowScrollControlProps={tableArrowScrollControlProps}>{rows}</Wrapper>
+        )}
       </BlockWrapper>
     );
   },
 );
 
-const Wrapper = JSX<
-  {
-    tableArrowScrollControlProps: TableArrowScrollControlProps;
-  },
-  any,
-  VNode
->(({ children, tableArrowScrollControlProps }) => {
+function renderTitle({ title, description }: { title?: string; description?: string }) {
+  return title ? (
+    <Heading
+      headingType="h3"
+      className={`text-center ${description ? 'mb-2.5' : 'mb-8'}`}
+      title={title}
+    />
+  ) : null;
+}
+
+function renderDescription(description?: string) {
+  return description ? <div className="mb-9 text-center text-l">{description}</div> : null;
+}
+
+const Wrapper = JSX<{
+  tableArrowScrollControlProps: TableArrowScrollControlProps;
+}>(({ children, tableArrowScrollControlProps }) => {
   const { isScrollAvailable } = tableArrowScrollControlProps;
 
   return (

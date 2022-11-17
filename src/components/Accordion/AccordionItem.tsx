@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { UniBlockProps } from '../../model/ContentPageDef';
 import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
-import type { FoldButtonProps } from '../../ui-kit/Foldable/FoldButtonProps';
+import { FoldableSection } from '../../ui-kit/Foldable/FoldableSection';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
 import type { AccordionItemCommonProps } from './AccordionContent';
@@ -19,16 +19,18 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label = '', blocks, cont
   return (
     <li className="border-0 border-b border-solid border-main-divider last:border-b-0">
       <Foldable
-        hiddenBlocksNum={foldableBlocks.length}
-        blocks={foldableBlocks}
-        isFoldButtonOnTop
-        containerClassName="grid grid-cols-12"
-        renderFoldButton={(props) => (
+        isFoldButtonOnTop={true}
+        renderFoldableSection={({ isUnfolded }) => (
+          <FoldableSection className="grid grid-cols-12" isUnfolded={isUnfolded}>
+            {foldableBlocks}
+          </FoldableSection>
+        )}
+        renderFoldButton={({ isUnfolded, onToggle }) => (
           <FoldButton
-            icon={icons[Number(props.isUnfolded)]}
             label={label}
+            icon={icons[Number(isUnfolded)]}
             hasContent={Boolean(blocks?.length)}
-            onClick={props.onToggle}
+            onClick={onToggle}
           />
         )}
       />
@@ -36,7 +38,14 @@ export const AccordionItem = JSX<AccordionItemProps>(({ label = '', blocks, cont
   );
 });
 
-const FoldButton = JSX<FoldButtonProps>(({ icon, label, hasContent, onClick }) => (
+interface FoldButtonProps {
+  label: string;
+  icon: IconName;
+  hasContent: boolean;
+  onClick?: () => void;
+}
+
+const FoldButton = JSX<FoldButtonProps>(({ label, icon, hasContent, onClick }) => (
   <button
     className={`border-none bg-transparent px-0 pt-5 pb-3.5 flex justify-between text-left w-full font-sans text-h6 group cursor-pointer ${
       hasContent ? 'group cursor-pointer' : ''

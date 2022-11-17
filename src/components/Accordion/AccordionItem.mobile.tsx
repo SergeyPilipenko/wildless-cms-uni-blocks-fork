@@ -1,8 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { Picture } from '../../model/Picture';
 import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
-import type { FoldButtonProps } from '../../ui-kit/Foldable/FoldButtonProps';
+import { FoldableSection } from '../../ui-kit/Foldable/FoldableSection';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
 import type { AccordionItemCommonProps } from './AccordionContent';
@@ -18,18 +19,23 @@ export const AccordionItem = JSX<AccordionItemProps>(
     return (
       <li className={`${borderedLiClass(bordered)} border-solid border-main-divider`}>
         <Foldable
-          hiddenBlocksNum={foldableBlocks.length}
-          blocks={foldableBlocks}
-          isFoldButtonOnTop
-          containerClassName="flex flex-wrap group-last:last:pb-0"
-          renderFoldButton={(props) => (
+          isFoldButtonOnTop={true}
+          renderFoldableSection={({ isUnfolded }) => (
+            <FoldableSection
+              className="flex flex-wrap group-last:last:pb-0"
+              isUnfolded={isUnfolded}
+            >
+              {foldableBlocks}
+            </FoldableSection>
+          )}
+          renderFoldButton={({ isUnfolded, onToggle }) => (
             <FoldButton
               className={bordered ? '' : 'py-[14px] px-0'}
-              icon={icons[Number(props.isUnfolded)]}
               label={label}
+              icon={icons[Number(isUnfolded)]}
               primaryIcon={labelIcon}
               hasContent={Boolean(blocks?.length)}
-              onClick={props.onToggle}
+              onClick={onToggle}
             />
           )}
         />
@@ -37,6 +43,15 @@ export const AccordionItem = JSX<AccordionItemProps>(
     );
   },
 );
+
+interface FoldButtonProps {
+  className?: string;
+  label: string;
+  icon: IconName;
+  primaryIcon?: Picture;
+  hasContent: boolean;
+  onClick?: () => void;
+}
 
 const FoldButton = JSX<FoldButtonProps>(
   ({ className, hasContent, icon, label, primaryIcon, onClick }) => (

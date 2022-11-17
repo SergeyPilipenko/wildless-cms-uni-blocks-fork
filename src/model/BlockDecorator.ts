@@ -4,6 +4,8 @@ export const DEFAULT_SLOT_NAME = null;
 
 export type BlockAncestors = [keyof SlotsMap | typeof DEFAULT_SLOT_NAME, ...Slot[]];
 
+export const DEFAULT_ANCESTORS: BlockAncestors = [DEFAULT_SLOT_NAME];
+
 interface BlockDecoratorProps<VNode> {
   blockClassName: string;
   block: BlockDef;

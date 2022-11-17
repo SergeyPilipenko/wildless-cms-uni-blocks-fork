@@ -1,4 +1,4 @@
-import { BlockAncestors, BlockDecorator, DEFAULT_SLOT_NAME } from '../../model/BlockDecorator';
+import { BlockAncestors, BlockDecorator, DEFAULT_ANCESTORS } from '../../model/BlockDecorator';
 import type { BlocksRegistry } from '../../model/BlocksRegistry';
 import type { BlockDef, ContentPageDef } from '../../model/ContentPageDef';
 import { style2className } from '../../utils/style2className';
@@ -15,7 +15,7 @@ interface RenderBlockOptions {
 export function renderBlock(
   block: BlockDef,
   options: RenderBlockOptions,
-  ancestors: BlockAncestors = [DEFAULT_SLOT_NAME], // Recursion context
+  ancestors: BlockAncestors = DEFAULT_ANCESTORS, // Recursion context
 ) {
   const { key, page, blockDecorator, blocksRegistry, context } = options;
   const { type } = block;
