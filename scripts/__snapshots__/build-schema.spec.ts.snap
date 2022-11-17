@@ -13,7 +13,7 @@ Object {
         },
         "accordionItems": Object {
           "items": Object {
-            "$ref": "#/definitions/AccordionItemCommonProps",
+            "$ref": "#/definitions/AccordionItem",
           },
           "title": "Список",
           "type": "array",
@@ -38,7 +38,7 @@ Object {
       "title": "Аккордеон",
       "type": "object",
     },
-    "AccordionItemCommonProps": Object {
+    "AccordionItem": Object {
       "properties": Object {
         "blocks": Object {
           "items": Object {
@@ -66,6 +66,28 @@ Object {
         },
       },
       "title": "Элемент списка",
+      "type": "object",
+    },
+    "AccordionItemCommonProps": Object {
+      "properties": Object {
+        "bordered": Object {
+          "default": false,
+          "title": "Отображать/скрывать обводку элемента",
+          "type": "boolean",
+        },
+        "isExpanded": Object {
+          "title": "Отображать в раскрытом виде",
+          "type": "boolean",
+        },
+        "label": Object {
+          "default": "Список",
+          "title": "Название",
+          "type": "string",
+        },
+        "labelIcon": Object {
+          "$ref": "#/definitions/Picture",
+        },
+      },
       "type": "object",
     },
     "AlignType": Object {

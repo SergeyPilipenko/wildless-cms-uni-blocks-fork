@@ -1,10 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { AlignType } from '../../model/AlignType';
 import type { UniBlockProps } from '../../model/ContentPageDef';
+import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { AccordionContent } from './AccordionContent';
 import { AccordionItem } from './AccordionItem';
+import { AccordionItemsList } from './AccordionItemsList';
 
 const ALIGN_TITLE: Record<AlignType, string> = {
   left: 'text-left',
@@ -40,11 +42,18 @@ export const Accordion = JSX<AccordionProps>(
         ) : null}
         {description ? <div className="mb-2.5 text-l">{description}</div> : null}
         {accordionItems?.length ? (
-          <ul className="list-none m-0 p-0">
+          <AccordionItemsList>
             {accordionItems.map((item, i) => (
-              <AccordionItem key={`AccordionItem${i}`} {...item} context={context} />
+              <AccordionItem
+                key={`AccordionItem${i}`}
+                context={context}
+                hasContent={Boolean(item.blocks?.length)}
+                {...item}
+              >
+                {renderBlocksList({ blocks: item.blocks, context, className: '!p-0 mb-5' })}
+              </AccordionItem>
             ))}
-          </ul>
+          </AccordionItemsList>
         ) : null}
       </BlockWrapper>
     );

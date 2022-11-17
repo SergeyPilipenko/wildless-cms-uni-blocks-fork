@@ -1,42 +1,34 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { UniBlockProps } from '../../model/ContentPageDef';
-import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import { FoldableSection } from '../../ui-kit/Foldable/FoldableSection';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
-import type { AccordionItemCommonProps } from './AccordionContent';
-
-export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
+import type { AccordionItemProps } from './AccordionItemProps';
 
 const icons: IconName[] = ['PlusIcon', 'MinusIcon'];
 
-export const AccordionItem = JSX<AccordionItemProps>(({ label = '', blocks, context }) => {
-  const foldableBlocks = blocks
-    ? renderBlocksList({ context, blocks, className: '!p-0 mb-5' })
-    : [];
-
-  return (
+export const AccordionItem = JSX<AccordionItemProps>(
+  ({ label = '', children, hasContent = true }) => (
     <li className="border-0 border-b border-solid border-main-divider last:border-b-0">
       <Foldable
         isFoldButtonOnTop={true}
         renderFoldableSection={({ isUnfolded }) => (
           <FoldableSection className="grid grid-cols-12" isUnfolded={isUnfolded}>
-            {foldableBlocks}
+            {children}
           </FoldableSection>
         )}
         renderFoldButton={({ isUnfolded, onToggle }) => (
           <FoldButton
             label={label}
             icon={icons[Number(isUnfolded)]}
-            hasContent={Boolean(blocks?.length)}
+            hasContent={hasContent}
             onClick={onToggle}
           />
         )}
       />
     </li>
-  );
-});
+  ),
+);
 
 interface FoldButtonProps {
   label: string;

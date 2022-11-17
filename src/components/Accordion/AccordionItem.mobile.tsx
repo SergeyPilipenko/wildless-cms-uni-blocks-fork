@@ -1,47 +1,36 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { Picture } from '../../model/Picture';
-import { renderBlocksList } from '../../ui-kit/BlocksList/renderBlocksList';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';
 import { FoldableSection } from '../../ui-kit/Foldable/FoldableSection';
 import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
-import type { AccordionItemCommonProps } from './AccordionContent';
-
-export interface AccordionItemProps extends AccordionItemCommonProps, UniBlockProps {}
+import type { AccordionItemProps } from './AccordionItemProps';
 
 const icons: IconName[] = ['PlusIcon', 'MinusIcon'];
 
 export const AccordionItem = JSX<AccordionItemProps>(
-  ({ label = '', labelIcon, blocks, bordered, context }) => {
-    const foldableBlocks = blocks ? renderBlocksList({ context, blocks, className: '!px-0' }) : [];
-
-    return (
-      <li className={`${borderedLiClass(bordered)} border-solid border-main-divider`}>
-        <Foldable
-          isFoldButtonOnTop={true}
-          renderFoldableSection={({ isUnfolded }) => (
-            <FoldableSection
-              className="flex flex-wrap group-last:last:pb-0"
-              isUnfolded={isUnfolded}
-            >
-              {foldableBlocks}
-            </FoldableSection>
-          )}
-          renderFoldButton={({ isUnfolded, onToggle }) => (
-            <FoldButton
-              className={bordered ? '' : 'py-[14px] px-0'}
-              label={label}
-              icon={icons[Number(isUnfolded)]}
-              primaryIcon={labelIcon}
-              hasContent={Boolean(blocks?.length)}
-              onClick={onToggle}
-            />
-          )}
-        />
-      </li>
-    );
-  },
+  ({ label = '', labelIcon, bordered, children, hasContent = true }) => (
+    <li className={`${borderedLiClass(bordered)} border-solid border-main-divider`}>
+      <Foldable
+        isFoldButtonOnTop={true}
+        renderFoldableSection={({ isUnfolded }) => (
+          <FoldableSection className="flex flex-wrap group-last:last:pb-0" isUnfolded={isUnfolded}>
+            {children}
+          </FoldableSection>
+        )}
+        renderFoldButton={({ isUnfolded, onToggle }) => (
+          <FoldButton
+            className={bordered ? '' : 'py-[14px] px-0'}
+            label={label}
+            icon={icons[Number(isUnfolded)]}
+            primaryIcon={labelIcon}
+            hasContent={hasContent}
+            onClick={onToggle}
+          />
+        )}
+      />
+    </li>
+  ),
 );
 
 interface FoldButtonProps {

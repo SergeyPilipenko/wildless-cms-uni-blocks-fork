@@ -1,19 +1,19 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/ContentPageDef';
-import { Accordion } from '../Accordion/Accordion';
+import type { Fallback } from '../../model/Fallback';
+import { useSitemap } from '../../services/sitemap/useSitemap';
+import { Button } from '../../ui-kit/Button/Button';
+import { Img } from '../../ui-kit/Img/Img';
+import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
+import { AccordionItem } from '../Accordion/AccordionItem';
+import { AccordionItemsList } from '../Accordion/AccordionItemsList';
+import { LinkList } from '../LinkList/LinkList';
 import { MobileAppTile } from '../MobileAppTile/MobileAppTile';
 import { Contacts } from './Contacts';
 import type { FooterContent, SubMenuItem } from './FooterContent';
 import { HorizontalNavigation } from './HorizontalNavigation';
 import { SocialMedia } from './SocialMedia';
 import { TextInformation } from './TextInformation';
-
-import { useSitemap } from '../../services/sitemap/useSitemap';
-import type { Fallback } from '../../model/Fallback';
-import { Button } from '../../ui-kit/Button/Button';
-import { Img } from '../../ui-kit/Img/Img';
-import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
-import { getAccordionItems } from '../../utils/getAccordionItems';
 
 export interface FooterProps extends FooterContent, UniBlockProps {}
 
@@ -35,11 +35,13 @@ export const Footer = JSX<FooterProps>(
     return (
       <footer className={`font-sans px-4 py-[26px] bg-white ${className}`}>
         <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
-        <Accordion
-          context={context}
-          className="!p-0 mb-4"
-          accordionItems={getAccordionItems(sitemap.topItems)}
-        />
+        <AccordionItemsList>
+          {sitemap.topItems?.map((item, i) => (
+            <AccordionItem key={String(i)} context={context} label={item.text}>
+              <LinkList context={context} documents={item.items} />
+            </AccordionItem>
+          ))}
+        </AccordionItemsList>
         <div>{dispositions?.map(renderSubMenuItem)}</div>
         <MobileAppTile
           context={context}
