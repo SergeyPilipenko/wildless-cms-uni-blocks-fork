@@ -11,5 +11,10 @@
         }
       }
     }
+  },
+  "style": {
+    "ui:options": {
+      "minCols": 6
+    }
   }
 }
