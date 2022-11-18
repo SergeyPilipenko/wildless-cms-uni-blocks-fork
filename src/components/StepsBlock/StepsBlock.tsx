@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/ContentPageDef';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Button } from '../../ui-kit/Button/Button';
@@ -8,11 +7,10 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { joinList } from '../../utils/joinList';
-import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
-import { renderItems } from './renderItems';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
+import { renderStepContent } from './renderStepContent';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -54,7 +52,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
         {...rest}
       >
         {title ? (
-          <Heading headingType="h2" className="max-w-[752px] text-center" title={title} />
+          <Heading headingType="h3" className="max-w-[752px] text-center" title={title} />
         ) : null}
         {steps?.length ? (
           <div className={`box-border ${titleMargin}`}>
@@ -65,7 +63,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
             </div>
             <div className={`flex justify-between ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
               {steps.map(
-                renderStepTitle({
+                renderStepContent({
                   styleMap,
                   isMainButton: Boolean(button?.text),
                   version,
@@ -103,50 +101,6 @@ const renderStepIcon =
             <span className={`text-h4 ${styleMap.iconText}`}>{i + 1}</span>
           )}
         </div>
-      </div>
-    );
-  };
-
-const renderStepTitle =
-  ({
-    styleMap,
-    isMainButton,
-    version,
-    router,
-    handlerDecorator,
-  }: {
-    styleMap: StyleType;
-    isMainButton: boolean;
-    version: BlockVersion;
-    router: Router;
-    handlerDecorator?: HandlerDecorator;
-  }) =>
-  (step: Step, i: number, { length }: { length: number }) => {
-    const additionalMarginClass = step?.label ? 'mt-2' : 'mt-4';
-    const widthContainer = length < 5 ? 'w-[276px]' : 'w-[210px]';
-
-    return (
-      <div
-        key={String(i)}
-        className={`flex flex-col items-center text-center relative
-        whitespace-pre-line overflow-hidden ${widthContainer}`}
-      >
-        {step?.label ? <div className="text-xl m-0 mt-4">{step.label}</div> : null}
-        {step?.description ? (
-          <div className={`text-l-light ${styleMap.description} ${additionalMarginClass}`}>
-            {step.description}
-          </div>
-        ) : null}
-        {renderItems(step?.items, styleMap, step?.isDotted)}
-        {step.button?.text && !isMainButton ? (
-          <Button
-            className="box-border mt-8 py-3 h-12 w-full max-w-[240px]"
-            {...useLink({ router, handlerDecorator }, step.button)}
-            version={version}
-          >
-            {step.button.text}
-          </Button>
-        ) : null}
       </div>
     );
   };

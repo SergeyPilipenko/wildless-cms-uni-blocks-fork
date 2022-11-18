@@ -1,17 +1,26 @@
-import type { StyleType } from './StepsBlockStyleMaps';
+import { List } from '../../ui-kit/List/List';
+import type { BlockVersion } from '../../model/BlockVersion';
 
-export const renderItems = (items?: string[], styleMap?: StyleType, isDotted = true) =>
-  items ? (
-    <div className={`mt-4 ${styleMap?.description}`} role="list">
-      {items.map((_) => (
-        <div className="items-start mt-1 first:mt-0" role="listitem">
-          {isDotted ? (
-            <div
-              className={`rounded-full inline-block mr-3 mb-1 w-1.5 h-1.5 min-w-1.5 min-h-1.5 ${styleMap?.dot}`}
-            />
-          ) : null}
-          <span>{_}</span>
-        </div>
-      ))}
-    </div>
+export const renderItems = ({
+  items,
+  isDotted = true,
+  version = 'primary',
+  className = '',
+}: {
+  items?: string[];
+  isDotted?: boolean;
+  version?: BlockVersion;
+  className?: string;
+}) => {
+  const listVersion = version === 'primary' ? 'gray' : version;
+
+  return items ? (
+    <List
+      className={`mt-4 ${className}`}
+      version={listVersion}
+      items={items}
+      listItemSize="S"
+      isDotted={isDotted}
+    />
   ) : null;
+};

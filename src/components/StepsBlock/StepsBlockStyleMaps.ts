@@ -14,7 +14,7 @@ export const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
   primary: {
     background: 'bg-white',
     title: 'text-primary-text',
-    description: 'text-secondary-text',
+    description: '!text-secondary-text text-l-light',
     iconText: 'text-secondary-text',
     iconBackground: 'bg-main-divider',
     iconConnector: 'bg-secondary-light',
@@ -23,7 +23,7 @@ export const STEPS_BLOCK_STYLE_MAPS: Record<BlockVersion, StyleType> = {
   secondary: {
     background: 'bg-primary-main',
     title: 'text-white',
-    description: 'text-white/80',
+    description: '!text-white/80 text-l-light',
     iconText: 'text-white',
     iconBackground: 'bg-white/30',
     iconConnector: 'bg-white',
