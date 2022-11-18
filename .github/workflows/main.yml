@@ -9,6 +9,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - run: jq -s add ./package.json ./.public.package.json > ./temp.package.json && mv ./temp.package.json ./package.json
+      - run: npm ci && npm install react react-dom --no-save
+
+      - run: npm test
+        env:
+          CI: true
+
   build:
     runs-on: ubuntu-latest
 
@@ -23,18 +51,25 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
       - run: jq -s add ./package.json ./.public.package.json > ./temp.package.json && mv ./temp.package.json ./package.json
       - run: npm ci && npm install react react-dom --no-save
+
       - run: npm run build
-      - run: npm test
-        env:
-          CI: true
+
       - run: tar -cvf docs.tar ./docs
       - uses: actions/upload-artifact@v3
         with:
           name: docs
           retention-days: 1
           path: docs.tar
+
       - run: tar -cvf dist.tar ./lib ./dist ./bundle ./fonts ./mobile ./cosmos-static/icons
       - uses: actions/upload-artifact@v3
         with:
@@ -50,13 +85,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
       - uses: actions/download-artifact@v3
         with:
           name: dist
       - run: tar -xvf dist.tar
+
       - run: jq -s add ./package.json ./.public.package.json > ./temp.package.json && mv ./temp.package.json ./package.json
       - run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
@@ -71,10 +109,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - uses: actions/download-artifact@v3
         with:
           name: docs
       - run: tar -xvf docs.tar
+
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.json'
@@ -87,10 +127,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - uses: actions/download-artifact@v3
         with:
           name: docs
       - run: tar -xvf docs.tar
+
       - uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './lighthouserc.mobile.json'

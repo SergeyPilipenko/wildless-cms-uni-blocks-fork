@@ -16,7 +16,7 @@ export const FoldableSection = JSX<FoldableSectionProps>(
           ? `${containerRef.current.scrollHeight}px`
           : '';
       }
-    }, [isUnfolded]);
+    }, [isUnfolded, children?.length]);
 
     return (
       <div

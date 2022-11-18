@@ -20,6 +20,7 @@ import { MiniGallery } from './MiniGallery/MiniGallery';
 import { MobileAppTile } from './MobileAppTile/MobileAppTile';
 import { OfficeServicesBlock } from './OfficeServicesBlock/OfficeServicesBlock';
 import { OtherProducts } from './OtherProducts/OtherProducts';
+import { OtherProductsItem } from './OtherProductsItem/OtherProductsItem';
 import { PictureText } from './PictureText/PictureText';
 import { Placeholder } from './Placeholder/Placeholder';
 import { ProductBlock } from './ProductBlock/ProductBlock';
@@ -59,6 +60,7 @@ export const Blocks = {
   ProductTile,
   PromoTile,
   OtherProducts,
+  OtherProductsItem,
   Recommendation,
   StepsBlock,
   TariffsTable,

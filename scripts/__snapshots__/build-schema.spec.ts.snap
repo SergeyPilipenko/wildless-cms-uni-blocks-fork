@@ -247,28 +247,6 @@ Object {
       ],
       "title": "Содержимое блока",
     },
-    "BlockItemCommonProps": Object {
-      "properties": Object {
-        "blocks": Object {
-          "items": Object {
-            "$ref": "#/definitions/BlockDef",
-          },
-          "title": "Блоки",
-          "type": "array",
-        },
-        "isUnfolded": Object {
-          "title": "Отображать в раскрытом виде",
-          "type": "boolean",
-        },
-        "label": Object {
-          "default": "Список",
-          "title": "Название",
-          "type": "string",
-        },
-      },
-      "title": "Элемент списка",
-      "type": "object",
-    },
     "BlockVersion": Object {
       "enum": Array [
         "primary",
@@ -2851,23 +2829,25 @@ Object {
       "type": "object",
     },
     "OtherProductsContent": Object {
+      "$ref": "#/definitions/TitleProps",
+      "title": "Другие продукты",
+    },
+    "OtherProductsItemContent": Object {
       "properties": Object {
-        "blockItems": Object {
-          "items": Object {
-            "$ref": "#/definitions/BlockItemCommonProps",
-          },
-          "title": "Список",
-          "type": "array",
-        },
         "colorPalette": Object {
           "$ref": "#/definitions/ColorPalette",
         },
-        "title": Object {
-          "title": "Заголовок",
+        "isUnfolded": Object {
+          "title": "Отображать в раскрытом виде",
+          "type": "boolean",
+        },
+        "label": Object {
+          "default": "Список",
+          "title": "Название",
           "type": "string",
         },
       },
-      "title": "Другие продукты",
+      "title": "Элемент списка",
       "type": "object",
     },
     "Picture": Object {

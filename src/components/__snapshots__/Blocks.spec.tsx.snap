@@ -692,6 +692,51 @@ exports[`Blocks OtherProducts should render block "OtherProducts" without conten
 />
 `;
 
+exports[`Blocks OtherProductsItem should render block "OtherProductsItem" without content 1`] = `
+<div
+  class="border-0 border-b border-solid border-main-divider undefined"
+>
+  <div>
+    <div
+      class="box-border"
+    >
+      <div
+        class="transition-max-h duration-300 overflow-hidden max-h-0 grid grid-cols-12 gap-1 border-box"
+      />
+    </div>
+    <button
+      class="border-none bg-primary-main hover:bg-primary-hover px-0 py-5 mb-[1px] w-full font-sans text-white flex justify-center cursor-pointer "
+      data-theme=""
+    >
+      <span
+        class="text-h4 pr-3"
+      />
+      <div
+        class="flex-shrink-0 my-auto"
+      >
+        <svg
+          aria-hidden="true"
+          class="width: 20px  text-black  invert"
+          height="20"
+          width="20"
+        >
+          <title>
+            Иконка ArrowDownIcon
+          </title>
+          <desc>
+            Иконка ArrowDownIcon
+          </desc>
+          <use
+            href="icons/ArrowDownIcon.svg#icon"
+            xlink:href="icons/ArrowDownIcon.svg#icon"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Blocks PictureText should render block "PictureText" without content 1`] = `
 <section
   class="relative font-sans py-12 px-24 bg-white text-primary-text "
