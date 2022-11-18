@@ -5,9 +5,17 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  --color-green: 78, 190, 81;
+  --color-green-light: 131, 184, 62;
+  --color-green-dark: 66, 171, 68;
+  --color-green-more-dark: 39, 148, 41;
+  --color-yellow: 221, 182, 61;
+}
+
 /* Private clients | Green */
 [data-theme='pc'] {
-  --color-primary-main: 66, 171, 68;
+  --color-primary-main: var(--color-green-dark);
   --color-primary-hover: 36, 131, 65;
   --color-primary-active: 36, 95, 52;
   --color-secondary-hover: 36, 131, 65;
@@ -17,7 +25,7 @@ html {
 }
 /* Business clients | Light-Green */
 [data-theme='bc'] {
-  --color-primary-main: 131, 184, 62;
+  --color-primary-main: var(--color-green-light);
   --color-primary-hover: 92, 146, 29;
   --color-primary-active: 60, 94, 16;
   --color-secondary-hover: 92, 146, 29;
@@ -27,7 +35,7 @@ html {
 }
 /* Ecosystem own | Yellow */
 [data-theme='eo'] {
-  --color-primary-main: 221, 182, 61;
+  --color-primary-main: var(--color-yellow);
   --color-primary-hover: 187, 151, 39;
   --color-primary-active: 126, 99, 12;
   --color-secondary-hover: 187, 151, 39;

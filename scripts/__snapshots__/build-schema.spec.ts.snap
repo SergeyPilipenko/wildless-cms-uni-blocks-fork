@@ -2151,6 +2151,111 @@ Object {
       "title": "Вкладка",
       "type": "object",
     },
+    "InvestmentCell": Object {
+      "properties": Object {
+        "cellColor": Object {
+          "$ref": "#/definitions/InvestmentCellColor",
+        },
+        "cellSize": Object {
+          "$ref": "#/definitions/InvestmentCellSize",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "title": "Ячейка",
+      "type": "object",
+    },
+    "InvestmentCellColor": Object {
+      "enum": Array [
+        "yellow",
+        "green-light",
+        "green",
+        "green-dark",
+      ],
+      "enumNames": Array [
+        "Желтый",
+        "Светло-зеленый",
+        "Зеленый",
+        "Тёмно-зеленый",
+      ],
+      "title": "Цвет",
+      "type": "string",
+    },
+    "InvestmentCellSize": Object {
+      "enum": Array [
+        "XL",
+        "L",
+        "M",
+        "S",
+        "XS",
+      ],
+      "enumNames": Array [
+        "Очень большой",
+        "Большой",
+        "Средний",
+        "Маленький",
+        "Очень маленький",
+      ],
+      "title": "Высота",
+      "type": "string",
+    },
+    "InvestmentColumn": Object {
+      "properties": Object {
+        "cells": Object {
+          "items": Object {
+            "$ref": "#/definitions/InvestmentCell",
+          },
+          "title": "Ячейки",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Элемент данных",
+      "type": "object",
+    },
+    "InvestmentInfoContent": Object {
+      "properties": Object {
+        "investmentColumns": Object {
+          "items": Object {
+            "$ref": "#/definitions/InvestmentColumn",
+          },
+          "title": "Остальные элементы данных",
+          "type": "array",
+        },
+        "investmentZeroColumn": Object {
+          "$ref": "#/definitions/InvestmentZeroColumn",
+          "title": "Элемент данных 1",
+        },
+        "isDotted": Object {
+          "title": "Буллиты",
+          "type": "boolean",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+      },
+      "title": "Блок инвестиций",
+      "type": "object",
+    },
+    "InvestmentZeroColumn": Object {
+      "properties": Object {
+        "title": Object {
+          "title": "Название",
+          "type": "string",
+        },
+      },
+      "title": "Элемент данных 1",
+      "type": "object",
+    },
     "LabelDescriptionCell": Object {
       "properties": Object {
         "description": Object {

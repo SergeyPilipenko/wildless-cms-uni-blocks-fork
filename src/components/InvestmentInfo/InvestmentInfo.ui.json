@@ -1,0 +1,16 @@
+{
+  "content": {
+    "bonusItems": {
+      "items": {
+        "bonusItemContent": {
+          "bonusType": {
+            "ui:widget": "hidden"
+          },
+          "image": {
+            "ui:field": "icon"
+          }
+        }
+      }
+    }
+  }
+}

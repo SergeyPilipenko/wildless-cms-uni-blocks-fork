@@ -592,6 +592,16 @@ exports[`Blocks InsuranceAmountBlock should render block "InsuranceAmountBlock" 
 </section>
 `;
 
+exports[`Blocks InvestmentInfo should render block "InvestmentInfo" without content 1`] = `
+<section
+  class="font-sans bg-white p-9 pb-9 "
+>
+  <div
+    class="container text-m-light"
+  />
+</section>
+`;
+
 exports[`Blocks LinkDocs should render block "LinkDocs" without content 1`] = `
 <section
   class="font-sans text-primary-text p-[50px] bg-white "

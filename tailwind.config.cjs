@@ -216,6 +216,11 @@ module.exports = {
           // Text
           text: 'rgba(125, 126, 127, <alpha-value>)',
         },
+        green: 'rgba(var(--color-green), <alpha-value>)',
+        'green-light': 'rgba(var(--color-green-light), <alpha-value>)',
+        'green-dark': 'rgba(var(--color-green-dark), <alpha-value>)',
+        'green-more-dark': 'rgba(var(--color-green-more-dark), <alpha-value>)',
+        yellow: 'rgba(var(--color-yellow), <alpha-value>)',
         gray: 'rgba(201, 202, 204, <alpha-value>)',
         error: 'rgba(242, 48, 48, <alpha-value>)',
       },
