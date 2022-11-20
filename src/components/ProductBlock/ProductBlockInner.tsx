@@ -26,6 +26,9 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     isDotted = true,
     textBlockClassName = '',
   }) => {
+    const benefitsCount = benefits?.filter((_) => _.label)?.length;
+    const benefitsContainerStyles = getBenefitsContainerStyles(benefitsCount);
+
     return (
       <div className={`flex grow justify-between items-stretch h-full ${className}`}>
         <div className={`flex flex-col ${textBlockClassName}`}>
@@ -39,8 +42,8 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
             align="left"
           />
           <BaseTile context={context} buttons={getButtons(context, buttons)}>
-            {benefits?.filter((_) => _.label)?.length ? (
-              <div className="flex gap-6 mt-6">
+            {benefitsCount ? (
+              <div className={benefitsContainerStyles}>
                 {benefits.map(renderBenefit(version, benefitsVersion))}
               </div>
             ) : null}
@@ -66,3 +69,6 @@ const getButtons = (context, buttons) => {
     <ButtonSection context={context} buttons={buttons} className="flex gap-4" />
   ) : null;
 };
+
+const getBenefitsContainerStyles = (benefitsCount = 0) =>
+  `gap-6 mt-6 ${benefitsCount > 3 ? 'inline-grid grid-cols-[auto_auto]' : 'flex'}`;

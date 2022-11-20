@@ -3046,7 +3046,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BenefitItemProps",
           },
-          "maxItems": 3,
+          "maxItems": 4,
           "minItems": 2,
           "title": "Список преимуществ",
           "type": "array",
@@ -3148,7 +3148,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BenefitItemProps",
           },
-          "maxItems": 3,
+          "maxItems": 4,
           "minItems": 2,
           "title": "Список преимуществ",
           "type": "array",
@@ -3228,7 +3228,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/BenefitItemProps",
           },
-          "maxItems": 3,
+          "maxItems": 4,
           "minItems": 2,
           "title": "Список преимуществ",
           "type": "array",

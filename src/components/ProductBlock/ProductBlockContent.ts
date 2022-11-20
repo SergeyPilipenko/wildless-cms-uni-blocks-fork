@@ -28,7 +28,7 @@ export type ProductBlockInnerContent = HeadlineProps &
     /**
      * @title Список преимуществ
      * @minItems 2
-     * @maxItems 3
+     * @maxItems 4
      */
     benefits?: BenefitItemProps[];
     benefitsVersion?: IconVersion;
