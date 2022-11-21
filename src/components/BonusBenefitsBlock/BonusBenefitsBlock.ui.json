@@ -7,5 +7,10 @@
         }
       }
     }
+  },
+  "style": {
+    "ui:options": {
+      "minCols": 12
+    }
   }
 }

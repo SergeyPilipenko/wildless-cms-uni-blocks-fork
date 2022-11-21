@@ -1,15 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Img } from '../../ui-kit/Img/Img';
 import { Headline } from '../Headline/Headline';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { BonusBenefit, BonusBenefitsBlockContent } from './BonusBenefitsBlockContent';
-import { getElementsColsValue } from './getElementsColsValue';
 
 export interface BenefitsBlockProps extends BonusBenefitsBlockContent, UniBlockProps {}
 
 export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ context, className = '', title, subtitle, bonusBenefits, ...rest }) => (
+  ({ context, className = '', title, subtitle, bonusBenefits, columnsCount = '4', ...rest }) => (
     <BlockWrapper
       className={`font-sans text-primary-text bg-white p-[50px] flex flex-col text-center ${className}`}
       context={context}
@@ -24,7 +23,7 @@ export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
         align="center"
       />
       {bonusBenefits?.length ? (
-        <div className={`grid gap-1 mt-8 ${getElementsColsValue(className)}`}>
+        <div className={`grid gap-1 mt-8 ${getElementsColsValue(columnsCount)}`}>
           {bonusBenefits.map(renderBonusBenefit)}
         </div>
       ) : null}
@@ -49,3 +48,5 @@ const renderBonusBenefit = (bonusBenefit: BonusBenefit, i: number) => {
     </div>
   );
 };
+
+const getElementsColsValue = (colValue) => (colValue === '4' ? 'grid-cols-4' : 'grid-cols-5');

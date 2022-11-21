@@ -43,6 +43,7 @@ export default [
   'investmentColumns',
   'accordionItems',
   'calendar',
+  'columnsCount',
   'columnsMode',
   'listMode',
   'hasBorder',

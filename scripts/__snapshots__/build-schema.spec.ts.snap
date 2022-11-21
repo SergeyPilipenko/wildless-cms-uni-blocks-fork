@@ -311,6 +311,18 @@ Object {
           "title": "Список бонусов",
           "type": "array",
         },
+        "columnsCount": Object {
+          "enum": Array [
+            "4",
+            "5",
+          ],
+          "enumNames": Array [
+            "Четыре колонки",
+            "Пять колонок",
+          ],
+          "title": "Количество элементов в строке",
+          "type": "string",
+        },
         "subtitle": Object {
           "title": "Подзаголовок",
           "type": "string",
