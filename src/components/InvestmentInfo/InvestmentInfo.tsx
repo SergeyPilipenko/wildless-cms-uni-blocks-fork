@@ -46,21 +46,21 @@ export const InvestmentInfo = JSX<InvestmentInfoProps>((props) => {
 
   return (
     <BlockWrapper
-      className={`font-sans bg-white p-9 pb-9 ${className}`}
+      className={`font-sans bg-white px-9 py-12 ${className}`}
       context={context}
       {...rest}
     >
       <div className="container text-m-light">
         {colums?.length ? (
           <div>
-            <div className="flex items-end px-9 text-white">
+            <div className="flex items-end relative pl-9 pr-5 text-white">
               {joinList(<div className="w-px h-4 bg-main-stroke" />)(
                 colums.map(renderInvestmentColumn),
               )}
-              <div className="w-px h-4 bg-main-stroke" />
+              <div className="absolute right-[30px] w-px h-4 bg-main-stroke" />
             </div>
-            <div className="border-t border-main-stroke -mt-2 mx-9" />
-            <div className="flex justify-between mt-3 -mx-10">
+            <div className="border-t border-main-stroke -mt-2 ml-9 mr-8" />
+            <div className="flex justify-between text-primary-text mt-3 -mx-10">
               {colums.map(renderInvestmentColumnTitle)}
             </div>
           </div>
@@ -68,7 +68,7 @@ export const InvestmentInfo = JSX<InvestmentInfoProps>((props) => {
 
         {items?.length ? (
           <List
-            className="mt-9 text-h6"
+            className="mt-9 text-l-light max-w-[657px]"
             items={items}
             itemClassName="mb-[7px]"
             isDotted={isDotted}
@@ -93,8 +93,12 @@ const renderInvestmentColumn = (
       className={`${getColumnClasses(isSecondColumn, isLastColumn, column.cells)}`}
     >
       {column.cells?.length ? (
-        <div className={`w-full ${isLastColumn ? 'border-4 border-green-more-dark p-1' : ''}`}>
-          {column.cells.map(renderInvestmentCell)}
+        <div
+          className={`w-full ${
+            isLastColumn ? 'border-4 border-green-more-dark p-1.5 min-w-[290px]' : ''
+          }`}
+        >
+          {column.cells.reverse().map(renderInvestmentCell)}
         </div>
       ) : null}
     </div>
@@ -109,7 +113,7 @@ const getColumnClasses = (
   [
     cells.length ? 'flex-1' : 'flex-0',
     cells.length && !isSecondColumn && !isLastColumn ? 'pl-2.5' : '',
-    cells.length && !isLastColumn ? 'pr-2.5 pb-8' : 'pb-6',
+    cells.length && !isLastColumn ? 'pr-2.5 pb-8' : 'pb-[22px]',
   ].join(' ');
 
 const renderInvestmentCell = (cell: InvestmentCell, i: number) => {
@@ -140,7 +144,7 @@ const renderInvestmentColumnTitle = (
     <div
       key={`title_${i}`}
       className={`flex-1 max-w-[180px] text-center px-2 ${isFirstColumn ? 'pl-9' : ''} ${
-        isLastColumn ? 'pr-9' : ' '
+        isLastColumn ? 'mr-3.5' : ' '
       }`}
     >
       {column.title}

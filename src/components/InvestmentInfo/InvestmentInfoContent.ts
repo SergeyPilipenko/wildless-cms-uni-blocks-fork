@@ -2,13 +2,12 @@ import type { ListContent } from '../../ui-kit/List/ListContent';
 
 /**
  * @title Цвет
- * @enumNames ["Желтый", "Светло-зеленый", "Зеленый", "Тёмно-зеленый"]
+ * @enumNames ["Оранжевый", "Светло-зеленый", "Зеленый", "Тёмно-зеленый"]
  */
 export type InvestmentCellColor = 'yellow' | 'green-light' | 'green' | 'green-dark';
 
 /**
  * @title Высота
- * @enumNames ["Очень большой", "Большой", "Средний", "Маленький", "Очень маленький"]
  */
 export type InvestmentCellSize = 'XL' | 'L' | 'M' | 'S' | 'XS';
 

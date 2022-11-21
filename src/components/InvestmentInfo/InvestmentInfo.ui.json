@@ -1,16 +1,9 @@
 {
-  "content": {
-    "bonusItems": {
-      "items": {
-        "bonusItemContent": {
-          "bonusType": {
-            "ui:widget": "hidden"
-          },
-          "image": {
-            "ui:field": "icon"
-          }
-        }
-      }
+  "content": {},
+  "style": {
+    "ui:options": {
+      "minCols": 12,
+      "maxCols": 12
     }
   }
 }

@@ -628,7 +628,7 @@ exports[`Blocks InsuranceAmountBlock should render block "InsuranceAmountBlock" 
 
 exports[`Blocks InvestmentInfo should render block "InvestmentInfo" without content 1`] = `
 <section
-  class="font-sans bg-white p-9 pb-9 "
+  class="font-sans bg-white px-9 py-12 "
 >
   <div
     class="container text-m-light"
@@ -724,14 +724,9 @@ exports[`Blocks OfficeMap should render block "OfficeMap" without content 1`] = 
         class="flex"
       >
         <div
-          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-primary-main border-green-light mr-4"
+          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-error border-error"
         >
-          09.00–16.30
-        </div>
-        <div
-          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-golden border-golden"
-        >
-          без перерыва
+          Выходной
         </div>
       </div>
     </div>
