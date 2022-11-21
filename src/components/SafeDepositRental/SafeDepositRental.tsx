@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useCallback, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useSafeBoxes } from '../../hooks/useSafeBoxes';
-import { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { SafeDepositRentalContent } from './SafeDepositRentalContent';

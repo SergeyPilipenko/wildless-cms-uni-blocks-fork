@@ -1,11 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { Fallback } from '../../model/Fallback';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import type { LinkProps } from '../../model/LinkProps';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import type { TopMenuItem } from '../../services/sitemap/SitemapProps';
 import { useSitemap } from '../../services/sitemap/useSitemap';
-import type { Fallback } from '../../model/Fallback';
 
 export interface SitemapProps extends UniBlockProps {
   items?: TopMenuItem[];

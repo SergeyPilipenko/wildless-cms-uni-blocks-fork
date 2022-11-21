@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';

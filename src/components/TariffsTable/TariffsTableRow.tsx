@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { Img } from '../../ui-kit/Img/Img';
 import { TableCarouselContainer } from '../ComparisonTable/TableCarouselContainer';
 import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';

@@ -1,4 +1,4 @@
-import type { JSXBlock } from '../../model/BlocksRegistry';
+import type { JSXBlock } from '../../model/JSXBlock';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { CalculatorBlockDef } from './CalculatorContent';
 import { EmbeddableCalcBlocks, EmbeddableCalcProps } from './EmbeddableCalcBlocks';

@@ -1,5 +1,3 @@
-import type { ColorPalette } from '../../model/ContentPageDef';
-
 /**
  * @title Элемент списка
  */
@@ -12,6 +10,4 @@ export interface OtherProductsItemContent {
 
   /** @title Отображать в раскрытом виде */
   isUnfolded?: boolean;
-
-  colorPalette?: ColorPalette;
 }

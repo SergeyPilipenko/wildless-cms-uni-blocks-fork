@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';

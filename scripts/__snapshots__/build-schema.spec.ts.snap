@@ -11,13 +11,6 @@ Object {
           "default": "center",
           "title": "Выравнивание заголовка",
         },
-        "accordionItems": Object {
-          "items": Object {
-            "$ref": "#/definitions/AccordionItem",
-          },
-          "title": "Список",
-          "type": "array",
-        },
         "bordered": Object {
           "default": false,
           "title": "Отображать/скрывать обводку у элемента списка",
@@ -38,20 +31,8 @@ Object {
       "title": "Аккордеон",
       "type": "object",
     },
-    "AccordionItem": Object {
+    "AccordionItemContent": Object {
       "properties": Object {
-        "blocks": Object {
-          "items": Object {
-            "$ref": "#/definitions/BlockDef",
-          },
-          "title": "Блоки",
-          "type": "array",
-        },
-        "bordered": Object {
-          "default": false,
-          "title": "Отображать/скрывать обводку элемента",
-          "type": "boolean",
-        },
         "isExpanded": Object {
           "title": "Отображать в раскрытом виде",
           "type": "boolean",
@@ -65,29 +46,7 @@ Object {
           "$ref": "#/definitions/Picture",
         },
       },
-      "title": "Элемент списка",
-      "type": "object",
-    },
-    "AccordionItemCommonProps": Object {
-      "properties": Object {
-        "bordered": Object {
-          "default": false,
-          "title": "Отображать/скрывать обводку элемента",
-          "type": "boolean",
-        },
-        "isExpanded": Object {
-          "title": "Отображать в раскрытом виде",
-          "type": "boolean",
-        },
-        "label": Object {
-          "default": "Список",
-          "title": "Название",
-          "type": "string",
-        },
-        "labelIcon": Object {
-          "$ref": "#/definitions/Picture",
-        },
-      },
+      "title": "Элемент аккордиона",
       "type": "object",
     },
     "AlignType": Object {
@@ -209,44 +168,6 @@ Object {
       "title": "Преимущество",
       "type": "object",
     },
-    "BlockDef": Object {
-      "anyOf": Array [
-        Object {
-          "$ref": "#/definitions/EmptyOption",
-        },
-        Object {
-          "$ref": "#/definitions/HeadlineBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/LinkDocsBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/TextBlockBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/PictureTextBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/ProductBlockBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/TileBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/ProductTileBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/GalleryBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/MiniGalleryBlockListDef",
-        },
-        Object {
-          "$ref": "#/definitions/LinkListBlockListDef",
-        },
-      ],
-      "title": "Содержимое блока",
-    },
     "BlockVersion": Object {
       "enum": Array [
         "primary",
@@ -272,21 +193,6 @@ Object {
       ],
       "title": "Цвет блока",
       "type": "string",
-    },
-    "BlocksCommonProps": Object {
-      "properties": Object {
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-      },
-      "type": "object",
     },
     "BonusBenefit": Object {
       "properties": Object {
@@ -1309,53 +1215,6 @@ Object {
       },
       "type": "object",
     },
-    "GalleryBlockListDef": Object {
-      "properties": Object {
-        "blockListType": Object {
-          "const": "Gallery",
-          "default": "Gallery",
-          "type": "string",
-        },
-        "cards": Object {
-          "items": Object {
-            "$ref": "#/definitions/GalleryCardProps",
-          },
-          "minItems": 3,
-          "title": "Карточки",
-          "type": "array",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
-        },
-        "orientation": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Галерея",
-      "type": "object",
-    },
     "GalleryCardProps": Object {
       "default": Object {
         "headlineSmallVersion": "XL_L",
@@ -1583,50 +1442,6 @@ Object {
       ],
       "title": "Размер заголовка",
       "type": "string",
-    },
-    "HeadlineBlockListDef": Object {
-      "properties": Object {
-        "align": Object {
-          "$ref": "#/definitions/AlignType",
-        },
-        "bgColorHeadline": Object {
-          "$ref": "#/definitions/BlockVersionWithTransparent",
-        },
-        "blockListType": Object {
-          "const": "Headline",
-          "default": "Headline",
-          "type": "string",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Заголовок",
-      "type": "object",
     },
     "HeadlineCommonProps": Object {
       "properties": Object {
@@ -2317,70 +2132,6 @@ Object {
       },
       "type": "object",
     },
-    "LinkDocsBlockListDef": Object {
-      "properties": Object {
-        "align": Object {
-          "$ref": "#/definitions/AlignType",
-        },
-        "blockListType": Object {
-          "const": "LinkDocs",
-          "default": "LinkDocs",
-          "type": "string",
-        },
-        "columnsMode": Object {
-          "$ref": "#/definitions/LinkColumnsMode",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "documents": Object {
-          "items": Object {
-            "$ref": "#/definitions/LinkDocsItem",
-          },
-          "title": "Список",
-          "type": "array",
-        },
-        "hasBorder": Object {
-          "title": "Рамка элементов (моб.)",
-          "type": "boolean",
-        },
-        "icon": Object {
-          "$ref": "#/definitions/Picture",
-          "default": Object {
-            "format": "webp",
-            "size": Object {
-              "height": 24,
-              "width": 24,
-            },
-          },
-          "title": "Иконка",
-        },
-        "orientation": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Список документов",
-      "type": "object",
-    },
     "LinkDocsContent": Object {
       "properties": Object {
         "align": Object {
@@ -2446,37 +2197,6 @@ Object {
         },
       },
       "title": "Элемент списка",
-      "type": "object",
-    },
-    "LinkListBlockListDef": Object {
-      "properties": Object {
-        "blockListType": Object {
-          "const": "LinkList",
-          "default": "LinkList",
-          "type": "string",
-        },
-        "documents": Object {
-          "items": Object {
-            "$ref": "#/definitions/LinkProps",
-          },
-          "title": "Список",
-          "type": "array",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Список ссылок",
       "type": "object",
     },
     "LinkListContent": Object {
@@ -2652,53 +2372,6 @@ Object {
       ],
       "title": "Брейкпоинт",
       "type": "number",
-    },
-    "MiniGalleryBlockListDef": Object {
-      "properties": Object {
-        "blockListType": Object {
-          "const": "MiniGallery",
-          "default": "MiniGallery",
-          "type": "string",
-        },
-        "cards": Object {
-          "items": Object {
-            "$ref": "#/definitions/GalleryCardProps",
-          },
-          "minItems": 4,
-          "title": "Карточки",
-          "type": "array",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
-        },
-        "orientation": Object {
-          "$ref": "#/definitions/ListOrientation",
-          "title": "Отображать элементы в моб. версии (прокрутка shift+mouseScroll)",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Мини-галлерея",
-      "type": "object",
     },
     "MiniGalleryContent": Object {
       "default": Object {
@@ -2884,14 +2557,20 @@ Object {
       "type": "object",
     },
     "OtherProductsContent": Object {
-      "$ref": "#/definitions/TitleProps",
-      "title": "Другие продукты",
-    },
-    "OtherProductsItemContent": Object {
       "properties": Object {
         "colorPalette": Object {
           "$ref": "#/definitions/ColorPalette",
         },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Другие продукты",
+      "type": "object",
+    },
+    "OtherProductsItemContent": Object {
+      "properties": Object {
         "isUnfolded": Object {
           "title": "Отображать в раскрытом виде",
           "type": "boolean",
@@ -2965,78 +2644,6 @@ Object {
       "title": "Изображение",
       "type": "object",
     },
-    "PictureTextBlockListDef": Object {
-      "properties": Object {
-        "benefits": Object {
-          "items": Object {
-            "$ref": "#/definitions/BenefitItemProps",
-          },
-          "title": "Список преимуществ",
-          "type": "array",
-        },
-        "blockListType": Object {
-          "const": "PictureText",
-          "default": "PictureText",
-          "type": "string",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "directionRight": Object {
-          "default": false,
-          "title": "Картинка справа/текст слева",
-          "type": "boolean",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-          "default": Object {
-            "format": "webp",
-            "size": Object {
-              "width": 400,
-            },
-            "sources": Array [
-              Object {
-                "alignment": "center",
-                "format": "webp",
-                "media": 1279,
-                "width": 240,
-              },
-            ],
-          },
-        },
-        "monthLimit": Object {
-          "title": "Ежемесячный лимит",
-          "type": "number",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "sum": Object {
-          "title": "Страховая сумма",
-          "type": "number",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Картинка с текстом",
-      "type": "object",
-    },
     "PictureTextContent": Object {
       "properties": Object {
         "benefits": Object {
@@ -3089,108 +2696,6 @@ Object {
         },
       },
       "title": "Картинка с текстом",
-      "type": "object",
-    },
-    "ProductBlockBlockListDef": Object {
-      "properties": Object {
-        "backwardButton": Object {
-          "$ref": "#/definitions/BackwardButtonProps",
-          "title": "Кнопка возврата",
-        },
-        "benefits": Object {
-          "items": Object {
-            "$ref": "#/definitions/BenefitItemProps",
-          },
-          "maxItems": 4,
-          "minItems": 2,
-          "title": "Список преимуществ",
-          "type": "array",
-        },
-        "benefitsVersion": Object {
-          "$ref": "#/definitions/IconVersion",
-        },
-        "blockListType": Object {
-          "const": "ProductBlock",
-          "default": "ProductBlock",
-          "type": "string",
-        },
-        "breadcrumbs": Object {
-          "items": Object {
-            "$ref": "#/definitions/LinkProps",
-          },
-          "title": "Хлебные крошки",
-          "type": "array",
-        },
-        "buttons": Object {
-          "items": Object {
-            "$ref": "#/definitions/ButtonWithIconProps",
-          },
-          "maxItems": 4,
-          "title": "Кнопки",
-          "type": "array",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-          "default": Object {
-            "format": "webp",
-            "size": Object {
-              "width": 600,
-            },
-            "sources": Array [
-              Object {
-                "alignment": "northeast",
-                "format": "webp",
-                "media": 1279,
-                "width": 360,
-              },
-            ],
-          },
-        },
-        "isDotted": Object {
-          "default": true,
-          "title": "Буллиты",
-          "type": "boolean",
-        },
-        "items": Object {
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Список",
-          "type": "array",
-        },
-        "label": Object {
-          "title": "Лейбл (моб.)",
-          "type": "string",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Продуктовый блок",
       "type": "object",
     },
     "ProductBlockContent": Object {
@@ -3405,81 +2910,6 @@ Object {
         "productBlock",
       ],
       "title": "Слайд",
-      "type": "object",
-    },
-    "ProductTileBlockListDef": Object {
-      "properties": Object {
-        "additionalDescription": Object {
-          "title": "Дополнительное описание",
-          "type": "string",
-        },
-        "benefits": Object {
-          "items": Object {
-            "$ref": "#/definitions/TextBenefit",
-          },
-          "maxItems": 7,
-          "title": "Преимущества",
-          "type": "array",
-        },
-        "blockListType": Object {
-          "const": "ProductTile",
-          "default": "ProductTile",
-          "type": "string",
-        },
-        "buttons": Object {
-          "items": Object {
-            "$ref": "#/definitions/ButtonWithIconProps",
-          },
-          "maxItems": 4,
-          "title": "Кнопки",
-          "type": "array",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "headlineVersion": Object {
-          "$ref": "#/definitions/HeadlineVersion",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-          "default": Object {
-            "format": "webp",
-            "size": Object {
-              "width": 320,
-            },
-            "sources": Array [
-              Object {
-                "alignment": "southeast",
-                "format": "webp",
-                "media": 1279,
-                "width": 192,
-              },
-            ],
-          },
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Продуктовая плитка",
       "type": "object",
     },
     "ProductTileContent": Object {
@@ -3970,58 +3400,6 @@ Object {
       "title": "Пункты описания",
       "type": "object",
     },
-    "TextBlockBlockListDef": Object {
-      "properties": Object {
-        "blockListType": Object {
-          "const": "TextBlock",
-          "default": "TextBlock",
-          "type": "string",
-        },
-        "blockVersion": Object {
-          "$ref": "#/definitions/TextBlockVersion",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "iconVersion": Object {
-          "$ref": "#/definitions/TextBlockIconVersion",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-        },
-        "isDotted": Object {
-          "title": "Буллиты",
-          "type": "boolean",
-        },
-        "items": Object {
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Список (моб.)",
-          "type": "array",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Текстовый блок",
-      "type": "object",
-    },
     "TextBlockContent": Object {
       "properties": Object {
         "blockVersion": Object {
@@ -4083,84 +3461,6 @@ Object {
       ],
       "title": "Цвет блока",
       "type": "string",
-    },
-    "TileBlockListDef": Object {
-      "properties": Object {
-        "blockListType": Object {
-          "const": "Tile",
-          "default": "Tile",
-          "type": "string",
-        },
-        "buttons": Object {
-          "items": Object {
-            "$ref": "#/definitions/ButtonWithIconProps",
-          },
-          "maxItems": 4,
-          "title": "Кнопки",
-          "type": "array",
-        },
-        "description": Object {
-          "title": "Описание",
-          "type": "string",
-        },
-        "headingType": Object {
-          "$ref": "#/definitions/HeadingType",
-        },
-        "image": Object {
-          "$ref": "#/definitions/Picture",
-          "default": Object {
-            "format": "webp",
-            "size": Object {
-              "width": 320,
-            },
-            "sources": Array [
-              Object {
-                "alignment": "southeast",
-                "format": "webp",
-                "media": 1279,
-                "width": 192,
-              },
-            ],
-          },
-        },
-        "isDotted": Object {
-          "default": true,
-          "title": "Буллиты",
-          "type": "boolean",
-        },
-        "items": Object {
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Список",
-          "type": "array",
-        },
-        "listItemSize": Object {
-          "$ref": "#/definitions/ListItemSize",
-        },
-        "style": Object {
-          "default": Array [
-            "col-span-12",
-          ],
-          "items": Object {
-            "type": "string",
-          },
-          "title": "Стиль",
-          "type": "array",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-        "version": Object {
-          "$ref": "#/definitions/BlockVersion",
-        },
-      },
-      "required": Array [
-        "blockListType",
-      ],
-      "title": "Плитка",
-      "type": "object",
     },
     "TileContent": Object {
       "properties": Object {

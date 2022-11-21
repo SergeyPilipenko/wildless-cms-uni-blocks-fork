@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { HandlerDecorator, Router } from '../../components/ContentPage/ContentPageContext';
 import { useLink } from '../../hooks/useLink';
-import { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from './Button';
 import type { ButtonContent, ButtonWithIconProps } from './ButtonProps';
 

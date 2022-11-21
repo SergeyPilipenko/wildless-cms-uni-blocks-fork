@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
+import type { UniBlockProps } from '../../model/JSXBlock';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Img } from '../../ui-kit/Img/Img';
 import { Headline } from '../Headline/Headline';
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { BonusBenefit, BonusBenefitsBlockContent } from './BonusBenefitsBlockContent';
 
 export interface BenefitsBlockProps extends BonusBenefitsBlockContent, UniBlockProps {}

@@ -1,14 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/ContentPageDef';
-import type { CardTransferContent } from './CardTransferContent';
+import { useLink } from '../../hooks/useLink';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import { CurrencyInput } from '../../ui-kit/CurrencyInput/CurrencyInput';
-import { Heading } from '../../ui-kit/Heading/Heading';
 import { getDisabledButtonClasses } from '../../ui-kit/Button/getDisabledButtonClasses';
 import { getRegularButtonClasses } from '../../ui-kit/Button/getRegularButtonClasses';
-import { useLink } from '../../hooks/useLink';
+import { CurrencyInput } from '../../ui-kit/CurrencyInput/CurrencyInput';
+import { Heading } from '../../ui-kit/Heading/Heading';
 import { getSanitizedValue } from '../../utils/getSanitizedValue';
+import type { CardTransferContent } from './CardTransferContent';
 
 const AMOUNT_KEY = 'amount';
 const FORM_URL = 'https://www.rshb.ru/p2p/';

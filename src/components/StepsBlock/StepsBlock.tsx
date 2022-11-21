@@ -1,16 +1,16 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { joinList } from '../../utils/joinList';
+import { renderStepContent } from './renderStepContent';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
-import { renderStepContent } from './renderStepContent';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 

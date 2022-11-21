@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import { TariffsTableTileCell, TariffsTableTileCellProps } from './TariffsTableTileCell';
 export interface TariffsTableHorizontalProps extends UniBlockProps {

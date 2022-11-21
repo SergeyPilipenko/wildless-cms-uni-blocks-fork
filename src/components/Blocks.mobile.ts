@@ -1,4 +1,5 @@
 import { Accordion } from './Accordion/Accordion';
+import { AccordionItem } from './AccordionItem/AccordionItem';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
 import { Footer } from './Footer/Footer';
 import { Gallery } from './Gallery/Gallery';
@@ -16,6 +17,7 @@ import { TextBlock } from './TextBlock/TextBlock';
 
 export const Blocks = {
   Accordion,
+  AccordionItem,
   ComparisonTable,
   Footer,
   Gallery,

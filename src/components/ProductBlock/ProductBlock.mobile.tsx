@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { VersionStyleMap } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import type { ProductBlockContent } from './ProductBlockContent';
 import { ProductBlockInner } from './ProductBlockInner';
 

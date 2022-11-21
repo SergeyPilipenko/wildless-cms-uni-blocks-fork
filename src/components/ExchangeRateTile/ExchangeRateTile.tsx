@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useExchangeRates } from '../../hooks/useExchangeRates';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { BaseTile } from '../BaseTile/BaseTile';
@@ -30,8 +30,7 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`bg-white text-primary-text font-sans p-9 box-border min-h-[320px] 
-          ${className}`}
+        className={`bg-white text-primary-text font-sans p-9 box-border min-h-[320px] ${className}`}
         {...rest}
       >
         <BaseTile

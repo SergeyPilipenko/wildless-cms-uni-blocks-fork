@@ -2,7 +2,7 @@
 
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { CommonCalculatorProps, DepositCalculatorParams } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import {

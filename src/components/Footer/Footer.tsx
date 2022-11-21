@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { Fallback } from '../../model/Fallback';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';

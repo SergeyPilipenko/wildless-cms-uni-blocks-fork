@@ -1,16 +1,16 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { Fallback } from '../../model/Fallback';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
 import type { TopItemProps } from '../../ui-kit/TopItem/TopItem';
-import { AccordionItem } from '../Accordion/AccordionItem';
 import { AccordionItemsList } from '../Accordion/AccordionItemsList';
+import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { LinkList } from '../LinkList/LinkList';
 import { HeaderBurger } from './HeaderBurger';
 import type { HeaderContent } from './HeaderContent';

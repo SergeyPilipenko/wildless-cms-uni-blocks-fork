@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderDefaultFoldButton } from '../../ui-kit/Foldable/DefaultFoldButton';
 import { Foldable } from '../../ui-kit/Foldable/Foldable';

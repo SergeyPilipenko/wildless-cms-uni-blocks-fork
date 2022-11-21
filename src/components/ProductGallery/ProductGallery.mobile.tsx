@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import { ProductGalleryBlock } from './ProductGalleryBlock';
 import type { ProductGalleryContent } from './ProductGalleryContent';

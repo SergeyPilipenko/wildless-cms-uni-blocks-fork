@@ -10,7 +10,7 @@ const [, , schemaFile] = process.argv;
 
 /** @type {import('ts-json-schema-generator/dist/src/Config').Config} */
 const GENERATOR_CONFIG = {
-  path: './src/**/*Content.ts',
+  path: './src/components/**/*Content.ts',
   skipTypeCheck: true,
   additionalProperties: true,
   sortProps: false,

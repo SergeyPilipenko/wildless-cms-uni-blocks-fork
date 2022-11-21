@@ -3,7 +3,51 @@
 exports[`Blocks Accordion should render block "Accordion" without content 1`] = `
 <section
   class="p-[50px] mb-1 last:mb-0 font-sans bg-white text-primary-text "
-/>
+>
+  <ul
+    class="list-none m-0 p-0"
+  />
+</section>
+`;
+
+exports[`Blocks AccordionItem should render block "AccordionItem" without content 1`] = `
+<li
+  class="border-0 border-b border-solid border-main-divider last:border-b-0 "
+>
+  <div>
+    <button
+      class="border-none bg-transparent px-0 pt-5 pb-3.5 flex justify-between text-left w-full font-sans text-h6 group cursor-pointer"
+    >
+      <span
+        class="text-xl font-medium pr-2.5"
+      />
+      <div
+        class="text-primary-main flex-shrink-0"
+      >
+        <svg
+          aria-hidden="true"
+          class="width: 24px  text-primary-main  "
+          height="24"
+          width="24"
+        >
+          <title>
+            Иконка PlusIcon
+          </title>
+          <desc>
+            Иконка PlusIcon
+          </desc>
+          <use
+            href="icons/PlusIcon.svg#icon"
+            xlink:href="icons/PlusIcon.svg#icon"
+          />
+        </svg>
+      </div>
+    </button>
+    <div
+      class="transition-max-h duration-300 overflow-hidden max-h-0 grid grid-cols-12 gap-5 [&>*]:p-0"
+    />
+  </div>
+</li>
 `;
 
 exports[`Blocks BenefitsBlock should render block "BenefitsBlock" without content 1`] = `
@@ -145,8 +189,7 @@ exports[`Blocks ErrorBlock should render block "ErrorBlock" without content 1`] 
 
 exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without content 1`] = `
 <section
-  class="bg-white text-primary-text font-sans p-9 box-border min-h-[320px] 
-          "
+  class="bg-white text-primary-text font-sans p-9 box-border min-h-[320px] "
 >
   <div
     class="font-sans flex flex-col grow h-full items-start "

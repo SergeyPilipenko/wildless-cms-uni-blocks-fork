@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { Checkbox } from '../Checkbox/Checkbox';
 
 interface RadioButtonItem {

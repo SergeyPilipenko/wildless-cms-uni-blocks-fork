@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { GalleryInner } from '../Gallery/GalleryInner';
 import type { MiniGalleryContent } from './MiniGalleryContent';
 

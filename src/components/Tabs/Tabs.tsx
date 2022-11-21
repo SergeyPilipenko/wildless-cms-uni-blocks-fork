@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { EventBus } from '../../EventBus/EventBus';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderTab } from './renderTab';
 import type { Tab, TabsContent } from './TabsContent';

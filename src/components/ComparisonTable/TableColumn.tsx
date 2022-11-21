@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { ButtonVersion } from '../../model/ButtonVersion';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import type { CellData, ColumnHeader } from './ComparisonTableContent';
 import { GRADIENT } from './constants';

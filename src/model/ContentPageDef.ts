@@ -1,4 +1,3 @@
-import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
 import type { BlockVersion } from './BlockVersion';
 
 /**
@@ -49,12 +48,4 @@ export interface ContentPageDef extends ContentPageMeta, Slot {
   fallback?: Record<string, unknown>;
   likeControl?: boolean;
   colorPalette?: ColorPalette;
-}
-
-export interface UniBlockProps {
-  className?: string;
-  context: ContentPageContext;
-  page?: ContentPageDef;
-  labels?: string[];
-  anchor?: string;
 }

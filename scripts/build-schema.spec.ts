@@ -1,7 +1,7 @@
 import { Config, createGenerator } from 'ts-json-schema-generator';
 
 const GENERATOR_CONFIG: Config = {
-  path: './src/**/*Content.ts',
+  path: './src/components/**/*Content.ts',
   skipTypeCheck: true,
   sortProps: true,
   additionalProperties: true,

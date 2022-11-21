@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import type { LinkProps } from '../../model/LinkProps';
 import type {
   ContentPageContext,

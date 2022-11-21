@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useMemo, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { AnchorClickScrollingEvent } from '../components/Tabs/Tabs';
 import { EventBus } from '../EventBus/EventBus';
-import type { UniBlockProps } from '../model/ContentPageDef';
+import type { UniBlockProps } from '../model/JSXBlock';
 import { changeHashOnObserve } from '../utils/changeHashOnObserve';
 import { IntersectionObserverTag } from './IntersectionObserverTag';
 

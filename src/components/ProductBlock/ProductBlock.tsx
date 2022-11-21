@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Breadcrumb } from '../../ui-kit/Breadcrumb';
 import { joinList } from '../../utils/joinList';

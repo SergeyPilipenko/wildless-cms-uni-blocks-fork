@@ -52,6 +52,7 @@ export function renderBlock(
             className={adjustedBlockClassName}
             context={context}
             page={page}
+            ancestors={ancestors}
             version={version}
             anchor={anchor}
             labels={labels}

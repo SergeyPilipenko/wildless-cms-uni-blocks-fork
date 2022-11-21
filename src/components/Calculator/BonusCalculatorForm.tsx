@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import { DEFAULT_REST_MIN_SUM, DEFAULT_TRAVEL_MIN_SUM } from './constants';

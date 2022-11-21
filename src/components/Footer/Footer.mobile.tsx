@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { Fallback } from '../../model/Fallback';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
-import { AccordionItem } from '../Accordion/AccordionItem';
 import { AccordionItemsList } from '../Accordion/AccordionItemsList';
+import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { LinkList } from '../LinkList/LinkList';
 import { MobileAppTile } from '../MobileAppTile/MobileAppTile';
 import { Contacts } from './Contacts';

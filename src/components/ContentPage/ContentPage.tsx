@@ -1,7 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockAncestors, BlockDecorator } from '../../model/BlockDecorator';
 import type { BlocksRegistry } from '../../model/BlocksRegistry';
-import type { BlockDef, ContentPageDef, UniBlockProps } from '../../model/ContentPageDef';
+import type { BlockDef, ContentPageDef } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { style2className } from '../../utils/style2className';
 import { LikeControl } from '../LikeControl/LikeControl';
 import type { ContentPageContext } from './ContentPageContext';

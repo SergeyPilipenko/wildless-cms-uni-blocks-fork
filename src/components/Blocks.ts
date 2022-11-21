@@ -1,4 +1,5 @@
 import { Accordion } from './Accordion/Accordion';
+import { AccordionItem } from './AccordionItem/AccordionItem';
 import { BenefitsBlock } from './BenefitsBlock/BenefitsBlock';
 import { Bonus } from './Bonus/Bonus';
 import { BonusBenefitsBlock } from './BonusBenefitsBlock/BonusBenefitsBlock';
@@ -38,6 +39,7 @@ import { Tile } from './Tile/Tile';
 
 export const Blocks = {
   Accordion,
+  AccordionItem,
   BenefitsBlock,
   Bonus,
   CardTransfer,

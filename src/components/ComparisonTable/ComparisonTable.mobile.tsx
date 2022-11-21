@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useCallback, useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
 import type { CellData, ComparisonTableContent } from './ComparisonTableContent';

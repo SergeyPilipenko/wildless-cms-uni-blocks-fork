@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/ContentPageDef';
 import type { TitleProps } from '../../model/HeadlineType';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import type { FooterLink } from './FooterLink';
 import { HorizontalNavigationLink } from './HorizontalNavigationLink';
 

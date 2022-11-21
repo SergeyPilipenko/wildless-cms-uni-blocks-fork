@@ -1,4 +1,4 @@
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 
 /**
  * @title Контейнер

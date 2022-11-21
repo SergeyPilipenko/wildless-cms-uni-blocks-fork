@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { VersionStyleMap } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../model/ContentPageDef';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { BaseTile } from '../BaseTile/BaseTile';
