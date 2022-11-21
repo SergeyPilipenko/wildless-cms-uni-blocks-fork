@@ -18,7 +18,7 @@ export const InputRange = JSX<InputRangeProps>(
     disabled = false,
     onChange,
   }) => {
-    const handleChange = (e) => {
+    const handleChange: JSX.IntrinsicElements['input']['onChange'] = (e) => {
       if (!onChange) {
         return;
       }
@@ -62,7 +62,7 @@ export const InputRange = JSX<InputRangeProps>(
   },
 );
 
-function renderRangeCaption(items) {
+function renderRangeCaption(items: string[]) {
   return (
     <div className="flex justify-between my-2">
       {items.map((item, i) => (

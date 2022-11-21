@@ -1,5 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { IconVersion } from '../../model/IconVersion';
+import type { Picture } from '../../model/Picture';
 import { Img } from '../Img/Img';
 import type { BenefitItemCommonProps, BenefitItemProps } from './BenefitItemProps';
 
@@ -26,7 +28,7 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
 
   const isIconWhite = benefitsVersion === 'white' || version === 'secondary';
   const listItemAlign = description ? 'items-start' : 'items-center';
-  const iconVersion = getIconVersion(icon, isIconWhite);
+  const iconVersion = getIconVersion(isIconWhite, icon);
 
   return (
     <div className={`flex gap-5 ${listItemAlign} ${className}`}>
@@ -45,7 +47,7 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   );
 });
 
-function renderBenefitIconBgStyle(version, benefitsVersion) {
+function renderBenefitIconBgStyle(version: BlockVersion, benefitsVersion: IconVersion) {
   let bgColorStyle = 'bg-primary-main text-black';
 
   if (version === 'secondary') {
@@ -57,5 +59,5 @@ function renderBenefitIconBgStyle(version, benefitsVersion) {
   return `w-[50px] h-[50px] min-w-[50px] rounded-full p-2.5 box-border flex items-center justify-center ${bgColorStyle}`;
 }
 
-const getIconVersion = (icon, isIconWhite) =>
+const getIconVersion = (isIconWhite: boolean, icon?: Picture) =>
   icon?.iconVersion || isIconWhite ? 'white' : 'normal';

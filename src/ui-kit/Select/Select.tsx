@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { Icon } from '../Icon/Icon';
-import { useState, useEffect, useRef } from '@redneckz/uni-jsx/lib/hooks';
+import { useEffect, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { Icon } from '../Icon/Icon';
 
 export interface OptionProps {
   key: string;
@@ -33,7 +33,7 @@ export const Select = JSX<SelectProps>(
       onChange(option);
     };
 
-    const isSelected = (option) => Boolean(option.key === selectedItem.key);
+    const isSelected = (option: OptionProps) => Boolean(option.key === selectedItem.key);
 
     useEffect(() => {
       setSelectedItem(value || { key: '', text: '' });
@@ -73,10 +73,15 @@ export const Select = JSX<SelectProps>(
   },
 );
 
-const renderOptionsStyle = (isOpen) => (isOpen ? '' : 'overflow-hidden');
+const renderOptionsStyle = (isOpen: boolean) => (isOpen ? '' : 'overflow-hidden');
 
 const renderOption =
-  (choiceOption, isOpen: boolean, isSelected) => (option: OptionProps, i: number) => {
+  (
+    choiceOption: (option: OptionProps) => void,
+    isOpen: boolean,
+    isSelected: (option: OptionProps) => boolean,
+  ) =>
+  (option: OptionProps, i: number) => {
     return (
       <div
         key={String(i)}
@@ -98,5 +103,5 @@ const renderOption =
     );
   };
 
-const getBorderStyle = (isBorder) =>
+const getBorderStyle = (isBorder: boolean) =>
   isBorder ? 'border border-main-stroke rounded-md hover:border-primary-hover' : '';

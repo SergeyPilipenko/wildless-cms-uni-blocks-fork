@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { Picture } from '../../model/Picture';
+import type { VNode } from '../../model/VNode';
 import { Img } from '../Img/Img';
 
 export interface LogoProps {
@@ -63,7 +64,7 @@ export const Logo = JSX<Partial<LogoProps>>(
   },
 );
 
-const renderTitle = (children, bgColor, title) => {
+const renderTitle = (children: VNode, bgColor: string, title?: string) => {
   const text = children || title || 'Россельхозбанк';
 
   return <span className={`${TEXT_COLOR[bgColor]} font-medium ml-2.5`}>{text}</span>;

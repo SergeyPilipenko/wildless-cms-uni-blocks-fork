@@ -10,7 +10,7 @@ import { getContainerStyle } from './utils/getContainerStyle';
 export interface SwipeListControlListProps extends SwipeContainer {
   className?: string;
   activeIndex: number;
-  onScroll?: (e) => void;
+  onScroll?: JSX.IntrinsicElements['div']['onScroll'];
 }
 
 export const SwipeListControlList = JSX<SwipeListControlListProps>(

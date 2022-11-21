@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { DEFAULT_GAP, DEFAULT_PADDING } from './constants';
 import { SwipeListControlDots } from './SwipeListControlDots';
-import { SwipeListControlList } from './SwipeListControlList';
+import { SwipeListControlList, SwipeListControlListProps } from './SwipeListControlList';
 import type { SwipeListControlProps } from './SwipeListControlProps';
 import { getIndexParts } from './utils/getIndexParts';
 import { getScrollPoints } from './utils/getScrollPoints';
@@ -26,7 +26,7 @@ export const SwipeListControl = JSX<SwipeListControlProps>(
       children,
     };
 
-    const handleScroll = (e) => {
+    const handleScroll: SwipeListControlListProps['onScroll'] = (e) => {
       const {
         scrollLeft,
         clientWidth,
