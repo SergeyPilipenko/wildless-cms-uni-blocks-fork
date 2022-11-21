@@ -1,9 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { RecommendationCard } from './RecommendationCard';
 import type { RecommendationCardTypes, RecommendationContent } from './RecommendationContent';
 
@@ -35,9 +37,7 @@ export const Recommendation = JSX<RecommendationProps>(
             role="list"
           >
             {recommendations?.length
-              ? recommendations.map(
-                  renderRecommendationCard({ context, version, className: cardClassName }),
-                )
+              ? recommendations.map(renderRecommendationCard(context, cardClassName, version))
               : null}
           </div>
           {renderNavButtons({
@@ -62,7 +62,7 @@ export const Recommendation = JSX<RecommendationProps>(
 );
 
 const renderRecommendationCard =
-  ({ context, version, className }) =>
+  (context: ContentPageContext, className: string, version?: BlockVersion) =>
   (card: RecommendationCardTypes, i: number) => {
     return (
       <RecommendationCard
@@ -82,7 +82,7 @@ const renderNavButtons = ({
 }: {
   cardsCount: number;
   activeCardIndex: number;
-  setActiveCardIndex: (number) => void;
+  setActiveCardIndex: (index: number) => void;
 }) => {
   const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
   const handlePrevClick = () => setActiveCardIndex(activeCardIndex - 1);

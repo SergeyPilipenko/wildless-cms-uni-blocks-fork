@@ -1,15 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
-import { TariffsTableTileCell, TariffsTableTileCellProps } from './TariffsTableTileCell';
-export interface TariffsTableHorizontalProps extends UniBlockProps {
-  tiles: TariffsTableTileCellProps[];
-}
+import type { TariffsTableProps } from './TariffsTableContent';
+import { TariffsTableTileCell } from './TariffsTableTileCell';
 
-export const TariffsTableHorizontal = JSX<TariffsTableHorizontalProps>(({ tiles, context }) => (
+export const TariffsTableHorizontal = JSX<TariffsTableProps>(({ tiles, context }) => (
   <SwipeListControl context={context}>
     {tiles.map((tile, i) => (
-      <TariffsTableTileCell key={String(i)} {...tile} />
+      <TariffsTableTileCell key={String(i)} tile={tile} context={context} />
     ))}
   </SwipeListControl>
 ));

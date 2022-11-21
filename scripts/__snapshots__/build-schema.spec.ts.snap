@@ -218,16 +218,7 @@ Object {
           "type": "array",
         },
         "columnsCount": Object {
-          "enum": Array [
-            "4",
-            "5",
-          ],
-          "enumNames": Array [
-            "Четыре колонки",
-            "Пять колонок",
-          ],
-          "title": "Количество элементов в строке",
-          "type": "string",
+          "$ref": "#/definitions/ColumnsCount",
         },
         "subtitle": Object {
           "title": "Подзаголовок",
@@ -813,6 +804,18 @@ Object {
       },
       "title": "Шапка колонки",
       "type": "object",
+    },
+    "ColumnsCount": Object {
+      "enum": Array [
+        "4",
+        "5",
+      ],
+      "enumNames": Array [
+        "Четыре колонки",
+        "Пять колонок",
+      ],
+      "title": "Количество элементов в строке",
+      "type": "string",
     },
     "CommonCalculatorProps": Object {
       "properties": Object {
@@ -2882,24 +2885,28 @@ Object {
       "title": "Продуктовая галерея",
       "type": "object",
     },
+    "ProductGalleryNav": Object {
+      "properties": Object {
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "title",
+        "description",
+      ],
+      "title": "Кнопка под слайдом",
+      "type": "object",
+    },
     "ProductSlide": Object {
       "properties": Object {
         "nav": Object {
-          "properties": Object {
-            "description": Object {
-              "title": "Описание",
-              "type": "string",
-            },
-            "title": Object {
-              "type": "string",
-            },
-          },
-          "required": Array [
-            "title",
-            "description",
-          ],
+          "$ref": "#/definitions/ProductGalleryNav",
           "title": "Превью содержимого слайда на навигации",
-          "type": "object",
         },
         "productBlock": Object {
           "$ref": "#/definitions/ProductBlockInnerContent",

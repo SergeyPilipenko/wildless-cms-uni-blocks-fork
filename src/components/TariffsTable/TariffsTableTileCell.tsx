@@ -2,19 +2,18 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { EmbeddableCellData } from './EmbeddableCellData';
 import { TableTileHeader } from './TableTileHeader';
-import type { CellDef, TariffsTableRowHeader } from './TariffsTableContent';
+import type { CellDef, TariffsTableTile } from './TariffsTableContent';
 
 export interface TariffsTableTileCellProps {
-  header: TariffsTableRowHeader;
-  data: CellDef[];
   context: ContentPageContext;
+  tile: TariffsTableTile;
 }
 
-export const TariffsTableTileCell = JSX<TariffsTableTileCellProps>(({ context, header, data }) => {
+export const TariffsTableTileCell = JSX<TariffsTableTileCellProps>(({ context, tile }) => {
   return (
     <div className="rounded-md border-main-stroke h-full box-border border p-4">
-      <TableTileHeader {...header} />
-      {data?.length ? data.map(renderCellInner(context)) : null}
+      <TableTileHeader {...tile.header} />
+      {tile.data?.length ? tile.data.map(renderCellInner(context)) : null}
     </div>
   );
 });

@@ -9,7 +9,11 @@ interface RenderRealEstateValueInputProps {
   moneyValue: number;
 }
 
-export function renderRealEstateValue(title, props: RenderRealEstateValueInputProps, callback) {
+export function renderRealEstateValue(
+  props: RenderRealEstateValueInputProps,
+  title?: string,
+  callback?: (value: number) => void,
+) {
   const { moneyValue } = props;
 
   const minSum = DEFAULT_MIN_SUM;

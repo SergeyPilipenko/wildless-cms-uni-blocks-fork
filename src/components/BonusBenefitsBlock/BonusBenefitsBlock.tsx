@@ -3,7 +3,11 @@ import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Img } from '../../ui-kit/Img/Img';
 import { Headline } from '../Headline/Headline';
-import type { BonusBenefit, BonusBenefitsBlockContent } from './BonusBenefitsBlockContent';
+import type {
+  BonusBenefit,
+  BonusBenefitsBlockContent,
+  ColumnsCount,
+} from './BonusBenefitsBlockContent';
 
 export interface BenefitsBlockProps extends BonusBenefitsBlockContent, UniBlockProps {}
 
@@ -49,4 +53,5 @@ const renderBonusBenefit = (bonusBenefit: BonusBenefit, i: number) => {
   );
 };
 
-const getElementsColsValue = (colValue) => (colValue === '4' ? 'grid-cols-4' : 'grid-cols-5');
+const getElementsColsValue = (colValue: ColumnsCount) =>
+  colValue === '4' ? 'grid-cols-4' : 'grid-cols-5';

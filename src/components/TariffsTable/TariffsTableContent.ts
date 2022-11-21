@@ -1,11 +1,27 @@
 import type { EmptyOption } from '../../model/EmptyOptionType';
 import type { DescriptionProps, LabelProps } from '../../model/HeadlineType';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 import type { HeadingProps } from '../../ui-kit/Heading/HeadingProps';
 import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
 import type { ListProps } from '../../ui-kit/List/ListProps';
+
+/**
+ * @hidden
+ */
+export interface TariffsTableTile {
+  header: TariffsTableRowHeader;
+  data: CellDef[];
+}
+
+/**
+ * @hidden
+ */
+export interface TariffsTableProps extends UniBlockProps {
+  tiles: TariffsTableTile[];
+}
 
 /**
  * @hidden

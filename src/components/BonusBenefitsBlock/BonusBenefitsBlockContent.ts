@@ -1,5 +1,5 @@
-import type { IconProps } from '../../model/Picture';
 import type { LabelProps, TitleProps } from '../../model/HeadlineType';
+import type { IconProps } from '../../model/Picture';
 /**
  * @title Количество элементов в строке
  * @enumNames [
@@ -7,7 +7,7 @@ import type { LabelProps, TitleProps } from '../../model/HeadlineType';
  *   "Пять колонок",
  *  ]
  */
-type ColumnsCount = '4' | '5';
+export type ColumnsCount = '4' | '5';
 
 /**
  * @title Бонус и преимущество

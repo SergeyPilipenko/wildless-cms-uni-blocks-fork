@@ -44,7 +44,7 @@ const calculatePrice = (days: number, tariffs: Tariff[]) => {
   return days * tariffValue;
 };
 
-const getTariffType = (days) => {
+const getTariffType = (days: number) => {
   let tariffType = 1;
 
   switch (true) {

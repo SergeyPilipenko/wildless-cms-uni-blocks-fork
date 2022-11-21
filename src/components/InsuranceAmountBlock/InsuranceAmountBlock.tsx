@@ -6,6 +6,13 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import type { InsuranceAmountBlockContent } from './InsuranceAmountBlockContent';
 import { InsuranceAmountBlockInner } from './InsuranceAmountBlockInner';
 
+interface RenderNavButtonProps {
+  title?: string;
+  i: number;
+  activeSlideIndex?: number;
+  onClick: () => void;
+}
+
 export interface InsuranceAmountBlockProps extends InsuranceAmountBlockContent, UniBlockProps {}
 
 export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
@@ -69,7 +76,7 @@ const renderInsuranceGalleries = ({
     : null;
 };
 
-function renderNavButton({ title, i, activeSlideIndex, onClick }) {
+function renderNavButton({ title, i, activeSlideIndex, onClick }: RenderNavButtonProps) {
   const isActiveBtn = i === activeSlideIndex;
 
   const btnClassName = isActiveBtn

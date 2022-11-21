@@ -1,9 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { BaseTile } from '../BaseTile/BaseTile';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { Headline } from '../Headline/Headline';
 import type { ProductBlockInnerContent } from './ProductBlockContent';
 import { renderBenefit } from './renderBenefit';
@@ -64,7 +66,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-const getButtons = (context, buttons) => {
+const getButtons = (context: ContentPageContext, buttons?: ButtonWithIconProps[]) => {
   return buttons?.length ? (
     <ButtonSection context={context} buttons={buttons} className="flex gap-4" />
   ) : null;

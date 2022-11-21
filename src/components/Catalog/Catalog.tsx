@@ -58,7 +58,7 @@ const renderCatalogCard = (context: ContentPageContext) => (card: CatalogCardTyp
 interface RenderNavButtonsProps {
   cardsCount: number;
   activeCardIndex: number;
-  setActiveCardIndex: (number) => void;
+  setActiveCardIndex: (index: number) => void;
 }
 
 const renderNavButtons = ({

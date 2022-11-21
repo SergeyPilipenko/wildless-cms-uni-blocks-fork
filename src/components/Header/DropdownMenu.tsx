@@ -65,7 +65,7 @@ const renderDotsSubMenuItems = ({
   handlerDecorator,
   activeSubItem,
 }: DotsSubMenuItemsProps) => {
-  const isActive = (item) => item === activeSubItem;
+  const isActive = (item: LinkProps) => item === activeSubItem;
 
   return menuItems?.map((_) => (
     <a

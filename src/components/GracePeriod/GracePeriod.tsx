@@ -1,10 +1,13 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/JSXBlock';
-import type { GracePeriodContent } from './GracePeriodContent';
-
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Img } from '../../ui-kit/Img/Img';
 import { Headline } from '../Headline/Headline';
+import type { CalendarItem, GracePeriodContent } from './GracePeriodContent';
+
+interface MappedCalendarItemProps extends CalendarItem {
+  flexBasis?: string;
+}
 
 export interface GracePeriodProps extends GracePeriodContent, UniBlockProps {}
 
@@ -30,7 +33,7 @@ export const GracePeriod = JSX<GracePeriodProps>(
   },
 );
 
-const renderCalendar = (calendar) => {
+const renderCalendar = (calendar: CalendarItem[]) => {
   const colCount =
     calendar.reduce(
       (accumulator, currentValue) =>
@@ -43,7 +46,8 @@ const renderCalendar = (calendar) => {
     .filter((_) => _?.month?.length)
     .map((_) => ({
       ..._,
-      flexBasis: `${_.month.length * colSize}%`,
+      // Condition lower is always true, TS does not understand this, notice filter above
+      flexBasis: `${_?.month?.length ? _.month.length * colSize : ''}%`,
     }));
 
   return (
@@ -70,14 +74,14 @@ const renderCalendar = (calendar) => {
   );
 };
 
-const renderMonthNames = (item, colSize) =>
+const renderMonthNames = (item: MappedCalendarItemProps, colSize: number) =>
   item.month?.map((_, i) => (
     <div key={`monthName-${i}`} style={{ flexBasis: `${colSize}%` }}>
       {_.text}
     </div>
   ));
 
-const renderMonthImages = (item) =>
+const renderMonthImages = (item: MappedCalendarItemProps) =>
   item.month?.map((_) =>
     _.image?.src ? (
       <div

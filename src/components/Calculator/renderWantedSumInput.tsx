@@ -13,7 +13,11 @@ interface RenderWantedSumParams {
   isShowItems?: boolean;
 }
 
-export function renderWantedSumInput(title: string, params: RenderWantedSumParams, callback) {
+export function renderWantedSumInput(
+  title: string,
+  params: RenderWantedSumParams,
+  callback?: (value: number) => void,
+) {
   const { moneyValue, minSum, maxSum, step = DEFAULT_MONEY_STEP, isShowItems = true } = params;
 
   const items = [

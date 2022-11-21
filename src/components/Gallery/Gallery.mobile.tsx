@@ -3,10 +3,12 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import type { ListOrientation } from '../../model/ListOrientation';
 import { Button } from '../../ui-kit/Button/Button';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { ListItemVersion } from '../../ui-kit/List/ListProps';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
 
@@ -32,7 +34,11 @@ export const Gallery = JSX<GalleryProps>(
   },
 );
 
-function renderCardsLayout(orientation: ListOrientation, cards: GalleryCardProps[], context) {
+function renderCardsLayout(
+  orientation: ListOrientation,
+  cards: GalleryCardProps[],
+  context: ContentPageContext,
+) {
   return orientation === 'horizontal' ? (
     <SwipeListControl context={context}>{cards?.map(renderCard)}</SwipeListControl>
   ) : (
@@ -62,14 +68,8 @@ function renderCard(card: GalleryCardProps, key: number) {
   );
 }
 
-function renderButton(button) {
-  return (
-    <Button
-      className="mt-3"
-      appendLeft={button?.icon && <Img image={button?.icon} width="24px" height="24px" asSVG />}
-      {...button}
-    />
-  );
+function renderButton(button?: ButtonWithIconProps) {
+  return <Button className="mt-3" {...button} />;
 }
 
 function renderDescription(card: GalleryCardProps) {
@@ -90,7 +90,11 @@ const LIST_DOT_STYLE_MAP: Record<ListItemVersion, string> = {
   gray: 'bg-secondary-text',
 };
 
-function renderItems(items: GalleryItemProps[], isDotted, version: BlockVersion = 'primary') {
+function renderItems(
+  items: GalleryItemProps[],
+  isDotted?: boolean,
+  version: BlockVersion = 'primary',
+) {
   return (
     <section className="mt-3">
       {items.map((item, i) => (

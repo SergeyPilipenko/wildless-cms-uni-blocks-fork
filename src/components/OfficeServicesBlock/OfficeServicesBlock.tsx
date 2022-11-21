@@ -26,7 +26,7 @@ export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
   },
 );
 
-const renderListItems = (itemList: OfficeServicesBlockList, i) => (
+const renderListItems = (itemList: OfficeServicesBlockList, i: number) => (
   <li key={`list_item_${String(i)}`} className="flex mb-5 last:mb-0 list-none">
     {itemList.icon ? (
       <Img

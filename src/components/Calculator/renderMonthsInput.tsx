@@ -9,9 +9,13 @@ interface RenderMonthsInputParams {
   monthsValue: number;
 }
 
-export function renderMonthsInput(title: string, params: RenderMonthsInputParams, callback) {
+export function renderMonthsInput(
+  title: string,
+  params: RenderMonthsInputParams,
+  callback?: (value: number) => void,
+) {
   const { minMonths, maxMonths, monthsValue } = params;
-  const monthText = (month) => {
+  const monthText = (month: number) => {
     const text = Number(month) % 10 === 1 ? 'месяца' : 'месяцев';
 
     return `${month} ${text}`;

@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import type { LinkProps } from '../../model/LinkProps';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import type { LinkListContent } from './LinkListContent';
 
@@ -15,7 +16,7 @@ export const LinkList = JSX<LinkListProps>(({ className = '', documents, ...rest
   );
 });
 
-const renderLinkListItem = (documents) => {
+const renderLinkListItem = (documents: LinkProps[]) => {
   return documents.map((doc, i) => {
     const { text, ...linkProps } = doc;
 

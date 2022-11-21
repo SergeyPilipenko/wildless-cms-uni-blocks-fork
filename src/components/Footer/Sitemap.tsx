@@ -6,10 +6,18 @@ import type { LinkProps } from '../../model/LinkProps';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import type { TopMenuItem } from '../../services/sitemap/SitemapProps';
 import { useSitemap } from '../../services/sitemap/useSitemap';
+import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
 
 export interface SitemapProps extends UniBlockProps {
   items?: TopMenuItem[];
   fallback?: Fallback;
+}
+
+interface RenderColumnProps {
+  menuItem: TopMenuItem;
+  index: number;
+  router: Router;
+  handlerDecorator?: HandlerDecorator;
 }
 
 export const Sitemap = JSX<SitemapProps>(({ className = '', items, fallback, context }) => {
@@ -22,13 +30,13 @@ export const Sitemap = JSX<SitemapProps>(({ className = '', items, fallback, con
 
   return (
     <div className={`flex flex-grow items-start justify-between gap-[54px] xl:gap-5 ${className}`}>
-      {mergedItems?.map((_, i) => renderColumn(_, i, linkParams))}
+      {mergedItems?.map((_, i) => renderColumn({ menuItem: _, index: i, ...linkParams }))}
     </div>
   );
 });
 
-const renderColumn = (c: TopMenuItem, index: number, { router, handlerDecorator }) => {
-  const { text, href, items, target } = c;
+const renderColumn = ({ menuItem, index, router, handlerDecorator }: RenderColumnProps) => {
+  const { text, href, items, target } = menuItem;
 
   return (
     <div key={String(index)} className="flex flex-col w-1/5 last:w-1/4 gap-3.5">

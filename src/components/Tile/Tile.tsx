@@ -70,13 +70,13 @@ export const Tile = JSX<TileProps>((props) => {
           <Description className="max-w-[600px] text-xl-light mt-2.5" description={description} />
         ) : null}
         {children}
-        {renderList(items, { version, isDotted, listItemSize })}
+        {renderList({ version, isDotted, listItemSize }, items)}
       </BaseTile>
     </BlockWrapper>
   );
 });
 
-function renderList(items, { version, isDotted, listItemSize }: ListProps) {
+function renderList({ version, isDotted, listItemSize }: ListProps, items?: string[]) {
   return items?.length ? (
     <List
       items={items}

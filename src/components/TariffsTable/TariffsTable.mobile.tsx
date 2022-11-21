@@ -1,11 +1,14 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import type { ListOrientation } from '../../model/ListOrientation';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type {
   CellDef,
   TariffsTableColumn,
   TariffsTableContent,
   TariffsTableRowHeader,
+  TariffsTableTile,
 } from './TariffsTableContent';
 import { TariffsTableHorizontal } from './TariffsTableHorizontal';
 import { TariffsTableVertical } from './TariffsTableVertical';
@@ -40,7 +43,11 @@ export const TariffsTable = JSX<TariffsTableProps>(
   },
 );
 
-function renderOrientationTable(orientation, tiles, context) {
+function renderOrientationTable(
+  orientation: ListOrientation,
+  tiles: TariffsTableTile[],
+  context: ContentPageContext,
+) {
   return orientation === 'vertical' ? (
     <TariffsTableVertical context={context} tiles={tiles} />
   ) : (

@@ -1,8 +1,8 @@
-import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import type { BlockVersion } from '../../model/BlockVersion';
+import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 
 /** @title Кнопка под слайдом */
-interface ProductGalleryNav {
+export interface ProductGalleryNav {
   title: string;
   /** @title Описание */
   description: string;

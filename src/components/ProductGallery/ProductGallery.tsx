@@ -4,11 +4,20 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
-import type { ProductGalleryContent } from './ProductGalleryContent';
+import type { ProductGalleryContent, ProductGalleryNav } from './ProductGalleryContent';
 
 export interface ProductGalleryProps extends ProductGalleryContent, UniBlockProps {}
+
+interface RenderNavButtonProps {
+  slide?: ProductGalleryNav;
+  i: number;
+  activeSlideIndex?: number;
+  onClick: () => void;
+  version: BlockVersion;
+}
 
 type StyleType = {
   title: string;
@@ -57,7 +66,11 @@ export const ProductGallery = JSX<ProductGalleryProps>(
   },
 );
 
-function renderProductBlock(block: ProductBlockInnerContent, i: number, context) {
+function renderProductBlock(
+  block: ProductBlockInnerContent,
+  i: number,
+  context: ContentPageContext,
+) {
   const { version } = block;
   const additionalClass = version ? productBlockStyleMap[version].title : '';
 
@@ -80,7 +93,7 @@ function renderProductBlock(block: ProductBlockInnerContent, i: number, context)
   );
 }
 
-function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
+function renderNavButton({ slide, i, activeSlideIndex, onClick, version }: RenderNavButtonProps) {
   const isActiveBtn = i === activeSlideIndex;
 
   const btnClassName = isActiveBtn
@@ -108,7 +121,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }) {
     >
       <div className="border-0 px-6">
         <div className={`last:pb-0 ${btnTitleClassName}`}>{slide?.title}</div>
-        <div className={`text-secondary-text  ${btnDescClassName}`}>{slide.description}</div>
+        <div className={`text-secondary-text  ${btnDescClassName}`}>{slide?.description}</div>
       </div>
     </button>
   );

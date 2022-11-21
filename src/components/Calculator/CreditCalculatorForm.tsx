@@ -88,7 +88,8 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
             value={calculatorParams.monthlyPayment}
             postfix="₽"
           />
-          {renderPaymentTypeSelector(context, {
+          {renderPaymentTypeSelector({
+            context,
             items: paymentTypeItems,
             checkedItem: isAnnuity ? ANNUITY : DIFFERENTIAL,
             onChange: (text: string) => toggleIsAnnuity(text === ANNUITY),

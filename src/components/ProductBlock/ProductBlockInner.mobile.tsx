@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import type { Picture } from '../../model/Picture';
 import { ButtonSection } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
@@ -65,7 +66,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   },
 );
 
-function renderImage(image) {
+function renderImage(image?: Picture) {
   return image?.src ? (
     <Img imageClassName="mt-5 mx-auto block" image={{ className: 'block', ...image }} />
   ) : null;

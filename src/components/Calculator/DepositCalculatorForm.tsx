@@ -78,7 +78,8 @@ export const DepositCalculatorForm = JSX<DepositCalculatorProp>(
           {finallySum ? (
             <CalculatorValueBlock title="Сумма в конце срока" value={finallySum} postfix="₽" />
           ) : null}
-          {renderPaymentTypeSelector(context, {
+          {renderPaymentTypeSelector({
+            context,
             items: depositTypeItems,
             checkedItem: isEveryMonth ? EVERY_MONTH : AT_END_TERM,
             onChange: (text: string) => toggleIsEveryMonth(text === EVERY_MONTH),

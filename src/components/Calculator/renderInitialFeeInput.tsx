@@ -9,7 +9,11 @@ interface RenderWantedSumInputParams {
   moneyValue: number;
 }
 
-export function renderInitialFeeInput(title, props: RenderWantedSumInputParams, callback) {
+export function renderInitialFeeInput(
+  props: RenderWantedSumInputParams,
+  title?: string,
+  callback?: (value: number) => void,
+) {
   const { moneyValue } = props;
 
   const minSum = DEFAULT_MIN_SUM;

@@ -80,7 +80,7 @@ function renderBenefit(version: BlockVersion = 'primary') {
     secondary: 'text-white',
   };
 
-  return function renderVersionedBenefit(benefit: TextBenefit, i) {
+  return function renderVersionedBenefit(benefit: TextBenefit, i: number) {
     const { label = '', description = '' } = benefit;
 
     return [
