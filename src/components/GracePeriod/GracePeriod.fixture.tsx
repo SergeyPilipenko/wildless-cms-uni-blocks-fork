@@ -58,7 +58,7 @@ export const GRACE_PERIOD: GracePeriodContent = {
       greenText: 'начинается с первого числа каждого месяца',
       month: [
         {
-          name: 'Август',
+          text: 'Август',
           image: august,
         },
       ],
@@ -68,11 +68,11 @@ export const GRACE_PERIOD: GracePeriodContent = {
       greenText: '(минимальный платеж, 3% от суммы задолженности)',
       month: [
         {
-          name: 'Сентябрь',
+          text: 'Сентябрь',
           image: september,
         },
         {
-          name: 'Октябрь',
+          text: 'Октябрь',
           image: october,
         },
       ],
@@ -82,7 +82,7 @@ export const GRACE_PERIOD: GracePeriodContent = {
       greenText: 'беспроцентного 3-х месячного периода',
       month: [
         {
-          name: 'Ноябрь',
+          text: 'Ноябрь',
           image: november,
         },
       ],
@@ -92,7 +92,7 @@ export const GRACE_PERIOD: GracePeriodContent = {
       greenText: '',
       month: [
         {
-          name: 'Декабрь',
+          text: 'Декабрь',
           image: december,
         },
       ],

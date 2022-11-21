@@ -586,7 +586,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/Month",
           },
-          "title": "Месяц",
+          "title": "Месяцы",
           "type": "array",
         },
         "text": Object {
@@ -1328,7 +1328,7 @@ Object {
           "items": Object {
             "$ref": "#/definitions/CalendarItem",
           },
-          "title": "Календарь",
+          "title": "Периоды",
           "type": "array",
         },
         "description": Object {
@@ -2478,7 +2478,7 @@ Object {
 }",
           "title": "Изображение календарного месяца",
         },
-        "name": Object {
+        "text": Object {
           "title": "Название месяца",
           "type": "string",
         },

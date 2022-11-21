@@ -3,7 +3,7 @@ import type { Picture } from '../../model/Picture';
 
 export interface Month {
   /** @title Название месяца */
-  name?: string;
+  text?: string;
   /**
    * @title Изображение календарного месяца
    * @default {
@@ -18,7 +18,7 @@ export interface Month {
 }
 
 export interface CalendarItem {
-  /** @title Месяц */
+  /** @title Месяцы */
   month?: Month[];
   /** @title Основной текст */
   text?: string;
@@ -30,6 +30,6 @@ export interface CalendarItem {
  * @title Льготный период
  */
 export type GracePeriodContent = HeadlineCommonProps & {
-  /** @title Календарь */
+  /** @title Периоды */
   calendar?: CalendarItem[];
 };

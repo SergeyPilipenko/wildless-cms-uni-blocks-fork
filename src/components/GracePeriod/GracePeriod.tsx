@@ -18,7 +18,7 @@ export const GracePeriod = JSX<GracePeriodProps>(
       >
         <Headline
           context={context}
-          className="!p-0"
+          className="!p-0 mb-4"
           title={title}
           description={description}
           headlineVersion="M"
@@ -73,7 +73,7 @@ const renderCalendar = (calendar) => {
 const renderMonthNames = (item, colSize) =>
   item.month?.map((_, i) => (
     <div key={`monthName-${i}`} style={{ flexBasis: `${colSize}%` }}>
-      {_.name}
+      {_.text}
     </div>
   ));
 

@@ -481,7 +481,7 @@ exports[`Blocks GracePeriod should render block "GracePeriod" without content 1`
   class="font-sans bg-white p-[50px] "
 >
   <section
-    class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
+    class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0 mb-4"
   />
 </section>
 `;
