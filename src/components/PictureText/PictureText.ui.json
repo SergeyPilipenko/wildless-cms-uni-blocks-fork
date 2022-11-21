@@ -1,1 +1,10 @@
-{}
+{
+  "content": {
+    "sum": {
+      "ui:field": "number"
+    },
+    "monthLimit": {
+      "ui:field": "number"
+    }
+  }
+}

@@ -4,6 +4,12 @@
       "items": {
         "cards": {
           "items": {
+            "fee": {
+              "ui:field": "number"
+            },
+            "sum": {
+              "ui:field": "number"
+            },
             "icon": {
               "ui:field": "icon"
             }
