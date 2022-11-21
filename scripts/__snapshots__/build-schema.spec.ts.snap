@@ -1794,6 +1794,7 @@ Object {
         "MapMarkerClusterIcon",
         "MapMarkerSingleIcon",
         "MasterCardIcon",
+        "MetroIcon",
         "MinusIcon",
         "MirIcon",
         "MoneyIcon",
@@ -1887,6 +1888,7 @@ Object {
         "Маркер карты",
         "Маркер карты РСХБ",
         "MasterCard",
+        "Лого Метро",
         "Минус",
         "МИР",
         "Деньги",
@@ -2808,6 +2810,47 @@ Object {
           "type": "string",
         },
       },
+      "type": "object",
+    },
+    "NearbyOffices": Object {
+      "properties": Object {
+        "distance": Object {
+          "type": "string",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/IconName",
+        },
+        "time": Object {
+          "type": "string",
+        },
+        "title": Object {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "OfficeMapProps": Object {
+      "properties": Object {
+        "address": Object {
+          "type": "string",
+        },
+        "gpsLatitude": Object {
+          "type": "number",
+        },
+        "gpsLongitude": Object {
+          "type": "number",
+        },
+        "name": Object {
+          "type": "string",
+        },
+        "workSchedule": Object {
+          "$ref": "#/definitions/WorkSchedule",
+        },
+      },
+      "required": Array [
+        "address",
+        "workSchedule",
+      ],
       "type": "object",
     },
     "OfficeServicesBlockContent": Object {
@@ -4207,6 +4250,77 @@ Object {
         "href",
       ],
       "title": "Ссылка",
+      "type": "object",
+    },
+    "WorkSchedule": Object {
+      "properties": Object {
+        "lunchHour": Object {
+          "type": "string",
+        },
+        "lunchHourSaturday": Object {
+          "type": "string",
+        },
+        "workTime": Object {
+          "type": "string",
+        },
+        "workTimeSaturday": Object {
+          "type": "string",
+        },
+        "workingFriday": Object {
+          "type": "boolean",
+        },
+        "workingMonday": Object {
+          "type": "boolean",
+        },
+        "workingSaturday": Object {
+          "type": "boolean",
+        },
+        "workingSunday": Object {
+          "type": "boolean",
+        },
+        "workingThursday": Object {
+          "type": "boolean",
+        },
+        "workingTuesday": Object {
+          "type": "boolean",
+        },
+        "workingWednesday": Object {
+          "type": "boolean",
+        },
+      },
+      "required": Array [
+        "workTime",
+        "lunchHour",
+        "workTimeSaturday",
+        "lunchHourSaturday",
+        "workingMonday",
+        "workingTuesday",
+        "workingWednesday",
+        "workingThursday",
+        "workingFriday",
+        "workingSaturday",
+        "workingSunday",
+      ],
+      "type": "object",
+    },
+    "WorkScheduleWeek": Object {
+      "properties": Object {
+        "description": Object {
+          "type": "string",
+        },
+        "lunchHour": Object {
+          "type": "string",
+        },
+        "status": Object {
+          "type": "boolean",
+        },
+        "title": Object {
+          "type": "string",
+        },
+        "workTime": Object {
+          "type": "string",
+        },
+      },
       "type": "object",
     },
     "def-hidden": Object {

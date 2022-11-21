@@ -222,6 +222,7 @@ module.exports = {
         'green-more-dark': 'rgba(var(--color-green-more-dark), <alpha-value>)',
         yellow: 'rgba(var(--color-yellow), <alpha-value>)',
         gray: 'rgba(201, 202, 204, <alpha-value>)',
+        golden: 'rgba(221, 182, 61, <alpha-value>)',
         error: 'rgba(242, 48, 48, <alpha-value>)',
       },
       minHeight: (theme) => ({
@@ -249,6 +250,8 @@ module.exports = {
         'primary-hover': 'rgba(134, 134, 134, 1);',
         'primary-focus': 'rgba(28, 28, 28, 1);',
         'checkbox-hover': 'rgba(134, 134, 134, 1);',
+        'green-light': 'rgba(219, 242, 219, 1);',
+        'golden': 'rgba(255, 237, 184, 1);',
       },
     },
   },

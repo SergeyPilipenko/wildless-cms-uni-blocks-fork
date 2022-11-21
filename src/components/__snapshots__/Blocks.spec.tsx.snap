@@ -680,6 +680,331 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
 </section>
 `;
 
+exports[`Blocks OfficeMap should render block "OfficeMap" without content 1`] = `
+<div
+  class="flex flex-col font-sans bg-white w-full "
+>
+  <div
+    class="flex flex-col px-12 pt-12"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <div
+        class="text-h2"
+      >
+        ДО   №3349/3/05
+      </div>
+      <div
+        class="flex"
+      >
+        <div
+          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-error border-error"
+        >
+          Выходной
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex text-l-light pt-4"
+    >
+      <div
+        class="pr-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="width: 24px  text-primary-main  "
+          height="24"
+          width="24"
+        >
+          <title>
+            Иконка GeolocationIcon
+          </title>
+          <desc>
+            Иконка GeolocationIcon
+          </desc>
+          <use
+            href="icons/GeolocationIcon.svg#icon"
+            xlink:href="icons/GeolocationIcon.svg#icon"
+          />
+        </svg>
+      </div>
+      353682, Краснодарский край, г.Ейск, ул.Гоголя, 349/ ул.Баррикадная, 42/1
+    </div>
+    <div
+      class="flex pt-4"
+    >
+      <div
+        class="flex mr-4"
+      >
+        <div
+          class="mr-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="width: 16px  text-primary-main  "
+            height="16"
+            width="16"
+          >
+            <title>
+              Иконка MetroIcon
+            </title>
+            <desc>
+              Иконка MetroIcon
+            </desc>
+            <use
+              href="icons/MetroIcon.svg#icon"
+              xlink:href="icons/MetroIcon.svg#icon"
+            />
+          </svg>
+        </div>
+        <span
+          class="text-m"
+        >
+          Деловой центр
+           
+        </span>
+        <span
+          class="text-m-light"
+        >
+           (~30 м.)
+          , 1 мин
+        </span>
+      </div>
+      <div
+        class="flex mr-4"
+      >
+        <div
+          class="mr-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="width: 16px  text-primary-main  "
+            height="16"
+            width="16"
+          >
+            <title>
+              Иконка MetroIcon
+            </title>
+            <desc>
+              Иконка MetroIcon
+            </desc>
+            <use
+              href="icons/MetroIcon.svg#icon"
+              xlink:href="icons/MetroIcon.svg#icon"
+            />
+          </svg>
+        </div>
+        <span
+          class="text-m"
+        >
+          Выставочная
+           
+        </span>
+        <span
+          class="text-m-light"
+        >
+           (~120 м.)
+          , 5 мин
+        </span>
+      </div>
+      <div
+        class="flex mr-4"
+      >
+        <div
+          class="mr-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="width: 16px  text-primary-main  "
+            height="16"
+            width="16"
+          >
+            <title>
+              Иконка MetroIcon
+            </title>
+            <desc>
+              Иконка MetroIcon
+            </desc>
+            <use
+              href="icons/MetroIcon.svg#icon"
+              xlink:href="icons/MetroIcon.svg#icon"
+            />
+          </svg>
+        </div>
+        <span
+          class="text-m"
+        >
+          Деловой центр
+           
+        </span>
+        <span
+          class="text-m-light"
+        >
+           (~350 м.)
+          , 8 мин
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex justify-between pt-8"
+  >
+    <div
+      class="flex-grow h-full bg-gray"
+    />
+    <div
+      class="w-[434px] pl-9 pr-12 pb-14"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Понедельник
+            </div>
+            <div
+              class="text-m-light text-error"
+            >
+              Выходной
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Вторник
+            </div>
+            <div
+              class="text-m-light text-error"
+            >
+              Выходной
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Среда
+            </div>
+            <div>
+              09.00–16.30
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
+          >
+            <div>
+              без перерыва
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Четверг
+            </div>
+            <div>
+              09.00–16.30
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center w-full pb-1 text-m-light text-error"
+          >
+            <div>
+              Перерыв
+            </div>
+            <div>
+              13:00 - 14:00
+            </div>
+          </div>
+          <div
+            class="pb-1 text-s-light text-secondary-text"
+          >
+            Не работает прием денег с 17:00 до 19:00
+          </div>
+        </div>
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Пятница
+            </div>
+            <div>
+              09.00–16.30
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
+          >
+            <div>
+              без перерыва
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Суббота
+            </div>
+            <div>
+              09.00–15.00
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
+          >
+            <div>
+              без перерыва
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+        >
+          <div
+            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+          >
+            <div>
+              Воскресенье
+            </div>
+            <div
+              class="text-m-light text-error"
+            >
+              Выходной
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Blocks OfficeServicesBlock should render block "OfficeServicesBlock" without content 1`] = `
 <section
   class="font-sans bg-white p-8 flex flex-col "
