@@ -124,7 +124,7 @@ module.exports = {
             exclude: BLOCKS_DIR_EXCLUSIONS,
           },
         ],
-        'local-eslint-rules/complete-function-signatures': ['warn'],
+        'local-eslint-rules/complete-function-signatures': ['error'],
       },
     },
   ],
