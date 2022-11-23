@@ -742,9 +742,14 @@ exports[`Blocks OfficeMap should render block "OfficeMap" without content 1`] = 
         class="flex"
       >
         <div
-          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-error border-error"
+          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-primary-main border-green-light mr-4"
         >
-          Выходной
+          09.00–16.30
+        </div>
+        <div
+          class="p-3 border rounded-md text-m flex items-center cursor-pointer text-golden border-golden"
+        >
+          без перерыва
         </div>
       </div>
     </div>

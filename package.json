@@ -129,6 +129,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.19.4",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^5.0.1",
     "@rollup/plugin-typescript": "^8.3.3",
     "@size-limit/file": "^7.0.8",
     "@testing-library/react": "^12.1.5",
