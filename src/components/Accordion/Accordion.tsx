@@ -1,16 +1,10 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { AlignType } from '../../model/AlignType';
+import { AlignText } from '../../model/AlignText';
 import type { JSXBlock, UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import type { AccordionContent } from './AccordionContent';
 import { AccordionItemsList } from './AccordionItemsList';
-
-const ALIGN_TITLE: Record<AlignType, string> = {
-  left: 'text-left',
-  center: 'text-center',
-  right: 'text-right',
-};
 
 export interface AccordionProps extends AccordionContent, UniBlockProps {}
 
@@ -33,7 +27,7 @@ export const Accordion: JSXBlock<AccordionProps> = JSX<AccordionProps>(
         <Heading
           headingType="h3"
           as="h2"
-          className={`mb-2.5 ${ALIGN_TITLE[accordionAlignTitle]}`}
+          className={`mb-2.5 ${AlignText[accordionAlignTitle]}`}
           title={title}
         />
       ) : null}

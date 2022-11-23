@@ -64,6 +64,7 @@ export default {
         className="col-span-12"
         version="secondary"
         title="Обновлённое мобильное приложение «Урожай»"
+        description="Описание"
         image={image}
         qr={qr}
         headingType="h3"

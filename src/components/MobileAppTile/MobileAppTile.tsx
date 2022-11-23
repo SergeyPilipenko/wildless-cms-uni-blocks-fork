@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { AlignText } from '../../model/AlignText';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
@@ -24,6 +25,8 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
     items,
     image,
     headingType = 'h4',
+    alignTitle = 'left',
+    description,
     ...rest
   }) => {
     const textColorClass = version === 'primary' ? 'text-primary-text' : '';
@@ -49,7 +52,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
                 as="h3"
                 title={title}
                 className={`whitespace-pre-wrap max-w-[509px] mb-6
-                  ${textColorClass}`}
+                  ${textColorClass} ${AlignText[alignTitle]}`}
               />
             ) : null
           }
@@ -59,6 +62,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
             ) : null
           }
         >
+          {renderDescription(description)}
           <div className="flex flex-1 items-center">
             {qr?.src ? (
               <div className={`flex justify-center mr-5 bg-white rounded-md ${containerStyle}`}>
@@ -87,3 +91,6 @@ const renderList = (version: ListItemVersion, items?: string[]) => {
     </span>
   );
 };
+
+const renderDescription = (description?: string) =>
+  description ? <p className="text-xl-light mb-5">{description}</p> : null;

@@ -1,3 +1,4 @@
+import type { AlignType } from '../../model/AlignType';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { HeadlineCommonProps } from '../../model/HeadlineType';
 import type { Picture } from '../../model/Picture';
@@ -12,6 +13,11 @@ export type MobileAppTileContent = HeadlineCommonProps &
   HeadingCommonProps &
   ButtonContent &
   ListContent & {
+    /**
+     * @title Выравнивание заголовка
+     * @default left
+     */
+    alignTitle?: AlignType;
     // TODO: description для мобильной версии
     /** @title QR-код */
     qr?: Picture;

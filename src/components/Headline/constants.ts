@@ -1,13 +1,6 @@
-import type { AlignType } from '../../model/AlignType';
 import type { BlockVersionWithTransparent } from '../../model/BlockVersion';
 import type { HeadlineSmallVersion, HeadlineVersion } from '../../model/HeadlineType';
 import type { HeadingTagType, HeadingType } from '../../ui-kit/Heading/HeadingProps';
-
-export const ALIGN_TEXT: Record<AlignType, string> = {
-  left: 'text-left',
-  center: 'text-center',
-  right: 'text-right',
-};
 
 type StyleType = {
   background: string;

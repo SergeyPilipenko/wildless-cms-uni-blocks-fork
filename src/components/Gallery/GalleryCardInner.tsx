@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { AlignType } from '../../model/AlignType';
+import { AlignText } from '../../model/AlignText';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
@@ -8,12 +8,6 @@ import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { HEADLINE_SMALL_VERSION } from '../Headline/constants';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
-
-const ALIGN_TITLE: Record<AlignType, string> = {
-  left: 'text-left',
-  center: 'text-center',
-  right: 'text-right',
-};
 
 export const GalleryCardInner = JSX<GalleryCardProps>(
   ({
@@ -29,7 +23,7 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
     align = 'center',
   }) => {
     return (
-      <div className={`h-full flex flex-col justify-between ${ALIGN_TITLE[align]}`}>
+      <div className={`h-full flex flex-col justify-between ${AlignText[align]}`}>
         <div className="flex flex-col h-full">
           {renderImage(image)}
           {renderCardTitle(headlineSmallVersion, title)}

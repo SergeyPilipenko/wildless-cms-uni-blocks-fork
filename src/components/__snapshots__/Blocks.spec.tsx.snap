@@ -694,7 +694,7 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
   >
     <h3
       class="font-sans m-0 text-h4 whitespace-pre-wrap max-w-[509px] mb-6
-                  text-primary-text"
+                  text-primary-text text-left"
     >
       Мобильное приложение
     </h3>

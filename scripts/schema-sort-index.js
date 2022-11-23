@@ -4,6 +4,7 @@ export default [
   'headingType',
   'headlineVersion',
   'as',
+  'alignTitle',
   'benefitList',
   'subtitle',
   'label',

@@ -2410,6 +2410,11 @@ Object {
     },
     "MobileAppTileContent": Object {
       "properties": Object {
+        "alignTitle": Object {
+          "$ref": "#/definitions/AlignType",
+          "default": "left",
+          "title": "Выравнивание заголовка",
+        },
         "buttons": Object {
           "items": Object {
             "$ref": "#/definitions/ButtonWithIconProps",
