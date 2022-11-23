@@ -7,6 +7,7 @@ import { Calculator } from './Calculator/Calculator';
 import { CardTransfer } from './CardTransfer/CardTransfer';
 import { Catalog } from './Catalog/Catalog';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
+import { ContactsBlock } from './ContactsBlock/ContactsBlock';
 import { ErrorBlock } from './ErrorBlock/ErrorBlock';
 import { ExchangeRateTile } from './ExchangeRateTile/ExchangeRateTile';
 import { Footer } from './Footer/Footer';
@@ -46,6 +47,7 @@ export const Blocks = {
   ComparisonTable,
   Calculator,
   Catalog,
+  ContactsBlock,
   ExchangeRateTile,
   Footer,
   Gallery,

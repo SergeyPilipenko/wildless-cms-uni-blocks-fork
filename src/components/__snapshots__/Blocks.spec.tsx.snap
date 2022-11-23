@@ -176,6 +176,12 @@ exports[`Blocks ComparisonTable should render block "ComparisonTable" without co
 </section>
 `;
 
+exports[`Blocks ContactsBlock should render block "ContactsBlock" without content 1`] = `
+<section
+  class="bg-primary-main text-white flex p-12 "
+/>
+`;
+
 exports[`Blocks ErrorBlock should render block "ErrorBlock" without content 1`] = `
 <section
   class="flex flex-col justify-center items-center mt-12 "

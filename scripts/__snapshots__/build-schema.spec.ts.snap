@@ -890,6 +890,24 @@ Object {
       "title": "Контакт",
       "type": "object",
     },
+    "ContactItemProps": Object {
+      "properties": Object {
+        "additionalDescription": Object {
+          "title": "Дополнительное описание",
+          "type": "string",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Элемент плитки",
+      "type": "object",
+    },
     "ContactType": Object {
       "enum": Array [
         "tel",
@@ -901,6 +919,35 @@ Object {
       ],
       "title": "Тип контакта",
       "type": "string",
+    },
+    "ContactsBlockContent": Object {
+      "properties": Object {
+        "contacts": Object {
+          "items": Object {
+            "items": Object {
+              "$ref": "#/definitions/ContactItemProps",
+            },
+            "type": "array",
+          },
+          "maxItems": 2,
+          "title": "Контакты",
+          "type": "array",
+        },
+        "contactsBlockVersion": Object {
+          "const": "secondary",
+          "type": "string",
+        },
+        "info": Object {
+          "items": Object {
+            "$ref": "#/definitions/InfoItemProps",
+          },
+          "maxItems": 2,
+          "title": "Данные",
+          "type": "array",
+        },
+      },
+      "title": "Контакты",
+      "type": "object",
     },
     "CreditCalculatorParams": Object {
       "description": "TODO: данные из справочника",
@@ -1899,6 +1946,24 @@ Object {
           "type": "string",
         },
       },
+      "type": "object",
+    },
+    "InfoItemProps": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "title": "Кнопка",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Элемент плитки",
       "type": "object",
     },
     "InnerTableBlockDef": Object {
