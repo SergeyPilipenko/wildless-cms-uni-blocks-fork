@@ -27,10 +27,10 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
           {renderImage(icon)}
           {renderCardTitle(headlineSmallVersion, title)}
           {renderDescription(description, title)}
-          {renderAdditionalDescription(additionalDescription)}
           {items?.length ? renderItems(items, isDotted, version) : null}
+          {renderAdditionalDescription(additionalDescription)}
         </div>
-        {button ? <Button className="mt-6" {...button} /> : null}
+        {button?.text ? <Button className="mt-6" {...button} /> : null}
       </div>
     );
   },
@@ -63,7 +63,7 @@ const renderItems = (
 ) => (
   <List
     className={`max-w-[308px] mt-2 text-s ${version === 'primary' ? '!text-secondary-text' : ''}`}
-    itemClassName="mt-1 text-left first:mt-0"
+    itemClassName="text-left"
     items={items.filter((item) => item?.text).map((item) => item.text as string)}
     isDotted={isDotted}
     version={version}

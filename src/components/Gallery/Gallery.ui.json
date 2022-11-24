@@ -1,1 +1,11 @@
-{}
+{
+  "content": {
+    "cards": {
+      "items": {
+        "additionalDescription": {
+          "ui:field": "hidden"
+        }
+      }
+    }
+  }
+}

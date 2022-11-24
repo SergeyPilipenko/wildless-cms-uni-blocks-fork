@@ -1271,6 +1271,7 @@ Object {
       },
       "properties": Object {
         "additionalDescription": Object {
+          "title": "Дополнительное описание",
           "type": "string",
         },
         "align": Object {

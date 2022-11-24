@@ -20,6 +20,7 @@ export interface GalleryItemProps {
  * @default {"headlineSmallVersion": "XL_L"}
  */
 export type GalleryCardProps = HeadlineSmallProps & {
+  /** @title Дополнительное описание */
   additionalDescription?: string;
   /**
    * @default {
