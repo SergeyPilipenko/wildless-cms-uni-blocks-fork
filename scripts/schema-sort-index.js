@@ -1,4 +1,5 @@
 export default [
+  'sourceBookDir',
   'title',
   'titleSize',
   'headingType',
@@ -7,6 +8,7 @@ export default [
   'alignTitle',
   'benefitList',
   'subtitle',
+  'footnote',
   'label',
   'placeholder',
   'buttonText',
