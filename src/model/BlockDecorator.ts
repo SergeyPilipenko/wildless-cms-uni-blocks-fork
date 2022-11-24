@@ -1,10 +1,10 @@
-import type { BlockDef, Slot, SlotsMap } from './ContentPageDef';
+import type { BlockDef, Slot } from './ContentPageDef';
 
 export const DEFAULT_SLOT_NAME = null;
 
-export type BlockAncestors = [keyof SlotsMap | typeof DEFAULT_SLOT_NAME, ...Slot[]];
-
-export const DEFAULT_ANCESTORS: BlockAncestors = [DEFAULT_SLOT_NAME];
+export type SlotName = string | typeof DEFAULT_SLOT_NAME;
+export type BlockAncestorItem = [SlotName?, Slot?];
+export type BlockAncestors = BlockAncestorItem[];
 
 interface BlockDecoratorProps<VNode> {
   blockClassName: string;

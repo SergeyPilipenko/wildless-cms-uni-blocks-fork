@@ -22,10 +22,7 @@ export interface BlockDef extends BaseBlockDef {
 export interface Slot {
   style?: string[];
   blocks?: BlockDef[];
-}
-
-export interface SlotsMap {
-  header?: Slot;
+  slots?: Record<string, BlockDef[]>;
 }
 
 export interface ContentPageMeta {
@@ -44,7 +41,6 @@ export interface ContentPageMeta {
 
 export interface ContentPageDef extends ContentPageMeta, Slot {
   _customPageType?: string;
-  slots?: SlotsMap;
   fallback?: Record<string, unknown>;
   likeControl?: boolean;
   colorPalette?: ColorPalette;

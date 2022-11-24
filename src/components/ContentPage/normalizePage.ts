@@ -1,5 +1,5 @@
 import type { BlocksRegistry } from '../../model/BlocksRegistry';
-import type { ContentPageDef, Slot } from '../../model/ContentPageDef';
+import type { ContentPageDef } from '../../model/ContentPageDef';
 import { filterBlocks } from './filterBlocks';
 
 export const normalizePage =
@@ -19,10 +19,7 @@ export const normalizePage =
         Object.keys(slots).reduce(
           (res, key) => ({
             ...res,
-            [key]: {
-              ...slots[key],
-              blocks: filterBlocks((slots[key] as Slot).blocks || [], blocksRegistry),
-            },
+            [key]: [...filterBlocks(slots[key] || [], blocksRegistry)],
           }),
           {},
         ),

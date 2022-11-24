@@ -19,17 +19,14 @@
   "style": ["bg-main-divider"],
   "likeControl": true,
   "slots": {
-    "header": {
-      "style": ["mb-5", "shadow-[0_8px_32px_0px_#00000014]"],
-      "blocks": [
-        {
-          "type": "Header",
-          "content": {
-            "defaultLocation": "Москва"
-          }
+    "header": [
+      {
+        "type": "Header",
+        "content": {
+          "defaultLocation": "Москва"
         }
-      ]
-    }
+      }
+    ]
   },
   "blocks": [
     {

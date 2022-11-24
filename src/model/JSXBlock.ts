@@ -11,6 +11,7 @@ export interface UniBlockProps {
   ancestors?: BlockAncestors;
   labels?: string[];
   anchor?: string;
+  slots?: Record<string, VNode>;
 }
 
 export type JSXBlock<BlockProps = Record<string, any>> = UNIComponent<
@@ -19,5 +20,6 @@ export type JSXBlock<BlockProps = Record<string, any>> = UNIComponent<
   VNode | VNode[]
 > & {
   childrenTypes?: string[];
+  slots?: (props: UniBlockProps) => string[];
   renderChild?: (child: VNode, i: number) => VNode;
 };

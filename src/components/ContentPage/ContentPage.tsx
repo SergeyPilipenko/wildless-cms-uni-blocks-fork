@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockAncestors, BlockDecorator } from '../../model/BlockDecorator';
+import type { BlockDecorator } from '../../model/BlockDecorator';
 import type { BlocksRegistry } from '../../model/BlocksRegistry';
-import type { BlockDef, ContentPageDef } from '../../model/ContentPageDef';
-import type { UniBlockProps } from '../../model/JSXBlock';
+import type { ContentPageDef } from '../../model/ContentPageDef';
+import type { JSXBlock, UniBlockProps } from '../../model/JSXBlock';
 import { style2className } from '../../utils/style2className';
 import { LikeControl } from '../LikeControl/LikeControl';
 import type { ContentPageContext } from './ContentPageContext';
-import { renderBlock } from './renderBlock';
+import { getBlockRenderer, RenderBlockOptions, renderSlots } from './renderBlock';
 
 interface ContentPageProps extends UniBlockProps {
   blocksRegistry: BlocksRegistry;
@@ -17,26 +17,33 @@ interface ContentPageProps extends UniBlockProps {
 const defaultBlockDecorator: BlockDecorator = ({ blockClassName, block, render }) =>
   render({ blockClassName, block });
 
-export const ContentPage = JSX<ContentPageProps>((props) => {
-  const { className = '', context, data = {} } = props;
+export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((props) => {
+  const { className = '', blocksRegistry, blockDecorator, context, data = {} } = props;
 
   const { style: pageStyle, blocks, slots, likeControl, colorPalette = 'pc' } = data;
 
-  const blocksListRenderer = renderBlocksList(props);
+  const options: RenderBlockOptions = {
+    key: '',
+    blocksRegistry,
+    page: data,
+    blockDecorator: blockDecorator || defaultBlockDecorator,
+    context,
+  };
+
+  const blockRenderer = getBlockRenderer(options, []);
+  const pageSlots = slots ? renderSlots(slots, options) : {};
 
   return (
     <section
       className={`relative ${style2className(pageStyle)} ${className}`}
       data-theme={colorPalette}
     >
-      {slots?.header?.blocks?.length ? (
-        <div className={`${style2className(slots.header.style)}`}>
-          {blocksListRenderer(slots.header.blocks, ['header'])}
-        </div>
+      {pageSlots?.header ? (
+        <div className="mb-5 shadow-[0_8px_32px_0px_#00000014]">{pageSlots.header}</div>
       ) : null}
 
       {blocks?.length ? (
-        <div className="container grid grid-cols-12 gap-1">{blocksListRenderer(blocks)}</div>
+        <div className="container grid grid-cols-12 gap-1">{blocks.map(blockRenderer())}</div>
       ) : null}
 
       {likeControl ? renderLikeControl(context) : null}
@@ -44,22 +51,8 @@ export const ContentPage = JSX<ContentPageProps>((props) => {
   );
 });
 
-function renderBlocksList({ blocksRegistry, data, blockDecorator, context }: ContentPageProps) {
-  return (blocks: BlockDef[], ancestors?: BlockAncestors) =>
-    blocks.map((block, i) =>
-      renderBlock(
-        block,
-        {
-          key: `${block.type || '#'}-${i}`,
-          blocksRegistry,
-          page: data || {},
-          blockDecorator: blockDecorator || defaultBlockDecorator,
-          context,
-        },
-        ancestors,
-      ),
-    );
-}
+ContentPage.childrenTypes = [];
+ContentPage.slots = () => ['header'];
 
 function renderLikeControl(context: ContentPageContext) {
   return (
