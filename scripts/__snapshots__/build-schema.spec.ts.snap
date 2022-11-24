@@ -1289,7 +1289,7 @@ Object {
         "headlineSmallVersion": Object {
           "$ref": "#/definitions/HeadlineSmallVersion",
         },
-        "image": Object {
+        "icon": Object {
           "$ref": "#/definitions/Picture",
           "default": Object {
             "format": "webp",
@@ -1331,6 +1331,9 @@ Object {
     },
     "GalleryContent": Object {
       "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonWithIconProps",
+        },
         "cards": Object {
           "items": Object {
             "$ref": "#/definitions/GalleryCardProps",
@@ -1566,6 +1569,7 @@ Object {
     },
     "HeadlineSmallVersion": Object {
       "enum": Array [
+        "H6",
         "XL_L",
         "XL_R",
         "L_L",
@@ -1575,6 +1579,7 @@ Object {
         "XS",
       ],
       "enumNames": Array [
+        "Заголовок",
         "Самый большой тонкий",
         "Самый большой",
         "Очень большой тонкий",
@@ -2446,6 +2451,9 @@ Object {
         "headlineVersion": "L",
       },
       "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonWithIconProps",
+        },
         "cards": Object {
           "items": Object {
             "$ref": "#/definitions/GalleryCardProps",

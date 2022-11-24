@@ -22,7 +22,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
   ({
     context,
     title,
-    headlineVersion = 'L',
+    headlineVersion = 'M',
     description,
     cards = [],
     version = 'normal',
@@ -30,7 +30,6 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
   }) => {
     return (
       <div>
-        <div className="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent" />
         <Headline
           context={context}
           className="!p-0"

@@ -3,7 +3,6 @@ import { AlignText } from '../../model/AlignText';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { HEADLINE_SMALL_VERSION } from '../Headline/constants';
@@ -12,10 +11,10 @@ import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 export const GalleryCardInner = JSX<GalleryCardProps>(
   ({
     title,
-    headlineSmallVersion = 'XL_L',
+    headlineSmallVersion = 'H6',
     description,
     additionalDescription,
-    image,
+    icon,
     items,
     button,
     version,
@@ -25,39 +24,37 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
     return (
       <div className={`h-full flex flex-col justify-between ${AlignText[align]}`}>
         <div className="flex flex-col h-full">
-          {renderImage(image)}
+          {renderImage(icon)}
           {renderCardTitle(headlineSmallVersion, title)}
           {renderDescription(description, title)}
           {renderAdditionalDescription(additionalDescription)}
           {items?.length ? renderItems(items, isDotted, version) : null}
         </div>
-        {button ? renderButton(button) : null}
+        {button ? <Button className="mt-6" {...button} /> : null}
       </div>
     );
   },
 );
 
-const renderImage = (image?: Picture) =>
-  image?.src ? (
-    <div className="flex justify-center">
-      <Img className="mb-6" image={image} />
-    </div>
-  ) : null;
+const renderImage = (image?: Picture) => (
+  <div className="flex justify-center">
+    {image?.src ? <Img className="mb-5" image={image} /> : null}
+    {image?.icon ? (
+      <Img className={`w-[32px] h-[32px] min-w-[32px] mb-5 rounded-full`} image={image} asSVG />
+    ) : null}
+  </div>
+);
 
 const renderCardTitle = (headlineSmallVersion: string, title?: string) =>
   title ? <div className={HEADLINE_SMALL_VERSION[headlineSmallVersion]}>{title}</div> : null;
 
 const renderDescription = (description?: string, title?: string) =>
-  description ? <div className={`text-base ${title ? 'mt-2' : ''}`}>{description}</div> : null;
+  description ? <div className={`text-l ${title ? 'mt-2' : ''}`}>{description}</div> : null;
 
 const renderAdditionalDescription = (additionalDescription?: string) =>
   additionalDescription ? (
     <div className="text-m-light text-secondary-text mt-auto">{additionalDescription}</div>
   ) : null;
-
-const renderButton = (button: ButtonWithIconProps) => (
-  <Button className="mt-6 w-full" {...button} />
-);
 
 const renderItems = (
   items: GalleryItemProps[],

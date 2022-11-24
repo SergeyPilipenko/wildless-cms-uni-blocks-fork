@@ -46,7 +46,7 @@ export const defaultProps: GalleryProps = {
       title: 'Более 5000 товаров',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
@@ -55,7 +55,7 @@ export const defaultProps: GalleryProps = {
     {
       title: 'Более 1000 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
-      image,
+      icon: image,
       button: buttonPrimaryIcon,
       isDotted,
       items: defaultItems,
@@ -63,7 +63,7 @@ export const defaultProps: GalleryProps = {
     {
       title: 'Фермерские продукты',
       description: 'Высокий процент даже при небольшой сумме денежных средств',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
@@ -72,7 +72,7 @@ export const defaultProps: GalleryProps = {
       title: '«Моя выгода»',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
@@ -89,26 +89,26 @@ const textAndButtonProps: GalleryProps = {
       title: 'Более 5000 товаров',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
       button: buttonPrimary,
     },
     {
       title: 'Более 1000 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
-      image,
+      icon: image,
       button: buttonPrimary,
     },
     {
       title: 'Фермерские продукты',
       description: 'Высокий процент даже при небольшой сумме денежных средств',
-      image,
+      icon: image,
       button: buttonPrimary,
     },
     {
       title: '«Моя выгода»',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
       button: buttonPrimary,
     },
   ],
@@ -121,28 +121,28 @@ const listAndButtonProps: GalleryProps = {
   cards: [
     {
       title: 'Более 5000 товаров',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
     },
     {
       title: 'Более 1000 развлечений',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
     },
     {
       title: 'Фермерские продукты',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
     },
     {
       title: '«Моя выгода»',
-      image,
+      icon: image,
       button: buttonPrimary,
       isDotted,
       items: defaultItems,
@@ -159,49 +159,45 @@ const textAndNoButtonProps: GalleryProps = {
       title: 'Более 5000 товаров',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
     },
     {
       title: 'Более 1000 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
-      image,
+      icon: image,
     },
     {
       title: 'Фермерские продукты',
       description: 'Высокий процент даже при небольшой сумме денежных средств',
-      image,
+      icon: image,
     },
     {
       title: '«Моя выгода»',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
     },
   ],
 };
 
 const onlyTitleProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
-  description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
   context,
   cards: [
     {
       title: 'Более 5000 товаров',
-      image,
+      icon: { icon: 'PercentageRoundIcon' },
     },
     {
       title: 'Более 1000 развлечений',
-      image,
+      icon: { icon: 'InterestIcon' },
     },
     {
       title: 'Фермерские продукты',
-      image,
-    },
-    {
-      title: '«Моя выгода»',
-      image,
+      icon: { icon: 'WalletIcon' },
     },
   ],
+  button: buttonPrimary,
 };
 
 export default {

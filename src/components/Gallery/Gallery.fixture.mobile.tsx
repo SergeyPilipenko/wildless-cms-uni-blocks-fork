@@ -32,19 +32,19 @@ const defaultItems = [
 
 const cards: GalleryCardProps[] = [
   {
-    image,
+    icon: image,
     title: 'Вклады в любой валюте',
     description: 'О Вклады до 1,4 млн застрахованы в государственной системе страхования вкладов',
     button: link,
   },
   {
-    image,
+    icon: image,
     title: 'Вклады в любой валюте',
     description: 'О Вклады до 1,4 млн застрахованы в государственной системе страхования вкладов',
     version: 'secondary',
   },
   {
-    image,
+    icon: image,
     title: 'Вклады в любой валюте',
     isDotted,
     items: defaultItems,

@@ -457,14 +457,11 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
 
 exports[`Blocks Gallery should render block "Gallery" without content 1`] = `
 <section
-  class="relative font-sans text-primary-text bg-white p-[42px] overflow-hidden "
+  class="relative font-sans text-primary-text bg-white p-[42px] overflow-hidden flex flex-col "
 >
   <div>
-    <div
-      class="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent"
-    />
     <section
-      class="font-sans flex flex-col p-[50px] gap-4 bg-transparent !p-0"
+      class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
     />
     <div
       class="flex mt-8 justify-center duration-1000"
@@ -473,12 +470,6 @@ exports[`Blocks Gallery should render block "Gallery" without content 1`] = `
     />
   </div>
   <div />
-  <div
-    class="absolute top-0 left-0 bottom-0 w-[82px] bg-opacity-from-white"
-  />
-  <div
-    class="absolute top-0 right-0 bottom-0 w-[82px] bg-opacity-to-white"
-  />
 </section>
 `;
 
@@ -663,14 +654,11 @@ exports[`Blocks LinkDocs should render block "LinkDocs" without content 1`] = `
 
 exports[`Blocks MiniGallery should render block "MiniGallery" without content 1`] = `
 <section
-  class="relative font-sans text-primary-text bg-white p-[42px] overflow-hidden "
+  class="relative font-sans text-primary-text bg-white p-[42px] overflow-hidden flex flex-col "
 >
   <div>
-    <div
-      class="absolute top-0 left-0 bottom-0 w-[84px] bg-gradient-to-r from-white to-transparent"
-    />
     <section
-      class="font-sans flex flex-col p-[50px] gap-4 bg-transparent !p-0"
+      class="font-sans flex flex-col p-[50px] gap-3 bg-transparent !p-0"
     />
     <div
       class="flex mt-8 justify-center duration-1000"
@@ -679,12 +667,6 @@ exports[`Blocks MiniGallery should render block "MiniGallery" without content 1`
     />
   </div>
   <div />
-  <div
-    class="absolute top-0 left-0 bottom-0 w-[82px] bg-opacity-from-white"
-  />
-  <div
-    class="absolute top-0 right-0 bottom-0 w-[82px] bg-opacity-to-white"
-  />
 </section>
 `;
 

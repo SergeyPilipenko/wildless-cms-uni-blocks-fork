@@ -35,7 +35,7 @@ export type GalleryCardProps = HeadlineSmallProps & {
    *   }]
    * }
    */
-  image?: Picture;
+  icon?: Picture;
   /** @title Кнопка */
   button?: ButtonWithIconProps;
   /**
@@ -64,4 +64,5 @@ export type GalleryContent = HeadlineProps & {
   cards?: GalleryCardProps[];
   /** @title Отображать элементы в моб. версии (прокрутка shift+mouseScroll) */
   orientation?: ListOrientation; //TODO: for mobile
+  button?: ButtonWithIconProps;
 };

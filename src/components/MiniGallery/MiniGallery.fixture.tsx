@@ -21,28 +21,28 @@ export const defaultProps: MiniGalleryProps = {
       title: 'Более 5000 товаров',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
     },
     {
       title: 'Более 1000 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
-      image,
+      icon: image,
     },
     {
       title: 'Фермерские продукты',
       description: 'Высокий процент даже при небольшой сумме денежных средств',
-      image,
+      icon: image,
     },
     {
       title: '«Моя выгода»',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
-      image,
+      icon: image,
     },
     {
       title: 'Более 8888 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
-      image,
+      icon: image,
     },
   ],
 };
@@ -54,19 +54,19 @@ const onlyTitleProps: MiniGalleryProps = {
   cards: [
     {
       title: 'Более 5000 товаров',
-      image,
+      icon: image,
     },
     {
       title: 'Более 1000 развлечений',
-      image,
+      icon: image,
     },
     {
       title: 'Фермерские продукты',
-      image,
+      icon: image,
     },
     {
       title: '«Моя выгода»',
-      image,
+      icon: image,
     },
   ],
 };
@@ -81,32 +81,32 @@ const additionalDescriptionProps: MiniGalleryProps = {
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
       additionalDescription: '01 января 2022',
-      image,
+      icon: image,
     },
     {
       title: 'Более 1000 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
       additionalDescription: '02 февраля 2022',
-      image,
+      icon: image,
     },
     {
       title: 'Фермерские продукты',
       description: 'Высокий процент даже при небольшой сумме денежных средств',
       additionalDescription: '03 марта 2022',
-      image,
+      icon: image,
     },
     {
       title: '«Моя выгода»',
       description:
         'Время копить: ставка растет в зависимости от срока нахождения средств на Счете!',
       additionalDescription: '04 апреля 2022',
-      image,
+      icon: image,
     },
     {
       title: 'Более 8888 развлечений',
       description: 'Порядок и условия предоставления в соответствии с 106 ФЗ',
       additionalDescription: '05 мая 2022',
-      image,
+      icon: image,
     },
   ],
 };

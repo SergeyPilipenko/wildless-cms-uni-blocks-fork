@@ -4,7 +4,7 @@
   "orientation": "horizontal",
   "cards": [
     {
-      "image": {
+      "icon": {
         "format": "webp",
         "size": {
           "width": 150,
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "image": {
+      "icon": {
         "format": "webp",
         "size": {
           "width": 140,

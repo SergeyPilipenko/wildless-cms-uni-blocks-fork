@@ -67,6 +67,7 @@ export const HEADLINE_VERSION: Record<HeadlineVersion, VersionStyleType> = {
 };
 
 export const HEADLINE_SMALL_VERSION: Record<HeadlineSmallVersion, string> = {
+  H6: 'text-h6',
   XL_L: 'text-xl-light',
   XL_R: 'text-xl',
   L_L: 'text-l-light',

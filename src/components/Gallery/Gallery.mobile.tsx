@@ -11,6 +11,7 @@ import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
+import { Picture } from '../../model/Picture';
 
 export const Gallery = JSX<GalleryProps>(
   ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {
@@ -54,11 +55,7 @@ function renderCard(card: GalleryCardProps, key: number) {
       key={key}
     >
       <div>
-        {card.image?.src ? (
-          <div className="flex justify-center">
-            <Img className="mb-3.5" image={card.image} />
-          </div>
-        ) : null}
+        {renderImage(card.icon)}
         {card.title ? <h3 className={`text-m-title-xs font-medium m-0`}>{card.title}</h3> : null}
         {card.description ? renderDescription(card) : null}
         {card.items?.length ? renderItems(card.items, card.isDotted, card.version) : null}
@@ -67,6 +64,13 @@ function renderCard(card: GalleryCardProps, key: number) {
     </div>
   );
 }
+
+const renderImage = (image?: Picture) =>
+  image?.src || image?.icon ? (
+    <div className="flex justify-center">
+      <Img className="mb-3.5" image={image} />
+    </div>
+  ) : null;
 
 function renderButton(button?: ButtonWithIconProps) {
   return <Button className="mt-3" {...button} />;
