@@ -76,7 +76,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
         ) : null}
         {button?.text ? (
           <Button
-            className="mt-8 w-full max-w-[240px]"
+            className="mt-8 min-w-[240px]"
             version="primary"
             {...useLink({ router, handlerDecorator }, button)}
           />

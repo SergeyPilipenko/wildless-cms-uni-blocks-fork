@@ -59,7 +59,7 @@ export const Tile = JSX<TileProps>((props) => {
           buttons?.length ? (
             <ButtonSection
               context={context}
-              buttons={buttons.map((button) => ({ ...button, className: 'w-[158px]' }))}
+              buttons={buttons.map((button) => ({ ...button, className: 'min-w-[158px]' }))}
               className="flex mt-8 gap-3"
             />
           ) : null
