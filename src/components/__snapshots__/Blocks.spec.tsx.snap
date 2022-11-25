@@ -737,7 +737,7 @@ exports[`Blocks OfficeMap should render block "OfficeMap" without content 1`] = 
         <div
           class="p-3 border rounded-md text-m flex items-center cursor-pointer text-golden border-golden"
         >
-          Перерыв 13:00 - 14:00
+          без перерыва
         </div>
       </div>
     </div>

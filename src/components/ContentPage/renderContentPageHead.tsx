@@ -5,15 +5,19 @@ export function renderContentPageHead(data: ContentPageMeta) {
   const { description, keywords, canonical, robots } = main || {};
 
   return [
-    <title>{title}</title>,
-    <meta name="viewport" content="width=device-width, initial-scale=1" />,
-    description ? <meta name="description" content={description} /> : null,
-    keywords ? <meta name="keywords" content={keywords.join(',')} /> : null,
-    robots ? <meta name="robots" content={robots.join(',')} /> : null,
+    <title key="title">{title}</title>,
+    <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />,
+    description ? <meta key="description" name="description" content={description} /> : null,
+    keywords ? <meta key="keywords" name="keywords" content={keywords.join(',')} /> : null,
+    robots ? <meta key="robots" name="robots" content={robots.join(',')} /> : null,
     renderOpenGraph(og),
     renderTwitter(twitter),
-    canonical ? <link rel="canonical" href={canonical} /> : null,
-    jsonLd ? <script type="application/ld+json">{jsonLd}</script> : null,
+    canonical ? <link key="canonical" rel="canonical" href={canonical} /> : null,
+    jsonLd ? (
+      <script key="jsonLd" type="application/ld+json">
+        {jsonLd}
+      </script>
+    ) : null,
   ].filter(Boolean);
 }
 
