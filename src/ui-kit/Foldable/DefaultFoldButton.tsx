@@ -13,29 +13,38 @@ interface DefaultFoldButtonProps {
 }
 
 export const DefaultFoldButton = JSX<DefaultFoldButtonProps>(
-  ({ className, label, icon, dataTheme = '', onClick }) => (
-    <button
-      className={`border-none bg-primary-main hover:bg-primary-hover px-0 py-5 mb-[1px] w-full font-sans text-white flex justify-center cursor-pointer ${
-        className || ''
-      }`}
-      data-theme={dataTheme}
-      onClick={onClick}
-    >
-      <span className="text-h4 pr-3">{label}</span>
-      {icon ? (
-        <Img
-          image={{
-            icon,
-            iconVersion: 'white',
-          }}
-          className="flex-shrink-0 my-auto"
-          width="20"
-          height="20"
-          asSVG
-        />
-      ) : null}
-    </button>
-  ),
+  ({ className = '', label, icon, dataTheme = '', onClick }) => {
+    const STATE_STYLE =
+      'hover:bg-primary-hover focus:border-primary-text active:bg-primary-active outline-none';
+    const DIMENSIONS_STYLE = 'flex justify-center w-full px-0 py-5 mb-[1px]';
+
+    return (
+      <button
+        className={[
+          'border border-transparent bg-primary-main font-sans text-white cursor-pointer',
+          STATE_STYLE,
+          DIMENSIONS_STYLE,
+          className,
+        ].join(' ')}
+        data-theme={dataTheme}
+        onClick={onClick}
+      >
+        <span className="text-h4 pr-3">{label}</span>
+        {icon ? (
+          <Img
+            image={{
+              icon,
+              iconVersion: 'white',
+            }}
+            className="flex-shrink-0 my-auto"
+            width="20"
+            height="20"
+            asSVG
+          />
+        ) : null}
+      </button>
+    );
+  },
 );
 
 export const renderDefaultFoldButton = ({ isUnfolded, onToggle }: FoldablePartProps) => {

@@ -1066,7 +1066,7 @@ exports[`Blocks OtherProductsItem should render block "OtherProductsItem" withou
       />
     </div>
     <button
-      class="border-none bg-primary-main hover:bg-primary-hover px-0 py-5 mb-[1px] w-full font-sans text-white flex justify-center cursor-pointer "
+      class="border border-transparent bg-primary-main font-sans text-white cursor-pointer hover:bg-primary-hover focus:border-primary-text active:bg-primary-active outline-none flex justify-center w-full px-0 py-5 mb-[1px] "
       data-theme=""
     >
       <span
