@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useMemo, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
@@ -16,39 +16,52 @@ export interface HeaderSubMenuProps {
 }
 
 export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], bgColor }) => {
-  const [menuVisible, setMenuVisible] = useState(false);
-  const router = context.useRouter();
   const { handlerDecorator } = context;
+  const router = context.useRouter();
+
+  const subItemsListRef = useRef<HTMLDivElement | null>(null);
+
+  const [menuVisible, setMenuVisible] = useState(false);
 
   const [visibleItemsCount, setVisibleItemsCount] = useState(subItems.length);
   const dropDownMenuItems = subItems.slice(visibleItemsCount);
 
+  const observerOptions = useMemo(
+    () => ({ threshold: 1, root: subItemsListRef.current }),
+    [subItemsListRef.current],
+  );
+
+  const observerCallbacks = useMemo(
+    () =>
+      subItems.map((_, index) => (entries: IntersectionObserverEntry[]) => {
+        if (!entries.length) {
+          return;
+        }
+
+        // Assumption about sorting entries by time
+        const entry = entries[entries.length - 1];
+
+        if (entry.isIntersecting) {
+          setVisibleItemsCount(handleIntersectionActivation(index));
+        } else {
+          setVisibleItemsCount(handleIntersectionDeactivation(index));
+        }
+      }),
+    [subItems],
+  );
+
   const activeSubItem = findActiveSubItem(router)(subItems);
   const toggleMenu = () => setMenuVisible(!menuVisible);
 
-  const observerCallback = (itemIndex: number) => (entries: IntersectionObserverEntry[]) => {
-    if (!entries.length) {
-      return;
-    }
-
-    const entry = entries[0];
-
-    if (entry.intersectionRatio < 1) {
-      setVisibleItemsCount((prev) => Math.min(prev, itemIndex));
-    } else {
-      setVisibleItemsCount((prev) => Math.max(prev, itemIndex + 1));
-    }
-  };
-
   return (
     <nav className="relative mt-6">
-      <div className="overflow-hidden whitespace-nowrap mr-52 pb-3">
+      <div ref={subItemsListRef} className="overflow-hidden whitespace-nowrap mr-52 pb-3">
         {subItems.map((_, i) => (
           <IntersectionObserverTag
-            tag="span"
-            observerCallback={observerCallback(i)}
-            observerOptions={{ threshold: 1 }}
             key={String(i)}
+            tag="span"
+            observerCallback={observerCallbacks[i]}
+            observerOptions={observerOptions}
           >
             <HeaderItem
               className={`mr-8 ${visibleItemsCount - 1 < i ? 'invisible' : ''}`}
@@ -72,3 +85,6 @@ export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], 
     </nav>
   );
 });
+
+const handleIntersectionActivation = (index: number) => (prev: number) => Math.max(prev, index + 1);
+const handleIntersectionDeactivation = (index: number) => (prev: number) => Math.min(prev, index);

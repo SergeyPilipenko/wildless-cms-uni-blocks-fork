@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useCallback, useRef } from '@redneckz/uni-jsx/lib/hooks';
+import { useEffect, useRef } from '@redneckz/uni-jsx/lib/hooks';
 import type { VNode } from '../model/VNode';
 
 interface IntersectionObserverTagProps {
@@ -20,29 +20,25 @@ export const IntersectionObserverTag = JSX<IntersectionObserverTagProps>((props)
     anchor = null,
     children,
   } = props;
+  const tagRef = useRef<HTMLElement | null>(null);
 
-  const intersectionObserver = useRef<IntersectionObserver | null>(null);
+  useEffect(() => {
+    if (!tagRef.current) {
+      return undefined;
+    }
 
-  const ref = useCallback(
-    (element: HTMLElement | null) => {
-      if (!element) {
-        return;
-      }
+    const intersectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+    intersectionObserver.observe(tagRef.current);
 
-      if (intersectionObserver.current) {
-        intersectionObserver.current.disconnect();
-      }
-
-      intersectionObserver.current = new IntersectionObserver(observerCallback, observerOptions);
-      intersectionObserver.current.observe(element);
-    },
-    [observerCallback, observerOptions],
-  );
+    return () => {
+      intersectionObserver.disconnect();
+    };
+  }, [observerCallback, observerOptions]);
 
   const Tag = tag as any;
 
   return (
-    <Tag ref={ref} className={className} id={anchor}>
+    <Tag ref={tagRef} className={className} id={anchor}>
       {children}
     </Tag>
   );

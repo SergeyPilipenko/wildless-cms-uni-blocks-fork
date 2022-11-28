@@ -67,15 +67,15 @@ const renderDotsSubMenuItems = ({
 }: DotsSubMenuItemsProps) => {
   const isActive = (item: LinkProps) => item === activeSubItem;
 
-  return menuItems?.map((_) => (
+  return menuItems?.map(({ text, ...rest }) => (
     <a
-      key={_.href}
-      {...useLink({ router, handlerDecorator }, _)}
+      key={rest.href}
+      {...useLink({ router, handlerDecorator }, rest)}
       className={`text-l-light pb-4 hover:text-primary-main ${
-        isActive(_) ? 'text-primary-main' : ''
+        isActive(rest) ? 'text-primary-main' : ''
       }`}
     >
-      {_.text}
+      {text}
     </a>
   ));
 };
