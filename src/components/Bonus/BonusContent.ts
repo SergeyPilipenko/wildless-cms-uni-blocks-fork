@@ -37,6 +37,7 @@ export type BonusItem = HeadlineCommonProps & {
   /**
    * @title Кнопка
    * @maxItems 1
+   * @default [{"version" : "secondary", "target": "_self"}]
    */
   buttons?: ButtonWithIconProps[];
 };

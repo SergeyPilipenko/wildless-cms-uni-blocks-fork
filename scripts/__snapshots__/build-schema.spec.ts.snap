@@ -369,6 +369,12 @@ Object {
           "$ref": "#/definitions/BonusItemContentDef",
         },
         "buttons": Object {
+          "default": Array [
+            Object {
+              "target": "_self",
+              "version": "secondary",
+            },
+          ],
           "items": Object {
             "$ref": "#/definitions/ButtonWithIconProps",
           },

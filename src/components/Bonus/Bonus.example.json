@@ -4,12 +4,7 @@
   "bonusItems": [
     {
       "title": "Плитка 1",
-      "description": "Описание плитки 1",
-      "bonusItemContent": {
-        "bonusType": "count",
-        "bonusCount": "1",
-        "bonusName": "балл"
-      }
+      "description": "Описание плитки 1"
     }
   ]
 }
