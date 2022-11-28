@@ -1,5 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useExchangeRates } from '../../hooks/useExchangeRates';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -7,25 +6,23 @@ import { BaseTile } from '../BaseTile/BaseTile';
 import { Currency } from './CurrencyProps';
 import { CurrencyTable } from './CurrencyTable';
 import { CurrentLocation } from './CurrentLocation';
-import { ExchangeCurrencyCalculator } from './ExchangeCurrencyCalculator';
+import { ExchangeCurrencyCalculator, ExchangeCurrencyItem } from './ExchangeCurrencyCalculator';
 import type { ExchangeRateTileContent } from './ExchangeRateTileContent';
-
-const DEFAULT_LOCATION = {
-  address: 'Москва, ул.Ленина д.28',
-  distance: '6км',
-};
+import { useFetchExchangeRateData } from './useFetchExchangeRateData';
 
 export interface ExchangeRateTileProps extends ExchangeRateTileContent, UniBlockProps {}
 
 export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
   ({ className = '', context, title = 'Курсы обмена валют', button, ...rest }) => {
-    const currencyRates = useExchangeRates();
+    const { exchangeRates } = useFetchExchangeRateData();
 
-    const currencyRatesBuy = currencyRates.filter((_) => _.buy);
-    currencyRatesBuy.unshift({ code: Currency.RUB });
+    const currencyRates = getCurrencyRates(exchangeRates?.exchangeRate?.currencies);
 
-    const currencyRatesSell = currencyRates.filter((_) => _.sell);
-    currencyRatesSell.push({ code: Currency.RUB });
+    const currencyRatesBuy = currencyRates.filter((_) => _.buyExchangeRate);
+    currencyRatesBuy.unshift({ currency: { currency: Currency.RUB } });
+
+    const currencyRatesSell = currencyRates.filter((_) => _.saleExchangeRate);
+    currencyRatesSell.push({ currency: { currency: Currency.RUB } });
 
     return (
       <BlockWrapper
@@ -44,7 +41,7 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
               {currencyRates ? (
                 <CurrencyTable className="mb-[30px]" exchangeCurrencyItems={currencyRates} />
               ) : null}
-              <CurrentLocation {...DEFAULT_LOCATION} />
+              <CurrentLocation address={exchangeRates?.address} />
             </div>
             {currencyRates.length && currencyRatesBuy.length && currencyRatesSell.length ? (
               <ExchangeCurrencyCalculator
@@ -61,3 +58,7 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
     );
   },
 );
+
+const getCurrencyRates = (currencies?: ExchangeCurrencyItem[]) => {
+  return currencies?.filter((_) => _?.currency?.id === 1 || _?.currency?.id === 2) || [];
+};

@@ -31,18 +31,20 @@ export const CurrencyTable = JSX<CurrencyTableProps>(({ className, exchangeCurre
 });
 
 const renderCurrencyRow = (exchangeCurrencyItem: ExchangeCurrencyItem) => {
-  const code = exchangeCurrencyItem?.code;
+  const currency = exchangeCurrencyItem?.currency?.currency;
 
   return (
-    <tr key={code} className="pb-1 text-h6">
+    <tr key={currency} className="pb-1 text-h6">
       <td className="pt-4">
         <div className="flex items-center">
-          {code ? <Img image={{ icon: CURRENCY_ICONS_MAP[code] }} width="24" height="24" /> : null}
-          <span className="ml-2">{code}</span>
+          {currency ? (
+            <Img image={{ icon: CURRENCY_ICONS_MAP[currency] }} width="24" height="24" />
+          ) : null}
+          <span className="ml-2">{currency}</span>
         </div>
       </td>
-      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem?.sell)}</td>
-      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem?.buy)}</td>
+      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem?.saleExchangeRate)}</td>
+      <td className="pt-4 pl-11">{formatCurrency(exchangeCurrencyItem?.buyExchangeRate)}</td>
     </tr>
   );
 };

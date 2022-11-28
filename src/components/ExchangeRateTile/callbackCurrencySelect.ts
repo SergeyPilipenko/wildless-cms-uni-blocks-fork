@@ -4,7 +4,7 @@ import { Currency } from './CurrencyProps';
 interface TableFuncProps {
   value: Currency;
   oppositeValue: Currency;
-  handleConvert: (codeFrom?: Currency, codeTo?: Currency) => void;
+  handleConvert: (currencyFrom?: Currency, currencyTo?: Currency) => void;
 }
 
 export const callbackCurrencySelect = (props: TableFuncProps) =>

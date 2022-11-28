@@ -10,9 +10,13 @@ import { Currency } from './CurrencyProps';
 import { renderInput } from './renderInput';
 
 export interface ExchangeCurrencyItem {
-  code?: Currency;
-  buy?: number;
-  sell?: number;
+  currency?: {
+    id?: number;
+    code?: string;
+    currency?: Currency;
+  };
+  buyExchangeRate?: number;
+  saleExchangeRate?: number;
 }
 export interface ExchangeCurrencyCalculatorProps extends UniBlockProps {
   className?: string;
@@ -35,8 +39,8 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
     const [calcState, setCalcState] = useState<CalcState>({
       inputSell: '',
       inputBuy: '',
-      selectSell: currencyRatesBuy?.[0]?.code || Currency.RUB,
-      selectBuy: currencyRatesSell?.[0]?.code || Currency.USD,
+      selectSell: currencyRatesBuy?.[0]?.currency?.currency || Currency.RUB,
+      selectBuy: currencyRatesSell?.[0]?.currency?.currency || Currency.USD,
     });
 
     const handleSetCalcState = (newState: Partial<CalcState>) => {
@@ -96,8 +100,12 @@ const handleSelectSell =
     callbackCurrencySelect({
       value,
       oppositeValue: calcState.selectBuy,
-      handleConvert: (codeFrom = calcState.selectSell, codeTo = calcState.selectBuy) => {
-        handleInputSell(setCalcState, currencyRatesSell)(calcState.inputSell, codeFrom, codeTo);
+      handleConvert: (currencyFrom = calcState.selectSell, currencyTo = calcState.selectBuy) => {
+        handleInputSell(setCalcState, currencyRatesSell)(
+          calcState.inputSell,
+          currencyFrom,
+          currencyTo,
+        );
       },
     });
   };
@@ -113,35 +121,39 @@ const handleSelectBuy =
     callbackCurrencySelect({
       value,
       oppositeValue: calcState.selectSell,
-      handleConvert: (codeTo = calcState.selectBuy, codeFrom = calcState.selectSell) =>
-        handleInputBuy(setCalcState, currencyRatesBuy)(calcState.inputBuy, codeTo, codeFrom),
+      handleConvert: (currencyTo = calcState.selectBuy, currencyFrom = calcState.selectSell) =>
+        handleInputBuy(setCalcState, currencyRatesBuy)(
+          calcState.inputBuy,
+          currencyTo,
+          currencyFrom,
+        ),
     });
   };
 
 const handleInputSell =
   (setCalcState: (state: Partial<CalcState>) => void, currencyRatesSell: ExchangeCurrencyItem[]) =>
-  (value: string, codeFrom: Currency, codeTo: Currency) => {
-    setCalcState({ inputSell: formatValue(value), selectBuy: codeTo });
+  (value: string, currencyFrom: Currency, currencyTo: Currency) => {
+    setCalcState({ inputSell: formatValue(value), selectBuy: currencyTo });
     const rate =
-      currencyRatesSell.find((_) => _.code === codeTo)?.buy ||
-      currencyRatesSell.find((_) => _.code === codeFrom)?.sell;
+      currencyRatesSell.find((_) => _.currency?.currency === currencyTo)?.buyExchangeRate ||
+      currencyRatesSell.find((_) => _.currency?.currency === currencyFrom)?.saleExchangeRate;
     if (rate) {
       setCalcState({
-        inputBuy: String(calculateResult(value, rate, codeFrom === Currency.RUB) || ''),
+        inputBuy: String(calculateResult(value, rate, currencyFrom === Currency.RUB) || ''),
       });
     }
   };
 
 const handleInputBuy =
   (setCalcState: (state: Partial<CalcState>) => void, currencyRatesBuy: ExchangeCurrencyItem[]) =>
-  (value: string, codeTo: Currency, codeFrom: Currency) => {
-    setCalcState({ inputBuy: formatValue(value), selectSell: codeFrom });
+  (value: string, currencyTo: Currency, currencyFrom: Currency) => {
+    setCalcState({ inputBuy: formatValue(value), selectSell: currencyFrom });
     const rate =
-      currencyRatesBuy.find((_) => _.code === codeFrom)?.sell ||
-      currencyRatesBuy.find((_) => _.code === codeTo)?.buy;
+      currencyRatesBuy.find((_) => _.currency?.currency === currencyFrom)?.saleExchangeRate ||
+      currencyRatesBuy.find((_) => _.currency?.currency === currencyTo)?.buyExchangeRate;
     if (rate) {
       setCalcState({
-        inputSell: String(calculateResult(value, rate, codeTo === Currency.RUB) || ''),
+        inputSell: String(calculateResult(value, rate, currencyTo === Currency.RUB) || ''),
       });
     }
   };

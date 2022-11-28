@@ -1,6 +1,6 @@
 import { Input } from '../../ui-kit/Input/Input';
-import { Select } from '../../ui-kit/Select/Select';
 import type { OptionProps } from '../../ui-kit/Select/Select';
+import { Select } from '../../ui-kit/Select/Select';
 import type { Currency } from './CurrencyProps';
 import type { ExchangeCurrencyItem } from './ExchangeCurrencyCalculator';
 
@@ -15,7 +15,10 @@ interface InputProps {
 
 export function renderInput(props: InputProps) {
   const { placeholder, rates, selected, value, setValue, setSelected } = props;
-  const ratesOptions: OptionProps[] = rates.map((_) => ({ key: _.code ?? '', text: _.code ?? '' }));
+  const ratesOptions: OptionProps[] = rates.map((_) => ({
+    key: _?.currency?.currency ?? '',
+    text: _?.currency?.currency ?? '',
+  }));
   const selectedValue: OptionProps = { key: selected, text: selected };
 
   return (

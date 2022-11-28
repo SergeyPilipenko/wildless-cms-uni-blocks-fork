@@ -268,15 +268,9 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
                   class="ml-3"
                 >
                   <p
-                    class="text-primary-main  m-0 mb-1 text-l"
+                    class="text-secondary-text m-0 text-m"
                   >
-                    Москва, ул.Ленина д.28
-                  </p>
-                  <p
-                    class="text-secondary-text m-0 text-m-light"
-                  >
-                    Курс указан для ближайшего офиса - 
-                    6км
+                    Курс указан для ближайшего офиса
                   </p>
                 </div>
               </div>
