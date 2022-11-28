@@ -3,11 +3,11 @@ import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { GalleryVersion } from '../../model/GalleryVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { galleryLengthForScrollMap } from './constants';
 import { GalleryContainer } from './GalleryContainer';
 import type { GalleryContent } from './GalleryContent';
-import { Button } from '../../ui-kit/Button/Button';
 
 export interface GalleryInnerProps extends GalleryContent, UniBlockProps {
   version?: GalleryVersion;
@@ -54,7 +54,7 @@ export const GalleryInner = JSX<GalleryInnerProps>(
           </div>
         ) : null}
 
-        {button ? <Button className="mt-8 mx-auto" {...button} /> : null}
+        {button ? renderButton({ button, buttonClassName: 'mt-8 mx-auto' }) : null}
       </BlockWrapper>
     );
   },

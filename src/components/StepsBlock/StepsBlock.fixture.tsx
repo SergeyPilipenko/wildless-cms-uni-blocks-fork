@@ -113,6 +113,8 @@ export default {
           text: 'Отправить заявку',
           href: 'https://www.rshb.ru/',
           target: '_blank',
+          icon: { icon: 'ComfortableCompIcon' },
+          iconRight: { icon: 'ComfortableCompIcon' },
         }}
       />
     </div>

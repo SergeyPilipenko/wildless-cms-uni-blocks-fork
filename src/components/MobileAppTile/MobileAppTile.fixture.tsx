@@ -1,8 +1,6 @@
-import type { IconVersion } from '../../model/IconVersion';
 import type { Picture } from '../../model/Picture';
 import { context } from '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import { Img } from '../../ui-kit/Img/Img';
 import { MobileAppTile } from './MobileAppTile';
 
 const image: Picture = {
@@ -34,14 +32,7 @@ const listItems = [
 const button1: ButtonWithIconProps = {
   aboveText: 'Загрузите в',
   text: 'App Store',
-  appendLeft: (
-    <Img
-      image={{ icon: 'AppleIcon', iconVersion: 'white' as IconVersion }}
-      width="24"
-      height="24"
-      asSVG
-    />
-  ),
+  icon: { icon: 'AppleIcon', iconVersion: 'white' },
   href: 'apps.apple.com',
   version: 'primary',
 };
@@ -49,12 +40,10 @@ const button1: ButtonWithIconProps = {
 const button2: ButtonWithIconProps = {
   aboveText: 'Доступно в',
   text: 'Google Play',
-  appendLeft: <Img image={{ icon: 'PlayMarketIcon' }} width="24" height="24" asSVG />,
+  icon: { icon: 'PlayMarketIcon' },
   href: 'play.google.com',
   version: 'secondary',
 };
-
-const icon = <Img image={{ icon: 'AppleIcon' }} width="24" height="24" asSVG />;
 
 export default {
   default: (
@@ -72,7 +61,7 @@ export default {
         buttons={[
           {
             ...button1,
-            appendLeft: icon,
+            icon: { icon: 'AppleIcon' },
             version: 'secondary',
           },
           button2,

@@ -1,5 +1,5 @@
-import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import { List } from '../../ui-kit/List/List';
@@ -15,16 +15,12 @@ export type EmbeddableCellDataType =
 const renderButtonsCellData = ({ buttons }: ButtonContent) =>
   buttons && buttons?.length ? (
     <div>
-      {buttons.map(({ rounded, appendLeft, ariaLabel, ...buttonProps }, idx) => (
-        <Button
-          className={`mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${appendLeft ? 'w-12 h-12' : ''}`}
-          key={String(idx)}
-          appendLeft={appendLeft}
-          rounded={rounded}
-          ariaLabel={ariaLabel}
-          {...buttonProps}
-        />
-      ))}
+      {buttons.map(({ rounded, icon, ...buttonProps }, idx) =>
+        renderButton({
+          button: { rounded, icon, ...buttonProps },
+          buttonClassName: `mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${icon ? 'w-12 h-12' : ''}`,
+        }),
+      )}
     </div>
   ) : null;
 

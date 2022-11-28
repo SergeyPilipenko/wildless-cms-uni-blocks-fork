@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { ProductColorVersion } from '../../model/ProductColorVersion';
-import { Button } from '../../ui-kit/Button/Button';
+import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import type { CatalogCardType } from './CatalogContent';
@@ -35,7 +35,7 @@ export const CatalogCard = JSX<CatalogCardProps>(
           </div>
         ) : null}
         {price ? <div className="text-h3 text-left">{price}&nbsp;₽</div> : null}
-        {button ? <Button className="mt-5 w-full" {...button} /> : null}
+        {button ? renderButton({ button, buttonClassName: 'mt-5 w-full' }) : null}
       </section>
     );
   },

@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { EventBus } from '../../EventBus/EventBus';
-import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
+import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import { TableInnerButton, TableInnerButtonProps } from '../../ui-kit/InnerTable/InnerTableButton';
@@ -21,14 +21,12 @@ export type EmbeddableCellDataType =
 const renderButtonsCellData = ({ buttons }: ButtonContent) =>
   buttons && buttons?.length ? (
     <div>
-      {buttons.map(({ rounded, ...buttonProps }, idx) => (
-        <Button
-          className={`${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`}
-          key={String(idx)}
-          rounded={rounded}
-          {...buttonProps}
-        />
-      ))}
+      {buttons.map(({ rounded, ...buttonProps }, idx) =>
+        renderButton({
+          button: { rounded, ...buttonProps },
+          buttonClassName: `${idx > 0 && rounded ? 'ml-3' : ''} w-12 h-12`,
+        }),
+      )}
     </div>
   ) : null;
 

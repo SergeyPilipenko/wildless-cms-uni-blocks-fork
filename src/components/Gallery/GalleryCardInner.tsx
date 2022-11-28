@@ -2,7 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { AlignText } from '../../model/AlignText';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
-import { Button } from '../../ui-kit/Button/Button';
+import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { HEADLINE_SMALL_VERSION } from '../Headline/constants';
@@ -30,7 +30,7 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
           {items?.length ? renderItems(items, isDotted, version) : null}
           {renderAdditionalDescription(additionalDescription)}
         </div>
-        {button?.text ? <Button className="mt-6" {...button} /> : null}
+        {button?.text ? renderButton({ button, buttonClassName: 'mt-6' }) : null}
       </div>
     );
   },
