@@ -47,7 +47,7 @@ export const PictureText = JSX<PictureTextProps>(
             {benefits?.length ? (
               <div className="flex flex-col gap-4">{benefits.map(renderBenefit(version))}</div>
             ) : null}
-            {renderInsuranceSumMonth(sum, monthLimit)}
+            {renderInsuranceSumMonth(Number(sum), Number(monthLimit))}
           </div>
         </div>
       </BlockWrapper>
