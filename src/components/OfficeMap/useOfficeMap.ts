@@ -1,5 +1,5 @@
 import { useAsyncData } from '@redneckz/uni-jsx/lib/hooks/useAsyncData';
-import { fetchJSON } from '../utils/fetchJSON';
+import { fetchJSON } from '../../utils/fetchJSON';
 
 const OFFICE_MAP_URL = '/api/v1/branches';
 

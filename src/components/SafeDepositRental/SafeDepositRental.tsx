@@ -9,7 +9,7 @@ import { SafeDepositRentalForm } from './SafeDepositRentalForm';
 import { HandleChangeState, SafeDepositRentalState } from './SafeDepositRentalTypes';
 import { Region, useGetRegions } from './useGetRegions';
 import { getBranch, getCoordinates } from './utils';
-import { YandexMap } from './YandexMap';
+import { YandexMap } from '../../ui-kit/YandexMap/YandexMap';
 
 export interface SafeDepositRentalProps extends SafeDepositRentalContent, UniBlockProps {}
 
@@ -58,7 +58,7 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
           />
           {footnote ? <p className="text-s-light text-secondary-text">{footnote}</p> : null}
         </div>
-        {points.length && showMap ? <YandexMap points={points} /> : null}
+        {points.length && showMap ? <YandexMap points={points} className="h-[640px]" /> : null}
       </BlockWrapper>
     );
   },

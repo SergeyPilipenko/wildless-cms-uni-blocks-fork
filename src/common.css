@@ -157,3 +157,12 @@ html {
     -moz-appearance: textfield;
   }
 }
+
+/*
+  Styling Yandex Map element
+ */
+/* Hide yandex elements in yandex map */
+[class$='-map-copyrights-promo'],
+[class$='-copyrights-pane'] {
+  display: none;
+}

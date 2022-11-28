@@ -15,6 +15,7 @@ export const IconsWithoutInversion = new Set([
   'DoneIcon',
   'EarthIcon',
   'EuroIcon',
+  'FullScreenIcon',
   'GlassIcon',
   'InterestGrowthIcon',
   'JCBIcon',
@@ -32,6 +33,7 @@ export const IconsWithoutInversion = new Set([
   'SignDocsIcon',
   'SoundIcon',
   'UnionPayIcon',
+  'UserGeoLocationIcon',
   'VisaIcon',
   'WateringCanIcon',
 ]);
@@ -76,6 +78,7 @@ export enum IconMap {
   EmptyWalletChangeIcon = 'EmptyWalletChangeIcon',
   EmptyWalletIcon = 'EmptyWalletIcon',
   EuroIcon = 'EuroIcon',
+  FullScreenIcon = 'FullScreenIcon',
   GeolocationIcon = 'GeolocationIcon',
   GlassIcon = 'GlassIcon',
   GlobalIcon = 'GlobalIcon',
@@ -119,6 +122,7 @@ export enum IconMap {
   StrongBoxIcon = 'StrongBoxIcon',
   TelegramIcon = 'TelegramIcon',
   UnionPayIcon = 'UnionPayIcon',
+  UserGeoLocationIcon = 'UserGeoLocationIcon',
   UserSquareIcon = 'UserSquareIcon',
   UserTickIcon = 'UserTickIcon',
   VisaIcon = 'VisaIcon',
@@ -170,6 +174,7 @@ export enum IconTitleMap {
   EmptyWalletChangeIcon = 'Пустой кошелёк с возвратом',
   EmptyWalletIcon = 'Пустой кошелёк',
   EuroIcon = 'Евро',
+  FullScreenIcon = 'FullScreenIcon',
   GeolocationIcon = 'Геолокация',
   GlassIcon = 'Зеркало',
   GlobalIcon = 'Глобус',
@@ -213,6 +218,7 @@ export enum IconTitleMap {
   StrongBoxIcon = 'Ящик с замочной скважиной',
   TelegramIcon = 'Лого «Telegram»',
   UnionPayIcon = 'UnionPay',
+  UserGeoLocationIcon = 'UserGeoLocationIcon',
   UserSquareIcon = 'Пользователь в рамке',
   UserTickIcon = 'Пользователь',
   VisaIcon = 'Visa',
@@ -229,7 +235,7 @@ export enum IconTitleMap {
  * @title Иконка
  * @enumNames [
  *   "",
- *   'Деньги', 'Самолёт', 'Лого «Apple»', 'Стрелка \'Вниз\'', 'Стрелка', 'Стрелка вверх', 'Банкомат', 'Банк', 'Здание с деревом', 'Бургер', 'Календарь 2', 'Скруглённый календарь', 'Календарь', 'Календарь с галочкой', 'Машина2', 'Кред. карта', 'Кред. карта под наклоном', 'Кред. карта с галочкой', 'Карта с драгоценностями', 'Машина', 'Деньги внутри кошелька', 'Кинотеатр', 'Часы', 'Крестик', 'Кресло', 'Кредитные карты', 'Скидка', 'Скачать документ', 'Документ', 'Документ (одноцветный)', 'Документы', 'Документ с текстом', 'Доллар', 'Зелёная \'галочка\' в круге', 'Зелёная \'галочка\'', 'Земля', 'Пустой кошелёк с возвратом', 'Пустой кошелёк', 'Евро', 'Геолокация', 'Зеркало', 'Глобус', 'Gps', 'Сетка (белая)', 'Диаграмма роста', 'Скидка', 'JCB', 'Logo', 'Лупа', 'Маркер карты', 'Маркер карты РСХБ', 'MasterCard', 'Лого Метро', 'Минус', 'МИР', 'Деньги', 'Денежное страхование', 'Купюры', 'Монитор и мобильный', 'Новый документ', 'Офис', 'Лого «Одноклассники»', 'Пачка бумаги А4', 'Бизнес', 'Проценты (круг.)', 'Проценты', 'Персональная карта', 'Лого «PlayMarket»', 'Плюс', 'Щит', 'Профиль, 2 персоны', 'Профиль', 'Тыква', 'Рубль (круг.)', 'Сейф', 'Безопасность', 'Подписанные документы', 'Маленькие часы', 'Звук', 'Ящик с замочной скважиной', 'Лого «Telegram»', 'UnionPay', 'Пользователь в рамке', 'Пользователь', 'Visa', 'Лого «VK»', 'Пополнение карты', 'Кошелёк с плюсом', 'Кошелёк', 'Кошелёк с деньгами', 'Добавить продукт'
+ *   'Деньги', 'Самолёт', 'Лого «Apple»', 'Стрелка \'Вниз\'', 'Стрелка', 'Стрелка вверх', 'Банкомат', 'Банк', 'Здание с деревом', 'Бургер', 'Календарь 2', 'Скруглённый календарь', 'Календарь', 'Календарь с галочкой', 'Машина2', 'Кред. карта', 'Кред. карта под наклоном', 'Кред. карта с галочкой', 'Карта с драгоценностями', 'Машина', 'Деньги внутри кошелька', 'Кинотеатр', 'Часы', 'Крестик', 'Кресло', 'Кредитные карты', 'Скидка', 'Скачать документ', 'Документ', 'Документ (одноцветный)', 'Документы', 'Документ с текстом', 'Доллар', 'Зелёная \'галочка\' в круге', 'Зелёная \'галочка\'', 'Земля', 'Пустой кошелёк с возвратом', 'Пустой кошелёк', 'Евро', 'FullScreenIcon', 'Геолокация', 'Зеркало', 'Глобус', 'Gps', 'Сетка (белая)', 'Диаграмма роста', 'Скидка', 'JCB', 'Logo', 'Лупа', 'Маркер карты', 'Маркер карты РСХБ', 'MasterCard', 'Лого Метро', 'Минус', 'МИР', 'Деньги', 'Денежное страхование', 'Купюры', 'Монитор и мобильный', 'Новый документ', 'Офис', 'Лого «Одноклассники»', 'Пачка бумаги А4', 'Бизнес', 'Проценты (круг.)', 'Проценты', 'Персональная карта', 'Лого «PlayMarket»', 'Плюс', 'Щит', 'Профиль, 2 персоны', 'Профиль', 'Тыква', 'Рубль (круг.)', 'Сейф', 'Безопасность', 'Подписанные документы', 'Маленькие часы', 'Звук', 'Ящик с замочной скважиной', 'Лого «Telegram»', 'UnionPay', 'UserGeoLocationIcon', 'Пользователь в рамке', 'Пользователь', 'Visa', 'Лого «VK»', 'Пополнение карты', 'Кошелёк с плюсом', 'Кошелёк', 'Кошелёк с деньгами', 'Добавить продукт'
  * ]
  */
 export type IconName =
@@ -273,6 +279,7 @@ export type IconName =
   | 'EmptyWalletChangeIcon'
   | 'EmptyWalletIcon'
   | 'EuroIcon'
+  | 'FullScreenIcon'
   | 'GeolocationIcon'
   | 'GlassIcon'
   | 'GlobalIcon'
@@ -316,6 +323,7 @@ export type IconName =
   | 'StrongBoxIcon'
   | 'TelegramIcon'
   | 'UnionPayIcon'
+  | 'UserGeoLocationIcon'
   | 'UserSquareIcon'
   | 'UserTickIcon'
   | 'VisaIcon'

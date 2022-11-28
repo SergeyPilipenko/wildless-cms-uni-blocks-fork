@@ -23,8 +23,11 @@ export const renderCurrentDaySchedule = ({ lunchHour, status, workTime }: WorkSc
   );
 };
 
-export const renderNearbyOffice = ({ icon, title, distance, time }: NearbyOffices, inx: number) => (
-  <div className="flex mr-4" key={`nearbyOffice${inx}`}>
+export const renderNearbyOffice = (
+  { icon, title, distance, time }: NearbyOffices,
+  index: number,
+) => (
+  <div className="flex mr-4" key={`nearbyOffice${index}`}>
     <Icon name={icon} width="16" height="16" asSVG className="mr-1" />
     {title ? <span className="text-m">{title}&nbsp;</span> : null}
     <span className="text-m-light">

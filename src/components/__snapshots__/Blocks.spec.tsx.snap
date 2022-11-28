@@ -876,152 +876,148 @@ exports[`Blocks OfficeMap should render block "OfficeMap" without content 1`] = 
     class="flex justify-between pt-8"
   >
     <div
-      class="flex-grow h-full bg-gray"
+      class="flex-grow h-full w-full overflow-hidden"
     />
     <div
-      class="w-[434px] pl-9 pr-12 pb-14"
+      class="w-[434px] min-w-[434px] pl-9 pr-12 pb-14 flex flex-col"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
       >
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
         >
+          <div>
+            Понедельник
+          </div>
           <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+            class="text-m-light text-error"
           >
-            <div>
-              Понедельник
-            </div>
-            <div
-              class="text-m-light text-error"
-            >
-              Выходной
-            </div>
+            Выходной
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+      >
+        <div
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+        >
+          <div>
+            Вторник
+          </div>
+          <div
+            class="text-m-light text-error"
+          >
+            Выходной
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+      >
+        <div
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+        >
+          <div>
+            Среда
+          </div>
+          <div>
+            09.00–16.30
           </div>
         </div>
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
         >
-          <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
-          >
-            <div>
-              Вторник
-            </div>
-            <div
-              class="text-m-light text-error"
-            >
-              Выходной
-            </div>
+          <div>
+            без перерыва
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+      >
+        <div
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+        >
+          <div>
+            Четверг
+          </div>
+          <div>
+            09.00–16.30
           </div>
         </div>
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="flex justify-between items-center w-full pb-1 text-m-light text-error"
         >
-          <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
-          >
-            <div>
-              Среда
-            </div>
-            <div>
-              09.00–16.30
-            </div>
+          <div>
+            Перерыв
           </div>
-          <div
-            class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
-          >
-            <div>
-              без перерыва
-            </div>
+          <div>
+            13:00 - 14:00
           </div>
         </div>
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="pb-1 text-s-light text-secondary-text"
         >
-          <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
-          >
-            <div>
-              Четверг
-            </div>
-            <div>
-              09.00–16.30
-            </div>
+          Не работает прием денег с 17:00 до 19:00
+        </div>
+      </div>
+      <div
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+      >
+        <div
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+        >
+          <div>
+            Пятница
           </div>
-          <div
-            class="flex justify-between items-center w-full pb-1 text-m-light text-error"
-          >
-            <div>
-              Перерыв
-            </div>
-            <div>
-              13:00 - 14:00
-            </div>
-          </div>
-          <div
-            class="pb-1 text-s-light text-secondary-text"
-          >
-            Не работает прием денег с 17:00 до 19:00
+          <div>
+            09.00–16.30
           </div>
         </div>
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
         >
-          <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
-          >
-            <div>
-              Пятница
-            </div>
-            <div>
-              09.00–16.30
-            </div>
+          <div>
+            без перерыва
           </div>
-          <div
-            class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
-          >
-            <div>
-              без перерыва
-            </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+      >
+        <div
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+        >
+          <div>
+            Суббота
+          </div>
+          <div>
+            09.00–15.00
           </div>
         </div>
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
         >
-          <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
-          >
-            <div>
-              Суббота
-            </div>
-            <div>
-              09.00–15.00
-            </div>
-          </div>
-          <div
-            class="flex justify-between items-center w-full pb-1 text-m-light text-primary-main"
-          >
-            <div>
-              без перерыва
-            </div>
+          <div>
+            без перерыва
           </div>
         </div>
+      </div>
+      <div
+        class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+      >
         <div
-          class="flex flex-col pb-3 border-b border-solid border-main-divider mb-3 last:border-0"
+          class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
         >
+          <div>
+            Воскресенье
+          </div>
           <div
-            class="flex justify-between items-center w-full pb-1 text-l text-primary-text"
+            class="text-m-light text-error"
           >
-            <div>
-              Воскресенье
-            </div>
-            <div
-              class="text-m-light text-error"
-            >
-              Выходной
-            </div>
+            Выходной
           </div>
         </div>
       </div>
