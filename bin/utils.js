@@ -20,3 +20,5 @@ export function deleteEmptyProps(obj) {
 
   return obj;
 }
+
+export const jsonCopy = (obj) => JSON.parse(JSON.stringify(obj));
