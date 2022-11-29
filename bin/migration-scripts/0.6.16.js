@@ -57,7 +57,7 @@ function adjustAccordion(block) {
     return;
   }
   const content = block.content;
-  content.blocks = adjustAccordionItems(content.accordionItems);
+  block.blocks = adjustAccordionItems(content.accordionItems);
   Reflect.deleteProperty(content, 'accordionItems');
 }
 
