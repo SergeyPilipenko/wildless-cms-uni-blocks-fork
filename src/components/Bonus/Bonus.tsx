@@ -32,7 +32,7 @@ export const Bonus = JSX<BonusProps>((props) => {
                 return (
                   <div
                     key={String(i)}
-                    className="flex-grow w-[49%] border border-gray pl-9 pt-9 pr-6 pb-6 mb-3 mx-2 even:mr-0 odd:ml-0 last:odd:mx-0"
+                    className="flex-grow w-[49%] border border-gray p-9 mb-3 mx-2 even:mr-0 odd:ml-0 last:odd:mx-0"
                   >
                     <div className="flex justify-between w-full">
                       <div className="flex flex-col justify-between mr-4">
