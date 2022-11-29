@@ -14,6 +14,11 @@ describe('Desktop. Регресс отображения блоков', {}, () =
     describe(`Регресс отображения блока ${blockName}`, () => {
       blockParams.fixtures.forEach((fixture) => {
         it(`Блок ${blockName}: ${fixture}`, () => {
+          // cy.intercept({
+          //   method: 'GET',
+          //   url: '**/api/v1/**',
+          // }).as('blockResources');
+
           cy.visit(blockFixture.getBlockFixtureURL(blockParams.path, fixture));
 
           const screenshotName = `${blockName}_${fixture}`;
@@ -27,6 +32,17 @@ describe('Desktop. Регресс отображения блоков', {}, () =
             case 'Footer': {
               blockFixture.firstLevelMenuIsLoaded();
               blockFixture.getBlock().compareSnapshot(screenshotName);
+              break;
+            }
+            case 'ExchangeRateTile': {
+              blockFixture.getBlock().find('img').should('have.length', '10');
+              blockFixture
+                .getBlock()
+                .find('title')
+                .contains('Иконка GpsIcon')
+                .then(() => {
+                  blockFixture.getBlock().compareSnapshot(screenshotName);
+                });
               break;
             }
             default: {
