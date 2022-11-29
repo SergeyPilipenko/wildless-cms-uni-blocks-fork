@@ -16,6 +16,10 @@ const THRESHOLD_ARRAY_LENGTH = 18;
 const THRESHOLD_ARRAY_START_VALUE =
   (THRESHOLD_ACCURACY - THRESHOLD_ARRAY_LENGTH) / THRESHOLD_ACCURACY;
 
+const OBSERVER_OPTIONS = {
+  threshold: new Array(THRESHOLD_ARRAY_LENGTH).fill(0).map(getIntersectionThreshold),
+};
+
 export const BlockWrapper = JSX<BlockWrapperProps>(
   ({ anchor, className, children, tag = 'section', labels }) => {
     const Tag: any = tag;
@@ -60,9 +64,7 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
         tag={tag}
         className={className}
         observerCallback={observerCallback}
-        observerOptions={{
-          threshold: new Array(THRESHOLD_ARRAY_LENGTH).fill(0).map(getIntersectionThreshold),
-        }}
+        observerOptions={OBSERVER_OPTIONS}
         anchor={anchor}
       >
         {children}
