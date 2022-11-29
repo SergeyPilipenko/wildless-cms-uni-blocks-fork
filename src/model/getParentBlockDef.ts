@@ -2,11 +2,11 @@ import type { BlockAncestors } from './BlockDecorator';
 import type { BlockDef } from './ContentPageDef';
 
 export function getParentBlockDef(ancestors: BlockAncestors | undefined, type?: string): BlockDef {
-  const [, block] =
+  const [block] =
     (ancestors || [])
-      .map((i) => i)
+      .map((item) => item)
       .reverse()
-      .find(([, _]) => !type || type === (_ as BlockDef)?.type) || [];
+      .find(([_]) => _ && 'type' in _ && (!type || type === (_ as BlockDef).type)) || [];
 
   return block || {};
 }

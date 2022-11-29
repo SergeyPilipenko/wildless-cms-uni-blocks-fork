@@ -1,6 +1,6 @@
 import type { BlocksRegistry } from '../../model/BlocksRegistry';
 import type { ContentPageDef } from '../../model/ContentPageDef';
-import { filterBlocks } from './filterBlocks';
+import { normalizeBlock } from './normalizeBlock';
 
 export const normalizePage =
   (blocksRegistry: BlocksRegistry) =>
@@ -9,19 +9,5 @@ export const normalizePage =
       return undefined;
     }
 
-    const { blocks = [], slots } = contentPage;
-
-    return {
-      ...contentPage,
-      blocks: filterBlocks(blocks, blocksRegistry),
-      slots:
-        slots &&
-        Object.keys(slots).reduce(
-          (res, key) => ({
-            ...res,
-            [key]: [...filterBlocks(slots[key] || [], blocksRegistry)],
-          }),
-          {},
-        ),
-    };
+    return normalizeBlock(contentPage, blocksRegistry);
   };

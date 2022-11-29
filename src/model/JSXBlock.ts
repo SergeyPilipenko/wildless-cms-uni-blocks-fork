@@ -1,6 +1,6 @@
 import type { UNIComponent } from '@redneckz/uni-jsx';
 import type { ContentPageContext } from '../components/ContentPage/ContentPageContext';
-import type { BlockAncestors } from './BlockDecorator';
+import type { BlockAncestors, SlotName } from './BlockDecorator';
 import type { ContentPageDef } from './ContentPageDef';
 import type { VNode } from './VNode';
 
@@ -20,6 +20,6 @@ export type JSXBlock<BlockProps = Record<string, any>> = UNIComponent<
   VNode | VNode[]
 > & {
   childrenTypes?: string[];
-  slots?: (props: UniBlockProps) => string[];
+  slots?: (props: BlockProps) => SlotName[];
   renderChild?: (child: VNode, i: number) => VNode;
 };

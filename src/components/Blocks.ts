@@ -1,3 +1,4 @@
+import type { BlocksRegistry } from '../model/BlocksRegistry';
 import { Accordion } from './Accordion/Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
 import { BenefitsBlock } from './BenefitsBlock/BenefitsBlock';
@@ -38,7 +39,7 @@ import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
 
-export const Blocks = {
+export const Blocks: BlocksRegistry = {
   Accordion,
   AccordionItem,
   BenefitsBlock,

@@ -3,7 +3,7 @@ import type { BlockDef, Slot } from './ContentPageDef';
 export const DEFAULT_SLOT_NAME = null;
 
 export type SlotName = string | typeof DEFAULT_SLOT_NAME;
-export type BlockAncestorItem = [SlotName?, Slot?];
+export type BlockAncestorItem = [Slot, SlotName];
 export type BlockAncestors = BlockAncestorItem[];
 
 interface BlockDecoratorProps<VNode> {

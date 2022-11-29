@@ -2,7 +2,7 @@ import type { BlockDef } from '../../model/ContentPageDef';
 import { normalizeBlock } from './normalizeBlock.mobile';
 
 describe('normalizeBlock', () => {
-  it('should return new block definition where properties from "mobile" override desktop properties', () => {
+  it('should return new block definition where add "blocks" and "slots" and properties from "mobile" override desktop properties', () => {
     const blockDef: BlockDef = {
       type: 'TextBlock',
       content: {
@@ -19,6 +19,8 @@ describe('normalizeBlock', () => {
 
     const mobileBlockDef: BlockDef = {
       type: 'TextBlock',
+      blocks: [],
+      slots: {},
       content: {
         title: 'Mobile Title',
         description: 'Desktop description',
@@ -31,6 +33,8 @@ describe('normalizeBlock', () => {
   it('should return new block definition same to input', () => {
     const blockDef: BlockDef = {
       type: 'TextBlock',
+      blocks: [],
+      slots: {},
       content: {
         title: 'Desktop Title',
         description: 'Desktop description',
@@ -39,6 +43,8 @@ describe('normalizeBlock', () => {
 
     const mobileBlockDef: BlockDef = {
       type: 'TextBlock',
+      blocks: [],
+      slots: {},
       content: {
         title: 'Desktop Title',
         description: 'Desktop description',
@@ -61,6 +67,8 @@ describe('normalizeBlock', () => {
 
     const mobileBlockDef: BlockDef = {
       type: 'TextBlock',
+      blocks: [],
+      slots: {},
       content: {
         title: 'Mobile Title',
       },

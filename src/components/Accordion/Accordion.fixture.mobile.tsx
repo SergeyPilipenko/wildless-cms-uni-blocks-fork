@@ -1,5 +1,5 @@
 import { DEFAULT_SLOT_NAME } from '../../model/BlockDecorator';
-import type { BlockDef } from '../../model/ContentPageDef';
+import type { BlockDef, ContentPageDef } from '../../model/ContentPageDef';
 import { context } from '../../react/setup-fixture';
 import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { Headline } from '../Headline/Headline';
@@ -10,6 +10,8 @@ import { TextBlock } from '../TextBlock/TextBlock';
 import { TEXT_BLOCK } from '../TextBlock/TextBlock.fixture';
 import type { AccordionProps } from './Accordion';
 import { Accordion } from './Accordion';
+
+const page = {} as ContentPageDef;
 
 const TEXT_BLOCK_ACCORDION_BLOCK = <TextBlock context={context} {...TEXT_BLOCK} />;
 
@@ -31,7 +33,10 @@ const ACCORDION_BLOCK_DEF: BlockDef = {
 export const ACCORDION_ITEM = (
   <AccordionItem
     context={context}
-    ancestors={[[], [DEFAULT_SLOT_NAME], ['accordion', ACCORDION_BLOCK_DEF]]}
+    ancestors={[
+      [page, DEFAULT_SLOT_NAME],
+      [ACCORDION_BLOCK_DEF, DEFAULT_SLOT_NAME],
+    ]}
     label="Accordion label 1"
     labelIcon={{ icon: 'CardIcon' }}
   >
@@ -46,14 +51,20 @@ export default {
         {ACCORDION_ITEM}
         <AccordionItem
           context={context}
-          ancestors={[[], [DEFAULT_SLOT_NAME], ['accordion', ACCORDION_BLOCK_DEF]]}
+          ancestors={[
+            [page, DEFAULT_SLOT_NAME],
+            [ACCORDION_BLOCK_DEF, DEFAULT_SLOT_NAME],
+          ]}
           label="Accordion label 2"
         >
           {[HEADLINE_ACCORDION_BLOCK]}
         </AccordionItem>
         <AccordionItem
           context={context}
-          ancestors={[[], [DEFAULT_SLOT_NAME], ['accordion', ACCORDION_BLOCK_DEF]]}
+          ancestors={[
+            [page, DEFAULT_SLOT_NAME],
+            [ACCORDION_BLOCK_DEF, DEFAULT_SLOT_NAME],
+          ]}
           label="Accordion label 3"
         >
           {[LINK_DOCS_ACCORDION_BLOCK]}

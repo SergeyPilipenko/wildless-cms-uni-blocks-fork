@@ -1,4 +1,4 @@
-export const description = 'v0.6.17';
+export const description = 'v0.6.19';
 
 export default (unitPath, content) => {
   if (!content?.slots) {
@@ -11,11 +11,11 @@ export default (unitPath, content) => {
 };
 
 function adjustRootSlots(slots) {
-  for (let slot of slots) {
-    if (Array.isArray(slot)) {
+  Object.keys(slots).forEach((slotKey) => {
+    if (Array.isArray(slots[slotKey])) {
       return;
     }
-    const slotBlocks = slot.blocks;
-    slot = slotBlocks;
-  }
+    const slotBlocks = slots[slotKey].blocks;
+    slots[slotKey] = slotBlocks;
+  });
 }

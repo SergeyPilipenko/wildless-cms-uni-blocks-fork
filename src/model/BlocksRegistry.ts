@@ -1,3 +1,3 @@
 import type { JSXBlock } from './JSXBlock';
 
-export type BlocksRegistry<BlockProps = Record<string, any>> = Record<string, JSXBlock<BlockProps>>;
+export type BlocksRegistry = Record<string, JSXBlock<any>>;

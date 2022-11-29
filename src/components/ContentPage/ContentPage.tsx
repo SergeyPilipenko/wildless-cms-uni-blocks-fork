@@ -6,7 +6,9 @@ import type { JSXBlock, UniBlockProps } from '../../model/JSXBlock';
 import { style2className } from '../../utils/style2className';
 import { LikeControl } from '../LikeControl/LikeControl';
 import type { ContentPageContext } from './ContentPageContext';
-import { getBlockRenderer, RenderBlockOptions, renderSlots } from './renderBlock';
+import { RenderBlockOptions } from './renderBlock';
+import { renderBlocksList } from './renderBlockList';
+import { renderSlots } from './renderSlots';
 
 interface ContentPageProps extends UniBlockProps {
   blocksRegistry: BlocksRegistry;
@@ -30,8 +32,7 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
     context,
   };
 
-  const blockRenderer = getBlockRenderer(options, []);
-  const pageSlots = slots ? renderSlots(slots, options) : {};
+  const pageSlots = renderSlots({ slots, options });
 
   return (
     <section
@@ -43,7 +44,9 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
       ) : null}
 
       {blocks?.length ? (
-        <div className="container grid grid-cols-12 gap-1">{blocks.map(blockRenderer())}</div>
+        <div className="container grid grid-cols-12 gap-1">
+          {renderBlocksList({ blocks, options })}
+        </div>
       ) : null}
 
       {likeControl ? renderLikeControl(context) : null}
