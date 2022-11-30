@@ -3,6 +3,7 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
 import type { Step } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
+import type { VNode } from '../../model/VNode';
 import { renderItems } from './renderItems';
 import { useLink } from '../../hooks/useLink';
 
@@ -20,39 +21,48 @@ export const renderStepContent =
     router: Router;
     handlerDecorator?: HandlerDecorator;
   }) =>
-  (step: Step, i: number, { length }: { length: number }) => {
+  (step: Step, i: number, { length }: { length: number }): VNode => {
     const { label, description, button, items, isDotted } = step;
 
-    const additionalMarginClass = `${button?.text ? 'mb-8' : ''} ${step?.label ? 'mt-2' : 'mt-4'}`;
-    const widthContainer = length < 5 ? 'w-[276px]' : 'w-[210px]';
+    const contentMarginClass = label && (description || items) ? 'mt-2' : '';
 
     return (
       <div
         key={String(i)}
-        className={`flex flex-col items-center text-center relative
-        whitespace-pre-line overflow-hidden ${widthContainer}`}
+        className={`relative flex flex-col items-center text-center whitespace-pre-line overflow-hidden ${getContainerWidth(
+          length,
+        )}`}
       >
-        {renderStepLabel(label)}
-        {renderStepDescription({
-          description,
-          className: `${styleMap.description} ${additionalMarginClass}`,
-        })}
-        {renderItems({ items, isDotted, version, className: styleMap.description })}
+        <div className={`${button?.text ? 'mb-8' : ''}  text-center`}>
+          {renderStepLabel(label)}
+          <div className={`${contentMarginClass} flex flex-col items-center`}>
+            {renderStepDescription({
+              description,
+              className: styleMap.description,
+            })}
+            {renderItems({
+              items,
+              isDotted,
+              version,
+              className: getItemsClasses({ className: 'text-left', description, styleMap }),
+            })}
+          </div>
+        </div>
         {button?.text && !isMainButton ? (
           <Button
             className="box-border py-3 h-12 w-full max-w-[240px] mt-auto"
             {...useLink({ router, handlerDecorator }, button)}
             version={version}
           >
-            {button.text}
+            {button?.text}
           </Button>
         ) : null}
       </div>
     );
   };
 
-const renderStepLabel = (label?: string) =>
-  label ? <div className="text-x6 m-0 mt-4">{label}</div> : null;
+const renderStepLabel = (label?: string): VNode =>
+  label ? <div className="text-h6">{label}</div> : null;
 
 const renderStepDescription = ({
   description,
@@ -60,4 +70,19 @@ const renderStepDescription = ({
 }: {
   description?: string;
   className?: string;
-}) => (description ? <div className={className}>{description}</div> : null);
+}): VNode => (description ? <div className={className}>{description}</div> : null);
+
+const getItemsClasses = ({
+  className,
+  description,
+  styleMap,
+}: {
+  className?: string;
+  description?: string;
+  styleMap: StyleType;
+}): string =>
+  [description ? styleMap.description : 'text-h6', description ? 'mt-0.5' : '', className].join(
+    ' ',
+  );
+
+const getContainerWidth = (length: number): string => (length < 5 ? 'w-[276px]' : 'w-[210px]');

@@ -41,9 +41,9 @@ export const StepsBlock = JSX<StepsBlockProps>(
     return (
       <BlockWrapper
         className={[
-          'box-border font-sans text-primary-text bg-white',
+          'box-border py-[50px] font-sans',
           shortGaps ? 'px-20' : 'px-[70px]',
-          'py-[50px] flex flex-col items-center',
+          'flex flex-col items-center',
           styleMap.background,
           styleMap.title,
           className,
@@ -61,7 +61,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
                 steps.map(renderStepIcon(styleMap)),
               )}
             </div>
-            <div className={`flex justify-between ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
+            <div className={`flex justify-between mt-4 ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
               {steps.map(
                 renderStepContent({
                   styleMap,

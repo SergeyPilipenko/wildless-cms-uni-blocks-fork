@@ -11,16 +11,13 @@ export const renderItems = ({
   isDotted?: boolean;
   version?: BlockVersion;
   className?: string;
-}) => {
-  const listVersion = version === 'primary' ? 'gray' : version;
-
-  return items ? (
+}) =>
+  items ? (
     <List
-      className={`mt-4 ${className}`}
-      version={listVersion}
+      className={className}
+      version={version}
       items={items}
-      listItemSize="S"
+      listItemSize="M"
       isDotted={isDotted}
     />
   ) : null;
-};
