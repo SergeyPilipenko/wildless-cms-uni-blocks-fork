@@ -1,10 +1,9 @@
 import type { EmptyOption } from '../../model/EmptyOptionType';
-import type { DescriptionProps, LabelProps } from '../../model/HeadlineType';
+import type { DescriptionProps, LabelProps, TitleProps } from '../../model/HeadlineType';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
-import type { HeadingProps } from '../../ui-kit/Heading/HeadingProps';
 import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
 import type { ListProps } from '../../ui-kit/List/ListProps';
 
@@ -43,7 +42,7 @@ export type Data = {
 /**
  * @title Параметр
  */
-export type TariffsTableRowHeader = HeadingProps & {
+export type TariffsTableRowHeader = TitleProps & {
   /** @default { "format": "webp", "size": { "width": 24, "height": 24 } } */
   icon?: Picture;
 };
@@ -117,7 +116,7 @@ export interface TariffsTableColumn {
 /**
  * @title Таблица тарифов
  */
-export type TariffsTableContent = HeadingProps &
+export type TariffsTableContent = TitleProps &
   DescriptionProps & {
     /** @title Колонки */
     tariffsColumns?: TariffsTableColumn[];

@@ -1477,18 +1477,6 @@ Object {
       },
       "type": "object",
     },
-    "HeadingProps": Object {
-      "properties": Object {
-        "headingType": Object {
-          "$ref": "#/definitions/HeadingType",
-        },
-        "title": Object {
-          "title": "Заголовок",
-          "type": "string",
-        },
-      },
-      "type": "object",
-    },
     "HeadingType": Object {
       "enum": Array [
         "h0",
@@ -3407,9 +3395,6 @@ Object {
           "title": "Описание",
           "type": "string",
         },
-        "headingType": Object {
-          "$ref": "#/definitions/HeadingType",
-        },
         "hiddenRowsNum": Object {
           "title": "Скрывать строк",
           "type": "number",
@@ -3455,9 +3440,6 @@ Object {
     },
     "TariffsTableRowHeader": Object {
       "properties": Object {
-        "headingType": Object {
-          "$ref": "#/definitions/HeadingType",
-        },
         "icon": Object {
           "$ref": "#/definitions/Picture",
           "default": Object {
