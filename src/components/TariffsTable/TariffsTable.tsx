@@ -43,12 +43,11 @@ export const TariffsTable = JSX<TariffsTableProps>(
       setActiveCardIndex,
     });
 
-    const rows = (rowData || []).map((row, i, { length }) => (
+    const rows = (rowData || []).map((row, i) => (
       <TariffsTableRow
         context={context}
         key={String(i)}
         row={row}
-        isLastRow={i + 1 === length}
         activeCardIndex={activeCardIndex}
         rowIdx={i}
       />

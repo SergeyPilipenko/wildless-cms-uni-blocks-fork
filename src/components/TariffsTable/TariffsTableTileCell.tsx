@@ -39,5 +39,7 @@ const renderCell = (cell: CellDef, context: ContentPageContext) => {
 
   const EmbeddableCellInner = EmbeddableCellData[type];
 
-  return <EmbeddableCellInner context={context} {...rest} />;
+  return (
+    <EmbeddableCellInner context={context} displayTable={() => null} {...rest} isVisible={true} />
+  );
 };

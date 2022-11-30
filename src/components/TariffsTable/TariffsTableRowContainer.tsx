@@ -1,6 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
-import { EventBus } from '../../EventBus/EventBus';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { VNode } from '../../model/VNode';
 import { InnerTable } from '../../ui-kit/InnerTable/InnerTable';
@@ -8,31 +6,18 @@ import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTabl
 
 export interface TariffsTableRowContainerProps extends UniBlockProps {
   children?: VNode;
-  rowIdx: number;
+  onHideContentClick: () => void;
+  tableInner?: TariffsTableInnerContent;
 }
 
 export const TariffsTableRowContainer = JSX<TariffsTableRowContainerProps>(
-  ({ context, children, rowIdx }) => {
-    const [tableInnerData, setTableInnerData] = useState<TariffsTableInnerContent | undefined>(
-      undefined,
-    );
-
-    useEffect(
-      () =>
-        EventBus.inst.subscribe('tariffInnerTable', (event) => {
-          setTableInnerData(
-            rowIdx === event.rowIdx ? { dataUrl: event.dataUrl, pdfUrl: event.pdfUrl } : undefined,
-          );
-        }),
-      [rowIdx],
-    );
-
+  ({ context, children, tableInner, onHideContentClick }) => {
     return (
       <div className="self-start flex flex-col" role="row">
         <div className="flex">{children}</div>
-        {tableInnerData ? (
+        {tableInner ? (
           <div className="origin-top animate-expansion">
-            <InnerTable context={context} {...tableInnerData} />
+            <InnerTable context={context} {...tableInner} onClick={onHideContentClick} />
           </div>
         ) : null}
       </div>

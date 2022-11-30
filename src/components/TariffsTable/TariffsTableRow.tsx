@@ -1,6 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Img } from '../../ui-kit/Img/Img';
+import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
 import { TableCarouselContainer } from '../ComparisonTable/TableCarouselContainer';
 import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
 import { TariffsTableCell } from './TariffsTableCell';
@@ -10,19 +12,23 @@ import { TariffsTableRowContainer } from './TariffsTableRowContainer';
 export interface TariffsTableRowProps extends UniBlockProps {
   row: Data;
   activeCardIndex: number;
-  isLastRow: boolean;
   rowIdx: number;
 }
 
 export const TariffsTableRow = JSX<TariffsTableRowProps>(
-  ({ row: { header, data }, activeCardIndex, isLastRow, context, rowIdx }) => {
+  ({ row: { header, data }, activeCardIndex, context, rowIdx }) => {
+    const [tableInner, setTableInner] = useState<TariffsTableInnerContent | undefined>(undefined);
+    const [openTableInnerIdx, setOpenTableInnerIdx] = useState<number | undefined>(undefined);
+
+    const onHideContentClick = () => setTableInner(undefined);
+
     return (
-      <TariffsTableRowContainer context={context} rowIdx={rowIdx}>
-        <div
-          className={`text-s py-5 ${FIRST_CELL_CLASSES} ${DIVIDER_CLASSES} ${
-            !isLastRow ? 'border-solid' : ''
-          }`}
-        >
+      <TariffsTableRowContainer
+        context={context}
+        onHideContentClick={onHideContentClick}
+        tableInner={tableInner}
+      >
+        <div className={`text-s py-5 ${FIRST_CELL_CLASSES} ${DIVIDER_CLASSES}`}>
           <div className="flex items-center text-primary-text" role="cell">
             {header?.icon ? (
               <Img
@@ -46,10 +52,13 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
               <TariffsTableCell
                 key={String(i)}
                 cells={cells}
-                isLastRow={isLastRow}
                 rowIdx={rowIdx}
                 cellIdx={i}
                 context={context}
+                setTableInner={setTableInner}
+                tableInner={tableInner}
+                openTableInnerIdx={openTableInnerIdx}
+                setOpenTableInnerIdx={setOpenTableInnerIdx}
               />
             ))}
           </TableCarouselContainer>

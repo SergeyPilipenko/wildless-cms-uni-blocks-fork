@@ -1,15 +1,13 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
-import { EventBus } from '../../EventBus/EventBus';
 import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { Img } from '../../ui-kit/Img/Img';
 import type { ImageContent } from '../../ui-kit/Img/ImgProps';
 import { TableInnerButton, TableInnerButtonProps } from '../../ui-kit/InnerTable/InnerTableButton';
-import { TariffsTableInnerEvent } from '../../ui-kit/InnerTable/InnerTableProps';
+import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
 import { List } from '../../ui-kit/List/List';
 import type { ListProps } from '../../ui-kit/List/ListProps';
-import type { LabelDescriptionCell, TariffsTableCellIndexProps } from './TariffsTableContent';
+import type { LabelDescriptionCell } from './TariffsTableContent';
 
 export type EmbeddableCellDataType =
   | LabelDescriptionCell
@@ -17,6 +15,11 @@ export type EmbeddableCellDataType =
   | ImageContent
   | ListProps
   | TableInnerButtonProps;
+
+interface TableCellDataProps extends TableInnerButtonProps {
+  isVisible?: boolean;
+  displayTable: (props: TariffsTableInnerContent) => void;
+}
 
 const renderButtonsCellData = ({ buttons }: ButtonContent) =>
   buttons && buttons?.length ? (
@@ -52,20 +55,19 @@ const renderListCellData = ({ isDotted, ...rest }: ListProps) => (
   />
 );
 
-const renderTableCellData = JSX((props: TableInnerButtonProps) => {
-  const [showBtn, setShowBtn] = useState(true);
-  console.log(props);
-  const tariffInnerTableSubscriber = (event: TariffsTableInnerEvent) => {
-    const _showBtn = (
-      ['rowIdx', 'cellIdx', 'fieldIdx'] as Array<keyof TariffsTableCellIndexProps>
-    ).every((key) => props[key] === event[key]);
-    setShowBtn(!_showBtn);
-  };
-
-  useEffect(() => EventBus.inst.subscribe('tariffInnerTable', tariffInnerTableSubscriber), []);
-
-  return showBtn ? <TableInnerButton {...props} /> : null;
-});
+const renderTableCellData = JSX<TableCellDataProps>(
+  ({ isVisible, displayTable, dataUrl, pdfUrl, isOpen, context }) => {
+    return isVisible ? (
+      <TableInnerButton
+        isOpen={isOpen}
+        context={context}
+        onClick={() => {
+          displayTable({ dataUrl, pdfUrl });
+        }}
+      />
+    ) : null;
+  },
+);
 
 export const EmbeddableCellData = {
   Buttons: renderButtonsCellData,
