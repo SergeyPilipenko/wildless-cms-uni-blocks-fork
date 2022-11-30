@@ -47,7 +47,12 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
       <BlockWrapper context={context} className={className} {...rest}>
         <div className="font-sans bg-white px-8 py-12">
           {title ? (
-            <Heading title={title} headingType="h3" as="h2" className="mb-2.5 text-center" />
+            <Heading
+              title={title}
+              headingType="h3"
+              as="h2"
+              className="text-primary-text mb-2.5 text-center"
+            />
           ) : null}
           <SafeDepositRentalForm
             regions={regions}

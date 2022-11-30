@@ -22,7 +22,11 @@ export function renderBackwardButton(
         href={href}
         target={target}
       >
-        <Img className="w-4 h-4" image={{ ...backwardIcon, iconVersion }} asSVG />
+        <Img
+          className="w-4 h-4"
+          image={{ ...backwardIcon, iconVersion: backwardIcon.iconVersion || iconVersion }}
+          asSVG
+        />
       </Button>
       {text ? <span className="text-m">{text}</span> : null}
     </div>
