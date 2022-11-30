@@ -3,7 +3,7 @@ import { RadioProps } from './RadioProps';
 
 export const Radio = JSX<RadioProps>(({ name, text, value, checked, onChange, className }) => (
   <div className={className}>
-    <label className="flex items-center relative cursor-pointer">
+    <label className="font-sans flex items-center relative cursor-pointer">
       <input
         className="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border border-gray hover:border-checkbox-hover
         checked:border-2 checked:!border-primary-main focus:checked:border-primary-main focus:border-primary-text active:border-primary-text
@@ -14,7 +14,7 @@ export const Radio = JSX<RadioProps>(({ name, text, value, checked, onChange, cl
         checked={checked}
         onChange={onChange}
       />
-      {text ? <span className="font-sans ml-3 cursor-pointer">{text}</span> : null}
+      {text ? <span className="text-primary-text ml-3 cursor-pointer">{text}</span> : null}
     </label>
   </div>
 ));

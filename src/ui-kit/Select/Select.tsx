@@ -41,7 +41,7 @@ export const Select = JSX<SelectProps>(
 
     return (
       <div className={`${className}`} ref={wrapperRef}>
-        {label ? <span className="mb-2 flex">{label}</span> : null}
+        {label ? <span className="mb-2 flex text-primary-text">{label}</span> : null}
         <div className={`relative ${isOpen ? 'z-20' : 'z-10'}`}>
           <div
             className={`text-l flex justify-between items-center mb-0.5 text-primary-text cursor-pointer

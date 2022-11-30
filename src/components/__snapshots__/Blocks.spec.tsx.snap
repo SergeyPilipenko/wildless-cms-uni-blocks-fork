@@ -105,7 +105,7 @@ exports[`Blocks CardTransfer should render block "CardTransfer" without content 
   class="p-[50px] flex flex-col items-center font-sans bg-white "
 >
   <h3
-    class="font-sans m-0 text-h2 max-w-[684px] pb-9"
+    class="font-sans text-primary-text m-0 text-h2 max-w-[684px] pb-9"
   >
     Укажите сумму перевода
   </h3>
@@ -166,7 +166,7 @@ exports[`Blocks ComparisonTable should render block "ComparisonTable" without co
   class="bg-white font-sans py-[50px] pl-[50px] overflow-hidden text-primary-text relative "
 >
   <h3
-    class="font-sans m-0 text-h2 max-w-[47rem] text-center mb-9 mx-auto"
+    class="font-sans text-primary-text m-0 text-h2 max-w-[47rem] text-center mb-9 mx-auto"
   />
   <div>
     <div
@@ -201,7 +201,7 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
     class="font-sans flex flex-col grow h-full items-start "
   >
     <h3
-      class="font-sans m-0 text-h4 whitespace-pre-wrap text-h4 mb-5"
+      class="font-sans text-primary-text m-0 text-h4 whitespace-pre-wrap text-h4 mb-5"
     >
       Курсы обмена валют
     </h3>
@@ -675,7 +675,7 @@ exports[`Blocks MobileAppTile should render block "MobileAppTile" without conten
     class="font-sans flex flex-col grow h-full items-start z-10"
   >
     <h3
-      class="font-sans m-0 text-h4 whitespace-pre-wrap max-w-[509px] mb-6
+      class="font-sans text-primary-text m-0 text-h4 whitespace-pre-wrap max-w-[509px] mb-6
                   text-primary-text text-left"
     >
       Мобильное приложение
@@ -1217,7 +1217,7 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
       class="font-sans flex flex-col p-[50px] gap-4 bg-white !p-0 max-w-[600px]"
     >
       <h2
-        class="font-sans m-0 text-h2 whitespace-pre-wrap text-primary-text text-left"
+        class="font-sans text-primary-text m-0 text-h2 whitespace-pre-wrap text-primary-text text-left"
       >
         Акции и спецпредложения
       </h2>
@@ -1291,7 +1291,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class=""
             >
               <span
-                class="mb-2 flex"
+                class="mb-2 flex text-primary-text"
               >
                 Регион
               </span>
@@ -1325,7 +1325,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class=""
             >
               <span
-                class="mb-2 flex"
+                class="mb-2 flex text-primary-text"
               >
                 Отделение
               </span>
@@ -1412,7 +1412,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class=""
             >
               <span
-                class="mb-2 flex"
+                class="mb-2 flex text-primary-text"
               >
                 Размер
               </span>
@@ -1448,7 +1448,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class=""
             >
               <span
-                class="mb-2 flex"
+                class="mb-2 flex text-primary-text"
               >
                 Параметры ячейки, мм (ВхШхД)
               </span>
@@ -1491,7 +1491,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
               class="mb-2"
             >
               <label
-                class="flex items-center relative cursor-pointer"
+                class="font-sans flex items-center relative cursor-pointer"
               >
                 <input
                   class="appearance-none flex justify-center items-center shrink-0 w-5 h-5 border border-gray hover:border-checkbox-hover
@@ -1502,7 +1502,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                   value="option1"
                 />
                 <span
-                  class="font-sans ml-3 cursor-pointer"
+                  class="text-primary-text ml-3 cursor-pointer"
                 >
                   Простое хранение
                 </span>
@@ -1510,7 +1510,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             </div>
             <div>
               <label
-                class="flex items-center relative cursor-pointer"
+                class="font-sans flex items-center relative cursor-pointer"
               >
                 <input
                   checked=""
@@ -1522,7 +1522,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
                   value="option2"
                 />
                 <span
-                  class="font-sans ml-3 cursor-pointer"
+                  class="text-primary-text ml-3 cursor-pointer"
                 >
                   Сделка с недвижимостью
                 </span>

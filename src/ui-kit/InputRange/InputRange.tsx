@@ -33,7 +33,7 @@ export const InputRange = JSX<InputRangeProps>(
     return (
       <div className={className}>
         <label className="block relative">
-          {title ? <span className="text-m-light">{title}</span> : null}
+          {title ? <span className="text-m-light text-primary-text">{title}</span> : null}
           <input
             className={`m-0 mt-2 font-sans text-h3 w-full h-14 border border-solid border-main-stroke rounded-md
             outline-none p-0 pl-4 box-border text-primary-text hover:border-primary-hover focus:border-primary-focus ${DISABLED_INPUT_CLASSES}`}
