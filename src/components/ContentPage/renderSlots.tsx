@@ -1,26 +1,29 @@
 import { BlockAncestors } from '../../model/BlockDecorator';
-import type { BlockDef } from '../../model/ContentPageDef';
+import type { BlockDef, Slot } from '../../model/ContentPageDef';
 import type { VNode } from '../../model/VNode';
 import type { RenderBlockOptions } from './renderBlock';
 import { renderBlocksList } from './renderBlockList';
 
 interface RenderSlotsProps {
   slots?: Record<string, BlockDef[]>;
+  parent: Slot;
   options: RenderBlockOptions;
   ancestors?: BlockAncestors;
 }
 
 export function renderSlots({
   slots = {},
+  parent,
   options,
   ancestors = [],
 }: RenderSlotsProps): Record<string, VNode> {
   return Object.entries(slots).reduce(
-    (res, [slotKey, slotBlocks]) => ({
+    (res, [slotName, slotBlocks]) => ({
       ...res,
-      [slotKey]: renderBlocksList({
+      [slotName]: renderBlocksList({
         blocks: slotBlocks,
-        slotName: slotKey,
+        parent,
+        slotName,
         options,
         ancestors,
       }),

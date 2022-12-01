@@ -29,13 +29,10 @@ export function renderBlock({ block = {}, options, ancestors = [] }: RenderBlock
   }
 
   const BlockComponent = type && blocksRegistry[type];
-  const children = renderBlocksList({
-    blocks: childBlocks,
-    parentBlock: block,
-    options,
-    ancestors,
-  });
-  const blockSlots = slots ? renderSlots({ slots, options, ancestors }) : {};
+
+  const subBlockRenderProps = { parent: block, options, ancestors };
+  const children = renderBlocksList({ ...subBlockRenderProps, blocks: childBlocks });
+  const blockSlots = slots ? renderSlots({ ...subBlockRenderProps, slots }) : {};
 
   return blockDecorator(
     {

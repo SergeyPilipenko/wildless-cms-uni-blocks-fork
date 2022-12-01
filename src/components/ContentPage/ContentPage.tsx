@@ -32,7 +32,7 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
     context,
   };
 
-  const pageSlots = renderSlots({ slots, options });
+  const pageSlots = renderSlots({ slots, parent: data, options });
 
   return (
     <section
@@ -45,7 +45,7 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
 
       {blocks?.length ? (
         <div className="container grid grid-cols-12 gap-1">
-          {renderBlocksList({ blocks, options })}
+          {renderBlocksList({ blocks, parent: data, options })}
         </div>
       ) : null}
 
