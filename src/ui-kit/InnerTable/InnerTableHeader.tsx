@@ -31,12 +31,12 @@ export const InnerTableHeader = JSX<InnerTableHeaderProps>(
         <Button
           href={linkToPDF}
           version="secondary"
-          className="flex justify-center items-center text-l-light text-primary-main px-8 max-h-14"
           target="_blank"
-        >
-          <Img image="DocDownloadIcon" className="mr-2.5" width="20" height="20" asSVG />
-          <span>Скачать в PDF</span>
-        </Button>
+          appendLeft={
+            <Img image="DocDownloadIcon" className="mr-0.5" width="20" height="20" asSVG />
+          }
+          text="Скачать в PDF"
+        />
       ) : null}
     </div>
   ),
