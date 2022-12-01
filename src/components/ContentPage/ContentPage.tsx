@@ -46,6 +46,7 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
       {blocks?.length ? (
         <div className="container grid grid-cols-12 gap-1">
           {renderBlocksList({ blocks, parent: data, options })}
+          {pageSlots?.footer ? pageSlots.footer : null}
         </div>
       ) : null}
 
@@ -55,7 +56,7 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
 });
 
 ContentPage.childrenTypes = [];
-ContentPage.slots = () => ['header'];
+ContentPage.slots = () => ['header', 'footer'];
 
 function renderLikeControl(context: ContentPageContext) {
   return (

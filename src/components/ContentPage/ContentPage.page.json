@@ -26,6 +26,130 @@
           "defaultLocation": "Москва"
         }
       }
+    ],
+    "footer": [
+      {
+        "type": "Footer",
+        "style": ["col-span-12"],
+        "content": {
+          "topItems": [
+            {
+              "href": "https://rshb.ru/",
+              "text": "О банке",
+              "target": "_blank",
+              "items": [
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "О банке"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Новости"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Офисы и отделения"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Карьера в банке"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Пресс-центр"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Кредитным организациям"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Закупки"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Премиальным клиентам"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Непрофильные/Профильные нецелевые активы"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Инсайдерам"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Противодействие коррупции"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Меры безопасности"
+                },
+                {
+                  "href": "https://rshb.ru/",
+                  "text": "Залоговое имущество"
+                }
+              ]
+            }
+          ],
+          "contacts": [
+            {
+              "text": "+7 (495) 787-7-787",
+              "description": "Для звонков из-за границы",
+              "type": "tel"
+            },
+            {
+              "text": "8 (800) 100-01-00",
+              "description": "По России",
+              "type": "tel"
+            },
+            {
+              "text": "7787",
+              "description": "Абонентам МТС, Мегафон, Билайн и Tele21",
+              "type": "tel"
+            }
+          ],
+          "documents": [
+            {
+              "text": "Информация о процентных ставках по договорам банковского вклада с физическими лицами",
+              "href": "https://rshb.ru/",
+              "target": "_blank"
+            },
+            {
+              "text": "Раскрытие информации профессиональным участником рынка ценных бумаг",
+              "href": "https://rshb.ru/",
+              "target": "_blank"
+            },
+            {
+              "text": "Раскрытие информации",
+              "href": "https://rshb.ru/",
+              "target": "_blank"
+            },
+            {
+              "text": "Удостоверяющий центр",
+              "href": "https://rshb.ru/",
+              "target": "_blank"
+            },
+            {
+              "text": "Финансовая культура",
+              "href": "https://rshb.ru/",
+              "target": "_blank"
+            }
+          ],
+          "socialMedia": [
+            {
+              "href": "https://vk.com"
+            },
+            {
+              "href": "https://ok.ru"
+            },
+            {
+              "href": "https://t.me"
+            }
+          ]
+        }
+      }
     ]
   },
   "blocks": [
@@ -2221,129 +2345,6 @@
     {
       "type": "SafeDepositRental",
       "style": ["col-span-12"]
-    },
-
-    {
-      "type": "Footer",
-      "style": ["col-span-12"],
-      "content": {
-        "topItems": [
-          {
-            "href": "https://rshb.ru/",
-            "text": "О банке",
-            "target": "_blank",
-            "items": [
-              {
-                "href": "https://rshb.ru/",
-                "text": "О банке"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Новости"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Офисы и отделения"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Карьера в банке"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Пресс-центр"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Кредитным организациям"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Закупки"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Премиальным клиентам"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Непрофильные/Профильные нецелевые активы"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Инсайдерам"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Противодействие коррупции"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Меры безопасности"
-              },
-              {
-                "href": "https://rshb.ru/",
-                "text": "Залоговое имущество"
-              }
-            ]
-          }
-        ],
-        "contacts": [
-          {
-            "text": "+7 (495) 787-7-787",
-            "description": "Для звонков из-за границы",
-            "type": "tel"
-          },
-          {
-            "text": "8 (800) 100-01-00",
-            "description": "По России",
-            "type": "tel"
-          },
-          {
-            "text": "7787",
-            "description": "Абонентам МТС, Мегафон, Билайн и Tele21",
-            "type": "tel"
-          }
-        ],
-        "documents": [
-          {
-            "text": "Информация о процентных ставках по договорам банковского вклада с физическими лицами",
-            "href": "https://rshb.ru/",
-            "target": "_blank"
-          },
-          {
-            "text": "Раскрытие информации профессиональным участником рынка ценных бумаг",
-            "href": "https://rshb.ru/",
-            "target": "_blank"
-          },
-          {
-            "text": "Раскрытие информации",
-            "href": "https://rshb.ru/",
-            "target": "_blank"
-          },
-          {
-            "text": "Удостоверяющий центр",
-            "href": "https://rshb.ru/",
-            "target": "_blank"
-          },
-          {
-            "text": "Финансовая культура",
-            "href": "https://rshb.ru/",
-            "target": "_blank"
-          }
-        ],
-        "socialMedia": [
-          {
-            "href": "https://vk.com"
-          },
-          {
-            "href": "https://ok.ru"
-          },
-          {
-            "href": "https://t.me"
-          }
-        ]
-      }
     }
   ]
 }
