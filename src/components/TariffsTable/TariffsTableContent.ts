@@ -81,7 +81,7 @@ export type LabelDescriptionCellDef = LabelDescriptionCell & {
 /**
  * @title Список
  */
-export type ListBlockDef = Omit<ListProps, 'listItemSize' | 'version'> & {
+export type ListBlockDef = ListProps & {
   /** @default List */
   tableCellType: 'List';
 };

@@ -1,11 +1,11 @@
-import type { BlockVersion } from '../../model/BlockVersion';
 import { Button } from '../../ui-kit/Button/Button';
-import type { BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { Img } from '../../ui-kit/Img/Img';
+import type { BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
+import type { ButtonVersion } from '../../model/ButtonVersion';
 
 export function renderBackwardButton(
   button: BackwardButtonProps,
-  version: BlockVersion,
+  version: ButtonVersion,
   className: string,
 ) {
   const { text, href, target, onClick } = button;

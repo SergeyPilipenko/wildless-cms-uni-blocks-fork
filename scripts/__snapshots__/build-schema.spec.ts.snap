@@ -1646,6 +1646,7 @@ Object {
         "DocIcon",
         "DocIconMonoColor",
         "DocsIcon",
+        "DocumentText2Icon",
         "DocumentTextIcon",
         "DollarIcon",
         "DoneIcon",
@@ -1742,6 +1743,7 @@ Object {
         "Документ",
         "Документ (одноцветный)",
         "Документы",
+        "Документы-2",
         "Документ с текстом",
         "Доллар",
         "Зелёная 'галочка' в круге",
@@ -2373,15 +2375,26 @@ Object {
           "title": "Буллиты",
           "type": "boolean",
         },
-        "items": Object {},
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "listItemSize": Object {
+          "$ref": "#/definitions/ListItemSize",
+        },
         "tableCellType": Object {
           "const": "List",
           "default": "List",
           "type": "string",
         },
+        "version": Object {
+          "$ref": "#/definitions/ListItemVersion",
+        },
       },
       "required": Array [
-        "items",
         "tableCellType",
       ],
       "title": "Список",
@@ -2413,6 +2426,20 @@ Object {
       "title": "Размер пунктов списка",
       "type": "string",
     },
+    "ListItemVersion": Object {
+      "enum": Array [
+        "primary",
+        "secondary",
+        "gray",
+      ],
+      "enumNames": Array [
+        "Основной",
+        "Второстепенный",
+        "Серый",
+      ],
+      "title": "Версия списка",
+      "type": "string",
+    },
     "ListOrientation": Object {
       "enum": Array [
         "vertical",
@@ -2424,6 +2451,33 @@ Object {
       ],
       "title": "Направление списка",
       "type": "string",
+    },
+    "ListProps": Object {
+      "properties": Object {
+        "hasIndent": Object {
+          "title": "Отступ",
+          "type": "boolean",
+        },
+        "isDotted": Object {
+          "title": "Буллиты",
+          "type": "boolean",
+        },
+        "items": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "listItemSize": Object {
+          "$ref": "#/definitions/ListItemSize",
+        },
+        "version": Object {
+          "$ref": "#/definitions/ListItemVersion",
+        },
+      },
+      "title": "Содержимое списка",
+      "type": "object",
     },
     "Logo": Object {
       "properties": Object {

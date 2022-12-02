@@ -28,6 +28,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
   } = props;
   const router = context.useRouter();
   const { handlerDecorator } = context;
+  const buttonVersion = version === 'primary' ? version : 'white';
 
   return (
     <BlockWrapper
@@ -38,7 +39,7 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
       {backwardButton?.text
         ? renderBackwardButton(
             useLink({ router, handlerDecorator }, backwardButton),
-            version,
+            buttonVersion,
             'mb-10 -mt-2.5',
           )
         : null}
