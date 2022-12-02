@@ -4,6 +4,17 @@
       "items": {
         "additionalDescription": {
           "ui:field": "hidden"
+        },
+        "icon": {
+          "ui:field": "picture"
+        },
+        "button": {
+          "icon": {
+            "ui:field": "icon"
+          },
+          "iconRight": {
+            "ui:field": "icon"
+          }
         }
       }
     }

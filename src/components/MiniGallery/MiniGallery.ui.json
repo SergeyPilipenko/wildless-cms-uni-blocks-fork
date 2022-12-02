@@ -1,1 +1,19 @@
-{}
+{
+  "content": {
+    "cards": {
+      "items": {
+        "icon": {
+          "ui:field": "picture"
+        },
+        "button": {
+          "icon": {
+            "ui:field": "icon"
+          },
+          "iconRight": {
+            "ui:field": "icon"
+          }
+        }
+      }
+    }
+  }
+}

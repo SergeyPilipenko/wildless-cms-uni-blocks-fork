@@ -9,6 +9,16 @@
           "image": {
             "ui:field": "icon"
           }
+        },
+        "buttons": {
+          "items": {
+            "icon": {
+              "ui:field": "icon"
+            },
+            "iconRight": {
+              "ui:field": "icon"
+            }
+          }
         }
       }
     }
