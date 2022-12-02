@@ -232,30 +232,6 @@ Object {
       "title": "Блок бонусов и преимуществ",
       "type": "object",
     },
-    "BonusCalculatorParams": Object {
-      "description": "TODO: данные из справочника",
-      "properties": Object {
-        "maxBonus": Object {
-          "type": "number",
-        },
-        "prefMonthsNum": Object {
-          "type": "number",
-        },
-        "prefRestBonusRate": Object {
-          "type": "number",
-        },
-        "prefTravelBonusRate": Object {
-          "type": "number",
-        },
-        "restBonusRate": Object {
-          "type": "number",
-        },
-        "travelBonusRate": Object {
-          "type": "number",
-        },
-      },
-      "type": "object",
-    },
     "BonusCalculatorParamsDef": Object {
       "default": Object {
         "calcType": "BonusCalculatorForm",
@@ -276,21 +252,6 @@ Object {
           "title": "Сноска",
           "type": "string",
         },
-        "maxBonus": Object {
-          "type": "number",
-        },
-        "prefMonthsNum": Object {
-          "type": "number",
-        },
-        "prefRestBonusRate": Object {
-          "type": "number",
-        },
-        "prefTravelBonusRate": Object {
-          "type": "number",
-        },
-        "restBonusRate": Object {
-          "type": "number",
-        },
         "sourceBookDir": Object {
           "title": "Адрес справочника",
           "type": "string",
@@ -298,9 +259,6 @@ Object {
         "title": Object {
           "title": "Заголовок",
           "type": "string",
-        },
-        "travelBonusRate": Object {
-          "type": "number",
         },
       },
       "required": Array [
@@ -961,10 +919,6 @@ Object {
         },
       },
       "title": "Контакты",
-      "type": "object",
-    },
-    "CreditCalculatorParams": Object {
-      "description": "TODO: данные из справочника",
       "type": "object",
     },
     "CreditCalculatorParamsDef": Object {

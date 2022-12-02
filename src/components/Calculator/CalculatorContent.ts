@@ -1,8 +1,8 @@
 import type { EmptyOption } from '../../model/EmptyOptionType';
+import type { Footnote } from '../../model/Footnote';
+import type { HeadlineCommonProps, TitleProps } from '../../model/HeadlineType';
 import type { IconProps } from '../../model/Picture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { HeadlineCommonProps, TitleProps } from '../../model/HeadlineType';
-import type { Footnote } from '../../model/Footnote';
 
 export type CommonCalculatorProps = Footnote & {
   /** @title Кнопки */
@@ -10,32 +10,6 @@ export type CommonCalculatorProps = Footnote & {
   /** @title Адрес справочника */
   sourceBookDir?: string;
 };
-
-/**
- * TODO: данные из справочника
- **/
-export interface CreditCalculatorParams {
-  /** @hidden */
-  isSalaryClient?: boolean;
-  /** @hidden */
-  isStateEmployee?: boolean;
-  /** @hidden */
-  isInsurance?: boolean;
-  /** @hidden */
-  isAnnuity?: boolean;
-  /** @hidden */
-  minSum?: number;
-  /** @hidden */
-  maxSum?: number;
-  /** @hidden */
-  minMonths?: number;
-  /** @hidden */
-  maxMonths?: number;
-  /** @hidden */
-  rateWithInsurance?: number;
-  /** @hidden */
-  rateWithoutInsurance?: number;
-}
 
 /**
  * TODO: данные из справочника
@@ -51,29 +25,6 @@ export interface DepositCalculatorParams {
   maxMonths?: number;
   /** @hidden */
   rate?: number;
-}
-
-/**
- * TODO: данные из справочника
- **/
-
-export interface BonusCalculatorParams {
-  /** @hidden */
-  bonus?: number;
-  /** @hidden */
-  minSumTravel?: number;
-  /** @hidden */
-  maxSumTravel?: number;
-  /** @hidden */
-  minSumOther?: number;
-  /** @hidden */
-  maxSumOther?: number;
-  maxBonus?: number;
-  prefMonthsNum?: number;
-  prefTravelBonusRate?: number;
-  prefRestBonusRate?: number;
-  travelBonusRate?: number;
-  restBonusRate?: number;
 }
 
 /**
@@ -96,7 +47,6 @@ export interface CalculatorParams {
  * @default {"calcType": "CreditCalculatorForm"}
  */
 export type CreditCalculatorParamsDef = TitleProps &
-  CreditCalculatorParams &
   CommonCalculatorProps & {
     calcType: 'CreditCalculatorForm';
   };
@@ -116,7 +66,6 @@ export type DepositCalculatorParamsDef = TitleProps &
  * @default {"calcType": "BonusCalculatorForm"}
  */
 export type BonusCalculatorParamsDef = TitleProps &
-  BonusCalculatorParams &
   CommonCalculatorProps & {
     calcType: 'BonusCalculatorForm';
   };
