@@ -13,5 +13,8 @@
     }
   ],
   "svg.preview.background": "white",
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

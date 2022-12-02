@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+trim() {
+  read -r str
+  # remove leading whitespace characters
+  str="${str#"${str%%[![:space:]]*}"}"
+  # remove trailing whitespace characters
+  str="${str%"${str##*[![:space:]]}"}"
+
+  echo "$str"
+}
+
+prepared_msg=$(cat "$1" | trim | tr -d "." | tr -s " ")
+
+word_count=$(echo "$prepared_msg" | wc -w)
+
+if [ "$word_count" -le 1 ]; then
+  echo "${RED}Commit message should be longer than 1 word!${NC}" >&2
+  exit 1
+fi
+
+npx --no -- commitlint --edit
