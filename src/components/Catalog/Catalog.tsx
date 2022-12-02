@@ -21,7 +21,7 @@ export const Catalog = JSX<CatalogProps>(
     return (
       <BlockWrapper
         context={context}
-        className={`bg-white relative font-sans p-12 overflow-hidden text-center ${className}`}
+        className={`bg-white relative font-sans p-[50px] overflow-hidden text-center ${className}`}
         {...rest}
       >
         <Headline

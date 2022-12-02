@@ -29,7 +29,7 @@ export const CatalogCard = JSX<CatalogCardProps>(
         ) : null}
         {description ? <div className="text-m-light text-left mb-4">{description}</div> : null}
         {colors?.length ? (
-          <div className="flex mb-4 text-m-light text-secondary-text">
+          <div className="flex mb-4 text-s-light text-secondary-text">
             <div className="mr-1.5">Доступные цвета: </div>
             {colors.map(renderColorOption)}
           </div>
