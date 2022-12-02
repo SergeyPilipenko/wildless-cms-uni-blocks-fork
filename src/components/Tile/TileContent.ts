@@ -5,6 +5,7 @@ import type { ButtonContent } from '../../ui-kit/Button/ButtonProps';
 import type { HeadingCommonProps } from '../../ui-kit/Heading/HeadingProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 import type { ListItemSize } from '../../ui-kit/List/ListProps';
+import type { TagsContent } from '../../ui-kit/Tags/TagsContent';
 
 /**
  * @title Плитка
@@ -12,7 +13,8 @@ import type { ListItemSize } from '../../ui-kit/List/ListProps';
 export type TileContent = HeadingCommonProps &
   DescriptionProps &
   ListContent &
-  ButtonContent & {
+  ButtonContent &
+  TagsContent & {
     /**
      * @default {
      *   "format": "webp",

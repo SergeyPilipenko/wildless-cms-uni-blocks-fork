@@ -59,6 +59,8 @@ export const TILE_PREMIUM: TileContent = {
   image: image3,
 };
 
+const tags = ['Tag #1', 'Tag #2', 'Tag #3'];
+
 export default {
   credit: (
     <div className="container grid grid-cols-12">
@@ -138,6 +140,11 @@ export default {
         ]}
         image={image4}
       />
+    </div>
+  ),
+  tags: (
+    <div className="container grid grid-cols-12">
+      <Tile context={context} className="col-span-8" {...TILE} tags={tags} />
     </div>
   ),
 };

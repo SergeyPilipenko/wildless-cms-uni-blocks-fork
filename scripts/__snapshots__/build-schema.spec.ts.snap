@@ -3364,6 +3364,18 @@ Object {
       "title": "Вкладки",
       "type": "object",
     },
+    "TagsContent": Object {
+      "properties": Object {
+        "tags": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Теги",
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
     "Target": Object {
       "enum": Array [
         "",
@@ -3605,6 +3617,13 @@ Object {
         },
         "listItemSize": Object {
           "$ref": "#/definitions/ListItemSize",
+        },
+        "tags": Object {
+          "items": Object {
+            "type": "string",
+          },
+          "title": "Теги",
+          "type": "array",
         },
         "title": Object {
           "title": "Заголовок",

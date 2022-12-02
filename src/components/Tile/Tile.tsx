@@ -8,6 +8,7 @@ import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import type { ListProps } from '../../ui-kit/List/ListProps';
+import { Tags } from '../../ui-kit/Tags/Tags';
 import { BaseTile } from '../BaseTile/BaseTile';
 import { getTileMinHeight } from '../BaseTile/getTileMinHeight';
 import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
@@ -31,6 +32,7 @@ export const Tile = JSX<TileProps>((props) => {
     listItemSize = 'M',
     className = '',
     version = 'primary',
+    tags,
     ...rest
   } = props;
   const headingClassName = version === 'primary' ? 'text-primary-text' : '';
@@ -71,6 +73,7 @@ export const Tile = JSX<TileProps>((props) => {
         ) : null}
         {children}
         {renderList({ version, isDotted, listItemSize }, items)}
+        {tags?.length ? <Tags tags={tags} className="mt-5" /> : null}
       </BaseTile>
     </BlockWrapper>
   );
