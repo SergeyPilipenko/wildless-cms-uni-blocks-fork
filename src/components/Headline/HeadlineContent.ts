@@ -8,6 +8,7 @@ import type { HeadingTagType } from '../../ui-kit/Heading/HeadingProps';
  * @title Заголовок
  */
 export type HeadlineContent = HeadlineProps & {
+  /** @title Изображение (моб.) */
   image?: Picture;
   align?: AlignType;
   bgColorHeadline?: BlockVersionWithTransparent;

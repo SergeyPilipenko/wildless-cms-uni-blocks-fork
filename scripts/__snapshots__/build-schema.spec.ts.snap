@@ -1483,6 +1483,7 @@ Object {
         },
         "image": Object {
           "$ref": "#/definitions/Picture",
+          "title": "Изображение (моб.)",
         },
         "title": Object {
           "title": "Заголовок",
