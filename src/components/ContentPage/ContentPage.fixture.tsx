@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { context } from '../../react/setup-fixture';
 
 import type { BlockDecorator } from '../../model/BlockDecorator';
@@ -5,8 +6,7 @@ import type { ContentPageDef } from '../../model/ContentPageDef';
 import { Blocks } from '../Blocks';
 import { ContentPage } from './ContentPage';
 import { normalizePage } from './normalizePage';
-
-import data from './ContentPage.page.json';
+import { useContentPageData } from './useContentPageData';
 
 const blockDecorator: BlockDecorator = ({ blockClassName, block, render }, i) => (
   <div
@@ -28,23 +28,31 @@ const blockDecorator: BlockDecorator = ({ blockClassName, block, render }, i) =>
 );
 
 export default {
-  default: (
-    <ContentPage
-      className="bg-main"
-      context={context}
-      blocksRegistry={Blocks}
-      data={normalizePage(Blocks)(data as ContentPageDef)}
-    />
-  ),
-  editor: (
-    <div style={{ background: "url('grid.svg')", height: '100%' }}>
+  default: () => {
+    const data = useContentPageData(Blocks);
+
+    return (
       <ContentPage
-        className="bg-transparent"
+        className="bg-main"
         context={context}
         blocksRegistry={Blocks}
         data={normalizePage(Blocks)(data as ContentPageDef)}
-        blockDecorator={blockDecorator}
       />
-    </div>
-  ),
+    );
+  },
+  editor: () => {
+    const data = useContentPageData(Blocks);
+
+    return (
+      <div style={{ background: "url('grid.svg')", height: '100%' }}>
+        <ContentPage
+          className="bg-transparent"
+          context={context}
+          blocksRegistry={Blocks}
+          data={normalizePage(Blocks)(data as ContentPageDef)}
+          blockDecorator={blockDecorator}
+        />
+      </div>
+    );
+  },
 };

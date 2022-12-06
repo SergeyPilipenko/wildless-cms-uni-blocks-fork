@@ -1,18 +1,14 @@
-module.exports = (webpackConfig) => {
+/* eslint-disable @typescript-eslint/no-var-requires */
+const base = require('./webpack.override.cjs');
+
+module.exports = (_) => {
+  const webpackConfig = base(_);
   const extensions = webpackConfig?.resolve?.extensions;
 
   return {
     ...webpackConfig,
     resolve: {
       extensions: ['.mobile.ts', '.mobile.tsx', ...extensions],
-    },
-    devServer: {
-      proxy: {
-        '/api/v1/exchangerates': {
-          target: 'https://dataservice.catalog.dev.rshbdev.ru',
-          secure: false,
-        },
-      },
     },
   };
 };

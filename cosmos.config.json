@@ -5,6 +5,9 @@
   "staticPath": "cosmos-static",
   "exportPath": "docs",
   "publicUrl": "./",
+  "webpack": {
+    "overridePath": "./webpack.override.cjs"
+  },
   "ui": {
     "responsivePreview": {
       "devices": [
