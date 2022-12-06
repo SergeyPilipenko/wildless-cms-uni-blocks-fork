@@ -11,7 +11,7 @@ export const CurrentLocation = JSX<CurrentLocationProps>(({ className = '', addr
     <Img image={{ icon: 'GpsIcon' }} width="24" height="24" asSVG />
     <div className="ml-3">
       {address ? <p className="text-primary-main  m-0 mb-1 text-l">{address}</p> : null}
-      <p className="text-secondary-text m-0 text-m">Курс указан для ближайшего офиса</p>
+      <p className="text-secondary-text m-0 text-m">Курс указан для заданного офиса</p>
     </div>
   </div>
 ));

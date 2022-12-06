@@ -36,6 +36,11 @@ describe('Blocks', () => {
   });
 
   for (const [key, BlockComponent] of Object.entries(Blocks)) {
+    // Temporary fix agreed with @Mikage
+    if (key === 'OfficeMap') {
+      continue;
+    }
+
     describe(key, () => {
       it(`should render block "${key}" without content`, () => {
         expect.assertions(2);
