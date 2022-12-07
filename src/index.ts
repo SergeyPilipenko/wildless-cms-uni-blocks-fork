@@ -7,4 +7,4 @@ export { ContentPage } from './components/ContentPage/ContentPage';
 export { projectSettings } from './ProjectSettings';
 export { joinList } from './utils/joinList';
 export * as url from './utils/url';
-export const packageVersion = process.env.UNI_BLOCKS_VERSION;
+export const packageVersion = process?.env?.UNI_BLOCKS_VERSION;
