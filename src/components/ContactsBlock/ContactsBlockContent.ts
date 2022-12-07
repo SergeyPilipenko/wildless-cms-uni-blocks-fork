@@ -1,3 +1,4 @@
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { HeadlineCommonProps } from '../../model/HeadlineType';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 
@@ -15,7 +16,7 @@ export interface ContactsBlockContent {
    * @maxItems 2
    * */
   contacts?: ContactItemProps[][];
-  contactsBlockVersion?: 'secondary';
+  version?: BlockVersion;
 }
 
 /**

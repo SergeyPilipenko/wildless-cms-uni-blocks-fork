@@ -905,10 +905,6 @@ Object {
           "title": "Контакты",
           "type": "array",
         },
-        "contactsBlockVersion": Object {
-          "const": "secondary",
-          "type": "string",
-        },
         "info": Object {
           "items": Object {
             "$ref": "#/definitions/InfoItemProps",
@@ -916,6 +912,9 @@ Object {
           "maxItems": 2,
           "title": "Данные",
           "type": "array",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "title": "Контакты",
