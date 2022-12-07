@@ -1,22 +1,24 @@
 {
-  "calculatorTabs": [
-    {
-      "nav": {
-        "title": "Вкладка 1",
-        "description": "Описание вкладки 1",
-        "icon": { "icon": "CalendarIcon" }
-      },
-      "calculatorBlock": {
-        "calcType": "CreditCalculatorForm",
-        "buttons": [
-          {
-            "href": "#",
-            "text": "Кнопка 1",
-            "version": "primary"
-          }
-        ],
-        "footnote": "Расчёт является предварительным. Точные условия будут предоставлены в отделении Банка. "
+  "content": {
+    "calculatorTabs": [
+      {
+        "nav": {
+          "title": "Вкладка 1",
+          "description": "Описание вкладки 1",
+          "icon": { "icon": "CalendarIcon" }
+        },
+        "calculatorBlock": {
+          "calcType": "CreditCalculatorForm",
+          "buttons": [
+            {
+              "href": "#",
+              "text": "Кнопка 1",
+              "version": "primary"
+            }
+          ],
+          "footnote": "Расчёт является предварительным. Точные условия будут предоставлены в отделении Банка. "
+        }
       }
-    }
-  ]
+    ]
+  }
 }

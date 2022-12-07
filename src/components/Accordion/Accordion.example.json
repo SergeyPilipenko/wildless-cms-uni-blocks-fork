@@ -1,4 +1,54 @@
 {
-  "title": "Аккордеон",
-  "accordionAlignTitle": "center"
+  "content": {
+    "title": "Аккордеон",
+    "accordionAlignTitle": "center"
+  },
+  "blocks": [
+    {
+      "type": "AccordionItem",
+      "content": {
+        "label": "Аккордеон 1",
+        "isExpanded": true,
+        "labelIcon": {
+          "icon": "CardIcon"
+        }
+      },
+      "blocks": [
+        {
+          "type": "Bonus",
+          "content": {
+            "title": "Начисление баллов",
+            "description": "Описание",
+            "bonusItems": [
+              {
+                "title": "Плитка 1",
+                "description": "Описание плитки 1"
+              }
+            ]
+          },
+          "style": ["col-span-12"]
+        }
+      ]
+    },
+    {
+      "type": "AccordionItem",
+      "content": {
+        "label": "Аккордеон 2",
+        "isExpanded": false,
+        "labelIcon": {
+          "icon": "CardIcon"
+        }
+      }
+    },
+    {
+      "type": "AccordionItem",
+      "content": {
+        "label": "Аккордеон 3",
+        "isExpanded": false,
+        "labelIcon": {
+          "icon": "CardIcon"
+        }
+      }
+    }
+  ]
 }

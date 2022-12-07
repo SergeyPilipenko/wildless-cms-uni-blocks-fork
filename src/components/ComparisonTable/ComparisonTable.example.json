@@ -1,85 +1,87 @@
 {
-  "title": "Сравнительная таблица",
-  "orientation": "horizontal",
-  "rowHeaders": [
-    {
-      "title": "Параметр 1"
-    },
-    {
-      "title": "Параметр 2"
-    },
-    {
-      "title": "Параметр 3"
-    }
-  ],
-  "columns": [
-    {
-      "header": {
-        "title": "Продукт 1",
-        "image": {
-          "format": "webp",
-          "size": {
-            "width": 100,
-            "height": 63
-          }
-        }
+  "content": {
+    "title": "Сравнительная таблица",
+    "orientation": "horizontal",
+    "rowHeaders": [
+      {
+        "title": "Параметр 1"
       },
-      "data": [
-        [
-          {
-            "label": "Ячейка 1"
-          }
-        ],
-        [
-          {
-            "label": "Ячейка 2-1",
-            "description": "Описание для ячейки 2-1"
-          },
-          {
-            "label": "Ячейка 2-2",
-            "description": "Описание для ячейки 2-2"
-          }
-        ],
-        [
-          {
-            "label": "Ячейка 3"
-          }
-        ]
-      ]
-    },
-    {
-      "header": {
-        "title": "Продукт 2",
-        "image": {
-          "format": "webp",
-          "size": {
-            "width": 100,
-            "height": 63
-          }
-        }
+      {
+        "title": "Параметр 2"
       },
-      "data": [
-        [
-          {
-            "label": "Ячейка 1"
+      {
+        "title": "Параметр 3"
+      }
+    ],
+    "columns": [
+      {
+        "header": {
+          "title": "Продукт 1",
+          "image": {
+            "format": "webp",
+            "size": {
+              "width": 100,
+              "height": 63
+            }
           }
-        ],
-        [
-          {
-            "label": "Ячейка 2-1",
-            "description": "Описание для ячейки 2-1"
-          },
-          {
-            "label": "Ячейка 2-2",
-            "description": "Описание для ячейки 2-2"
-          }
-        ],
-        [
-          {
-            "label": "Ячейка 3"
-          }
+        },
+        "data": [
+          [
+            {
+              "label": "Ячейка 1"
+            }
+          ],
+          [
+            {
+              "label": "Ячейка 2-1",
+              "description": "Описание для ячейки 2-1"
+            },
+            {
+              "label": "Ячейка 2-2",
+              "description": "Описание для ячейки 2-2"
+            }
+          ],
+          [
+            {
+              "label": "Ячейка 3"
+            }
+          ]
         ]
-      ]
-    }
-  ]
+      },
+      {
+        "header": {
+          "title": "Продукт 2",
+          "image": {
+            "format": "webp",
+            "size": {
+              "width": 100,
+              "height": 63
+            }
+          }
+        },
+        "data": [
+          [
+            {
+              "label": "Ячейка 1"
+            }
+          ],
+          [
+            {
+              "label": "Ячейка 2-1",
+              "description": "Описание для ячейки 2-1"
+            },
+            {
+              "label": "Ячейка 2-2",
+              "description": "Описание для ячейки 2-2"
+            }
+          ],
+          [
+            {
+              "label": "Ячейка 3"
+            }
+          ]
+        ]
+      }
+    ]
+  }
 }

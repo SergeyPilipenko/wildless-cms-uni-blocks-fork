@@ -1,64 +1,66 @@
 {
-  "title": "Галерея",
-  "description": "Описание",
-  "orientation": "horizontal",
-  "cards": [
-    {
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 150,
-          "height": 150
-        }
+  "content": {
+    "title": "Галерея",
+    "description": "Описание",
+    "orientation": "horizontal",
+    "cards": [
+      {
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 150,
+            "height": 150
+          }
+        },
+        "title": "Заголовок 1",
+        "description": "Описание 1",
+        "href": "/credit-cards",
+        "version": "primary",
+        "isDotted": true,
+        "items": [
+          { "text": "Элемент списка 1", "title": "Элемент заголовка 1" },
+          { "text": "Элемент списка 2", "title": "Элемент заголовка 2" },
+          { "text": "Элемент списка 3", "title": "Элемент заголовка 3" }
+        ]
       },
-      "title": "Заголовок 1",
-      "description": "Описание 1",
-      "href": "/credit-cards",
-      "version": "primary",
-      "isDotted": true,
-      "items": [
-        { "text": "Элемент списка 1", "title": "Элемент заголовка 1" },
-        { "text": "Элемент списка 2", "title": "Элемент заголовка 2" },
-        { "text": "Элемент списка 3", "title": "Элемент заголовка 3" }
-      ]
-    },
-    {
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 140,
-          "height": 140
-        }
+      {
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 140,
+            "height": 140
+          }
+        },
+        "title": "Заголовок 2",
+        "description": "Описание 2",
+        "href": "/credit-cards",
+        "version": "primary",
+        "isDotted": true,
+        "items": [
+          { "text": "Элемент списка 1", "title": "Элемент заголовка 1" },
+          { "text": "Элемент списка 2", "title": "Элемент заголовка 2" },
+          { "text": "Элемент списка 3", "title": "Элемент заголовка 3" }
+        ]
       },
-      "title": "Заголовок 2",
-      "description": "Описание 2",
-      "href": "/credit-cards",
-      "version": "primary",
-      "isDotted": true,
-      "items": [
-        { "text": "Элемент списка 1", "title": "Элемент заголовка 1" },
-        { "text": "Элемент списка 2", "title": "Элемент заголовка 2" },
-        { "text": "Элемент списка 3", "title": "Элемент заголовка 3" }
-      ]
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 140,
-          "height": 140
-        }
-      },
-      "title": "Заголовок 3",
-      "description": "Описание 3",
-      "href": "/credit-cards",
-      "version": "primary",
-      "isDotted": true,
-      "items": [
-        { "text": "Элемент списка 1", "title": "Элемент заголовка 1" },
-        { "text": "Элемент списка 2", "title": "Элемент заголовка 2" },
-        { "text": "Элемент списка 3", "title": "Элемент заголовка 3" }
-      ]
-    }
-  ]
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 140,
+            "height": 140
+          }
+        },
+        "title": "Заголовок 3",
+        "description": "Описание 3",
+        "href": "/credit-cards",
+        "version": "primary",
+        "isDotted": true,
+        "items": [
+          { "text": "Элемент списка 1", "title": "Элемент заголовка 1" },
+          { "text": "Элемент списка 2", "title": "Элемент заголовка 2" },
+          { "text": "Элемент списка 3", "title": "Элемент заголовка 3" }
+        ]
+      }
+    ]
+  }
 }

@@ -1,74 +1,76 @@
 {
-  "slides": [
-    {
-      "nav": {
-        "title": "Заголовок",
-        "description": "Описание"
-      },
-      "productBlock": {
-        "title": "Продуктовая галерея",
-        "image": {
-          "format": "webp",
-          "size": {
-            "width": 608,
-            "height": 299
-          }
+  "content": {
+    "slides": [
+      {
+        "nav": {
+          "title": "Заголовок",
+          "description": "Описание"
         },
-        "version": "primary",
-        "description": "Описание",
-        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
-        "benefits": [
-          {
-            "icon": {
-              "icon": "ActualBalanceIcon"
-            },
-            "label": "Денежное преимущество",
-            "description": "эмпирическая выгода"
+        "productBlock": {
+          "title": "Продуктовая галерея",
+          "image": {
+            "format": "webp",
+            "size": {
+              "width": 608,
+              "height": 299
+            }
           },
-          {
-            "icon": {
-              "icon": "BankIcon"
+          "version": "primary",
+          "description": "Описание",
+          "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
+          "benefits": [
+            {
+              "icon": {
+                "icon": "ActualBalanceIcon"
+              },
+              "label": "Денежное преимущество",
+              "description": "эмпирическая выгода"
             },
-            "label": "Возврат %",
-            "description": "при пополнении счёта"
-          }
-        ]
-      }
-    },
-    {
-      "nav": {
-        "title": "Заголовок",
-        "description": "Описание"
+            {
+              "icon": {
+                "icon": "BankIcon"
+              },
+              "label": "Возврат %",
+              "description": "при пополнении счёта"
+            }
+          ]
+        }
       },
-      "productBlock": {
-        "title": "Продуктовая галерея",
-        "image": {
-          "format": "webp",
-          "size": {
-            "width": 608,
-            "height": 299
-          }
+      {
+        "nav": {
+          "title": "Заголовок",
+          "description": "Описание"
         },
-        "version": "primary",
-        "description": "Описание",
-        "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
-        "benefits": [
-          {
-            "icon": {
-              "icon": "BankIcon"
-            },
-            "label": "Возврат %",
-            "description": "при пополнении счёта"
+        "productBlock": {
+          "title": "Продуктовая галерея",
+          "image": {
+            "format": "webp",
+            "size": {
+              "width": 608,
+              "height": 299
+            }
           },
-          {
-            "icon": {
-              "icon": "ActualBalanceIcon"
+          "version": "primary",
+          "description": "Описание",
+          "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
+          "benefits": [
+            {
+              "icon": {
+                "icon": "BankIcon"
+              },
+              "label": "Возврат %",
+              "description": "при пополнении счёта"
             },
-            "label": "Денежное преимущество",
-            "description": "эмпирическая выгода"
-          }
-        ]
+            {
+              "icon": {
+                "icon": "ActualBalanceIcon"
+              },
+              "label": "Денежное преимущество",
+              "description": "эмпирическая выгода"
+            }
+          ]
+        }
       }
-    }
-  ]
+    ]
+  }
 }

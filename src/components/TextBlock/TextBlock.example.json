@@ -1,14 +1,16 @@
 {
-  "title": "Текстовый блок",
-  "description": "Описание",
-  "blockVersion": "primary",
-  "iconVersion": "small",
-  "image": {
-    "format": "webp",
-    "size": {
-      "width": 43,
-      "height": 43
-    }
-  },
-  "isDotted": true
+  "content": {
+    "title": "Текстовый блок",
+    "description": "Описание",
+    "blockVersion": "primary",
+    "iconVersion": "small",
+    "image": {
+      "format": "webp",
+      "size": {
+        "width": 43,
+        "height": 43
+      }
+    },
+    "isDotted": true
+  }
 }

@@ -1,40 +1,42 @@
 {
-  "title": "Продукт",
-  "description": "Описание",
-  "headlineVersion": "XL",
-  "backwardButton": {
-    "text": "Кнопка возврата",
-    "icon": { "icon": "ArrowLeftIcon" }
-  },
-  "image": {
-    "format": "webp",
-    "size": {
-      "width": 234,
-      "height": 234
-    }
-  },
-  "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
-  "isDotted": true,
-  "buttons": [
-    {
-      "text": "Кнопка",
-      "version": "secondary"
-    }
-  ],
-  "version": "primary",
-  "benefitsVersion": "normal",
-  "benefits": [
-    {
-      "label": "Преимущество №1",
-      "icon": {
-        "icon": "ClockIcon"
+  "content": {
+    "title": "Продукт",
+    "description": "Описание",
+    "headlineVersion": "XL",
+    "backwardButton": {
+      "text": "Кнопка возврата",
+      "icon": { "icon": "ArrowLeftIcon" }
+    },
+    "image": {
+      "format": "webp",
+      "size": {
+        "width": 234,
+        "height": 234
       }
     },
-    {
-      "label": "Преимущество №2",
-      "icon": {
-        "icon": "SignDocsIcon"
+    "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"],
+    "isDotted": true,
+    "buttons": [
+      {
+        "text": "Кнопка",
+        "version": "secondary"
       }
-    }
-  ]
+    ],
+    "version": "primary",
+    "benefitsVersion": "normal",
+    "benefits": [
+      {
+        "label": "Преимущество №1",
+        "icon": {
+          "icon": "ClockIcon"
+        }
+      },
+      {
+        "label": "Преимущество №2",
+        "icon": {
+          "icon": "SignDocsIcon"
+        }
+      }
+    ]
+  }
 }

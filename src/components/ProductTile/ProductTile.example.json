@@ -1,32 +1,34 @@
 {
-  "title": "Продуктовая плитка",
-  "headlineVersion": "S",
-  "description": "Описание",
-  "image": {
-    "format": "webp",
-    "size": {
-      "width": 300
-    }
-  },
-  "version": "primary",
-  "benefits": [
-    {
-      "label": "Преимущество 1",
-      "description": "Описание"
+  "content": {
+    "title": "Продуктовая плитка",
+    "headlineVersion": "S",
+    "description": "Описание",
+    "image": {
+      "format": "webp",
+      "size": {
+        "width": 300
+      }
     },
-    {
-      "label": "Преимущество 2",
-      "description": "Описание"
-    },
-    {
-      "label": "Преимущество 3",
-      "description": "Описание"
-    }
-  ],
-  "buttons": [
-    {
-      "text": "Кнопка",
-      "version": "primary"
-    }
-  ]
+    "version": "primary",
+    "benefits": [
+      {
+        "label": "Преимущество 1",
+        "description": "Описание"
+      },
+      {
+        "label": "Преимущество 2",
+        "description": "Описание"
+      },
+      {
+        "label": "Преимущество 3",
+        "description": "Описание"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Кнопка",
+        "version": "primary"
+      }
+    ]
+  }
 }

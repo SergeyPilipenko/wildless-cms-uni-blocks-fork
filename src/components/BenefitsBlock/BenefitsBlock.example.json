@@ -1,36 +1,38 @@
 {
-  "title": "Преимущества",
-  "benefitsBlockVersion": "primary",
-  "benefitList": [
-    {
-      "label": "Преимущество №1",
-      "description": {
-        "name": "Описание 1",
-        "benefitType": "description"
+  "content": {
+    "title": "Преимущества",
+    "benefitsBlockVersion": "primary",
+    "benefitList": [
+      {
+        "label": "Преимущество №1",
+        "description": {
+          "name": "Описание 1",
+          "benefitType": "description"
+        },
+        "icon": {
+          "icon": "ClockIcon",
+          "format": "webp",
+          "size": {
+            "width": 70,
+            "height": 70
+          }
+        }
       },
-      "icon": {
-        "icon": "ClockIcon",
-        "format": "webp",
-        "size": {
-          "width": 70,
-          "height": 70
+      {
+        "label": "Преимущество №2",
+        "description": {
+          "name": "Описание 2",
+          "benefitType": "description"
+        },
+        "icon": {
+          "icon": "SignDocsIcon",
+          "format": "webp",
+          "size": {
+            "width": 70,
+            "height": 70
+          }
         }
       }
-    },
-    {
-      "label": "Преимущество №2",
-      "description": {
-        "name": "Описание 2",
-        "benefitType": "description"
-      },
-      "icon": {
-        "icon": "SignDocsIcon",
-        "format": "webp",
-        "size": {
-          "width": 70,
-          "height": 70
-        }
-      }
-    }
-  ]
+    ]
+  }
 }

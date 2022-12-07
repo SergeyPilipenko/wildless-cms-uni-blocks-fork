@@ -1,94 +1,96 @@
 {
-  "title": "Заголовок",
-  "description": "Описание",
-  "orientation": "vertical",
-  "rowHeaders": [
-    {
-      "title": "Параметр 1",
-      "icon": {
-        "icon": "MoneyIcon"
+  "content": {
+    "title": "Заголовок",
+    "description": "Описание",
+    "orientation": "vertical",
+    "rowHeaders": [
+      {
+        "title": "Параметр 1",
+        "icon": {
+          "icon": "MoneyIcon"
+        }
+      },
+      {
+        "title": "Параметр 2",
+        "icon": {
+          "icon": "DollarIcon"
+        }
+      },
+      {
+        "title": "Параметр 3"
+      },
+      {
+        "title": "Параметр 4"
       }
-    },
-    {
-      "title": "Параметр 2",
-      "icon": {
-        "icon": "DollarIcon"
-      }
-    },
-    {
-      "title": "Параметр 3"
-    },
-    {
-      "title": "Параметр 4"
-    }
-  ],
-  "tariffsColumns": [
-    {
-      "data": [
-        [
-          {
-            "tableCellType": "LabelDescription",
-            "label": "Ячейка 1-1",
-            "description": "Описание для ячейки 2-1"
-          },
-          {
-            "tableCellType": "List",
-            "isDotted": true,
-            "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
-          },
-          {
-            "label": "Ячейка 1-2",
-            "tableCellType": "LabelDescription",
-            "description": "Описание"
-          },
-          {
-            "tableCellType": "List",
-            "isDotted": false,
-            "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
-          }
-        ],
-        [
-          {
-            "tableCellType": "LabelDescription",
-            "label": "Ячейка 2-1"
-          },
-          {
-            "tableCellType": "List",
-            "isDotted": true,
-            "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
-          }
-        ],
-        [
-          {
-            "label": "Ячейка 3-1",
-            "tableCellType": "LabelDescription"
-          },
-          {
-            "tableCellType": "Button",
-            "buttons": [
-              {
-                "icon": {
-                  "icon": "AppleIcon"
+    ],
+    "tariffsColumns": [
+      {
+        "data": [
+          [
+            {
+              "tableCellType": "LabelDescription",
+              "label": "Ячейка 1-1",
+              "description": "Описание для ячейки 2-1"
+            },
+            {
+              "tableCellType": "List",
+              "isDotted": true,
+              "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
+            },
+            {
+              "label": "Ячейка 1-2",
+              "tableCellType": "LabelDescription",
+              "description": "Описание"
+            },
+            {
+              "tableCellType": "List",
+              "isDotted": false,
+              "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
+            }
+          ],
+          [
+            {
+              "tableCellType": "LabelDescription",
+              "label": "Ячейка 2-1"
+            },
+            {
+              "tableCellType": "List",
+              "isDotted": true,
+              "items": ["Элемент списка 1", "Элемент списка 2", "Элемент списка 3"]
+            }
+          ],
+          [
+            {
+              "label": "Ячейка 3-1",
+              "tableCellType": "LabelDescription"
+            },
+            {
+              "tableCellType": "Button",
+              "buttons": [
+                {
+                  "icon": {
+                    "icon": "AppleIcon"
+                  },
+                  "rounded": true,
+                  "version": "secondary",
+                  "href": "/",
+                  "target": "_blank"
                 },
-                "rounded": true,
-                "version": "secondary",
-                "href": "/",
-                "target": "_blank"
-              },
-              {
-                "icon": {
-                  "icon": "PlayMarketIcon"
-                },
-                "rounded": true,
-                "version": "secondary",
-                "href": "/",
-                "target": "_blank"
-              }
-            ]
-          }
+                {
+                  "icon": {
+                    "icon": "PlayMarketIcon"
+                  },
+                  "rounded": true,
+                  "version": "secondary",
+                  "href": "/",
+                  "target": "_blank"
+                }
+              ]
+            }
+          ]
         ]
-      ]
-    }
-  ],
-  "hiddenRowsNum": 2
+      }
+    ],
+    "hiddenRowsNum": 2
+  }
 }

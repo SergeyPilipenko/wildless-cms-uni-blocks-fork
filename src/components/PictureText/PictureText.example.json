@@ -1,31 +1,33 @@
 {
-  "title": "Блок с картинкой",
-  "description": "Описание",
-  "image": {
-    "format": "webp",
-    "size": {
-      "width": 400,
-      "height": 300
-    }
-  },
-  "version": "primary",
-  "directionRight": false,
-  "benefits": [
-    {
-      "label": "Преимущество №1",
-      "icon": {
-        "format": "webp",
-        "icon": "ShieldTickIcon"
+  "content": {
+    "title": "Блок с картинкой",
+    "description": "Описание",
+    "image": {
+      "format": "webp",
+      "size": {
+        "width": 400,
+        "height": 300
       }
     },
-    {
-      "label": "Преимущество №2",
-      "icon": {
-        "format": "webp",
-        "icon": "ShieldTickIcon"
+    "version": "primary",
+    "directionRight": false,
+    "benefits": [
+      {
+        "label": "Преимущество №1",
+        "icon": {
+          "format": "webp",
+          "icon": "ShieldTickIcon"
+        }
+      },
+      {
+        "label": "Преимущество №2",
+        "icon": {
+          "format": "webp",
+          "icon": "ShieldTickIcon"
+        }
       }
-    }
-  ],
-  "sum": 500000,
-  "monthLimit": 25000
+    ],
+    "sum": 500000,
+    "monthLimit": 25000
+  }
 }

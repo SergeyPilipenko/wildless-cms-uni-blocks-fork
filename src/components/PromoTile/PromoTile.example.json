@@ -1,14 +1,16 @@
 {
-  "title": "Акции и спецпредложения",
-  "date": "2022-04-16",
-  "description": "Пенсионный кредит по специальной процентной ставке",
-  "headlineVersion": "M",
-  "buttons": [
-    {
-      "text": "Все акции",
-      "href": "/credits",
-      "version": "secondary"
-    }
-  ],
-  "version": "secondary"
+  "content": {
+    "title": "Акции и спецпредложения",
+    "date": "2022-04-16",
+    "description": "Пенсионный кредит по специальной процентной ставке",
+    "headlineVersion": "M",
+    "buttons": [
+      {
+        "text": "Все акции",
+        "href": "/credits",
+        "version": "secondary"
+      }
+    ],
+    "version": "secondary"
+  }
 }

@@ -1,49 +1,51 @@
 {
-  "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
-  "isDotted": true,
-  "investmentZeroColumn": {
-    "title": "Название 1"
-  },
-  "investmentColumns": [
-    {
-      "title": "Название 2",
-      "cells": [
-        {
-          "text": "Ячейка 2-1",
-          "cellColor": "green-dark",
-          "cellSize": "S"
-        }
-      ]
+  "content": {
+    "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
+    "isDotted": true,
+    "investmentZeroColumn": {
+      "title": "Название 1"
     },
-    {
-      "title": "Название 3",
-      "cells": [
-        {
-          "text": "Ячейка 3-1",
-          "cellColor": "green-dark",
-          "cellSize": "S"
-        }
-      ]
-    },
-    {
-      "title": "Название 4",
-      "cells": [
-        {
-          "text": "Ячейка 4-1",
-          "cellColor": "green-dark",
-          "cellSize": "L"
-        }
-      ]
-    },
-    {
-      "title": "Название 5",
-      "cells": [
-        {
-          "text": "Ячейка 5-1",
-          "cellColor": "green-dark",
-          "cellSize": "XL"
-        }
-      ]
-    }
-  ]
+    "investmentColumns": [
+      {
+        "title": "Название 2",
+        "cells": [
+          {
+            "text": "Ячейка 2-1",
+            "cellColor": "green-dark",
+            "cellSize": "S"
+          }
+        ]
+      },
+      {
+        "title": "Название 3",
+        "cells": [
+          {
+            "text": "Ячейка 3-1",
+            "cellColor": "green-dark",
+            "cellSize": "S"
+          }
+        ]
+      },
+      {
+        "title": "Название 4",
+        "cells": [
+          {
+            "text": "Ячейка 4-1",
+            "cellColor": "green-dark",
+            "cellSize": "L"
+          }
+        ]
+      },
+      {
+        "title": "Название 5",
+        "cells": [
+          {
+            "text": "Ячейка 5-1",
+            "cellColor": "green-dark",
+            "cellSize": "XL"
+          }
+        ]
+      }
+    ]
+  }
 }

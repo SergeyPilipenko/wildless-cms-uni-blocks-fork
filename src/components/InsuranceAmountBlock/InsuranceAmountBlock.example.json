@@ -1,86 +1,88 @@
 {
-  "title": "Заголовок",
-  "insuranceTabs": [
-    {
-      "title": "Описание 1",
-      "cards": [
-        {
-          "sum": 200000,
-          "fee": 2100,
-          "icon": {
-            "format": "webp",
-            "size": {
-              "width": 70,
-              "height": 70
+  "content": {
+    "title": "Заголовок",
+    "insuranceTabs": [
+      {
+        "title": "Описание 1",
+        "cards": [
+          {
+            "sum": 200000,
+            "fee": 2100,
+            "icon": {
+              "format": "webp",
+              "size": {
+                "width": 70,
+                "height": 70
+              },
+              "icon": "ActualBalanceIcon"
             },
-            "icon": "ActualBalanceIcon"
+            "href": ""
           },
-          "href": ""
-        },
-        {
-          "sum": 200000,
-          "fee": 2100,
-          "icon": {
-            "format": "webp",
-            "size": {
-              "width": 70,
-              "height": 70
+          {
+            "sum": 200000,
+            "fee": 2100,
+            "icon": {
+              "format": "webp",
+              "size": {
+                "width": 70,
+                "height": 70
+              },
+              "icon": "ActualBalanceIcon"
             },
-            "icon": "ActualBalanceIcon"
-          },
-          "href": ""
-        }
-      ]
-    },
-    {
-      "title": "Описание 2",
-      "cards": [
-        {
-          "sum": 200000,
-          "fee": 2100,
-          "icon": {
-            "format": "webp",
-            "size": {
-              "width": 70,
-              "height": 70
+            "href": ""
+          }
+        ]
+      },
+      {
+        "title": "Описание 2",
+        "cards": [
+          {
+            "sum": 200000,
+            "fee": 2100,
+            "icon": {
+              "format": "webp",
+              "size": {
+                "width": 70,
+                "height": 70
+              },
+              "icon": "ActualBalanceIcon"
             },
-            "icon": "ActualBalanceIcon"
+            "href": ""
           },
-          "href": ""
-        },
-        {
-          "sum": 200000,
-          "fee": 2100,
-          "icon": {
-            "format": "webp",
-            "size": {
-              "width": 70,
-              "height": 70
+          {
+            "sum": 200000,
+            "fee": 2100,
+            "icon": {
+              "format": "webp",
+              "size": {
+                "width": 70,
+                "height": 70
+              },
+              "icon": "ActualBalanceIcon"
             },
-            "icon": "ActualBalanceIcon"
+            "href": ""
           },
-          "href": ""
-        },
-        {
-          "sum": 200000,
-          "fee": 2100,
-          "icon": {
-            "format": "webp",
-            "size": {
-              "width": 70,
-              "height": 70
+          {
+            "sum": 200000,
+            "fee": 2100,
+            "icon": {
+              "format": "webp",
+              "size": {
+                "width": 70,
+                "height": 70
+              },
+              "icon": "ActualBalanceIcon"
             },
-            "icon": "ActualBalanceIcon"
-          },
-          "href": ""
-        }
-      ]
+            "href": ""
+          }
+        ]
+      }
+    ],
+    "button": {
+      "href": "",
+      "text": "Выбрать программу",
+      "target": "_self",
+      "version": "primary"
     }
-  ],
-  "button": {
-    "href": "",
-    "text": "Выбрать программу",
-    "target": "_self",
-    "version": "primary"
   }
 }

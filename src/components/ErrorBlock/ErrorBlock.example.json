@@ -1,13 +1,15 @@
 {
-  "title": "Заголовок",
-  "subtitle": "Описание",
-  "error": {
-    "errorContentType": "Code",
-    "code": "404"
-  },
-  "button": {
-    "text": "Кнопка",
-    "version": "primary",
-    "target": "_self"
+  "content": {
+    "title": "Заголовок",
+    "subtitle": "Описание",
+    "error": {
+      "errorContentType": "Code",
+      "code": "404"
+    },
+    "button": {
+      "text": "Кнопка",
+      "version": "primary",
+      "target": "_self"
+    }
   }
 }

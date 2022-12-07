@@ -1,51 +1,53 @@
 {
-  "contactsBlockVersion": "secondary",
-  "info": [
-    {
-      "title": "Заголовок 1",
-      "description": "Описание 1",
-      "button": {
-        "href": "#",
-        "text": "Кнопка 1",
-        "target": "_blank",
-        "version": "secondary"
-      }
-    },
-    {
-      "title": "Заголовок 2",
-      "description": "Описание 2",
-      "button": {
-        "href": "#",
-        "text": "Кнопка 2",
-        "target": "_blank",
-        "version": "secondary"
-      }
-    }
-  ],
-  "contacts": [
-    [
+  "content": {
+    "contactsBlockVersion": "secondary",
+    "info": [
       {
-        "title": "Заголовок 3",
-        "description": "Описание 3",
-        "additionalDescription": "Доп описание 3"
+        "title": "Заголовок 1",
+        "description": "Описание 1",
+        "button": {
+          "href": "#",
+          "text": "Кнопка 1",
+          "target": "_blank",
+          "version": "secondary"
+        }
       },
       {
-        "title": "Заголовок 4",
-        "description": "Описание 4",
-        "additionalDescription": "Доп описание 4"
+        "title": "Заголовок 2",
+        "description": "Описание 2",
+        "button": {
+          "href": "#",
+          "text": "Кнопка 2",
+          "target": "_blank",
+          "version": "secondary"
+        }
       }
     ],
-    [
-      {
-        "title": "Заголовок 5",
-        "description": "Описание 5",
-        "additionalDescription": "Доп описание 5"
-      },
-      {
-        "title": "Заголовок 6",
-        "description": "Описание 6",
-        "additionalDescription": "Доп описание 6"
-      }
+    "contacts": [
+      [
+        {
+          "title": "Заголовок 3",
+          "description": "Описание 3",
+          "additionalDescription": "Доп описание 3"
+        },
+        {
+          "title": "Заголовок 4",
+          "description": "Описание 4",
+          "additionalDescription": "Доп описание 4"
+        }
+      ],
+      [
+        {
+          "title": "Заголовок 5",
+          "description": "Описание 5",
+          "additionalDescription": "Доп описание 5"
+        },
+        {
+          "title": "Заголовок 6",
+          "description": "Описание 6",
+          "additionalDescription": "Доп описание 6"
+        }
+      ]
     ]
-  ]
+  }
 }

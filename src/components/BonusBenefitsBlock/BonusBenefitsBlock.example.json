@@ -1,94 +1,96 @@
 {
-  "title": "Вы можете оплатить бонусными баллами",
-  "subtitle": "Удобный каталог с большим ассортиментом товаров и сервисов",
-  "bonusBenefits": [
-    {
-      "label": "Более 5000 товаров",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "WateringCanIcon"
+  "content": {
+    "title": "Вы можете оплатить бонусными баллами",
+    "subtitle": "Удобный каталог с большим ассортиментом товаров и сервисов",
+    "bonusBenefits": [
+      {
+        "label": "Более 5000 товаров",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "WateringCanIcon"
+        }
+      },
+      {
+        "label": "750 авиакомпаний, 1,2 млн отелей, билеты РЖД",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
+      },
+      {
+        "label": "Аренда автомобилей",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
+      },
+      {
+        "label": "Болеее 1000 развлечений",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
+      },
+      {
+        "label": "Платежные гаджеты Pay Ring",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
+      },
+      {
+        "label": "Цифровые сервисы",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
+      },
+      {
+        "label": "Фермерские продукты",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
+      },
+      {
+        "label": "Страхование",
+        "icon": {
+          "format": "webp",
+          "size": {
+            "width": 160,
+            "height": 180
+          },
+          "icon": "SignDocsIcon"
+        }
       }
-    },
-    {
-      "label": "750 авиакомпаний, 1,2 млн отелей, билеты РЖД",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    },
-    {
-      "label": "Аренда автомобилей",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    },
-    {
-      "label": "Болеее 1000 развлечений",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    },
-    {
-      "label": "Платежные гаджеты Pay Ring",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    },
-    {
-      "label": "Цифровые сервисы",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    },
-    {
-      "label": "Фермерские продукты",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    },
-    {
-      "label": "Страхование",
-      "icon": {
-        "format": "webp",
-        "size": {
-          "width": 160,
-          "height": 180
-        },
-        "icon": "SignDocsIcon"
-      }
-    }
-  ]
+    ]
+  }
 }

@@ -1,7 +1,25 @@
 {
-  "label": "Аккордеон 1",
-  "isExpanded": true,
-  "labelIcon": {
-    "icon": "CardIcon"
-  }
+  "content": {
+    "label": "Аккордеон 1",
+    "isExpanded": true,
+    "labelIcon": {
+      "icon": "CardIcon"
+    }
+  },
+  "blocks": [
+    {
+      "type": "Bonus",
+      "content": {
+        "title": "Начисление баллов",
+        "description": "Описание",
+        "bonusItems": [
+          {
+            "title": "Плитка 1",
+            "description": "Описание плитки 1"
+          }
+        ]
+      },
+      "style": ["col-span-12"]
+    }
+  ]
 }

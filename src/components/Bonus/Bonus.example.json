@@ -1,10 +1,12 @@
 {
-  "title": "Начисление баллов",
-  "description": "Описание",
-  "bonusItems": [
-    {
-      "title": "Плитка 1",
-      "description": "Описание плитки 1"
-    }
-  ]
+  "content": {
+    "title": "Начисление баллов",
+    "description": "Описание",
+    "bonusItems": [
+      {
+        "title": "Плитка 1",
+        "description": "Описание плитки 1"
+      }
+    ]
+  }
 }

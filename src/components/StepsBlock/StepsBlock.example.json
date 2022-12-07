@@ -1,62 +1,64 @@
 {
-  "version": "primary",
-  "title": "Шаги",
-  "description": "Описание",
-  "showLines": true,
-  "steps": [
-    {
-      "label": "Шаг №1",
-      "description": "Описание шага №1",
-      "icon": {
-        "icon": "NewDocIcon",
-        "size": {
-          "width": 48,
-          "height": 48
+  "content": {
+    "version": "primary",
+    "title": "Шаги",
+    "description": "Описание",
+    "showLines": true,
+    "steps": [
+      {
+        "label": "Шаг №1",
+        "description": "Описание шага №1",
+        "icon": {
+          "icon": "NewDocIcon",
+          "size": {
+            "width": 48,
+            "height": 48
+          },
+          "format": "webp"
         },
-        "format": "webp"
+        "button": {
+          "text": "Кнопка",
+          "target": "_blank",
+          "version": "primary"
+        }
       },
-      "button": {
-        "text": "Кнопка",
-        "target": "_blank",
-        "version": "primary"
-      }
-    },
-    {
-      "label": "Шаг №2",
-      "icon": {
-        "icon": "PassSendIcon",
-        "size": {
-          "width": 48,
-          "height": 48
+      {
+        "label": "Шаг №2",
+        "icon": {
+          "icon": "PassSendIcon",
+          "size": {
+            "width": 48,
+            "height": 48
+          },
+          "format": "webp"
         },
-        "format": "webp"
+        "button": {
+          "text": "Кнопка",
+          "target": "_blank",
+          "version": "primary"
+        }
       },
-      "button": {
-        "text": "Кнопка",
-        "target": "_blank",
-        "version": "primary"
-      }
-    },
-    {
-      "description": "Шаг №3 без заголовка",
-      "icon": {
-        "icon": "ActualBalanceIcon",
-        "size": {
-          "width": 48,
-          "height": 48
+      {
+        "description": "Шаг №3 без заголовка",
+        "icon": {
+          "icon": "ActualBalanceIcon",
+          "size": {
+            "width": 48,
+            "height": 48
+          },
+          "format": "webp"
         },
-        "format": "webp"
-      },
-      "button": {
-        "text": "Кнопка",
-        "target": "_blank",
-        "version": "primary"
+        "button": {
+          "text": "Кнопка",
+          "target": "_blank",
+          "version": "primary"
+        }
       }
+    ],
+    "button": {
+      "text": "Кнопка",
+      "target": "_blank",
+      "version": "primary"
     }
-  ],
-  "button": {
-    "text": "Кнопка",
-    "target": "_blank",
-    "version": "primary"
   }
 }

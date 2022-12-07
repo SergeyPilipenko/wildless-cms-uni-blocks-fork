@@ -1,47 +1,49 @@
 {
-  "title": "Заголовок",
-  "servicesList": [
-    {
-      "label": "Пункт 1",
-      "icon": { 
-        "icon": "CardTickIcon"
+  "content": {
+    "title": "Заголовок",
+    "servicesList": [
+      {
+        "label": "Пункт 1",
+        "icon": {
+          "icon": "CardTickIcon"
+        }
+      },
+      {
+        "label": "Пункт 2",
+        "icon": {
+          "icon": "EmptyWalletChangeIcon"
+        }
+      },
+      {
+        "label": "Пункт 3",
+        "icon": {
+          "icon": "UserTickIcon"
+        }
+      },
+      {
+        "label": "Пункт 4",
+        "icon": {
+          "icon": "UserTickIcon"
+        }
+      },
+      {
+        "label": "Пункт 5",
+        "icon": {
+          "icon": "ShieldTickIcon"
+        }
+      },
+      {
+        "label": "Пункт 6",
+        "icon": {
+          "icon": "ShieldTickIcon"
+        }
+      },
+      {
+        "label": "Пункт 7",
+        "icon": {
+          "icon": "ShieldTickIcon"
+        }
       }
-    },
-    {
-      "label": "Пункт 2",
-      "icon": { 
-        "icon": "EmptyWalletChangeIcon" 
-      }
-    },
-    {
-      "label": "Пункт 3",
-      "icon": { 
-        "icon": "UserTickIcon" 
-      }
-    },
-    {
-      "label": "Пункт 4",
-      "icon": { 
-        "icon": "UserTickIcon" 
-      }
-    },
-    {
-      "label": "Пункт 5",
-      "icon": { 
-        "icon": "ShieldTickIcon" 
-      }
-    },
-    {
-      "label": "Пункт 6",
-      "icon": { 
-        "icon": "ShieldTickIcon" 
-      }
-    },
-    {
-      "label": "Пункт 7",
-      "icon": { 
-        "icon": "ShieldTickIcon" 
-      }
-    }
-  ]
+    ]
+  }
 }

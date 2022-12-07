@@ -1,54 +1,56 @@
 {
-  "title": "Блок рекомендаций",
-  "recommendations": [
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 180,
-          "height": 180
-        }
+  "content": {
+    "title": "Блок рекомендаций",
+    "recommendations": [
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 180,
+            "height": 180
+          }
+        },
+        "title": "Заголовок 1",
+        "description": "Описание 1",
+        "socialMedia": [
+          { "href": "https://t.me" },
+          { "href": "https://vk.com" },
+          { "href": "https://ok.ru" }
+        ]
       },
-      "title": "Заголовок 1",
-      "description": "Описание 1",
-      "socialMedia": [
-        { "href": "https://t.me" },
-        { "href": "https://vk.com" },
-        { "href": "https://ok.ru" }
-      ]
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 180,
-          "height": 180
-        }
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 180,
+            "height": 180
+          }
+        },
+        "title": "Заголовок 2",
+        "description": "Описание 2",
+        "socialMedia": [
+          { "href": "https://t.me" },
+          { "href": "https://vk.com" },
+          { "href": "https://ok.ru" }
+        ]
       },
-      "title": "Заголовок 2",
-      "description": "Описание 2",
-      "socialMedia": [
-        { "href": "https://t.me" },
-        { "href": "https://vk.com" },
-        { "href": "https://ok.ru" }
-      ]
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 180,
-          "height": 180
-        }
-      },
-      "title": "Заголовок 3",
-      "description": "Описание 3",
-      "socialMedia": [
-        { "href": "https://t.me" },
-        { "href": "https://vk.com" },
-        { "href": "https://ok.ru" }
-      ]
-    }
-  ],
-  "version": "primary"
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 180,
+            "height": 180
+          }
+        },
+        "title": "Заголовок 3",
+        "description": "Описание 3",
+        "socialMedia": [
+          { "href": "https://t.me" },
+          { "href": "https://vk.com" },
+          { "href": "https://ok.ru" }
+        ]
+      }
+    ],
+    "version": "primary"
+  }
 }

@@ -1,4 +1,22 @@
 {
-  "label": "Другие продукты N",
-  "isUnfolded": true
+  "content": {
+    "label": "Другие продукты N",
+    "isUnfolded": true
+  },
+  "blocks": [
+    {
+      "type": "Bonus",
+      "content": {
+        "title": "Начисление баллов",
+        "description": "Описание",
+        "bonusItems": [
+          {
+            "title": "Плитка 1",
+            "description": "Описание плитки 1"
+          }
+        ]
+      },
+      "style": ["col-span-12"]
+    }
+  ]
 }

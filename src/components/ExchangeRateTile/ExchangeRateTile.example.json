@@ -1,8 +1,10 @@
 {
-  "button": {
-    "href": "https://coins.rshb.ru/exchange",
-    "text": "Купить валюту",
-    "target": "_blank",
-    "version": "primary"
+  "content": {
+    "button": {
+      "href": "https://coins.rshb.ru/exchange",
+      "text": "Купить валюту",
+      "target": "_blank",
+      "version": "primary"
+    }
   }
 }

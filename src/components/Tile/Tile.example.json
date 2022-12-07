@@ -1,21 +1,23 @@
 {
-  "title": "Плитка",
-  "headingType": "h3",
-  "description": "Описание",
-  "image": {
-    "format": "webp",
-    "size": {
-      "width": 445
-    }
-  },
-  "isDotted": true,
-  "listItemSize": "M",
-  "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
-  "buttons": [
-    {
-      "text": "Кнопка",
-      "version": "primary"
-    }
-  ],
-  "version": "primary"
+  "content": {
+    "title": "Плитка",
+    "headingType": "h3",
+    "description": "Описание",
+    "image": {
+      "format": "webp",
+      "size": {
+        "width": 445
+      }
+    },
+    "isDotted": true,
+    "listItemSize": "M",
+    "items": ["Пункт 1", "Пункт 2", "Пункт 3"],
+    "buttons": [
+      {
+        "text": "Кнопка",
+        "version": "primary"
+      }
+    ],
+    "version": "primary"
+  }
 }

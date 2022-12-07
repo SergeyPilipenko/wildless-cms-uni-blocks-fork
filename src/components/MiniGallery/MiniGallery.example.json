@@ -1,54 +1,56 @@
 {
-  "title": "Мини-галерея",
-  "description": "Описание",
-  "cards": [
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 120,
-          "height": 70
-        }
+  "content": {
+    "title": "Мини-галерея",
+    "description": "Описание",
+    "cards": [
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 120,
+            "height": 70
+          }
+        },
+        "title": "Заголовок 1",
+        "description": "Описание 1",
+        "version": "primary"
       },
-      "title": "Заголовок 1",
-      "description": "Описание 1",
-      "version": "primary"
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 120,
-          "height": 70
-        }
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 120,
+            "height": 70
+          }
+        },
+        "title": "Заголовок 2",
+        "description": "Описание 2",
+        "version": "primary"
       },
-      "title": "Заголовок 2",
-      "description": "Описание 2",
-      "version": "primary"
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 120,
-          "height": 70
-        }
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 120,
+            "height": 70
+          }
+        },
+        "title": "Заголовок 3",
+        "description": "Описание 3",
+        "version": "primary"
       },
-      "title": "Заголовок 3",
-      "description": "Описание 3",
-      "version": "primary"
-    },
-    {
-      "image": {
-        "format": "webp",
-        "size": {
-          "width": 120,
-          "height": 70
-        }
-      },
-      "title": "Заголовок 4",
-      "description": "Описание 4",
-      "version": "primary"
-    }
-  ]
+      {
+        "image": {
+          "format": "webp",
+          "size": {
+            "width": 120,
+            "height": 70
+          }
+        },
+        "title": "Заголовок 4",
+        "description": "Описание 4",
+        "version": "primary"
+      }
+    ]
+  }
 }

@@ -1,11 +1,13 @@
 {
-  "title": "Укажите сумму перевода",
-  "label": "Сумма перевода",
-  "placeholder": "1500",
-  "button": {
-    "href": "",
-    "text": "Далее",
-    "target": "_blank",
-    "version": "primary"
+  "content": {
+    "title": "Укажите сумму перевода",
+    "label": "Сумма перевода",
+    "placeholder": "1500",
+    "button": {
+      "href": "",
+      "text": "Далее",
+      "target": "_blank",
+      "version": "primary"
+    }
   }
 }
