@@ -20,7 +20,9 @@ export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
         {...rest}
       >
         {title ? <Heading headingType="h5" className="mb-5" title={title} /> : null}
-        {servicesList?.length ? servicesList.map(renderListItems) : null}
+        {servicesList?.length ? (
+          <ul className="list-none m-0 p-0">{servicesList.map(renderListItems)}</ul>
+        ) : null}
       </BlockWrapper>
     );
   },

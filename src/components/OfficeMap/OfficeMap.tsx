@@ -1,12 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useOfficeMap } from './useOfficeMap';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Icon } from '../../ui-kit/Icon/Icon';
+import { YandexMap } from '../../ui-kit/YandexMap/YandexMap';
 import { OFFICE_MAP } from './mockOfficeMap';
+import { nearbyOffices } from './nearbyOffices';
 import type { OfficeMapProps, WorkScheduleWeek } from './OfficeMapContent';
 import { renderCurrentDaySchedule, renderDay, renderNearbyOffice } from './renderFunctions';
-import { YandexMap } from '../../ui-kit/YandexMap/YandexMap';
-import { nearbyOffices } from './nearbyOffices';
+import { useOfficeMap } from './useOfficeMap';
 
 export const OfficeMap = JSX<UniBlockProps>(({ className = '' }) => {
   const resultOfficeMap = useOfficeMap('063') || OFFICE_MAP;

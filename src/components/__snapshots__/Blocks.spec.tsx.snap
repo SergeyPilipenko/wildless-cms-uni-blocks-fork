@@ -185,7 +185,6 @@ exports[`Blocks ContactsBlock should render block "ContactsBlock" without conten
 exports[`Blocks ErrorBlock should render block "ErrorBlock" without content 1`] = `
 <section
   class="flex flex-col justify-center items-center mt-12 "
-  role="listitem"
 >
   <div
     class="flex justify-center py-20"
@@ -1302,6 +1301,7 @@ exports[`Blocks StepsBlock should render block "StepsBlock" without content 1`] 
 exports[`Blocks Tabs should render block "Tabs" without content 1`] = `
 <section
   class="box-border flex gap-x-1 "
+  role="tablist"
 />
 `;
 

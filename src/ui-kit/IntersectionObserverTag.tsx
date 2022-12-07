@@ -9,6 +9,7 @@ interface IntersectionObserverTagProps {
   children?: VNode;
   observerCallback: IntersectionObserverCallback;
   observerOptions?: IntersectionObserverInit;
+  role?: string;
 }
 
 export const IntersectionObserverTag = JSX<IntersectionObserverTagProps>((props) => {
@@ -19,6 +20,7 @@ export const IntersectionObserverTag = JSX<IntersectionObserverTagProps>((props)
     className = '',
     anchor = null,
     children,
+    role,
   } = props;
   const tagRef = useRef<HTMLElement | null>(null);
 
@@ -38,7 +40,7 @@ export const IntersectionObserverTag = JSX<IntersectionObserverTagProps>((props)
   const Tag = tag as any;
 
   return (
-    <Tag ref={tagRef} className={className} id={anchor}>
+    <Tag ref={tagRef} className={className} id={anchor} role={role}>
       {children}
     </Tag>
   );

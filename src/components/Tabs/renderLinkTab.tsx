@@ -27,6 +27,7 @@ export const renderLinkTab = ({
 
   return (
     <a
+      role="tab"
       key={String(i)}
       className={`${LINK_CLASSES} ${active ? ACTIVE_LINK_CLASSES : INACTIVE_LINK_CLASSES}`}
       target={target}

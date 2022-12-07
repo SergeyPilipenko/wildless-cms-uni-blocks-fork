@@ -21,7 +21,7 @@ const OBSERVER_OPTIONS = {
 };
 
 export const BlockWrapper = JSX<BlockWrapperProps>(
-  ({ anchor, className, children, tag = 'section', labels }) => {
+  ({ anchor, className, children, tag = 'section', labels, role }) => {
     const Tag: any = tag;
 
     const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
@@ -66,11 +66,14 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
         observerCallback={observerCallback}
         observerOptions={OBSERVER_OPTIONS}
         anchor={anchor}
+        role={role}
       >
         {children}
       </IntersectionObserverTag>
     ) : (
-      <Tag className={className}>{children}</Tag>
+      <Tag className={className} role={role}>
+        {children}
+      </Tag>
     );
   },
 );

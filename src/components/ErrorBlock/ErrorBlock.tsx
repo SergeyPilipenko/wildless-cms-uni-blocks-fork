@@ -26,10 +26,7 @@ export const ErrorBlock = JSX<ErrorBlockProps>(
     const router = useRouter();
 
     return (
-      <section
-        className={`flex flex-col justify-center items-center mt-12 ${className}`}
-        role="listitem"
-      >
+      <section className={`flex flex-col justify-center items-center mt-12 ${className}`}>
         <div className="flex justify-center py-20">{renderErrorContent(error)}</div>
         {title ? <Heading headingType="h1" className="text-left mb-4" title={title} /> : null}
         {subtitle ? (
