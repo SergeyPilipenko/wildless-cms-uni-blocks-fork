@@ -4,8 +4,8 @@
 /**
  * @type {import('rollup').RollupOptions}
  */
-import replace from '@rollup/plugin-replace';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 import rollupTypescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import publicPackage from './.public.package.json';
@@ -30,7 +30,7 @@ export const config = (name) => [
       rollupTypescript({ outDir: 'bundle/lib' }),
       nodeResolve(),
       replace({
-        'process.env.UNI_BLOCKS_VERSION': JSON.stringify(publicPackage.version),
+        'globalThis.process?.env?.UNI_BLOCKS_VERSION': JSON.stringify(publicPackage.version),
       }),
     ],
   },
