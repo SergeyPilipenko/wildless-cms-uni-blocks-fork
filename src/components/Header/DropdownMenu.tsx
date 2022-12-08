@@ -1,84 +1,67 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useCallback, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 import type { BgColorVersion } from '../../model/BgColorVersion';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import type { LinkProps } from '../../model/LinkProps';
-import type {
-  ContentPageContext,
-  HandlerDecorator,
-  Router,
-} from '../ContentPage/ContentPageContext';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 
 const DOT_BG_COLORS_MAP: Record<BgColorVersion, string> = {
   'bg-white': 'bg-primary-text',
   transparent: 'bg-white',
 };
 
-interface DropdownMenuProps extends UniBlockProps {
-  menuVisible: boolean;
-  toggleMenu: () => void;
-  menuItems: LinkProps[];
-  bgColor?: BgColorVersion;
+interface DropdownMenuProps {
   context: ContentPageContext;
-  activeSubItem?: LinkProps;
+  className?: string;
+  items: LinkProps[];
+  activeItem?: LinkProps;
+  bgColor?: BgColorVersion;
 }
 
-export const DropdownMenu = JSX<DropdownMenuProps>((props) => {
-  const { menuVisible, toggleMenu, menuItems, bgColor, context, activeSubItem } = props;
+export const DropdownMenu = JSX<DropdownMenuProps>(
+  ({ context, className, items, activeItem, bgColor }) => {
+    const { useRouter, handlerDecorator } = context;
+    const router = useRouter();
 
-  const { useRouter, handlerDecorator } = context;
-  const router = useRouter();
+    const [visible, setVisible] = useState(false);
+    const handleToggle = useCallback(() => setVisible((_) => !_), []);
 
-  return (
-    <div
-      className={`absolute w-52 -top-4 right-0 pt-4 z-40 ${
-        menuVisible ? 'bg-white rounded-md shadow-blue-gray/24' : ''
-      }`}
-    >
-      <button
-        className="flex justify-between items-center cursor-pointer h-6 ml-6"
-        onClick={toggleMenu}
-        aria-label={`${menuVisible ? 'Скрыть другие разделы' : 'Показать другие разделы'}`}
-      >
-        {Array(3).fill(bgColor).map(renderDot)}
-      </button>
+    const handleClickOutside = useCallback(() => setVisible(false), []);
+    const ref = useOutsideClick<HTMLDivElement>(handleClickOutside);
+
+    return (
       <div
-        className={`flex flex-col rounded-md bg-white p-6 pb-2 ${menuVisible ? '' : 'hidden'}`}
-        aria-hidden={!menuVisible}
+        className={`${visible ? 'bg-white rounded-md shadow-blue-gray/24' : ''} ${className || ''}`}
+        ref={ref}
       >
-        {renderDotsSubMenuItems({ menuItems, router, handlerDecorator, activeSubItem })}
+        <button
+          className="flex justify-between items-center cursor-pointer h-6 ml-6"
+          aria-label={`${visible ? 'Скрыть другие разделы' : 'Показать другие разделы'}`}
+          onClick={handleToggle}
+        >
+          {Array(3).fill(bgColor).map(renderDot)}
+        </button>
+        <div
+          className={`flex flex-col rounded-md bg-white p-6 pb-2 ${visible ? '' : 'hidden'}`}
+          aria-hidden={!visible}
+        >
+          {items?.map((item, i) => (
+            <a
+              key={item.href || String(i)}
+              className={`text-l-light pb-4 hover:text-primary-main ${
+                item === activeItem ? 'text-primary-main' : ''
+              }`}
+              {...useLink({ router, handlerDecorator }, item)}
+            >
+              {item.text}
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-});
-
-type DotsSubMenuItemsProps = {
-  menuItems: LinkProps[];
-  router: Router;
-  handlerDecorator: HandlerDecorator | undefined;
-  activeSubItem?: LinkProps;
-};
-
-const renderDotsSubMenuItems = ({
-  menuItems,
-  router,
-  handlerDecorator,
-  activeSubItem,
-}: DotsSubMenuItemsProps) => {
-  const isActive = (item: LinkProps) => item === activeSubItem;
-
-  return menuItems?.map(({ text, ...rest }) => (
-    <a
-      key={rest.href}
-      {...useLink({ router, handlerDecorator }, rest)}
-      className={`text-l-light pb-4 hover:text-primary-main ${
-        isActive(rest) ? 'text-primary-main' : ''
-      }`}
-    >
-      {text}
-    </a>
-  ));
-};
+    );
+  },
+);
 
 const renderDot = (bgColor: BgColorVersion, i: number) => (
   <div key={String(i)} className={`w-[3px] h-[3px] rounded mr-1 ${DOT_BG_COLORS_MAP[bgColor]}`} />

@@ -10,9 +10,9 @@ export interface TopItemProps extends TopItemContent {
   className?: string;
   flat?: boolean;
   ariaLabel?: string;
-  onClick?: () => void;
   bgColor?: BgColorVersion;
   dataItemName?: string;
+  onClick?: () => void;
 }
 
 const TEXT_CLASSES = 'font-sans text-s-light';

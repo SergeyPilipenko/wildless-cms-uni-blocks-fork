@@ -12,17 +12,17 @@ export const HeaderItem = JSX<TopItemProps>(
     href,
     target,
     active,
-    onClick,
-    children,
     bgColor = 'bg-white',
     dataItemName,
+    children,
+    onClick,
   }) => (
     <a
       className={`relative inline-block bg-transparent text-center no-underline ${className}`}
       href={href}
       target={target}
-      onClick={onClick}
       data-item-name={dataItemName}
+      onClick={onClick}
     >
       <span className={getTextClasses(bgColor, active)}>{text || children}</span>
       {active ? <div className={getBorderClasses(bgColor, active)} /> : null}

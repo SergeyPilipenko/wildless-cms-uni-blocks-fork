@@ -2,9 +2,9 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useEffect, useMemo, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { AnchorClickScrollingEvent } from '../components/Tabs/Tabs';
 import { EventBus } from '../EventBus/EventBus';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import type { UniBlockProps } from '../model/JSXBlock';
 import { changeHashOnObserve } from '../utils/changeHashOnObserve';
-import { IntersectionObserverTag } from './IntersectionObserverTag';
 
 interface BlockWrapperProps extends UniBlockProps, Record<string, any> {
   anchor?: string;
@@ -24,57 +24,42 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
   ({ anchor, className, children, tag = 'section', labels, role }) => {
     const Tag: any = tag;
 
-    const [shouldRenderBlock, setShouldRenderBlock] = useState(true);
+    const [isVisible, setVisible] = useState(true);
     const anchorClickRef = useRef<AnchorClickScrollingEvent>({});
 
     const observerCallback = useMemo(
       () => changeHashOnObserve({ anchor, anchorClickRef }),
       [anchor],
     );
+    const ref = useIntersectionObserver(observerCallback, OBSERVER_OPTIONS);
 
-    useEffect(() => {
-      const anchorClickCleanup = EventBus.inst.subscribe('anchorClick', (e) => {
-        setShouldRenderBlock(true);
-        anchorClickRef.current = e;
-      });
-      const tabCleanup = EventBus.inst.subscribe('tab', (event) => {
-        if (event.type === 'group') {
-          const blockHasSettgins = labels?.length || anchor;
-          setShouldRenderBlock(
-            event.label ? !blockHasSettgins || Boolean(labels?.includes(event.label)) : true,
-          );
-        } else {
-          changeHash(event.label);
-          setShouldRenderBlock(true);
-        }
-      });
+    useEffect(
+      () =>
+        EventBus.inst.subscribe('anchorClick', (e) => {
+          setVisible(true);
+          anchorClickRef.current = e;
+        }),
+      [],
+    );
+    useEffect(
+      () =>
+        EventBus.inst.subscribe('tab', (event) => {
+          if (event.type === 'group') {
+            const hasSettings = labels?.length || anchor;
+            setVisible(event.label ? !hasSettings || Boolean(labels?.includes(event.label)) : true);
+          } else {
+            changeHash(event.label);
+            setVisible(true);
+          }
+        }),
+      [],
+    );
 
-      return () => {
-        anchorClickCleanup();
-        tabCleanup();
-      };
-    }, []);
-
-    if (!shouldRenderBlock) {
-      return null;
-    }
-
-    return anchor ? (
-      <IntersectionObserverTag
-        tag={tag}
-        className={className}
-        observerCallback={observerCallback}
-        observerOptions={OBSERVER_OPTIONS}
-        anchor={anchor}
-        role={role}
-      >
-        {children}
-      </IntersectionObserverTag>
-    ) : (
-      <Tag className={className} role={role}>
+    return isVisible ? (
+      <Tag className={className} role={role} {...(anchor ? { id: anchor, ref } : {})}>
         {children}
       </Tag>
-    );
+    ) : null;
   },
 );
 

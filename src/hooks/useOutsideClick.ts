@@ -1,25 +1,25 @@
-import { useEffect } from '@redneckz/uni-jsx/lib/hooks';
+import { useEffect, useRef } from '@redneckz/uni-jsx/lib/hooks';
 
-interface Ref {
-  current: HTMLInputElement | null;
-}
+export function useOutsideClick<R extends Node>(onClick: () => void) {
+  const targetRef = useRef<R | null>(null);
 
-export function useOutsideClick(wrapperRef: Ref, setIsOpen: (_: boolean) => void) {
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleClickOutside = (event: { target?: any }) => {
       if (
-        wrapperRef &&
-        wrapperRef.current &&
-        event.target instanceof HTMLElement &&
-        !wrapperRef.current.contains(event.target)
+        targetRef &&
+        targetRef.current &&
+        event.target instanceof Node &&
+        !targetRef.current.contains(event.target)
       ) {
-        setIsOpen(false);
+        onClick();
       }
-    }
+    };
     document.addEventListener('click', handleClickOutside);
 
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, []);
+  }, [onClick]);
+
+  return targetRef;
 }

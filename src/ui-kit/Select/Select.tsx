@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useEffect, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useCallback, useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { Icon } from '../Icon/Icon';
 
@@ -23,9 +23,8 @@ export const Select = JSX<SelectProps>(
     const [selectedItem, setSelectedItem] = useState(options[0] || { key: '', text: '' });
     const [isOpen, setIsOpen] = useState(false);
 
-    const wrapperRef = useRef<HTMLInputElement | null>(null);
-
-    useOutsideClick(wrapperRef, setIsOpen);
+    const handleClickOutside = useCallback(() => setIsOpen(false), []);
+    const wrapperRef = useOutsideClick<HTMLDivElement>(handleClickOutside);
 
     const choiceOption = (option: OptionProps) => {
       setSelectedItem(option);
