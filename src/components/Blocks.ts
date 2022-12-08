@@ -38,6 +38,7 @@ import { Tabs } from './Tabs/Tabs';
 import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
+import { InvestmentGallery } from './InvestmentGallery/InvestmentGallery';
 
 export const Blocks: BlocksRegistry = {
   Accordion,
@@ -79,4 +80,5 @@ export const Blocks: BlocksRegistry = {
   SafeDepositRental,
   Tabs,
   ErrorBlock,
+  InvestmentGallery,
 };

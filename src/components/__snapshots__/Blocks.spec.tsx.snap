@@ -605,6 +605,31 @@ exports[`Blocks InsuranceAmountBlock should render block "InsuranceAmountBlock" 
 </section>
 `;
 
+exports[`Blocks InvestmentGallery should render block "InvestmentGallery" without content 1`] = `
+<section
+  class="relative font-sans p-9 overflow-hidden text-center 
+        bg-white text-primary-text 
+        "
+>
+  <div>
+    <div
+      class="flex duration-1000 gap-3.5"
+      role="list"
+      style="transform: translateX(-0px);"
+    />
+    <div>
+      <div />
+    </div>
+  </div>
+  <div
+    class="absolute top-0 bottom-0 w-[84px] left-0 bg-opacity-from-white"
+  />
+  <div
+    class="absolute top-0 bottom-0 w-[84px] right-0 bg-opacity-to-white"
+  />
+</section>
+`;
+
 exports[`Blocks InvestmentInfo should render block "InvestmentInfo" without content 1`] = `
 <section
   class="font-sans bg-white px-9 py-12 "
@@ -900,7 +925,9 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
 
 exports[`Blocks Recommendation should render block "Recommendation" without content 1`] = `
 <section
-  class="relative font-sans p-9 overflow-hidden text-center bg-white text-primary-text "
+  class="relative font-sans p-9 overflow-hidden text-center 
+          bg-white text-primary-text 
+          "
 >
   <div>
     <div

@@ -1,49 +1,55 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { BlockVersion } from '../../model/BlockVersion';
-import { BorderVersionStyleMap } from '../../model/BorderVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { InvestmentGalleryCard } from './InvestmentGalleryCard';
+import type {
+  InvestmentGalleryCardTypes,
+  InvestmentGalleryContent,
+} from './InvestmentGalleryContent';
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
-import { RecommendationCard } from './RecommendationCard';
-import type { RecommendationCardTypes, RecommendationContent } from './RecommendationContent';
 
 const BLUR_BLOCK_CLASSES = 'absolute top-0 bottom-0 w-[84px]';
-const CARD_FULL_VIEW_COUNT = 2;
-const CARD_SHIFT = 525;
+const CARD_FULL_VIEW_COUNT = 1;
 
-export interface RecommendationProps extends RecommendationContent, UniBlockProps {}
+export interface InvestmentGalleryProps extends InvestmentGalleryContent, UniBlockProps {}
 
-export const Recommendation = JSX<RecommendationProps>(
-  ({ context, recommendations = [], className = '', title, version = 'primary', ...rest }) => {
+interface NavButtonsProps {
+  cardsCount: number;
+  activeCardIndex: number;
+  setActiveCardIndex: (number: number) => void;
+}
+
+export const InvestmentGallery = JSX<InvestmentGalleryProps>(
+  ({ context, cards = [], className = '', title, version = 'primary', ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = useState(0);
+    const cardWidth = 525;
 
     return (
       <BlockWrapper
         context={context}
         className={`relative font-sans p-9 overflow-hidden text-center 
-          ${VersionStyleMap[version]} 
-          ${className}`}
+        ${VersionStyleMap[version]} 
+        ${className}`}
         {...rest}
       >
-        {title ? <Heading headingType="h3" className="mb-6" title={title} /> : null}
+        {title ? <Heading headingType="h3" className="mb-9" title={title} /> : null}
         <div>
           <div
             className="flex duration-1000 gap-3.5"
-            style={{ transform: `translateX(-${activeCardIndex * CARD_SHIFT}px)` }}
+            style={{ transform: `translateX(-${activeCardIndex * cardWidth}px)` }}
             role="list"
           >
-            {recommendations?.length
-              ? recommendations.map(
-                  renderRecommendationCard(context, BorderVersionStyleMap[version], version),
-                )
+            {cards?.length
+              ? cards.map(renderInvestmentGalleryCard(context, className, version))
               : null}
           </div>
           {renderNavButtons({
-            cardsCount: recommendations.length,
+            cardsCount: cards.length,
             activeCardIndex,
             setActiveCardIndex,
           })}
@@ -63,34 +69,26 @@ export const Recommendation = JSX<RecommendationProps>(
   },
 );
 
-const renderRecommendationCard =
+const renderInvestmentGalleryCard =
   (context: ContentPageContext, className: string, version?: BlockVersion) =>
-  (card: RecommendationCardTypes, i: number) => {
-    return (
-      <RecommendationCard
+  (card: InvestmentGalleryCardTypes, i: number) =>
+    (
+      <InvestmentGalleryCard
         key={String(i)}
-        context={context}
-        {...card}
-        version={version}
         className={className}
+        context={context}
+        version={version}
+        {...card}
       />
     );
-  };
 
-const renderNavButtons = ({
-  cardsCount,
-  activeCardIndex,
-  setActiveCardIndex,
-}: {
-  cardsCount: number;
-  activeCardIndex: number;
-  setActiveCardIndex: (index: number) => void;
-}) => {
-  const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
-  const handlePrevClick = () => setActiveCardIndex(activeCardIndex - 1);
+const renderNavButtons = ({ cardsCount, activeCardIndex, setActiveCardIndex }: NavButtonsProps) => {
   const isUseSlider = cardsCount > CARD_FULL_VIEW_COUNT;
   const showNextButton = isUseSlider && cardsCount - activeCardIndex > CARD_FULL_VIEW_COUNT;
   const showPrevButton = isUseSlider && activeCardIndex > 0;
+
+  const handleNextClick = () => setActiveCardIndex(activeCardIndex + 1);
+  const handlePrevClick = () => setActiveCardIndex(activeCardIndex - 1);
 
   return (
     <div>

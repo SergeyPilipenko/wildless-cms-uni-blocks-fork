@@ -1,0 +1,64 @@
+{
+  "title": "Заголовок блока",
+  "cards": [
+    {
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 180,
+          "height": 180
+        }
+      },
+      "title": "Заголовок карточки",
+      "description": "Описание",
+      "additionalDescription": "Дополнительное описание",
+      "cardList":[
+        {
+          "parametr": "Параметр",
+          "parametrDesccription": "Описание"
+        },
+        {
+          "parametr": "Параметр",
+          "parametrDesccription": "Описание"
+        },
+        {
+          "parametr": "Параметр",
+          "parametrDesccription": "Описание"
+        }
+      ]
+    },
+    {
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 180,
+          "height": 180
+        }
+      },
+      "title": "Заголовок 2",
+      "description": "Описание 2",
+      "socialMedia": [
+        { "href": "https://t.me" },
+        { "href": "https://vk.com" },
+        { "href": "https://ok.ru" }
+      ]
+    },
+    {
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 180,
+          "height": 180
+        }
+      },
+      "title": "Заголовок 3",
+      "description": "Описание 3",
+      "socialMedia": [
+        { "href": "https://t.me" },
+        { "href": "https://vk.com" },
+        { "href": "https://ok.ru" }
+      ]
+    }
+  ],
+  "version": "primary"
+}

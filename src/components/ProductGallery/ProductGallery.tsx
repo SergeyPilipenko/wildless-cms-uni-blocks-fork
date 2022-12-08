@@ -2,9 +2,10 @@ import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
+import { BorderVersionStyleMap } from '../../model/BorderVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import { ContentPageContext } from '../ContentPage/ContentPageContext';
+import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent, ProductGalleryNav } from './ProductGalleryContent';
@@ -107,8 +108,6 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }: Rende
     ? 'text-secondary-text text-l-light'
     : `text-m-light ${productBlockStyleMap[version].text}`;
 
-  const additionalBorder = version === 'secondary' ? 'border-white/50' : 'border-black/50';
-
   return (
     <button
       type="button"
@@ -116,7 +115,7 @@ function renderNavButton({ slide, i, activeSlideIndex, onClick, version }: Rende
       onClick={onClick}
       aria-label={slide?.title}
       className={`box-border relative overflow-hidden border border-white/50 cursor-pointer text-left mx-1 grow basis-0
-        ${btnClassName} ${additionalBorder}
+        ${btnClassName} ${BorderVersionStyleMap[version]}
       `}
     >
       <div className="border-0 px-6">

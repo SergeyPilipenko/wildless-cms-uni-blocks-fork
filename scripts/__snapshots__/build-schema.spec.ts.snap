@@ -559,6 +559,18 @@ Object {
       },
       "type": "object",
     },
+    "CardColumnsMode": Object {
+      "enum": Array [
+        "single",
+        "double",
+      ],
+      "enumNames": Array [
+        "1 колонка",
+        "2 колонки",
+      ],
+      "title": "Количество колонок в списке",
+      "type": "string",
+    },
     "CardItem": Object {
       "properties": Object {
         "fee": Object {
@@ -579,6 +591,19 @@ Object {
         },
       },
       "title": "Кнопка выбора программы",
+      "type": "object",
+    },
+    "CardListItem": Object {
+      "properties": Object {
+        "parameter": Object {
+          "title": "Параметр",
+          "type": "string",
+        },
+        "parameterDesccription": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+      },
       "type": "object",
     },
     "CardTransferContent": Object {
@@ -665,6 +690,9 @@ Object {
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
         },
       },
       "title": "Каталог",
@@ -2055,6 +2083,71 @@ Object {
         },
       },
       "title": "Элемент данных",
+      "type": "object",
+    },
+    "InvestmentGalleryCardTypes": Object {
+      "properties": Object {
+        "additionalDescription": Object {
+          "title": "Доп. описание карточки",
+          "type": "string",
+        },
+        "cardList": Object {
+          "items": Object {
+            "$ref": "#/definitions/CardListItem",
+          },
+          "title": "Описание пункта",
+          "type": "array",
+        },
+        "columnsMode": Object {
+          "$ref": "#/definitions/CardColumnsMode",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+          "default": Object {
+            "format": "webp",
+            "size": Object {
+              "width": 290,
+            },
+            "sources": Array [
+              Object {
+                "alignment": "southeast",
+                "format": "webp",
+                "media": 1279,
+                "width": 174,
+              },
+            ],
+          },
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Карточка",
+      "type": "object",
+    },
+    "InvestmentGalleryContent": Object {
+      "properties": Object {
+        "cards": Object {
+          "items": Object {
+            "$ref": "#/definitions/InvestmentGalleryCardTypes",
+          },
+          "title": "Карточки",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Карточка",
       "type": "object",
     },
     "InvestmentInfoContent": Object {
