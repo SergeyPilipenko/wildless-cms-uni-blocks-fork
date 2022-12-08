@@ -1,19 +1,12 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { BlockVersion } from '../../model/BlockVersion';
+import { BlockVersion, VersionStyleMap } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import type { BenefitsBlockContent, ListBenefitDef, TextBenefitDef } from './BenefitsBlockContent';
 import { BenefitBlockItemProps, DescriptionDef } from './BenefitsBlockContent';
-import { getIconWithVersion } from '../../utils/getIconWithVersion';
-
-export interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
-
-const benefitsBlockStyleMap = {
-  primary: 'bg-white',
-  secondary: 'bg-primary-main',
-};
 
 const benefitsTextStyleMap = {
   primary: '',
@@ -30,10 +23,12 @@ const benefitsIconStyleMap = {
   secondary: 'bg-white/30 text-black',
 };
 
+interface BenefitsBlockProps extends BenefitsBlockContent, UniBlockProps {}
+
 export const BenefitsBlock = JSX<BenefitsBlockProps>(
   ({ className = '', title, benefitList, version = 'primary', ...rest }) => (
     <BlockWrapper
-      className={`font-sans text-primary-text p-12 flex flex-col items-center ${className} ${benefitsBlockStyleMap[version]}`}
+      className={`font-sans text-primary-text p-12 flex flex-col items-center ${className} ${VersionStyleMap[version]}`}
       {...rest}
     >
       {title ? (
@@ -44,19 +39,17 @@ export const BenefitsBlock = JSX<BenefitsBlockProps>(
           title={title}
         />
       ) : null}
-      {benefitList?.length ? renderBenefits(benefitList, version) : null}
+      {benefitList?.length ? (
+        <div className="flex flex-wrap w-full justify-center gap-x-20 mt-8">
+          {benefitList.map(renderStep(version))}
+        </div>
+      ) : null}
     </BlockWrapper>
   ),
 );
 
-const renderBenefits = (benefitList: BenefitBlockItemProps[], version: BlockVersion) => (
-  <div className="flex flex-wrap w-full justify-center gap-x-20 mt-8">
-    {benefitList.map(renderStep(version))}
-  </div>
-);
-
 const renderStep = (version: BlockVersion) => (benefit: BenefitBlockItemProps, i: number) => {
-  const description = (benefit?.description || undefined) as DescriptionDef;
+  const description = benefit.description;
 
   return (
     <div key={String(i)} className="flex items-center basis-1/2 max-w-[500px] mb-14">
@@ -78,8 +71,8 @@ const renderStep = (version: BlockVersion) => (benefit: BenefitBlockItemProps, i
   );
 };
 
-const renderDescription = (description: DescriptionDef, version: BlockVersion) => {
-  const benefitType = description ? description?.benefitType : null;
+const renderDescription = (description: DescriptionDef | undefined, version: BlockVersion) => {
+  const benefitType = description?.benefitType || null;
 
   return description && benefitType ? (
     <div className={`text-l-light mt-2 ${benefitsDescriptionStyleMap[version]}`}>
@@ -90,7 +83,7 @@ const renderDescription = (description: DescriptionDef, version: BlockVersion) =
   ) : null;
 };
 
-const renderTextBenefit = (description?: TextBenefitDef) => (description ? description.name : null);
+const renderTextBenefit = (description?: TextBenefitDef) => description?.name || null;
 
 const renderListBenefit = (description?: ListBenefitDef) => {
   const listStyleType = description?.bullets ? 'list-disc pl-6' : '';

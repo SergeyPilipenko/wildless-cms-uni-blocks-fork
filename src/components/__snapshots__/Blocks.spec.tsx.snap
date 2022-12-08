@@ -40,7 +40,7 @@ exports[`Blocks AccordionItem should render block "AccordionItem" without conten
 
 exports[`Blocks BenefitsBlock should render block "BenefitsBlock" without content 1`] = `
 <section
-  class="font-sans text-primary-text p-12 flex flex-col items-center  bg-white"
+  class="font-sans text-primary-text p-12 flex flex-col items-center  bg-white text-primary-text"
 />
 `;
 
