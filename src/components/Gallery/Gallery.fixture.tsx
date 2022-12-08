@@ -194,6 +194,7 @@ const onlyTitleProps: GalleryProps = {
     {
       title: 'Фермерские продукты',
       icon: { icon: 'WalletIcon' },
+      version: 'secondary',
     },
   ],
   button: buttonPrimary,

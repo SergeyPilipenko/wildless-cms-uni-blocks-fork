@@ -8,8 +8,10 @@ import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import { joinList } from '../../utils/joinList';
 import { renderStepContent } from './renderStepContent';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
+import type { BlockVersion } from '../../model/BlockVersion';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
@@ -58,7 +60,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
           <div className={`box-border ${titleMargin}`}>
             <div className={`flex items-center ${paddingX}`}>
               {joinList(<div className={`h-0.5 w-full bg-secondary-light ${lineOpacity}`} />)(
-                steps.map(renderStepIcon(styleMap)),
+                steps.map(renderStepIcon(styleMap, version)),
               )}
             </div>
             <div className={`flex justify-between mt-4 ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
@@ -87,7 +89,7 @@ export const StepsBlock = JSX<StepsBlockProps>(
 );
 
 const renderStepIcon =
-  (styleMap: StyleType) =>
+  (styleMap: StyleType, version?: BlockVersion) =>
   ({ icon }: Step, i: number) => {
     return (
       <div key={String(i)} className="flex flex-col items-center text-center">
@@ -96,7 +98,7 @@ const renderStepIcon =
             ${styleMap.iconBackground} ${styleMap.title}`}
         >
           {checkIsIconRenderable(icon) ? (
-            <Img image={icon} width="48" height="48" asSVG />
+            <Img image={getIconWithVersion(icon || {}, version)} width="48" height="48" asSVG />
           ) : (
             <span className={`text-h4 ${styleMap.iconText}`}>{i + 1}</span>
           )}

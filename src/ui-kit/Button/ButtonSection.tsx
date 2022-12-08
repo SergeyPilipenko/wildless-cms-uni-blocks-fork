@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
-import type { IconVersion } from '../../model/IconVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { Picture } from '../../model/Picture';
 import { Img } from '../Img/Img';
@@ -14,12 +13,6 @@ interface RenderButtonProps {
   buttonClassName?: string;
   index?: number;
 }
-
-interface RenderButtonIconProps {
-  icon?: Picture;
-  iconVersion?: IconVersion;
-}
-
 export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '', buttons }) => {
   const { handlerDecorator } = context;
   const router = context.useRouter();
@@ -36,10 +29,10 @@ export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '',
 export function renderButton({ button, buttonClassName, index }: RenderButtonProps) {
   const { icon, iconRight, version, ...rest } = button;
 
-  const iconVersion = version === 'secondary' ? 'normal' : 'white';
+  const iconVersion = version === 'secondary' ? 'color' : 'white';
 
-  const leftIcon = renderButtonIcon({ icon, iconVersion });
-  const rightIcon = renderButtonIcon({ icon: iconRight, iconVersion });
+  const leftIcon = renderButtonIcon({ ...icon, iconVersion: iconVersion } as Picture);
+  const rightIcon = renderButtonIcon({ ...iconRight, iconVersion: iconVersion } as Picture);
 
   return (
     <Button
@@ -53,11 +46,11 @@ export function renderButton({ button, buttonClassName, index }: RenderButtonPro
   );
 }
 
-const renderButtonIcon = ({ icon, iconVersion }: RenderButtonIconProps) => {
+const renderButtonIcon = (icon: Picture) => {
   if (!icon?.icon && !icon?.src) {
     return null;
   }
   const iconWidth = icon?.size?.width ? `${icon.size.width}` : '24';
 
-  return <Img image={{ ...icon, iconVersion: iconVersion }} width={iconWidth} height="24" asSVG />;
+  return <Img image={{ ...icon }} width={iconWidth} height="24" asSVG />;
 };

@@ -21,27 +21,15 @@ exports[`Blocks AccordionItem should render block "AccordionItem" without conten
       <span
         class="text-xl font-medium pr-2.5"
       />
-      <div
+      <img
+        alt="Иконка PlusIcon"
+        aria-hidden="true"
         class="text-primary-main flex-shrink-0"
-      >
-        <svg
-          aria-hidden="true"
-          class="width: 24px  text-primary-main  "
-          height="24"
-          width="24"
-        >
-          <title>
-            Иконка PlusIcon
-          </title>
-          <desc>
-            Иконка PlusIcon
-          </desc>
-          <use
-            href="icons/PlusIcon.svg#icon"
-            xlink:href="icons/PlusIcon.svg#icon"
-          />
-        </svg>
-      </div>
+        height="24"
+        src="icons/PlusIcon.svg"
+        title="Иконка PlusIcon"
+        width="24"
+      />
     </button>
     <div
       class="transition-max-h duration-300 overflow-hidden max-h-0 grid grid-cols-12 gap-5 [&>*]:p-0"
@@ -246,23 +234,15 @@ exports[`Blocks ExchangeRateTile should render block "ExchangeRateTile" without 
               <div
                 class="flex "
               >
-                <svg
+                <img
+                  alt="Иконка GpsIcon"
                   aria-hidden="true"
-                  class="width: 24px  text-primary-main  "
+                  class=""
                   height="24"
+                  src="icons/GpsIcon.svg"
+                  title="Иконка GpsIcon"
                   width="24"
-                >
-                  <title>
-                    Иконка GpsIcon
-                  </title>
-                  <desc>
-                    Иконка GpsIcon
-                  </desc>
-                  <use
-                    href="icons/GpsIcon.svg#icon"
-                    xlink:href="icons/GpsIcon.svg#icon"
-                  />
-                </svg>
+                />
                 <div
                   class="ml-3"
                 >
@@ -1261,23 +1241,15 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
         <div
           class="bg-primary-main px-10 pt-10 pb-4 text-center"
         >
-          <svg
+          <img
+            alt="Иконка PackA4Icon"
             aria-hidden="true"
-            class="width: 290px  text-primary-main  "
+            class=""
             height="257"
+            src="icons/PackA4Icon.svg"
+            title="Иконка PackA4Icon"
             width="290"
-          >
-            <title>
-              Иконка PackA4Icon
-            </title>
-            <desc>
-              Иконка PackA4Icon
-            </desc>
-            <use
-              href="icons/PackA4Icon.svg#icon"
-              xlink:href="icons/PackA4Icon.svg#icon"
-            />
-          </svg>
+          />
           <span
             class="text-s-light text-white opacity-80 mt-2 inline-block"
           >

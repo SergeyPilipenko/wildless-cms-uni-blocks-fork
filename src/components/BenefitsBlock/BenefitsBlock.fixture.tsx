@@ -61,7 +61,7 @@ export default {
             icon: image,
           },
         ]}
-        benefitsBlockVersion="primary"
+        version="primary"
       />
     </div>
   ),
@@ -105,7 +105,7 @@ export default {
             icon: { icon: 'GlobalIcon' },
           },
         ]}
-        benefitsBlockVersion="primary"
+        version="primary"
       />
     </div>
   ),
@@ -150,7 +150,7 @@ export default {
               items: itemsList,
               benefitType: 'list',
             },
-            icon: { icon: 'ActualBalanceIcon' },
+            icon: { icon: 'ActualBalanceIcon', iconVersion: 'normal' },
           },
         ]}
       />
@@ -197,10 +197,10 @@ export default {
               items: itemsList,
               benefitType: 'list',
             },
-            icon: { icon: 'ActualBalanceIcon' },
+            icon: { icon: 'ActualBalanceIcon', iconVersion: 'normal' },
           },
         ]}
-        benefitsBlockVersion="secondary"
+        version="secondary"
       />
     </div>
   ),
@@ -244,7 +244,7 @@ export default {
             icon: { icon: 'GlobalIcon', iconVersion: 'black' },
           },
         ]}
-        benefitsBlockVersion="secondary"
+        version="secondary"
       />
     </div>
   ),

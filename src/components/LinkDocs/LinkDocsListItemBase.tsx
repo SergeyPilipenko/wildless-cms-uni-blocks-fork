@@ -2,6 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import { Img } from '../../ui-kit/Img/Img';
 import type { LinkDocsItem } from './LinkDocsContent';
 import type { Picture } from '../../model/Picture';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface LinkDocsListItemProps {
   className?: string;
@@ -22,7 +23,13 @@ export const LinkDocsListItemBase = JSX<LinkDocsListItemBaseProps>(
     return (
       <a className={className} role="link" {...linkProps}>
         {icon ? (
-          <Img className={iconClassName} image={icon} width="24px" height="24px" asSVG />
+          <Img
+            className={iconClassName}
+            image={getIconWithVersion(icon)}
+            width="24px"
+            height="24px"
+            asSVG
+          />
         ) : null}
         {text ? (
           <span className={textClassName}>

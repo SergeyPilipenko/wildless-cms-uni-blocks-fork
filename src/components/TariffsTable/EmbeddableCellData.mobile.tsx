@@ -19,11 +19,11 @@ const renderButtonsCellData = ({ buttons }: ButtonContent) =>
         renderButton({
           button: { rounded, icon, ...buttonProps },
           buttonClassName: `mt-3 ${idx > 0 && rounded ? 'ml-2.5' : ''} ${icon ? 'w-12 h-12' : ''}`,
+          index: idx,
         }),
       )}
     </div>
   ) : null;
-
 const renderLabelDescriptionCellData = ({ label, description }: LabelDescriptionCell) => {
   const labelClassName = `text-xl font-medium m-0 ${description ? 'mb-1' : ''}`;
 

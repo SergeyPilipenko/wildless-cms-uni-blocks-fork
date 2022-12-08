@@ -8,6 +8,7 @@ import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
 import { TariffsTableCell } from './TariffsTableCell';
 import type { Data } from './TariffsTableContent';
 import { TariffsTableRowContainer } from './TariffsTableRowContainer';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface TariffsTableRowProps extends UniBlockProps {
   row: Data;
@@ -33,7 +34,7 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
             {header?.icon ? (
               <Img
                 className="mr-[14px] max-w-6 max-h-6"
-                image={header.icon}
+                image={getIconWithVersion(header.icon)}
                 width="24px"
                 height="24px"
                 asSVG

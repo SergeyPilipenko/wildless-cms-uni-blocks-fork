@@ -7,6 +7,7 @@ import { Img } from '../../ui-kit/Img/Img';
 import { List } from '../../ui-kit/List/List';
 import { HEADLINE_SMALL_VERSION } from '../Headline/constants';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export const GalleryCardInner = JSX<GalleryCardProps>(
   ({
@@ -24,7 +25,7 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
     return (
       <div className={`h-full flex flex-col justify-between ${AlignText[align]}`}>
         <div className="flex flex-col h-full">
-          {renderImage(icon)}
+          {renderImage(icon, version)}
           {renderCardTitle(headlineSmallVersion, title)}
           {renderDescription(description, title)}
           {items?.length ? renderItems(items, isDotted, version) : null}
@@ -36,11 +37,15 @@ export const GalleryCardInner = JSX<GalleryCardProps>(
   },
 );
 
-const renderImage = (image?: Picture) => (
+const renderImage = (image?: Picture, version?: BlockVersion) => (
   <div className="flex justify-center">
     {image?.src ? <Img className="mb-5" image={image} /> : null}
     {image?.icon ? (
-      <Img className={`w-[32px] h-[32px] min-w-[32px] mb-5 rounded-full`} image={image} asSVG />
+      <Img
+        className={`w-[32px] h-[32px] min-w-[32px] mb-5 rounded-full`}
+        image={getIconWithVersion(image, version)}
+        asSVG
+      />
     ) : null}
   </div>
 );

@@ -36,17 +36,17 @@ const STEPS_WITH_ICONS: Step[] = [
   {
     label: 'В мобильном приложении или интернет-банке',
     description: 'Для всех клиентов Россельхозбанка',
-    icon: { icon: 'SignDocsIcon' },
+    icon: { icon: 'SignDocsIcon', iconVersion: 'normal' },
   },
   {
     label: 'Через Госуслуги',
     description: 'При наличии данных в Единой биометрической системе',
-    icon: { icon: 'ClockIcon' },
+    icon: { icon: 'ClockIcon', iconVersion: 'normal' },
   },
   {
     label: 'В офисах Россельхозбанка',
     description: 'Откройте вклад',
-    icon: { icon: 'ComfortableCompIcon' },
+    icon: { icon: 'ComfortableCompIcon', iconVersion: 'normal' },
   },
 ];
 
@@ -97,6 +97,7 @@ export default {
         {...COMMON_PROPS}
         showLines={false}
         steps={STEPS_WITH_ICONS}
+        version="secondary"
         button={{
           text: 'Отправить заявку',
           href: 'https://www.rshb.ru/',

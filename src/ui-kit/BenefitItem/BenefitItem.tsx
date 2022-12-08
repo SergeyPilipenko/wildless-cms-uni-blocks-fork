@@ -1,9 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { IconVersion } from '../../model/IconVersion';
-import type { Picture } from '../../model/Picture';
 import { Img } from '../Img/Img';
 import type { BenefitItemCommonProps, BenefitItemProps } from './BenefitItemProps';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface BenefitGeneralProps extends BenefitItemProps, BenefitItemCommonProps {}
 
@@ -25,16 +25,14 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
     version = 'primary',
     benefitsVersion = 'normal',
   } = props;
-
-  const isIconWhite = benefitsVersion === 'white' || version === 'secondary';
   const listItemAlign = description ? 'items-start' : 'items-center';
-  const iconVersion = getIconVersion(isIconWhite, icon);
+  const calcVersion = benefitsVersion === 'white' ? 'secondary' : 'primary';
 
   return (
     <div className={`flex gap-5 ${listItemAlign} ${className}`}>
       {icon ? (
         <div className={renderBenefitIconBgStyle(version, benefitsVersion)}>
-          <Img className="w-6 h-6" image={{ ...icon, iconVersion }} asSVG />
+          <Img className="w-6 h-6" image={getIconWithVersion(icon, calcVersion)} asSVG />
         </div>
       ) : null}
       <div className="gap-0.5">
@@ -58,6 +56,3 @@ function renderBenefitIconBgStyle(version: BlockVersion, benefitsVersion: IconVe
 
   return `w-[50px] h-[50px] min-w-[50px] rounded-full p-2.5 box-border flex items-center justify-center ${bgColorStyle}`;
 }
-
-const getIconVersion = (isIconWhite: boolean, icon?: Picture) =>
-  icon?.iconVersion || isIconWhite ? 'white' : 'normal';

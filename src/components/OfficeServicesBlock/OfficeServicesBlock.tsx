@@ -7,6 +7,7 @@ import type {
   OfficeServicesBlockContent,
   OfficeServicesBlockList,
 } from './OfficeServicesBlockContent';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface OfficeServicesBlockProps extends OfficeServicesBlockContent, UniBlockProps {}
 
@@ -36,7 +37,7 @@ const renderListItems = (itemList: OfficeServicesBlockList, i: number) => (
         width="24"
         height="24"
         asSVG
-        image={itemList.icon}
+        image={getIconWithVersion(itemList.icon)}
       />
     ) : null}
     {itemList.label ? <span className="text-l-light">{itemList.label}</span> : null}

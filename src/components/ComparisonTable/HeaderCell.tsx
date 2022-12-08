@@ -5,6 +5,7 @@ import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { BORDER_CLASSES, GRADIENT } from './constants';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface HeaderCellProps {
   icon?: Picture;
@@ -22,9 +23,10 @@ export const HeaderCell = JSX<HeaderCellProps>(({ icon, image, title, link }) =>
     {icon && !image?.src && (
       <Img
         className="h-[63px] w-[63px] min-w-[63px] min-h-[63px] mb-4"
-        image={icon}
+        image={getIconWithVersion(icon)}
         width="63"
         height="63"
+        asSVG
       />
     )}
     {image?.src && <Img className="mb-[18px]" image={image} />}

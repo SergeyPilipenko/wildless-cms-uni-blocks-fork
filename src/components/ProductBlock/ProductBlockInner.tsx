@@ -20,7 +20,7 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     headlineVersion = 'L',
     description,
     benefits,
-    benefitsVersion = 'normal',
+    benefitsVersion,
     buttons,
     image,
     items,

@@ -11,7 +11,7 @@ import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl
 import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
-import { Picture } from '../../model/Picture';
+import type { Picture } from '../../model/Picture';
 
 export const Gallery = JSX<GalleryProps>(
   ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {

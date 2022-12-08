@@ -5,8 +5,8 @@ import { BenefitItem } from '../../ui-kit/BenefitItem/BenefitItem';
 
 export const renderBenefit =
   (version: BlockVersion = 'primary', benefitsVersion: IconVersion = 'normal') =>
-  ({ icon, label, description }: BenefitItemProps, i: number) => {
-    return (
+  ({ icon, label, description }: BenefitItemProps, i: number) =>
+    (
       <BenefitItem
         key={String(i)}
         icon={icon}
@@ -16,4 +16,3 @@ export const renderBenefit =
         benefitsVersion={benefitsVersion}
       />
     );
-  };

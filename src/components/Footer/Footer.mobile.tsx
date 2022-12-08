@@ -1,19 +1,21 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Fallback } from '../../model/Fallback';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import { Button } from '../../ui-kit/Button/Button';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
 import { AccordionItemsList } from '../Accordion/AccordionItemsList';
-import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { LinkList } from '../LinkList/LinkList';
 import { MobileAppTile } from '../MobileAppTile/MobileAppTile';
 import { Contacts } from './Contacts';
-import type { FooterContent, SubMenuItem } from './FooterContent';
 import { HorizontalNavigation } from './HorizontalNavigation';
 import { SocialMedia } from './SocialMedia';
 import { TextInformation } from './TextInformation';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
+import type { Fallback } from '../../model/Fallback';
+import type { UniBlockProps } from '../../model/JSXBlock';
+import type { FooterContent, SubMenuItem } from './FooterContent';
+import type { Picture } from '../../model/Picture';
+import { AccordionItem } from '../AccordionItem/AccordionItem';
 
 export interface FooterProps extends FooterContent, UniBlockProps {}
 
@@ -66,7 +68,15 @@ const renderSubMenuItem = (menu: SubMenuItem, i: number) => {
 
   return (
     <Button version="link" key={`footer-${i}`} href={href} className="flex text-s mb-4 w-6">
-      {icon ? <Img className="pr-1" image={icon} width="24" height="24" asSVG /> : null}
+      {icon ? (
+        <Img
+          className="pr-1"
+          image={getIconWithVersion({ icon: icon } as Picture)}
+          width="24"
+          height="24"
+          asSVG
+        />
+      ) : null}
       <span className="pl-2.5 font-medium text-primary-text">{text}</span>
     </Button>
   );

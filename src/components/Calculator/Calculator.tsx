@@ -81,6 +81,8 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
     ? 'text-l-light text-white'
     : `text-m-light text-secondary-text`;
   const iconClassName = isActiveBtn ? '' : `text-primary-main`;
+  const iconVersion = tab?.icon?.iconVersion;
+  const activeIconStyle = isActiveBtn ? 'white' : 'normal';
 
   return (
     <button
@@ -93,7 +95,10 @@ function renderNavButton({ tab, i, activeSlideIndex, onClick }: NavButtonProps) 
     >
       <Img
         className={`h-6 w-6 min-w-6 min-h-6 mr-4 ${iconClassName}`}
-        image={{ ...tab?.icon, iconVersion: isActiveBtn ? 'white' : 'normal' }}
+        image={{
+          ...tab?.icon,
+          iconVersion: iconVersion ?? activeIconStyle,
+        }}
         width="24"
         height="24"
         asSVG

@@ -54,5 +54,5 @@ export type BenefitsBlockContent = TitleProps & {
    */
   benefitList?: BenefitBlockItemProps[];
   /** @default primary */
-  benefitsBlockVersion?: BlockVersion;
+  version?: BlockVersion;
 };

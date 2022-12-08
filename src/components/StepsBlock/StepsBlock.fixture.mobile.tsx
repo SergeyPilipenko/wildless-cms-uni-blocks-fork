@@ -136,20 +136,20 @@ export default {
           steps={[
             {
               description: 'Оставьте онлайн-заявку на потребительский кредит',
-              icon: { icon: 'ClockIcon' },
+              icon: { icon: 'ClockIcon', iconVersion: 'normal' },
             },
             {
               label: 'В случае одобрения',
-              icon: { icon: 'SignDocsIcon' },
+              icon: { icon: 'SignDocsIcon', iconVersion: 'normal' },
             },
             {
               label: 'Заявка на кредит',
               description: 'Оставьте онлайн-заявку на потребительский кредит',
-              icon: { icon: 'ComfortableCompIcon' },
+              icon: { icon: 'ComfortableCompIcon', iconVersion: 'normal' },
             },
             {
               label: 'Получение наличных',
-              icon: { icon: 'ClockIcon' },
+              icon: { icon: 'ClockIcon', iconVersion: 'normal' },
             },
           ]}
           version="secondary"

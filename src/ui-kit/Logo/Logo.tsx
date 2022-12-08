@@ -17,7 +17,7 @@ export interface LogoProps {
 }
 
 const ICON_VERSION_MAP: Record<BgColorVersion, string> = {
-  'bg-white': 'normal',
+  'bg-white': 'color',
   transparent: 'white',
 };
 

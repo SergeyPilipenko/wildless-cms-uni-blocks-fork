@@ -8,6 +8,7 @@ import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -112,7 +113,7 @@ const renderIconArea = (size: SizeVersion, version: BlockVersion) => (step: Step
       <span className={`font-medium flex self-center ${styleMap.title} ${iconTextSize}`}>
         {checkIsIconRenderable(step?.icon) ? (
           <Img
-            image={{ ...step.icon, iconVersion: STEPS_SVG_VERSION_MAP[version] }}
+            image={getIconWithVersion({ ...step.icon }, version)}
             width={iconSize}
             height={iconSize}
             asSVG

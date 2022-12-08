@@ -8,6 +8,7 @@ import type { IconName } from '../../ui-kit/Icon/IconProps';
 import { Img } from '../../ui-kit/Img/Img';
 import type { AccordionContent } from '../Accordion/AccordionContent';
 import type { AccordionItemProps } from './AccordionItemProps';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 const icons: IconName[] = ['PlusIcon', 'MinusIcon'];
 
@@ -64,10 +65,22 @@ const FoldButton = JSX<FoldButtonProps>(({ className, icon, label, primaryIcon, 
   >
     <span className="text-m-title-xs font-medium pr-2.5 flex group-hover:text-primary-main">
       {primaryIcon ? (
-        <Img image={primaryIcon} className="mr-3 flex-shrink-0" width="24" height="24" asSVG />
+        <Img
+          image={getIconWithVersion(primaryIcon)}
+          className="mr-3 flex-shrink-0"
+          width="24"
+          height="24"
+          asSVG
+        />
       ) : null}
       {label}
     </span>
-    <Img className="flex-shrink-0" image={icon} width="24" height="24" asSVG />
+    <Img
+      className="flex-shrink-0"
+      image={getIconWithVersion({ icon: icon })}
+      width="24"
+      height="24"
+      asSVG
+    />
   </button>
 ));

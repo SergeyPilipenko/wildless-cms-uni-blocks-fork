@@ -143,13 +143,13 @@ Object {
           "title": "Список преимуществ",
           "type": "array",
         },
-        "benefitsBlockVersion": Object {
-          "$ref": "#/definitions/BlockVersion",
-          "default": "primary",
-        },
         "title": Object {
           "title": "Заголовок",
           "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+          "default": "primary",
         },
       },
       "title": "Блок преимущества",
@@ -1774,13 +1774,16 @@ Object {
       "type": "object",
     },
     "IconVersion": Object {
+      "default": "normal",
       "enum": Array [
         "normal",
+        "color",
         "white",
         "black",
       ],
       "enumNames": Array [
-        "Нормальный",
+        "по умолчанию",
+        "Цветной",
         "Белый",
         "Чёрный",
       ],

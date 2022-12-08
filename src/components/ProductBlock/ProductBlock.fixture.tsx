@@ -19,7 +19,7 @@ const benefits: BenefitItemProps[] = [
   {
     label: 'До 5 млн ₽',
     description: 'Кредитный лимит',
-    icon: { icon: 'CalendarTickIcon', iconVersion: 'white' },
+    icon: { icon: 'CalendarTickIcon' },
   },
   {
     label: 'От 16,9%',
@@ -141,6 +141,7 @@ export default {
         title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
+        benefitsVersion="white"
         buttons={buttonsSecond}
         image={image}
         version="secondary"
@@ -192,6 +193,7 @@ export default {
         title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
+        benefitsVersion="white"
         buttons={buttonsSecond}
         image={image}
         version="secondary"

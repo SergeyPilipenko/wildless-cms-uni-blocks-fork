@@ -2,6 +2,7 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import { Img } from '../../ui-kit/Img/Img';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 const ICONS_MAP: Array<{
   origins: string[];
@@ -66,7 +67,13 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
       rel="noopener noreferrer"
     >
       {icon ? (
-        <Img image={icon} imageClassName="group-hover:text-white" width="24" height="24" asSVG />
+        <Img
+          image={getIconWithVersion(icon)}
+          imageClassName="group-hover:text-white"
+          width="24"
+          height="24"
+          asSVG
+        />
       ) : null}
     </a>
   );

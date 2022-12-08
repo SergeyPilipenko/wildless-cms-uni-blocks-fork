@@ -4,7 +4,8 @@ import { projectSettings } from '../../ProjectSettings';
 import type { IconProps } from './IconProps';
 
 const svgUseStyleMap: Record<IconVersion, string> = {
-  normal: 'text-primary-main',
+  normal: '',
+  color: 'text-primary-main',
   black: 'text-black',
   white: 'text-black',
 };
@@ -16,13 +17,13 @@ export const Icon = JSX<IconProps>(
     name = '',
     alt = `Иконка ${name}`,
     title = alt,
-    iconVersion = 'normal',
+    iconVersion = 'color',
     asSVG,
     ...imgProps
   }) => {
     const href = `${projectSettings.CDN || ''}icons/${name}.svg`;
 
-    if (asSVG) {
+    if (asSVG && iconVersion !== 'normal') {
       return (
         <Background className={className}>
           <svg

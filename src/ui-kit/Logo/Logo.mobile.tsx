@@ -10,10 +10,16 @@ export interface LogoProps {
   showTitle?: boolean;
 }
 
+const ICON_VERSION_MAP: Record<BgColorVersion, string> = {
+  'bg-white': 'color',
+  transparent: 'white',
+};
+
 const SVG_COLOR: Record<BgColorVersion, string> = {
   'bg-white': 'text-primary-main',
   transparent: 'text-white',
 };
+
 const TEXT_COLOR: Record<BgColorVersion, string> = {
   'bg-white': 'text-black',
   transparent: 'text-white',
@@ -29,8 +35,10 @@ export const Logo = JSX<Partial<LogoProps>>(
         aria-label="Россельхозбанк"
       >
         <Img
-          image={{ icon: 'LogoIcon', iconVersion: SVG_COLOR[bgColor] }}
-          className={`${SVG_COLOR[bgColor]} w-10 h-[38px]`}
+          image={{ icon: 'LogoIcon', iconVersion: ICON_VERSION_MAP[bgColor] }}
+          className={`${SVG_COLOR[bgColor]}`}
+          width="34"
+          height="34"
           asSVG
         />
         {showTitle ? (
