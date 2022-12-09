@@ -69,8 +69,8 @@ const renderBenefit = (version: BlockVersion) => (benefit: BenefitItemProps, i: 
 function renderInsuranceSumMonth(sum?: number, monthLimit?: number) {
   return sum || monthLimit ? (
     <div className="bg-main-divider rounded-md flex mt-7 gap-6 px-5 py-4">
-      {Number.isFinite(sum) ? renderValueBlock('Страховая сумма:', sum, Boolean(monthLimit)) : null}
-      {Number.isFinite(monthLimit)
+      {Number(sum) > 0 ? renderValueBlock('Страховая сумма:', sum, Boolean(monthLimit)) : null}
+      {Number(monthLimit) > 0
         ? renderValueBlock('Ежемесячный лимит:', monthLimit, Boolean(sum))
         : null}
     </div>
@@ -81,7 +81,7 @@ function renderValueBlock(title: string, sum = 0, isAnotherBlock = false) {
   const widthStyle = isAnotherBlock ? 'w-fit' : 'w-full';
 
   return (
-    <div className={`flex justify-between items-center gap-2 w-full ${widthStyle}`}>
+    <div className={`flex justify-between items-center gap-2 w-full whitespace-pre ${widthStyle}`}>
       <span className="text-secondary-text text-l-light">{title}</span>
       <span className="text-primary-main text-h6">{addSpacesBetweenNumbers(sum)} ₽</span>
     </div>
