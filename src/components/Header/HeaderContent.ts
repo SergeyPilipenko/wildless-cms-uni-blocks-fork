@@ -1,7 +1,6 @@
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import type { IconProps, Picture } from '../../model/Picture';
-import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 
 /**
  * @title Пункт подменю
@@ -31,7 +30,7 @@ export interface Logo {
  * @title Шапка (для мобильных горизонтальная прокрутка shift+mouseScroll)
  * @required ["defaultLocation", "topItems"]
  */
-export interface HeaderContent extends SitemapProps {
+export interface HeaderContent {
   logo?: Logo;
   /**
    * @title Город по-умолчанию

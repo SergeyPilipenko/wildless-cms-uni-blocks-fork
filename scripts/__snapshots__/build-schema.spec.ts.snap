@@ -1421,22 +1421,8 @@ Object {
           "title": "Город по-умолчанию",
           "type": "string",
         },
-        "dispositions": Object {
-          "items": Object {
-            "$ref": "#/definitions/DispositionItem",
-          },
-          "title": "Дополнительное меню",
-          "type": "array",
-        },
         "logo": Object {
           "$ref": "#/definitions/Logo",
-        },
-        "topItems": Object {
-          "items": Object {
-            "$ref": "#/definitions/TopMenuItem",
-          },
-          "title": "Основное меню",
-          "type": "array",
         },
       },
       "required": Array [

@@ -3,12 +3,13 @@ import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import type { TopMenuItem } from '../../model/SitemapProps';
 import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
-import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
 import { useSitemap } from '../../services/sitemap/useSitemap';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
+import type { Router } from '../ContentPage/ContentPageContext';
 import type { HeaderContent } from './HeaderContent';
 import { HeaderSecondaryMenu } from './HeaderSecondaryMenu';
 import { HeaderSubMenu } from './HeaderSubMenu';
@@ -22,27 +23,24 @@ export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
   ({
-    className = '',
-    defaultLocation = 'Москва',
-    showSubMenu = true,
     bgColor = 'bg-white',
+    className = '',
     context,
-    topItems,
+    defaultLocation = 'Москва',
     logo,
     page,
+    showSubMenu = true,
     ...rest
   }) => {
     const router = context.useRouter();
     const fallback: Fallback | undefined = page?.fallback;
-    const sitemap = useSitemap(fallback);
     const { handlerDecorator } = context;
 
-    const mergedItems = mergeTopItems(sitemap.topItems, topItems);
-    const [firstPortal] = mergedItems;
-    const activeTopItem = showSubMenu
-      ? mergedItems.find(isTopItemActive(router)) || firstPortal // Если по слагу невозможно понять к какому подпорталу этот слаг относиться, то выбираем первый подпортал.
-      : null;
-    const topMenu = mergedItems.map((_, i) => (
+    const { topItems } = useSitemap(fallback);
+
+    const activeTopItem = showSubMenu ? getActiveItem(topItems, router) : null;
+
+    const topMenu = topItems?.map((_, i) => (
       <TopItem
         key={String(i)}
         active={_ === activeTopItem}
@@ -80,3 +78,10 @@ export const Header = JSX<HeaderProps>(
     );
   },
 );
+
+const getActiveItem = (topItems: TopMenuItem[] | undefined, router: Router) => {
+  const [firstPortal] = topItems || [];
+
+  // Если по слагу невозможно понять к какому подпорталу этот слаг относиться, то выбираем первый подпортал.
+  return topItems?.find(isTopItemActive(router)) || firstPortal;
+};
