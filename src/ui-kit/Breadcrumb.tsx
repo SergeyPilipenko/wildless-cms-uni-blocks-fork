@@ -7,15 +7,12 @@ export interface BreadcrumbProps extends LinkProps {
 }
 
 export const Breadcrumb = JSX<BreadcrumbProps>(
-  ({ text, href, target, onClick, className = '', children }) => {
-    if (href) {
-      return (
-        <a className={`no-underline ${className}`} href={href} target={target} onClick={onClick}>
-          <span className={className}>{text || children}</span>
-        </a>
-      );
-    } else {
-      return <span className={className}>{text || children}</span>;
-    }
-  },
+  ({ text, href, target, onClick, className = '', children }) =>
+    href ? (
+      <a className={`no-underline ${className}`} href={href} target={target} onClick={onClick}>
+        <span className={className}>{text || children}</span>
+      </a>
+    ) : (
+      <span className={className}>{text || children}</span>
+    ),
 );

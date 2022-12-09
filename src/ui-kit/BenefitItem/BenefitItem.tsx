@@ -1,20 +1,21 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { IconVersion } from '../../model/IconVersion';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import { Img } from '../Img/Img';
 import type { BenefitItemCommonProps, BenefitItemProps } from './BenefitItemProps';
-import { getIconWithVersion } from '../../utils/getIconWithVersion';
-
-export interface BenefitGeneralProps extends BenefitItemProps, BenefitItemCommonProps {}
 
 const titleStyleMap: Record<BlockVersion, string> = {
   primary: 'text-primary-text',
   secondary: 'text-white',
 };
+
 const descStyleMap: Record<BlockVersion, string> = {
   primary: 'text-secondary-text',
   secondary: 'text-white',
 };
+
+export interface BenefitGeneralProps extends BenefitItemProps, BenefitItemCommonProps {}
 
 export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   const {
@@ -31,7 +32,7 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   return (
     <div className={`flex gap-5 ${listItemAlign} ${className}`}>
       {icon ? (
-        <div className={renderBenefitIconBgStyle(version, benefitsVersion)}>
+        <div className={getBenefitIconBgStyle(version, benefitsVersion)}>
           <Img className="w-6 h-6" image={getIconWithVersion(icon, calcVersion)} asSVG />
         </div>
       ) : null}
@@ -45,7 +46,7 @@ export const BenefitItem = JSX<BenefitGeneralProps>((props) => {
   );
 });
 
-function renderBenefitIconBgStyle(version: BlockVersion, benefitsVersion: IconVersion) {
+function getBenefitIconBgStyle(version: BlockVersion, benefitsVersion: IconVersion) {
   let bgColorStyle = 'bg-primary-main text-black';
 
   if (version === 'secondary') {

@@ -2,14 +2,14 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { BorderVersionStyleMap } from '../../model/BorderVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
-import { BaseTile } from '../BaseTile/BaseTile';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
+import { BaseTile } from '../BaseTile/BaseTile';
 import type {
-  InvestmentGalleryCardTypes,
-  CardListItem,
   CardColumnsMode,
+  CardListItem,
+  InvestmentGalleryCardTypes,
 } from './InvestmentGalleryContent';
 
 export interface RecommendationCardProps extends InvestmentGalleryCardTypes, UniBlockProps {
@@ -43,9 +43,9 @@ export const InvestmentGalleryCard = JSX<RecommendationCardProps>(
 
     return (
       <section
-        className={`relative overflow-hidden text-left border border-solid box-border 
-          p-9 min-w-[697px] min-h-[319px] 
-          ${BorderVersionStyleMap[version]} 
+        className={`relative overflow-hidden text-left border border-solid box-border
+          p-9 min-w-[697px] min-h-[319px]
+          ${BorderVersionStyleMap[version]}
           ${className}`}
         role="listitem"
       >

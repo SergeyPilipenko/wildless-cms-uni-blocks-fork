@@ -1,4 +1,4 @@
-import { adjustValue } from './adjustValue ';
+import { adjustValue } from './adjustValue';
 
 describe('adjustValue should return valid number', () => {
   it('should zero before dot', () => {

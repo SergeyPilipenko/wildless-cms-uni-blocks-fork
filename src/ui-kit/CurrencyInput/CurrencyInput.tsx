@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { clamp } from '../../utils/clamp';
-import { adjustValue, localNumberFormat } from './adjustValue ';
+import { adjustValue, localNumberFormat } from './adjustValue';
 import { useCallback } from '@redneckz/uni-jsx/lib/hooks';
 import { Input } from '../Input/Input';
 import type { CurrencyInputProps } from './CurrencyInputProps';
