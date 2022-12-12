@@ -16,67 +16,49 @@ const not =
   (_: Arg) =>
     !predicate(_);
 
-export function ContentPageRepository({
-  contentDir = 'content',
-  publicDir = 'public',
-}: Partial<TransformationOptions> = {}) {
-  function listAllContentPages(): Promise<string[]> {
-    return find(`${contentDir}/**/*.page.json`);
+export class ContentPageRepository {
+  public static readonly inst = new ContentPageRepository();
+
+  private cache: Record<string, ContentPageDef> = {};
+
+  constructor(
+    private readonly options: TransformationOptions = {
+      contentDir: 'content',
+      publicDir: 'public',
+    },
+  ) {}
+
+  async listAllContentPages(): Promise<string[]> {
+    return find(`${this.options.contentDir}/**/*.page.json`);
   }
 
-  async function getAllContentPagesMap(): Promise<Record<string, ContentPageDef>> {
-    const pagePaths = await listAllContentPages();
-    const pages = await Promise.all(pagePaths.map(readPage));
+  async getAllContentPages(): Promise<ContentPageDef[]> {
+    const pagePaths = await this.listAllContentPages();
 
-    return pagePaths.reduce(
-      (result, path, i) => ({
-        ...result,
-        [path]: pages[i],
-      }),
-      {},
-    );
+    return Promise.all(pagePaths.map((_) => this.readPage(_)));
   }
 
-  async function getAllContentPages(): Promise<ContentPageDef[]> {
-    return Object.values(await getAllContentPagesMap());
-  }
-
-  async function getSecondaryContentPages(customPageType?: string) {
-    const pages = await getAllContentPages();
+  async getSecondaryContentPages(customPageType?: string): Promise<ContentPageDef[]> {
+    const pages = await this.getAllContentPages();
 
     return pages.filter(not(bySlug(INDEX_PAGE_SLUG))).filter(byCustomPageType(customPageType));
   }
 
-  async function getContentPageBySlug(slug: string): Promise<ContentPageDef | undefined> {
-    const pages = await getAllContentPages();
+  async getContentPageBySlug(slug: string): Promise<ContentPageDef | undefined> {
+    const pages = await this.getAllContentPages();
 
     return pages.find(bySlug(slug));
   }
 
-  async function getIndexPage() {
-    return await getContentPageBySlug(INDEX_PAGE_SLUG);
+  async getIndexPage(): Promise<ContentPageDef | undefined> {
+    return this.getContentPageBySlug(INDEX_PAGE_SLUG);
   }
 
-  const cache: Record<string, ContentPageDef> = {};
-
-  async function readPage(filePath: string): Promise<ContentPageDef> {
-    if (!(filePath in cache)) {
-      cache[filePath] = await transformContentPage(filePath, {
-        contentDir,
-        publicDir,
-      });
+  async readPage(filePath: string): Promise<ContentPageDef> {
+    if (!(filePath in this.cache)) {
+      this.cache[filePath] = await transformContentPage(filePath, this.options);
     }
 
-    return cache[filePath];
+    return this.cache[filePath];
   }
-
-  return {
-    listAllContentPages,
-    getAllContentPagesMap,
-    getAllContentPages,
-    getContentPageBySlug,
-    getSecondaryContentPages,
-    getIndexPage,
-    readPage,
-  };
 }

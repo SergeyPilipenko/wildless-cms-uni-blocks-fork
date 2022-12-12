@@ -1,14 +1,13 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
-import { IconVersion } from '../../model/IconVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { SizeVersion } from '../../model/SizeVersion';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
-import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
 
@@ -20,11 +19,6 @@ const STEPS_SIZE_MAP: Record<SizeVersion, string> = {
 const STEPS_TILE_DESCRIPTION_HEIGHT_MAP: Record<SizeVersion, string> = {
   normal: 'min-h-[70px]',
   small: 'min-h-[50px]',
-};
-
-const STEPS_SVG_VERSION_MAP: Record<BlockVersion, IconVersion> = {
-  primary: 'normal',
-  secondary: 'white',
 };
 
 export const StepsBlock = JSX<StepsBlockProps>(

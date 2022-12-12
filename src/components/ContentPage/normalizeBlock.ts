@@ -4,18 +4,16 @@ import { mapSlot } from './mapSlot';
 
 export function normalizeBlock<S extends Slot>(block?: S, blocksRegistry?: BlocksRegistry): S {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { mobile, ...rest } = (block || {}) as BlockDef;
+  const { mobile, ...result } = (block || {}) as BlockDef;
 
-  return {
-    ...mapSlot((blocks) => filterBlocks(blocks, blocksRegistry))({ ...rest }),
-  } as S;
+  return mapSlot(filterBlocks(blocksRegistry))({ ...result }) as S;
 }
 
-const filterBlocks = (blocks?: BlockDef[], blocksRegistry?: BlocksRegistry) =>
-  blocks
-    ? blocks
-        .filter((block) => blocksRegistry && (block?.type || '') in blocksRegistry)
-        .map((block) => ({
-          ...normalizeBlock(block, blocksRegistry),
-        }))
-    : [];
+const filterBlocks =
+  (blocksRegistry?: BlocksRegistry) =>
+  (blocks?: BlockDef[]): BlockDef[] =>
+    blocks
+      ? blocks
+          .filter((block) => blocksRegistry && (block?.type || '') in blocksRegistry)
+          .map((block) => normalizeBlock(block, blocksRegistry))
+      : [];
