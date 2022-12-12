@@ -1371,6 +1371,28 @@ Object {
       "title": "Элемент списка",
       "type": "object",
     },
+    "GapVersion": Object {
+      "enum": Array [
+        "XXL",
+        "XL",
+        "L",
+        "M",
+        "S",
+        "XS",
+        "",
+      ],
+      "enumNames": Array [
+        "Самый большой",
+        "Очень большой",
+        "Большой",
+        "Средний",
+        "Маленький",
+        "Самый маленький",
+        "Без отступа",
+      ],
+      "title": "Отсуп между компонентами",
+      "type": "string",
+    },
     "GracePeriodContent": Object {
       "properties": Object {
         "calendar": Object {
@@ -3738,6 +3760,24 @@ Object {
         "href",
       ],
       "title": "Ссылка",
+      "type": "object",
+    },
+    "VerticalLayoutContent": Object {
+      "properties": Object {
+        "align": Object {
+          "$ref": "#/definitions/AlignType",
+        },
+        "colorPalette": Object {
+          "$ref": "#/definitions/ColorPalette",
+        },
+        "gap": Object {
+          "$ref": "#/definitions/GapVersion",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersionWithTransparent",
+        },
+      },
+      "title": "Вертикальный компоновщик",
       "type": "object",
     },
     "WorkSchedule": Object {

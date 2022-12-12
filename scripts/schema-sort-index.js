@@ -34,6 +34,7 @@ export default [
   'bonusBenefits',
   'recommendations',
   'isScroll',
+  'isPadding',
   'orientation',
   'isDotted',
   'listItemSize',

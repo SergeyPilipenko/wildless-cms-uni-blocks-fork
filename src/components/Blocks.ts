@@ -38,6 +38,7 @@ import { Tabs } from './Tabs/Tabs';
 import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
+import { VerticalLayout } from './VerticalLayout/VerticalLayout';
 import { InvestmentGallery } from './InvestmentGallery/InvestmentGallery';
 
 export const Blocks: BlocksRegistry = {
@@ -45,11 +46,13 @@ export const Blocks: BlocksRegistry = {
   AccordionItem,
   BenefitsBlock,
   Bonus,
+  BonusBenefitsBlock,
   CardTransfer,
   ComparisonTable,
   Calculator,
   Catalog,
   ContactsBlock,
+  ErrorBlock,
   ExchangeRateTile,
   Footer,
   Gallery,
@@ -58,10 +61,12 @@ export const Blocks: BlocksRegistry = {
   Headline,
   InsuranceAmountBlock,
   InvestmentInfo,
+  InvestmentGallery,
   LinkDocs,
   MiniGallery,
   MobileAppTile,
   PictureText,
+  Placeholder,
   ProductBlock,
   ProductGallery,
   ProductTile,
@@ -71,14 +76,11 @@ export const Blocks: BlocksRegistry = {
   OtherProducts,
   OtherProductsItem,
   Recommendation,
+  SafeDepositRental,
   StepsBlock,
+  Tabs,
   TariffsTable,
   TextBlock,
   Tile,
-  Placeholder,
-  BonusBenefitsBlock,
-  SafeDepositRental,
-  Tabs,
-  ErrorBlock,
-  InvestmentGallery,
+  VerticalLayout,
 };

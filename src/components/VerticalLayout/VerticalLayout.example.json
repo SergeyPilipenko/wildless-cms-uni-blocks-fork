@@ -1,0 +1,17 @@
+{
+  "title": "Вертикальный компоновщик",
+  "version": "transparent",
+  "align": "left",
+  "gap": "",
+  "blocks": [
+    {
+      "type": "Headline",
+      "content": {
+        "title": "Заголовок блока",
+        "description": "Описание блока",
+        "headlineVersion": "M"
+      },
+      "style": ["col-span-12"]
+    }
+  ]
+}

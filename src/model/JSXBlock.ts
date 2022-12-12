@@ -19,7 +19,7 @@ export type JSXBlock<BlockProps = Record<string, any>> = UNIComponent<
   any,
   VNode | VNode[]
 > & {
-  childrenTypes?: string[];
+  childrenTypes?: string[] | { include?: string[]; exclude?: string[] };
   slots?: (props: BlockProps) => SlotName[];
   renderChild?: (child: VNode, i: number) => VNode;
 };

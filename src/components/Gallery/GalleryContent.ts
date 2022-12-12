@@ -1,4 +1,4 @@
-import { AlignType } from '../../model/AlignType';
+import type { AlignType } from '../../model/AlignType';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { HeadlineProps, HeadlineSmallProps } from '../../model/HeadlineType';
 import type { ListOrientation } from '../../model/ListOrientation';

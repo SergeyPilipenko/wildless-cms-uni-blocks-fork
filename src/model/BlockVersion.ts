@@ -14,3 +14,9 @@ export const VersionStyleMap: Record<BlockVersion, string> = {
   primary: 'bg-white text-primary-text',
   secondary: 'bg-primary-main text-white',
 };
+
+export const VersionWithTransparentStyleMap: Record<BlockVersionWithTransparent, string> = {
+  transparent: '',
+  primary: 'bg-white text-primary-text',
+  secondary: 'bg-primary-main text-white',
+};
