@@ -6,27 +6,26 @@ interface FallbackData {
   data: unknown;
 }
 
-export const computeAPIFallback =
-  (blocksRegistry: BlocksRegistry) => async (): Promise<Fallback> => {
-    const blocksFallbackMap = await Promise.all(Object.keys(blocksRegistry).map(loadBlockFallback));
-    const pageFallbackMap = getPageFallbackMap(blocksFallbackMap);
-    const fallbackData = await Promise.allSettled(
-      Object.entries(pageFallbackMap).map(async ([key, fetcher]) => {
-        const data = await fetcher();
+export const computeAPIFallback = async (blocksRegistry: BlocksRegistry): Promise<Fallback> => {
+  const blocksFallbackMap = await Promise.all(Object.keys(blocksRegistry).map(loadBlockFallback));
+  const pageFallbackMap = getPageFallbackMap(blocksFallbackMap);
+  const fallbackData = await Promise.allSettled(
+    Object.entries(pageFallbackMap).map(async ([key, fetcher]) => {
+      const data = await fetcher();
 
-        return { key, data };
-      }),
-    );
+      return { key, data };
+    }),
+  );
 
-    return fallbackData
-      .filter((d): d is PromiseFulfilledResult<FallbackData> => d.status === 'fulfilled')
-      .reduce((res, item) => {
-        return {
-          ...res,
-          [item.value.key]: item.value.data,
-        };
-      }, {});
-  };
+  return fallbackData
+    .filter((d): d is PromiseFulfilledResult<FallbackData> => d.status === 'fulfilled')
+    .reduce((res, item) => {
+      return {
+        ...res,
+        [item.value.key]: item.value.data,
+      };
+    }, {});
+};
 
 export async function loadBlockFallback(blockName: string): Promise<FallbackMap | undefined> {
   try {

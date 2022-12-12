@@ -8,7 +8,7 @@ describe('computeAPIFallback', () => {
       key: 'data',
     };
 
-    const blockFallback = await computeAPIFallback(Blocks)();
+    const blockFallback = await computeAPIFallback(Blocks);
 
     expect(blockFallback).toEqual(fallbackData);
   });
