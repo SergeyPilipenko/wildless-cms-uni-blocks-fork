@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { ProductGallery } from './ProductGallery';
 
@@ -59,7 +59,6 @@ export default {
     <div className="container grid grid-cols-12">
       <ProductGallery
         className="col-span-12"
-        context={context}
         slides={[
           {
             nav: {
@@ -122,7 +121,6 @@ export default {
     <div className="container grid grid-cols-12">
       <ProductGallery
         className="col-span-12"
-        context={context}
         version={'secondary'}
         slides={[
           {

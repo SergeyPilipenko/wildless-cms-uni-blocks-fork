@@ -1,43 +1,26 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import type { GalleryVersion } from '../../model/GalleryVersion';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { Headline } from '../Headline/Headline';
 import { cardStyleMap, cardWidthMap, galleryLengthForScrollMap } from './constants';
 import { GalleryCardInner } from './GalleryCardInner';
 import type { GalleryCardProps } from './GalleryContent';
 import type { GalleryInnerProps } from './GalleryInner';
 
-export interface GalleryContainerProps extends Omit<GalleryInnerProps, 'className'> {
+export interface GalleryContainerProps extends GalleryInnerProps {
   activeCardIndex: number;
 }
 
 export interface GalleryCardData {
   card: GalleryCardProps;
   version: GalleryVersion;
-  context: ContentPageContext;
 }
 
 export const GalleryContainer = JSX<GalleryContainerProps>(
-  ({
-    context,
-    title,
-    headlineVersion = 'M',
-    description,
-    cards = [],
-    version = 'normal',
-    activeCardIndex,
-  }) => {
+  ({ headlineVersion = 'M', cards = [], version = 'normal', activeCardIndex, ...rest }) => {
     return (
       <div>
-        <Headline
-          context={context}
-          className="!p-0"
-          title={title}
-          description={description}
-          headlineVersion={headlineVersion}
-          align="center"
-        />
+        <Headline {...rest} className="!p-0" headlineVersion={headlineVersion} align="center" />
         <div
           className={`flex mt-8 ${
             cards?.length <= galleryLengthForScrollMap[version] ? 'justify-center' : ''
@@ -45,7 +28,7 @@ export const GalleryContainer = JSX<GalleryContainerProps>(
           style={{ transform: `translateX(-${activeCardIndex * cardWidthMap[version]}px)` }}
           role="list"
         >
-          {cards?.map((card, i) => renderCard({ card, version, context }, i))}
+          {cards?.map((card, i) => renderCard({ card, version }, i))}
         </div>
       </div>
     );

@@ -1,5 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
@@ -25,8 +24,6 @@ export const TariffsTable = JSX<TariffsTableProps>(
     hiddenRowsNum = 0,
     ...rest
   }) => {
-    const [activeCardIndex, setActiveCardIndex] = useState(0);
-
     const colData = columns?.map(({ data }) => data) || [];
     const rowData = rowHeaders?.map((header, i) => ({
       header,
@@ -38,9 +35,8 @@ export const TariffsTable = JSX<TariffsTableProps>(
     const tableArrowScrollControlProps = useTableArrowScrollControl({
       columnsLength,
       colsLengthForScroll: COLS_LENGTH_FOR_SCROLL,
-      activeCardIndex,
-      setActiveCardIndex,
     });
+    const { activeCardIndex } = tableArrowScrollControlProps;
 
     const rows = (rowData || []).map((row, i) => (
       <TariffsTableRow

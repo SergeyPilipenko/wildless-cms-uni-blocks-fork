@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { Bonus } from './Bonus';
 import type { BonusContent } from './BonusContent';
@@ -65,7 +65,7 @@ export const BONUS: BonusContent = {
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <Bonus className="col-span-12" context={context} {...BONUS} />
+      <Bonus className="col-span-12" {...BONUS} />
     </div>
   ),
 };

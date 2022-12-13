@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import { DEFAULT_REST_MIN_SUM, DEFAULT_TRAVEL_MIN_SUM } from './constants';
@@ -10,10 +9,12 @@ import { renderFootnote } from './renderFootnote';
 import { renderWantedSumInput } from './renderWantedSumInput';
 import { useBonusCalculatorParams } from './useBonusCalculatorParams';
 
-export interface BonusCalculatorProps extends CommonCalculatorProps, UniBlockProps {}
+export interface BonusCalculatorProps extends CommonCalculatorProps {
+  className?: string;
+}
 
 export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
-  ({ context, className = '', sourceBookDir = '', buttons, footnote }) => {
+  ({ className = '', sourceBookDir = '', buttons, footnote }) => {
     const [travelExpenseValue, setTravelExpenseValue] = useState(DEFAULT_TRAVEL_MIN_SUM);
     const [restExpenseValue, setRestExpenseValue] = useState(DEFAULT_REST_MIN_SUM);
     const userInputParams = {
@@ -57,7 +58,7 @@ export const BonusCalculatorForm = JSX<BonusCalculatorProps>(
         </div>
         <div className="w-full max-w-[350px]">
           {yearBonus >= 0 ? <CalculatorValueBlock title="Баллов за год" value={yearBonus} /> : null}
-          {renderButtonSection(context, buttons)}
+          {renderButtonSection(buttons)}
           {renderFootnote(footnote)}
         </div>
       </section>

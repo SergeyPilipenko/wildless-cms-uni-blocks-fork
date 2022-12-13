@@ -1,13 +1,11 @@
 import { useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { EmbeddableCellData } from './EmbeddableCellData';
 import type { TariffTableContentProps } from './TariffsTableCell';
 import type { CellDef } from './TariffsTableContent';
 
 interface TariffTableCellInnerProps extends TariffTableContentProps {
   cellIdx: number;
-  context: ContentPageContext;
   rowIdx: number;
 }
 
@@ -19,7 +17,6 @@ interface RenderCellProps {
 interface CellProps {
   isVisible?: boolean;
   cellIdx: number;
-  context: ContentPageContext;
   rowIdx: number;
   fieldIdx: number;
   displayTable: (props: TariffsTableInnerContent) => void;
@@ -28,7 +25,6 @@ interface CellProps {
 export const renderCellInner =
   ({
     rowIdx,
-    context,
     cellIdx,
     setTableInner,
     tableInner,
@@ -64,7 +60,6 @@ export const renderCellInner =
             fieldIdx: i,
             displayTable,
             isVisible,
-            context,
           },
         })}
       </div>

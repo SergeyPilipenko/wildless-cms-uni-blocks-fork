@@ -1,4 +1,4 @@
-import type { Router } from '../../components/ContentPage/ContentPageContext';
+import type { Router } from '../../hooks/useRouter';
 import { checkIsHrefSameOrigin } from './checkIsHrefSameOrigin';
 import { isHrefActive } from './isHrefActive';
 import { isSubItemActive } from './isSubItemActive';

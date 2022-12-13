@@ -1,6 +1,6 @@
 import { DEFAULT_SLOT_NAME } from '../../model/BlockDecorator';
 import type { BlockDef, ContentPageDef } from '../../model/ContentPageDef';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { Headline } from '../Headline/Headline';
 import { HEADLINE } from '../Headline/Headline.fixture';
@@ -13,13 +13,11 @@ import { Accordion } from './Accordion';
 
 const page = {} as ContentPageDef;
 
-const TEXT_BLOCK_ACCORDION_BLOCK = <TextBlock context={context} {...TEXT_BLOCK} />;
+const TEXT_BLOCK_ACCORDION_BLOCK = <TextBlock {...TEXT_BLOCK} />;
 
-const HEADLINE_ACCORDION_BLOCK = <Headline context={context} {...HEADLINE} />;
+const HEADLINE_ACCORDION_BLOCK = <Headline {...HEADLINE} />;
 
-const LINK_DOCS_ACCORDION_BLOCK = (
-  <LinkDocs context={context} {...linkDocsContentExample} title="" />
-);
+const LINK_DOCS_ACCORDION_BLOCK = <LinkDocs {...linkDocsContentExample} title="" />;
 
 const ACCORDION_BLOCK_DEF: BlockDef = {
   type: 'Accordion',
@@ -32,7 +30,6 @@ const ACCORDION_BLOCK_DEF: BlockDef = {
 
 export const ACCORDION_ITEM = (
   <AccordionItem
-    context={context}
     ancestors={[
       [page, DEFAULT_SLOT_NAME],
       [ACCORDION_BLOCK_DEF, DEFAULT_SLOT_NAME],
@@ -47,10 +44,9 @@ export const ACCORDION_ITEM = (
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <Accordion className="col-span-12" context={context} {...ACCORDION_BLOCK_DEF.content}>
+      <Accordion className="col-span-12" {...ACCORDION_BLOCK_DEF.content}>
         {ACCORDION_ITEM}
         <AccordionItem
-          context={context}
           ancestors={[
             [page, DEFAULT_SLOT_NAME],
             [ACCORDION_BLOCK_DEF, DEFAULT_SLOT_NAME],
@@ -60,7 +56,6 @@ export default {
           {[HEADLINE_ACCORDION_BLOCK]}
         </AccordionItem>
         <AccordionItem
-          context={context}
           ancestors={[
             [page, DEFAULT_SLOT_NAME],
             [ACCORDION_BLOCK_DEF, DEFAULT_SLOT_NAME],

@@ -7,19 +7,13 @@ import { BusinessCard } from './BusinessCard';
 
 export interface BusinessBlockProps extends BusinessBlockContent, UniBlockProps {}
 
-export const BusinessBlock = JSX<BusinessBlockProps>((props) => {
-  const { context, className = '', title, cards, ...rest } = props;
-
-  return (
-    <BlockWrapper
-      className={`font-sans bg-white p-[50px] pb-9 ${className}`}
-      context={context}
-      {...rest}
-    >
+export const BusinessBlock = JSX<BusinessBlockProps>(
+  ({ className = '', title, cards, ...rest }) => (
+    <BlockWrapper className={`font-sans bg-white p-[50px] pb-9 ${className}`} {...rest}>
       <Heading headingType="h3" title={title} className="text-center mb-8" />
       <div className="flex gap-5">
         {cards?.length ? cards.map((_, i) => <BusinessCard key={String(i)} {..._} />) : null}
       </div>
     </BlockWrapper>
-  );
-});
+  ),
+);

@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
 import type { Picture } from '../../model/Picture';
 import { Img } from '../../ui-kit/Img/Img';
@@ -41,7 +42,10 @@ interface MediaButtonProps {
   version?: BlockVersion;
 }
 
-export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' }) => {
+export const MediaButton = JSX<MediaButtonProps>(({ version = 'primary', ...rest }) => {
+  const link = useLink();
+  const { href, onClick } = link(rest);
+
   const { icon, label } =
     ICONS_MAP.find(({ origins }) => origins.some((_) => href?.includes(_))) || {};
 
@@ -65,6 +69,7 @@ export const MediaButton = JSX<MediaButtonProps>(({ href, version = 'primary' })
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={onClick}
     >
       {icon ? (
         <Img

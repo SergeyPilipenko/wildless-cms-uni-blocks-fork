@@ -1,5 +1,5 @@
-import { context } from '../../react/setup-fixture';
 import type { Picture } from '../../model/Picture';
+import '../../react/setup-fixture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { ProductTile } from './ProductTile';
 import type { ProductTileContent } from './ProductTileContent';
@@ -125,13 +125,12 @@ export const PRODUCT_PENSION_TILE: ProductTileContent = {
 export default {
   credit: (
     <div className="container grid grid-cols-12">
-      <ProductTile context={context} className="col-span-6" {...PRODUCT_TILE} />
+      <ProductTile className="col-span-6" {...PRODUCT_TILE} />
     </div>
   ),
   pension: (
     <div className="container grid grid-cols-12">
       <ProductTile
-        context={context}
         className="col-span-6"
         title="Акция! “Пенсионный кредит”"
         description={'Потребительский кредит на любые цели, без залога и поручительства'}
@@ -144,7 +143,6 @@ export default {
   'long-title-benefits-without-image': (
     <div className="container grid grid-cols-12">
       <ProductTile
-        context={context}
         className="col-span-6"
         title="Кредит пенсионный"
         description={'Для людей в возрасте до 75 лет'}
@@ -156,7 +154,6 @@ export default {
   'credit-card': (
     <div className="container grid grid-cols-12">
       <ProductTile
-        context={context}
         className="col-span-8"
         title="Кредит под залог недвижимости"
         description={'Без переоформления залогой недвижимости на банк'}
@@ -169,7 +166,6 @@ export default {
   'pension-credit': (
     <div className="container grid grid-cols-12">
       <ProductTile
-        context={context}
         className="col-span-4"
         title="Кредит пенсионный"
         description={'Для людей в возрасте до 75 лет'}
@@ -181,7 +177,6 @@ export default {
   'with-add-desc': (
     <div className="container grid grid-cols-12">
       <ProductTile
-        context={context}
         className="col-span-6"
         title="Ипотечное страхование"
         description={'Финансовая защита заемщиков в случае непредвиденных обстоятельств'}
@@ -197,7 +192,6 @@ export default {
   'stretching with long description': (
     <div className="container grid grid-cols-12">
       <ProductTile
-        context={context}
         className="col-span-6"
         {...PRODUCT_TILE}
         benefits={multilineBenefits}

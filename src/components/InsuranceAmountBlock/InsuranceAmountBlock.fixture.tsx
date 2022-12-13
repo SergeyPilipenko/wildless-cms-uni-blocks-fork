@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { InsuranceAmountBlock } from './InsuranceAmountBlock';
 
@@ -14,7 +14,6 @@ export default {
     <div className="container grid grid-cols-12">
       <InsuranceAmountBlock
         className="col-span-12"
-        context={context}
         title="Выбор страховой суммы"
         button={buttonPrimary}
         insuranceTabs={[

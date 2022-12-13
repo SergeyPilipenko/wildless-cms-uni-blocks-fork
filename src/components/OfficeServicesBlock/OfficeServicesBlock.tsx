@@ -3,30 +3,23 @@ import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import type {
   OfficeServicesBlockContent,
   OfficeServicesBlockList,
 } from './OfficeServicesBlockContent';
-import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface OfficeServicesBlockProps extends OfficeServicesBlockContent, UniBlockProps {}
 
 export const OfficeServicesBlock = JSX<OfficeServicesBlockProps>(
-  ({ className = '', context, title, servicesList, anchor = '', ...rest }) => {
-    return (
-      <BlockWrapper
-        context={context}
-        id={anchor}
-        className={`font-sans bg-white p-8 flex flex-col ${className}`}
-        {...rest}
-      >
-        {title ? <Heading headingType="h5" className="mb-5" title={title} /> : null}
-        {servicesList?.length ? (
-          <ul className="list-none m-0 p-0">{servicesList.map(renderListItems)}</ul>
-        ) : null}
-      </BlockWrapper>
-    );
-  },
+  ({ className = '', title, servicesList, ...rest }) => (
+    <BlockWrapper className={`font-sans bg-white p-8 flex flex-col ${className}`} {...rest}>
+      {title ? <Heading headingType="h5" className="mb-5" title={title} /> : null}
+      {servicesList?.length ? (
+        <ul className="list-none m-0 p-0">{servicesList.map(renderListItems)}</ul>
+      ) : null}
+    </BlockWrapper>
+  ),
 );
 
 const renderListItems = (itemList: OfficeServicesBlockList, i: number) => (

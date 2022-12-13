@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 
 import type { BlockDecorator } from '../../model/BlockDecorator';
 import type { ContentPageDef } from '../../model/ContentPageDef';
@@ -34,7 +34,6 @@ export default {
     return (
       <ContentPage
         className="bg-main"
-        context={context}
         blocksRegistry={Blocks}
         data={normalizePage(Blocks)(data as ContentPageDef)}
       />
@@ -47,7 +46,6 @@ export default {
       <div style={{ background: "url('grid.svg')", height: '100%' }}>
         <ContentPage
           className="bg-transparent"
-          context={context}
           blocksRegistry={Blocks}
           data={normalizePage(Blocks)(data as ContentPageDef)}
           blockDecorator={blockDecorator}

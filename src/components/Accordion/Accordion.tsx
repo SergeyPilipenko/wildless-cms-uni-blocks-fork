@@ -9,17 +9,8 @@ import { AccordionItemsList } from './AccordionItemsList';
 export interface AccordionProps extends AccordionContent, UniBlockProps {}
 
 export const Accordion: JSXBlock<AccordionProps> = JSX<AccordionProps>(
-  ({
-    className = '',
-    context,
-    title,
-    accordionAlignTitle = 'center',
-    description,
-    children,
-    ...rest
-  }) => (
+  ({ className = '', title, accordionAlignTitle = 'center', description, children, ...rest }) => (
     <BlockWrapper
-      context={context}
       className={`p-[50px] mb-1 last:mb-0 font-sans bg-white text-primary-text ${className}`}
       {...rest}
     >

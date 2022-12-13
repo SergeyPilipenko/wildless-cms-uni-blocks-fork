@@ -1,7 +1,7 @@
-import { context } from '../../react/setup-fixture';
 import type { Picture } from '../../model/Picture';
-import type { PictureTextContent } from './PictureTextContent';
+import '../../react/setup-fixture';
 import { PictureText } from './PictureText';
+import type { PictureTextContent } from './PictureTextContent';
 
 const image: Picture = {
   src: 'legal-support-business.png',
@@ -78,32 +78,22 @@ export const INSURANCE_TEXT: PictureTextContent = {
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <PictureText className="col-span-12" context={context} {...PICTURE_TEXT} />
+      <PictureText className="col-span-12" {...PICTURE_TEXT} />
     </div>
   ),
   secondary: (
     <div className="container grid grid-cols-12">
-      <PictureText
-        className="col-span-12"
-        context={context}
-        {...PICTURE_TEXT}
-        version="secondary"
-      />
+      <PictureText className="col-span-12" {...PICTURE_TEXT} version="secondary" />
     </div>
   ),
   'insurance sum': (
     <div className="container grid grid-cols-12">
-      <PictureText context={context} className="col-span-12" {...INSURANCE_TEXT} />
+      <PictureText className="col-span-12" {...INSURANCE_TEXT} />
     </div>
   ),
   'insurance monthPay': (
     <div className="container grid grid-cols-12">
-      <PictureText
-        context={context}
-        className="col-span-12"
-        {...INSURANCE_TEXT}
-        monthLimit={25000}
-      />
+      <PictureText className="col-span-12" {...INSURANCE_TEXT} monthLimit={25000} />
     </div>
   ),
 };

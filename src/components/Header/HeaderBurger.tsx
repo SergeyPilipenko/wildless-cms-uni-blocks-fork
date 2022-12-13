@@ -3,11 +3,9 @@ import { useGeolocation } from '../../hooks/useGeolocation';
 import type { VNode } from '../../model/VNode';
 import { Img } from '../../ui-kit/Img/Img';
 import { SearchBar } from '../../ui-kit/SearchBar/SearchBar';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { DispositionItem } from './HeaderContent';
 
 export interface HeaderBurgerProps {
-  context: ContentPageContext;
   onClick: () => void;
   burgerSubMenu?: DispositionItem[];
   defaultLocation?: string;
@@ -15,7 +13,7 @@ export interface HeaderBurgerProps {
 }
 
 export const HeaderBurger = JSX<HeaderBurgerProps>(
-  ({ context, burgerSubMenu, onClick, defaultLocation = '', children }) => {
+  ({ burgerSubMenu, onClick, defaultLocation = '', children }) => {
     const [city, getCity] = useGeolocation(defaultLocation);
 
     return (
@@ -41,7 +39,7 @@ export const HeaderBurger = JSX<HeaderBurgerProps>(
         </button>
         {children}
         <div className="mb-7">{burgerSubMenu?.map(renderBurgerSubMenuItem)}</div>
-        <SearchBar context={context} className="grow" />
+        <SearchBar className="grow" />
       </div>
     );
   },

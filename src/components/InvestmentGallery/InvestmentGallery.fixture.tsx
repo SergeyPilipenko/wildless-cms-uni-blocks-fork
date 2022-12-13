@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { InvestmentGallery, InvestmentGalleryProps } from './InvestmentGallery';
 
 const five: Picture = {
@@ -46,7 +46,6 @@ const cardCoomonProps = {
 };
 
 export const shortProps: InvestmentGalleryProps = {
-  context,
   title: 'Примеры еврооблигаций (Московская Биржа)',
   cards: [
     {

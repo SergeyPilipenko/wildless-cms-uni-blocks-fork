@@ -15,10 +15,7 @@ export type ProductBlockInnerProps = ProductBlockInnerContent & UniBlockProps;
 export const ProductBlockInner = JSX<ProductBlockInnerProps>(
   ({
     className = '',
-    context,
-    title,
     headlineVersion = 'L',
-    description,
     benefits,
     benefitsVersion = 'normal',
     buttons,
@@ -27,28 +24,22 @@ export const ProductBlockInner = JSX<ProductBlockInnerProps>(
     version = 'primary',
     isDotted = true,
     label,
+    ...rest
   }) => {
     return (
       <div className={`w-full ${className}`}>
         <div>
           {label ? renderLabel(label, version) : null}
           <Headline
-            context={context}
             className="!p-0 max-w-[600px]"
-            title={title}
-            description={description}
             bgColorHeadline={version}
             headlineVersion={headlineVersion}
+            {...rest}
           />
           <BaseTile
-            context={context}
             buttons={
               buttons?.length ? (
-                <ButtonSection
-                  context={context}
-                  buttons={buttons}
-                  className="flex flex-col mt-5 gap-2.5"
-                />
+                <ButtonSection buttons={buttons} className="flex flex-col mt-5 gap-2.5" />
               ) : null
             }
           >

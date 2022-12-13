@@ -16,12 +16,11 @@ interface RenderNavButtonProps {
 export interface InsuranceAmountBlockProps extends InsuranceAmountBlockContent, UniBlockProps {}
 
 export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
-  ({ className = '', context, title, insuranceTabs = [], button, ...rest }) => {
+  ({ className = '', title, insuranceTabs = [], button, ...rest }) => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     return (
       <BlockWrapper
-        context={context}
         className={`box-border py-[50px] overflow-hidden relative font-sans w-100 bg-white ${className}`}
         {...rest}
       >
@@ -44,8 +43,6 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
           role="list"
         >
           {renderInsuranceGalleries({
-            context,
-            className,
             insuranceTabs,
             button,
           })}
@@ -55,23 +52,12 @@ export const InsuranceAmountBlock = JSX<InsuranceAmountBlockProps>(
   },
 );
 
-const renderInsuranceGalleries = ({
-  insuranceTabs,
-  button,
-  context,
-  className = '',
-}: InsuranceAmountBlockProps) => {
+const renderInsuranceGalleries = ({ insuranceTabs, button }: InsuranceAmountBlockContent) => {
   const insuranceGalleries = insuranceTabs?.map((_) => _.cards);
 
   return insuranceGalleries?.length
     ? insuranceGalleries.map((cards, i) => (
-        <InsuranceAmountBlockInner
-          key={String(i)}
-          context={context}
-          className={className}
-          button={button}
-          cards={cards}
-        />
+        <InsuranceAmountBlockInner key={String(i)} button={button} cards={cards} />
       ))
     : null;
 };

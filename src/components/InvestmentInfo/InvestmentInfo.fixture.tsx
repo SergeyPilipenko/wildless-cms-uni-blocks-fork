@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { InvestmentInfo } from './InvestmentInfo';
 import type { InvestmentInfoContent } from './InvestmentInfoContent';
 
@@ -100,7 +100,7 @@ export const INVESTMENT_INFO: InvestmentInfoContent = {
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <InvestmentInfo className="col-span-12" context={context} {...INVESTMENT_INFO} />
+      <InvestmentInfo className="col-span-12" {...INVESTMENT_INFO} />
     </div>
   ),
 };

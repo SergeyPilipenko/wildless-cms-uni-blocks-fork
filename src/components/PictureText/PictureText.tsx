@@ -15,7 +15,6 @@ export interface PictureTextProps extends PictureTextContent, UniBlockProps {}
 export const PictureText = JSX<PictureTextProps>(
   ({
     className = '',
-    context,
     title,
     description,
     image,
@@ -25,34 +24,31 @@ export const PictureText = JSX<PictureTextProps>(
     monthLimit,
     directionRight = false,
     ...rest
-  }) => {
-    return (
-      <BlockWrapper
-        className={`relative font-sans py-12 px-24 ${VersionStyleMap[version]} ${className}`}
-        context={context}
+  }) => (
+    <BlockWrapper
+      className={`relative font-sans py-12 px-24 ${VersionStyleMap[version]} ${className}`}
+      {...rest}
+    >
+      <Headline
+        className="!p-0"
+        title={title}
+        description={description}
+        headlineVersion="M"
+        bgColorHeadline={version}
+        align="center"
         {...rest}
-      >
-        <Headline
-          context={context}
-          className="!p-0"
-          title={title}
-          description={description}
-          headlineVersion="M"
-          bgColorHeadline={version}
-          align="center"
-        />
-        <div className={'flex justify-center gap-[122px] mt-[30px]'}>
-          {image?.src ? <Img className={directionRight ? 'order-2' : ''} image={image} /> : null}
-          <div className="w-[558px] m-auto">
-            {benefits?.length ? (
-              <div className="flex flex-col gap-4">{benefits.map(renderBenefit(version))}</div>
-            ) : null}
-            {renderInsuranceSumMonth(Number(sum), Number(monthLimit))}
-          </div>
+      />
+      <div className={'flex justify-center gap-[122px] mt-[30px]'}>
+        {image?.src ? <Img className={directionRight ? 'order-2' : ''} image={image} /> : null}
+        <div className="w-[558px] m-auto">
+          {benefits?.length ? (
+            <div className="flex flex-col gap-4">{benefits.map(renderBenefit(version))}</div>
+          ) : null}
+          {renderInsuranceSumMonth(Number(sum), Number(monthLimit))}
         </div>
-      </BlockWrapper>
-    );
-  },
+      </div>
+    </BlockWrapper>
+  ),
 );
 
 const renderBenefit = (version: BlockVersion) => (benefit: BenefitItemProps, i: number) =>

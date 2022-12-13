@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { mobileContext } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 
 import type { ContentPageDef } from '../../model/ContentPageDef';
 import { Blocks } from '../Blocks';
@@ -12,11 +12,7 @@ export default {
     const data = useContentPageData(Blocks);
 
     return (
-      <ContentPage
-        context={mobileContext}
-        blocksRegistry={Blocks}
-        data={normalizePage(Blocks)(data as ContentPageDef)}
-      />
+      <ContentPage blocksRegistry={Blocks} data={normalizePage(Blocks)(data as ContentPageDef)} />
     );
   },
 };

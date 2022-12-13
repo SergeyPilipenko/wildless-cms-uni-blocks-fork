@@ -1,6 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useLink } from '../../hooks/useLink';
-import { useRouter } from '../../hooks/useRouter';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -22,27 +20,18 @@ const renderErrorContent = (error: ErrorBlockContent['error']) => {
 };
 
 export const ErrorBlock = JSX<ErrorBlockProps>(
-  ({ context, className = '', title, subtitle, error, button }) => {
-    const { handlerDecorator } = context;
-    const router = useRouter();
-
-    return (
-      <section className={`flex flex-col justify-center items-center mt-12 ${className}`}>
-        <div className="flex justify-center py-20">{renderErrorContent(error)}</div>
-        {title ? <Heading headingType="h1" className="text-left mb-4" title={title} /> : null}
-        {subtitle ? (
-          <div className="font-sans text-xl-light mb-7 max-w-[613px] text-center">{subtitle}</div>
-        ) : null}
-        {button?.text ? (
-          <Button
-            className="py-4 px-9"
-            version={button?.version}
-            {...useLink({ router, handlerDecorator }, button)}
-          >
-            {button.text}
-          </Button>
-        ) : null}
-      </section>
-    );
-  },
+  ({ className = '', title, subtitle, error, button }) => (
+    <section className={`flex flex-col justify-center items-center mt-12 ${className}`}>
+      <div className="flex justify-center py-20">{renderErrorContent(error)}</div>
+      {title ? <Heading headingType="h1" className="text-left mb-4" title={title} /> : null}
+      {subtitle ? (
+        <div className="font-sans text-xl-light mb-7 max-w-[613px] text-center">{subtitle}</div>
+      ) : null}
+      {button?.text ? (
+        <Button className="py-4 px-9" version={button?.version} {...button}>
+          {button.text}
+        </Button>
+      ) : null}
+    </section>
+  ),
 );

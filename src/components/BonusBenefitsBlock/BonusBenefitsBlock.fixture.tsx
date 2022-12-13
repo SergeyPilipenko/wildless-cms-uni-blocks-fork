@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 
 import { BonusBenefitsBlock } from './BonusBenefitsBlock';
 import { BonusBenefit } from './BonusBenefitsBlockContent';
@@ -42,7 +42,6 @@ export default {
   default: (
     <div className="container grid grid-cols-12">
       <BonusBenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         subtitle="Удобный каталог с большим ассортиментом товаров и сервисов"
@@ -53,7 +52,6 @@ export default {
   '5-cols': (
     <div className="container grid grid-cols-12">
       <BonusBenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         subtitle="Удобный каталог с большим ассортиментом товаров и сервисов"

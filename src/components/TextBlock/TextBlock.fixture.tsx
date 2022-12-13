@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { TextBlock } from './TextBlock';
 import type { TextBlockContent } from './TextBlockContent';
 
@@ -24,28 +24,12 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="font-sans overflow-hidden col-span-12">
         <div className="flex flex-col gap-6" data-theme="pc">
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="primary"
-            iconVersion="big"
-            image={image}
-          />
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="none" />
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="secondary"
-            iconVersion="small"
-          />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="secondary-light"
-            iconVersion="small"
-          />
+          <TextBlock {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="primary" iconVersion="big" image={image} />
+          <TextBlock {...TEXT_BLOCK} blockVersion="primary" iconVersion="none" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="secondary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="secondary-light" iconVersion="small" />
         </div>
       </div>
     </div>
@@ -54,19 +38,9 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="font-sans overflow-hidden col-span-12">
         <div className="flex flex-col gap-6" data-theme="bc">
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="secondary"
-            iconVersion="small"
-          />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="secondary-light"
-            iconVersion="small"
-          />
+          <TextBlock {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="secondary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="secondary-light" iconVersion="small" />
         </div>
       </div>
     </div>
@@ -75,19 +49,9 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="font-sans overflow-hidden col-span-12">
         <div className="flex flex-col gap-6" data-theme="eo">
-          <TextBlock context={context} {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="secondary"
-            iconVersion="small"
-          />
-          <TextBlock
-            context={context}
-            {...TEXT_BLOCK}
-            blockVersion="secondary-light"
-            iconVersion="small"
-          />
+          <TextBlock {...TEXT_BLOCK} blockVersion="primary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="secondary" iconVersion="small" />
+          <TextBlock {...TEXT_BLOCK} blockVersion="secondary-light" iconVersion="small" />
         </div>
       </div>
     </div>

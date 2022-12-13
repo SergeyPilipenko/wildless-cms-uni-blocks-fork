@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { ComparisonTable } from './ComparisonTable';
 import type { Column } from './ComparisonTableContent';
 
@@ -95,7 +95,6 @@ export default {
         className="col-span-12"
         title="Другие дебетовые карты Россельхозбанка"
         isColoredFirstColumn={true}
-        context={context}
         rowHeaders={rowHeaders}
         orientation="vertical"
         columns={columns}
@@ -109,7 +108,6 @@ export default {
         className="col-span-12"
         title="Другие дебетовые карты Россельхозбанка"
         isColoredFirstColumn={true}
-        context={context}
         rowHeaders={rowHeaders}
         orientation="horizontal"
         columns={Array(2).fill(columns).flat()}

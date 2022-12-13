@@ -1,9 +1,9 @@
-import { context } from '../../react/setup-fixture';
-import { ProductBlock } from './ProductBlock';
 import type { Picture } from '../../model/Picture';
-import type { BackwardButtonProps, ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { ProductBlockContent } from './ProductBlockContent';
+import '../../react/setup-fixture';
 import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
+import type { BackwardButtonProps, ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import { ProductBlock } from './ProductBlock';
+import type { ProductBlockContent } from './ProductBlockContent';
 
 const image: Picture = {
   src: 'money-1.png',
@@ -81,7 +81,6 @@ export default {
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         backwardButton={backwardButton}
         headlineVersion="L"
         title="Потребительский кредит наличными"
@@ -97,7 +96,6 @@ export default {
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         title="Потребительский кредит наличными"
         headlineVersion="L"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
@@ -110,19 +108,18 @@ export default {
   ),
   'primary with list': (
     <div className="container grid grid-cols-12">
-      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} image={image} />
+      <ProductBlock className="col-span-12" {...PRODUCT_BLOCK} image={image} />
     </div>
   ),
   'primary without image': (
     <div className="container grid grid-cols-12">
-      <ProductBlock className="col-span-12" context={context} {...PRODUCT_BLOCK} />
+      <ProductBlock className="col-span-12" {...PRODUCT_BLOCK} />
     </div>
   ),
   'primary with default benefits': (
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}
@@ -135,7 +132,6 @@ export default {
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         backwardButton={backwardButton}
         headlineVersion="XL"
         title="Потребительский кредит наличными"
@@ -152,7 +148,6 @@ export default {
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         title="Потребительский кредит наличными"
         headlineVersion="L"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
@@ -166,30 +161,18 @@ export default {
   ),
   'secondary with list': (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        {...PRODUCT_BLOCK}
-        image={image}
-        version="secondary"
-      />
+      <ProductBlock className="col-span-12" {...PRODUCT_BLOCK} image={image} version="secondary" />
     </div>
   ),
   'secondary without image': (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        {...PRODUCT_BLOCK}
-        version="secondary"
-      />
+      <ProductBlock className="col-span-12" {...PRODUCT_BLOCK} version="secondary" />
     </div>
   ),
   'secondary without back button': (
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         title="Потребительский кредит наличными"
         description="Кредит наличными без залога и поручительства. Потребительский кредит на любые цели. Нужен только паспорт."
         benefits={benefits}

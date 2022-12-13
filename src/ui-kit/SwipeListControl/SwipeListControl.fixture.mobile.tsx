@@ -1,4 +1,4 @@
-import { mobileContext } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { SwipeListControl } from './SwipeListControl';
 
 const generateChildren = (count: number) =>
@@ -11,24 +11,22 @@ const generateChildren = (count: number) =>
 export default {
   default: (
     <div className="px-4 py-5 bg-white">
-      <SwipeListControl context={mobileContext}>{generateChildren(5)}</SwipeListControl>
+      <SwipeListControl>{generateChildren(5)}</SwipeListControl>
     </div>
   ),
   'w/o dots': (
     <div className="px-4 py-5 bg-white">
-      <SwipeListControl context={mobileContext} showDots={false}>
-        {generateChildren(5)}
-      </SwipeListControl>
+      <SwipeListControl showDots={false}>{generateChildren(5)}</SwipeListControl>
     </div>
   ),
   '1 element': (
     <div className="px-4 py-5 bg-white">
-      <SwipeListControl context={mobileContext}>{generateChildren(1)}</SwipeListControl>
+      <SwipeListControl>{generateChildren(1)}</SwipeListControl>
     </div>
   ),
   '2 elements': (
     <div className="px-4 py-5 bg-white">
-      <SwipeListControl context={mobileContext}>{generateChildren(2)}</SwipeListControl>
+      <SwipeListControl>{generateChildren(2)}</SwipeListControl>
     </div>
   ),
 };

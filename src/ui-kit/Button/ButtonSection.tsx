@@ -1,27 +1,25 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import type { Picture } from '../../model/Picture';
 import { Img } from '../Img/Img';
 import { Button } from './Button';
 import type { ButtonContent, ButtonWithIconProps } from './ButtonProps';
 
-export interface ButtonSectionProps extends ButtonContent, UniBlockProps {}
+export interface ButtonSectionProps extends ButtonContent {
+  className?: string;
+}
 
 interface RenderButtonProps {
   button: ButtonWithIconProps;
   buttonClassName?: string;
   index?: number;
 }
-export const ButtonSection = JSX<ButtonSectionProps>(({ className = '', buttons }) => {
-  const link = useLink();
-
-  return buttons && buttons?.length ? (
+export const ButtonSection = JSX<ButtonSectionProps>(({ className = '', buttons }) =>
+  buttons && buttons?.length ? (
     <div className={className}>
-      {buttons.map((button, index) => renderButton({ button: link(button), index }))}
+      {buttons.map((button, index) => renderButton({ button, index }))}
     </div>
-  ) : null;
-});
+  ) : null,
+);
 
 export function renderButton({ button, buttonClassName, index }: RenderButtonProps) {
   const { icon, iconRight, version, ...rest } = button;
@@ -33,11 +31,11 @@ export function renderButton({ button, buttonClassName, index }: RenderButtonPro
 
   return (
     <Button
+      key={index ? String(index) : ''}
       className={buttonClassName}
       appendLeft={leftIcon}
       appendRight={rightIcon}
       version={version}
-      key={index ? String(index) : ''}
       {...rest}
     />
   );

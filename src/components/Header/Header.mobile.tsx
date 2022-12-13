@@ -1,6 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import { useLink } from '../../hooks/useLink';
+import { useRouter } from '../../hooks/useRouter';
 import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { projectSettings } from '../../ProjectSettings';
@@ -9,7 +9,6 @@ import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
 import type { SitemapDataProps } from '../../services/sitemap/SitemapProps';
 import { useSWRResource } from '../../services/sitemap/useSWRResource';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
-import type { TopItemProps } from '../../ui-kit/TopItem/TopItem';
 import { AccordionItemsList } from '../Accordion/AccordionItemsList';
 import { AccordionItem } from '../AccordionItem/AccordionItem';
 import { LinkList } from '../LinkList/LinkList';
@@ -20,10 +19,10 @@ import { HeaderTop } from './HeaderTop';
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
-  ({ className = '', defaultLocation, bgColor = 'bg-white', context, page }) => {
-    const { handlerDecorator } = context;
-    const router = context.useRouter();
+  ({ className = '', defaultLocation, bgColor = 'bg-white', ...rest }) => {
+    const router = useRouter();
 
+    const { page } = rest;
     const fallback: Fallback | undefined = page?.fallback;
     const { topItems, dispositions } = useSWRResource<SitemapDataProps>(
       projectSettings.SITEMAP || 'sitemap',
@@ -44,42 +43,34 @@ export const Header = JSX<HeaderProps>(
           <HeaderTop onClick={toggleBurgerMenu} bgColor={bgColor} />
           <nav className="flex items-center m-0 p-0 overflow-y-hidden w-full h-[50px]">
             <div className="flex no-scrollbar horizontal-list h-full items-center">
-              {subItems?.map((_, i) =>
-                renderSubItem(
-                  {
-                    ...useLink({ router, handlerDecorator }, _),
-                    active: _ === activeSubItem,
-                    bgColor,
-                  },
-                  i,
-                ),
-              )}
+              {subItems?.map((_, i) => (
+                <HeaderItem
+                  key={String(i)}
+                  className="mr-8 whitespace-nowrap text-s"
+                  active={_ === activeSubItem}
+                  bgColor={bgColor}
+                  {..._}
+                />
+              ))}
             </div>
           </nav>
         </div>
         {burgerMenuShow ? (
           <HeaderBurger
-            context={context}
             onClick={toggleBurgerMenu}
             burgerSubMenu={dispositions}
             defaultLocation={defaultLocation}
           >
             <AccordionItemsList>
-              {topItems?.map((item, i) => {
-                item?.text ? (
-                  <AccordionItem key={String(i)} context={context} label={item.text}>
-                    <LinkList context={context} documents={item.items} />
-                  </AccordionItem>
-                ) : null;
-              })}
+              {topItems?.map((item, i) => (
+                <AccordionItem key={String(i)} label={item.text} {...rest}>
+                  <LinkList documents={item.items} {...rest} />
+                </AccordionItem>
+              ))}
             </AccordionItemsList>
           </HeaderBurger>
         ) : null}
       </header>
     );
   },
-);
-
-const renderSubItem = (item: TopItemProps, i: number) => (
-  <HeaderItem key={String(i)} className="mr-8 whitespace-nowrap text-s" {...item} />
 );

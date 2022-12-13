@@ -7,28 +7,25 @@ import { getTileRightPadding } from '../BaseTile/getTileRightPadding';
 import { Headline } from '../Headline/Headline';
 import type { PlaceholderContent } from './PlaceholderContent';
 
-export interface PlaceholderProps extends PlaceholderContent, UniBlockProps {
-  className?: string;
-}
+export interface PlaceholderProps extends PlaceholderContent, UniBlockProps {}
 
 const GOLDEN_RATIO = 1.618;
 
 export const Placeholder = JSX<PlaceholderProps>(
-  ({ className, context, title, description = 'Блок в разработке...', ...rest }) => {
+  ({ className, title, description = 'Блок в разработке...', ...rest }) => {
     return (
       <BlockWrapper
-        context={context}
         className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${getTileRightPadding(
           className,
         )} ${getTileMinHeight(className)} `}
         {...rest}
       >
         <Headline
-          context={context}
           className="!p-0 max-w-[600px]"
           title={title}
           description={description}
           headlineVersion={getTileHeadingType(className)}
+          {...rest}
         />
         <figure className="m-0 min-w-[80%]">{renderShimmer()}</figure>
       </BlockWrapper>

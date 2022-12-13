@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useRouter } from '../../hooks/useRouter';
+import { Router, useRouter } from '../../hooks/useRouter';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { TopMenuItem } from '../../model/SitemapProps';
@@ -10,7 +10,6 @@ import { useSWRResource } from '../../services/sitemap/useSWRResource';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
-import type { Router } from '../ContentPage/ContentPageContext';
 import type { HeaderContent } from './HeaderContent';
 import { HeaderSecondaryMenu } from './HeaderSecondaryMenu';
 import { HeaderSubMenu } from './HeaderSubMenu';

@@ -1400,7 +1400,7 @@ Object {
       "title": "Льготный период",
       "type": "object",
     },
-    "GroupTab": Object {
+    "GroupTabData": Object {
       "properties": Object {
         "ref": Object {
           "title": "Тег",
@@ -2352,7 +2352,7 @@ Object {
       "title": "Ссылка",
       "type": "object",
     },
-    "LinkTab": Object {
+    "LinkTabData": Object {
       "properties": Object {
         "href": Object {
           "title": "URL (href)",
@@ -3392,13 +3392,13 @@ Object {
       "title": "Пункт подменю",
       "type": "object",
     },
-    "Tab": Object {
+    "TabData": Object {
       "anyOf": Array [
         Object {
-          "$ref": "#/definitions/GroupTab",
+          "$ref": "#/definitions/GroupTabData",
         },
         Object {
-          "$ref": "#/definitions/LinkTab",
+          "$ref": "#/definitions/LinkTabData",
         },
       ],
       "default": Object {
@@ -3418,7 +3418,7 @@ Object {
         },
         "tabs": Object {
           "items": Object {
-            "$ref": "#/definitions/Tab",
+            "$ref": "#/definitions/TabData",
           },
           "title": "Табы",
           "type": "array",

@@ -1,6 +1,6 @@
-import { context } from '../../react/setup-fixture';
-import { StepsBlock } from './StepsBlock';
+import '../../react/setup-fixture';
 import type { StepsBlockProps } from './StepsBlock';
+import { StepsBlock } from './StepsBlock';
 import type { Step } from './StepsBlockContent';
 
 const TITLE =
@@ -9,7 +9,6 @@ const TITLE =
 const ITEMS: Step['items'] = ['item1', 'item2', 'item3', 'item4', 'item5'];
 const COMMON_PROPS: StepsBlockProps = {
   className: 'col-span-12',
-  context,
   title: TITLE,
 };
 

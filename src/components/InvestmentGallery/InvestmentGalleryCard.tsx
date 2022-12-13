@@ -1,7 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { BorderVersionStyleMap } from '../../model/BorderVersion';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -12,7 +11,8 @@ import type {
   InvestmentGalleryCardTypes,
 } from './InvestmentGalleryContent';
 
-export interface RecommendationCardProps extends InvestmentGalleryCardTypes, UniBlockProps {
+export interface RecommendationCardProps extends InvestmentGalleryCardTypes {
+  className?: string;
   version?: BlockVersion;
 }
 const getItemListFontSize = (colValue?: string) => (colValue === 'single' ? 'text-h6' : 'text-l');
@@ -26,7 +26,6 @@ export const InvestmentGalleryCard = JSX<RecommendationCardProps>(
   ({
     className = '',
     columnsMode = 'double',
-    context,
     description,
     additionalDescription,
     image,
@@ -49,12 +48,7 @@ export const InvestmentGalleryCard = JSX<RecommendationCardProps>(
           ${className}`}
         role="listitem"
       >
-        <BaseTile
-          context={context}
-          className="flex justify-between"
-          title={tileTitle}
-          image={tileImage}
-        >
+        <BaseTile className="flex justify-between" title={tileTitle} image={tileImage}>
           <div className="flex flex-col justify-between">
             <div className="flex itens-center justify-between mb-4">
               {description ? <Description className="text-h6" description={description} /> : null}

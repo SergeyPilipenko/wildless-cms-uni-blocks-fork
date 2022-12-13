@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/JSXBlock';
-import type { Picture } from '../../model/Picture';
 import { projectSettings } from '../../ProjectSettings';
 import type { SitemapDataProps } from '../../services/sitemap/SitemapProps';
 import { useSWRResource } from '../../services/sitemap/useSWRResource';
@@ -28,8 +27,6 @@ export const Footer = JSX<FooterProps>(({ className = '', ...rest }) => {
   const { documents, relatedEnterprises, contacts, socialMedia, horizontalNavigationTitle } =
     useSWRResource<FooterDataProps>(projectSettings.FOOTER || 'footer', fallback);
 
-  const dispositions = sitemap?.dispositions;
-
   return (
     <footer className={`font-sans px-4 py-[26px] bg-white ${className}`}>
       <Contacts className="overflow-hidden" items={contacts} hasButton />
@@ -40,7 +37,7 @@ export const Footer = JSX<FooterProps>(({ className = '', ...rest }) => {
           </AccordionItem>
         ))}
       </AccordionItemsList>
-      <div>{dispositions?.map(renderSubMenuItem)}</div>
+      <div>{sitemap?.dispositions?.map(renderSubMenuItem)}</div>
       <MobileAppTile
         title="Мобильное приложение"
         description="Загрузить для IOS и Android"
@@ -60,13 +57,7 @@ const renderSubMenuItem = (menu: SubMenuItem, i: number) => {
   return (
     <Button version="link" key={`footer-${i}`} href={href} className="flex text-s mb-4 w-6">
       {icon ? (
-        <Img
-          className="pr-1"
-          image={getIconWithVersion({ icon: icon } as Picture)}
-          width="24"
-          height="24"
-          asSVG
-        />
+        <Img className="pr-1" image={getIconWithVersion(icon)} width="24" height="24" asSVG />
       ) : null}
       <span className="pl-2.5 font-medium text-primary-text">{text}</span>
     </Button>

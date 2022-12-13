@@ -19,10 +19,9 @@ const contactsBlockStyleMap = {
 };
 
 export const ContactsBlock = JSX<ContactsBlockProps>(
-  ({ className = '', contacts, context, info, version = 'secondary', ...rest }) => {
+  ({ className = '', contacts, info, version = 'secondary', ...rest }) => {
     return (
       <BlockWrapper
-        context={context}
         className={`${contactsBlockStyleMap[version]} flex p-12 ${className}`}
         {...rest}
       >

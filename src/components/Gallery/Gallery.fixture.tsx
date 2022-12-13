@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Gallery } from './Gallery';
 import type { GalleryProps } from './GalleryProps';
@@ -39,7 +39,7 @@ const defaultItems = [
 export const defaultProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
+
   cards: [
     {
       title: 'Более 5000 товаров',
@@ -82,7 +82,6 @@ export const defaultProps: GalleryProps = {
 const textAndButtonProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: [
     {
       title: 'Более 5000 товаров',
@@ -116,7 +115,6 @@ const textAndButtonProps: GalleryProps = {
 const listAndButtonProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: [
     {
       title: 'Более 5000 товаров',
@@ -152,7 +150,6 @@ const listAndButtonProps: GalleryProps = {
 const textAndNoButtonProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: [
     {
       title: 'Более 5000 товаров',
@@ -181,7 +178,6 @@ const textAndNoButtonProps: GalleryProps = {
 
 const onlyTitleProps: GalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
-  context,
   cards: [
     {
       title: 'Более 5000 товаров',

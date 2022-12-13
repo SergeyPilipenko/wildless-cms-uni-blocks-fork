@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { Calculator } from './Calculator';
 
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
@@ -54,7 +54,6 @@ export default {
     <div className="container grid grid-cols-12">
       <Calculator
         className="col-span-12"
-        context={context}
         calculatorTabs={[
           {
             nav: {
@@ -87,7 +86,6 @@ export default {
     <div className="container grid grid-cols-12">
       <Calculator
         className="col-span-12"
-        context={context}
         calculatorTabs={[
           {
             nav: {

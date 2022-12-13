@@ -15,51 +15,44 @@ export interface PromoTileProps extends PromoTileContent, UniBlockProps {}
 export const PromoTile = JSX<PromoTileProps>(
   ({
     className = '',
-    context,
     title = 'Акции и спецпредложения',
     date,
     description,
     buttons = [],
     version = 'primary',
     ...rest
-  }) => {
-    return (
-      <BlockWrapper
-        context={context}
-        className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${
-          VersionStyleMap[version]
-        } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
-        {...rest}
+  }) => (
+    <BlockWrapper
+      className={`bg-white text-primary-text font-sans p-9 box-border ${className} ${
+        VersionStyleMap[version]
+      } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
+      {...rest}
+    >
+      <BaseTile
+        title={
+          title ? (
+            <Headline
+              title={title}
+              className={`!p-0 max-w-[600px]`}
+              headlineVersion={getTileHeadingType(className)}
+              bgColorHeadline={version}
+              align="left"
+              as="h2"
+              {...rest}
+            />
+          ) : null
+        }
+        buttons={
+          buttons?.length ? <ButtonSection buttons={buttons} className="flex gap-3" /> : null
+        }
       >
-        <BaseTile
-          context={context}
-          title={
-            title ? (
-              <Headline
-                context={context}
-                title={title}
-                className={`!p-0 max-w-[600px]`}
-                headlineVersion={getTileHeadingType(className)}
-                bgColorHeadline={version}
-                align="left"
-                as="h2"
-              />
-            ) : null
-          }
-          buttons={
-            buttons?.length ? (
-              <ButtonSection context={context} buttons={buttons} className="flex gap-3" />
-            ) : null
-          }
-        >
-          <div className="mt-1.5">
-            {date ? <div className="text-s mb-2">{formatDate(date)}</div> : null}
-            <div className="text-l">{description}</div>
-          </div>
-        </BaseTile>
-      </BlockWrapper>
-    );
-  },
+        <div className="mt-1.5">
+          {date ? <div className="text-s mb-2">{formatDate(date)}</div> : null}
+          <div className="text-l">{description}</div>
+        </div>
+      </BaseTile>
+    </BlockWrapper>
+  ),
 );
 
 function formatDate(date: string) {

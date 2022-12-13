@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { Tile } from './Tile';
 import type { TileContent } from './TileContent';
 
@@ -64,13 +64,12 @@ const tags = ['Tag #1', 'Tag #2', 'Tag #3'];
 export default {
   credit: (
     <div className="container grid grid-cols-12">
-      <Tile context={context} className="col-span-8" {...TILE} />
+      <Tile className="col-span-8" {...TILE} />
     </div>
   ),
   mortgage: (
     <div className="container grid grid-cols-12">
       <Tile
-        context={context}
         version="secondary"
         className="col-span-4"
         title="Ипотека"
@@ -95,7 +94,6 @@ export default {
   'credit-card': (
     <div className="container grid grid-cols-12">
       <Tile
-        context={context}
         className="col-span-6"
         title="Банковские пластиковые карты"
         headingType="h4"
@@ -114,13 +112,12 @@ export default {
   ),
   premium: (
     <div className="container grid grid-cols-12">
-      <Tile context={context} className="col-span-6" {...TILE_PREMIUM} />
+      <Tile className="col-span-6" {...TILE_PREMIUM} />
     </div>
   ),
   ecosystem: (
     <div className="container grid grid-cols-12">
       <Tile
-        context={context}
         className="col-span-12 pr-28"
         title="Экосистема «СВОЕ», созданная для людей"
         headingType="h4"
@@ -144,7 +141,7 @@ export default {
   ),
   tags: (
     <div className="container grid grid-cols-12">
-      <Tile context={context} className="col-span-8" {...TILE} tags={tags} />
+      <Tile className="col-span-8" {...TILE} tags={tags} />
     </div>
   ),
 };

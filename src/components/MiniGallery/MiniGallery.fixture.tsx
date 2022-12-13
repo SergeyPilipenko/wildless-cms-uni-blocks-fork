@@ -1,9 +1,9 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
-import { MiniGallery } from './MiniGallery';
-import type { MiniGalleryProps } from './MiniGallery';
-import type { GalleryCardProps } from '../Gallery/GalleryContent';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import type { GalleryCardProps } from '../Gallery/GalleryContent';
+import type { MiniGalleryProps } from './MiniGallery';
+import { MiniGallery } from './MiniGallery';
 
 const image: Picture = {
   src: 'domovoj-kupon.png',
@@ -18,7 +18,6 @@ const image: Picture = {
 export const defaultProps: MiniGalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: [
     {
       title: 'Более 5000 товаров',
@@ -53,7 +52,6 @@ export const defaultProps: MiniGalleryProps = {
 const onlyTitleProps: MiniGalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: [
     {
       title: 'Более 5000 товаров',
@@ -110,7 +108,6 @@ const additionalDescriptionCards: GalleryCardProps[] = [
 const additionalDescriptionProps: MiniGalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: additionalDescriptionCards,
 };
 
@@ -126,7 +123,6 @@ const list = [{ text: 'Item 1' }, { text: 'Item 2' }, { text: 'Item 3' }];
 const combinedProps: MiniGalleryProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
-  context,
   cards: additionalDescriptionCards.map((card, i) => ({
     ...card,
     button: button,

@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { StepsBlock } from './StepsBlock';
 
 const steps = [
@@ -21,7 +21,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           description="Откройте мультивалютный вклад, чтобы распределить свои вложения"
           size="normal"
@@ -34,7 +33,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           size="small"
           steps={steps}
@@ -46,7 +44,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           description="Откройте мультивалютный вклад, чтобы распределить свои вложения"
           size="small"
@@ -77,7 +74,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           size="small"
           steps={[
@@ -102,7 +98,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           description="Откройте мультивалютный вклад, чтобы распределить свои вложения"
           size="normal"
@@ -116,7 +111,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           size="small"
           steps={steps}
@@ -129,7 +123,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           description="Откройте мультивалютный вклад, чтобы распределить свои вложения"
           size="small"
@@ -161,7 +154,6 @@ export default {
     <div className="container grid grid-cols-12">
       <div className="col-span-12">
         <StepsBlock
-          context={context}
           title="Рассчитайте условия на онлайн-калькуляторе и оставьте заявку на потребительский кредит"
           size="small"
           steps={[

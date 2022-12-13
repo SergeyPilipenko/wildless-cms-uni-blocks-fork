@@ -12,7 +12,7 @@ type ComparisonTableRowsProps = TableArrowScrollControlProps & {
 };
 
 export const ComparisonTableRows = JSX<ComparisonTableRowsProps>(
-  ({ rowData, activeCardIndex, isColoredFirstColumn, ...tableArrowScrollProps }) => {
+  ({ rowData, isColoredFirstColumn, ...tableArrowScrollProps }) => {
     return (
       <div className="relative">
         {rowData.map((row, i, { length }) => (
@@ -21,7 +21,7 @@ export const ComparisonTableRows = JSX<ComparisonTableRowsProps>(
             row={row}
             isFirstRow={i === 0}
             isLastRow={i + 1 === length}
-            activeCardIndex={activeCardIndex}
+            activeCardIndex={tableArrowScrollProps.activeCardIndex}
             isColoredFirstColumn={isColoredFirstColumn}
           />
         ))}

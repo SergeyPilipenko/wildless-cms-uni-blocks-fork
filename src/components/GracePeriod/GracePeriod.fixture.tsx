@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 
 import type { Picture } from '../../model/Picture';
 import { GracePeriod } from './GracePeriod';
@@ -103,7 +103,7 @@ export const GRACE_PERIOD: GracePeriodContent = {
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <GracePeriod className="col-span-12" context={context} {...GRACE_PERIOD} />
+      <GracePeriod className="col-span-12" {...GRACE_PERIOD} />
     </div>
   ),
 };

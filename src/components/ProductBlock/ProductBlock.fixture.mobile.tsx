@@ -1,8 +1,8 @@
-import { context } from '../../react/setup-fixture';
-import { ProductBlock } from './ProductBlock';
 import type { Picture } from '../../model/Picture';
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import '../../react/setup-fixture';
 import type { BenefitItemProps } from '../../ui-kit/BenefitItem/BenefitItemProps';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
+import { ProductBlock } from './ProductBlock';
 
 const title = 'Кредит до 5 000 000 Р\nбез залога и поручителей';
 const description =
@@ -69,52 +69,33 @@ const props = { title, description, image, buttons };
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <ProductBlock className="col-span-12" context={context} {...props} benefits={benefits} />
+      <ProductBlock className="col-span-12" {...props} benefits={benefits} />
     </div>
   ),
   items: (
     <div className="container grid grid-cols-12">
-      <ProductBlock className="col-span-12" context={context} {...props} items={items} />
+      <ProductBlock className="col-span-12" {...props} items={items} />
     </div>
   ),
   'primary with label': (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        {...props}
-        benefits={benefits}
-        label={label}
-      />
+      <ProductBlock className="col-span-12" {...props} benefits={benefits} label={label} />
     </div>
   ),
   secondary: (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        {...props}
-        benefits={benefits}
-        version="secondary"
-      />
+      <ProductBlock className="col-span-12" {...props} benefits={benefits} version="secondary" />
     </div>
   ),
   'secondary with items': (
     <div className="container grid grid-cols-12">
-      <ProductBlock
-        className="col-span-12"
-        context={context}
-        {...props}
-        items={items}
-        version="secondary"
-      />
+      <ProductBlock className="col-span-12" {...props} items={items} version="secondary" />
     </div>
   ),
   'secondary with label': (
     <div className="container grid grid-cols-12">
       <ProductBlock
         className="col-span-12"
-        context={context}
         {...props}
         benefits={benefits}
         label={label}

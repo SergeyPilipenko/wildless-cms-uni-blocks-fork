@@ -12,19 +12,18 @@ import type {
 export interface BenefitsBlockProps extends BonusBenefitsBlockContent, UniBlockProps {}
 
 export const BonusBenefitsBlock = JSX<BenefitsBlockProps>(
-  ({ context, className = '', title, subtitle, bonusBenefits, columnsCount = '4', ...rest }) => (
+  ({ className = '', title, subtitle, bonusBenefits, columnsCount = '4', ...rest }) => (
     <BlockWrapper
       className={`font-sans text-primary-text bg-white p-[50px] flex flex-col text-center ${className}`}
-      context={context}
       {...rest}
     >
       <Headline
-        context={context}
         className="!p-0"
         title={title}
         description={subtitle}
         headlineVersion="M"
         align="center"
+        {...rest}
       />
       {bonusBenefits?.length ? (
         <div className={`grid gap-1 mt-8 ${getElementsColsValue(columnsCount)}`}>

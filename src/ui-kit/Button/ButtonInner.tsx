@@ -15,7 +15,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
       {appendLeft ? <div className={iconStyleMap[version]}>{appendLeft}</div> : null}
       {isWithText(props) ? (
         <div>
-          <div className="text-xs-light text-left">{aboveText}</div>
+          {aboveText ? <div className="text-xs-light text-left">{aboveText}</div> : null}
           <div className={`text-left ${aboveText ? 'text-s -mt-0.5' : 'text-l'}`}>{text}</div>
         </div>
       ) : null}
@@ -25,7 +25,7 @@ export const ButtonInner = JSX<ButtonInnerProps>((props) => {
 });
 
 const getButtonStyle = (props: ButtonInnerProps) => {
-  const { className = '', version, aboveText, rounded } = props;
+  const { version, aboveText, rounded } = props;
 
   if (version === 'link') {
     return '';
@@ -37,7 +37,6 @@ const getButtonStyle = (props: ButtonInnerProps) => {
     'group flex items-center justify-center',
     isWithText(props) ? withTextStyle : 'h-12 w-12',
     rounded ? 'rounded-full' : '',
-    className,
   ].join(' ');
 };
 

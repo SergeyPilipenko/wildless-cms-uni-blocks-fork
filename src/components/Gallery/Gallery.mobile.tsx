@@ -2,19 +2,18 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import type { ListOrientation } from '../../model/ListOrientation';
+import type { Picture } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { ListItemVersion } from '../../ui-kit/List/ListProps';
 import { SwipeListControl } from '../../ui-kit/SwipeListControl/SwipeListControl';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { GalleryCardProps, GalleryItemProps } from './GalleryContent';
 import type { GalleryProps } from './GalleryProps';
-import type { Picture } from '../../model/Picture';
 
 export const Gallery = JSX<GalleryProps>(
-  ({ context, title, description, cards = [], className, orientation = 'horizontal' }) => {
+  ({ title, description, cards = [], className, orientation = 'horizontal' }) => {
     const headingClassName = description ? 'mb-2' : 'mb-5';
 
     return (
@@ -29,19 +28,15 @@ export const Gallery = JSX<GalleryProps>(
             <div className="text-m max-w-[600px] text-center mb-5">{description}</div>
           ) : null}
         </div>
-        {renderCardsLayout(orientation, cards, context)}
+        {renderCardsLayout(orientation, cards)}
       </section>
     );
   },
 );
 
-function renderCardsLayout(
-  orientation: ListOrientation,
-  cards: GalleryCardProps[],
-  context: ContentPageContext,
-) {
+function renderCardsLayout(orientation: ListOrientation, cards: GalleryCardProps[]) {
   return orientation === 'horizontal' ? (
-    <SwipeListControl context={context}>{cards?.map(renderCard)}</SwipeListControl>
+    <SwipeListControl>{cards?.map(renderCard)}</SwipeListControl>
   ) : (
     <div className="grid gap-[14px]">{cards?.map(renderCard)}</div>
   );

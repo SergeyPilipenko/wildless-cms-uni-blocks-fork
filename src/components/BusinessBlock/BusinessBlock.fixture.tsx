@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { BusinessBlock } from './BusinessBlock';
 import type {
@@ -68,7 +68,7 @@ const PROPS: BusinessBlockContent = {
 export default {
   default: (
     <div className="container grid grid-cols-12">
-      <BusinessBlock className="col-span-12" context={context} {...PROPS} />
+      <BusinessBlock className="col-span-12" {...PROPS} />
     </div>
   ),
 };

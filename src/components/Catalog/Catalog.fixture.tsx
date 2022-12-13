@@ -1,6 +1,6 @@
 import type { Picture } from '../../model/Picture';
 import type { ProductColorVersion } from '../../model/ProductColorVersion';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { Catalog, CatalogProps } from './Catalog';
 
@@ -36,7 +36,6 @@ const catalogCard = {
 };
 
 export const defaultProps: CatalogProps = {
-  context,
   title: 'Каталог',
   description: 'Описание',
   cards: new Array(5).fill(catalogCard).flat(),

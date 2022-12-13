@@ -1,7 +1,8 @@
 export interface TableArrowScrollControlProps {
+  activeCardIndex: number;
+  onNextClick: () => void;
+  onPrevClick: () => void;
   isScrollAvailable?: boolean;
-  handleNextClick: () => void;
-  handlePrevClick: () => void;
   showNextButton: boolean;
   showPrevButton: boolean;
 }

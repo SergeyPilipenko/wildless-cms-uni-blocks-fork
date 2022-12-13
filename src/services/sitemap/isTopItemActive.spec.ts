@@ -1,4 +1,4 @@
-import type { Router } from '../../components/ContentPage/ContentPageContext';
+import type { Router } from '../../hooks/useRouter';
 import { isTopItemActive } from './isTopItemActive';
 
 const router: Router = {

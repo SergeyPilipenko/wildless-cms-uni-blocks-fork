@@ -2,7 +2,6 @@ import { BlockAncestors, BlockDecorator } from '../../model/BlockDecorator';
 import type { BlocksRegistry } from '../../model/BlocksRegistry';
 import type { BlockDef, ContentPageDef } from '../../model/ContentPageDef';
 import { style2className } from '../../utils/style2className';
-import type { ContentPageContext } from './ContentPageContext';
 import { renderBlocksList } from './renderBlockList';
 import { renderSlots } from './renderSlots';
 
@@ -11,7 +10,6 @@ export interface RenderBlockOptions {
   page: ContentPageDef;
   blockDecorator: BlockDecorator;
   blocksRegistry: BlocksRegistry;
-  context: ContentPageContext;
 }
 
 export interface RenderBlockProps {
@@ -21,7 +19,7 @@ export interface RenderBlockProps {
 }
 
 export function renderBlock({ block = {}, options, ancestors = [] }: RenderBlockProps) {
-  const { key, page, blockDecorator, blocksRegistry = {}, context } = options;
+  const { key, page, blockDecorator, blocksRegistry = {} } = options;
   const { type, slots, blocks: childBlocks } = block;
 
   if (!(type && type in blocksRegistry)) {
@@ -46,7 +44,6 @@ export function renderBlock({ block = {}, options, ancestors = [] }: RenderBlock
         return BlockComponent ? (
           <BlockComponent
             key={key}
-            context={context}
             page={page}
             block={adjustedBlock}
             className={adjustedBlockClassName}

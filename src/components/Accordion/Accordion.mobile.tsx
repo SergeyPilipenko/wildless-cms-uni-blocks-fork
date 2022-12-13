@@ -8,9 +8,8 @@ import { AccordionItemsList } from './AccordionItemsList';
 export interface AccordionProps extends AccordionContent, UniBlockProps {}
 
 export const Accordion: JSXBlock<AccordionProps> = JSX<AccordionProps>(
-  ({ title, description, context, className = '', children, ...rest }) => (
+  ({ title, description, className = '', children, ...rest }) => (
     <BlockWrapper
-      context={context}
       className={`py-6 px-4 font-sans bg-white text-primary-text ${className}`}
       {...rest}
     >

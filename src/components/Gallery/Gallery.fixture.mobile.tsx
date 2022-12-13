@@ -1,9 +1,9 @@
-import { context } from '../../react/setup-fixture';
 import type { ListOrientation } from '../../model/ListOrientation';
 import type { Picture } from '../../model/Picture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { GalleryCardProps } from './GalleryContent';
 import { Gallery } from './Gallery';
+import type { GalleryCardProps } from './GalleryContent';
 
 const isDotted = true;
 
@@ -59,7 +59,6 @@ const defaultProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
   orientation: 'vertical' as ListOrientation,
-  context,
   cards: cards,
 };
 
@@ -67,7 +66,6 @@ const scrollProps = {
   title: 'Вы можете оплатить бонусными баллами',
   description: 'Удобный каталог с большим ассортиментом товаров и сервисов',
   orientation: 'horizontal' as ListOrientation,
-  context,
   cards: cards,
 };
 

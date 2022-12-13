@@ -1,7 +1,7 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 
-import { BenefitsBlock } from './BenefitsBlock';
 import type { Picture } from '../../model/Picture';
+import { BenefitsBlock } from './BenefitsBlock';
 
 const itemsList = [
   'Комиссия за выдачу',
@@ -24,7 +24,6 @@ export default {
   'desc-img': (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         benefitList={[
@@ -68,7 +67,6 @@ export default {
   'desc-icon': (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         benefitList={[
@@ -112,7 +110,6 @@ export default {
   list: (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         benefitList={[
@@ -159,7 +156,6 @@ export default {
   'list-green': (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         benefitList={[
@@ -207,7 +203,6 @@ export default {
   'desc-icon-green': (
     <div className="container grid grid-cols-12">
       <BenefitsBlock
-        context={context}
         className="col-span-12"
         title="Преимущества кредита"
         benefitList={[

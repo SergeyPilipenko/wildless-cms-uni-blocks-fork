@@ -1,8 +1,8 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -11,7 +11,6 @@ import type {
   InvestmentGalleryCardTypes,
   InvestmentGalleryContent,
 } from './InvestmentGalleryContent';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 
 const BLUR_BLOCK_CLASSES = 'absolute top-0 bottom-0 w-[84px]';
 const CARD_FULL_VIEW_COUNT = 1;
@@ -25,16 +24,13 @@ interface NavButtonsProps {
 }
 
 export const InvestmentGallery = JSX<InvestmentGalleryProps>(
-  ({ context, cards = [], className = '', title, version = 'primary', ...rest }) => {
+  ({ cards = [], className = '', title, version = 'primary', ...rest }) => {
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const cardWidth = 525;
 
     return (
       <BlockWrapper
-        context={context}
-        className={`relative font-sans p-9 overflow-hidden text-center 
-        ${VersionStyleMap[version]} 
-        ${className}`}
+        className={`relative font-sans p-9 overflow-hidden text-center ${VersionStyleMap[version]} ${className}`}
         {...rest}
       >
         {title ? <Heading headingType="h3" className="mb-9" title={title} /> : null}
@@ -44,9 +40,7 @@ export const InvestmentGallery = JSX<InvestmentGalleryProps>(
             style={{ transform: `translateX(-${activeCardIndex * cardWidth}px)` }}
             role="list"
           >
-            {cards?.length
-              ? cards.map(renderInvestmentGalleryCard(context, className, version))
-              : null}
+            {cards?.length ? cards.map(renderInvestmentGalleryCard(className, version)) : null}
           </div>
           {renderNavButtons({
             cardsCount: cards.length,
@@ -70,17 +64,8 @@ export const InvestmentGallery = JSX<InvestmentGalleryProps>(
 );
 
 const renderInvestmentGalleryCard =
-  (context: ContentPageContext, className: string, version?: BlockVersion) =>
-  (card: InvestmentGalleryCardTypes, i: number) =>
-    (
-      <InvestmentGalleryCard
-        key={String(i)}
-        className={className}
-        context={context}
-        version={version}
-        {...card}
-      />
-    );
+  (className: string, version?: BlockVersion) => (card: InvestmentGalleryCardTypes, i: number) =>
+    <InvestmentGalleryCard key={String(i)} className={className} version={version} {...card} />;
 
 const renderNavButtons = ({ cardsCount, activeCardIndex, setActiveCardIndex }: NavButtonsProps) => {
   const isUseSlider = cardsCount > CARD_FULL_VIEW_COUNT;

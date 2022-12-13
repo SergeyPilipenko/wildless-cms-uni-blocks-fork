@@ -2,7 +2,7 @@
 
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
+import { RadioButtonGroup } from '../../ui-kit/RadioButtonGroup/RadioButtonGroup';
 import { CommonCalculatorProps, DepositCalculatorParams } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import {
@@ -17,13 +17,11 @@ import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
 import { renderFootnote } from './renderFootnote';
 import { renderMonthsInput } from './renderMonthsInput';
-import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
 import { renderWantedSumInput } from './renderWantedSumInput';
 
-export interface DepositCalculatorProp
-  extends DepositCalculatorParams,
-    CommonCalculatorProps,
-    UniBlockProps {}
+export interface DepositCalculatorProp extends DepositCalculatorParams, CommonCalculatorProps {
+  className?: string;
+}
 
 const EVERY_MONTH = 'everyMonth';
 const AT_END_TERM = 'atEndTerm';
@@ -40,7 +38,7 @@ const depositTypeItems = [
 ];
 
 export const DepositCalculatorForm = JSX<DepositCalculatorProp>(
-  ({ context, className = '', rate, buttons, footnote }) => {
+  ({ className = '', rate, buttons, footnote }) => {
     const [moneyValue, setMoneyValue] = useState(DEFAULT_SUM);
     const [monthsValue, setMonthsValue] = useState(DEFAULT_MONTHS);
     const [isEveryMonth, toggleIsEveryMonth] = useState(false);
@@ -78,13 +76,12 @@ export const DepositCalculatorForm = JSX<DepositCalculatorProp>(
           {finallySum ? (
             <CalculatorValueBlock title="Сумма в конце срока" value={finallySum} postfix="₽" />
           ) : null}
-          {renderPaymentTypeSelector({
-            context,
-            items: depositTypeItems,
-            checkedItem: isEveryMonth ? EVERY_MONTH : AT_END_TERM,
-            onChange: (text: string) => toggleIsEveryMonth(text === EVERY_MONTH),
-          })}
-          {renderButtonSection(context, buttons)}
+          <RadioButtonGroup
+            items={depositTypeItems}
+            checkedItem={isEveryMonth ? EVERY_MONTH : AT_END_TERM}
+            onChange={(text: string) => toggleIsEveryMonth(text === EVERY_MONTH)}
+          />
+          {renderButtonSection(buttons)}
           {renderFootnote(footnote)}
         </div>
       </section>

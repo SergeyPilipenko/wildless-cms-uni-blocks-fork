@@ -21,8 +21,10 @@ const OBSERVER_OPTIONS = {
 };
 
 export const BlockWrapper = JSX<BlockWrapperProps>(
-  ({ className, block: { anchor, labels }, tag = 'section', role, children }) => {
+  ({ className, block, tag = 'section', role, children }) => {
     const Tag: any = tag;
+
+    const { anchor, labels } = block || {};
 
     const [isVisible, setVisible] = useState(true);
     const anchorClickRef = useRef<AnchorClickScrollingEvent>({});
@@ -45,7 +47,7 @@ export const BlockWrapper = JSX<BlockWrapperProps>(
       () =>
         EventBus.inst.subscribe('tab', (event) => {
           if (event.type === 'group') {
-            const hasSettings = labels?.length || anchor;
+            const hasSettings = labels?.length || block?.anchor;
             setVisible(event.label ? !hasSettings || Boolean(labels?.includes(event.label)) : true);
           } else {
             changeHash(event.label);

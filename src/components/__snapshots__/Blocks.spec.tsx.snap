@@ -378,12 +378,9 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           target="_blank"
         >
           <div
-            class="group flex items-center justify-center gap-2 py-4 px-9  "
+            class="group flex items-center justify-center gap-2 py-4 px-9 "
           >
             <div>
-              <div
-                class="text-xs-light text-left"
-              />
               <div
                 class="text-left text-l"
               >
@@ -620,9 +617,7 @@ exports[`Blocks InsuranceAmountBlock should render block "InsuranceAmountBlock" 
 
 exports[`Blocks InvestmentGallery should render block "InvestmentGallery" without content 1`] = `
 <section
-  class="relative font-sans p-9 overflow-hidden text-center 
-        bg-white text-primary-text 
-        "
+  class="relative font-sans p-9 overflow-hidden text-center bg-white text-primary-text "
 >
   <div>
     <div
@@ -938,9 +933,7 @@ exports[`Blocks PromoTile should render block "PromoTile" without content 1`] = 
 
 exports[`Blocks Recommendation should render block "Recommendation" without content 1`] = `
 <section
-  class="relative font-sans p-9 overflow-hidden text-center 
-          bg-white text-primary-text 
-          "
+  class="relative font-sans p-9 overflow-hidden text-center bg-white text-primary-text "
 >
   <div>
     <div
@@ -1227,12 +1220,9 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             role="button"
           >
             <div
-              class="group flex items-center justify-center gap-2 py-4 px-9  "
+              class="group flex items-center justify-center gap-2 py-4 px-9 "
             >
               <div>
-                <div
-                  class="text-xs-light text-left"
-                />
                 <div
                   class="text-left text-l"
                 >

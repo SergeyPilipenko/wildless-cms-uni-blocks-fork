@@ -31,7 +31,6 @@ export interface InvestmentInfoProps extends InvestmentInfoContent, UniBlockProp
 
 export const InvestmentInfo = JSX<InvestmentInfoProps>((props) => {
   const {
-    context,
     className = '',
     items,
     isDotted,
@@ -45,11 +44,7 @@ export const InvestmentInfo = JSX<InvestmentInfoProps>((props) => {
   }
 
   return (
-    <BlockWrapper
-      className={`font-sans bg-white px-9 py-12 ${className}`}
-      context={context}
-      {...rest}
-    >
+    <BlockWrapper className={`font-sans bg-white px-9 py-12 ${className}`} {...rest}>
       <div className="container text-m-light">
         {colums?.length ? (
           <div>

@@ -1,19 +1,19 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { AlignText } from '../../model/AlignText';
+import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
-import type { HeadlineContent } from './HeadlineContent';
-import type { UniBlockProps } from '../../model/JSXBlock';
-import { AlignText } from '../../model/AlignText';
 import { HEADLINE_BLOCK_STYLE_MAPS, HEADLINE_VERSION } from './constants';
+import type { HeadlineContent } from './HeadlineContent';
 
 export interface HeadlineProps extends UniBlockProps, HeadlineContent {}
 
 export const Headline = JSX<HeadlineProps>(
   ({
+    className = '',
     bgColorHeadline = 'transparent',
     align = 'center',
-    className = '',
     title,
     description,
     headlineVersion = 'XL',

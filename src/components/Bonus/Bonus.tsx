@@ -9,22 +9,18 @@ import type { BonusContent, BonusCountDef, BonusImageDef } from './BonusContent'
 export interface BonusProps extends BonusContent, UniBlockProps {}
 
 export const Bonus = JSX<BonusProps>((props) => {
-  const { context, className = '', title, description, bonusItems, ...rest } = props;
+  const { className = '', title, description, bonusItems, ...rest } = props;
 
   return (
-    <BlockWrapper
-      className={`font-sans bg-white p-[50px] pb-9 ${className}`}
-      context={context}
-      {...rest}
-    >
+    <BlockWrapper className={`font-sans bg-white p-[50px] pb-9 ${className}`} {...rest}>
       <div className="container">
         <Headline
-          context={context}
           className="!p-0"
           title={title}
           description={description}
           headlineVersion="M"
           align="center"
+          {...rest}
         />
         <div className="flex flex-wrap w-full mt-9">
           {bonusItems?.length
@@ -40,9 +36,7 @@ export const Bonus = JSX<BonusProps>((props) => {
                           <div className="text-h4">{_.title}</div>
                           <div className="text-xl-light mt-2 max-w-[488px]">{_.description}</div>
                         </div>
-                        {_?.buttons?.length ? (
-                          <ButtonSection context={context} buttons={_?.buttons} />
-                        ) : null}
+                        {_?.buttons?.length ? <ButtonSection buttons={_?.buttons} /> : null}
                       </div>
                       {_.bonusItemContent?.bonusType
                         ? renderBonusItemContent(_.bonusItemContent)

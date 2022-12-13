@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { ContactsBlock } from './ContactsBlock';
 
@@ -49,16 +49,8 @@ const contacts = [
 ];
 
 export default {
-  secondary: (
-    <ContactsBlock className="col-span-12" info={info} contacts={contacts} context={context} />
-  ),
+  secondary: <ContactsBlock className="col-span-12" info={info} contacts={contacts} />,
   primary: (
-    <ContactsBlock
-      className="col-span-12"
-      version="primary"
-      info={info}
-      contacts={contacts}
-      context={context}
-    />
+    <ContactsBlock className="col-span-12" version="primary" info={info} contacts={contacts} />
   ),
 };

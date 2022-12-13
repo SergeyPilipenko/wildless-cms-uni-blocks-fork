@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -9,12 +8,13 @@ import { BaseTile } from '../BaseTile/BaseTile';
 import { SocialMedia } from '../Footer/SocialMedia';
 import type { RecommendationCardTypes } from './RecommendationContent';
 
-export interface RecommendationCardProps extends RecommendationCardTypes, UniBlockProps {
+export interface RecommendationCardProps extends RecommendationCardTypes {
+  className?: string;
   version?: BlockVersion;
 }
 
 export const RecommendationCard = JSX<RecommendationCardProps>(
-  ({ context, className = '', title, description, items, image, version, socialMedia }) => {
+  ({ className = '', title, description, items, image, version, socialMedia }) => {
     const tileTitle = title ? (
       <Heading headingType="h5" as="h3" className="mb-3.5 z-10" title={title} />
     ) : null;
@@ -27,12 +27,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
         className={`relative overflow-hidden text-left border border-solid box-border p-7 min-w-[524px] min-h-[218px] ${className}`}
         role="listitem"
       >
-        <BaseTile
-          context={context}
-          className="flex justify-between"
-          title={tileTitle}
-          image={tileImage}
-        >
+        <BaseTile className="flex justify-between" title={tileTitle} image={tileImage}>
           <div className="h-full flex flex-col justify-between">
             {description ? <Description className="mb-2" description={description} /> : null}
             {items?.length ? (
@@ -43,12 +38,7 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
               />
             ) : null}
             {socialMedia ? (
-              <SocialMedia
-                className="pt-10 pb-0"
-                media={socialMedia}
-                version={version}
-                context={context}
-              />
+              <SocialMedia className="pt-10 pb-0" media={socialMedia} version={version} />
             ) : null}
           </div>
         </BaseTile>

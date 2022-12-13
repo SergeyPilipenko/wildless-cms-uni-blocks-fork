@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { OfficeServicesBlock } from './OfficeServicesBlock';
 
 export default {
@@ -6,7 +6,6 @@ export default {
     <div className="container grid grid-cols-12">
       <OfficeServicesBlock
         className="col-span-4"
-        context={context}
         title="Услуги"
         servicesList={[
           {

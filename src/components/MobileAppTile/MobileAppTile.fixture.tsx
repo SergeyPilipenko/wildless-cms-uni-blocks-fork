@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 import { MobileAppTile } from './MobileAppTile';
 
@@ -49,7 +49,6 @@ export default {
   default: (
     <div className="container grid grid-cols-12">
       <MobileAppTile
-        context={context}
         className="col-span-12"
         version="secondary"
         title="Обновлённое мобильное приложение «Урожай»"
@@ -72,7 +71,6 @@ export default {
   secondary: (
     <div className="container grid grid-cols-12">
       <MobileAppTile
-        context={context}
         className="col-span-12"
         title="Обновлённое мобильное приложение «Урожай»"
         qr={qr}
@@ -85,7 +83,6 @@ export default {
   'without-image': (
     <div className="container grid grid-cols-12">
       <MobileAppTile
-        context={context}
         className="col-span-12"
         title="Обновлённое мобильное приложение «Урожай»"
         qr={qr}
@@ -97,12 +94,7 @@ export default {
   ),
   'without-image-and-list': (
     <div className="container grid grid-cols-12">
-      <MobileAppTile
-        context={context}
-        className="col-span-4"
-        qr={qr}
-        buttons={[button1, button2]}
-      />
+      <MobileAppTile className="col-span-4" qr={qr} buttons={[button1, button2]} />
     </div>
   ),
 };

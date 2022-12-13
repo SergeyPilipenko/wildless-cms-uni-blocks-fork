@@ -1,6 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { renderArrows } from '../../ui-kit/Button/renderArrows';
@@ -8,7 +7,8 @@ import { Img } from '../../ui-kit/Img/Img';
 import { addSpacesBetweenNumbers } from '../../utils/addSpacesBetweenNumbers';
 import type { CardItem, InsuranceAmountBlockTab } from './InsuranceAmountBlockContent';
 
-export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTab, UniBlockProps {
+export interface InsuranceAmountBlockInnerProps extends InsuranceAmountBlockTab {
+  className?: string;
   button?: ButtonProps;
 }
 

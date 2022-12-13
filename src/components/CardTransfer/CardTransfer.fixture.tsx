@@ -1,6 +1,6 @@
-import { context } from '../../react/setup-fixture';
-import { CardTransfer } from './CardTransfer';
+import '../../react/setup-fixture';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
+import { CardTransfer } from './CardTransfer';
 
 const button: ButtonProps = {
   href: '',
@@ -10,5 +10,5 @@ const button: ButtonProps = {
 };
 
 export default {
-  default: <CardTransfer context={context} button={button} />,
+  default: <CardTransfer button={button} />,
 };

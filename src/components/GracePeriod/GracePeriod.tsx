@@ -12,25 +12,19 @@ interface MappedCalendarItemProps extends CalendarItem {
 export interface GracePeriodProps extends GracePeriodContent, UniBlockProps {}
 
 export const GracePeriod = JSX<GracePeriodProps>(
-  ({ context, className = '', title, description, calendar, ...rest }) => {
-    return (
-      <BlockWrapper
-        className={`font-sans bg-white p-[50px] ${className}`}
-        context={context}
+  ({ className = '', title, description, calendar, ...rest }) => (
+    <BlockWrapper className={`font-sans bg-white p-[50px] ${className}`} {...rest}>
+      <Headline
+        className="!p-0 mb-4"
+        title={title}
+        description={description}
+        headlineVersion="M"
+        align="center"
         {...rest}
-      >
-        <Headline
-          context={context}
-          className="!p-0 mb-4"
-          title={title}
-          description={description}
-          headlineVersion="M"
-          align="center"
-        />
-        {calendar ? renderCalendar(calendar) : null}
-      </BlockWrapper>
-    );
-  },
+      />
+      {calendar ? renderCalendar(calendar) : null}
+    </BlockWrapper>
+  ),
 );
 
 const renderCalendar = (calendar: CalendarItem[]) => {

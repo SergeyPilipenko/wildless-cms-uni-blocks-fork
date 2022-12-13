@@ -5,7 +5,6 @@ import type { ContentPageDef } from '../../model/ContentPageDef';
 import type { JSXBlock, UniBlockProps } from '../../model/JSXBlock';
 import { style2className } from '../../utils/style2className';
 import { LikeControl } from '../LikeControl/LikeControl';
-import type { ContentPageContext } from './ContentPageContext';
 import { RenderBlockOptions } from './renderBlock';
 import { renderBlocksList } from './renderBlockList';
 import { renderSlots } from './renderSlots';
@@ -20,7 +19,7 @@ const defaultBlockDecorator: BlockDecorator = ({ blockClassName, block, render }
   render({ blockClassName, block });
 
 export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((props) => {
-  const { className = '', blocksRegistry, blockDecorator, context, data = {} } = props;
+  const { className = '', blocksRegistry, blockDecorator, data = {} } = props;
 
   const { style: pageStyle, blocks, slots, likeControl, colorPalette = 'pc' } = data;
 
@@ -29,7 +28,6 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
     blocksRegistry,
     page: data,
     blockDecorator: blockDecorator || defaultBlockDecorator,
-    context,
   };
 
   const pageSlots = renderSlots({ slots, parent: data, options });
@@ -50,7 +48,7 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
         </div>
       ) : null}
 
-      {likeControl ? renderLikeControl(context) : null}
+      {likeControl ? renderLikeControl() : null}
     </section>
   );
 });
@@ -58,14 +56,10 @@ export const ContentPage: JSXBlock<ContentPageProps> = JSX<ContentPageProps>((pr
 ContentPage.childrenTypes = [];
 ContentPage.slots = () => ['header', 'footer'];
 
-function renderLikeControl(context: ContentPageContext) {
+function renderLikeControl() {
   return (
     <div className="flex items-end absolute bottom-0 right-0 h-full pointer-events-none">
-      <LikeControl
-        key="LikeControl"
-        className="rounded-tl-lg sticky bottom-0 pointer-events-auto"
-        context={context}
-      />
+      <LikeControl className="rounded-tl-lg sticky bottom-0 pointer-events-auto" />
     </div>
   );
 }

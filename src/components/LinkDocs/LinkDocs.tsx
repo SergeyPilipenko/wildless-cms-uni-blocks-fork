@@ -14,7 +14,6 @@ export interface LinkDocsProps extends LinkDocsContent, UniBlockProps {}
 
 export const LinkDocs = JSX<LinkDocsProps>(
   ({
-    context,
     className = '',
     title,
     description,
@@ -23,29 +22,26 @@ export const LinkDocs = JSX<LinkDocsProps>(
     icon = { icon: 'DocIcon' },
     columnsMode = 'double',
     ...rest
-  }) => {
-    return (
-      <BlockWrapper
-        className={`font-sans text-primary-text p-[50px] bg-white ${className}`}
-        context={context}
+  }) => (
+    <BlockWrapper
+      className={`font-sans text-primary-text p-[50px] bg-white ${className}`}
+      {...rest}
+    >
+      <Headline
+        className="!p-0"
+        title={title}
+        description={description}
+        align={align}
+        headlineVersion="M"
+        as="h2"
         {...rest}
-      >
-        <Headline
-          className="!p-0"
-          title={title}
-          description={description}
-          context={context}
-          align={align}
-          headlineVersion="M"
-          as="h2"
-        />
-        <LinkDocsList
-          className={`mt-8 ${linkColumnsModeStyleMap[columnsMode]}`}
-          columnsMode={columnsMode}
-          documents={documents}
-          icon={icon}
-        />
-      </BlockWrapper>
-    );
-  },
+      />
+      <LinkDocsList
+        className={`mt-8 ${linkColumnsModeStyleMap[columnsMode]}`}
+        columnsMode={columnsMode}
+        documents={documents}
+        icon={icon}
+      />
+    </BlockWrapper>
+  ),
 );

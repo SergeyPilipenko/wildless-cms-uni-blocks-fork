@@ -7,7 +7,7 @@ import { InnerTableHeader } from './InnerTableHeader';
 import type { TableFetchData, TariffsTableInnerContent } from './InnerTableProps';
 
 export interface InnerTableProps extends TariffsTableInnerContent {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const EMPTY_DATA = 'Данных нет';

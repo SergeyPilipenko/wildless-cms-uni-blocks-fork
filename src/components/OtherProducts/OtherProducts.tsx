@@ -6,12 +6,8 @@ import type { OtherProductsContent } from './OtherProductsContent';
 export interface OtherProductsProps extends OtherProductsContent, UniBlockProps {}
 
 export const OtherProducts: JSXBlock<OtherProductsProps> = JSX<OtherProductsProps>(
-  ({ context, className = '', children, ...rest }) => (
-    <BlockWrapper
-      context={context}
-      className={`font-sans text-primary-text ${className}`}
-      {...rest}
-    >
+  ({ className = '', children, ...rest }) => (
+    <BlockWrapper className={`font-sans text-primary-text ${className}`} {...rest}>
       {children}
     </BlockWrapper>
   ),

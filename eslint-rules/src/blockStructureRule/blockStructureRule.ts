@@ -45,6 +45,7 @@ export const blockStructureRule = ESLintUtils.RuleCreator.withoutDocs<
           node,
           data: { blocksDir, blockName: getBlockSubDir(filename) },
         });
+
         return false;
       };
     const assertBlockFileStructure = composeAssertions(
@@ -68,6 +69,7 @@ export const blockStructureRule = ESLintUtils.RuleCreator.withoutDocs<
         node,
         data: { blockName },
       });
+
       return false;
     };
 

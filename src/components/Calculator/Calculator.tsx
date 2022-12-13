@@ -24,7 +24,7 @@ type NavButtonProps = {
 };
 
 export const Calculator = JSX<CalculatorProps>(
-  ({ className = '', context, calculatorTabs = [], ...rest }) => {
+  ({ className = '', calculatorTabs = [], ...rest }) => {
     const tabsNav = calculatorTabs.map((_) => _.nav || ({} as CalculatorNav));
     const calculatorBlocks = calculatorTabs.map(
       ({ calculatorBlock }) => calculatorBlock || ({} as CalculatorBlockDef),
@@ -41,7 +41,6 @@ export const Calculator = JSX<CalculatorProps>(
 
     return (
       <BlockWrapper
-        context={context}
         className={`box-border overflow-hidden relative font-sans w-100 text-primary-text bg-white ${className}`}
         {...rest}
       >
@@ -61,9 +60,7 @@ export const Calculator = JSX<CalculatorProps>(
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}
           role="list"
         >
-          {calculatorBlocks?.length
-            ? calculatorBlocks.map(renderCalculatorBlock({ context, className }))
-            : null}
+          {calculatorBlocks?.length ? calculatorBlocks.map(renderCalculatorBlock) : null}
         </div>
       </BlockWrapper>
     );

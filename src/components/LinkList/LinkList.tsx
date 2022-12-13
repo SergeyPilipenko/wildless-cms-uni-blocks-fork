@@ -6,15 +6,13 @@ import type { LinkListContent } from './LinkListContent';
 
 export interface LinkListProps extends LinkListContent, UniBlockProps {}
 
-export const LinkList = JSX<LinkListProps>(({ className = '', documents, ...rest }) => {
-  return (
-    <BlockWrapper className={`font-sans bg-white mt-[10px] ${className}`} {...rest}>
-      <ul className="flex flex-col text-s text-secondary-text p-0">
-        {documents?.length ? renderLinkListItem(documents) : null}
-      </ul>
-    </BlockWrapper>
-  );
-});
+export const LinkList = JSX<LinkListProps>(({ className = '', documents, ...rest }) => (
+  <BlockWrapper className={`font-sans bg-white mt-[10px] ${className}`} {...rest}>
+    <ul className="flex flex-col text-s text-secondary-text p-0">
+      {documents?.length ? renderLinkListItem(documents) : null}
+    </ul>
+  </BlockWrapper>
+));
 
 const renderLinkListItem = (documents: LinkProps[]) => {
   return documents.map((doc, i) => {

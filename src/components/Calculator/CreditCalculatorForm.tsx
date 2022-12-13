@@ -1,7 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Checkbox } from '../../ui-kit/Checkbox/Checkbox';
+import { RadioButtonGroup } from '../../ui-kit/RadioButtonGroup/RadioButtonGroup';
 import { CommonCalculatorProps } from './CalculatorContent';
 import { CalculatorValueBlock } from './CalculatorValueBlock';
 import { DEFAULT_MONTHS, DEFAULT_SUM } from './constants';
@@ -9,7 +9,6 @@ import { Rate } from './Rate';
 import { renderButtonSection } from './renderButtonSection';
 import { renderFootnote } from './renderFootnote';
 import { renderMonthsInput } from './renderMonthsInput';
-import { renderPaymentTypeSelector } from './renderPaymentTypeSelector';
 import { renderWantedSumInput } from './renderWantedSumInput';
 import { useCreditCalculatorParams } from './useCreditCalculatorParams';
 
@@ -27,10 +26,12 @@ const paymentTypeItems = [
   },
 ];
 
-export interface CreditCalculatorProp extends CommonCalculatorProps, UniBlockProps {}
+export interface CreditCalculatorProp extends CommonCalculatorProps {
+  className?: string;
+}
 
 export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
-  ({ context, className = '', sourceBookDir, buttons, footnote }) => {
+  ({ className = '', sourceBookDir, buttons, footnote }) => {
     const [isAnnuity, toggleIsAnnuity] = useState(false);
     const [isInsurance, toggleIsInsurance] = useState(true);
     const [isSalaryClient, toggleIsSalaryClient] = useState(false);
@@ -88,13 +89,12 @@ export const CreditCalculatorForm = JSX<CreditCalculatorProp>(
             value={calculatorParams.monthlyPayment}
             postfix="₽"
           />
-          {renderPaymentTypeSelector({
-            context,
-            items: paymentTypeItems,
-            checkedItem: isAnnuity ? ANNUITY : DIFFERENTIAL,
-            onChange: (text: string) => toggleIsAnnuity(text === ANNUITY),
-          })}
-          {renderButtonSection(context, buttons)}
+          <RadioButtonGroup
+            items={paymentTypeItems}
+            checkedItem={isAnnuity ? ANNUITY : DIFFERENTIAL}
+            onChange={(text: string) => toggleIsAnnuity(text === ANNUITY)}
+          />
+          {renderButtonSection(buttons)}
           {renderFootnote(footnote)}
         </div>
       </section>

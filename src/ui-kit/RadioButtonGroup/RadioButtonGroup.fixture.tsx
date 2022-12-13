@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { RadioButtonGroup } from './RadioButtonGroup';
 
 const items = [
@@ -16,10 +16,9 @@ export default {
   default: (
     <div>
       <RadioButtonGroup
-        context={context}
         items={items}
         checkedItem={'Аннуитетный'}
-        onChangeCheckedItem={(text) => console.log('Выбран пункт меню: ', text)}
+        onChange={(text) => console.log('Выбран пункт меню: ', text)}
       />
     </div>
   ),

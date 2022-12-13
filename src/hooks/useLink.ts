@@ -4,11 +4,13 @@ import { isURL } from '../utils/url';
 import { handlerDecorator } from './handlerDecorator';
 import { useRouter } from './useRouter';
 
-type ClickHandler = (ev?: { preventDefault: () => void }) => any;
+interface ClickHandler {
+  onClick(ev?: { preventDefault: () => void }): void;
+}
 
-export function useLink(): <L extends Partial<LinkProps & { onClick: ClickHandler }>>(
+export function useLink(): <L extends Partial<LinkProps & ClickHandler>>(
   props: L,
-) => L {
+) => L & ClickHandler {
   const router = useRouter();
 
   return (props) => {

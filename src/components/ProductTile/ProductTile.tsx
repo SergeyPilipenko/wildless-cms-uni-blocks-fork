@@ -14,7 +14,6 @@ export interface ProductTileProps extends ProductTileContent, UniBlockProps {}
 
 export const ProductTile = JSX<ProductTileProps>(
   ({
-    context,
     className = '',
     title,
     headlineVersion = 'S',
@@ -25,39 +24,32 @@ export const ProductTile = JSX<ProductTileProps>(
     image,
     version = 'primary',
     ...rest
-  }) => {
-    return (
-      <BlockWrapper
-        context={context}
-        className={`overflow-hidden font-sans p-9 box-border relative justify-between grid min-h-[364px]
+  }) => (
+    <BlockWrapper
+      className={`overflow-hidden font-sans p-9 box-border relative justify-between grid min-h-[364px]
           ${className} ${VersionStyleMap[version]} ${getTileRightPadding(className)}`}
+      {...rest}
+    >
+      <Headline
+        className={`!p-0 !bg-transparent z-10 ${title || description ? 'mb-3.5' : ''}`}
+        as="h2"
+        title={title}
+        description={description}
+        headlineVersion={headlineVersion}
+        bgColorHeadline={version}
+        align="left"
         {...rest}
-      >
-        <Headline
-          context={context}
-          className={`!p-0 !bg-transparent z-10 ${title || description ? 'mb-3.5' : ''}`}
-          as="h2"
-          title={title}
-          description={description}
-          headlineVersion={headlineVersion}
-          bgColorHeadline={version}
-          align="left"
-        />
-        {renderBenefits(benefits, version, image)}
-        {additionalDescription
-          ? renderAdditionalDescription(additionalDescription, image, version)
-          : null}
-        {buttons?.length ? (
-          <ButtonSection
-            context={context}
-            buttons={buttons}
-            className="flex self-end mt-5 gap-4 z-10 text-l"
-          />
-        ) : null}
-        {image?.src ? <Img className="absolute right-0 bottom-0" image={image} /> : null}
-      </BlockWrapper>
-    );
-  },
+      />
+      {renderBenefits(benefits, version, image)}
+      {additionalDescription
+        ? renderAdditionalDescription(additionalDescription, image, version)
+        : null}
+      {buttons?.length ? (
+        <ButtonSection buttons={buttons} className="flex self-end mt-5 gap-4 z-10 text-l" />
+      ) : null}
+      {image?.src ? <Img className="absolute right-0 bottom-0" image={image} /> : null}
+    </BlockWrapper>
+  ),
 );
 
 function renderBenefits(benefits: TextBenefit[], version: BlockVersion, image?: Picture) {

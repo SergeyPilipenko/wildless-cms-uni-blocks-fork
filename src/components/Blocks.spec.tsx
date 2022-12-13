@@ -4,26 +4,11 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import runtime from 'react/jsx-runtime';
 import { Blocks } from './Blocks';
-import type { ContentPageContext } from './ContentPage/ContentPageContext';
 
 const { jsx, jsxs } = runtime as any;
 
 setup(jsx, jsxs);
 setupHooks(React as any);
-
-const emptyFn = () => {
-  /* For sure */
-};
-
-const context: ContentPageContext = {
-  useRouter: () => ({
-    pathname: '/credits',
-    query: {},
-    push: emptyFn,
-    replace: emptyFn,
-  }),
-  handlerDecorator: (): any => emptyFn,
-};
 
 jest.mock('@redneckz/uni-jsx/lib/hooks/useAsyncData', () => ({
   __esModule: true,
@@ -45,7 +30,7 @@ describe('Blocks', () => {
       it(`should render block "${key}" without content`, () => {
         expect.assertions(2);
 
-        const { container } = render(<BlockComponent context={context} />);
+        const { container } = render(<BlockComponent />);
         expect(container.firstChild).toBeTruthy();
         expect(container.firstChild).toMatchSnapshot();
       });
@@ -62,7 +47,7 @@ describe('Blocks', () => {
           // Do nothing
         }
 
-        const { container } = render(<BlockComponent context={context} {...data} />);
+        const { container } = render(<BlockComponent {...data} />);
         expect(container.firstChild).toBeTruthy();
       });
     });

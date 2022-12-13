@@ -1,4 +1,4 @@
-import type { Router } from '../../components/ContentPage/ContentPageContext';
+import type { Router } from '../../hooks/useRouter';
 import type { LinkProps } from '../../model/LinkProps';
 import { maxBy } from '../../utils/maxBy';
 import { isSubItemActive } from './isSubItemActive';

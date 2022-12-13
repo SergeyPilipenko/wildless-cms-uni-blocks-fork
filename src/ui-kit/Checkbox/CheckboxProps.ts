@@ -1,7 +1,7 @@
 export interface CheckboxProps {
   text?: string;
-  checked: boolean;
+  checked?: boolean;
   className?: string;
   isRadio?: boolean;
-  onChange: (value: boolean) => void;
+  onChange?: (value: boolean) => void;
 }

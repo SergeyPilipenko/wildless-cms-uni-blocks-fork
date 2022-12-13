@@ -1,4 +1,4 @@
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 
 import type { Picture } from '../../model/Picture';
 import { Headline } from './Headline';
@@ -40,40 +40,39 @@ const secondaryProps: HeadlineContent = {
 export default {
   'default left alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...defaultProps} align="left" />
+      <Headline className="col-span-12" {...defaultProps} align="left" />
     </div>
   ),
   'default center alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...defaultProps} align="center" />
+      <Headline className="col-span-12" {...defaultProps} align="center" />
     </div>
   ),
   'default right alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...defaultProps} align="right" />
+      <Headline className="col-span-12" {...defaultProps} align="right" />
     </div>
   ),
 
   'primary left alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...primaryProps} align="left" />
+      <Headline className="col-span-12" {...primaryProps} align="left" />
     </div>
   ),
   'primary center alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...primaryProps} align="center" />
+      <Headline className="col-span-12" {...primaryProps} align="center" />
     </div>
   ),
   'primary right alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...primaryProps} align="right" />
+      <Headline className="col-span-12" {...primaryProps} align="right" />
     </div>
   ),
   'primary without description': (
     <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
-        context={context}
         title="Копите в нескольких валютах"
         image={image}
         bgColorHeadline="primary"
@@ -84,7 +83,6 @@ export default {
     <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
-        context={context}
         description="Откройте мультивалютный вклад, чтобы распределить свои вложения. Это до 4 счетов в разных валютах внутри одного вклада"
         image={image}
         bgColorHeadline="primary"
@@ -94,24 +92,23 @@ export default {
 
   'secondary left alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...secondaryProps} align="left" />
+      <Headline className="col-span-12" {...secondaryProps} align="left" />
     </div>
   ),
   'secondary center alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...secondaryProps} align="center" />
+      <Headline className="col-span-12" {...secondaryProps} align="center" />
     </div>
   ),
   'secondary right alignment': (
     <div className="container grid grid-cols-12">
-      <Headline className="col-span-12" context={context} {...secondaryProps} align="right" />
+      <Headline className="col-span-12" {...secondaryProps} align="right" />
     </div>
   ),
   'secondary without description': (
     <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
-        context={context}
         title="Копите в нескольких валютах"
         image={image}
         bgColorHeadline="secondary"
@@ -122,7 +119,6 @@ export default {
     <div className="container grid grid-cols-12">
       <Headline
         className="col-span-12"
-        context={context}
         description="Откройте мультивалютный вклад, чтобы распределить свои вложения. Это до 4 счетов в разных валютах внутри одного вклада"
         image={image}
         bgColorHeadline="secondary"

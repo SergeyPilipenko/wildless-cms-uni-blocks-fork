@@ -4,19 +4,19 @@ import { useSafeBoxes } from '../../hooks/useSafeBoxes';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Heading } from '../../ui-kit/Heading/Heading';
+import { YandexMap } from '../../ui-kit/YandexMap/YandexMap';
 import type { SafeDepositRentalContent } from './SafeDepositRentalContent';
 import { SafeDepositRentalForm } from './SafeDepositRentalForm';
 import { HandleChangeState, SafeDepositRentalState } from './SafeDepositRentalTypes';
 import { Region, useGetRegions } from './useGetRegions';
 import { getBranch, getCoordinates } from './utils';
-import { YandexMap } from '../../ui-kit/YandexMap/YandexMap';
 
 export interface SafeDepositRentalProps extends SafeDepositRentalContent, UniBlockProps {}
 
 const DEFAULT_DAYS = 26;
 
 export const SafeDepositRental = JSX<SafeDepositRentalProps>(
-  ({ title, footnote, context, className = '', ...rest }) => {
+  ({ title, footnote, className = '', ...rest }) => {
     const [showMap, setShowMap] = useState<boolean>(false);
     const [safeDepositState, setStateDepositState] = useState<SafeDepositRentalState>({
       selectedRegion: '',
@@ -44,7 +44,7 @@ export const SafeDepositRental = JSX<SafeDepositRentalProps>(
     const points = getCoordinates(getBranch(branches, safeDepositState.selectedBranch) || branches);
 
     return (
-      <BlockWrapper context={context} className={className} {...rest}>
+      <BlockWrapper className={className} {...rest}>
         <div className="font-sans bg-white px-8 py-12">
           {title ? (
             <Heading

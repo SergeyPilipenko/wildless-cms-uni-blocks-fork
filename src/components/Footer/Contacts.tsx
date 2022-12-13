@@ -1,40 +1,28 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useLink } from '../../hooks/useLink';
-import { useRouter } from '../../hooks/useRouter';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ContactInfo } from './FooterContent';
 
-export interface ContactsProps extends UniBlockProps {
+export interface ContactsProps {
+  className?: string;
   items?: ContactInfo[];
   hasButton?: boolean;
 }
 
-export const Contacts = JSX<ContactsProps>(({ context, className = '', items, hasButton }) => {
-  const router = useRouter();
-  const { handlerDecorator } = context;
-
-  return (
-    <div className={className}>
-      {items?.length ? items.map(renderContact) : null}
-      {hasButton ? (
-        <Button
-          version="primary"
-          className="mb-6 w-full"
-          {...useLink(
-            { router, handlerDecorator },
-            {
-              text: 'Обратная связь',
-              href: '/',
-              target: '_blank',
-            },
-          )}
-          ariaLabel="Обратная связь"
-        />
-      ) : null}
-    </div>
-  );
-});
+export const Contacts = JSX<ContactsProps>(({ className = '', items, hasButton }) => (
+  <div className={className}>
+    {items?.length ? items.map(renderContact) : null}
+    {hasButton ? (
+      <Button
+        version="primary"
+        className="mb-6 w-full"
+        href="/"
+        target="_blank"
+        ariaLabel="Обратная связь"
+        text="Обратная связь"
+      />
+    ) : null}
+  </div>
+));
 
 const renderContact = (item: ContactInfo, index: number) => {
   const { type, text, description } = item;

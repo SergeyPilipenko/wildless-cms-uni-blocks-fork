@@ -1,15 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import { useRouter } from '../../hooks/useRouter';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
-import { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { ComparisonTableColumnHeaders } from './ComparisonTableColumnHeaders';
-import { Column, RowHeader } from './ComparisonTableContent';
+import type { Column, RowHeader } from './ComparisonTableContent';
 import { ComparisonTableRows } from './ComparisonTableRows';
 import { COLS_LENGTH_FOR_SCROLL } from './constants';
 
 interface ComparisonTableBodyProps {
-  context: ContentPageContext;
   columns?: Column[];
   rowHeaders?: RowHeader[];
   isShowAllRow: boolean;
@@ -18,10 +14,7 @@ interface ComparisonTableBodyProps {
 }
 
 export const ComparisonTableBody = JSX<ComparisonTableBodyProps>(
-  ({ context, columns, rowHeaders, isShowAllRow, visibleRowLength, isColoredFirstColumn }) => {
-    const router = useRouter();
-    const { handlerDecorator } = context;
-
+  ({ columns, rowHeaders, isShowAllRow, visibleRowLength, isColoredFirstColumn }) => {
     const colHeaders = columns?.map(({ header }) => header || {});
     const colData = columns?.map(({ data }) => data) || [];
     const rowData = rowHeaders
@@ -31,15 +24,11 @@ export const ComparisonTableBody = JSX<ComparisonTableBodyProps>(
       }))
       .slice(0, isShowAllRow ? rowHeaders.length : visibleRowLength);
 
-    const [activeCardIndex, setActiveCardIndex] = useState(0);
-
     const tableArrowScrollProps = useTableArrowScrollControl({
       columnsLength: colData.length,
       colsLengthForScroll: COLS_LENGTH_FOR_SCROLL,
-      activeCardIndex,
-      setActiveCardIndex,
     });
-    const { isScrollAvailable } = tableArrowScrollProps;
+    const { activeCardIndex, isScrollAvailable } = tableArrowScrollProps;
 
     return (
       <div>
@@ -48,14 +37,11 @@ export const ComparisonTableBody = JSX<ComparisonTableBodyProps>(
             <ComparisonTableColumnHeaders
               colHeaders={colHeaders}
               activeCardIndex={activeCardIndex}
-              router={router}
-              handlerDecorator={handlerDecorator}
             />
           ) : null}
           {rowData?.length ? (
             <ComparisonTableRows
               rowData={rowData}
-              activeCardIndex={activeCardIndex}
               isColoredFirstColumn={isColoredFirstColumn}
               {...tableArrowScrollProps}
             />

@@ -1,5 +1,5 @@
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { ComparisonTable } from './ComparisonTable';
 import type { Column } from './ComparisonTableContent';
 
@@ -199,7 +199,6 @@ export default {
       <ComparisonTable
         className="col-span-12"
         title="Другие дебетовые карты Россельхозбанка"
-        context={context}
         rowHeaders={rowHeaders}
         columns={Array(2).fill(columns).flat()}
       />
@@ -211,7 +210,6 @@ export default {
         className="col-span-12"
         title="Другие дебетовые карты Россельхозбанка"
         visibleRowLength={3}
-        context={context}
         rowHeaders={rowHeaders}
         columns={Array(2).fill(columns).flat()}
       />
@@ -224,7 +222,6 @@ export default {
         title="Другие дебетовые карты Россельхозбанка"
         visibleRowLength={3}
         isColoredFirstColumn={true}
-        context={context}
         rowHeaders={rowHeaders}
         columns={Array(2).fill(columns).flat()}
       />
@@ -235,7 +232,6 @@ export default {
       <ComparisonTable
         className="col-span-12"
         title="Другие вклады и сбережения"
-        context={context}
         rowHeaders={rowHeaders2}
         columns={Array(2).fill(columns2).flat()}
       />
@@ -246,7 +242,6 @@ export default {
       <ComparisonTable
         className="col-span-12"
         title="Другие вклады и сбережения"
-        context={context}
         rowHeaders={rowHeaders2}
         columns={columns2.slice(0, 2)}
       />

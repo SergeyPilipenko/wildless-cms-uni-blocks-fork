@@ -1,6 +1,6 @@
 import type { LinkProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
-import { context } from '../../react/setup-fixture';
+import '../../react/setup-fixture';
 import { Recommendation, RecommendationProps } from './Recommendation';
 
 const cowCard: Picture = {
@@ -50,7 +50,6 @@ const socialMedia: LinkProps[] = [
 ];
 
 export const defaultProps: RecommendationProps = {
-  context,
   title: 'Мы в социальных сетях',
   recommendations: [
     {
@@ -85,7 +84,6 @@ export const defaultProps: RecommendationProps = {
 };
 
 export const shortProps: RecommendationProps = {
-  context,
   title: 'Также интересуются',
   recommendations: [
     {

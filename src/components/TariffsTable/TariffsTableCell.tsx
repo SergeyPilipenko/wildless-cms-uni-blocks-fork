@@ -20,7 +20,6 @@ export interface TariffsTableCellProps extends TariffTableContentProps, UniBlock
 
 export const TariffsTableCell = JSX<TariffsTableCellProps>(
   ({
-    context,
     cells,
     rowIdx,
     cellIdx,
@@ -38,7 +37,6 @@ export const TariffsTableCell = JSX<TariffsTableCellProps>(
           ? cells.map(
               renderCellInner({
                 rowIdx,
-                context,
                 cellIdx,
                 setTableInner,
                 tableInner,
