@@ -1,7 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import { useLink } from '../../hooks/useLink';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import { calculateResult, formatValue } from './calculateResult';
@@ -18,7 +16,7 @@ export interface ExchangeCurrencyItem {
   buyExchangeRate?: number;
   saleExchangeRate?: number;
 }
-export interface ExchangeCurrencyCalculatorProps extends UniBlockProps {
+export interface ExchangeCurrencyCalculatorProps {
   className?: string;
   currencyRatesBuy: ExchangeCurrencyItem[];
   currencyRatesSell: ExchangeCurrencyItem[];
@@ -32,10 +30,7 @@ export interface CalcState {
 }
 
 export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
-  ({ context, className = '', currencyRatesBuy, currencyRatesSell, button }) => {
-    const { useRouter, handlerDecorator } = context;
-    const router = useRouter();
-
+  ({ className = '', currencyRatesBuy, currencyRatesSell, button }) => {
     const [calcState, setCalcState] = useState<CalcState>({
       inputSell: '',
       inputBuy: '',
@@ -76,11 +71,7 @@ export const ExchangeCurrencyCalculator = JSX<ExchangeCurrencyCalculatorProps>(
             ),
         })}
         {button?.text ? (
-          <Button
-            className="py-4 mr-1"
-            version={button?.version}
-            {...useLink({ router, handlerDecorator }, button)}
-          >
+          <Button className="py-4 mr-1" version={button?.version} {...button}>
             {button.text}
           </Button>
         ) : null}

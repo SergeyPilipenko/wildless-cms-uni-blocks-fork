@@ -1,30 +1,32 @@
-import { HandlerDecorator, Router } from '../components/ContentPage/ContentPageContext';
 import type { LinkProps } from '../model/LinkProps';
 import { adjustHref } from '../utils/adjustHref';
 import { isURL } from '../utils/url';
+import { handlerDecorator } from './handlerDecorator';
+import { useRouter } from './useRouter';
 
-export const defaultHandlerDecorator: HandlerDecorator = (handler) => handler;
+type ClickHandler = (ev?: { preventDefault: () => void }) => any;
 
-export function useLink(
-  {
-    router,
-    handlerDecorator = defaultHandlerDecorator,
-  }: { router: Router; handlerDecorator?: HandlerDecorator },
-  link: Partial<LinkProps & { className: string }>,
-) {
-  const href = adjustHref(link.href, router);
+export function useLink(): <L extends Partial<LinkProps & { onClick: ClickHandler }>>(
+  props: L,
+) => L {
+  const router = useRouter();
 
-  return {
-    ...link,
-    href,
-    'aria-label': link.text,
-    onClick: handlerDecorator((ev?: { preventDefault: () => void }) => {
-      const isLocalHref = href && !isURL(href);
-      const isLocalTarget = !link.target || link.target === '_self';
-      if (isLocalHref && isLocalTarget) {
-        ev?.preventDefault();
-        router.push(href);
-      }
-    }, link),
+  return (props) => {
+    const href = adjustHref(props.href, router);
+
+    return {
+      ...props,
+      href,
+      'aria-label': props.text,
+      onClick: handlerDecorator((ev?: { preventDefault: () => void }) => {
+        props.onClick && props.onClick(ev);
+        const isLocalHref = href && !isURL(href);
+        const isLocalTarget = !props.target || props.target === '_self';
+        if (isLocalHref && isLocalTarget) {
+          ev?.preventDefault();
+          router.push(href);
+        }
+      }, props),
+    };
   };
 }

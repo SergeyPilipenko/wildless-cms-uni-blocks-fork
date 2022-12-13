@@ -18,7 +18,6 @@ export interface TariffsTableProps extends TariffsTableContent, UniBlockProps {}
 export const TariffsTable = JSX<TariffsTableProps>(
   ({
     className = '',
-    context,
     title,
     description,
     rowHeaders,
@@ -45,11 +44,11 @@ export const TariffsTable = JSX<TariffsTableProps>(
 
     const rows = (rowData || []).map((row, i) => (
       <TariffsTableRow
-        context={context}
         key={String(i)}
         row={row}
         activeCardIndex={activeCardIndex}
         rowIdx={i}
+        {...rest}
       />
     ));
     const [visibleRows, hiddenRows] =
@@ -60,7 +59,6 @@ export const TariffsTable = JSX<TariffsTableProps>(
         className={`bg-white font-sans p-[50px] overflow-hidden text-primary-text relative ${
           columnsLength > 1 ? 'pr-0' : ''
         } ${className}`}
-        context={context}
         {...rest}
       >
         {renderTitle({ title, description })}

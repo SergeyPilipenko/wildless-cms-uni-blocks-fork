@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
+import { useRouter } from '../../hooks/useRouter';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
@@ -22,7 +23,7 @@ const renderErrorContent = (error: ErrorBlockContent['error']) => {
 
 export const ErrorBlock = JSX<ErrorBlockProps>(
   ({ context, className = '', title, subtitle, error, button }) => {
-    const { useRouter, handlerDecorator } = context;
+    const { handlerDecorator } = context;
     const router = useRouter();
 
     return (

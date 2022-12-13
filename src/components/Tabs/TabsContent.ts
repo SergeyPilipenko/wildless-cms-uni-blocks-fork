@@ -1,10 +1,10 @@
-import type { LinkProps } from '../../model/LinkProps';
 import type { TitleProps } from '../../model/HeadlineType';
+import type { LinkProps } from '../../model/LinkProps';
 
 /**
  * @title Группа
  */
-export type GroupTab = TitleProps & {
+export type GroupTabData = TitleProps & {
   /** @default group */
   type: 'group';
   /** @title Тег */
@@ -14,7 +14,7 @@ export type GroupTab = TitleProps & {
 /**
  * @title Ссылка
  */
-export type LinkTab = LinkProps & {
+export type LinkTabData = LinkProps & {
   /** @default link */
   type: 'link';
 };
@@ -25,14 +25,14 @@ export type LinkTab = LinkProps & {
  *    "type": "group"
  * }
  */
-export type Tab = GroupTab | LinkTab;
+export type TabData = GroupTabData | LinkTabData;
 
 /**
  * @title Вкладки
  */
 export interface TabsContent {
   /** @title Табы */
-  tabs?: Tab[];
+  tabs?: TabData[];
   /** @title Закрепить сверху */
   isSticky?: boolean;
   /** @title Показывать счетчик блоков во вкладках */

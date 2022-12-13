@@ -28,7 +28,7 @@ export const ComparisonTable = JSX<ComparisonTableProps>((props) => {
 });
 
 const TableInner = JSX<ComparisonTableProps>(
-  ({ columns, rowHeaders, isColoredFirstColumn, visibleRowLength, orientation, context }) => {
+  ({ columns, rowHeaders, isColoredFirstColumn, visibleRowLength, orientation, ...rest }) => {
     const [columnsViewState, setColumnsViewState] = useState(
       new Array<boolean>(columns?.length || 0).fill(!visibleRowLength),
     );
@@ -51,20 +51,18 @@ const TableInner = JSX<ComparisonTableProps>(
     const tableColumns = columns?.map(({ data, header }, colIndex) => (
       <TableColumn
         key={String(colIndex)}
-        context={context}
         visibleRowLength={visibleRowLength}
         showRow={columnsViewState[colIndex]}
         header={header}
         columnData={getColumnData(data)}
         isFillGradient={colIndex === 0 && isColoredFirstColumn}
         onToggleColumn={() => handleToggleColumn(colIndex)}
+        {...rest}
       />
     ));
 
     return orientation === 'horizontal' ? (
-      <SwipeListControl context={context} onSlideChange={handleSlideChange}>
-        {tableColumns}
-      </SwipeListControl>
+      <SwipeListControl onSlideChange={handleSlideChange}>{tableColumns}</SwipeListControl>
     ) : (
       tableColumns
     );

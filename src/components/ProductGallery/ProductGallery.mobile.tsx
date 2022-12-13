@@ -11,7 +11,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(({ className, context, sl
 
   return (
     <section className={`font-sans bg-white overflow-hidden w-100 pb-6 ${className || ''}`}>
-      <SwipeListControl context={context}>
+      <SwipeListControl>
         {galleryBlocks.map((block, i) => (
           <ProductGalleryBlock key={String(i)} block={block} context={context} />
         ))}

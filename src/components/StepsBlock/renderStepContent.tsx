@@ -1,25 +1,19 @@
-import { Button } from '../../ui-kit/Button/Button';
 import type { BlockVersion } from '../../model/BlockVersion';
-import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
+import type { VNode } from '../../model/VNode';
+import { Button } from '../../ui-kit/Button/Button';
+import { renderItems } from './renderItems';
 import type { Step } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
-import type { VNode } from '../../model/VNode';
-import { renderItems } from './renderItems';
-import { useLink } from '../../hooks/useLink';
 
 export const renderStepContent =
   ({
     styleMap,
     isMainButton,
     version,
-    router,
-    handlerDecorator,
   }: {
     styleMap: StyleType;
     isMainButton: boolean;
     version: BlockVersion;
-    router: Router;
-    handlerDecorator?: HandlerDecorator;
   }) =>
   (step: Step, i: number, { length }: { length: number }): VNode => {
     const { label, description, button, items, isDotted } = step;
@@ -51,8 +45,8 @@ export const renderStepContent =
         {button?.text && !isMainButton ? (
           <Button
             className="box-border py-3 h-12 w-full max-w-[240px] mt-auto"
-            {...useLink({ router, handlerDecorator }, button)}
             version={version}
+            {...button}
           >
             {button?.text}
           </Button>

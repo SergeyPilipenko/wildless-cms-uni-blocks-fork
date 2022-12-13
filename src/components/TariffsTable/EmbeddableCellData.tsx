@@ -56,17 +56,15 @@ const renderListCellData = ({ isDotted, ...rest }: ListProps) => (
 );
 
 const renderTableCellData = JSX<TableCellDataProps>(
-  ({ isVisible, displayTable, dataUrl, pdfUrl, isOpen, context }) => {
-    return isVisible ? (
+  ({ isVisible, displayTable, dataUrl, pdfUrl, isOpen }) =>
+    isVisible ? (
       <TableInnerButton
         isOpen={isOpen}
-        context={context}
         onClick={() => {
           displayTable({ dataUrl, pdfUrl });
         }}
       />
-    ) : null;
-  },
+    ) : null,
 );
 
 export const EmbeddableCellData = {

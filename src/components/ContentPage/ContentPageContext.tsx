@@ -9,11 +9,6 @@ export interface Router {
 
 export type HandlerDecorator = <F extends Function>(handler: F, targetContent?: any) => F;
 
-export interface Search {
-  term: string;
-  setTerm: (t: string) => void;
-}
-
 export interface ContentPageContext {
   useRouter: () => Router;
   handlerDecorator?: HandlerDecorator;

@@ -41,18 +41,16 @@ export function renderBlock({ block = {}, options, ancestors = [] }: RenderBlock
       ancestors,
       // Adjusted by decorator block and blockClassName
       render: ({ block: adjustedBlock, blockClassName: adjustedBlockClassName }) => {
-        const { version, anchor, labels, content } = adjustedBlock;
+        const { content } = adjustedBlock;
 
         return BlockComponent ? (
           <BlockComponent
             key={key}
-            className={adjustedBlockClassName}
             context={context}
             page={page}
+            block={adjustedBlock}
+            className={adjustedBlockClassName}
             ancestors={ancestors}
-            version={version}
-            anchor={anchor}
-            labels={labels}
             slots={blockSlots}
             {...content}
           >

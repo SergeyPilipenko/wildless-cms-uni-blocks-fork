@@ -25,21 +25,19 @@ export const CardTransfer = JSX<CardTransferProps>(
     label = DEFAULT_LABEL,
     placeholder = DEFAULT_PLACEHOLDER,
     button,
-    context,
     ...rest
   }) => {
-    const router = context.useRouter();
-    const { handlerDecorator } = context;
     const [value, setValue] = useState<string>('');
     const isDisabled = !Number(getSanitizedValue(value));
     const buttonStyle = isDisabled
       ? getDisabledButtonClasses({ version: button?.version })
       : getRegularButtonClasses({ className: 'text-white', version: button?.version });
 
+    const link = useLink();
+
     return (
       <BlockWrapper
         className={`p-[50px] flex flex-col items-center font-sans bg-white ${className}`}
-        context={context}
         {...rest}
       >
         {title ? <Heading className="max-w-[684px] pb-9" headingType="h2" title={title} /> : null}
@@ -57,7 +55,7 @@ export const CardTransfer = JSX<CardTransferProps>(
               type="submit"
               className={`w-full p-4 mt-6 ${buttonStyle} `}
               disabled={isDisabled}
-              {...useLink({ router, handlerDecorator }, button)}
+              {...link(button)}
             >
               {button.text}
             </button>

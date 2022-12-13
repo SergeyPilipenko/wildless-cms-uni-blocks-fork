@@ -11,13 +11,13 @@ interface RenderSlotsProps {
   ancestors?: BlockAncestors;
 }
 
-export function renderSlots({
-  slots = {},
+export const renderSlots = ({
+  slots,
   parent,
   options,
   ancestors = [],
-}: RenderSlotsProps): Record<string, VNode> {
-  return Object.entries(slots).reduce(
+}: RenderSlotsProps): Record<string, VNode[]> =>
+  Object.entries(slots || {}).reduce(
     (res, [slotName, slotBlocks]) => ({
       ...res,
       [slotName]: renderBlocksList({
@@ -30,4 +30,3 @@ export function renderSlots({
     }),
     {},
   );
-}

@@ -12,28 +12,17 @@ interface RenderBlockListProps {
   ancestors?: BlockAncestors; // Recursion context
 }
 
-const defaultChildRenderer = (_: VNode) => _;
-
-export function renderBlocksList({
-  blocks = [],
+export const renderBlocksList = ({
+  blocks,
   parent,
   slotName = DEFAULT_SLOT_NAME,
   options,
   ancestors = [],
-}: RenderBlockListProps): Record<string, VNode> {
-  const { blocksRegistry = {} } = options;
-  const { type } = parent as BlockDef;
-  const BlockComponent = type && blocksRegistry[type];
-  const { renderChild = defaultChildRenderer } = BlockComponent || {};
-
-  return blocks.map((_: BlockDef, j: number) =>
-    renderChild(
-      renderBlock({
-        block: _,
-        options: { ...options, key: `${options.key ? options.key : _.type}-${j}` },
-        ancestors: [...ancestors, [parent, slotName]],
-      }),
-      j,
-    ),
+}: RenderBlockListProps): VNode[] =>
+  (blocks || []).map((_: BlockDef, j: number) =>
+    renderBlock({
+      block: _,
+      options: { ...options, key: `${options.key ? options.key : _.type}-${j}` },
+      ancestors: [...ancestors, [parent, slotName]],
+    }),
   );
-}

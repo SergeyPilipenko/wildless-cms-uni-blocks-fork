@@ -1,6 +1,6 @@
-import type { UniBlockProps } from '../../model/JSXBlock';
 import type { LinkProps } from '../../model/LinkProps';
 
-export interface FooterLink extends UniBlockProps {
+export interface FooterLink {
+  className?: string;
   links?: LinkProps[];
 }

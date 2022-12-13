@@ -7,7 +7,7 @@ import {
   LINK_CLASSES,
   TEXT_CLASSES,
 } from './tabItemClasses';
-import type { GroupTab } from './TabsContent';
+import type { GroupTabData } from './TabsContent';
 
 const BADGE_CLASSES =
   'min-w-[22px] h-[22px] rounded-full text-xs ml-2 flex justify-center items-center';
@@ -15,8 +15,8 @@ const ACTIVE_BADGE_CLASSES = 'bg-white/30 text-white';
 const INACTIVE_BADGE_CLASSES = 'bg-main-divider text-secondary-text group-hover:text-primary-main';
 
 export const renderGroupTab =
-  ({ onClick, currentTab, showCounter, page }: RenderTabProps) =>
-  (tab: GroupTab, i: number) => {
+  ({ page, currentTab, showCounter, onClick }: RenderTabProps) =>
+  (tab: GroupTabData, i: number) => {
     const active = currentTab === tab;
 
     const count =

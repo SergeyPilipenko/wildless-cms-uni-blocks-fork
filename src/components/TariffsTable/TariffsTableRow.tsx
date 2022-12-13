@@ -3,12 +3,12 @@ import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Img } from '../../ui-kit/Img/Img';
 import type { TariffsTableInnerContent } from '../../ui-kit/InnerTable/InnerTableProps';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import { TableCarouselContainer } from '../ComparisonTable/TableCarouselContainer';
 import { COLUMN_WIDTH, DIVIDER_CLASSES, FIRST_CELL_CLASSES } from './constants';
 import { TariffsTableCell } from './TariffsTableCell';
 import type { Data } from './TariffsTableContent';
 import { TariffsTableRowContainer } from './TariffsTableRowContainer';
-import { getIconWithVersion } from '../../utils/getIconWithVersion';
 
 export interface TariffsTableRowProps extends UniBlockProps {
   row: Data;
@@ -17,7 +17,7 @@ export interface TariffsTableRowProps extends UniBlockProps {
 }
 
 export const TariffsTableRow = JSX<TariffsTableRowProps>(
-  ({ row: { header, data }, activeCardIndex, context, rowIdx }) => {
+  ({ row: { header, data }, activeCardIndex, rowIdx, ...rest }) => {
     const [tableInner, setTableInner] = useState<TariffsTableInnerContent | undefined>(undefined);
     const [openTableInnerIdx, setOpenTableInnerIdx] = useState<number | undefined>(undefined);
 
@@ -25,9 +25,9 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
 
     return (
       <TariffsTableRowContainer
-        context={context}
         onHideContentClick={onHideContentClick}
         tableInner={tableInner}
+        {...rest}
       >
         <div className={`text-s py-5 ${FIRST_CELL_CLASSES} ${DIVIDER_CLASSES}`}>
           <div className="flex items-center text-primary-text" role="cell">
@@ -55,11 +55,11 @@ export const TariffsTableRow = JSX<TariffsTableRowProps>(
                 cells={cells}
                 rowIdx={rowIdx}
                 cellIdx={i}
-                context={context}
                 setTableInner={setTableInner}
                 tableInner={tableInner}
                 openTableInnerIdx={openTableInnerIdx}
                 setOpenTableInnerIdx={setOpenTableInnerIdx}
+                {...rest}
               />
             ))}
           </TableCarouselContainer>

@@ -17,7 +17,6 @@ export interface MobileAppTileProps extends MobileAppTileContent, UniBlockProps 
 export const MobileAppTile = JSX<MobileAppTileProps>(
   ({
     className = '',
-    context,
     title = 'Мобильное приложение',
     qr,
     buttons,
@@ -35,7 +34,6 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
 
     return (
       <BlockWrapper
-        context={context}
         className={`flex justify-between font-sans p-9 box-border relative min-h-[320px]
         ${getTileMinHeight(className)}
         ${VersionStyleMap[version]}
@@ -43,7 +41,6 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
         {...rest}
       >
         <BaseTile
-          context={context}
           className="z-10"
           title={
             title ? (
@@ -58,7 +55,7 @@ export const MobileAppTile = JSX<MobileAppTileProps>(
           }
           buttons={
             buttons?.length ? (
-              <ButtonSection context={context} buttons={buttonsWithClass} className="flex gap-4" />
+              <ButtonSection buttons={buttonsWithClass} className="flex gap-4" {...rest} />
             ) : null
           }
         >

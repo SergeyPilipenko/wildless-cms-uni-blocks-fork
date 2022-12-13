@@ -1,45 +1,34 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
+import type { UniBlockProps } from '../../model/JSXBlock';
+import type { VNode } from '../../model/VNode';
 import { EmbeddableCellData } from './EmbeddableCellData';
 import { TableTileHeader } from './TableTileHeader';
 import type { CellDef, TariffsTableTile } from './TariffsTableContent';
 
-export interface TariffsTableTileCellProps {
-  context: ContentPageContext;
-  tile: TariffsTableTile;
+export interface TariffsTableTileCellProps extends UniBlockProps {
+  tile?: TariffsTableTile;
 }
 
-export const TariffsTableTileCell = JSX<TariffsTableTileCellProps>(({ context, tile }) => {
-  return (
-    <div className="rounded-md border-main-stroke h-full box-border border p-4">
-      <TableTileHeader {...tile.header} />
-      {tile.data?.length ? tile.data.map(renderCellInner(context)) : null}
-    </div>
-  );
-});
+export const TariffsTableTileCell = JSX<TariffsTableTileCellProps>(({ tile, ...rest }) => (
+  <div className="rounded-md border-main-stroke h-full box-border border p-4">
+    <TableTileHeader {...tile?.header} />
+    {tile?.data?.length
+      ? tile.data.map((cell, i) => (
+          <div key={String(i)}>
+            {i > 0 ? <div className="h-5" /> : null}
+            {renderCell(cell, rest)}
+          </div>
+        ))
+      : null}
+  </div>
+));
 
-const renderCellInner = (context: ContentPageContext) => (cell: CellDef, i: number) =>
-  (
-    <div key={String(i)}>
-      {i > 0 ? <div className="h-5" /> : null}
-      {renderCell(cell, context)}
-    </div>
-  );
-
-const renderCell = (cell: CellDef, context: ContentPageContext) => {
-  if (!cell) {
+function renderCell(cell: CellDef, props: UniBlockProps): VNode {
+  if (!cell || !cell.tableCellType || !(cell.tableCellType in EmbeddableCellData)) {
     return null;
   }
 
-  const { tableCellType: type, ...rest } = cell;
+  const EmbeddableCellInner = EmbeddableCellData[cell.tableCellType];
 
-  if (!type || !(type in EmbeddableCellData)) {
-    return null;
-  }
-
-  const EmbeddableCellInner = EmbeddableCellData[type];
-
-  return (
-    <EmbeddableCellInner context={context} displayTable={() => null} {...rest} isVisible={true} />
-  );
-};
+  return <EmbeddableCellInner displayTable={() => null} isVisible={true} {...cell} {...props} />;
+}

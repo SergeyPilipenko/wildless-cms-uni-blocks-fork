@@ -19,7 +19,7 @@ export interface TariffsTableTile {
  * @hidden
  */
 export interface TariffsTableProps extends UniBlockProps {
-  tiles: TariffsTableTile[];
+  tiles?: TariffsTableTile[];
 }
 
 /**

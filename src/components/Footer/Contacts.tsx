@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
+import { useRouter } from '../../hooks/useRouter';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../../ui-kit/Button/Button';
 import type { ContactInfo } from './FooterContent';
@@ -9,8 +10,8 @@ export interface ContactsProps extends UniBlockProps {
   hasButton?: boolean;
 }
 
-export const Contacts = JSX<ContactsProps>(({ className = '', items, hasButton, context }) => {
-  const router = context.useRouter();
+export const Contacts = JSX<ContactsProps>(({ context, className = '', items, hasButton }) => {
+  const router = useRouter();
   const { handlerDecorator } = context;
 
   return (

@@ -20,12 +20,10 @@ export interface TileProps extends TileContent, UniBlockProps {
 
 export const Tile = JSX<TileProps>((props) => {
   const {
-    context,
     title,
     headingType = 'h3',
     description,
     items,
-    children,
     buttons,
     image,
     isDotted = true,
@@ -33,20 +31,19 @@ export const Tile = JSX<TileProps>((props) => {
     className = '',
     version = 'primary',
     tags,
+    children,
     ...rest
   } = props;
   const headingClassName = version === 'primary' ? 'text-primary-text' : '';
 
   return (
     <BlockWrapper
-      context={context}
       className={`overflow-hidden font-sans p-9 pr-3 box-border ${className} ${
         VersionStyleMap[version]
       } ${getTileRightPadding(className)} ${getTileMinHeight(className)} `}
       {...rest}
     >
       <BaseTile
-        context={context}
         title={
           title ? (
             <Heading
@@ -60,9 +57,9 @@ export const Tile = JSX<TileProps>((props) => {
         buttons={
           buttons?.length ? (
             <ButtonSection
-              context={context}
               buttons={buttons.map((button) => ({ ...button, className: 'min-w-[158px]' }))}
               className="flex mt-8 gap-3"
+              {...rest}
             />
           ) : null
         }

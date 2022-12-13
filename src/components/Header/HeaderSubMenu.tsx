@@ -1,20 +1,19 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useMemo, useRef, useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useRouter } from '../../hooks/useRouter';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { DropdownMenu } from './DropdownMenu';
 import { HeaderSubMenuItem } from './HeaderSubMenuItem';
 
 export interface HeaderSubMenuProps {
-  context: ContentPageContext;
   subItems?: LinkProps[];
   bgColor?: BgColorVersion;
 }
 
-export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], bgColor }) => {
-  const router = context.useRouter();
+export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ subItems = [], bgColor }) => {
+  const router = useRouter();
 
   const activeSubItem = findActiveSubItem(router)(subItems);
 
@@ -44,7 +43,6 @@ export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], 
         {subItems.map((_, i) => (
           <HeaderSubMenuItem
             key={String(i)}
-            context={context}
             className={`mr-8 ${visibleItemsCount - 1 < i ? 'invisible' : ''}`}
             active={_ === activeSubItem}
             bgColor={bgColor}
@@ -56,7 +54,6 @@ export const HeaderSubMenu = JSX<HeaderSubMenuProps>(({ context, subItems = [], 
       </div>
       {dropDownMenuItems.length ? (
         <DropdownMenu
-          context={context}
           className="absolute w-52 -top-4 right-0 pt-4 z-40"
           items={dropDownMenuItems}
           activeItem={activeSubItem}

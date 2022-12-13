@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
+import { useRouter } from '../../hooks/useRouter';
 import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
 import { ContentPageContext } from '../ContentPage/ContentPageContext';
 import { ComparisonTableColumnHeaders } from './ComparisonTableColumnHeaders';
@@ -18,7 +19,7 @@ interface ComparisonTableBodyProps {
 
 export const ComparisonTableBody = JSX<ComparisonTableBodyProps>(
   ({ context, columns, rowHeaders, isShowAllRow, visibleRowLength, isColoredFirstColumn }) => {
-    const router = context.useRouter();
+    const router = useRouter();
     const { handlerDecorator } = context;
 
     const colHeaders = columns?.map(({ header }) => header || {});

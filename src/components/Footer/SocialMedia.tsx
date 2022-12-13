@@ -11,7 +11,7 @@ export interface SocialMediaProps extends UniBlockProps {
 }
 
 export const SocialMedia = JSX<SocialMediaProps>(
-  ({ className = '', media, version, context, children }) => {
+  ({ context, className = '', media, version, children }) => {
     const router = context.useRouter();
     const { handlerDecorator } = context;
 

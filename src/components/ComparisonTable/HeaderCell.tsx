@@ -4,8 +4,8 @@ import type { Picture } from '../../model/Picture';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
-import { BORDER_CLASSES, GRADIENT } from './constants';
 import { getIconWithVersion } from '../../utils/getIconWithVersion';
+import { BORDER_CLASSES, GRADIENT } from './constants';
 
 export interface HeaderCellProps {
   icon?: Picture;

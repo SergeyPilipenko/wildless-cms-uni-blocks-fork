@@ -1,5 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { Picture } from '../../model/Picture';
 import { projectSettings } from '../../ProjectSettings';
@@ -22,40 +21,35 @@ import { TextInformation } from './TextInformation';
 
 export interface FooterProps extends FooterContent, UniBlockProps {}
 
-export const Footer = JSX<FooterProps>(({ className = '', context, page }) => {
-  const fallback: Fallback | undefined = page?.fallback;
-
-  const { documents, relatedEnterprises, contacts, socialMedia, horizontalNavigationTitle } =
-    useSWRResource<FooterDataProps>(projectSettings.FOOTER || 'footer', fallback);
+export const Footer = JSX<FooterProps>(({ className = '', ...rest }) => {
+  const fallback = rest.page?.fallback;
 
   const sitemap = useSWRResource<SitemapDataProps>(projectSettings.SITEMAP || 'sitemap', fallback);
+  const { documents, relatedEnterprises, contacts, socialMedia, horizontalNavigationTitle } =
+    useSWRResource<FooterDataProps>(projectSettings.FOOTER || 'footer', fallback);
 
   const dispositions = sitemap?.dispositions;
 
   return (
     <footer className={`font-sans px-4 py-[26px] bg-white ${className}`}>
-      <Contacts className="overflow-hidden" items={contacts} context={context} hasButton />
+      <Contacts className="overflow-hidden" items={contacts} hasButton />
       <AccordionItemsList>
         {sitemap.topItems?.map((item, i) => (
-          <AccordionItem key={String(i)} context={context} label={item.text}>
-            <LinkList context={context} documents={item.items} />
+          <AccordionItem key={String(i)} label={item.text} {...rest}>
+            <LinkList documents={item.items} {...rest} />
           </AccordionItem>
         ))}
       </AccordionItemsList>
       <div>{dispositions?.map(renderSubMenuItem)}</div>
       <MobileAppTile
-        context={context}
         title="Мобильное приложение"
         description="Загрузить для IOS и Android"
+        {...rest}
       />
-      <SearchBar context={context} className="grow" />
-      <SocialMedia className="pb-4" media={socialMedia} context={context} />
-      <HorizontalNavigation
-        title={horizontalNavigationTitle}
-        links={relatedEnterprises}
-        context={context}
-      />
-      <TextInformation links={documents} context={context} />
+      <SearchBar className="grow" />
+      <SocialMedia className="pb-4" media={socialMedia} />
+      <HorizontalNavigation title={horizontalNavigationTitle} links={relatedEnterprises} />
+      <TextInformation links={documents} />
     </footer>
   );
 });

@@ -1,7 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useLink } from '../../hooks/useLink';
+import { useRouter } from '../../hooks/useRouter';
 import type { BgColorVersion } from '../../model/BgColorVersion';
-import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { TopMenuItem } from '../../model/SitemapProps';
 import { projectSettings } from '../../ProjectSettings';
@@ -27,22 +26,17 @@ export const Header = JSX<HeaderProps>(
   ({
     bgColor = 'bg-white',
     className = '',
-    context,
     defaultLocation = 'Москва',
     logo,
-    page,
     showSubMenu = true,
     ...rest
   }) => {
-    const router = context.useRouter();
+    const router = useRouter();
 
-    const fallback: Fallback | undefined = page?.fallback;
     const { topItems } = useSWRResource<SitemapDataProps>(
       projectSettings.SITEMAP || 'sitemap',
-      fallback,
+      rest.page?.fallback,
     );
-
-    const { handlerDecorator } = context;
 
     const activeTopItem = showSubMenu ? getActiveItem(topItems, router) : null;
 
@@ -50,16 +44,15 @@ export const Header = JSX<HeaderProps>(
       <TopItem
         key={String(i)}
         active={_ === activeTopItem}
-        {...useLink({ router, handlerDecorator }, _)}
         aria-label={_.text}
         bgColor={bgColor}
+        {..._}
       />
     ));
 
     return (
       <BlockWrapper
         tag="header"
-        context={context}
         className={`pt-6 px-20 ${bgColor} ${className} ${
           showSubMenu && activeTopItem?.items?.length ? 'pb-4' : 'pb-5'
         }`}
@@ -77,7 +70,7 @@ export const Header = JSX<HeaderProps>(
           </div>
           <div className={`mt-6 h-[1px] ${BORDER_COLORS[bgColor]}`} />
           {showSubMenu && activeTopItem?.items?.length ? (
-            <HeaderSubMenu context={context} subItems={activeTopItem.items} bgColor={bgColor} />
+            <HeaderSubMenu subItems={activeTopItem.items} bgColor={bgColor} />
           ) : null}
         </div>
       </BlockWrapper>

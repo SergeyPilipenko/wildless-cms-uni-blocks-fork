@@ -13,15 +13,12 @@ interface RenderButtonProps {
   buttonClassName?: string;
   index?: number;
 }
-export const ButtonSection = JSX<ButtonSectionProps>(({ context, className = '', buttons }) => {
-  const { handlerDecorator } = context;
-  const router = context.useRouter();
+export const ButtonSection = JSX<ButtonSectionProps>(({ className = '', buttons }) => {
+  const link = useLink();
 
   return buttons && buttons?.length ? (
     <div className={className}>
-      {buttons.map((button, index) =>
-        renderButton({ button: useLink({ router, handlerDecorator }, button), index }),
-      )}
+      {buttons.map((button, index) => renderButton({ button: link(button), index }))}
     </div>
   ) : null;
 });

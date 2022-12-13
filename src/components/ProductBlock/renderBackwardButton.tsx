@@ -1,7 +1,7 @@
-import { Button } from '../../ui-kit/Button/Button';
-import { Img } from '../../ui-kit/Img/Img';
-import type { BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
 import type { ButtonVersion } from '../../model/ButtonVersion';
+import { Button } from '../../ui-kit/Button/Button';
+import type { BackwardButtonProps } from '../../ui-kit/Button/ButtonProps';
+import { Img } from '../../ui-kit/Img/Img';
 
 export function renderBackwardButton(
   button: BackwardButtonProps,
@@ -12,6 +12,7 @@ export function renderBackwardButton(
   const iconVersion = version === 'primary' ? 'white' : 'black';
   const backwardIcon = button?.icon || { icon: 'ArrowLeftIcon' };
 
+  // TODO Move click handler to Button
   return (
     <div className={`flex items-center cursor-pointer ${className}`} onClick={onClick}>
       <Button

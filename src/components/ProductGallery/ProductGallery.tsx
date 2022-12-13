@@ -5,7 +5,6 @@ import { VersionStyleMap } from '../../model/BlockVersion';
 import { BorderVersionStyleMap } from '../../model/BorderVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 import type { ProductBlockInnerContent } from '../ProductBlock/ProductBlockContent';
 import { ProductBlockInner } from '../ProductBlock/ProductBlockInner';
 import type { ProductGalleryContent, ProductGalleryNav } from './ProductGalleryContent';
@@ -31,14 +30,13 @@ const productBlockStyleMap: Record<BlockVersion, StyleType> = {
 };
 
 export const ProductGallery = JSX<ProductGalleryProps>(
-  ({ className = '', context, slides = [], version = 'primary', ...rest }) => {
+  ({ className = '', slides = [], version = 'primary', ...rest }) => {
     const galleryNav = slides.map((s) => s.nav);
     const galleryBlocks = slides.map((s) => s.productBlock);
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     return (
       <BlockWrapper
-        context={context}
         className={`box-border pt-[50px] overflow-hidden relative font-sans w-100 mb-6 ${className}
         ${VersionStyleMap[version]}`}
         {...rest}
@@ -48,7 +46,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
           style={{ transform: `translateX(-${activeSlideIndex}00%)` }}
           role="list"
         >
-          {galleryBlocks.map((_, i) => renderProductBlock({ ..._, version }, i, context))}
+          {galleryBlocks.map((_, i) => renderProductBlock({ ..._, ...rest, version }, i))}
         </div>
 
         <div className="flex items-center absolute bottom-6 left-0 right-0 px-[26px] box-border h-28">
@@ -67,11 +65,7 @@ export const ProductGallery = JSX<ProductGalleryProps>(
   },
 );
 
-function renderProductBlock(
-  block: ProductBlockInnerContent,
-  i: number,
-  context: ContentPageContext,
-) {
+function renderProductBlock(block: ProductBlockInnerContent & UniBlockProps, i: number) {
   const { version } = block;
   const additionalClass = version ? productBlockStyleMap[version].title : '';
 
@@ -84,10 +78,9 @@ function renderProductBlock(
       <div className="flex grow">
         <ProductBlockInner
           className={`pl-[50px] z-10 ${additionalClass}`}
-          context={context}
           textBlockClassName="mb-[154px]"
-          {...block}
           headlineVersion="XXL"
+          {...block}
         />
       </div>
     </section>

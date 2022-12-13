@@ -1,16 +1,15 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Img } from '../Img/Img';
 import { InnerTableBodyItem } from './InnerTableBodyItem';
 import type { DataItem } from './InnerTableProps';
 
-export interface InnerTableBodyProps extends UniBlockProps {
+export interface InnerTableBodyProps {
   activeTabIndex: number;
   items: DataItem[];
 }
 
-export const InnerTableBody = JSX<InnerTableBodyProps>(({ context, activeTabIndex, items }) => {
+export const InnerTableBody = JSX<InnerTableBodyProps>(({ activeTabIndex, items }) => {
   const [hiddenTables, setHiddenTables] = useState<Record<string, boolean>>({});
 
   const toggleTable = (key: string) => {
@@ -42,7 +41,7 @@ export const InnerTableBody = JSX<InnerTableBodyProps>(({ context, activeTabInde
               }`}
             >
               <div className="relative">
-                <InnerTableBodyItem context={context} rows={_.rowsData} />
+                <InnerTableBodyItem rows={_.rowsData} />
               </div>
             </div>
           </div>

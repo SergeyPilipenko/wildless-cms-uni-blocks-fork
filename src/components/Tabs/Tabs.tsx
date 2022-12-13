@@ -4,10 +4,10 @@ import { EventBus } from '../../EventBus/EventBus';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { renderTab } from './renderTab';
-import type { Tab, TabsContent } from './TabsContent';
+import type { TabData, TabsContent } from './TabsContent';
 
 export interface TabActivationEvent {
-  type?: Tab['type'];
+  type?: TabData['type'];
   label?: string;
 }
 
@@ -19,7 +19,7 @@ export interface AnchorClickScrollingEvent {
 export interface TabsBlockProps extends TabsContent, UniBlockProps {}
 
 export const Tabs = JSX<TabsBlockProps>((props) => {
-  const { context, className = '', tabs, page, showCounter, isSticky } = props;
+  const { className = '', tabs, showCounter, isSticky, ...rest } = props;
 
   const [currentTab, setCurrentTab] = useState(tabs ? tabs[0] : undefined);
 
@@ -45,7 +45,7 @@ export const Tabs = JSX<TabsBlockProps>((props) => {
     return undefined;
   }, [currentTab]);
 
-  const handleClick = (selectedTab: Tab) => {
+  const handleClick = (selectedTab: TabData) => {
     if (selectedTab?.type === 'group') {
       EventBus.inst.fire('tab', { type: selectedTab.type, label: selectedTab.ref });
     }
@@ -54,14 +54,14 @@ export const Tabs = JSX<TabsBlockProps>((props) => {
 
   return (
     <BlockWrapper
-      context={context}
       className={`${isSticky ? 'sticky top-1 z-20 ' : ''}box-border flex gap-x-1 ${className}`}
       role="tablist"
+      {...rest}
     >
-      {tabs?.map(renderTab({ onClick: handleClick, currentTab, page, showCounter, context }))}
+      {tabs?.map(renderTab({ onClick: handleClick, currentTab, showCounter, ...rest }))}
     </BlockWrapper>
   );
 });
 
-const checkTab = (event: TabActivationEvent) => (_: Tab) =>
+const checkTab = (event: TabActivationEvent) => (_: TabData) =>
   _.type === 'link' && _.href === `#${event.label}`;

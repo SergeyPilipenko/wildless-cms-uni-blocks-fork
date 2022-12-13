@@ -1,14 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useCallback } from '@redneckz/uni-jsx/lib/hooks';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
-import type { ContentPageContext } from '../ContentPage/ContentPageContext';
 
 export interface HeaderSubMenuItemProps extends LinkProps {
-  context: ContentPageContext;
   className?: string;
   active?: boolean;
   bgColor?: BgColorVersion;
@@ -17,19 +14,7 @@ export interface HeaderSubMenuItemProps extends LinkProps {
 }
 
 export const HeaderSubMenuItem = JSX<HeaderSubMenuItemProps>(
-  ({
-    context,
-    className,
-    active,
-    bgColor,
-    observerOptions,
-    onVisibilityChange,
-    children,
-    ...linkProps
-  }) => {
-    const { handlerDecorator } = context;
-    const router = context.useRouter();
-
+  ({ className, active, bgColor, observerOptions, onVisibilityChange, children, ...linkProps }) => {
     const observerCallback = useCallback(
       (entries: IntersectionObserverEntry[]) => {
         if (!entries.length || !onVisibilityChange) {
@@ -47,12 +32,7 @@ export const HeaderSubMenuItem = JSX<HeaderSubMenuItemProps>(
 
     return (
       <span ref={ref}>
-        <HeaderItem
-          className={className}
-          active={active}
-          bgColor={bgColor}
-          {...useLink({ router, handlerDecorator }, linkProps)}
-        >
+        <HeaderItem className={className} active={active} bgColor={bgColor} {...linkProps}>
           {children}
         </HeaderItem>
       </span>

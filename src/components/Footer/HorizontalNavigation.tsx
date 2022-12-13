@@ -8,7 +8,7 @@ import { HorizontalNavigationLink } from './HorizontalNavigationLink';
 export interface HorizontalNavigationProps extends FooterLink, UniBlockProps, TitleProps {}
 
 export const HorizontalNavigation = JSX<HorizontalNavigationProps>(
-  ({ links, className = '', context }) => {
+  ({ context, className = '', links }) => {
     const router = context.useRouter();
     const { handlerDecorator } = context;
 

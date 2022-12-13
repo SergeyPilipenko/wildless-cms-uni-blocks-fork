@@ -1,19 +1,18 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useTariffsInnerTableData } from '../../hooks/useTariffsInnerTableData';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { InnerTableBody } from './InnerTableBody';
 import { TableInnerButton } from './InnerTableButton';
 import { InnerTableHeader } from './InnerTableHeader';
 import type { TableFetchData, TariffsTableInnerContent } from './InnerTableProps';
 
-export interface InnerTableProps extends TariffsTableInnerContent, UniBlockProps {
+export interface InnerTableProps extends TariffsTableInnerContent {
   onClick: () => void;
 }
 
 const EMPTY_DATA = 'Данных нет';
 
-export const InnerTable = JSX<InnerTableProps>(({ context, dataUrl, pdfUrl, onClick }) => {
+export const InnerTable = JSX<InnerTableProps>(({ dataUrl, pdfUrl, onClick }) => {
   const { tableData }: TableFetchData = useTariffsInnerTableData(dataUrl);
 
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -29,13 +28,13 @@ export const InnerTable = JSX<InnerTableProps>(({ context, dataUrl, pdfUrl, onCl
         setActiveTabIndex={setActiveTabIndex}
         linkToPDF={pdfUrl} //TODO: need link to service
       />
-      <InnerTableBody context={context} activeTabIndex={activeTabIndex} items={items} />
-      <TableInnerButton context={context} onClick={onClick} isOpen />
+      <InnerTableBody activeTabIndex={activeTabIndex} items={items} />
+      <TableInnerButton onClick={onClick} isOpen />
     </div>
   ) : (
     <div className="my-5 text-h6 text-center">
       <p>{EMPTY_DATA}</p>
-      <TableInnerButton context={context} onClick={onClick} isOpen />
+      <TableInnerButton onClick={onClick} isOpen />
     </div>
   );
 });

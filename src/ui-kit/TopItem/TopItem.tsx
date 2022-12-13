@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { LinkProps } from '../../model/LinkProps';
 
@@ -19,29 +20,23 @@ const TEXT_CLASSES = 'font-sans text-s-light';
 const LINK_CLASSES = 'inline-block border border-solid bg-transparent text-center no-underline';
 
 export const TopItem = JSX<TopItemProps>(
-  ({
-    className = '',
-    text,
-    href,
-    target,
-    active,
-    flat,
-    onClick,
-    children,
-    ariaLabel,
-    bgColor = 'bg-white',
-  }) => (
-    <a
-      className={`${getLinkClasses(bgColor, active, flat)} ${className}`}
-      href={href}
-      target={target}
-      onClick={onClick}
-      rel="noopener noreferrer"
-      aria-label={ariaLabel}
-    >
-      <span className={getTextClasses(bgColor, active, flat)}>{text || children}</span>
-    </a>
-  ),
+  ({ className = '', active, flat, ariaLabel, bgColor = 'bg-white', children, ...rest }) => {
+    const link = useLink();
+    const { href, target, text, onClick } = link(rest);
+
+    return (
+      <a
+        className={`${getLinkClasses(bgColor, active, flat)} ${className}`}
+        href={href}
+        target={target}
+        onClick={onClick}
+        rel="noopener noreferrer"
+        aria-label={ariaLabel}
+      >
+        <span className={getTextClasses(bgColor, active, flat)}>{text || children}</span>
+      </a>
+    );
+  },
 );
 
 const getLinkClasses = (bgColor: BgColorVersion, active = false, flat = false) => {

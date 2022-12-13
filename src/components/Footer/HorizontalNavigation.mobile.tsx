@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useLink } from '../../hooks/useLink';
+import { useRouter } from '../../hooks/useRouter';
 import type { TitleProps } from '../../model/HeadlineType';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { FooterLink } from './FooterLink';
@@ -9,7 +10,7 @@ export interface HorizontalNavigationProps extends FooterLink, UniBlockProps, Ti
 
 export const HorizontalNavigation = JSX<HorizontalNavigationProps>(
   ({ title, links, className = '', context }) => {
-    const router = context.useRouter();
+    const router = useRouter();
     const { handlerDecorator } = context;
 
     return (

@@ -13,7 +13,7 @@ import { useFetchExchangeRateData } from './useFetchExchangeRateData';
 export interface ExchangeRateTileProps extends ExchangeRateTileContent, UniBlockProps {}
 
 export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
-  ({ className = '', context, title = 'Курсы обмена валют', button, ...rest }) => {
+  ({ className = '', title = 'Курсы обмена валют', button, ...rest }) => {
     const { exchangeRates } = useFetchExchangeRateData();
 
     const currencyRates = getCurrencyRates(exchangeRates?.exchangeRate?.currencies);
@@ -26,12 +26,10 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
 
     return (
       <BlockWrapper
-        context={context}
         className={`bg-white text-primary-text font-sans p-9 box-border min-h-[320px] ${className}`}
         {...rest}
       >
         <BaseTile
-          context={context}
           title={
             <Heading headingType="h4" title={title} className="whitespace-pre-wrap text-h4 mb-5" />
           }
@@ -46,7 +44,6 @@ export const ExchangeRateTile = JSX<ExchangeRateTileProps>(
             {currencyRates.length && currencyRatesBuy.length && currencyRatesSell.length ? (
               <ExchangeCurrencyCalculator
                 className="grow"
-                context={context}
                 currencyRatesBuy={currencyRatesBuy}
                 currencyRatesSell={currencyRatesSell}
                 button={button}

@@ -1,5 +1,3 @@
-import type { UniBlockProps } from '../../model/JSXBlock';
-
 /**
  * @title Контейнер
  */
@@ -13,7 +11,8 @@ export interface SwipeContainer {
 /**
  * @title Swipe-контроллер
  */
-export interface SwipeListControlProps extends SwipeContainer, UniBlockProps {
+export interface SwipeListControlProps extends SwipeContainer {
+  className?: string;
   /** @title Точки-индикаторы */
   showDots?: boolean;
   onSlideChange?: () => void;

@@ -6,9 +6,9 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import type { UniBlockProps } from '../model/JSXBlock';
 import { changeHashOnObserve } from '../utils/changeHashOnObserve';
 
-interface BlockWrapperProps extends UniBlockProps, Record<string, any> {
-  anchor?: string;
+interface BlockWrapperProps extends UniBlockProps {
   tag?: keyof HTMLElementTagNameMap;
+  role?: string;
 }
 
 const THRESHOLD_ACCURACY = 100; // Decimals number (100 is for two decimals number, 0.**)
@@ -21,7 +21,7 @@ const OBSERVER_OPTIONS = {
 };
 
 export const BlockWrapper = JSX<BlockWrapperProps>(
-  ({ anchor, className, children, tag = 'section', labels, role }) => {
+  ({ className, block: { anchor, labels }, tag = 'section', role, children }) => {
     const Tag: any = tag;
 
     const [isVisible, setVisible] = useState(true);

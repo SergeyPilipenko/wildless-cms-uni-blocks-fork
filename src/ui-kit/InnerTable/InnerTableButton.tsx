@@ -1,10 +1,9 @@
 import { JSX } from '@redneckz/uni-jsx';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import type { TariffsTableInnerEvent } from './InnerTableProps';
 
-export interface TableInnerButtonProps extends TariffsTableInnerEvent, UniBlockProps {
+export interface TableInnerButtonProps extends TariffsTableInnerEvent {
   onClick?: () => void;
   isOpen?: boolean;
 }

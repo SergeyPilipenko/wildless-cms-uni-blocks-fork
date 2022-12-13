@@ -10,11 +10,11 @@ import { getScrollPoints } from './utils/getScrollPoints';
 export const SwipeListControl = JSX<SwipeListControlProps>(
   ({
     className,
-    children,
     gap = DEFAULT_GAP,
     padding = DEFAULT_PADDING,
     showDots = true,
     onSlideChange,
+    children,
   }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [indexFraction, setIndexFraction] = useState(0);

@@ -1,17 +1,16 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useLink } from '../../hooks/useLink';
+import type { BlockVersion } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Button } from '../../ui-kit/Button/Button';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
 import { checkIsIconRenderable } from '../../utils/checkIsIconRenderable';
+import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import { joinList } from '../../utils/joinList';
 import { renderStepContent } from './renderStepContent';
-import { getIconWithVersion } from '../../utils/getIconWithVersion';
 import type { Step, StepsBlockContent } from './StepsBlockContent';
 import type { StyleType } from './StepsBlockStyleMaps';
-import type { BlockVersion } from '../../model/BlockVersion';
 import { STEPS_BLOCK_STYLE_MAPS } from './StepsBlockStyleMaps';
 
 export interface StepsBlockProps extends StepsBlockContent, UniBlockProps {}
@@ -21,18 +20,7 @@ const getLineOpacity = (showLines: boolean) => (showLines ? '' : 'opacity-0');
 const getPaddingX = (steps: number) => (steps < 5 ? 'px-[88px]' : 'px-[55px]');
 
 export const StepsBlock = JSX<StepsBlockProps>(
-  ({
-    className = '',
-    showLines = true,
-    steps = [],
-    button,
-    version = 'primary',
-    context,
-    ...rest
-  }) => {
-    const router = context.useRouter();
-    const { handlerDecorator } = context;
-
+  ({ className = '', showLines = true, steps = [], button, version = 'primary', ...rest }) => {
     const { title } = rest;
     const styleMap = STEPS_BLOCK_STYLE_MAPS[version];
     const shortGaps = steps.length > 3;
@@ -50,7 +38,6 @@ export const StepsBlock = JSX<StepsBlockProps>(
           styleMap.title,
           className,
         ].join(' ')}
-        context={context}
         {...rest}
       >
         {title ? (
@@ -65,23 +52,13 @@ export const StepsBlock = JSX<StepsBlockProps>(
             </div>
             <div className={`flex justify-between mt-4 ${shortGaps ? 'gap-x-3' : 'gap-x-[101px]'}`}>
               {steps.map(
-                renderStepContent({
-                  styleMap,
-                  isMainButton: Boolean(button?.text),
-                  version,
-                  router,
-                  handlerDecorator,
-                }),
+                renderStepContent({ styleMap, isMainButton: Boolean(button?.text), version }),
               )}
             </div>
           </div>
         ) : null}
         {button?.text ? (
-          <Button
-            className="mt-8 min-w-[240px]"
-            version="primary"
-            {...useLink({ router, handlerDecorator }, button)}
-          />
+          <Button className="mt-8 min-w-[240px]" version="primary" {...button} />
         ) : null}
       </BlockWrapper>
     );

@@ -1,93 +1,48 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useLink } from '../../hooks/useLink';
 import { ButtonInner } from './ButtonInner';
 import type { ButtonWithIconProps } from './ButtonProps';
 import { getDisabledButtonClasses } from './getDisabledButtonClasses';
 import { getRegularButtonClasses } from './getRegularButtonClasses';
 
-export const Button = JSX<ButtonWithIconProps>(
-  ({
-    aboveText,
-    appendLeft,
-    appendRight,
-    ariaLabel,
-    children,
-    className,
-    disabled,
-    href,
-    onClick,
-    rel,
-    rounded,
-    target,
-    text,
-    version,
-  }) => {
-    const buttonInner = children ?? (
-      <ButtonInner
-        aboveText={aboveText}
-        appendLeft={appendLeft}
-        appendRight={appendRight}
-        rounded={rounded}
-        text={text}
-        version={version}
-      />
-    );
+export const Button = JSX<ButtonWithIconProps>(({ disabled, children, ...rest }) => {
+  const link = useLink();
+  const adjustedProps = link(rest);
+  const buttonInner = children ?? <ButtonInner {...adjustedProps} />;
 
-    return disabled ? (
-      <DisabledButton
-        ariaLabel={ariaLabel}
-        className={className}
-        rounded={rounded}
-        version={version}
-      >
-        {buttonInner}
-      </DisabledButton>
-    ) : (
-      <RegularButton
-        ariaLabel={ariaLabel}
-        className={className}
-        href={href}
-        onClick={onClick}
-        rel={rel}
-        rounded={rounded}
-        target={target}
-        version={version}
-      >
-        {buttonInner}
-      </RegularButton>
-    );
-  },
-);
+  return disabled ? (
+    <DisabledButton {...adjustedProps}>{buttonInner}</DisabledButton>
+  ) : (
+    <RegularButton {...adjustedProps}>{buttonInner}</RegularButton>
+  );
+});
 
 const RegularButton = JSX<ButtonWithIconProps>(
-  ({ className = '', ariaLabel, version, rounded, href, target, children, onClick, rel }) => {
-    return (
-      <a
-        className={getRegularButtonClasses({ className, version, rounded })}
-        href={href}
-        target={target}
-        onClick={onClick}
-        aria-label={ariaLabel}
-        role={href ? 'link' : 'button'}
-        rel={rel}
-      >
-        {children}
-      </a>
-    );
-  },
+  ({ className = '', href, rel, target, ariaLabel, version, rounded, onClick, children }) => (
+    <a
+      className={getRegularButtonClasses({ className, version, rounded })}
+      href={href}
+      rel={rel}
+      target={target}
+      aria-label={ariaLabel}
+      role={href ? 'link' : 'button'}
+      onClick={onClick}
+    >
+      {children}
+    </a>
+  ),
 );
 
 const DisabledButton = JSX<ButtonWithIconProps>(
-  ({ className, children, ariaLabel, version, rounded }) => {
-    return (
-      <div
-        role="button"
-        aria-disabled="true"
-        aria-label={ariaLabel}
-        tabIndex={-1}
-        className={getDisabledButtonClasses({ className, rounded, version })}
-      >
-        {children}
-      </div>
-    );
-  },
+  ({ className, ariaLabel, version, rounded, children }) => (
+    <div
+      role="button"
+      aria-disabled="true"
+      aria-label={ariaLabel}
+      tabIndex={-1}
+      className={getDisabledButtonClasses({ className, rounded, version })}
+    >
+      {children}
+    </div>
+  ),
 );

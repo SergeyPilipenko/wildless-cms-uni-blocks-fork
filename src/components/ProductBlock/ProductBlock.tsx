@@ -1,5 +1,4 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useLink } from '../../hooks/useLink';
 import type { BlockVersion } from '../../model/BlockVersion';
 import { VersionStyleMap } from '../../model/BlockVersion';
 import type { UniBlockProps } from '../../model/JSXBlock';
@@ -18,30 +17,16 @@ const breadcrumbsStyleMap: Record<BlockVersion, string> = {
 };
 
 export const ProductBlock = JSX<ProductBlockProps>((props) => {
-  const {
-    context,
-    className = '',
-    breadcrumbs,
-    backwardButton,
-    version = 'primary',
-    ...otherProps
-  } = props;
-  const router = context.useRouter();
-  const { handlerDecorator } = context;
+  const { className = '', breadcrumbs, backwardButton, version = 'primary', ...rest } = props;
   const buttonVersion = version === 'primary' ? version : 'white';
 
   return (
     <BlockWrapper
-      context={context}
       className={`font-sans overflow-hidden p-[50px] flex flex-col box-border min-h-[454px] ${VersionStyleMap[version]} ${className}`}
-      {...otherProps}
+      {...rest}
     >
       {backwardButton?.text
-        ? renderBackwardButton(
-            useLink({ router, handlerDecorator }, backwardButton),
-            buttonVersion,
-            'mb-10 -mt-2.5',
-          )
+        ? renderBackwardButton(backwardButton, buttonVersion, 'mb-10 -mt-2.5')
         : null}
       {breadcrumbs?.length ? (
         <div className="text-xs-light mb-6">
@@ -49,16 +34,14 @@ export const ProductBlock = JSX<ProductBlockProps>((props) => {
             breadcrumbs.map((breadcrumb, i) => (
               <Breadcrumb
                 key={String(i)}
-                {...useLink(
-                  { router, handlerDecorator },
-                  { className: breadcrumbsStyleMap[version], ...breadcrumb },
-                )}
+                className={breadcrumbsStyleMap[version]}
+                {...breadcrumb}
               />
             )),
           )}
         </div>
       ) : null}
-      <ProductBlockInner context={context} version={version} {...otherProps} />
+      <ProductBlockInner version={version} {...rest} />
     </BlockWrapper>
   );
 });

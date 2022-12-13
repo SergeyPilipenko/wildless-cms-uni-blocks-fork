@@ -1,12 +1,11 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useState } from '@redneckz/uni-jsx/lib/hooks';
-import type { UniBlockProps } from '../../model/JSXBlock';
 import { renderArrows } from '../Button/renderArrows';
 import type { RowsData } from './InnerTableProps';
 
 const COLUMN_WIDTH = 140;
 
-export interface InnerTableBodyItemProps extends UniBlockProps {
+export interface InnerTableBodyItemProps {
   rows?: RowsData[][];
 }
 

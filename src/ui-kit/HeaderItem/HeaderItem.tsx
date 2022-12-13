@@ -1,4 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
+import { useLink } from '../../hooks/useLink';
 import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { TopItemProps } from '../TopItem/TopItem';
 
@@ -6,28 +7,23 @@ const TEXT_CLASSES = 'font-sans text-l-light';
 const BORDER_CLASSES = 'absolute left-0 -bottom-3 w-full h-[2px]';
 
 export const HeaderItem = JSX<TopItemProps>(
-  ({
-    className = '',
-    text,
-    href,
-    target,
-    active,
-    bgColor = 'bg-white',
-    dataItemName,
-    children,
-    onClick,
-  }) => (
-    <a
-      className={`relative inline-block bg-transparent text-center no-underline ${className}`}
-      href={href}
-      target={target}
-      data-item-name={dataItemName}
-      onClick={onClick}
-    >
-      <span className={getTextClasses(bgColor, active)}>{text || children}</span>
-      {active ? <div className={getBorderClasses(bgColor, active)} /> : null}
-    </a>
-  ),
+  ({ className = '', active, bgColor = 'bg-white', dataItemName, children, ...rest }) => {
+    const link = useLink();
+    const { href, target, text, onClick } = link(rest);
+
+    return (
+      <a
+        className={`relative inline-block bg-transparent text-center no-underline ${className}`}
+        href={href}
+        target={target}
+        data-item-name={dataItemName}
+        onClick={onClick}
+      >
+        <span className={getTextClasses(bgColor, active)}>{text || children}</span>
+        {active ? <div className={getBorderClasses(bgColor, active)} /> : null}
+      </a>
+    );
+  },
 );
 
 const getTextClasses = (bgColor: BgColorVersion, active = false) => {
