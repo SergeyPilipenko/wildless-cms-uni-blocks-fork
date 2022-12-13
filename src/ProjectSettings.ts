@@ -5,6 +5,7 @@ export interface ProjectSettings {
   FORCED_DRAFT_FLOW: boolean;
   ASSIST_PROJECT_ID?: string;
   SITEMAP?: string;
+  FOOTER?: string;
   CDN?: string; // Should ends with "/"
   YANDEX_MAP_API_KEY?: string;
   YANDEX_METRIKA_ID?: string;
@@ -37,6 +38,9 @@ export const projectSettings = new (class implements ProjectSettings {
   }
   get SITEMAP() {
     return this._.SITEMAP;
+  }
+  get FOOTER() {
+    return this._.FOOTER;
   }
   get CDN() {
     return this._.CDN;

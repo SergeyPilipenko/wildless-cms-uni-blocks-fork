@@ -3,9 +3,11 @@ import { useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useLink } from '../../hooks/useLink';
 import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
+import { projectSettings } from '../../ProjectSettings';
 import { findActiveSubItem } from '../../services/sitemap/findActiveSubItem';
 import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
-import { useSitemap } from '../../services/sitemap/useSitemap';
+import type { SitemapDataProps } from '../../services/sitemap/SitemapProps';
+import { useSWRResource } from '../../services/sitemap/useSWRResource';
 import { HeaderItem } from '../../ui-kit/HeaderItem/HeaderItem';
 import type { TopItemProps } from '../../ui-kit/TopItem/TopItem';
 import { AccordionItemsList } from '../Accordion/AccordionItemsList';
@@ -23,7 +25,10 @@ export const Header = JSX<HeaderProps>(
     const router = context.useRouter();
 
     const fallback: Fallback | undefined = page?.fallback;
-    const { topItems, dispositions } = useSitemap(fallback);
+    const { topItems, dispositions } = useSWRResource<SitemapDataProps>(
+      projectSettings.SITEMAP || 'sitemap',
+      fallback,
+    );
 
     const activeTopItem = topItems?.find(isTopItemActive(router));
     const subItems = activeTopItem?.items;

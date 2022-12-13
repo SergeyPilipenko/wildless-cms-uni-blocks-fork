@@ -1,0 +1,152 @@
+{
+  "_schemaPath": "content/wcms-resources/schemas/Подвал.schema.json",
+  "topItems": [
+    {
+      "href": "https://rshb.ru/",
+      "text": "О банке",
+      "target": "_blank",
+      "items": [
+        {
+          "href": "https://rshb.ru/",
+          "text": "О банке"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Новости"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Офисы и отделения"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Карьера в банке"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Пресс-центр"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Кредитным организациям"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Закупки"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Непрофильные/Профильные нецелевые активы"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Инсайдерам"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Противодействие коррупции"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Меры безопасности"
+        },
+        {
+          "href": "https://rshb.ru/",
+          "text": "Залоговое имущество"
+        }
+      ]
+    }
+  ],
+  "relatedEnterprises": [
+    {
+      "text": "РСХБ Страхование",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "РСХБ Страхование жизни",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "РСХБ Управление активами",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "РСХБ Лизинг",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "РСХБ Факторинг",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "tel",
+      "description": "Для звонков из-за границы",
+      "text": "+7 (495) 787-77-87"
+    },
+    {
+      "type": "tel",
+      "description": "По России",
+      "text": "8 (800) 100-01-00"
+    },
+    {
+      "type": "tel",
+      "text": "7787",
+      "description": "Абонентам МТС, Мегафон, Билайн и Tele2"
+    }
+  ],
+  "mobileApps": [
+    {
+      "href": "https://apps.apple.com/ru/genre/ios/id36"
+    },
+    {
+      "href": "https://play.google.com/store/games"
+    }
+  ],
+  "socialMedia": [
+    {
+      "href": "https://web.telegram.org/k/"
+    },
+    {
+      "href": "https://vk.com/"
+    },
+    {
+      "href": "https://ok.ru/"
+    }
+  ],
+  "documents": [
+    {
+      "text": "Информация о процентных ставках по договорам банковского вклада с физическими лицами",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "Раскрытие информации профессиональным участником рынка ценных бумаг",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "Раскрытие информации",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "Удостоверяющий центр",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    },
+    {
+      "text": "Финансовая культура",
+      "href": "https://rshb.ru/",
+      "target": "_blank"
+    }
+  ],
+  "horizontalNavigationTitle": "Компании Россельхозбанка",
+  "_defaultFolder": "content/wcms-resources/"
+}

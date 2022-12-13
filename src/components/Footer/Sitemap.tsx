@@ -3,9 +3,10 @@ import { useLink } from '../../hooks/useLink';
 import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { LinkProps } from '../../model/LinkProps';
+import { projectSettings } from '../../ProjectSettings';
 import { mergeTopItems } from '../../services/sitemap/mergeTopItems';
-import type { TopMenuItem } from '../../services/sitemap/SitemapProps';
-import { useSitemap } from '../../services/sitemap/useSitemap';
+import type { SitemapDataProps, TopMenuItem } from '../../services/sitemap/SitemapProps';
+import { useSWRResource } from '../../services/sitemap/useSWRResource';
 import type { HandlerDecorator, Router } from '../ContentPage/ContentPageContext';
 
 export interface SitemapProps extends UniBlockProps {
@@ -21,7 +22,7 @@ interface RenderColumnProps {
 }
 
 export const Sitemap = JSX<SitemapProps>(({ className = '', items, fallback, context }) => {
-  const sitemap = useSitemap(fallback);
+  const sitemap = useSWRResource<SitemapDataProps>(projectSettings.SITEMAP || 'sitemap', fallback);
   const mergedItems = mergeTopItems(sitemap.topItems, items);
   const linkParams = {
     router: context.useRouter(),

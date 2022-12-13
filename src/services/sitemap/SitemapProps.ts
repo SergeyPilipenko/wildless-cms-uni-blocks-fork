@@ -19,7 +19,7 @@ export interface DispositionItem extends LinkProps {
   icon?: Picture;
 }
 
-export interface SitemapProps {
+export interface SitemapDataProps {
   /** @title Основное меню */
   topItems?: TopMenuItem[];
   /** @title Дополнительное меню */

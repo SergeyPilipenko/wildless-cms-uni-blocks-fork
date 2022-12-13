@@ -4,8 +4,10 @@ import type { BgColorVersion } from '../../model/BgColorVersion';
 import type { Fallback } from '../../model/Fallback';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import type { TopMenuItem } from '../../model/SitemapProps';
+import { projectSettings } from '../../ProjectSettings';
 import { isTopItemActive } from '../../services/sitemap/isTopItemActive';
-import { useSitemap } from '../../services/sitemap/useSitemap';
+import type { SitemapDataProps } from '../../services/sitemap/SitemapProps';
+import { useSWRResource } from '../../services/sitemap/useSWRResource';
 import { BlockWrapper } from '../../ui-kit/BlockWrapper';
 import { Logo } from '../../ui-kit/Logo/Logo';
 import { TopItem } from '../../ui-kit/TopItem/TopItem';
@@ -33,10 +35,14 @@ export const Header = JSX<HeaderProps>(
     ...rest
   }) => {
     const router = context.useRouter();
-    const fallback: Fallback | undefined = page?.fallback;
-    const { handlerDecorator } = context;
 
-    const { topItems } = useSitemap(fallback);
+    const fallback: Fallback | undefined = page?.fallback;
+    const { topItems } = useSWRResource<SitemapDataProps>(
+      projectSettings.SITEMAP || 'sitemap',
+      fallback,
+    );
+
+    const { handlerDecorator } = context;
 
     const activeTopItem = showSubMenu ? getActiveItem(topItems, router) : null;
 

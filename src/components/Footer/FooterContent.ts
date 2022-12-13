@@ -1,7 +1,6 @@
 import type { DescriptionProps } from '../../model/HeadlineType';
-import type { LinkCommonProps, LinkProps } from '../../model/LinkProps';
+import type { LinkProps } from '../../model/LinkProps';
 import type { IconProps } from '../../model/Picture';
-import type { SitemapProps } from '../../services/sitemap/SitemapProps';
 
 /**
  * @title Тип контакта
@@ -28,21 +27,7 @@ export type SubMenuItem = LinkProps & IconProps;
 
 /**
  * @title Подвал
- * @required ["topItems"]
+ * @hidden
  */
-export interface FooterContent extends SitemapProps {
-  /** @title Обязательные документы */
-  documents?: LinkProps[];
-  /** @title Другие предприятия */
-  relatedEnterprises?: LinkProps[];
-  /** @title Контакты */
-  contacts?: ContactInfo[];
-  /** @title Социальные сети */
-  socialMedia?: LinkCommonProps[];
-  /** @title Мобильные приложения */
-  mobileApps?: LinkCommonProps[];
-  /** @title Заголовок для меню */
-  horizontalNavigationTitle?: string; // TODO: для мобильной версии
-  /** @title Подменю */
-  subMenu?: SubMenuItem[]; // TODO: для мобильной версии
-}
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type FooterContent = {};
