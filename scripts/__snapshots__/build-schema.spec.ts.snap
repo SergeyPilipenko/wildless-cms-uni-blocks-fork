@@ -366,6 +366,61 @@ Object {
       ],
       "title": "Вид контента",
     },
+    "BusinessBlockContent": Object {
+      "properties": Object {
+        "cards": Object {
+          "items": Object {
+            "$ref": "#/definitions/BusinessCardProps",
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Карточки",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок блока",
+          "type": "string",
+        },
+      },
+      "title": "Бизнес блок",
+      "type": "object",
+    },
+    "BusinessCardItemProps": Object {
+      "properties": Object {
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+          "title": "Иконка",
+        },
+        "text": Object {
+          "title": "Текст",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "BusinessCardProps": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonWithIconProps",
+          "title": "Кнопка",
+        },
+        "cardItems": Object {
+          "items": Object {
+            "$ref": "#/definitions/BusinessCardItemProps",
+          },
+          "title": "Список",
+          "type": "array",
+        },
+        "image": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "title": Object {
+          "title": "Заголовок карточки",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
     "ButtonContent": Object {
       "properties": Object {
         "buttons": Object {

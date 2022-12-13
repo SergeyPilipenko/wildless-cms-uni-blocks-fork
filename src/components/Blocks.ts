@@ -4,6 +4,7 @@ import { AccordionItem } from './AccordionItem/AccordionItem';
 import { BenefitsBlock } from './BenefitsBlock/BenefitsBlock';
 import { Bonus } from './Bonus/Bonus';
 import { BonusBenefitsBlock } from './BonusBenefitsBlock/BonusBenefitsBlock';
+import { BusinessBlock } from './BusinessBlock/BusinessBlock';
 import { Calculator } from './Calculator/Calculator';
 import { CardTransfer } from './CardTransfer/CardTransfer';
 import { Catalog } from './Catalog/Catalog';
@@ -45,6 +46,7 @@ export const Blocks: BlocksRegistry = {
   Accordion,
   AccordionItem,
   BenefitsBlock,
+  BusinessBlock,
   Bonus,
   BonusBenefitsBlock,
   CardTransfer,

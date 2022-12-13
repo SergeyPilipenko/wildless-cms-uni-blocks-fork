@@ -1,0 +1,65 @@
+{
+  "title": "Заголовок блока",
+  "cards": [
+    {
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 319,
+          "height": 230
+        }
+      },
+      "title": "Заголовок карточки",
+      "cardItems": [
+        {
+          "icon": { "icon": "RoundRubleIcon" },
+          "text": "Пункт 1"
+        },
+        {
+          "icon": { "icon": "EmptyWalletIcon" },
+          "text": "Пункт 2"
+        },
+        {
+          "icon": { "icon": "PercentageSquareIcon" },
+          "text": "Пункт 3"
+        }
+      ],
+      "button": {
+        "href": "#",
+        "text": "Подробнее",
+        "target": "_blank",
+        "version": "secondary"
+      }
+    },
+    {
+      "image": {
+        "format": "webp",
+        "size": {
+          "width": 304,
+          "height": 237
+        }
+      },
+      "title": "Заголовок карточки",
+      "cardItems": [
+        {
+          "icon": { "icon": "RoundRubleIcon" },
+          "text": "Пункт 1"
+        },
+        {
+          "icon": { "icon": "EmptyWalletIcon" },
+          "text": "Пункт 2"
+        },
+        {
+          "icon": { "icon": "PercentageSquareIcon" },
+          "text": "Пункт 3"
+        }
+      ],
+      "button": {
+        "href": "#",
+        "text": "Подробнее",
+        "target": "_blank",
+        "version": "secondary"
+      }
+    }
+  ]
+}

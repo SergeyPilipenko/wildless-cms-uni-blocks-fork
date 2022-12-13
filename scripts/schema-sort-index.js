@@ -42,6 +42,7 @@ export default [
   'socialMedia',
   'steps',
   'cards',
+  'cardItems',
   'cells',
   'investmentZeroColumn',
   'investmentColumns',

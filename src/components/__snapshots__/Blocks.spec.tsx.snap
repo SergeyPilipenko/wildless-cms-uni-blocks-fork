@@ -71,6 +71,19 @@ exports[`Blocks BonusBenefitsBlock should render block "BonusBenefitsBlock" with
 </section>
 `;
 
+exports[`Blocks BusinessBlock should render block "BusinessBlock" without content 1`] = `
+<section
+  class="font-sans bg-white p-[50px] pb-9 "
+>
+  <h3
+    class="font-sans m-0 text-h3 text-center mb-8"
+  />
+  <div
+    class="flex gap-5"
+  />
+</section>
+`;
+
 exports[`Blocks Calculator should render block "Calculator" without content 1`] = `
 <section
   class="box-border overflow-hidden relative font-sans w-100 text-primary-text bg-white "
