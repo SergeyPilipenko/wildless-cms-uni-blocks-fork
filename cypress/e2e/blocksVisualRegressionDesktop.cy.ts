@@ -26,6 +26,7 @@ describe('Desktop. Регресс отображения блоков', {}, () =
             }
             case 'Footer': {
               blockFixture.firstLevelMenuIsLoaded();
+              blockFixture.getBlock().find('svg').should('have.length', '6');
               blockFixture.getBlock().compareSnapshot(screenshotName);
               break;
             }

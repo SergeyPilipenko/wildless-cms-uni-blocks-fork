@@ -1,10 +1,10 @@
-import { BlockWrapper } from '../../ui-kit/BlockWrapper';
-import { CarouselContainer } from './CarouselContainer';
-import { renderArrows } from '../../ui-kit/Button/renderArrows';
 import { JSX } from '@redneckz/uni-jsx';
 import { useCarouselControl } from '../../hooks/useCarousel';
-import type { CarouselContent } from './CarouselContent';
 import type { JSXBlock, UniBlockProps } from '../../model/JSXBlock';
+import { BlockWrapper } from '../../ui-kit/BlockWrapper';
+import { renderArrows } from '../../ui-kit/Button/renderArrows';
+import { CarouselContainer } from './CarouselContainer';
+import type { CarouselContent } from './CarouselContent';
 
 export interface CarouselProps extends CarouselContent, UniBlockProps {}
 
@@ -67,4 +67,4 @@ export const Carousel: JSXBlock<CarouselProps> = JSX<CarouselProps>(
   },
 );
 
-Carousel.childrenTypes = ['CarouselCard'];
+Carousel.childrenTypes = ['CarouselCard', 'CarouselTariffsCard'];

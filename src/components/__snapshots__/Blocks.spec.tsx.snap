@@ -180,6 +180,12 @@ exports[`Blocks CarouselCard should render block "CarouselCard" without content 
 </section>
 `;
 
+exports[`Blocks CarouselTariffsCard should render block "CarouselTariffsCard" without content 1`] = `
+<section
+  class="font-sans bg-white p-[50px] p-8 border border-main-stroke relative w-[322px] min-w-[322px] -ml-[1px] mt-[70px] pt-9 "
+/>
+`;
+
 exports[`Blocks Catalog should render block "Catalog" without content 1`] = `
 <section
   class="bg-white relative font-sans p-[50px] overflow-hidden text-center "
@@ -418,7 +424,7 @@ exports[`Blocks Footer should render block "Footer" without content 1`] = `
           target="_blank"
         >
           <div
-            class="group flex items-center justify-center gap-2 py-4 px-9 "
+            class="group flex items-center justify-center gap-2 py-4 px-4 "
           >
             <div>
               <div
@@ -1302,7 +1308,7 @@ exports[`Blocks SafeDepositRental should render block "SafeDepositRental" withou
             role="button"
           >
             <div
-              class="group flex items-center justify-center gap-2 py-4 px-9 "
+              class="group flex items-center justify-center gap-2 py-4 px-4 "
             >
               <div>
                 <div

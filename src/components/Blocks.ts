@@ -7,6 +7,9 @@ import { BonusBenefitsBlock } from './BonusBenefitsBlock/BonusBenefitsBlock';
 import { BusinessBlock } from './BusinessBlock/BusinessBlock';
 import { Calculator } from './Calculator/Calculator';
 import { CardTransfer } from './CardTransfer/CardTransfer';
+import { Carousel } from './Carousel/Carousel';
+import { CarouselCard } from './CarouselCard/CarouselCard';
+import { CarouselTariffsCard } from './CarouselTariffsCard/CarouselTariffsCard';
 import { Catalog } from './Catalog/Catalog';
 import { ComparisonTable } from './ComparisonTable/ComparisonTable';
 import { ContactsBlock } from './ContactsBlock/ContactsBlock';
@@ -42,8 +45,6 @@ import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
 import { VerticalLayout } from './VerticalLayout/VerticalLayout';
-import { CarouselCard } from './CarouselCard/CarouselCard';
-import { Carousel } from './Carousel/Carousel';
 
 export const Blocks: BlocksRegistry = {
   Accordion,
@@ -53,10 +54,13 @@ export const Blocks: BlocksRegistry = {
   Bonus,
   BonusBenefitsBlock,
   CardTransfer,
-  ComparisonTable,
   Calculator,
+  Carousel,
+  CarouselCard,
+  CarouselTariffsCard,
   Catalog,
   ContactsBlock,
+  ComparisonTable,
   ErrorBlock,
   ExchangeRateTile,
   Footer,
@@ -89,6 +93,4 @@ export const Blocks: BlocksRegistry = {
   TextBlock,
   Tile,
   VerticalLayout,
-  CarouselCard,
-  Carousel,
 };

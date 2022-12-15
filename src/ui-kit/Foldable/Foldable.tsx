@@ -7,7 +7,7 @@ export interface FoldableProps {
   unfoldedByDefault?: boolean;
   isFoldButtonOnTop?: boolean;
   renderFoldableSection: (props: FoldablePartProps) => VNode;
-  renderFoldButton?: (props: FoldablePartProps) => VNode;
+  renderFoldButton?: ((props: FoldablePartProps) => VNode) | null;
 }
 
 export const Foldable = JSX<FoldableProps>(
