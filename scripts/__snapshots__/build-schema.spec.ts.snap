@@ -1485,16 +1485,6 @@ Object {
       "type": "object",
     },
     "HeaderContent": Object {
-      "properties": Object {
-        "defaultLocation": Object {
-          "default": "Москва",
-          "title": "Город по-умолчанию",
-          "type": "string",
-        },
-        "logo": Object {
-          "$ref": "#/definitions/Logo",
-        },
-      },
       "required": Array [
         "defaultLocation",
         "topItems",

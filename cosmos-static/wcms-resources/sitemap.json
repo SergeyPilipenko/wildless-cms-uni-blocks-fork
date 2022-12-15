@@ -134,5 +134,11 @@
   ],
   "id": "6XGlupwIMfAfAca1Zm1X0",
   "title": "Сайт РСХБ",
-  "slug": "sitemap"
+  "slug": "sitemap",
+  "defaultLocation": "Москва",
+  "logo": {
+    "image": {
+      "icon": "LogoIcon"
+    }
+  }
 }

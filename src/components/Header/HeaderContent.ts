@@ -31,12 +31,6 @@ export interface Logo {
  * @required ["defaultLocation", "topItems"]
  */
 export interface HeaderContent {
-  logo?: Logo;
-  /**
-   * @title Город по-умолчанию
-   * @default Москва
-   */
-  defaultLocation?: string;
   /** @hidden */
   showSubMenu?: boolean;
   /** @hidden */

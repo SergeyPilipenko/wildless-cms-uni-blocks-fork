@@ -51,7 +51,10 @@ export const Logo = JSX<Partial<LogoProps>>(
           <Img image={logo.image} className={SVG_COLOR[bgColor]} width="40" height="45" asSVG />
         ) : (
           <Img
-            image={{ icon: 'LogoIcon', iconVersion: ICON_VERSION_MAP[bgColor] }}
+            image={{
+              icon: logo?.image?.icon || 'LogoIcon',
+              iconVersion: ICON_VERSION_MAP[bgColor],
+            }}
             className={`${SVG_COLOR[bgColor]} w-10`}
             width="40"
             height="45"

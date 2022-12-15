@@ -24,4 +24,9 @@ export interface SitemapDataProps {
   topItems?: TopMenuItem[];
   /** @title Дополнительное меню */
   dispositions?: DispositionItem[];
+  logo?: {
+    image?: Picture;
+    title?: string;
+  };
+  defaultLocation?: string;
 }

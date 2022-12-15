@@ -22,17 +22,10 @@ const BORDER_COLORS: Record<BgColorVersion, string> = {
 export interface HeaderProps extends HeaderContent, UniBlockProps {}
 
 export const Header = JSX<HeaderProps>(
-  ({
-    bgColor = 'bg-white',
-    className = '',
-    defaultLocation = 'Москва',
-    logo,
-    showSubMenu = true,
-    ...rest
-  }) => {
+  ({ bgColor = 'bg-white', className = '', showSubMenu = true, ...rest }) => {
     const router = useRouter();
 
-    const { topItems } = useSWRResource<SitemapDataProps>(
+    const { topItems, logo, defaultLocation } = useSWRResource<SitemapDataProps>(
       projectSettings.SITEMAP || 'sitemap',
       rest.page?.fallback,
     );

@@ -29,7 +29,7 @@ const LINKS_ICON_VERSION_MAP: Record<BgColorVersion, IconVersion> = {
 };
 
 export const HeaderSecondaryMenu = JSX<HeaderSecondaryMenuProps>(
-  ({ className, defaultLocation = '', bgColor = 'bg-white' }) => {
+  ({ className, defaultLocation = 'Москва', bgColor = 'bg-white' }) => {
     const [city, getCity] = useGeolocation(defaultLocation);
 
     return (
