@@ -1,7 +1,10 @@
-import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
-import type { HeadlineCommonProps } from '../../model/HeadlineType';
 import type { CarouselCardVersion } from '../../model/CarouselCardVersion';
+import type { HeadlineCommonProps } from '../../model/HeadlineType';
+import type { ButtonWithIconProps } from '../../ui-kit/Button/ButtonProps';
 
+/**
+ * @title Карточка какусели
+ */
 export interface CarouselCardContent extends HeadlineCommonProps {
   /**
    * @title Кнопка

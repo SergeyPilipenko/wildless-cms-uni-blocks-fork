@@ -31,7 +31,7 @@ const getButtonStyle = (props: ButtonInnerProps) => {
     return '';
   }
 
-  const withTextStyle = `gap-2 ${aboveText ? 'py-2.5 px-7' : 'py-4 px-9'}`;
+  const withTextStyle = `gap-2 ${aboveText ? 'py-2.5 px-7' : 'py-4 px-4'}`;
 
   return [
     'group flex items-center justify-center',

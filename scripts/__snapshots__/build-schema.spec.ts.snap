@@ -716,6 +716,7 @@ Object {
           "$ref": "#/definitions/CarouselCardVersion",
         },
       },
+      "title": "Карточка какусели",
       "type": "object",
     },
     "CarouselCardVersion": Object {
@@ -742,6 +743,34 @@ Object {
         },
       },
       "title": "Карусель",
+      "type": "object",
+    },
+    "CarouselTariffsCardContent": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "title": "Кнопка",
+        },
+        "icon": Object {
+          "$ref": "#/definitions/Picture",
+        },
+        "isHighlighting": Object {
+          "title": "Выделить карточку",
+          "type": "boolean",
+        },
+        "rows": Object {
+          "items": Object {
+            "$ref": "#/definitions/HeadlineCommonProps",
+          },
+          "title": "Ячейка",
+          "type": "array",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+      },
+      "title": "Карточка тарифной карусели",
       "type": "object",
     },
     "CatalogCardType": Object {
@@ -1689,6 +1718,7 @@ Object {
         "GlobalIcon",
         "GpsIcon",
         "GridIcon",
+        "HeartIcon",
         "HuaweiIcon",
         "InterestGrowthIcon",
         "InterestIcon",
@@ -1787,6 +1817,7 @@ Object {
         "Глобус",
         "Gps",
         "Сетка (белая)",
+        "Сердце",
         "Лого «Huawei»",
         "Диаграмма роста",
         "Скидка",
