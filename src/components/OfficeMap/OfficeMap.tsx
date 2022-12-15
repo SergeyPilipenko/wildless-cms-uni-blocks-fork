@@ -2,14 +2,16 @@ import { JSX } from '@redneckz/uni-jsx';
 import type { UniBlockProps } from '../../model/JSXBlock';
 import { Icon } from '../../ui-kit/Icon/Icon';
 import { YandexMap } from '../../ui-kit/YandexMap/YandexMap';
-import { OFFICE_MAP } from './mockOfficeMap';
 import { nearbyOffices } from './nearbyOffices';
 import type { OfficeMapProps, WorkScheduleWeek } from './OfficeMapContent';
 import { renderCurrentDaySchedule, renderDay, renderNearbyOffice } from './renderFunctions';
 import { useOfficeMap } from './useOfficeMap';
 
 export const OfficeMap = JSX<UniBlockProps>(({ className = '' }) => {
-  const resultOfficeMap = useOfficeMap('063') || OFFICE_MAP;
+  // TODO: useOfficeMap endpoint had use /api/v1/branches. This endpoint now is`t correct/
+  // TODO: useOfficeMap has return MOCK OBJECT!
+  // TODO: Fix this when endpoint /api/v1/branches (or new endpoint) had returning right data
+  const resultOfficeMap = useOfficeMap('000');
   const { name, address, gpsLatitude, gpsLongitude, workSchedule } =
     resultOfficeMap as OfficeMapProps;
   const {
