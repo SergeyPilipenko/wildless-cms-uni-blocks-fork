@@ -1,0 +1,23 @@
+{
+  "content": {
+    "label": "Сворачивающаяся секция 1",
+    "isExpanded": true,
+    "isFoldButtonOnTop": true
+  },
+  "blocks": [
+    {
+      "type": "Bonus",
+      "content": {
+        "title": "Заголовок",
+        "description": "Описание",
+        "bonusItems": [
+          {
+            "title": "Плитка 1",
+            "description": "Описание плитки 1"
+          }
+        ]
+      },
+      "style": ["col-span-12"]
+    }
+  ]
+}

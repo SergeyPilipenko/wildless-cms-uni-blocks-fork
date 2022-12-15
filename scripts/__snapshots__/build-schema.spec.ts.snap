@@ -3261,6 +3261,27 @@ Object {
       "title": "Рекомендации",
       "type": "object",
     },
+    "RollupItemContent": Object {
+      "properties": Object {
+        "isExpanded": Object {
+          "title": "Отображать в раскрытом виде",
+          "type": "boolean",
+        },
+        "isFoldButtonOnTop": Object {
+          "title": "Кнопка сверху",
+          "type": "boolean",
+        },
+        "label": Object {
+          "title": "Название",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/BlockVersion",
+        },
+      },
+      "title": "Сворачивающаяся секция",
+      "type": "object",
+    },
     "RowHeader": Object {
       "properties": Object {
         "title": Object {

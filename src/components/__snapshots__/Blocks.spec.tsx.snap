@@ -742,7 +742,7 @@ exports[`Blocks OtherProductsItem should render block "OtherProductsItem" withou
       />
     </div>
     <button
-      class="border border-transparent bg-primary-main font-sans text-white cursor-pointer hover:bg-primary-hover focus:border-primary-text active:bg-primary-active outline-none flex justify-center w-full px-0 py-5 mb-[1px] "
+      class="border border-transparent bg-primary-main font-sans text-white cursor-pointer hover:bg-primary-hover focus:border-primary-text active:bg-primary-active outline-none flex justify-center w-full px-0 py-5 "
       data-theme=""
     >
       <span
@@ -952,6 +952,48 @@ exports[`Blocks Recommendation should render block "Recommendation" without cont
     class="absolute top-0 bottom-0 w-[84px] right-0 bg-opacity-to-white"
   />
 </section>
+`;
+
+exports[`Blocks RollupItem should render block "RollupItem" without content 1`] = `
+<div
+  class="border-b border-solid border-main-divider w-full "
+>
+  <div>
+    <button
+      class="border-none bg-transparent px-9 pt-5 pb-3.5 flex justify-between text-left w-full font-sans text-h6 group cursor-pointer"
+    >
+      <span
+        class="text-xl font-medium pr-2.5"
+      >
+        Развернуть
+      </span>
+      <svg
+        aria-hidden="true"
+        class="width: 24px  text-primary-main  "
+        height="24"
+        width="24"
+      >
+        <title>
+          Иконка PlusIcon
+        </title>
+        <desc>
+          Иконка PlusIcon
+        </desc>
+        <use
+          href="icons/PlusIcon.svg#icon"
+          xlink:href="icons/PlusIcon.svg#icon"
+        />
+      </svg>
+    </button>
+    <div
+      class="box-border"
+    >
+      <div
+        class="transition-max-h duration-300 overflow-hidden max-h-0 grid grid-cols-12 gap-1 border-box"
+      />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Blocks SafeDepositRental should render block "SafeDepositRental" without content 1`] = `
@@ -1355,6 +1397,6 @@ exports[`Blocks Tile should render block "Tile" without content 1`] = `
 
 exports[`Blocks VerticalLayout should render block "VerticalLayout" without content 1`] = `
 <section
-  class="flex flex-col  items-start bg-white "
+  class="flex flex-col  items-start  "
 />
 `;

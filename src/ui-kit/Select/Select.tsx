@@ -1,6 +1,7 @@
 import { JSX } from '@redneckz/uni-jsx';
 import { useCallback, useEffect, useState } from '@redneckz/uni-jsx/lib/hooks';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { LabelProps } from '../../model/HeadlineType';
 import { Icon } from '../Icon/Icon';
 
 export interface OptionProps {
@@ -8,15 +9,14 @@ export interface OptionProps {
   text: string;
 }
 
-export interface SelectProps {
+export type SelectProps = LabelProps & {
   className?: string;
-  label?: string;
   value?: OptionProps;
   onChange: (value: OptionProps) => void;
   options: OptionProps[];
   isBorder?: boolean;
   placeholder?: string;
-}
+};
 
 export const Select = JSX<SelectProps>(
   ({ className = '', isBorder = true, label, options = [], value, onChange, placeholder = '' }) => {

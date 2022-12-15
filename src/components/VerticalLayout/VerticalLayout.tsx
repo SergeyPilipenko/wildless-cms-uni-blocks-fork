@@ -30,7 +30,7 @@ const backgroundStyleMap: Record<BlockVersionWithTransparent, string> = {
 };
 
 export const VerticalLayout: JSXBlock<VerticalLayoutProps> = JSX<VerticalLayoutProps>(
-  ({ className = '', children, gap = '', align = 'left', version = 'primary', ...rest }) => (
+  ({ className = '', children, gap = '', align = 'left', version = 'transparent', ...rest }) => (
     <BlockWrapper
       className={[
         'flex flex-col',

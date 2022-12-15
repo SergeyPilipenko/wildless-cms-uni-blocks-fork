@@ -18,6 +18,7 @@ import { GracePeriod } from './GracePeriod/GracePeriod';
 import { Header } from './Header/Header';
 import { Headline } from './Headline/Headline';
 import { InsuranceAmountBlock } from './InsuranceAmountBlock/InsuranceAmountBlock';
+import { InvestmentGallery } from './InvestmentGallery/InvestmentGallery';
 import { InvestmentInfo } from './InvestmentInfo/InvestmentInfo';
 import { LinkDocs } from './LinkDocs/LinkDocs';
 import { MiniGallery } from './MiniGallery/MiniGallery';
@@ -33,6 +34,7 @@ import { ProductGallery } from './ProductGallery/ProductGallery';
 import { ProductTile } from './ProductTile/ProductTile';
 import { PromoTile } from './PromoTile/PromoTile';
 import { Recommendation } from './Recommendation/Recommendation';
+import { RollupItem } from './RollupItem/RollupItem';
 import { SafeDepositRental } from './SafeDepositRental/SafeDepositRental';
 import { StepsBlock } from './StepsBlock/StepsBlock';
 import { Tabs } from './Tabs/Tabs';
@@ -40,7 +42,6 @@ import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
 import { VerticalLayout } from './VerticalLayout/VerticalLayout';
-import { InvestmentGallery } from './InvestmentGallery/InvestmentGallery';
 
 export const Blocks: BlocksRegistry = {
   Accordion,
@@ -78,6 +79,7 @@ export const Blocks: BlocksRegistry = {
   OtherProducts,
   OtherProductsItem,
   Recommendation,
+  RollupItem,
   SafeDepositRental,
   StepsBlock,
   Tabs,

@@ -16,7 +16,7 @@ export const DefaultFoldButton = JSX<DefaultFoldButtonProps>(
   ({ className = '', label, icon, dataTheme = '', onClick }) => {
     const STATE_STYLE =
       'hover:bg-primary-hover focus:border-primary-text active:bg-primary-active outline-none';
-    const DIMENSIONS_STYLE = 'flex justify-center w-full px-0 py-5 mb-[1px]';
+    const DIMENSIONS_STYLE = 'flex justify-center w-full px-0 py-5';
 
     return (
       <button
