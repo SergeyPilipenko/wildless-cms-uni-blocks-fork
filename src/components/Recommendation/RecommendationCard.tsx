@@ -1,5 +1,6 @@
 import { JSX } from '@redneckz/uni-jsx';
 import type { BlockVersion } from '../../model/BlockVersion';
+import { renderButton } from '../../ui-kit/Button/ButtonSection';
 import { Description } from '../../ui-kit/Description/Description';
 import { Heading } from '../../ui-kit/Heading/Heading';
 import { Img } from '../../ui-kit/Img/Img';
@@ -14,7 +15,7 @@ export interface RecommendationCardProps extends RecommendationCardTypes {
 }
 
 export const RecommendationCard = JSX<RecommendationCardProps>(
-  ({ className = '', title, description, items, image, version, socialMedia }) => {
+  ({ className = '', title, description, items, image, version, socialMedia, button }) => {
     const tileTitle = title ? (
       <Heading headingType="h5" as="h3" className="mb-3.5 z-10" title={title} />
     ) : null;
@@ -39,6 +40,9 @@ export const RecommendationCard = JSX<RecommendationCardProps>(
             ) : null}
             {socialMedia ? (
               <SocialMedia className="pt-10 pb-0" media={socialMedia} version={version} />
+            ) : null}
+            {button?.text ? (
+              <div className="pt-2">{renderButton({ button, buttonClassName: 'mt-16' })}</div>
             ) : null}
           </div>
         </BaseTile>

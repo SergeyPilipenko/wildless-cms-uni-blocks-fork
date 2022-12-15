@@ -3240,6 +3240,13 @@ Object {
     },
     "RecommendationCardTypes": Object {
       "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonProps",
+          "default": Object {
+            "text": "",
+            "version": "secondary",
+          },
+        },
         "description": Object {
           "title": "Описание",
           "type": "string",

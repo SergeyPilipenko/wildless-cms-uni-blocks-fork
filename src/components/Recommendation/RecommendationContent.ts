@@ -2,6 +2,7 @@ import type { BlockVersion } from '../../model/BlockVersion';
 import type { HeadlineCommonProps, TitleProps } from '../../model/HeadlineType';
 import type { LinkCommonProps } from '../../model/LinkProps';
 import type { Picture } from '../../model/Picture';
+import type { ButtonProps } from '../../ui-kit/Button/ButtonProps';
 import type { ListContent } from '../../ui-kit/List/ListContent';
 
 /**
@@ -33,6 +34,13 @@ export interface RecommendationCardTypes extends HeadlineCommonProps, ListConten
    * }
    */
   image?: Picture;
+  /**
+   * @default {
+   * "text": "",
+   * "version": "secondary"
+   * }
+   */
+  button?: ButtonProps;
 }
 
 /**
