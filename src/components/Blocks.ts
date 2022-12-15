@@ -42,6 +42,8 @@ import { TariffsTable } from './TariffsTable/TariffsTable';
 import { TextBlock } from './TextBlock/TextBlock';
 import { Tile } from './Tile/Tile';
 import { VerticalLayout } from './VerticalLayout/VerticalLayout';
+import { CarouselCard } from './CarouselCard/CarouselCard';
+import { Carousel } from './Carousel/Carousel';
 
 export const Blocks: BlocksRegistry = {
   Accordion,
@@ -87,4 +89,6 @@ export const Blocks: BlocksRegistry = {
   TextBlock,
   Tile,
   VerticalLayout,
+  CarouselCard,
+  Carousel,
 };

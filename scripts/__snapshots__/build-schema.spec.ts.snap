@@ -682,6 +682,68 @@ Object {
       "title": "Перевод с карты на карту",
       "type": "object",
     },
+    "CarouselCardContent": Object {
+      "properties": Object {
+        "button": Object {
+          "$ref": "#/definitions/ButtonWithIconProps",
+          "default": Object {
+            "icon": Object {
+              "format": "webp",
+              "size": Object {
+                "height": 24,
+                "width": 24,
+              },
+            },
+            "iconRight": Object {
+              "format": "webp",
+              "size": Object {
+                "height": 24,
+                "width": 24,
+              },
+            },
+          },
+          "title": "Кнопка",
+        },
+        "description": Object {
+          "title": "Описание",
+          "type": "string",
+        },
+        "title": Object {
+          "title": "Заголовок",
+          "type": "string",
+        },
+        "version": Object {
+          "$ref": "#/definitions/CarouselCardVersion",
+        },
+      },
+      "type": "object",
+    },
+    "CarouselCardVersion": Object {
+      "enum": Array [
+        "normal",
+        "mini",
+      ],
+      "type": "string",
+    },
+    "CarouselContent": Object {
+      "properties": Object {
+        "cardFullViewCount": Object {
+          "title": "Блоки",
+          "type": "number",
+        },
+        "cardWidth": Object {
+          "type": "number",
+        },
+        "isBlur": Object {
+          "type": "boolean",
+        },
+        "isCyclic": Object {
+          "type": "boolean",
+        },
+      },
+      "title": "Карусель",
+      "type": "object",
+    },
     "CatalogCardType": Object {
       "properties": Object {
         "button": Object {

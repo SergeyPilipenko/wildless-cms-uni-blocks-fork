@@ -1,5 +1,5 @@
 import { JSX } from '@redneckz/uni-jsx';
-import { useTableArrowScrollControl } from '../../hooks/useTableArrowScrollControl';
+import { useCarouselControl } from '../../hooks/useCarousel';
 import { ComparisonTableColumnHeaders } from './ComparisonTableColumnHeaders';
 import type { Column, RowHeader } from './ComparisonTableContent';
 import { ComparisonTableRows } from './ComparisonTableRows';
@@ -24,26 +24,26 @@ export const ComparisonTableBody = JSX<ComparisonTableBodyProps>(
       }))
       .slice(0, isShowAllRow ? rowHeaders.length : visibleRowLength);
 
-    const tableArrowScrollProps = useTableArrowScrollControl({
-      columnsLength: colData.length,
-      colsLengthForScroll: COLS_LENGTH_FOR_SCROLL,
+    const isScrollAvailable = colData.length > COLS_LENGTH_FOR_SCROLL;
+
+    const [activeIndex, controls] = useCarouselControl({
+      itemsCount: colData.length,
+      visibleItemCount: COLS_LENGTH_FOR_SCROLL,
     });
-    const { activeCardIndex, isScrollAvailable } = tableArrowScrollProps;
 
     return (
       <div>
         <div role="table">
           {colHeaders?.length ? (
-            <ComparisonTableColumnHeaders
-              colHeaders={colHeaders}
-              activeCardIndex={activeCardIndex}
-            />
+            <ComparisonTableColumnHeaders colHeaders={colHeaders} activeCardIndex={activeIndex} />
           ) : null}
           {rowData?.length ? (
             <ComparisonTableRows
               rowData={rowData}
               isColoredFirstColumn={isColoredFirstColumn}
-              {...tableArrowScrollProps}
+              activeCardIndex={activeIndex}
+              controls={controls}
+              isScrollAvailable={isScrollAvailable}
             />
           ) : null}
         </div>
